@@ -37,7 +37,7 @@
       <button class="rail-btn" data-go="6" title="Impacto com PAD">
         <svg class="i" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
       </button>
-      <button class="rail-btn" data-go="10" title="Encerramento">
+      <button class="rail-btn" data-go="11" title="Encerramento">
         <svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
       </button>
       <div class="rail-logo">RT</div>
@@ -250,6 +250,44 @@
           </div>
         </section>
 
+        <!-- 7b · Vídeo do impacto (HyperFrames, modelo R03) -->
+        <section class="slide" data-title="Impacto em vídeo">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Testes de Bancada · Impacto</span>
+              <h2>O golpe em <em>câmera lenta</em></h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1.65fr) minmax(0,1fr); align-items:start">
+              <figure class="glass media" style="margin:0; background:#f2f6f8">
+                <video id="video-impacto" src="assets/video/impacto_pad_r03.mp4" poster="assets/video/impacto_pad_r03_poster.jpg"
+                       muted playsinline loop preload="metadata" controls
+                       style="display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:contain"
+                       aria-label="Animação: esfera de aço atinge o PAD laranja no recorte A1 da garra; gráfico mostra força sem e com PAD"></video>
+                <figcaption>10 s de vídeo = 7 ms físicos · deslocamentos ampliados 2× para leitura</figcaption>
+              </figure>
+              <div style="display:grid; gap:14px">
+                <div class="glass card" style="padding:18px 20px">
+                  <table class="tbl">
+                    <tbody>
+                      <tr><td>Impactor</td><td>esfera de aço R20 · 263 g</td></tr>
+                      <tr><td>Velocidade · energia</td><td>1 m/s · 0,132 J</td></tr>
+                      <tr><td>PAD</td><td>TPU 95A · 40% · 6,3 mm · k ≈ 125 N/mm</td></tr>
+                      <tr><td>Garra (seção substituta)</td><td>PA-CF Hexa3D 15% · k ≈ 773 N/mm</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="g2">
+                  <div class="glass stat sm"><b>451 → 169 N</b><span>pico de força</span><small>−62,6% com PAD</small></div>
+                  <div class="glass stat sm"><b class="ink">1,83 → 4,90 ms</b><span>duração do contato</span><small>impulso igual: 0,526 N·s</small></div>
+                  <div class="glass stat sm"><b class="ink">1,34 mm</b><span>compressão máx. do PAD</span><small>21% da espessura</small></div>
+                  <div class="glass stat sm"><b class="ink">0,113 J</b><span>energia no PAD no pico</span><small>86% de 0,132 J</small></div>
+                </div>
+              </div>
+            </div>
+            <p class="note">HyperFrames sobre os dados do modelo 1D R03 (molas em série, sem amortecimento). Não é FEA nem ensaio; garra do modelo: Hexa3D 15% (atual: TPMS-D zonal R06).</p>
+          </div>
+        </section>
+
         <!-- 8 · Sensibilidade -->
         <section class="slide" data-title="Sensibilidade">
           <div class="wrap wide split" style="--cols:minmax(0,1fr) minmax(0,1.3fr)">
@@ -280,8 +318,8 @@
           <div class="wrap wide split" style="--cols:minmax(0,1fr) minmax(0,1.2fr)">
             <div>
               <span class="kicker">Testes de Bancada · Impressão</span>
-              <h2>Reforço por <em>zonas</em></h2>
-              <p class="lead">A garra é impressa inteira, mas com densidade interna diferente onde o esforço é maior. O fatiador aplica os modificadores dentro da peça.</p>
+              <h2>Reforço só <em>por dentro</em></h2>
+              <p class="lead">As cores são preenchimento interno do fatiamento. Cada zona é recortada do núcleo da peça, 2 mm abaixo da superfície (5 perímetros). O exterior não muda.</p>
               <div class="glass card" style="margin-top:20px; padding:18px 20px">
                 <div class="zones" style="margin:0">
                   <div class="zone"><i style="background:#f4f4f7"></i>Base · TPMS-D<b>20%</b></div>
@@ -289,12 +327,18 @@
                   <div class="zone"><i style="background:#1e6fb8"></i>Azul · corredores de carga<b>50%</b></div>
                   <div class="zone"><i style="background:#f03cf0"></i>Rosa · sob os PADs<b>70%</b></div>
                 </div>
-                <p class="note">Prioridade de sobreposição 70 &gt; 50 &gt; 30 &gt; 20 · 5 perímetros · Creality K1 Max, bico 0,4 mm, escala 1:1.</p>
+                <p class="note">Volume de zona fora da peça: <b>0 cm³</b>. Antes (R04) o modificador amarelo tinha 1.650 cm³, maior que a própria peça (1.391 cm³), e atravessava o contorno.</p>
               </div>
+              <div class="g3" style="margin-top:14px">
+                <div class="glass stat sm"><b>754 g</b><span>Superior · 38,1 h</span></div>
+                <div class="glass stat sm"><b>444 g</b><span>Inferior esq. · 23,8 h</span></div>
+                <div class="glass stat sm"><b>444 g</b><span>Inferior dir. · 23,9 h</span></div>
+              </div>
+              <p class="note">Massa da peça fatiada no Orca (K1 Max, 1:1, PA6-CF), sem suportes. Fatiamento local, nada enviado à impressora.</p>
             </div>
             <figure class="glass media" style="margin:0; background:#fff">
-              <img src="assets/img/bancada/zonas_coloridas.png" alt="Desenho da garra com zonas pintadas em amarelo, azul e rosa indicando reforço de preenchimento">
-              <figcaption>Mapa de zonas marcado sobre o desenho da montagem com ventosas</figcaption>
+              <img style="max-height:64vh; width:auto; max-width:100%; margin:0 auto; display:block; object-fit:contain" src="assets/img/bancada/r06_camadas_slide.png" alt="Três camadas reais do G-code do corpo superior com contornos das zonas rosa, azul e amarelo dentro das paredes externas">
+              <figcaption>Trajetórias reais do G-code: o preenchimento adensa dentro das zonas, as paredes seguem o contorno original</figcaption>
             </figure>
           </div>
         </section>
