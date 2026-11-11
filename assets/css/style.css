@@ -324,3 +324,9 @@ h1 em, h2 em { font-family: var(--serif); font-weight: 400; font-style: italic; 
 @media (max-width: 900px) {
   .split, .split.even { grid-template-columns: 1fr; }
 }
+
+/* Slide do vídeo de impacto: compacto para caber em telas ~16:9 */
+.vid-tbl td { padding: 7px 4px; font-size: 14px; }
+.vid-tbl td:last-child { text-align: right; }
+.vid-stats .stat.sm { padding: 12px 14px; }
+.vid-stats .stat.sm b { font-size: clamp(22px, 2.1vw, 28px); }

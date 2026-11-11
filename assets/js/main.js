@@ -56,14 +56,16 @@
   go(fromHash());
 })();
 
-// Vídeo do impacto: toca só com o slide visível, volta ao início ao entrar.
+// Vídeo do impacto: reprodução automática em loop contínuo (mudo, exigência dos navegadores para autoplay).
 (() => {
   const v = document.getElementById('video-impacto');
   if (!v) return;
-  const host = v.closest('.slide');
-  document.addEventListener('slidechange', e => {
-    if (e.detail.slide === host) { v.currentTime = 0; v.play().catch(() => {}); }
-    else v.pause();
-  });
-  if (host.classList.contains('on')) v.play().catch(() => {});
+  v.muted = true; v.defaultMuted = true; v.loop = true;
+  const play = () => { if (v.paused) v.play().catch(() => {}); };
+  play();
+  v.addEventListener('canplay', play);
+  v.addEventListener('pause', () => setTimeout(play, 200));
+  document.addEventListener('slidechange', play);
+  document.addEventListener('visibilitychange', play);
+  ['pointerdown', 'keydown'].forEach(ev => document.addEventListener(ev, play, { once: true }));
 })();
