@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Red Team · SENAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="orb o4"></div>
+  </div>
+
+  <div class="shell">
+    <nav class="rail" aria-label="Seções">
+      <button class="rail-btn" data-go="0" title="Início">
+        <svg class="i" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+      </button>
+      <button class="rail-btn" data-go="1" title="Contexto">
+        <svg class="i" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>
+      </button>
+      <button class="rail-btn" data-go="3" title="Demonstração">
+        <svg class="i" viewBox="0 0 24 24"><path d="M4 17l6-5-6-5M12 19h8"/></svg>
+      </button>
+      <button class="rail-btn" data-go="5" title="Encerramento">
+        <svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
+      </button>
+      <div class="rail-logo">RT</div>
+    </nav>
+
+    <main class="stage">
+      <header class="topbar">
+        <div class="top-title">Red Team <span>· SENAI</span></div>
+        <div class="counter" id="counter">01 / 06</div>
+      </header>
+
+      <div class="deck" id="deck">
+
+        <!-- 1 · Capa -->
+        <section class="slide on" data-title="Capa">
+          <div class="wrap">
+            <span class="kicker">SENAI · Red Team</span>
+            <h1 class="todo">Título da <em>apresentação</em></h1>
+            <p class="lead todo">Subtítulo ou frase de abertura. Substitua este texto pelo conteúdo real.</p>
+            <div style="display:flex; gap:12px; margin-top:28px; flex-wrap:wrap">
+              <span class="pill">Começar →</span>
+              <span class="pill ghost todo">Apresentador · Data</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2 · Seção com 3 cards -->
+        <section class="slide" data-title="Contexto">
+          <div class="wrap">
+            <div class="s-head">
+              <span class="kicker">01 · Contexto</span>
+              <h2 class="todo">Título da <em>seção</em></h2>
+              <p class="lead todo">Texto de apoio da seção.</p>
+            </div>
+            <div class="g3">
+              <article class="glass card todo">
+                <div class="card-ic"><svg class="i" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div>
+                <h3>Tópico 1</h3><p>Descrição curta do tópico.</p>
+              </article>
+              <article class="glass card todo">
+                <div class="card-ic"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></div>
+                <h3>Tópico 2</h3><p>Descrição curta do tópico.</p>
+              </article>
+              <article class="glass card todo">
+                <div class="card-ic"><svg class="i" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+                <h3>Tópico 3</h3><p>Descrição curta do tópico.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3 · Números -->
+        <section class="slide" data-title="Números">
+          <div class="wrap">
+            <div class="s-head">
+              <span class="kicker">02 · Números</span>
+              <h2 class="todo">Dados em <em>destaque</em></h2>
+            </div>
+            <div class="g4">
+              <div class="glass stat todo"><b>00</b><span>Indicador 1</span></div>
+              <div class="glass stat todo"><b>00%</b><span>Indicador 2</span></div>
+              <div class="glass stat todo"><b>00</b><span>Indicador 3</span></div>
+              <div class="glass stat todo"><b>00h</b><span>Indicador 4</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4 · Terminal / demonstração -->
+        <section class="slide" data-title="Demonstração">
+          <div class="wrap g2" style="align-items:center">
+            <div class="s-head">
+              <span class="kicker">03 · Demonstração</span>
+              <h2 class="todo">Passo a <em>passo</em></h2>
+              <p class="lead todo">Explique aqui o que está sendo demonstrado ao lado.</p>
+            </div>
+            <div class="glass term todo">
+              <div class="term-bar"><i></i><i></i><i></i><span>terminal</span></div>
+<pre><span class="p">$</span> comando de exemplo
+saída de exemplo
+<span class="p">$</span> _</pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5 · Dois blocos -->
+        <section class="slide" data-title="Comparação">
+          <div class="wrap">
+            <div class="s-head">
+              <span class="kicker">04 · Comparação</span>
+              <h2 class="todo">Ataque × <em>Defesa</em></h2>
+            </div>
+            <div class="g2">
+              <article class="glass card todo">
+                <h3>Lado A</h3><p>Conteúdo do primeiro bloco.</p>
+              </article>
+              <article class="glass card todo">
+                <h3>Lado B</h3><p>Conteúdo do segundo bloco.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6 · Encerramento -->
+        <section class="slide" data-title="Encerramento">
+          <div class="wrap" style="text-align:center">
+            <span class="kicker">Obrigado</span>
+            <h1 class="todo">Perguntas<em>?</em></h1>
+            <p class="lead todo" style="margin:0 auto">Contato ou mensagem final.</p>
+          </div>
+        </section>
+
+      </div>
+
+      <footer class="footbar">
+        <button class="nav-btn" id="prev" aria-label="Slide anterior">
+          <svg class="i" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <div class="progress"><i id="bar"></i></div>
+        <button class="nav-btn" id="next" aria-label="Próximo slide">
+          <svg class="i" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </footer>
+    </main>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
