@@ -8,6 +8,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    } }
+  </script>
 </head>
 <body>
   <div class="bg" aria-hidden="true">
@@ -19,13 +25,19 @@
       <button class="rail-btn" data-go="0" title="Início">
         <svg class="i" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
       </button>
-      <button class="rail-btn" data-go="1" title="Contexto">
-        <svg class="i" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>
+      <button class="rail-btn" data-go="1" title="Testes de Bancada">
+        <svg class="i" viewBox="0 0 24 24"><path d="M9 3v6l-5 9a2 2 0 0 0 1.7 3h12.6a2 2 0 0 0 1.7-3l-5-9V3M8 3h8M7 15h10"/></svg>
       </button>
-      <button class="rail-btn" data-go="3" title="Demonstração">
-        <svg class="i" viewBox="0 0 24 24"><path d="M4 17l6-5-6-5M12 19h8"/></svg>
+      <button class="rail-btn" data-go="2" title="Modelo 3D">
+        <svg class="i" viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9zM12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>
       </button>
-      <button class="rail-btn" data-go="5" title="Encerramento">
+      <button class="rail-btn" data-go="4" title="Resultados Fusion">
+        <svg class="i" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+      </button>
+      <button class="rail-btn" data-go="6" title="Impacto com PAD">
+        <svg class="i" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+      </button>
+      <button class="rail-btn" data-go="10" title="Encerramento">
         <svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
       </button>
       <div class="rail-logo">RT</div>
@@ -33,14 +45,14 @@
 
     <main class="stage">
       <header class="topbar">
-        <div class="top-title">Red Team <span>· SENAI</span></div>
-        <div class="counter" id="counter">01 / 06</div>
+        <div class="top-title">Red Team <span id="sec-title">· SENAI</span></div>
+        <div class="counter" id="counter">01 / 11</div>
       </header>
 
       <div class="deck" id="deck">
 
         <!-- 1 · Capa -->
-        <section class="slide on" data-title="Capa">
+        <section class="slide on" data-title="SENAI">
           <div class="wrap">
             <span class="kicker">SENAI · Red Team</span>
             <h1 class="todo">Título da <em>apresentação</em></h1>
@@ -52,83 +64,274 @@
           </div>
         </section>
 
-        <!-- 2 · Seção com 3 cards -->
-        <section class="slide" data-title="Contexto">
-          <div class="wrap">
-            <div class="s-head">
-              <span class="kicker">01 · Contexto</span>
-              <h2 class="todo">Título da <em>seção</em></h2>
-              <p class="lead todo">Texto de apoio da seção.</p>
+        <!-- 2 · Testes de Bancada: abertura -->
+        <section class="slide" data-title="Testes de Bancada">
+          <div class="wrap wide split">
+            <div>
+              <span class="kicker">Testes de Bancada</span>
+              <h2>Garra do robô <em>SAMI</em></h2>
+              <p class="lead">Simulações no Autodesk Fusion e cálculo de impacto para a garra de ventosas impressa em 3D: corpo em PA-CF e proteções (PADs) em TPU 95A.</p>
+              <div class="g3" style="margin-top:24px">
+                <div class="glass stat sm"><b>3</b><span>peças estruturais</span><small>superior + 2 inferiores</small></div>
+                <div class="glass stat sm"><b>8</b><span>PADs de proteção</span><small>TPU 95A · 40%</small></div>
+                <div class="glass stat sm"><b class="ink">3.023</b><span>cm³ de garra</span><small>1.391 + 2 × 816</small></div>
+              </div>
+              <div class="chips">
+                <span class="chip"><i></i>Fusion · tensão estática</span>
+                <span class="chip"><i></i>PA6-CF × Tritan</span>
+                <span class="chip"><i></i>Impacto 1D com PAD</span>
+                <span class="chip"><i></i>Revisão R04</span>
+              </div>
             </div>
-            <div class="g3">
-              <article class="glass card todo">
-                <div class="card-ic"><svg class="i" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div>
-                <h3>Tópico 1</h3><p>Descrição curta do tópico.</p>
-              </article>
-              <article class="glass card todo">
-                <div class="card-ic"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></div>
-                <h3>Tópico 2</h3><p>Descrição curta do tópico.</p>
-              </article>
-              <article class="glass card todo">
-                <div class="card-ic"><svg class="i" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
-                <h3>Tópico 3</h3><p>Descrição curta do tópico.</p>
-              </article>
+            <figure class="glass media dark" style="margin:0">
+              <img src="assets/img/bancada/garra_montagem.png" alt="Montagem da garra SAMI no Fusion: corpo superior sobre os dois suportes inferiores de ventosas">
+              <figcaption>Montagem R04 no Fusion · geometria externa original</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- 3 · Modelo 3D -->
+        <section class="slide" data-title="Modelo 3D" data-viewer>
+          <div class="wrap wide split" style="--cols:minmax(0,.8fr) minmax(0,1.5fr)">
+            <div>
+              <span class="kicker">Testes de Bancada · Modelo 3D</span>
+              <h2>Peças em <em>escala real</em></h2>
+              <p class="lead">Envelopes STL usados no fatiamento. Arraste para girar, role para aproximar.</p>
+              <div class="seg" id="viewer-parts" style="margin-top:22px" role="tablist" aria-label="Peça exibida">
+                <button class="on" data-part="garra_superior" data-info="Corpo superior · 1.391 cm³">Superior</button>
+                <button data-part="garra_inferior" data-info="Suporte inferior (esq./dir. espelhados) · 816 cm³ cada">Inferior</button>
+                <button data-part="pads" data-info="8 PADs dispostos na mesa · 105,9 cm³ no total">PADs</button>
+              </div>
+              <p class="note" id="viewer-info">Corpo superior · 1.391 cm³</p>
+              <div class="zones" style="margin-top:22px">
+                <div class="zone"><i style="background:#e7e5ef"></i>Garra · PA-CF, 5 perímetros</div>
+                <div class="zone"><i style="background:#f07c24"></i>PADs (laranja) · TPU 95A, núcleo 40%</div>
+              </div>
+            </div>
+            <div class="glass viewer" id="viewer">
+              <div class="vmsg" id="viewer-msg">Carregando modelo…</div>
+              <span class="vhint">STL · mm</span>
             </div>
           </div>
         </section>
 
-        <!-- 3 · Números -->
-        <section class="slide" data-title="Números">
-          <div class="wrap">
-            <div class="s-head">
-              <span class="kicker">02 · Números</span>
-              <h2 class="todo">Dados em <em>destaque</em></h2>
+        <!-- 4 · Configuração do estudo -->
+        <section class="slide" data-title="Configuração">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Testes de Bancada · Fusion</span>
+              <h2>Como o teste foi <em>montado</em></h2>
             </div>
-            <div class="g4">
-              <div class="glass stat todo"><b>00</b><span>Indicador 1</span></div>
-              <div class="glass stat todo"><b>00%</b><span>Indicador 2</span></div>
-              <div class="glass stat todo"><b>00</b><span>Indicador 3</span></div>
-              <div class="glass stat todo"><b>00h</b><span>Indicador 4</span></div>
+            <div class="g3" style="align-items:start">
+              <figure class="glass media" style="margin:0; background:#fff">
+                <img src="assets/img/bancada/cargas.png" alt="Corpo superior com quatro faces carregadas para baixo, indicadas por setas azuis">
+                <figcaption>Força de 88,84 N em −Z, aplicada em cada uma das 4 faces</figcaption>
+              </figure>
+              <figure class="glass media" style="margin:0; background:#fff">
+                <img src="assets/img/bancada/malha.png" alt="Malha de elementos finitos do corpo superior maciço">
+                <figcaption>Corpo superior maciço · malha parabólica de 3 mm</figcaption>
+              </figure>
+              <div class="glass card">
+                <table class="tbl">
+                  <tbody>
+                    <tr><td>Tipo de estudo</td><td>Tensão estática</td></tr>
+                    <tr><td>Peça</td><td>Corpo superior</td></tr>
+                    <tr><td>Restrição</td><td>Fixo (Ux, Uy, Uz)</td></tr>
+                    <tr><td>Carga por face</td><td>88,84 N</td></tr>
+                    <tr><td>Carga total</td><td>355,4 N</td></tr>
+                    <tr><td>Nós</td><td>498.261</td></tr>
+                    <tr><td>Elementos</td><td>339.001</td></tr>
+                    <tr><td>Software</td><td>Fusion 2706.1.17</td></tr>
+                  </tbody>
+                </table>
+                <p class="note">Estudo exploratório “24 kg”, mesma geometria e cargas para os dois materiais.</p>
+              </div>
             </div>
           </div>
         </section>
 
-        <!-- 4 · Terminal / demonstração -->
-        <section class="slide" data-title="Demonstração">
-          <div class="wrap g2" style="align-items:center">
-            <div class="s-head">
-              <span class="kicker">03 · Demonstração</span>
-              <h2 class="todo">Passo a <em>passo</em></h2>
-              <p class="lead todo">Explique aqui o que está sendo demonstrado ao lado.</p>
+        <!-- 5 · PA6-CF × Tritan -->
+        <section class="slide" data-title="PA6-CF × Tritan">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Testes de Bancada · Comparação</span>
+              <h2>PA6-CF × <em>Tritan</em></h2>
             </div>
-            <div class="glass term todo">
-              <div class="term-bar"><i></i><i></i><i></i><span>terminal</span></div>
-<pre><span class="p">$</span> comando de exemplo
-saída de exemplo
-<span class="p">$</span> _</pre>
+            <div class="split even" style="align-items:start">
+              <div class="glass card">
+                <table class="tbl">
+                  <thead><tr><th></th><th><span class="sw red"></span>PA6-CF</th><th><span class="sw indigo"></span>Tritan</th></tr></thead>
+                  <tbody>
+                    <tr class="grp"><td colspan="3">Material (entrada do Fusion)</td></tr>
+                    <tr><td>Densidade</td><td>1,09 g/cm³</td><td>1,18 g/cm³</td></tr>
+                    <tr><td>Módulo de Young</td><td>4.430 MPa</td><td>1.548 MPa</td></tr>
+                    <tr><td>Poisson</td><td>0,39</td><td>0,38</td></tr>
+                    <tr><td>Escoamento</td><td class="na">não informado</td><td>43 MPa</td></tr>
+                    <tr><td>Tração máxima</td><td>102 MPa</td><td>58 MPa</td></tr>
+                    <tr class="grp"><td colspan="3">Resultado</td></tr>
+                    <tr><td>Von Mises máx.</td><td class="na">não exportado</td><td>3,22 MPa</td></tr>
+                    <tr><td>1ª principal máx.</td><td>5,16 MPa</td><td>5,03 MPa</td></tr>
+                    <tr><td>3ª principal mín.</td><td>−4,61 MPa</td><td>−4,49 MPa</td></tr>
+                    <tr><td>Fator de segurança</td><td>&gt; 8 na peça toda</td><td>&gt; 8 na peça toda</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div style="display:grid; gap:18px">
+                <div class="glass chart" id="chart-desl">
+                  <h4>Deslocamento máximo</h4>
+                  <p class="sub">mm · menor é melhor</p>
+                </div>
+                <div class="g2">
+                  <div class="glass stat sm"><b>2,9×</b><span>mais rígido</span><small>deslocamento do Tritan ÷ PA6-CF</small></div>
+                  <div class="glass stat sm"><b>−7,6%</b><span>de massa</span><small>mesmo volume, só densidade</small></div>
+                </div>
+                <p class="note" style="margin:0">As tensões quase não mudam entre os materiais (mesma geometria e carga). O que muda é a <b>rigidez</b>: o deslocamento cai na proporção do módulo de Young (4.430 ÷ 1.548 ≈ 2,9).</p>
+              </div>
             </div>
           </div>
         </section>
 
-        <!-- 5 · Dois blocos -->
-        <section class="slide" data-title="Comparação">
-          <div class="wrap">
-            <div class="s-head">
-              <span class="kicker">04 · Comparação</span>
-              <h2 class="todo">Ataque × <em>Defesa</em></h2>
+        <!-- 6 · Mapas de resultados -->
+        <section class="slide" data-title="Mapas Fusion">
+          <div class="wrap wide">
+            <div class="s-head compact" style="display:flex; justify-content:space-between; align-items:end; gap:16px; flex-wrap:wrap">
+              <div>
+                <span class="kicker">Testes de Bancada · Resultados</span>
+                <h2>Mapas do <em>Fusion</em></h2>
+              </div>
+              <div class="seg-row" style="margin:0">
+                <div class="seg" id="map-mat" aria-label="Material">
+                  <button class="on" data-v="pa6cf">PA6-CF</button>
+                  <button data-v="tritan">Tritan</button>
+                </div>
+                <div class="seg" id="map-res" aria-label="Resultado">
+                  <button class="on" data-v="desl">Deslocamento</button>
+                  <button data-v="vm">Von Mises</button>
+                  <button data-v="p1">1ª principal</button>
+                  <button data-v="p3">3ª principal</button>
+                  <button data-v="sf">Fator de seg.</button>
+                </div>
+              </div>
+            </div>
+            <figure class="glass media dark" style="margin:0">
+              <img id="map-img" src="assets/img/bancada/pa6cf_desl.png" alt="Mapa de resultado do Fusion">
+              <figcaption id="map-cap">PA6-CF · deslocamento total: máx. 0,08 mm nas abas externas, onde a carga é aplicada</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- 7 · Impacto 1D -->
+        <section class="slide" data-title="Impacto com PAD">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Testes de Bancada · Impacto</span>
+              <h2>O PAD reduz o <em>pico</em></h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1.5fr) minmax(0,1fr); align-items:start">
+              <div class="glass chart" id="chart-impacto">
+                <h4>Força de contato ao longo do tempo</h4>
+                <p class="sub">Esfera de 263 g a 1 m/s (0,132 J) · modelo de molas 1D, sem amortecimento</p>
+                <div class="legend">
+                  <span><i style="background:var(--s-indigo)"></i>Sem PAD</span>
+                  <span><i style="background:var(--s-red)"></i>Com PAD</span>
+                </div>
+              </div>
+              <div style="display:grid; gap:14px">
+                <div class="glass stat"><b>−62,6%</b><span>no pico de força · 450,9 → 168,5 N</span></div>
+                <div class="g2">
+                  <div class="glass stat sm"><b class="ink">2,7×</b><span>contato mais longo</span><small>1,83 → 4,90 ms</small></div>
+                  <div class="glass stat sm"><b class="ink">1,34 mm</b><span>compressão do PAD</span><small>21% da espessura</small></div>
+                  <div class="glass stat sm"><b class="ink">86%</b><span>da energia no PAD</span><small>0,113 de 0,132 J</small></div>
+                  <div class="glass stat sm"><b class="ink">0,58 → 0,22</b><span>mm de deflexão</span><small>viga substituta da garra</small></div>
+                </div>
+              </div>
+            </div>
+            <p class="note">Modelo reduzido (R03), não é FEA: a seção da garra e a área de contato são hipóteses. O impulso total é igual nos dois casos (0,526 N·s), porque o PAD espalha a força no tempo.</p>
+          </div>
+        </section>
+
+        <!-- 8 · Sensibilidade -->
+        <section class="slide" data-title="Sensibilidade">
+          <div class="wrap wide split" style="--cols:minmax(0,1fr) minmax(0,1.3fr)">
+            <div>
+              <span class="kicker">Testes de Bancada · Sensibilidade</span>
+              <h2>Depende da <em>área de contato</em></h2>
+              <p class="lead">Quanto menor a área que recebe o golpe, mais macio o PAD fica e maior a redução do pico. A área real ainda não foi medida.</p>
+              <div class="glass card" style="margin-top:22px; padding:18px 20px">
+                <table class="tbl">
+                  <thead><tr><th>Preenchimento</th><th>Sem PAD</th><th>Com PAD</th><th>Redução</th></tr></thead>
+                  <tbody>
+                    <tr><td>15%</td><td>450,9 N</td><td>168,5 N</td><td>62,6%</td></tr>
+                    <tr><td>30%</td><td>460,0 N</td><td>169,0 N</td><td>63,3%</td></tr>
+                  </tbody>
+                </table>
+                <p class="note">Dobrar o preenchimento da garra muda a redução em menos de 1 ponto percentual.</p>
+              </div>
+            </div>
+            <div class="glass chart" id="chart-area">
+              <h4>Redução do pico de força por área de contato</h4>
+              <p class="sub">% de redução com PAD · área assumida em mm² (100 mm² é o caso base)</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9 · Estratégia de impressão -->
+        <section class="slide" data-title="Impressão zonal">
+          <div class="wrap wide split" style="--cols:minmax(0,1fr) minmax(0,1.2fr)">
+            <div>
+              <span class="kicker">Testes de Bancada · Impressão</span>
+              <h2>Reforço por <em>zonas</em></h2>
+              <p class="lead">A garra é impressa inteira, mas com densidade interna diferente onde o esforço é maior. O fatiador aplica os modificadores dentro da peça.</p>
+              <div class="glass card" style="margin-top:20px; padding:18px 20px">
+                <div class="zones" style="margin:0">
+                  <div class="zone"><i style="background:#f4f4f7"></i>Base · TPMS-D<b>20%</b></div>
+                  <div class="zone"><i style="background:#f5e400"></i>Amarelo · entorno dos apoios<b>30%</b></div>
+                  <div class="zone"><i style="background:#1e6fb8"></i>Azul · corredores de carga<b>50%</b></div>
+                  <div class="zone"><i style="background:#f03cf0"></i>Rosa · sob os PADs<b>70%</b></div>
+                </div>
+                <p class="note">Prioridade de sobreposição 70 &gt; 50 &gt; 30 &gt; 20 · 5 perímetros · Creality K1 Max, bico 0,4 mm, escala 1:1.</p>
+              </div>
+            </div>
+            <figure class="glass media" style="margin:0; background:#fff">
+              <img src="assets/img/bancada/zonas_coloridas.png" alt="Desenho da garra com zonas pintadas em amarelo, azul e rosa indicando reforço de preenchimento">
+              <figcaption>Mapa de zonas marcado sobre o desenho da montagem com ventosas</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- 10 · Validado × pendente -->
+        <section class="slide" data-title="Status">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Testes de Bancada · Status</span>
+              <h2>O que já foi testado e o que <em>falta</em></h2>
             </div>
             <div class="g2">
-              <article class="glass card todo">
-                <h3>Lado A</h3><p>Conteúdo do primeiro bloco.</p>
+              <article class="glass card">
+                <h3 class="st"><span class="ok"><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>Concluído</h3>
+                <ul class="status-list ok">
+                  <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Tensão estática no Fusion, PA6-CF e Tritan, corpo superior maciço</li>
+                  <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Cálculo de impacto 1D com e sem PAD, com estudo de sensibilidade</li>
+                  <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>8 STLs de PAD e 3 da garra exportados, fechados e verificados</li>
+                  <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Modificadores de preenchimento zonal preparados no Orca</li>
+                </ul>
               </article>
-              <article class="glass card todo">
-                <h3>Lado B</h3><p>Conteúdo do segundo bloco.</p>
+              <article class="glass card">
+                <h3 class="st"><span class="pend"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Pendente</h3>
+                <ul class="status-list pend">
+                  <li><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Impacto 3D: massa efetiva do robô e velocidade reais</li>
+                  <li><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Temperatura, ruptura e delaminação das camadas</li>
+                  <li><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Amortecimento real: curva força × compressão do PAD</li>
+                  <li><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Desgaste e durabilidade em operação 24/7</li>
+                  <li><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Massa e consumo de filamento (fatiamento K1 Max em andamento)</li>
+                </ul>
               </article>
             </div>
+            <p class="note">Os estudos estáticos usam a peça maciça. Ainda não representam o miolo zonal TPMS-D impresso.</p>
           </div>
         </section>
 
-        <!-- 6 · Encerramento -->
+        <!-- 11 · Encerramento -->
         <section class="slide" data-title="Encerramento">
           <div class="wrap" style="text-align:center">
             <span class="kicker">Obrigado</span>
@@ -152,5 +355,8 @@ saída de exemplo
   </div>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/bancada-dados.js"></script>
+  <script src="assets/js/bancada.js"></script>
+  <script type="module" src="assets/js/viewer3d.js"></script>
 </body>
 </html>

@@ -22,7 +22,10 @@
     let active = null;
     railBtns.forEach(b => { if (+b.dataset.go <= cur) active = b; });
     railBtns.forEach(b => b.classList.toggle('on', b === active));
+    const sec = document.getElementById('sec-title');
+    if (sec) sec.textContent = `· ${slides[cur].dataset.title || 'SENAI'}`;
     history.replaceState(null, '', `#${cur + 1}`);
+    document.dispatchEvent(new CustomEvent('slidechange', { detail: { index: cur, slide: slides[cur] } }));
   }
 
   prev.addEventListener('click', () => go(cur - 1));

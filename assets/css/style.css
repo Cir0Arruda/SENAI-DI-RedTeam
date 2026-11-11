@@ -224,3 +224,103 @@ h1 em, h2 em { font-family: var(--serif); font-weight: 400; font-style: italic; 
 @media (prefers-reduced-motion: reduce) {
   .orb, .slide.on > * { animation: none; }
 }
+
+/* =========================================================
+   Testes de Bancada
+   ========================================================= */
+:root {
+  --s-red: #e5232f;     /* PA6-CF · com PAD   (paleta validada) */
+  --s-indigo: #5b5bd6;  /* Tritan · sem PAD */
+}
+.wrap.wide { max-width: 1320px; }
+.split { display: grid; gap: 28px; grid-template-columns: var(--cols, minmax(0, 1fr) minmax(0, 1.25fr)); align-items: center; }
+.split.even { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.s-head.compact { margin-bottom: 18px; }
+.s-head.compact h2 { font-size: clamp(26px, 3.2vw, 42px); }
+.note { margin: 14px 0 0; font-size: 13px; line-height: 1.5; color: var(--muted); }
+.note b { color: var(--ink-2); font-weight: 600; }
+
+/* Mídia (imagens do Fusion, fundo escuro) */
+.media { border-radius: var(--r-lg); overflow: hidden; padding: 8px; }
+.media img { display: block; width: 100%; height: auto; border-radius: calc(var(--r-lg) - 8px); }
+.media figcaption { padding: 10px 8px 4px; font-size: 13px; color: var(--muted); }
+.media.dark { background: #2b2f3a; border-color: rgba(255,255,255,.5); }
+.media.dark figcaption { color: #c9cbd6; }
+
+/* Chips de especificação */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; border-radius: 999px; background: var(--glass-3); border: 1px solid var(--stroke); font-size: 13px; color: var(--ink-2); }
+.chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
+
+/* Stat menor */
+.stat.sm { padding: 16px 18px; border-radius: var(--r-md); }
+.stat.sm b { font-size: clamp(24px, 2.4vw, 32px); }
+.stat small { display: block; margin-top: 2px; font-size: 12px; color: var(--muted); }
+.stat b.ink { color: var(--ink); }
+
+/* Controle segmentado */
+.seg { display: inline-flex; gap: 4px; padding: 4px; border-radius: 999px; background: var(--glass-2); border: 1px solid var(--stroke); flex-wrap: wrap; }
+.seg button { height: 34px; padding: 0 14px; border-radius: 999px; font-size: 13px; font-weight: 500; color: var(--ink-2); transition: background .25s, color .25s; }
+.seg button:hover { background: rgba(255,255,255,.8); }
+.seg button.on { background: var(--ink); color: #fff; }
+.seg-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
+
+/* Tabela */
+.tbl { width: 100%; border-collapse: collapse; font-size: 14px; }
+.tbl th, .tbl td { padding: 9px 12px; text-align: right; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.tbl th:first-child, .tbl td:first-child { text-align: left; color: var(--ink-2); }
+.tbl thead th { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.tbl tbody tr:last-child td { border-bottom: 0; }
+.tbl .grp td { padding-top: 16px; font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; text-align: left; }
+.tbl td.na { color: var(--muted); font-size: 12px; }
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: 0; }
+.sw.red { background: var(--s-red); } .sw.indigo { background: var(--s-indigo); }
+
+/* Gráficos */
+.chart { position: relative; border-radius: var(--r-lg); padding: 18px 18px 12px; }
+.chart h4 { margin: 0 0 2px; font-size: 15px; font-weight: 600; }
+.chart .sub { margin: 0 0 10px; font-size: 12px; color: var(--muted); }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart .axis text { font-size: 11px; fill: var(--muted); font-family: var(--font); }
+.chart .axis line, .chart .grid line { stroke: rgba(21,21,29,.08); }
+.chart .lbl { font-size: 12px; fill: var(--ink-2); font-family: var(--font); font-variant-numeric: tabular-nums; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--ink-2); margin-bottom: 6px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 14px; height: 3px; border-radius: 2px; }
+.tip {
+  position: absolute; z-index: 5; pointer-events: none; min-width: 120px;
+  padding: 8px 10px; border-radius: 10px; font-size: 12px; line-height: 1.5;
+  background: rgba(255,255,255,.96); border: 1px solid var(--stroke);
+  box-shadow: 0 10px 30px -12px rgba(40,30,80,.45);
+  opacity: 0; transition: opacity .15s;
+  font-variant-numeric: tabular-nums;
+}
+.tip.on { opacity: 1; }
+.tip b { font-weight: 600; }
+.tip .r { display: flex; align-items: center; gap: 6px; }
+.tip .r i { width: 8px; height: 8px; border-radius: 2px; }
+
+/* Visualizador 3D */
+.viewer { position: relative; border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 16 / 10; min-height: 300px;
+  background: radial-gradient(120% 90% at 50% 20%, #ffffff 0%, #eeecf8 60%, #e3e1f3 100%); }
+.viewer canvas { display: block; width: 100% !important; height: 100% !important; cursor: grab; }
+.viewer canvas:active { cursor: grabbing; }
+.viewer .vmsg { position: absolute; inset: 0; display: grid; place-items: center; font-size: 14px; color: var(--muted); }
+.viewer .vhint { position: absolute; left: 14px; bottom: 12px; font-size: 12px; color: var(--muted); background: var(--glass-3); padding: 4px 10px; border-radius: 999px; }
+
+/* Status validado / pendente */
+.status-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.status-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.45; color: var(--ink-2); }
+.status-list svg { flex: none; margin-top: 1px; }
+.ok svg { color: #1f9d6b; } .pend svg { color: #c27c0e; }
+.card h3.st { display: flex; align-items: center; gap: 8px; margin-top: 0; }
+
+/* Legenda de zonas */
+.zones { display: grid; gap: 8px; margin-top: 14px; }
+.zone { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink-2); }
+.zone i { width: 28px; height: 14px; border-radius: 4px; border: 1px solid rgba(0,0,0,.08); }
+.zone b { margin-left: auto; font-variant-numeric: tabular-nums; }
+
+@media (max-width: 900px) {
+  .split, .split.even { grid-template-columns: 1fr; }
+}
