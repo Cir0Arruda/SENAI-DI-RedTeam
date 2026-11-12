@@ -776,3 +776,16 @@ dialog.qr-big .nav-btn { position: absolute; top: 12px; right: 12px; }
 #s-sustent.on .sg:nth-child(3) { transition-delay: .55s; }
 @media (max-width: 600px) { .eol-split { grid-template-columns: 1fr; } .eol-split::after { display: none; } }
 @media (prefers-reduced-motion: reduce) { #s-sustent .eol li, #s-sustent .eol-dest, #s-sustent .sg { transition: none; opacity: 1; transform: none; } }
+
+/* logos das instituições na capa */
+.logos { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 34px; margin: 0 0 26px; padding: 12px 22px; width: fit-content; max-width: 100%; border-radius: 18px; background: rgba(255, 255, 255, .8); border: 1px solid rgba(21, 21, 29, .08); }
+.logos img { display: block; width: auto; }
+.logos .lg-senai, .logos .lg-ciesp { height: 34px; }
+.logos .lg-fca { height: 46px; }
+.logos .lg-aji { height: 52px; }
+@media (max-width: 600px) {
+  .logos { gap: 12px 20px; padding: 10px 14px; }
+  .logos .lg-senai, .logos .lg-ciesp { height: 24px; }
+  .logos .lg-fca { height: 32px; }
+  .logos .lg-aji { height: 36px; }
+}
