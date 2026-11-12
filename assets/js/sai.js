@@ -152,13 +152,13 @@
       e.dataset.final = f(to);
       if (reduce) { e.textContent = f(to); return; }
       const t0 = performance.now();
-      const st = now => { const k = Math.min(1, (now - t0) / 900); e.textContent = f(to * ease(k)); if (k < 1) requestAnimationFrame(st); };
+      const st = now => { const k = Math.max(0, Math.min(1, (now - t0) / 900)); e.textContent = f(to * ease(k)); if (k < 1) requestAnimationFrame(st); };
       requestAnimationFrame(st);
     };
     const play = () => {
       if (reduce) { cr.setAttribute('width', W); return; }
       const t0 = performance.now();
-      const st = now => { const k = Math.min(1, (now - t0) / 1600); cr.setAttribute('width', L + ease(k) * (W - L)); if (k < 1) requestAnimationFrame(st); };
+      const st = now => { const k = Math.max(0, Math.min(1, (now - t0) / 1600)); cr.setAttribute('width', L + ease(k) * (W - L)); if (k < 1) requestAnimationFrame(st); };
       cr.setAttribute('width', L); requestAnimationFrame(st);
     };
     const show = (c, anim) => {
@@ -252,7 +252,7 @@
     const play = () => {
       if (reduce) { cr.setAttribute('width', W); return; }
       const t0 = performance.now();
-      const st = now => { const k = Math.min(1, (now - t0) / 1200); cr.setAttribute('width', L + ease(k) * (W - L)); if (k < 1) requestAnimationFrame(st); };
+      const st = now => { const k = Math.max(0, Math.min(1, (now - t0) / 1200)); cr.setAttribute('width', L + ease(k) * (W - L)); if (k < 1) requestAnimationFrame(st); };
       cr.setAttribute('width', L); requestAnimationFrame(st);
     };
     const update = anim => {

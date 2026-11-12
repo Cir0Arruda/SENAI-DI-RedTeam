@@ -333,7 +333,7 @@
     if (!p || reduce) return;
     const t0 = performance.now(), dur = 900;
     const step = now => {
-      const k = Math.min(1, (now - t0) / dur), ease = 1 - Math.pow(1 - k, 3);
+      const k = Math.max(0, Math.min(1, (now - t0) / dur)), ease = 1 - Math.pow(1 - k, 3);
       const v = p.num * ease;
       e.textContent = k < 1 ? `${p.pre}${p.neg ? '−' : ''}${fmt(Math.abs(v), p.dec)}${p.suf}` : e.dataset.final;
       if (k < 1) requestAnimationFrame(step);

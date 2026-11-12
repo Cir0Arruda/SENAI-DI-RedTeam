@@ -21,7 +21,7 @@
     const to = +el.dataset.count, d = +(el.dataset.d || 0);
     let t0 = null;
     const st = { active: () => t0 !== null, tick: (dt, now) => {
-      const p = Math.min(1, (now - t0) / 1400);
+      const p = Math.max(0, Math.min(1, (now - t0) / 1400));
       el.textContent = fmt(to * ease(p), d);
       if (p >= 1) t0 = null;
     } };
