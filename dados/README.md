@@ -20,7 +20,7 @@ A garra instalada é de Tritan Hexa3D 30%. Sua massa é estimada como o fatiamen
 | Pasta | Conteúdo | Origem |
 |---|---|---|
 | `orca/` | massa por peça, filamento, tempo e avisos de cada fatiamento | OrcaSlicer CLI, Creality K1 Max, 1:1, PA6-CF 1,10 g/cm³, 5 paredes, camada 0,2 mm. Nada foi enviado à impressora. |
-| `montagem/` | garra **montada** (superior + inferior): carga máxima numa asa, FS a 24/30 kg, rigidez, flecha | FE por voxels de 3 mm, giroide homogeneizado (Gibson-Ashby), pico × 2,2 (calibrado no Fusion do R06) |
+| `montagem/` | garra **montada** (superior + inferior): carga máxima numa asa, FS a 24/30 kg, rigidez, flecha | FE por voxels de 3 mm, giroide homogeneizado (Gibson-Ashby), pico × 2,2 (calibrado contra o Fusion [F1] na peça maciça: `fusion/calibracao_pico.json`) |
 | `impacto/` | tranco de 24 kg numa asa aplicado em 10 ms; séries no tempo (`hist`) | FE transiente 3D (Newmark, Rayleigh 3%) da peça superior |
 | `fadiga/` | vida estimada da peça superior | curva S-N normalizada conservadora + regra de Miner |
 | `decisao/` | tabela consolidada para decidir com × sem esqueleto (`DECISAO_ESQUELETO.json`, `dados_comparativos.csv`) e peso do conjunto inteiro de cada rodada (`peso_conjunto.csv`) | junta as pastas acima; o conjunto vem de `scripts/conjunto_dados.py` |

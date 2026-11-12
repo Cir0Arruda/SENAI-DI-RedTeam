@@ -1,0 +1,510 @@
+{
+ "conferidos": 63,
+ "problemas": [],
+ "linhas": [
+  {
+   "slide": 3,
+   "item": "paletes por parada (280 ÷ 40)",
+   "mostrado": 7,
+   "calculado": 7.0,
+   "status": "OK",
+   "fonte": "equipe"
+  },
+  {
+   "slide": 3,
+   "item": "kg parados (280 × 12 kg)",
+   "mostrado": 3360,
+   "calculado": 3360,
+   "status": "OK",
+   "fonte": "equipe"
+  },
+  {
+   "slide": 3,
+   "item": "caixas por ano (4 × 280)",
+   "mostrado": 1120,
+   "calculado": 1120,
+   "status": "OK",
+   "fonte": "equipe"
+  },
+  {
+   "slide": 4,
+   "item": "itens no lote (280 × 12)",
+   "mostrado": 3360,
+   "calculado": 3360,
+   "status": "OK",
+   "fonte": "equipe"
+  },
+  {
+   "slide": 4,
+   "item": "280 caixas a cerca de 6/min (min)",
+   "mostrado": 47,
+   "calculado": 46.6667,
+   "status": "OK",
+   "fonte": "equipe: 45 min de parada ≈ 280 ÷ 6"
+  },
+  {
+   "slide": 3,
+   "item": "7 paletes de 40 no slide",
+   "mostrado": 7,
+   "calculado": 7.0,
+   "status": "OK",
+   "fonte": "equipe"
+  },
+  {
+   "slide": 4,
+   "item": "garra + 2 caixas (kg)",
+   "mostrado": 26.8,
+   "calculado": 26.834,
+   "status": "OK",
+   "fonte": "equipe"
+  },
+  {
+   "slide": 4,
+   "item": "% do limite do UR30",
+   "mostrado": 89,
+   "calculado": 89.4467,
+   "status": "OK",
+   "fonte": "equipe"
+  },
+  {
+   "slide": 6,
+   "item": "PA6-CF ÷ Tritan, rigidez (\"quase 3×\")",
+   "mostrado": 2.9,
+   "calculado": 2.8618,
+   "status": "OK",
+   "fonte": "fichas [M1] [M3]"
+  },
+  {
+   "slide": 6,
+   "item": "garra rompe numa asa (kg)",
+   "mostrado": 93,
+   "calculado": 93.3,
+   "status": "OK",
+   "fonte": "montagem_R07_SEM.json"
+  },
+  {
+   "slide": 0,
+   "item": "carga 24 kg × (g + 5) (N)",
+   "mostrado": 355.36,
+   "calculado": 355.3596,
+   "status": "OK",
+   "fonte": "campanha Fusion / README"
+  },
+  {
+   "slide": 0,
+   "item": "carga do Fusion = 4 × 88,84 N",
+   "mostrado": 355.36,
+   "calculado": 355.3596,
+   "status": "OK",
+   "fonte": "campanha_2026-11-11.json"
+  },
+  {
+   "slide": 13,
+   "item": "FS 24 kg = 48 ÷ σZ",
+   "mostrado": 3.9,
+   "calculado": 3.8898,
+   "status": "OK",
+   "fonte": "montagem_R07_SEM.json"
+  },
+  {
+   "slide": 13,
+   "item": "kg máx = 24 × FS",
+   "mostrado": 93,
+   "calculado": 93.3549,
+   "status": "OK",
+   "fonte": "montagem_R07_SEM.json"
+  },
+  {
+   "slide": 0,
+   "item": "pior colagem: kg máx (18,2 MPa)",
+   "mostrado": 35.4,
+   "calculado": 35.3971,
+   "status": "OK",
+   "fonte": "montagem_R07_SEM.json"
+  },
+  {
+   "slide": 14,
+   "item": "tranco 24 kg em 10 ms: FS = 48 ÷ σZ pico",
+   "mostrado": 2.65,
+   "calculado": 2.6534,
+   "status": "OK",
+   "fonte": "impacto_F25_SEM.json"
+  },
+  {
+   "slide": 13,
+   "item": "fadiga, PA6-CF da ficha: passa de 100 anos",
+   "mostrado": 1,
+   "calculado": 1.0,
+   "status": "OK",
+   "fonte": "r07_vida.json"
+  },
+  {
+   "slide": 8,
+   "item": "pico sem PAD (N)",
+   "mostrado": 451,
+   "calculado": 450.9143,
+   "status": "OK",
+   "fonte": "parametros_resultados_R03.json"
+  },
+  {
+   "slide": 8,
+   "item": "pico com PAD (N)",
+   "mostrado": 169,
+   "calculado": 168.5231,
+   "status": "OK",
+   "fonte": "parametros_resultados_R03.json"
+  },
+  {
+   "slide": 8,
+   "item": "redução (%)",
+   "mostrado": 62.6,
+   "calculado": 62.6264,
+   "status": "OK",
+   "fonte": "parametros_resultados_R03.json"
+  },
+  {
+   "slide": 8,
+   "item": "redução arredondada (%)",
+   "mostrado": 63,
+   "calculado": 62.6264,
+   "status": "OK",
+   "fonte": "parametros_resultados_R03.json"
+  },
+  {
+   "slide": 8,
+   "item": "energia no PAD (%)",
+   "mostrado": 86,
+   "calculado": 86.0321,
+   "status": "OK",
+   "fonte": "parametros_resultados_R03.json"
+  },
+  {
+   "slide": 8,
+   "item": "força em que o PAD se esmaga (N)",
+   "mostrado": 240,
+   "calculado": 237.0,
+   "status": "OK",
+   "fonte": "pad_limites.json"
+  },
+  {
+   "slide": 8,
+   "item": "240 N em kgf (\"24 kg\")",
+   "mostrado": 24,
+   "calculado": 24.159,
+   "status": "OK",
+   "fonte": "pad_limites.json"
+  },
+  {
+   "slide": 8,
+   "item": "% da ruptura que chega à garra",
+   "mostrado": 17,
+   "calculado": 17.1491,
+   "status": "OK",
+   "fonte": "pad_limites.json"
+  },
+  {
+   "slide": 8,
+   "item": "ruptura da garra (N)",
+   "mostrado": 1380,
+   "calculado": 1382.0,
+   "status": "OK",
+   "fonte": "pad_limites.json"
+  },
+  {
+   "slide": 8,
+   "item": "ruptura = 93,3 kg × (g + 5)",
+   "mostrado": 1380,
+   "calculado": 1381.773,
+   "status": "OK",
+   "fonte": "pad_limites.py"
+  },
+  {
+   "slide": 8,
+   "item": "1.380 N em kgf (\"140 kg\")",
+   "mostrado": 140,
+   "calculado": 140.8767,
+   "status": "OK",
+   "fonte": "pad_limites.json"
+  },
+  {
+   "slide": 8,
+   "item": "energia com ÷ sem PAD",
+   "mostrado": 2.2,
+   "calculado": 2.1901,
+   "status": "OK",
+   "fonte": "pad_limites.json"
+  },
+  {
+   "slide": 8,
+   "item": "1 kg caindo, com PAD (cm)",
+   "mostrado": 27,
+   "calculado": 27.0133,
+   "status": "OK",
+   "fonte": "pad_limites.json"
+  },
+  {
+   "slide": 8,
+   "item": "1 kg caindo, sem PAD (cm)",
+   "mostrado": 12,
+   "calculado": 12.3344,
+   "status": "OK",
+   "fonte": "pad_limites.json"
+  },
+  {
+   "slide": 8,
+   "item": "\"pouco mais de um terço\" (169 ÷ 451)",
+   "mostrado": 0.37,
+   "calculado": 0.3737,
+   "status": "OK",
+   "fonte": "R03"
+  },
+  {
+   "slide": 14,
+   "item": "garra SAI impressa (g)",
+   "mostrado": 1433,
+   "calculado": 1432.8397,
+   "status": "OK",
+   "fonte": "Orca"
+  },
+  {
+   "slide": 10,
+   "item": "filamento da garra (g)",
+   "mostrado": 1744.5,
+   "calculado": 1744.5,
+   "status": "OK",
+   "fonte": "Orca"
+  },
+  {
+   "slide": 14,
+   "item": "tempo de impressão da garra (h)",
+   "mostrado": 75.2,
+   "calculado": 75.1714,
+   "status": "OK",
+   "fonte": "Orca"
+  },
+  {
+   "slide": 10,
+   "item": "filamento dos PADs (g)",
+   "mostrado": 139,
+   "calculado": 139.01,
+   "status": "OK",
+   "fonte": "Orca"
+  },
+  {
+   "slide": 0,
+   "item": "tempo dos PADs (h)",
+   "mostrado": 11.0,
+   "calculado": 11.0225,
+   "status": "OK",
+   "fonte": "Orca"
+  },
+  {
+   "slide": 10,
+   "item": "conjunto SAI com 8 PADs (kg)",
+   "mostrado": 2.783,
+   "calculado": 2.783,
+   "status": "OK",
+   "fonte": "peso_conjunto.csv + PADs"
+  },
+  {
+   "slide": 10,
+   "item": "mais leve que a atual (g)",
+   "mostrado": 51,
+   "calculado": 50.9706,
+   "status": "OK",
+   "fonte": "peso_conjunto.csv + PADs"
+  },
+  {
+   "slide": 13,
+   "item": "mais leve que a atual (%)",
+   "mostrado": 1.8,
+   "calculado": 1.7985,
+   "status": "OK",
+   "fonte": "peso_conjunto.csv + PADs"
+  },
+  {
+   "slide": 12,
+   "item": "garra sozinha, menos que a de Tritan (g)",
+   "mostrado": 144,
+   "calculado": 144.0303,
+   "status": "OK",
+   "fonte": "peso_conjunto.csv"
+  },
+  {
+   "slide": 10,
+   "item": "material da garra (R$)",
+   "mostrado": 450.08,
+   "calculado": 450.081,
+   "status": "OK",
+   "fonte": "Orca × R$ 258/kg"
+  },
+  {
+   "slide": 10,
+   "item": "material dos PADs (R$)",
+   "mostrado": 21.96,
+   "calculado": 21.962,
+   "status": "OK",
+   "fonte": "Orca × R$ 158/kg"
+  },
+  {
+   "slide": 10,
+   "item": "custo de aquisição (R$)",
+   "mostrado": 495.54,
+   "calculado": 495.54,
+   "status": "OK",
+   "fonte": "soma"
+  },
+  {
+   "slide": 10,
+   "item": "gasto no ano: garra + 6 trocas de PAD (R$)",
+   "mostrado": 627.3,
+   "calculado": 627.3,
+   "status": "OK",
+   "fonte": "soma"
+  },
+  {
+   "slide": 10,
+   "item": "diferença na compra (R$)",
+   "mostrado": 245.54,
+   "calculado": 245.54,
+   "status": "OK",
+   "fonte": "soma"
+  },
+  {
+   "slide": 10,
+   "item": "gasto no ano menor (%)",
+   "mostrado": 37,
+   "calculado": 37.27,
+   "status": "OK",
+   "fonte": "soma"
+  },
+  {
+   "slide": 10,
+   "item": "fatia da garra (%)",
+   "mostrado": 91,
+   "calculado": 90.8262,
+   "status": "OK",
+   "fonte": "soma"
+  },
+  {
+   "slide": 10,
+   "item": "fatia dos PADs (%)",
+   "mostrado": 4,
+   "calculado": 4.4315,
+   "status": "OK",
+   "fonte": "soma"
+  },
+  {
+   "slide": 10,
+   "item": "fatia do bico (%)",
+   "mostrado": 5,
+   "calculado": 4.7423,
+   "status": "OK",
+   "fonte": "soma"
+  },
+  {
+   "slide": 11,
+   "item": "Tritan em 24 meses (R$)",
+   "mostrado": 2000,
+   "calculado": 2000,
+   "status": "OK",
+   "fonte": "quebra a cada 3 meses"
+  },
+  {
+   "slide": 11,
+   "item": "SAI em 24 meses (R$)",
+   "mostrado": 759.06,
+   "calculado": 759.06,
+   "status": "OK",
+   "fonte": "garra + 12 trocas de PAD"
+  },
+  {
+   "slide": 11,
+   "item": "economia em 2 anos (R$)",
+   "mostrado": 1240.94,
+   "calculado": 1240.94,
+   "status": "OK",
+   "fonte": "conta"
+  },
+  {
+   "slide": 11,
+   "item": "retorno (%)",
+   "mostrado": 163,
+   "calculado": 163.4838,
+   "status": "OK",
+   "fonte": "conta"
+  },
+  {
+   "slide": 11,
+   "item": "mês em que o SAI se paga",
+   "mostrado": 9,
+   "calculado": 9,
+   "status": "OK",
+   "fonte": "conta"
+  },
+  {
+   "slide": 11,
+   "item": "SAI R$ por hora (24 h × 730 h/mês)",
+   "mostrado": 0.04,
+   "calculado": 0.0433,
+   "status": "OK",
+   "fonte": "conta"
+  },
+  {
+   "slide": 11,
+   "item": "Tritan R$ por hora",
+   "mostrado": 0.11,
+   "calculado": 0.1142,
+   "status": "OK",
+   "fonte": "conta"
+  },
+  {
+   "slide": 14,
+   "item": "FS mínimo PA6-CF = 102 ÷ 1ª principal",
+   "mostrado": 19.8,
+   "calculado": 19.756,
+   "status": "OK",
+   "fonte": "COMPARACAO_SAMI"
+  },
+  {
+   "slide": 14,
+   "item": "FS mínimo Tritan = 58 ÷ 1ª principal",
+   "mostrado": 11.5,
+   "calculado": 11.5423,
+   "status": "OK",
+   "fonte": "COMPARACAO_SAMI"
+  },
+  {
+   "slide": 14,
+   "item": "PA6-CF deforma menos (%)",
+   "mostrado": 65,
+   "calculado": 65.2174,
+   "status": "OK",
+   "fonte": "COMPARACAO_SAMI"
+  },
+  {
+   "slide": 14,
+   "item": "nós da malha",
+   "mostrado": 498261,
+   "calculado": 498261,
+   "status": "OK",
+   "fonte": "campanha_2026-11-11.json"
+  },
+  {
+   "slide": 14,
+   "item": "fator de pico = Fusion ÷ voxel (von Mises, peça maciça)",
+   "mostrado": 2.2,
+   "calculado": 2.2152,
+   "status": "OK",
+   "fonte": "calibracao_pico.json"
+  },
+  {
+   "slide": 0,
+   "item": "reação do FE de calibração = carga (N)",
+   "mostrado": 355.36,
+   "calculado": 355.36,
+   "status": "OK",
+   "fonte": "calibracao_pico.json"
+  }
+ ]
+}

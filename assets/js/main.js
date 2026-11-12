@@ -94,6 +94,8 @@
       if (fits()) lo = mid; else hi = mid;
     }
     set(lo);
+    // no limite o layout depende do zoom anterior (uma linha quebra ou não): confere e desce até caber de verdade
+    while (!fits() && lo > MIN) { lo -= 0.01; set(lo); }
   }
   // Escala de leitura: no computador, todo texto dos slides abaixo de 16 px cresce (+20% até 13 px, +15% até 16 px).
   // Lê os tamanhos originais uma vez e grava em px, então não acumula; no celular volta ao tamanho do CSS.

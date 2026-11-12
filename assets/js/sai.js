@@ -18,6 +18,7 @@
   function padChart() {
     const box = document.getElementById('pv-chart'), v = document.getElementById('video-impacto');
     const D = window.IMPACTO_1D;
+    const PICO_SEM = 450.914, PICO_COM = 168.523;   // parametros_resultados_R03.json
     if (!box || !v || !D) return;
     const host = box.querySelector('.pv-svg'), read = document.getElementById('pv-read');
     const W = 300, H = 205, L = 40, R = 22, T = 30, B = 26, tMax = 7, fMax = 500;
@@ -39,9 +40,9 @@
     const peak = idx => D.reduce((a, p) => (p[idx] > a[idx] ? p : a));
     const pS = peak(1), pC = peak(2);
     const lS = el('text', { x: x(pS[0]) + 8, y: y(pS[1]) + 4, class: 'lbl', opacity: 0 }, svg);
-    lS.textContent = `${fmt(pS[1], 1)} N`;
+    lS.textContent = `${fmt(PICO_SEM, 1)} N`;   // pico exato do R03; a série amostrada a cada 0,05 ms dá 450,7
     const lC = el('text', { x: x(pC[0]) + 2, y: y(pC[2]) - 12, class: 'lbl cut', 'text-anchor': 'start', opacity: 0 }, svg);
-    lC.textContent = `${fmt(pC[2], 1)} N · −${fmt((1 - pC[2] / pS[1]) * 100, 0)}%`;
+    lC.textContent = `${fmt(PICO_COM, 1)} N · −${fmt((1 - PICO_COM / PICO_SEM) * 100, 0)}%`;
     const head = el('line', { y1: T, y2: H - B, stroke: 'rgba(21,21,29,.35)', 'stroke-dasharray': '3 3' }, svg);
     const dS = el('circle', { r: 4, fill: INDIGO, stroke: '#fff', 'stroke-width': 2 }, svg);
     const dC = el('circle', { r: 4, fill: RED, stroke: '#fff', 'stroke-width': 2 }, svg);

@@ -923,3 +923,7 @@ dialog.qr-big .nav-btn { position: absolute; top: 12px; right: 12px; }
 .pad-lims .pad-anim .pad-svg { max-height: 104px; }
 #s-pad .pad-svg .val { font-size: 19px; }
 #s-pad .pv-svg .axis text, #s-pad .pv-svg .lbl { font-size: 14px; }
+
+/* Giroide: a tabela tem frases, não números: quebra linha e alinha à esquerda */
+#s-giroide .tbl.compact td:not(:first-child) { white-space: normal; text-align: left; }
+#s-giroide .tbl.compact td:first-child { white-space: nowrap; vertical-align: top; }

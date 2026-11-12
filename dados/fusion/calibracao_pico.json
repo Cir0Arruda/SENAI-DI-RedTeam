@@ -1,0 +1,12 @@
+{
+  "o_que_e": "Fator de pico do FE por voxels: Fusion [F1] ÷ FE por voxels na mesma peça superior maciça, PA6-CF isotrópico (E 4.430 MPa, ν 0,39), 355,36 N em −Z nas 4 interfaces, engaste nos 6 furos da flange.",
+  "data": "2026-11-12",
+  "script": "scripts/calibracao_pico.py (usa r07_vfe.py e r07_validar.py da pasta de trabalho; geometria dos furos em fusion/bc_geom.json)",
+  "fusion_F1": {"von_mises_max_MPa": 3.232, "principal_1_max_MPa": 5.163, "desl_max_mm": 0.080},
+  "fe_voxels_H3mm": {"von_mises_max_MPa": 1.459, "principal_1_max_MPa": 1.915, "desl_max_mm": 0.0779, "reacao_Z_N": 355.36},
+  "fator_von_mises": 2.22,
+  "fator_principal_1": 2.70,
+  "razao_deslocamento_fusion_voxel": 1.03,
+  "uso": "Os resultados publicados usam 2,2 (von Mises). Pela 1ª principal seria 2,7: os FS cairiam cerca de 19% (ex.: garra montada FS 3,89 → 3,17; 93 kg → 76 kg numa asa).",
+  "limites": "Picos do Fusion ficam perto de apoios rígidos e furos, sem estudo de convergência; o fator é uma calibração de ordem de grandeza, não um ensaio."
+}

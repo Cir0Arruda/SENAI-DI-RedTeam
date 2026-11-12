@@ -33,7 +33,7 @@ O Orca avisa que a dureza do bico (HRC) está abaixo da exigida pelo PA6-CF. Use
 ### 3.1 Método
 - **FE por voxels (3 mm, hexaedros de 8 nós)** de cada variante: PA6-CF transversalmente isotrópico (XY 4.430 MPa / Z 2.170 MPa) nas paredes e almas. Giroide homogeneizado por Gibson-Ashby (E·φ², 0,3·σ·φ^1,5). Engaste nos 6 furos da flange; carga −Z nos ressaltos de uma asa.
 - **Critério de falha:** tração/cisalhamento entre camadas (Z) e tensão principal no plano (XY). O ponto crítico em todas as variantes é a raiz da flange do robô (−544,8; 338,5; 341,4).
-- **Pico real** = pico voxel × 2,2 (fator medido contra o Fusion no R06). [Atualizar com o Fusion R07.]
+- **Pico real** = pico voxel × 2,2, calibrado contra o Fusion [F1]: a mesma peça maciça, com a mesma carga, dá von Mises 3,23 MPa no Fusion e 1,46 MPa no FE por voxels (3,23 ÷ 1,46 = 2,2; o deslocamento bate: 0,080 × 0,078 mm). Se a comparação for feita pela 1ª tensão principal, o fator sobe para 2,7 (5,16 ÷ 1,92) e todos os FS caem cerca de 19%.
 - **Casos de carga:** massa × (g + 5 m/s²) numa asa só (erro da seladora). 24 kg → 355 N; 30 kg → 444 N.
 
 ### 3.2 Carga numa asa: 24 kg, 30 kg e máximo
@@ -163,13 +163,13 @@ Figuras: `06_Engenharia/R07/GALERIA/` (01–12, `INDEX.md`, `dados_comparativos.
 - **Material do estudo:** o fator de segurança passou a usar a resistência máxima à tração, porque os cartões não têm resistência ao escoamento.
 - **Resultado:** o solve na nuvem terminou com erro de malha na casca, `Falha na malha: falha de corpo ... Body_1`. O núcleo gerou malha: 67.739 tetraedros e 105.928 nós.
 - **Causa:** a casca vem de uma operação booleana e tem triângulos muito finos, com razão de aspecto de até 3.548 e 65 triângulos acima de 200.
-- **Próximo passo:** refazer a malha da casca, reimportar e resolver de novo, para calibrar o fator de pico (hoje 2,2, medido no R06).
+- **Próximo passo:** refazer a malha da casca, reimportar e resolver de novo, para calibrar o fator de pico na peça com preenchimento (hoje 2,2, medido na peça maciça [F1]).
 
 Status em 11/11/2026, 20:23: **o estudo ainda NÃO foi resolvido.**
 - Documento salvo: "SAMI R07 - ESQUELETO INTERNO - SUPERIOR" (98 corpos facetados, 7 materiais homogeneizados, 0,743 kg). Estudo 1 com engaste nos 169 facetos dos furos da flange e força de −355,36 N em Z nos 107 facetos dos ressaltos da asa direita (24 kg × (g+5)).
 - A geração de contatos automáticos ficou parada em cerca de 5% por mais de 12 min: 52 mil faces facetadas e cerca de 2 GB de RAM livre. Foi cancelada.
 - Preparado modelo leve de 2 corpos (`04_Modificadores/R07/FEA_LOD3`: casca 5 paredes + núcleo homogeneizado; cartões NUCLEO_COM E = 790 MPa, NUCLEO_SEM 484 MPa, NUCLEO_SEM_ISO 618 MPa). Ao importá-lo, o Fusion parou de responder (14,7 GB reservados, todas as threads em espera).
-- Os números das seções 3.2–3.6 usam o fator de pico 2,2 calibrado no Fusion do R06. Quando o estudo R07 rodar, recalcular com `python r07_vida.py --pico <novo fator>`.
+- Os números das seções 3.2–3.6 usam o fator de pico 2,2, calibrado contra o Fusion na peça maciça [F1]. Quando o estudo R07 rodar, recalcular com `python r07_vida.py --pico <novo fator>`.
 
 ## 5. Limites (honestidade)
 - Giroide homogeneizado. O fator de pico é calibrado no Fusion, não em ensaio.

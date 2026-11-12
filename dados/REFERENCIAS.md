@@ -68,7 +68,7 @@ Links internos apontam para este repositório: <https://github.com/Cir0Arruda/SE
 - O modelo de 2 corpos (casca e núcleo homogeneizado) foi montado.
 - O solve parou num erro de malha na casca.
 - Registro: [`RELATORIO_R07.md`, seção 4](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/RELATORIO_R07.md) e [`fusion_build_2corpos.json`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/fusion/fusion_build_2corpos.json).
-- Por isso o R07 usa o FE próprio ([E1]), com o pico calibrado no Fusion (fator 2,2, medido no R06).
+- Por isso o R07 usa o FE próprio ([E1]), com o fator de pico 2,2, calibrado contra o Fusion [F1]: a mesma peça maciça, com a mesma carga, dá von Mises 3,23 MPa no Fusion e 1,46 MPa no FE por voxels (3,23 ÷ 1,46 = 2,2; o deslocamento bate: 0,080 × 0,078 mm).
 
 ---
 
