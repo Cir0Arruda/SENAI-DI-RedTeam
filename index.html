@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=r07e">
+  <link rel="stylesheet" href="assets/css/style.css?v=r07f">
   <script type="importmap">
     { "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
@@ -23,28 +23,31 @@
 
   <div class="shell">
     <nav class="rail" aria-label="Seções">
-      <button class="rail-btn" data-go="0" title="Início">
+      <button class="rail-btn" data-go="#s-capa" title="Início">
         <svg class="i" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
       </button>
-      <button class="rail-btn" data-go="2" title="Introdução: o problema">
+      <button class="rail-btn" data-go="#s-intro" title="Introdução: o problema">
         <svg class="i" viewBox="0 0 24 24"><path d="M12 3l9 16H3zM12 10v4M12 17v.01"/></svg>
       </button>
-      <button class="rail-btn" data-go="4" title="Desenvolvimento: materiais, custos e produção">
+      <button class="rail-btn" data-go="#s-desenv" title="Desenvolvimento: materiais, PAD e giroide">
         <svg class="i" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg>
       </button>
-      <button class="rail-btn" data-go="9" title="Testes de bancada (Fusion e PAD)">
+      <button class="rail-btn" data-go="#s-testes" title="Testes de bancada (Fusion e PAD)">
         <svg class="i" viewBox="0 0 24 24"><path d="M9 3v6l-5 9a2 2 0 0 0 1.7 3h12.6a2 2 0 0 0 1.7-3l-5-9V3M8 3h8M7 15h10"/></svg>
       </button>
-      <button class="rail-btn" data-go="17" title="Orca: estrutura interna">
+      <button class="rail-btn" data-go="#s-orca" title="Orca: estrutura interna">
         <svg class="i" viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9zM12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>
       </button>
-      <button class="rail-btn" data-go="20" title="Comparação e decisão">
+      <button class="rail-btn" data-go="#s-comp" title="Comparação e decisão">
         <svg class="i" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
       </button>
-      <button class="rail-btn" data-go="32" title="Conclusão e dados">
+      <button class="rail-btn" data-go="#s-hw" title="Hardware, custos, filas e metodologias">
+        <svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .8-3 2s1.3 1.7 3 2 3 .8 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"/></svg>
+      </button>
+      <button class="rail-btn" data-go="#s-conc" title="Conclusão e dados">
         <svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
       </button>
-      <div class="rail-logo">RT</div>
+      <div class="rail-logo">RL</div>
     </nav>
 
     <main class="stage">
@@ -56,7 +59,7 @@
       <div class="deck" id="deck">
 
         <!-- Capa -->
-        <section class="slide on" data-title="SENAI">
+        <section class="slide on" data-title="SENAI" id="s-capa">
           <div class="wrap wide split" style="--cols:minmax(0,1.1fr) minmax(0,1fr)">
             <div>
               <span class="kicker">SENAI · RedLab</span>
@@ -68,8 +71,8 @@
               </div>
             </div>
             <div class="g2">
-              <div class="glass stat"><b><span data-r07="R07_COM.pct_tritan" data-d="1" data-sign="1">−5,0</span>%</b><span>de massa vs. garra Tritan instalada</span><small>R07 com esqueleto · Orca</small></div>
-              <div class="glass stat"><b><span data-r07="R07_COM.kg_pa6" data-d="0">100</span> kg</b><span>máx. numa asa (PA6-CF)</span><small>garra montada · FE</small></div>
+              <div class="glass stat"><b><span data-r07="R07_COM.pct_tritan" data-d="0" data-sign="1">−5</span> a <span data-r07="R07_SEM.pct_tritan" data-d="0" data-sign="1">−9</span>%</b><span>de massa vs. garra Tritan instalada</span><small>R07 com ou sem esqueleto · Orca</small></div>
+              <div class="glass stat"><b><span data-r07="R07_SEM.kg_pa6" data-d="0">93</span>–<span data-r07="R07_COM.kg_pa6" data-d="0">100</span> kg</b><span>máx. numa asa (PA6-CF)</span><small>garra montada · FE</small></div>
               <div class="glass stat"><b class="ink">−62,6%</b><span>no pico de força com PAD</span><small>modelo de impacto 1D</small></div>
               <div class="glass stat"><b class="ink">R$ 84.000</b><span>perdidos por parada</span><small>dados da equipe</small></div>
             </div>
@@ -88,12 +91,13 @@
               </div>
             </div>
             <ol class="agenda">
-              <li class="glass"><b>01</b><span>Introdução<small>Contexto do problema e limitações</small></span></li>
-              <li class="glass"><b>02</b><span>Engenharia de materiais<small>Polímeros da garra e do PAD de sacrifício</small></span></li>
+              <li class="glass"><b>01</b><span>Introdução<small>Problema, desperdício, processo produtivo e proposta</small></span></li>
+              <li class="glass"><b>02</b><span>Engenharia de materiais<small>Polímeros da garra e do PAD, giroide, testes e simulações (com e sem esqueleto)</small></span></li>
               <li class="glass"><b>03</b><span>Hardware de impressão<small>Bico de alta resistência e parâmetros do Orca</small></span></li>
-              <li class="glass"><b>04</b><span>Custos e produção<small>Matéria-prima, componentes, troca e teoria das filas</small></span></li>
-              <li class="glass"><b>05</b><span>Testes e simulações<small>Fusion, impacto, estrutura interna e comparação com e sem esqueleto</small></span></li>
-              <li class="glass"><b>06</b><span>Conclusão<small>Custo de oportunidade, riscos e dados abertos no GitHub</small></span></li>
+              <li class="glass"><b>04</b><span>Cálculo de custos<small>Matéria-prima, componentes, fórmulas e taxa de substituição</small></span></li>
+              <li class="glass"><b>05</b><span>Simulação de sistemas<small>Tempos de impressão e teoria das filas</small></span></li>
+              <li class="glass"><b>06</b><span>Metodologias de melhoria<small>Kaizen, Lean, 5W2H e Ishikawa</small></span></li>
+              <li class="glass"><b>07</b><span>Conclusão<small>Custo de oportunidade, riscos e dados abertos no GitHub</small></span></li>
             </ol>
           </div>
         </section>
@@ -110,13 +114,73 @@
               <article class="glass card"><h3>Troca demorada</h3><p>Substituir a garra exige parada de manutenção de cerca de 45 minutos.</p></article>
               <article class="glass card"><h3>Desperdício</h3><p>Com a linha parada, caixas deixam de ser produzidas e o custo de oportunidade cresce a cada minuto.</p></article>
             </div>
-            <div class="g4" style="margin-top:16px">
-              <div class="glass stat sm"><b>45 min</b><span>parada para manutenção</span></div>
-              <div class="glass stat sm"><b class="ink">280</b><span>caixas perdidas</span><small>7 paletes de 40 · 6 caixas/min</small></div>
-              <div class="glass stat sm"><b class="ink">3.360 kg</b><span>de produto</span><small>280 caixas × 12 kg</small></div>
-              <div class="glass stat sm"><b>R$ 84.000</b><span>desperdiçados</span><small>preço de mercado</small></div>
+            <div class="glass ticker" id="anim-parada" aria-label="Contador da parada: em 45 minutos a linha perde 280 caixas e R$ 84.000">
+              <span class="t-lbl"><i class="t-dot"></i>Linha parada</span>
+              <b class="t-clock">00:00</b>
+              <div class="t-bar"><i></i></div>
+              <b class="t-rs">R$ 0</b>
+            </div>
+            <div class="g4" style="margin-top:12px">
+              <div class="glass stat sm"><b><span data-count="45">45</span> min</b><span>parada para manutenção</span></div>
+              <div class="glass stat sm"><b class="ink" data-count="280">280</b><span>caixas perdidas</span><small>7 paletes de 40 · 6 caixas/min</small></div>
+              <div class="glass stat sm"><b class="ink"><span data-count="3360">3.360</span> kg</b><span>de produto</span><small>280 caixas × 12 kg</small></div>
+              <div class="glass stat sm"><b>R$ <span data-count="84000">84.000</span></b><span>desperdiçados</span><small>preço de mercado</small></div>
             </div>
             <p class="note"><span class="tag eq">dados da equipe</span> Cada palete tem 40 caixas (4 camadas de 10); cada caixa tem 12 itens. A garra instalada (deck do cliente) pesa 2,834 kg e, com duas caixas de 12 kg, chega a 26,834 kg, ou 89% dos 30 kg do UR30.</p>
+          </div>
+        </section>
+
+        <!-- Processo produtivo e logística (animação da linha) -->
+        <section class="slide" data-title="Processo produtivo" id="s-processo">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Introdução · Processo produtivo</span>
+              <h2>Como a linha <em>enche</em> um palete</h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1.45fr) minmax(0,1fr); align-items:start">
+              <figure class="glass card anim-card" style="margin:0; padding:14px 16px">
+                <svg class="line-svg" id="anim-linha" viewBox="0 0 640 300" role="img" aria-label="Animação: o robô UR30 pega duas caixas por vez da esteira e monta o palete em 4 camadas de 10 caixas; ao completar 40 caixas, um novo palete começa">
+                  <rect class="floor" x="0" y="262" width="640" height="2" />
+                  <!-- esteira -->
+                  <g class="belt"><rect x="10" y="226" width="250" height="16" rx="8" /><circle cx="22" cy="234" r="5" /><circle cx="248" cy="234" r="5" /></g>
+                  <g id="belt-boxes"></g>
+                  <!-- robô -->
+                  <g class="robot">
+                    <rect x="300" y="236" width="44" height="26" rx="6" class="rb-base" />
+                    <g id="robot-arm" class="rb-arm">
+                      <rect x="314" y="110" width="16" height="130" rx="8" />
+                      <g id="robot-fore"><rect x="314" y="104" width="130" height="14" rx="7" /><g id="robot-claw"><rect x="436" y="104" width="14" height="40" rx="5" /><rect x="420" y="140" width="46" height="9" rx="4" class="claw" /></g></g>
+                    </g>
+                  </g>
+                  <!-- palete -->
+                  <g id="pallet"><rect x="440" y="248" width="190" height="14" rx="3" class="pal" /></g>
+                  <g id="pallet-boxes"></g>
+                </svg>
+                <div class="line-hud">
+                  <div><b id="hud-caixas">0</b><span>caixas</span></div>
+                  <div><b id="hud-palete">1</b><span>palete (de 7)</span></div>
+                  <div><b id="hud-itens">0</b><span>itens</span></div>
+                  <div><b id="hud-kg">0</b><span>kg</span></div>
+                </div>
+                <figcaption class="note" style="margin-top:6px">Tempo acelerado. Na linha real são 6 caixas por minuto; cada caixa tem 12 itens e 12 kg.</figcaption>
+              </figure>
+              <div style="display:grid; gap:12px">
+                <div class="g2">
+                  <div class="glass stat sm"><b>6</b><span>caixas por minuto</span><small>ritmo da linha</small></div>
+                  <div class="glass stat sm"><b class="ink">40</b><span>caixas por palete</span><small>4 camadas de 10</small></div>
+                  <div class="glass stat sm"><b class="ink">7–8</b><span>paletes por parada</span><small>≈ 280 caixas</small></div>
+                  <div class="glass stat sm"><b class="ink">3.360</b><span>itens no lote</span><small>280 caixas × 12 itens</small></div>
+                </div>
+                <div class="glass card" style="padding:14px 16px">
+                  <h3 style="margin:0 0 8px; font-size:16px">Carga no robô UR30</h3>
+                  <div class="payload" id="anim-payload" aria-label="Garra 2,834 kg mais duas caixas de 12 kg somam 26,834 kg, 89% do limite de 30 kg do UR30">
+                    <i class="p-garra" style="--w:9.45%"></i><i class="p-cx" style="--w:40%"></i><i class="p-cx" style="--w:40%"></i>
+                  </div>
+                  <div class="payload-axis"><span>0</span><span>garra 2,834 kg + 2 caixas de 12 kg = <b>26,8 kg</b></span><span>30 kg</span></div>
+                  <p class="note" style="margin-top:8px"><span class="tag eq">dados da equipe</span> Braço UR30: 30 kg. Garra com caixas: 26 kg. Garra sem caixa: 2,834 kg. Parada para manuseio a cada 45 min de operação.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -140,7 +204,7 @@
                 <div class="evo">
                   <article class="glass card"><span class="tag">instalada</span><h3>Tritan · Hexa3D 30%</h3><p><b data-r07="tritan_g" data-d="0">1.577</b> g de peças impressas (estimado)</p></article>
                   <article class="glass card"><span class="tag eq">proposta inicial</span><h3>PA-CF · TPMS-D 40%</h3><p><b data-r07="TPMSD40.garra_g" data-d="0">1.785</b> g · <b><span data-r07="TPMSD40.pct_tritan" data-d="1" data-sign="1">+13,2</span>%</b> de massa. Mais forte que 30%, porém mais pesada.</p></article>
-                  <article class="glass card win"><span class="tag ok">resultado</span><h3>PA-CF · R07 com esqueleto</h3><p><b data-r07="R07_COM.garra_g" data-d="0">1.497</b> g · <b><span data-r07="R07_COM.pct_tritan" data-d="1" data-sign="1">−5,0</span>%</b>. Material só onde a falha começa: <b><span data-r07="R07_COM.kg_pa6" data-d="0">100</span> kg</b> numa asa, contra <span data-r07="UNI_40.kg_pa6" data-d="0">76</span> kg do 40% uniforme.</p></article>
+                  <article class="glass card win"><span class="tag ok">resultado</span><h3>PA-CF · R07 (com ou sem esqueleto)</h3><p>Com: <b data-r07="R07_COM.garra_g" data-d="0">1.497</b> g · <b><span data-r07="R07_COM.pct_tritan" data-d="1" data-sign="1">−5,0</span>%</b> · <b><span data-r07="R07_COM.kg_pa6" data-d="0">100</span> kg</b> numa asa.<br>Sem: <b data-r07="R07_SEM.garra_g" data-d="0">1.433</b> g · <b><span data-r07="R07_SEM.pct_tritan" data-d="1" data-sign="1">−9,1</span>%</b> · <b><span data-r07="R07_SEM.kg_pa6" data-d="0">93</span> kg</b>.<br>O 40% uniforme aguenta <span data-r07="UNI_40.kg_pa6" data-d="0">76</span> kg. Escolha entre com e sem: em aberto.</p></article>
                 </div>
                 <p class="note">O preenchimento muda só por dentro: as 5 paredes e o contorno externo continuam iguais. Massas do fatiamento no Orca (K1 Max, 1:1). Resistência por FE da garra montada.</p>
               </div>
@@ -169,144 +233,100 @@
                     <tr><td>Função</td><td>garra</td><td>garra estrutural</td><td>absorver choque</td></tr>
                   </tbody>
                 </table>
-                <p class="note"><span class="tag eq">custos e prazos: equipe</span> <span class="tag sim">propriedades: entradas do Fusion e do Orca</span></p>
+                <p class="note"><span class="tag eq">custos e prazos: equipe</span> <span class="tag sim">propriedades: entradas do Fusion e do Orca</span> No ranking multiobjetivo (TOPSIS), o PA6-CF ficou em 1º com 0,83; o 2º colocado teve 0,52.</p>
               </div>
-              <div style="display:grid; gap:14px">
-                <div class="glass stat sm"><b>2,9×</b><span>mais rígido que o Tritan</span><small>deslocamento no Fusion: 0,23 → 0,08 mm</small></div>
-                <div class="glass stat sm"><b class="ink"><span data-r07="HEXA30.pct_tritan" data-d="1" data-sign="1">−6,8</span>%</b><span>de massa só pela densidade</span><small>mesmo Hexa3D 30%: Tritan × PA6-CF (Orca)</small></div>
-                <div class="glass stat sm"><b class="ink">0,83</b><span>ranking multiobjetivo (TOPSIS)</span><small>PA6-CF 1º lugar · 2º colocado 0,52</small></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Hardware de impressão -->
-        <section class="slide" data-title="Hardware de impressão">
-          <div class="wrap wide">
-            <div class="s-head compact">
-              <span class="kicker">Desenvolvimento · Hardware de impressão</span>
-              <h2>Bico de alta <em>resistência</em></h2>
-            </div>
-            <div class="g3" style="align-items:start">
-              <article class="glass card">
-                <h3 style="margin-top:0">Por que trocar o bico</h3>
-                <p>A fibra de carbono do PA-CF é abrasiva. O próprio Orca avisa em todos os fatiamentos: <i>dureza do bico (HRC) menor que a exigida pelo filamento</i>. Bico de latão comum se desgasta e altera a extrusão.</p>
-                <div class="glass stat sm" style="margin-top:14px"><b>R$ 23,50</b><span>bico MK8 endurecido</span><small>dado da equipe</small></div>
-              </article>
-              <div class="glass card" style="padding:16px 18px">
-                <h3 style="margin:0 0 6px; font-size:17px">Garra · PA6-CF</h3>
-                <table class="tbl compact">
-                  <tbody>
-                    <tr><td>Impressora</td><td>Creality K1 Max</td></tr>
-                    <tr><td>Bico</td><td>0,4 mm, endurecido</td></tr>
-                    <tr><td>Camada</td><td>0,2 mm</td></tr>
-                    <tr><td>Paredes</td><td>5 perímetros</td></tr>
-                    <tr><td>Preenchimento</td><td>giroide + zonas R07</td></tr>
-                    <tr><td>Escala</td><td>1:1, sem alterar o exterior</td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="glass card" style="padding:16px 18px">
-                <h3 style="margin:0 0 6px; font-size:17px">PAD · TPU 95A</h3>
-                <table class="tbl compact">
-                  <tbody>
-                    <tr><td>Paredes</td><td><span data-r07="pads.paredes">3</span> perímetros</td></tr>
-                    <tr><td>Preenchimento</td><td>giroide <span>40%</span></td></tr>
-                    <tr><td>8 PADs (peças)</td><td><span data-r07="pads.peca_g" data-d="1">93,1</span> g</td></tr>
-                    <tr><td>Com suportes</td><td><span data-r07="pads.total_g" data-d="1">139,0</span> g</td></tr>
-                    <tr><td>Tempo (8 PADs)</td><td><span data-r07="pads.tempo_h" data-d="1">11,0</span> h</td></tr>
-                  </tbody>
-                </table>
-                <p class="note"><span class="tag sim">Orca</span> Por que giroide: espalha a carga em todas as direções e mantém boa resistência com 20–25% de preenchimento.</p>
+              <div style="display:grid; gap:12px">
+                <div class="g2">
+                  <div class="glass stat sm"><b>2,9×</b><span>mais rígido que o Tritan</span><small>deslocamento no Fusion: 0,23 → 0,08 mm</small></div>
+                  <div class="glass stat sm"><b class="ink"><span data-r07="HEXA30.pct_tritan" data-d="1" data-sign="1">−6,8</span>%</b><span>de massa só pela densidade</span><small>mesmo Hexa3D 30% (Orca) · equipe: −2,5%</small></div>
+                </div>
+                <div class="glass card anim-card" style="padding:14px 16px">
+                  <h3 style="margin:0 0 4px; font-size:16px">Prazo de entrega</h3>
+                  <p class="note" style="margin:0 0 8px">dias · barra = faixa mínima a máxima</p>
+                  <div class="gantt">
+                    <div class="gr"><span>Tritan<small>importado</small></span><div class="gt"><i style="--a:0%; --b:66.7%; background:var(--ink-2)"></i><i style="--a:66.7%; --b:88.9%; background:var(--ink-2); opacity:.45"></i></div><b>15–20 dias</b></div>
+                    <div class="gr"><span>PA-CF<small>nacional</small></span><div class="gt"><i style="--a:0%; --b:31.1%; background:var(--s-red)"></i></div><b>7 dias úteis</b></div>
+                    <div class="gr"><span>TPU 95A<small>nacional</small></span><div class="gt"><i style="--a:0%; --b:22.2%; background:var(--s-indigo)"></i><i style="--a:22.2%; --b:35.6%; background:var(--s-indigo); opacity:.45"></i></div><b>5–8 dias úteis</b></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- Custos -->
-        <section class="slide" data-title="Custos">
+        <!-- PAD de sacrifício: especificações e animação do choque -->
+        <section class="slide" data-title="PAD de sacrifício" id="s-pad">
           <div class="wrap wide">
             <div class="s-head compact">
-              <span class="kicker">Desenvolvimento · Custos</span>
-              <h2>Quanto custa <em>fazer</em></h2>
+              <span class="kicker">Desenvolvimento · Componente de desgaste</span>
+              <h2>O PAD apanha <em>no lugar</em> da garra</h2>
             </div>
-            <div class="split" style="--cols:minmax(0,1.3fr) minmax(0,1fr); align-items:start">
-              <div class="glass card" style="padding:16px 18px">
+            <div class="split" style="--cols:minmax(0,1.1fr) minmax(0,1fr); align-items:start">
+              <figure class="glass card anim-card" style="margin:0; padding:14px 16px">
+                <div class="pad-duo">
+                  <svg viewBox="0 0 260 200" class="pad-svg sem" role="img" aria-label="Sem PAD: o golpe vai direto na garra e aparece uma trinca">
+                    <text x="130" y="18" class="ttl">sem PAD</text>
+                    <rect class="hit" x="95" y="30" width="70" height="40" rx="6" />
+                    <rect class="claw" x="40" y="120" width="180" height="40" rx="10" />
+                    <path class="crack" d="M130 120 l-8 14 l10 6 l-6 16" />
+                    <text x="130" y="188" class="val bad">451 N de pico</text>
+                  </svg>
+                  <svg viewBox="0 0 260 200" class="pad-svg com" role="img" aria-label="Com PAD: o PAD de TPU 95A amassa, absorve 86% da energia e a garra fica intacta">
+                    <text x="130" y="18" class="ttl">com PAD</text>
+                    <rect class="hit" x="95" y="30" width="70" height="40" rx="6" />
+                    <rect class="pad" x="85" y="100" width="90" height="20" rx="6" />
+                    <rect class="claw" x="40" y="120" width="180" height="40" rx="10" />
+                    <text x="130" y="188" class="val ok">169 N de pico (−62,6%)</text>
+                  </svg>
+                </div>
+                <div class="bars-h" style="margin-top:10px">
+                  <div class="bh"><span>Pico sem PAD</span><i style="--v:100%; background:var(--ink-2)"></i><b>451 N</b></div>
+                  <div class="bh"><span>Pico com PAD</span><i style="--v:37.5%; background:var(--s-red)"></i><b>169 N</b></div>
+                  <div class="bh"><span>Energia no PAD</span><i style="--v:86%; background:var(--s-indigo)"></i><b>86%</b></div>
+                </div>
+                <figcaption class="note" style="margin-top:6px"><span class="tag sim">modelo de impacto 1D</span> Animação ilustrativa; os números vêm da simulação.</figcaption>
+              </figure>
+              <div class="glass card" style="padding:14px 16px">
                 <table class="tbl compact">
-                  <thead><tr><th>Item</th><th>Base</th><th>Custo</th></tr></thead>
                   <tbody>
-                    <tr class="grp"><td colspan="3">Garra em PA-CF (R$ 258/kg × filamento do Orca, com suportes)</td></tr>
-                    <tr class="hl"><td>R07 com esqueleto</td><td><span data-r07="R07_COM.fil_g" data-d="0">1.809</span> g</td><td>R$ <span data-r07="R07_COM.custo_rs" data-d="2">466,77</span></td></tr>
-                    <tr><td>R07 sem esqueleto</td><td><span data-r07="R07_SEM.fil_g" data-d="0">1.745</span> g</td><td>R$ <span data-r07="R07_SEM.custo_rs" data-d="2">450,08</span></td></tr>
-                    <tr><td>TPMS-D 40% (proposta inicial)</td><td><span data-r07="TPMSD40.fil_g" data-d="0">2.097</span> g</td><td>R$ <span data-r07="TPMSD40.custo_rs" data-d="2">540,92</span></td></tr>
-                    <tr class="grp"><td colspan="3">PADs em TPU 95A (R$ 158/kg)</td></tr>
-                    <tr><td>Conta da equipe</td><td>62 g / 8 peças</td><td>R$ 1,22/un · R$ 9,76</td></tr>
-                    <tr><td>Fatiamento Orca (só peças)</td><td><span data-r07="pads.peca_g" data-d="1">93,1</span> g / 8</td><td>R$ <span data-r07="pads.custo_un_peca" data-d="2">1,84</span>/un</td></tr>
-                    <tr><td>Fatiamento Orca (com suportes)</td><td><span data-r07="pads.total_g" data-d="1">139,0</span> g / 8</td><td>R$ <span data-r07="pads.custo_un_total" data-d="2">2,75</span>/un</td></tr>
-                    <tr class="grp"><td colspan="3">Componentes</td></tr>
-                    <tr><td>Bico MK8 endurecido</td><td>1 un</td><td>R$ 23,50</td></tr>
-                    <tr><td>Garra antiga · Tritan</td><td>custo informado</td><td>R$ 250,00</td></tr>
+                    <tr><td>Material</td><td>TPU 95A (poliuretano termoplástico)</td></tr>
+                    <tr><td>Preço</td><td>R$ 158,00 / kg</td></tr>
+                    <tr><td>Peso por unidade</td><td>32 g</td></tr>
+                    <tr><td>Rendimento</td><td>≈ 31,25 peças / kg</td></tr>
+                    <tr><td>Tempo de impressão</td><td>1h40 a 2 h</td></tr>
+                    <tr><td>Função</td><td>absorver o choque e proteger a garra</td></tr>
+                    <tr><td>Troca</td><td>a cada 2 meses (última registrada)</td></tr>
+                    <tr><td>Preenchimento</td><td>giroide 40% · <span data-r07="pads.paredes">3</span> paredes</td></tr>
                   </tbody>
                 </table>
-              </div>
-              <div style="display:grid; gap:14px">
-                <div class="glass stat"><b>≈ R$ 512</b><span>garra R07 + 8 PADs + bico</span><small>466,77 + 21,96 + 23,50 · com suportes</small></div>
-                <div class="glass stat sm"><b class="ink">R$ 84.000</b><span>custo de uma parada de 45 min</span><small>≈ 164 garras completas</small></div>
-                <p class="note" style="margin:0"><span class="tag eq">preços: equipe</span> <span class="tag sim">gramas: Orca</span> A conta da equipe (62 g para 8 PADs) e o fatiamento (93,1 g sem suportes) diferem. Vale pesar um PAD impresso para fechar o número.</p>
+                <p class="note"><span class="tag eq">especificação: equipe</span> Três números de massa precisam ser fechados: 32 g por peça (especificação), 62 g para 8 peças (conta de custo) e <span data-r07="pads.peca_g" data-d="1">93,1</span> g para 8 no fatiamento do Orca. <b>Pesar um PAD impresso</b> resolve.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- Produção e filas -->
-        <section class="slide" data-title="Produção e filas">
-          <div class="wrap wide">
-            <div class="s-head compact">
-              <span class="kicker">Desenvolvimento · Simulação de sistemas</span>
-              <h2>Ritmo da linha e <em>tempo de espera</em></h2>
+        <!-- Padrão giroide: animação de um corte se movendo -->
+        <section class="slide" data-title="Giroide" id="s-giroide">
+          <div class="wrap wide split" style="--cols:minmax(0,1fr) minmax(0,1.1fr)">
+            <figure class="glass card anim-card" style="margin:0; padding:14px">
+              <canvas id="anim-giroide" width="360" height="360" role="img" aria-label="Animação: corte do preenchimento giroide subindo camada a camada; as paredes mudam de forma e se cruzam em todas as direções"></canvas>
+              <div class="seg" role="tablist" aria-label="Densidade do giroide" id="giroide-dens" style="margin-top:10px">
+                <button class="on" data-t="0.25">25% · garra</button>
+                <button data-t="0.40">40% · PAD</button>
+              </div>
+              <figcaption class="note" style="margin-top:8px">Cada quadro é uma camada. A superfície é sen x·cos y + sen y·cos z + sen z·cos x = 0, a mesma do Orca. Altura: <b id="giroide-z">0,0</b> mm.</figcaption>
+            </figure>
+            <div>
+              <span class="kicker">Desenvolvimento · Padrão de preenchimento</span>
+              <h2>Por que <em>giroide</em></h2>
+              <ul class="adv">
+                <li class="glass"><b>01</b><span>Distribui a carga do impacto e a pressão em <b>todas as direções</b>, sem plano fraco.</span></li>
+                <li class="glass"><b>02</b><span>Reduz bastante o <b>peso</b> da estrutura.</span></li>
+                <li class="glass"><b>03</b><span>Mantém alta <b>resistência</b> mesmo com preenchimento baixo (20% a 25%).</span></li>
+                <li class="glass"><b>04</b><span>Imprime mais <b>rápido</b>: a trajetória é contínua.</span></li>
+              </ul>
+              <p class="note">Na garra, o giroide de 25% é a base do R07; as zonas de reforço só existem na versão com esqueleto. No PAD, o giroide é de 40%.</p>
             </div>
-            <div class="g4">
-              <div class="glass stat sm"><b>6</b><span>caixas por minuto</span><small>12 kg por caixa</small></div>
-              <div class="glass stat sm"><b class="ink">40</b><span>caixas por palete</span><small>4 camadas de 10</small></div>
-              <div class="glass stat sm"><b class="ink">7–8</b><span>paletes por parada</span><small>≈ 280 caixas · 3.360 itens</small></div>
-              <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.tempo_h" data-d="1">78,9</span> h</b><span>para imprimir uma garra R07</span><small>Orca, K1 Max · 3 peças</small></div>
-            </div>
-            <div class="split even" style="margin-top:16px; align-items:start">
-              <article class="glass card">
-                <h3 style="margin-top:0">Tempo de impressão</h3>
-                <table class="tbl compact">
-                  <tbody>
-                    <tr><td>Tritan, por peça (equipe)</td><td>6 a 8,5 h</td></tr>
-                    <tr><td>PA-CF superior R07 (Orca)</td><td>38,0 h</td></tr>
-                    <tr><td>PA-CF inferior R07, cada (Orca)</td><td>20,5 h</td></tr>
-                    <tr><td>8 PADs TPU 95A (Orca)</td><td><span data-r07="pads.tempo_h" data-d="1">11,0</span> h</td></tr>
-                    <tr><td>4 PADs (equipe)</td><td>1h40 a 2h</td></tr>
-                  </tbody>
-                </table>
-                <p class="note">Como a garra leva mais de 3 dias para imprimir, ela precisa estar pronta <b>antes</b> da quebra: estoque de reposição.</p>
-              </article>
-              <article class="glass card todo">
-                <h3 style="margin-top:0">Teoria das filas</h3>
-                <p>Taxa de chegada de falhas (λ), taxa de reparo (μ) e tempo médio de espera (Wq) para a troca de garra e de PAD. Preencher com os dados de operação.</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <!-- Metodologias -->
-        <section class="slide" data-title="Metodologias">
-          <div class="wrap wide">
-            <div class="s-head compact">
-              <span class="kicker">Desenvolvimento · Melhoria contínua</span>
-              <h2>Kaizen, Lean, 5W2H e <em>Ishikawa</em></h2>
-            </div>
-            <div class="g4">
-              <article class="glass card todo"><h3 style="margin-top:0">Kaizen</h3><p>Melhoria contínua: PAD trocado de forma planejada, sem parada não programada.</p></article>
-              <article class="glass card todo"><h3 style="margin-top:0">Lean</h3><p>Eliminar o desperdício de 45 min de parada e de produto não embalado.</p></article>
-              <article class="glass card todo"><h3 style="margin-top:0">5W2H</h3><p>O quê, por quê, onde, quando, quem, como e quanto custa a troca da garra.</p></article>
-              <article class="glass card todo"><h3 style="margin-top:0">Ishikawa</h3><p>Causas da quebra: material (Tritan), método (preenchimento uniforme), máquina (2 caixas numa asa), medida.</p></article>
-            </div>
-            <p class="note">Conteúdo a completar pela equipe (contorno tracejado).</p>
           </div>
         </section>
 
@@ -335,7 +355,6 @@
             </figure>
           </div>
         </section>
-
 
         <!-- Modelo 3D -->
         <section class="slide" data-title="Modelo 3D">
@@ -590,7 +609,6 @@
           </div>
         </section>
 
-
         <!-- R07: esqueleto (camadas) -->
         <section class="slide" data-title="Esqueleto R07" id="s-esqueleto">
           <div class="wrap wide">
@@ -684,7 +702,7 @@
             </div>
             <div class="g4" style="margin-bottom:14px">
               <div class="glass stat sm"><b class="ink">24 kg</b><span>erro de processo</span><small>2 caixas numa asa só · 355 N com g + 5 m/s²</small></div>
-              <div class="glass stat sm"><b><span data-r07="R07_COM.kg_pa6" data-d="0">100</span> kg</b><span>R07 com esqueleto aguenta</span><small>FS <span data-r07="R07_COM.fs24_pa6" data-d="1">4,2</span> a 24 kg · <span data-r07="R07_COM.pct_tritan" data-d="1" data-sign="1">−5,0</span>% de massa</small></div>
+              <div class="glass stat sm"><b><span data-r07="R07_SEM.kg_pa6" data-d="0">93</span>–<span data-r07="R07_COM.kg_pa6" data-d="0">100</span> kg</b><span>R07 sem / com esqueleto aguenta</span><small>FS <span data-r07="R07_SEM.fs24_pa6" data-d="1">3,9</span>–<span data-r07="R07_COM.fs24_pa6" data-d="1">4,2</span> a 24 kg · <span data-r07="R07_SEM.pct_tritan" data-d="1" data-sign="1">−9,1</span> / <span data-r07="R07_COM.pct_tritan" data-d="1" data-sign="1">−5,0</span>% de massa</small></div>
               <div class="glass stat sm"><b class="ink"><span data-r07="UNI_30.kg_pa6" data-d="0">62</span> kg</b><span>giroide 30% uniforme</span><small>mesma massa, <span class="cnt">38</span>% menos carga que o R07</small></div>
               <div class="glass stat sm"><b class="ink">FS &gt; 8</b><span>teste de bancada R04</span><small>Fusion, peça maciça, 24 kg · PA6-CF e Tritan</small></div>
             </div>
@@ -966,6 +984,191 @@
           </div>
         </section>
 
+        <!-- Hardware de impressão -->
+        <section class="slide" data-title="Hardware de impressão" id="s-hw">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Desenvolvimento · Hardware de impressão</span>
+              <h2>Bico de alta <em>resistência</em></h2>
+            </div>
+            <div class="g3" style="align-items:start">
+              <article class="glass card">
+                <h3 style="margin-top:0">Por que trocar o bico</h3>
+                <p>A fibra de carbono do PA-CF é abrasiva. O próprio Orca avisa em todos os fatiamentos: <i>dureza do bico (HRC) menor que a exigida pelo filamento</i>. Bico de latão comum se desgasta e altera a extrusão.</p>
+                <div class="glass stat sm" style="margin-top:14px"><b>R$ 23,50</b><span>bico MK8 endurecido</span><small>dado da equipe</small></div>
+              </article>
+              <div class="glass card" style="padding:16px 18px">
+                <h3 style="margin:0 0 6px; font-size:17px">Garra · PA6-CF</h3>
+                <table class="tbl compact">
+                  <tbody>
+                    <tr><td>Impressora</td><td>Creality K1 Max</td></tr>
+                    <tr><td>Bico</td><td>0,4 mm, endurecido</td></tr>
+                    <tr><td>Camada</td><td>0,2 mm</td></tr>
+                    <tr><td>Paredes</td><td>5 perímetros</td></tr>
+                    <tr><td>Preenchimento</td><td>giroide + zonas R07</td></tr>
+                    <tr><td>Escala</td><td>1:1, sem alterar o exterior</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="glass card" style="padding:16px 18px">
+                <h3 style="margin:0 0 6px; font-size:17px">PAD · TPU 95A</h3>
+                <table class="tbl compact">
+                  <tbody>
+                    <tr><td>Paredes</td><td><span data-r07="pads.paredes">3</span> perímetros</td></tr>
+                    <tr><td>Preenchimento</td><td>giroide <span>40%</span></td></tr>
+                    <tr><td>8 PADs (peças)</td><td><span data-r07="pads.peca_g" data-d="1">93,1</span> g</td></tr>
+                    <tr><td>Com suportes</td><td><span data-r07="pads.total_g" data-d="1">139,0</span> g</td></tr>
+                    <tr><td>Tempo (8 PADs)</td><td><span data-r07="pads.tempo_h" data-d="1">11,0</span> h</td></tr>
+                  </tbody>
+                </table>
+                <p class="note"><span class="tag sim">Orca</span> Por que giroide: espalha a carga em todas as direções e mantém boa resistência com 20–25% de preenchimento.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Custos -->
+        <section class="slide" data-title="Custos">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Desenvolvimento · Custos</span>
+              <h2>Quanto custa <em>fazer</em></h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1.3fr) minmax(0,1fr); align-items:start">
+              <div class="glass card" style="padding:16px 18px">
+                <table class="tbl compact">
+                  <thead><tr><th>Item</th><th>Base</th><th>Custo</th></tr></thead>
+                  <tbody>
+                    <tr class="grp"><td colspan="3">Garra em PA-CF (R$ 258/kg × filamento do Orca) · toque numa opção</td></tr>
+                    <tr class="pick" data-k="R07_COM" tabindex="0" role="button" aria-pressed="false"><td><span class="radio"></span>R07 com esqueleto</td><td><span data-r07="R07_COM.fil_g" data-d="0">1.809</span> g</td><td>R$ <span data-r07="R07_COM.custo_rs" data-d="2">466,77</span></td></tr>
+                    <tr class="pick" data-k="R07_SEM" tabindex="0" role="button" aria-pressed="false"><td><span class="radio"></span>R07 sem esqueleto</td><td><span data-r07="R07_SEM.fil_g" data-d="0">1.745</span> g</td><td>R$ <span data-r07="R07_SEM.custo_rs" data-d="2">450,08</span></td></tr>
+                    <tr class="pick" data-k="TPMSD40" tabindex="0" role="button" aria-pressed="false"><td><span class="radio"></span>TPMS-D 40% (proposta inicial)</td><td><span data-r07="TPMSD40.fil_g" data-d="0">2.097</span> g</td><td>R$ <span data-r07="TPMSD40.custo_rs" data-d="2">540,92</span></td></tr>
+                    <tr class="grp"><td colspan="3">PADs em TPU 95A (R$ 158/kg)</td></tr>
+                    <tr><td>Conta da equipe</td><td>62 g / 8 peças</td><td>R$ 1,22/un · R$ 9,76</td></tr>
+                    <tr><td>Fatiamento Orca (só peças)</td><td><span data-r07="pads.peca_g" data-d="1">93,1</span> g / 8</td><td>R$ <span data-r07="pads.custo_un_peca" data-d="2">1,84</span>/un</td></tr>
+                    <tr><td>Fatiamento Orca (com suportes)</td><td><span data-r07="pads.total_g" data-d="1">139,0</span> g / 8</td><td>R$ <span data-r07="pads.custo_un_total" data-d="2">2,75</span>/un</td></tr>
+                    <tr class="grp"><td colspan="3">Componentes</td></tr>
+                    <tr><td>Bico MK8 endurecido</td><td>1 un</td><td>R$ 23,50</td></tr>
+                    <tr><td>Garra antiga · Tritan</td><td>custo informado</td><td>R$ 250,00</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div style="display:grid; gap:14px">
+                <div class="glass stat" id="custo-total" aria-live="polite">
+                  <b id="custo-val">R$ 496 a 512</b>
+                  <span id="custo-rot">garra R07 (sem ou com esqueleto) + 8 PADs + bico</span>
+                  <small id="custo-conta">escolha uma opção na tabela para ver a conta</small>
+                  <div class="cost-bar" id="custo-bar" aria-hidden="true"><i class="c-garra"></i><i class="c-pad"></i><i class="c-bico"></i></div>
+                  <div class="legend" style="margin:8px 0 0"><span><i style="background:var(--ink-2)"></i>garra</span><span><i style="background:var(--s-indigo)"></i>8 PADs</span><span><i style="background:#c27c0e"></i>bico</span></div>
+                </div>
+                <div class="glass stat sm"><b class="ink">R$ 84.000</b><span>custo de uma parada de 45 min</span><small id="custo-paradas">paga 164 a 170 garras completas</small></div>
+                <p class="note" style="margin:0"><span class="tag eq">preços: equipe</span> <span class="tag sim">gramas: Orca</span> A conta da equipe (62 g para 8 PADs) e o fatiamento (93,1 g sem suportes) diferem. Vale pesar um PAD impresso para fechar o número.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Fórmulas de custo -->
+        <section class="slide" data-title="Fórmulas de custo" id="s-formulas">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Desenvolvimento · Custos</span>
+              <h2>As contas, <em>passo a passo</em></h2>
+            </div>
+            <div class="g3 steps" style="align-items:stretch">
+              <article class="glass card">
+                <h3 style="margin-top:0">PAD em TPU 95A</h3>
+                <ol class="calc">
+                  <li><span>62 g ÷ 8 peças</span><b>7,75 g/peça</b></li>
+                  <li><span>8 × 1.000 ÷ 62</span><b>≈ 129 peças/kg</b></li>
+                  <li><span>R$ 158 ÷ 129</span><b>R$ 1,22/peça</b></li>
+                  <li><span>8 × R$ 1,22</span><b>R$ 9,76</b></li>
+                </ol>
+                <p class="note">Com 32 g por peça (especificação): R$ 158 ÷ 31,25 = <b>R$ 5,06</b> por peça.</p>
+              </article>
+              <article class="glass card">
+                <h3 style="margin-top:0">Garra em PA-CF</h3>
+                <ol class="calc">
+                  <li><span>filamento (g) ÷ 1.000 × R$ 258</span><b>custo</b></li>
+                  <li><span>sem esqueleto: <span data-r07="R07_SEM.fil_g" data-d="0">1.745</span> g</span><b>R$ <span data-r07="R07_SEM.custo_rs" data-d="2">450,08</span></b></li>
+                  <li><span>com esqueleto: <span data-r07="R07_COM.fil_g" data-d="0">1.809</span> g</span><b>R$ <span data-r07="R07_COM.custo_rs" data-d="2">466,77</span></b></li>
+                  <li><span>+ 8 PADs + bico MK8 (R$ 23,50)</span><b>R$ 483 a 512</b></li>
+                </ol>
+                <p class="note">Filamento inclui suportes (fatiamento do Orca, K1 Max). Tritan antigo: R$ 250,00 informado.</p>
+              </article>
+              <article class="glass card">
+                <h3 style="margin-top:0">Parada da linha</h3>
+                <ol class="calc">
+                  <li><span>7 paletes × 40 caixas</span><b>280 caixas</b></li>
+                  <li><span>280 × 12 itens</span><b>3.360 itens</b></li>
+                  <li><span>280 × 12 kg</span><b>3.360 kg</b></li>
+                  <li><span>R$ 84.000 ÷ 280</span><b>R$ 300/caixa</b></li>
+                </ol>
+                <p class="note">Uma parada de 45 min paga de 164 a 170 garras completas (garra + 8 PADs + bico).</p>
+              </article>
+            </div>
+            <p class="note"><span class="tag eq">preços e produção: equipe</span> <span class="tag sim">gramas: Orca</span> Custo das melhorias por garra: garra R07 + 8 PADs + bico = R$ 483 a 512, conforme a opção de esqueleto e a massa do PAD (equipe ou Orca).</p>
+          </div>
+        </section>
+
+        <!-- Produção e filas -->
+        <section class="slide" data-title="Produção e filas">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Desenvolvimento · Simulação de sistemas</span>
+              <h2>Tempo de impressão e <em>tempo de espera</em></h2>
+            </div>
+            <div class="split even" style="align-items:start">
+              <article class="glass card anim-card">
+                <h3 style="margin-top:0">Tempo de impressão</h3>
+                <p class="note" style="margin:0 0 10px">horas · barra clara = faixa da estimativa</p>
+                <div class="bars-h hours">
+                  <div class="bh"><span>Tritan, por peça <small>equipe</small></span><i style="--v:9.9%; --f:70.7%; background:var(--ink-2)"></i><b>6 a 8,5 h</b></div>
+                  <div class="bh"><span>Garra R07, 3 peças <small>Orca · sem / com</small></span><i style="--v:91.7%; --f:95.3%; background:var(--s-red)"></i><b><span data-r07="R07_SEM.tempo_h" data-d="1">75,2</span> / <span data-r07="R07_COM.tempo_h" data-d="1">78,9</span> h</b></div>
+                  <div class="bh"><span>Superior R07 <small>Orca · com</small></span><i style="--v:44.2%; background:var(--s-red); opacity:.7"></i><b>38,0 h</b></div>
+                  <div class="bh"><span>Inferior R07, cada <small>Orca</small></span><i style="--v:23.8%; background:var(--s-red); opacity:.7"></i><b>20,5 h</b></div>
+                  <div class="bh"><span>8 PADs TPU 95A <small>Orca</small></span><i style="--v:12.8%; background:var(--s-indigo)"></i><b><span data-r07="pads.tempo_h" data-d="1">11,0</span> h</b></div>
+                  <div class="bh"><span>4 PADs <small>equipe</small></span><i style="--v:2.3%; --f:82.6%; background:var(--s-indigo)"></i><b>1h40 a 2 h</b></div>
+                </div>
+                <p class="note">Como a garra leva mais de 3 dias para imprimir, ela precisa estar pronta <b>antes</b> da quebra: estoque de reposição.</p>
+              </article>
+              <article class="glass card todo">
+                <h3 style="margin-top:0">Teoria das filas</h3>
+                <p>Taxa de chegada de falhas (λ), taxa de reparo (μ) e tempo médio de espera (Wq) para a troca de garra e de PAD. Preencher com os dados de operação.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Metodologias -->
+        <section class="slide" data-title="Metodologias">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Desenvolvimento · Melhoria contínua</span>
+              <h2>Kaizen, Lean, 5W2H e <em>Ishikawa</em></h2>
+            </div>
+            <div class="g4">
+              <article class="glass card todo"><h3 style="margin-top:0">Kaizen</h3><p>Melhoria contínua: PAD trocado de forma planejada, sem parada não programada.</p></article>
+              <article class="glass card todo"><h3 style="margin-top:0">Lean</h3><p>Eliminar o desperdício de 45 min de parada e de produto não embalado.</p></article>
+              <article class="glass card todo"><h3 style="margin-top:0">5W2H</h3><p>O quê, por quê, onde, quando, quem, como e quanto custa a troca da garra.</p></article>
+              <article class="glass card todo"><h3 style="margin-top:0">Ishikawa</h3><p>Causas da quebra: material (Tritan), método (preenchimento uniforme), máquina (2 caixas numa asa), medida.</p></article>
+            </div>
+            <figure class="glass card anim-card" style="margin:14px 0 0; padding:12px 16px">
+              <svg class="fish" viewBox="0 0 900 230" role="img" aria-label="Diagrama de Ishikawa: material, método, máquina e medida levam à quebra da garra">
+                <path class="spine" d="M40 115 H720" />
+                <path class="bone b1" d="M180 25 L260 115" /><path class="bone b2" d="M420 25 L500 115" />
+                <path class="bone b3" d="M180 205 L260 115" /><path class="bone b4" d="M420 205 L500 115" />
+                <g class="lbl l1"><text x="170" y="20">Material</text><text x="232" y="64" class="sm">Tritan · adesão entre camadas</text></g>
+                <g class="lbl l2"><text x="410" y="20">Método</text><text x="472" y="64" class="sm">preenchimento uniforme</text></g>
+                <g class="lbl l3"><text x="170" y="222">Máquina</text><text x="230" y="176" class="sm">2 caixas numa asa (seladora)</text></g>
+                <g class="lbl l4"><text x="410" y="222">Medida</text><text x="470" y="176" class="sm">sem pesagem da peça impressa</text></g>
+                <g class="head"><rect x="720" y="85" width="170" height="60" rx="14" /><text x="805" y="121">Quebra da garra</text></g>
+              </svg>
+            </figure>
+            <p class="note">Conteúdo a completar pela equipe (contorno tracejado). As causas do diagrama são um ponto de partida.</p>
+          </div>
+        </section>
+
         <!-- Status -->
         <section class="slide" data-title="Status" id="s-conc">
           <div class="wrap wide">
@@ -1006,17 +1209,17 @@
             </div>
             <div class="g3" style="align-items:stretch">
               <div class="glass stat"><b>R$ 84.000</b><span>por parada de 45 min</span><small>280 caixas · dados da equipe</small></div>
-              <div class="glass stat"><b class="ink">≈ R$ 512</b><span>garra R07 + 8 PADs + bico</span><small>Orca + preços da equipe</small></div>
-              <div class="glass stat"><b class="ink">≈ 164×</b><span>uma parada paga garras novas</span><small>84.000 ÷ 512</small></div>
+              <div class="glass stat"><b class="ink">R$ 496–512</b><span>garra R07 + 8 PADs + bico</span><small>sem / com esqueleto · Orca + preços da equipe</small></div>
+              <div class="glass stat"><b class="ink">164–170×</b><span>uma parada paga garras novas</span><small>84.000 ÷ 512 e 84.000 ÷ 496</small></div>
             </div>
             <div class="split even" style="margin-top:16px; align-items:start">
               <article class="glass card todo">
                 <h3 style="margin-top:0">Custo de fazer hoje</h3>
-                <p>Impacto no orçamento de produzir a garra e os PADs nas condições atuais. Preencher com o orçamento da equipe.</p>
+                <p>Com os preços de hoje: garra R07 de R$ 450 a 467 (sem ou com esqueleto) + 8 PADs de R$ 9,76 a 21,96 + bico R$ 23,50 = <b>R$ 483 a 512</b> por garra completa, contra R$ 250 da garra de Tritan. Falta somar mão de obra, energia e setup da impressora: preencher com o orçamento da equipe.</p>
               </article>
               <article class="glass card">
                 <h3 style="margin-top:0">Plano de contingência</h3>
-                <p>Como a garra R07 leva cerca de <span data-r07="R07_COM.tempo_h" data-d="0">79</span> h para imprimir, ter uma garra reserva pronta e PADs em estoque (troca a cada 2 meses). <span class="todo">Quebra simultânea de garra e robô: definir com a equipe.</span></p>
+                <p>Como a garra R07 leva de <span data-r07="R07_SEM.tempo_h" data-d="0">75</span> a <span data-r07="R07_COM.tempo_h" data-d="0">79</span> h para imprimir, ter uma garra reserva pronta e PADs em estoque (troca a cada 2 meses). <span class="todo">Quebra simultânea de garra e robô: definir com a equipe.</span></p>
               </article>
             </div>
           </div>
@@ -1044,11 +1247,40 @@
 
       </div>
 
+      <!-- Pandinha RedLab: caminha na capa e aponta o QR -->
+      <div class="panda-walk" aria-hidden="true">
+        <div class="panda" id="panda">
+          <div class="panda-bubble" id="panda-bubble"><span class="pb-desk">Aponte a câmera para o QR e veja os dados no celular</span><span class="pb-mob">Deslize e veja todos os dados</span></div>
+          <svg class="panda-svg" viewBox="0 0 120 160">
+            <g class="p-leg p-leg-b"><rect x="44" y="118" width="15" height="34" rx="7.5" /></g>
+            <g class="p-arm-b"><rect x="21" y="78" width="13" height="32" rx="6.5" /></g>
+            <path class="p-shirt" d="M34 74 Q60 64 86 74 L92 98 L84 100 L84 126 Q60 132 36 126 L36 100 L28 98 Z" />
+            <text class="p-shirt-txt" x="60" y="108">RedLab</text>
+            <g class="p-leg p-leg-a"><rect x="62" y="118" width="15" height="34" rx="7.5" /></g>
+            <g class="p-arm-a"><path d="M80 84 Q96 84 98 70" /></g>
+            <g class="p-phone"><rect x="92" y="46" width="13" height="22" rx="2.5" class="ph-body" /><rect x="94" y="49" width="9" height="15" rx="1.2" class="ph-screen" /></g>
+            <g class="p-head">
+              <circle cx="38" cy="18" r="10" class="blk" /><circle cx="84" cy="18" r="10" class="blk" />
+              <circle cx="60" cy="42" r="30" class="wht" />
+              <ellipse cx="49" cy="42" rx="8" ry="10.5" transform="rotate(-20 49 42)" class="blk" />
+              <ellipse cx="73" cy="42" rx="8" ry="10.5" transform="rotate(20 73 42)" class="blk" />
+              <g class="p-eyes"><circle cx="51" cy="41" r="3.2" class="wht" /><circle cx="75" cy="41" r="3.2" class="wht" /><circle cx="52.4" cy="40.4" r="1.6" class="blk" /><circle cx="76.4" cy="40.4" r="1.6" class="blk" /></g>
+              <ellipse cx="62" cy="54" rx="4.2" ry="3" class="blk" />
+              <path d="M57 59 Q62 63 67 59" class="p-mouth" />
+            </g>
+          </svg>
+        </div>
+      </div>
+
       <footer class="footbar">
         <button class="nav-btn" id="prev" aria-label="Slide anterior">
           <svg class="i" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
         </button>
         <div class="progress"><i id="bar"></i></div>
+        <button class="qr" id="qr-btn" type="button" aria-haspopup="dialog" aria-label="Ampliar o QR code para abrir esta apresentação no celular">
+          <img src="assets/img/qr-site.svg" alt="" width="52" height="52">
+          <span><b>Veja no celular</b>dados e simulações</span>
+        </button>
         <button class="nav-btn" id="next" aria-label="Próximo slide">
           <svg class="i" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
         </button>
@@ -1056,15 +1288,22 @@
     </main>
   </div>
 
+  <dialog class="qr-big" id="qr-dialog" aria-label="QR code da apresentação">
+    <img src="assets/img/qr-site.svg" alt="QR code que abre cir0arruda.github.io/SENAI-DI-RedTeam">
+    <p><b>Aponte a câmera do celular</b>cir0arruda.github.io/SENAI-DI-RedTeam</p>
+    <button type="button" class="nav-btn" id="qr-close" aria-label="Fechar"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </dialog>
+
   <dialog class="lightbox" id="lightbox" aria-label="Figura ampliada">
     <figure><img src="" alt=""><figcaption></figcaption></figure>
   </dialog>
 
-  <script src="assets/js/main.js?v=r07e"></script>
-  <script src="assets/js/bancada-dados.js?v=r07e"></script>
-  <script src="assets/js/bancada.js?v=r07e"></script>
-  <script src="assets/js/r07-dados.js?v=r07e"></script>
-  <script src="assets/js/r07.js?v=r07e"></script>
-  <script type="module" src="assets/js/viewer3d.js?v=r07e"></script>
+  <script src="assets/js/main.js?v=r07f"></script>
+  <script src="assets/js/bancada-dados.js?v=r07f"></script>
+  <script src="assets/js/bancada.js?v=r07f"></script>
+  <script src="assets/js/r07-dados.js?v=r07f"></script>
+  <script src="assets/js/r07.js?v=r07f"></script>
+  <script src="assets/js/anim.js?v=r07f"></script>
+  <script type="module" src="assets/js/viewer3d.js?v=r07f"></script>
 </body>
 </html>

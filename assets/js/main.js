@@ -6,6 +6,9 @@
   const prev = document.getElementById('prev');
   const next = document.getElementById('next');
   const railBtns = [...document.querySelectorAll('.rail-btn[data-go]')];
+  // data-go aceita índice ou #id do slide (assim a ordem dos slides pode mudar sem quebrar a barra)
+  const idx = g => g.startsWith('#') ? slides.findIndex(s => s.id === g.slice(1)) : +g;
+  railBtns.forEach(b => { b.dataset.idx = idx(b.dataset.go); });
   const pad = n => String(n).padStart(2, '0');
   let cur = 0;
 
@@ -20,17 +23,18 @@
     next.disabled = cur === slides.length - 1;
     // Destaca a seção ativa na barra lateral (a última cujo índice é <= atual)
     let active = null;
-    railBtns.forEach(b => { if (+b.dataset.go <= cur) active = b; });
+    railBtns.forEach(b => { if (+b.dataset.idx <= cur) active = b; });
     railBtns.forEach(b => b.classList.toggle('on', b === active));
     const sec = document.getElementById('sec-title');
     if (sec) sec.textContent = `· ${slides[cur].dataset.title || 'SENAI'}`;
+    document.querySelector('.stage')?.classList.toggle('is-cover', cur === 0);
     history.replaceState(null, '', `#${cur + 1}`);
     document.dispatchEvent(new CustomEvent('slidechange', { detail: { index: cur, slide: slides[cur] } }));
   }
 
   prev.addEventListener('click', () => go(cur - 1));
   next.addEventListener('click', () => go(cur + 1));
-  railBtns.forEach(b => b.addEventListener('click', () => go(+b.dataset.go)));
+  railBtns.forEach(b => b.addEventListener('click', () => go(+b.dataset.idx)));
 
   document.addEventListener('keydown', e => {
     if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); go(cur + 1); }

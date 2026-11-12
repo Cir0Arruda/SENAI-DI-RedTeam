@@ -191,14 +191,14 @@
     const dec = document.getElementById('tbl-decisao');
     if (dec) dec.innerHTML = ['R07_COM', 'R07_SEM', 'UNI_30', 'UNI_35', 'UNI_40', 'R06'].map(k => {
       const v = V[k], im = v.impacto;
-      return `<tr${k === 'R07_COM' ? ' class="hl"' : ''}><td><span class="sw" style="background:${col(k)}"></span>${v.rot}</td><td>${fmt(v.garra_g, 0)} g</td><td>${sgn(v.pct_tritan)}%</td>
+      return `<tr><td><span class="sw" style="background:${col(k)}"></span>${v.rot}</td><td>${fmt(v.garra_g, 0)} g</td><td>${sgn(v.pct_tritan)}%</td>
         <td>${fmt(v.kg_pa6)} / ${fmt(v.kg_paht)}</td><td>${fmt(v.fs30_paht, 2)}</td><td>${fmt(v.desl24, 2)} mm</td>
         <td>${im ? `${fmt(im.sz)} MPa · ${fmt(im.fs_paht, 2)}` : '<span class="na">não rodado</span>'}</td></tr>`;
     }).join('');
     const orca = document.getElementById('tbl-orca');
     if (orca) orca.innerHTML = ['R07_COM', 'R07_SEM', 'HEXA30', 'UNI_30', 'UNI_35', 'UNI_40', 'TPMSD40', 'R06'].map(k => {
       const v = V[k];
-      return `<tr${k === 'R07_COM' ? ' class="hl"' : ''}><td><span class="sw" style="background:${col(k)}"></span>${v.rot}</td><td>${fmt(v.sup_g, 0)}</td><td>${fmt(v.inf_g, 0)} ×2</td><td><b>${fmt(v.garra_g, 0)}</b></td>
+      return `<tr><td><span class="sw" style="background:${col(k)}"></span>${v.rot}</td><td>${fmt(v.sup_g, 0)}</td><td>${fmt(v.inf_g, 0)} ×2</td><td><b>${fmt(v.garra_g, 0)}</b></td>
         <td>${sgn(v.pct_tritan)}%</td><td>${v.proprio_fe ? '' : '≈ '}${fmt(v.kg_pa6, 0)} kg <small class="muted">FS ${fmt(v.fs24_pa6, 1)}</small></td><td>${fmt(v.tempo_h, 1)} h</td><td>R$ ${fmt(v.custo_rs, 2)}</td></tr>`;
     }).join('');
     const SHORT = { R07_COM: 'R07 com', R07_SEM: 'R07 sem', UNI_30: 'Giroide 30%', UNI_35: 'Giroide 35%', UNI_40: 'Giroide 40%', R06: 'R06 zonal' };
@@ -206,7 +206,7 @@
     const pc = document.getElementById('tbl-pesocarga');
     if (pc) pc.innerHTML = ['R07_COM', 'R07_SEM', 'UNI_30', 'UNI_35', 'UNI_40', 'R06'].map(k => {
       const v = V[k], im = v.impacto;
-      return `<tr${k === 'R07_COM' ? ' class="hl"' : ''}><td class="nw"><span class="sw" style="background:${col(k)}"></span>${SHORT[k]}</td><td>${fmt(v.garra_g, 0)} g</td>
+      return `<tr><td class="nw"><span class="sw" style="background:${col(k)}"></span>${SHORT[k]}</td><td>${fmt(v.garra_g, 0)} g</td>
         <td><b>${fmt(v.kg_pa6, 1)} kg</b></td>${fsCell(v.fs24_pa6)}<td>${fmt(v.kg_paht, 1)} kg</td>${fsCell(v.fs24_paht)}
         ${im ? `<td${im.fs_paht < 1 ? ' class="fs-bad"' : ''}>${fmt(im.fs_pa6, 2)} / ${im.fs_paht < 1 ? '⚠ ' : ''}${fmt(im.fs_paht, 2)}</td>` : '<td><span class="na">não rodado</span></td>'}</tr>`;
     }).join('');
