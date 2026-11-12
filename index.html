@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=r07v">
+  <link rel="stylesheet" href="assets/css/style.css?v=r07w">
   <script type="importmap">
     { "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
@@ -31,12 +31,6 @@
       </button>
       <button class="rail-btn" data-go="#s-sai" title="Projeto SAI: solução e PAD">
         <svg class="i" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg>
-      </button>
-      <button class="rail-btn" data-go="#s-testes" title="Testes de bancada (Fusion e PAD)">
-        <svg class="i" viewBox="0 0 24 24"><path d="M9 3v6l-5 9a2 2 0 0 0 1.7 3h12.6a2 2 0 0 0 1.7-3l-5-9V3M8 3h8M7 15h10"/></svg>
-      </button>
-      <button class="rail-btn" data-go="#s-orca" title="Orca: estrutura interna">
-        <svg class="i" viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9zM12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>
       </button>
       <button class="rail-btn" data-go="#s-hw" title="Hardware e custos">
         <svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .8-3 2s1.3 1.7 3 2 3 .8 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"/></svg>
@@ -87,9 +81,8 @@
               <li class="glass"><b>01</b><span>Introdução<small>As dores da Ajinomoto: a garra quebra, a linha para e o custo de oportunidade</small></span></li>
               <li class="glass"><b>02</b><span>Ideias anteriores<small>Matriz de prioridade: valor agregado × complexidade</small></span></li>
               <li class="glass"><b>03</b><span>Projeto SAI<small>A solução: material novo, estrutura interna sem esqueleto e PAD de sacrifício</small></span></li>
-              <li class="glass"><b>04</b><span>Testes e simulações<small>Fusion, Orca e impacto com PAD</small></span></li>
-              <li class="glass"><b>05</b><span>Hardware e custos<small>Impressora, custo SAI × Tritan, retorno e payback</small></span></li>
-              <li class="glass"><b>06</b><span>Sustentabilidade e conclusão<small>Descarte e reciclagem, segurança, peso, caixas garantidas e durabilidade</small></span></li>
+              <li class="glass"><b>04</b><span>Hardware e custos<small>Impressora, custo SAI × Tritan, retorno e payback</small></span></li>
+              <li class="glass"><b>05</b><span>Sustentabilidade e conclusão<small>Descarte e reciclagem, segurança, peso, caixas garantidas e durabilidade</small></span></li>
             </ol>
           </div>
         </section>
@@ -449,158 +442,6 @@
               </div>
               <p class="note">Na garra o giroide leva a carga com o mínimo de peso; no PAD o giroide mais denso vira uma mola que espalha o golpe no tempo. O exterior não muda: 5 paredes em volta de tudo.</p>
             </div>
-          </div>
-        </section>
-
-        <!-- 4 · Configuração do estudo -->
-        <section class="slide" data-title="Configuração" id="s-testes">
-          <div class="wrap wide">
-            <div class="s-head compact">
-              <span class="kicker">Testes de Bancada · Fusion</span>
-              <h2>Como o teste foi <em>montado</em></h2>
-            </div>
-            <div class="g3" style="align-items:start">
-              <figure class="glass media" style="margin:0; background:#fff">
-                <img src="assets/img/bancada/cargas.png" alt="Corpo superior com quatro faces carregadas para baixo, indicadas por setas azuis">
-                <figcaption>Força de 88,84 N em −Z, aplicada em cada uma das 4 faces</figcaption>
-              </figure>
-              <figure class="glass media" style="margin:0; background:#fff">
-                <img src="assets/img/bancada/malha.png" alt="Malha de elementos finitos do corpo superior maciço">
-                <figcaption>Corpo superior maciço · malha parabólica de 3 mm</figcaption>
-              </figure>
-              <div class="glass card">
-                <table class="tbl">
-                  <tbody>
-                    <tr><td>Tipo de estudo</td><td>Tensão estática</td></tr>
-                    <tr><td>Peça</td><td>Corpo superior</td></tr>
-                    <tr><td>Restrição</td><td>Fixo (Ux, Uy, Uz)</td></tr>
-                    <tr><td>Carga por face</td><td>88,84 N</td></tr>
-                    <tr><td>Carga total</td><td>355,4 N</td></tr>
-                    <tr><td>Nós</td><td>498.261</td></tr>
-                    <tr><td>Elementos</td><td>339.001</td></tr>
-                    <tr><td>Software</td><td>Fusion 2706.1.17</td></tr>
-                  </tbody>
-                </table>
-                <p class="note">Estudo exploratório “24 kg”, mesma geometria e cargas para os dois materiais.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- 7 · Impacto 1D -->
-        <section class="slide" data-title="Impacto com PAD">
-          <div class="wrap wide">
-            <div class="s-head compact">
-              <span class="kicker">Testes de Bancada · Impacto</span>
-              <h2>O PAD reduz o <em>pico</em></h2>
-            </div>
-            <div class="split" style="--cols:minmax(0,1.5fr) minmax(0,1fr); align-items:start">
-              <div class="glass chart" id="chart-impacto">
-                <h4>Força de contato ao longo do tempo</h4>
-                <p class="sub">Esfera de 263 g a 1 m/s (0,132 J) · modelo de molas 1D, sem amortecimento</p>
-                <div class="legend">
-                  <span><i style="background:var(--s-indigo)"></i>Sem PAD</span>
-                  <span><i style="background:var(--s-red)"></i>Com PAD</span>
-                </div>
-              </div>
-              <div style="display:grid; gap:14px">
-                <div class="glass stat"><b>−62,6%</b><span>no pico de força · 450,9 → 168,5 N</span></div>
-                <div class="g2">
-                  <div class="glass stat sm"><b class="ink">2,7×</b><span>contato mais longo</span><small>1,83 → 4,90 ms</small></div>
-                  <div class="glass stat sm"><b class="ink">1,34 mm</b><span>compressão do PAD</span><small>21% da espessura</small></div>
-                  <div class="glass stat sm"><b class="ink">86%</b><span>da energia no PAD</span><small>0,113 de 0,132 J</small></div>
-                  <div class="glass stat sm"><b class="ink">0,58 → 0,22</b><span>mm de deflexão</span><small>viga substituta da garra</small></div>
-                </div>
-              </div>
-            </div>
-            <p class="note">Modelo reduzido (R03), não é FEA: a seção da garra e a área de contato são hipóteses. O impulso total é igual nos dois casos (0,526 N·s), porque o PAD espalha a força no tempo.</p>
-          </div>
-        </section>
-
-        <!-- 8 · Sensibilidade -->
-        <section class="slide" data-title="Sensibilidade">
-          <div class="wrap wide split" style="--cols:minmax(0,1fr) minmax(0,1.3fr)">
-            <div>
-              <span class="kicker">Testes de Bancada · Sensibilidade</span>
-              <h2>Depende da <em>área de contato</em></h2>
-              <p class="lead">Quanto menor a área que recebe o golpe, mais macio o PAD fica e maior a redução do pico. A área real ainda não foi medida.</p>
-              <div class="glass card" style="margin-top:22px; padding:18px 20px">
-                <table class="tbl">
-                  <thead><tr><th>Preenchimento</th><th>Sem PAD</th><th>Com PAD</th><th>Redução</th></tr></thead>
-                  <tbody>
-                    <tr><td>15%</td><td>450,9 N</td><td>168,5 N</td><td>62,6%</td></tr>
-                    <tr><td>30%</td><td>460,0 N</td><td>169,0 N</td><td>63,3%</td></tr>
-                  </tbody>
-                </table>
-                <p class="note">Dobrar o preenchimento da garra muda a redução em menos de 1 ponto percentual.</p>
-              </div>
-            </div>
-            <div class="glass chart" id="chart-area">
-              <h4>Redução do pico de força por área de contato</h4>
-              <p class="sub">% de redução com PAD · área assumida em mm² (100 mm² é o caso base)</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- 9 · Estratégia de impressão -->
-        <section class="slide" data-title="Orca R06 zonal" id="s-orca">
-          <div class="wrap wide split" style="--cols:minmax(0,1fr) minmax(0,1.2fr)">
-            <div>
-              <span class="kicker">Orca · Estrutura interna R06</span>
-              <h2>Reforço só <em>por dentro</em></h2>
-              <p class="lead">As cores são preenchimento interno do fatiamento. Cada zona é recortada do núcleo da peça, 2 mm abaixo da superfície (5 perímetros). O exterior não muda.</p>
-              <div class="glass card" style="margin-top:20px; padding:18px 20px">
-                <div class="zones" style="margin:0">
-                  <div class="zone"><i style="background:#f4f4f7"></i>Base · TPMS-D<b>20%</b></div>
-                  <div class="zone"><i style="background:#f5e400"></i>Amarelo · entorno dos apoios<b>30%</b></div>
-                  <div class="zone"><i style="background:#1e6fb8"></i>Azul · corredores de carga<b>50%</b></div>
-                  <div class="zone"><i style="background:#f03cf0"></i>Rosa · sob os PADs<b>70%</b></div>
-                </div>
-                <p class="note">Volume de zona fora da peça: <b>0 cm³</b>. Antes (R04) o modificador amarelo tinha 1.650 cm³, maior que a própria peça (1.391 cm³), e atravessava o contorno.</p>
-              </div>
-              <div class="g3" style="margin-top:14px">
-                <div class="glass stat sm"><b>754 g</b><span>Superior · 38,1 h</span></div>
-                <div class="glass stat sm"><b>444 g</b><span>Inferior esq. · 23,8 h</span></div>
-                <div class="glass stat sm"><b>444 g</b><span>Inferior dir. · 23,9 h</span></div>
-              </div>
-              <p class="note">Massa da peça fatiada no Orca (K1 Max, 1:1, PA6-CF), sem suportes. Fatiamento local, nada enviado à impressora.</p>
-            </div>
-            <figure class="glass media" style="margin:0; background:#fff">
-              <img style="max-height:64vh; width:auto; max-width:100%; margin:0 auto; display:block; object-fit:contain" src="assets/img/bancada/r06_camadas_slide.png" alt="Três camadas reais do G-code do corpo superior com contornos das zonas rosa, azul e amarelo dentro das paredes externas">
-              <figcaption>Trajetórias reais do G-code: o preenchimento adensa dentro das zonas, as paredes seguem o contorno original</figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <!-- R07: esqueleto (camadas) -->
-        <section class="slide" data-title="Esqueleto R07" id="s-esqueleto">
-          <div class="wrap wide">
-            <div class="s-head compact" style="display:flex; justify-content:space-between; align-items:end; gap:16px; flex-wrap:wrap">
-              <div>
-                <span class="kicker">Orca · Estrutura interna R07</span>
-                <h2>Esqueleto <em>interno</em> + giroide</h2>
-              </div>
-              <div class="seg" id="esq-tabs" role="tablist" aria-label="Vista da estrutura interna">
-                <button class="on" role="tab" data-img="assets/img/r07/camadas_r07_superior.jpg" data-cap="G-code real (Orca, K1 Max, 1:1) da peça superior COM esqueleto. Azul: almas e tubos 100%. Roxo: colar 55%. Rosa: ressaltos 35%. Amarelo: assento 20%. O resto é giroide 25%." data-alt="Três camadas reais do G-code do superior com esqueleto: almas azuis ligando o cubo aos ressaltos, anéis rosa e amarelo e o colar roxo na flange">Com esqueleto</button>
-                <button role="tab" data-img="assets/img/r07/camadas_r07_superior_sem.jpg" data-cap="G-code real do superior SEM esqueleto: mesmas zonas, mas só os tubos dos furos ficam a 100%. Na camada de 40 mm não há nenhuma alma: é só giroide 25%." data-alt="Três camadas reais do G-code do superior sem esqueleto: só os tubos dos furos em azul, sem as almas">Sem esqueleto</button>
-                <button role="tab" data-img="assets/img/r07/camadas_r07_inferior.jpg" data-cap="G-code real da inferior direita COM esqueleto (giroide 20%). As almas azuis sobem das bases das ventosas (Z 20 mm) até os anéis do encaixe com o superior (Z 70 mm)." data-alt="Três camadas reais do G-code da inferior: pés com almas, corpo com anéis rosa e amarelo e o anel do encaixe no topo">Inferior</button>
-                <button role="tab" data-img="assets/img/r07/encaixe_r07_com.jpg" data-img2="assets/img/r07/encaixe_r07_sem.jpg" data-cap="Corte vertical da garra montada pelos anéis da asa direita (modificadores do Orca, não é FE). À esquerda COM: a alma da inferior (azul) chega até o encaixe e continua no superior. À direita SEM: só os tubos dos furos." data-alt="Corte vertical da garra montada mostrando o esqueleto azul da inferior chegando ao encaixe com o superior, com e sem esqueleto">Encaixe com × sem</button>
-              </div>
-            </div>
-            <figure class="glass media esq-fig" style="margin:0 0 14px; background:#fff">
-              <div class="esq-imgs">
-                <img id="esq-img" src="assets/img/r07/camadas_r07_superior.jpg" alt="Três camadas reais do G-code do superior com esqueleto: almas azuis ligando o cubo aos ressaltos, anéis rosa e amarelo e o colar roxo na flange">
-                <img id="esq-img2" hidden alt="">
-              </div>
-              <figcaption id="esq-cap">G-code real (Orca, K1 Max, 1:1) da peça superior COM esqueleto. Azul: almas e tubos 100%. Roxo: colar 55%. Rosa: ressaltos 35%. Amarelo: assento 20%. O resto é giroide 25%.</figcaption>
-            </figure>
-            <div class="g4">
-              <div class="glass stat sm"><b><span data-r07="R07_COM.garra_g" data-d="0">1.498</span> g</b><span>garra COM esqueleto</span><small><span data-r07="R07_COM.pct_tritan" data-d="1" data-sign="1">−5,0</span>% vs Tritan · aguenta <span data-r07="R07_COM.kg_pa6" data-d="0">100</span> kg</small></div>
-              <div class="glass stat sm"><b class="ink"><span data-r07="R07_SEM.garra_g" data-d="0">1.433</span> g</b><span>garra SEM esqueleto</span><small><span data-r07="R07_SEM.pct_tritan" data-d="1" data-sign="1">−9,1</span>% vs Tritan · aguenta <span data-r07="R07_SEM.kg_pa6" data-d="0">93</span> kg</small></div>
-              <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.sup_g" data-d="0">731</span> / <span data-r07="R07_SEM.sup_g" data-d="0">666</span> g</b><span>superior com / sem</span><small>giroide 25% · inferior <span data-r07="R07_COM.inf_g" data-d="0">383</span> g cada (20%)</small></div>
-              <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.tempo_h" data-d="1">78,9</span> / <span data-r07="R07_SEM.tempo_h" data-d="1">75,2</span> h</b><span>impressão com / sem</span><small>filamento <span data-r07="R07_COM.fil_g" data-d="0">1.809</span> / <span data-r07="R07_SEM.fil_g" data-d="0">1.745</span> g</small></div>
-            </div>
-            <p class="note">Almas de 3 mm a 100%, tubos de 7,5 mm nos furos, colar 55%, ressaltos 35%, assento 20%. Tudo fica 2,25 mm para dentro (5 perímetros): o exterior não muda. Massas do fatiamento, sem suportes.</p>
           </div>
         </section>
 
@@ -1780,6 +1621,158 @@
           </div>
         </section>
 
+        <!-- 4 · Configuração do estudo -->
+        <section class="slide" data-title="Configuração" id="arq2-s-testes">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Testes de Bancada · Fusion</span>
+              <h2>Como o teste foi <em>montado</em></h2>
+            </div>
+            <div class="g3" style="align-items:start">
+              <figure class="glass media" style="margin:0; background:#fff">
+                <img src="assets/img/bancada/cargas.png" alt="Corpo superior com quatro faces carregadas para baixo, indicadas por setas azuis">
+                <figcaption>Força de 88,84 N em −Z, aplicada em cada uma das 4 faces</figcaption>
+              </figure>
+              <figure class="glass media" style="margin:0; background:#fff">
+                <img src="assets/img/bancada/malha.png" alt="Malha de elementos finitos do corpo superior maciço">
+                <figcaption>Corpo superior maciço · malha parabólica de 3 mm</figcaption>
+              </figure>
+              <div class="glass card">
+                <table class="tbl">
+                  <tbody>
+                    <tr><td>Tipo de estudo</td><td>Tensão estática</td></tr>
+                    <tr><td>Peça</td><td>Corpo superior</td></tr>
+                    <tr><td>Restrição</td><td>Fixo (Ux, Uy, Uz)</td></tr>
+                    <tr><td>Carga por face</td><td>88,84 N</td></tr>
+                    <tr><td>Carga total</td><td>355,4 N</td></tr>
+                    <tr><td>Nós</td><td>498.261</td></tr>
+                    <tr><td>Elementos</td><td>339.001</td></tr>
+                    <tr><td>Software</td><td>Fusion 2706.1.17</td></tr>
+                  </tbody>
+                </table>
+                <p class="note">Estudo exploratório “24 kg”, mesma geometria e cargas para os dois materiais.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7 · Impacto 1D -->
+        <section class="slide" data-title="Impacto com PAD">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Testes de Bancada · Impacto</span>
+              <h2>O PAD reduz o <em>pico</em></h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1.5fr) minmax(0,1fr); align-items:start">
+              <div class="glass chart" id="chart-impacto">
+                <h4>Força de contato ao longo do tempo</h4>
+                <p class="sub">Esfera de 263 g a 1 m/s (0,132 J) · modelo de molas 1D, sem amortecimento</p>
+                <div class="legend">
+                  <span><i style="background:var(--s-indigo)"></i>Sem PAD</span>
+                  <span><i style="background:var(--s-red)"></i>Com PAD</span>
+                </div>
+              </div>
+              <div style="display:grid; gap:14px">
+                <div class="glass stat"><b>−62,6%</b><span>no pico de força · 450,9 → 168,5 N</span></div>
+                <div class="g2">
+                  <div class="glass stat sm"><b class="ink">2,7×</b><span>contato mais longo</span><small>1,83 → 4,90 ms</small></div>
+                  <div class="glass stat sm"><b class="ink">1,34 mm</b><span>compressão do PAD</span><small>21% da espessura</small></div>
+                  <div class="glass stat sm"><b class="ink">86%</b><span>da energia no PAD</span><small>0,113 de 0,132 J</small></div>
+                  <div class="glass stat sm"><b class="ink">0,58 → 0,22</b><span>mm de deflexão</span><small>viga substituta da garra</small></div>
+                </div>
+              </div>
+            </div>
+            <p class="note">Modelo reduzido (R03), não é FEA: a seção da garra e a área de contato são hipóteses. O impulso total é igual nos dois casos (0,526 N·s), porque o PAD espalha a força no tempo.</p>
+          </div>
+        </section>
+
+        <!-- 8 · Sensibilidade -->
+        <section class="slide" data-title="Sensibilidade">
+          <div class="wrap wide split" style="--cols:minmax(0,1fr) minmax(0,1.3fr)">
+            <div>
+              <span class="kicker">Testes de Bancada · Sensibilidade</span>
+              <h2>Depende da <em>área de contato</em></h2>
+              <p class="lead">Quanto menor a área que recebe o golpe, mais macio o PAD fica e maior a redução do pico. A área real ainda não foi medida.</p>
+              <div class="glass card" style="margin-top:22px; padding:18px 20px">
+                <table class="tbl">
+                  <thead><tr><th>Preenchimento</th><th>Sem PAD</th><th>Com PAD</th><th>Redução</th></tr></thead>
+                  <tbody>
+                    <tr><td>15%</td><td>450,9 N</td><td>168,5 N</td><td>62,6%</td></tr>
+                    <tr><td>30%</td><td>460,0 N</td><td>169,0 N</td><td>63,3%</td></tr>
+                  </tbody>
+                </table>
+                <p class="note">Dobrar o preenchimento da garra muda a redução em menos de 1 ponto percentual.</p>
+              </div>
+            </div>
+            <div class="glass chart" id="chart-area">
+              <h4>Redução do pico de força por área de contato</h4>
+              <p class="sub">% de redução com PAD · área assumida em mm² (100 mm² é o caso base)</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9 · Estratégia de impressão -->
+        <section class="slide" data-title="Orca R06 zonal" id="s-orca">
+          <div class="wrap wide split" style="--cols:minmax(0,1fr) minmax(0,1.2fr)">
+            <div>
+              <span class="kicker">Orca · Estrutura interna R06</span>
+              <h2>Reforço só <em>por dentro</em></h2>
+              <p class="lead">As cores são preenchimento interno do fatiamento. Cada zona é recortada do núcleo da peça, 2 mm abaixo da superfície (5 perímetros). O exterior não muda.</p>
+              <div class="glass card" style="margin-top:20px; padding:18px 20px">
+                <div class="zones" style="margin:0">
+                  <div class="zone"><i style="background:#f4f4f7"></i>Base · TPMS-D<b>20%</b></div>
+                  <div class="zone"><i style="background:#f5e400"></i>Amarelo · entorno dos apoios<b>30%</b></div>
+                  <div class="zone"><i style="background:#1e6fb8"></i>Azul · corredores de carga<b>50%</b></div>
+                  <div class="zone"><i style="background:#f03cf0"></i>Rosa · sob os PADs<b>70%</b></div>
+                </div>
+                <p class="note">Volume de zona fora da peça: <b>0 cm³</b>. Antes (R04) o modificador amarelo tinha 1.650 cm³, maior que a própria peça (1.391 cm³), e atravessava o contorno.</p>
+              </div>
+              <div class="g3" style="margin-top:14px">
+                <div class="glass stat sm"><b>754 g</b><span>Superior · 38,1 h</span></div>
+                <div class="glass stat sm"><b>444 g</b><span>Inferior esq. · 23,8 h</span></div>
+                <div class="glass stat sm"><b>444 g</b><span>Inferior dir. · 23,9 h</span></div>
+              </div>
+              <p class="note">Massa da peça fatiada no Orca (K1 Max, 1:1, PA6-CF), sem suportes. Fatiamento local, nada enviado à impressora.</p>
+            </div>
+            <figure class="glass media" style="margin:0; background:#fff">
+              <img style="max-height:64vh; width:auto; max-width:100%; margin:0 auto; display:block; object-fit:contain" src="assets/img/bancada/r06_camadas_slide.png" alt="Três camadas reais do G-code do corpo superior com contornos das zonas rosa, azul e amarelo dentro das paredes externas">
+              <figcaption>Trajetórias reais do G-code: o preenchimento adensa dentro das zonas, as paredes seguem o contorno original</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- R07: esqueleto (camadas) -->
+        <section class="slide" data-title="Esqueleto R07" id="s-esqueleto">
+          <div class="wrap wide">
+            <div class="s-head compact" style="display:flex; justify-content:space-between; align-items:end; gap:16px; flex-wrap:wrap">
+              <div>
+                <span class="kicker">Orca · Estrutura interna R07</span>
+                <h2>Esqueleto <em>interno</em> + giroide</h2>
+              </div>
+              <div class="seg" id="esq-tabs" role="tablist" aria-label="Vista da estrutura interna">
+                <button class="on" role="tab" data-img="assets/img/r07/camadas_r07_superior.jpg" data-cap="G-code real (Orca, K1 Max, 1:1) da peça superior COM esqueleto. Azul: almas e tubos 100%. Roxo: colar 55%. Rosa: ressaltos 35%. Amarelo: assento 20%. O resto é giroide 25%." data-alt="Três camadas reais do G-code do superior com esqueleto: almas azuis ligando o cubo aos ressaltos, anéis rosa e amarelo e o colar roxo na flange">Com esqueleto</button>
+                <button role="tab" data-img="assets/img/r07/camadas_r07_superior_sem.jpg" data-cap="G-code real do superior SEM esqueleto: mesmas zonas, mas só os tubos dos furos ficam a 100%. Na camada de 40 mm não há nenhuma alma: é só giroide 25%." data-alt="Três camadas reais do G-code do superior sem esqueleto: só os tubos dos furos em azul, sem as almas">Sem esqueleto</button>
+                <button role="tab" data-img="assets/img/r07/camadas_r07_inferior.jpg" data-cap="G-code real da inferior direita COM esqueleto (giroide 20%). As almas azuis sobem das bases das ventosas (Z 20 mm) até os anéis do encaixe com o superior (Z 70 mm)." data-alt="Três camadas reais do G-code da inferior: pés com almas, corpo com anéis rosa e amarelo e o anel do encaixe no topo">Inferior</button>
+                <button role="tab" data-img="assets/img/r07/encaixe_r07_com.jpg" data-img2="assets/img/r07/encaixe_r07_sem.jpg" data-cap="Corte vertical da garra montada pelos anéis da asa direita (modificadores do Orca, não é FE). À esquerda COM: a alma da inferior (azul) chega até o encaixe e continua no superior. À direita SEM: só os tubos dos furos." data-alt="Corte vertical da garra montada mostrando o esqueleto azul da inferior chegando ao encaixe com o superior, com e sem esqueleto">Encaixe com × sem</button>
+              </div>
+            </div>
+            <figure class="glass media esq-fig" style="margin:0 0 14px; background:#fff">
+              <div class="esq-imgs">
+                <img id="esq-img" src="assets/img/r07/camadas_r07_superior.jpg" alt="Três camadas reais do G-code do superior com esqueleto: almas azuis ligando o cubo aos ressaltos, anéis rosa e amarelo e o colar roxo na flange">
+                <img id="esq-img2" hidden alt="">
+              </div>
+              <figcaption id="esq-cap">G-code real (Orca, K1 Max, 1:1) da peça superior COM esqueleto. Azul: almas e tubos 100%. Roxo: colar 55%. Rosa: ressaltos 35%. Amarelo: assento 20%. O resto é giroide 25%.</figcaption>
+            </figure>
+            <div class="g4">
+              <div class="glass stat sm"><b><span data-r07="R07_COM.garra_g" data-d="0">1.498</span> g</b><span>garra COM esqueleto</span><small><span data-r07="R07_COM.pct_tritan" data-d="1" data-sign="1">−5,0</span>% vs Tritan · aguenta <span data-r07="R07_COM.kg_pa6" data-d="0">100</span> kg</small></div>
+              <div class="glass stat sm"><b class="ink"><span data-r07="R07_SEM.garra_g" data-d="0">1.433</span> g</b><span>garra SEM esqueleto</span><small><span data-r07="R07_SEM.pct_tritan" data-d="1" data-sign="1">−9,1</span>% vs Tritan · aguenta <span data-r07="R07_SEM.kg_pa6" data-d="0">93</span> kg</small></div>
+              <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.sup_g" data-d="0">731</span> / <span data-r07="R07_SEM.sup_g" data-d="0">666</span> g</b><span>superior com / sem</span><small>giroide 25% · inferior <span data-r07="R07_COM.inf_g" data-d="0">383</span> g cada (20%)</small></div>
+              <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.tempo_h" data-d="1">78,9</span> / <span data-r07="R07_SEM.tempo_h" data-d="1">75,2</span> h</b><span>impressão com / sem</span><small>filamento <span data-r07="R07_COM.fil_g" data-d="0">1.809</span> / <span data-r07="R07_SEM.fil_g" data-d="0">1.745</span> g</small></div>
+            </div>
+            <p class="note">Almas de 3 mm a 100%, tubos de 7,5 mm nos furos, colar 55%, ressaltos 35%, assento 20%. Tudo fica 2,25 mm para dentro (5 perímetros): o exterior não muda. Massas do fatiamento, sem suportes.</p>
+          </div>
+        </section>
+
   </template>
 
   <dialog class="qr-big" id="qr-dialog" aria-label="QR code da apresentação">
@@ -1792,15 +1785,15 @@
     <figure><img src="" alt=""><figcaption></figcaption></figure>
   </dialog>
 
-  <script src="assets/js/main.js?v=r07v"></script>
-  <script src="assets/js/bancada-dados.js?v=r07v"></script>
-  <script src="assets/js/bancada.js?v=r07v"></script>
-  <script src="assets/js/r07-dados.js?v=r07v"></script>
-  <script src="assets/js/r07.js?v=r07v"></script>
-  <script src="assets/js/conjunto-dados.js?v=r07v"></script>
-  <script src="assets/js/conjunto.js?v=r07v"></script>
-  <script src="assets/js/sai.js?v=r07v"></script>
-  <script src="assets/js/anim.js?v=r07v"></script>
-  <script type="module" src="assets/js/viewer3d.js?v=r07v"></script>
+  <script src="assets/js/main.js?v=r07w"></script>
+  <script src="assets/js/bancada-dados.js?v=r07w"></script>
+  <script src="assets/js/bancada.js?v=r07w"></script>
+  <script src="assets/js/r07-dados.js?v=r07w"></script>
+  <script src="assets/js/r07.js?v=r07w"></script>
+  <script src="assets/js/conjunto-dados.js?v=r07w"></script>
+  <script src="assets/js/conjunto.js?v=r07w"></script>
+  <script src="assets/js/sai.js?v=r07w"></script>
+  <script src="assets/js/anim.js?v=r07w"></script>
+  <script type="module" src="assets/js/viewer3d.js?v=r07w"></script>
 </body>
 </html>
