@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=r07m">
+  <link rel="stylesheet" href="assets/css/style.css?v=r07n">
   <script type="importmap">
     { "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
@@ -76,6 +76,27 @@
           </div>
         </section>
 
+        <!-- Capa -->
+        <section class="slide" data-title="SENAI" id="arq-s-capa">
+          <div class="wrap wide split" style="--cols:minmax(0,1.1fr) minmax(0,1fr)">
+            <div>
+              <span class="kicker">SENAI · RedLab</span>
+              <h1>Garra <em>SAMI</em> mais leve e mais forte</h1>
+              <p class="lead">PAD de sacrifício em TPU 95A para absorver o choque e preenchimento interno otimizado em PA-CF para a garra de ventosas do robô UR30.</p>
+              <div style="display:flex; gap:12px; margin-top:28px; flex-wrap:wrap">
+                <span class="pill">Começar →</span>
+                <span class="pill ghost todo">Apresentadores · Data</span>
+              </div>
+            </div>
+            <div class="g2">
+              <div class="glass stat"><b><span data-r07="R07_COM.pct_tritan" data-d="0" data-sign="1">−5</span> a <span data-r07="R07_SEM.pct_tritan" data-d="0" data-sign="1">−9</span>%</b><span>de massa vs. garra Tritan instalada</span><small>R07 com ou sem esqueleto · Orca</small></div>
+              <div class="glass stat"><b><span data-r07="R07_SEM.kg_pa6" data-d="0">93</span>–<span data-r07="R07_COM.kg_pa6" data-d="0">100</span> kg</b><span>máx. numa asa (PA6-CF)</span><small>garra montada · FE</small></div>
+              <div class="glass stat"><b class="ink">−62,6%</b><span>no pico de força com PAD</span><small>modelo de impacto 1D</small></div>
+              <div class="glass stat"><b class="ink">R$ 84.000</b><span>por parada de 45 min</span><small>estimado pelo valor final do produto no varejo</small></div>
+            </div>
+          </div>
+        </section>
+
         <!-- 2 · Tópicos -->
         <section class="slide" data-title="Tópicos">
           <div class="wrap wide split" style="--cols:minmax(0,.8fr) minmax(0,1.4fr)">
@@ -92,6 +113,29 @@
               <li class="glass"><b>05</b><span>Hardware e custos<small>Impressora, bico, fórmulas de custo e produção</small></span></li>
               <li class="glass"><b>06</b><span>Metodologias<small>Kaizen, Lean, 5W2H e Ishikawa</small></span></li>
               <li class="glass"><b>07</b><span>Conclusão<small>Riscos, próximos passos e dados abertos</small></span></li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- Roteiro -->
+        <section class="slide" data-title="Roteiro">
+          <div class="wrap wide split" style="--cols:minmax(0,.9fr) minmax(0,1.3fr)">
+            <div>
+              <span class="kicker">Apresentação</span>
+              <h2>Projeto e <em>integrantes</em></h2>
+              <p class="lead">RedLab · SENAI. Desafio: garra SAMI do robô UR30 que quebra por choque mecânico.</p>
+              <div class="glass card todo" style="margin-top:22px; padding:18px 20px">
+                <p style="margin:0">Integrantes: nome · função (preencher)</p>
+              </div>
+            </div>
+            <ol class="agenda">
+              <li class="glass"><b>01</b><span>Introdução<small>Problema, desperdício, processo produtivo e proposta</small></span></li>
+              <li class="glass"><b>02</b><span>Engenharia de materiais<small>Polímeros da garra e do PAD, giroide, testes e simulações (com e sem esqueleto)</small></span></li>
+              <li class="glass"><b>03</b><span>Hardware de impressão<small>Bico de alta resistência e parâmetros do Orca</small></span></li>
+              <li class="glass"><b>04</b><span>Cálculo de custos<small>Matéria-prima, componentes, fórmulas e taxa de substituição</small></span></li>
+              <li class="glass"><b>05</b><span>Simulação de sistemas<small>Tempos de impressão e teoria das filas</small></span></li>
+              <li class="glass"><b>06</b><span>Metodologias de melhoria<small>Kaizen, Lean, 5W2H e Ishikawa</small></span></li>
+              <li class="glass"><b>07</b><span>Conclusão<small>Custo de oportunidade, riscos e dados abertos no GitHub</small></span></li>
             </ol>
           </div>
         </section>
@@ -125,6 +169,34 @@
               <div class="glass stat sm"><b>R$ <span data-count="84000">84.000</span></b><span>custo de oportunidade</span><small>por parada · estimado</small></div>
             </div>
             <p class="note">Estimativa: o custo de oportunidade é calculado pelo valor final do produto no varejo: é o que a Ajinomoto deixa de produzir enquanto a linha está parada, no cenário de hoje. Cada palete tem 40 caixas e cada caixa tem 12 itens (dados da equipe).</p>
+          </div>
+        </section>
+
+        <!-- Problema -->
+        <section class="slide" data-title="Problema" id="arq-s-intro">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Introdução · Problema</span>
+              <h2>A garra quebra e a linha <em>para</em></h2>
+            </div>
+            <div class="flow">
+              <article class="glass card"><h3>Choque mecânico</h3><p>A garra quebra quando recebe impacto. Na análise, a falha começa entre as camadas, na raiz da flange do robô.</p></article>
+              <article class="glass card"><h3>Troca demorada</h3><p>Substituir a garra exige parada de manutenção de cerca de 45 minutos.</p></article>
+              <article class="glass card"><h3>Desperdício</h3><p>Com a linha parada, caixas deixam de ser produzidas e o custo de oportunidade cresce a cada minuto.</p></article>
+            </div>
+            <div class="glass ticker" id="arq-anim-parada" aria-label="Contador da parada: em 45 minutos a linha perde 280 caixas e R$ 84.000">
+              <span class="t-lbl"><i class="t-dot"></i>Linha parada</span>
+              <b class="t-clock">00:00</b>
+              <div class="t-bar"><i></i></div>
+              <b class="t-rs">R$ 0</b>
+            </div>
+            <div class="g4" style="margin-top:12px">
+              <div class="glass stat sm"><b><span data-count="45">45</span> min</b><span>parada para manutenção</span></div>
+              <div class="glass stat sm"><b class="ink" data-count="280">280</b><span>caixas perdidas</span><small>7 paletes de 40 · 6 caixas/min</small></div>
+              <div class="glass stat sm"><b class="ink"><span data-count="3360">3.360</span> kg</b><span>de produto</span><small>280 caixas × 12 kg</small></div>
+              <div class="glass stat sm"><b>R$ <span data-count="84000">84.000</span></b><span>custo de oportunidade</span><small>estimado pelo valor final do produto no varejo</small></div>
+            </div>
+            <p class="note"><span class="tag eq">dados da equipe</span> Cada palete tem 40 caixas (4 camadas de 10); cada caixa tem 12 itens. A garra instalada (deck do cliente) pesa 2,834 kg e, com duas caixas de 12 kg, chega a 26,834 kg, ou 89% dos 30 kg do UR30.</p>
           </div>
         </section>
 
@@ -216,6 +288,34 @@
               </div>
               <figcaption class="note" style="margin:8px 6px 2px">Os PADs giram, descem e se fecham em volta dos quatro ressaltos da garra, onde ficam os parafusos.</figcaption>
             </figure>
+          </div>
+        </section>
+
+        <!-- Proposta -->
+        <section class="slide" data-title="Proposta">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Introdução · Proposta</span>
+              <h2>PAD de sacrifício + <em>preenchimento</em> otimizado</h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1fr) minmax(0,1.6fr); align-items:start">
+              <article class="glass card">
+                <h3 style="margin-top:0">PAD de sacrifício</h3>
+                <p>Peça de TPU 95A que recebe o choque no lugar da garra. É barata, imprime rápido e é trocada a cada 2 meses (última troca registrada).</p>
+                <div class="g2" style="margin-top:14px">
+                  <div class="glass stat sm"><b>−62,6%</b><span>pico de força</span><small>451 → 169 N · modelo 1D</small></div>
+                  <div class="glass stat sm"><b class="ink">86%</b><span>da energia no PAD</span><small>0,113 de 0,132 J</small></div>
+                </div>
+              </article>
+              <div>
+                <div class="evo">
+                  <article class="glass card"><span class="tag">instalada</span><h3>Tritan · Hexa3D 30%</h3><p><b data-r07="tritan_g" data-d="0">1.577</b> g de peças impressas (estimado)</p></article>
+                  <article class="glass card"><span class="tag eq">proposta inicial</span><h3>PA-CF · TPMS-D 40%</h3><p><b data-r07="TPMSD40.garra_g" data-d="0">1.785</b> g · <b><span data-r07="TPMSD40.pct_tritan" data-d="1" data-sign="1">+13,2</span>%</b> de massa. Mais forte que 30%, porém mais pesada.</p></article>
+                  <article class="glass card win"><span class="tag ok">resultado</span><h3>PA-CF · R07 (com ou sem esqueleto)</h3><p>Com: <b data-r07="R07_COM.garra_g" data-d="0">1.497</b> g · <b><span data-r07="R07_COM.pct_tritan" data-d="1" data-sign="1">−5,0</span>%</b> · <b><span data-r07="R07_COM.kg_pa6" data-d="0">100</span> kg</b> numa asa.<br>Sem: <b data-r07="R07_SEM.garra_g" data-d="0">1.433</b> g · <b><span data-r07="R07_SEM.pct_tritan" data-d="1" data-sign="1">−9,1</span>%</b> · <b><span data-r07="R07_SEM.kg_pa6" data-d="0">93</span> kg</b>.<br>O 40% uniforme aguenta <span data-r07="UNI_40.kg_pa6" data-d="0">76</span> kg. Escolha entre com e sem: em aberto.</p></article>
+                </div>
+                <p class="note">O preenchimento muda só por dentro: as 5 paredes e o contorno externo continuam iguais. Massas do fatiamento no Orca (K1 Max, 1:1). Resistência por FE da garra montada.</p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -331,6 +431,95 @@
                 </article>
             </div>
                 <p class="note" style="margin:8px 0 0"><span class="tag sim">estimativa</span> Modelo simplificado de molas com a garra sem esqueleto; não é ensaio.</p>
+          </div>
+        </section>
+
+        <!-- PAD de sacrifício: especificações e animação do choque -->
+        <section class="slide" data-title="PAD: especificações" id="arq-s-pad">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Desenvolvimento · Componente de desgaste</span>
+              <h2>O PAD apanha <em>no lugar</em> da garra</h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1.1fr) minmax(0,1fr); align-items:start">
+              <figure class="glass card anim-card" style="margin:0; padding:14px 16px">
+                <div class="pad-duo">
+                  <svg viewBox="0 0 260 200" class="pad-svg sem" role="img" aria-label="Sem PAD: o golpe vai direto na garra e aparece uma trinca">
+                    <text x="130" y="18" class="ttl">sem PAD</text>
+                    <rect class="hit" x="95" y="30" width="70" height="40" rx="6" />
+                    <rect class="claw" x="40" y="120" width="180" height="40" rx="10" />
+                    <path class="crack" d="M130 120 l-8 14 l10 6 l-6 16" />
+                    <text x="130" y="188" class="val bad">451 N de pico</text>
+                  </svg>
+                  <svg viewBox="0 0 260 200" class="pad-svg com" role="img" aria-label="Com PAD: o PAD de TPU 95A amassa, absorve 86% da energia e a garra fica intacta">
+                    <text x="130" y="18" class="ttl">com PAD</text>
+                    <rect class="hit" x="95" y="30" width="70" height="40" rx="6" />
+                    <rect class="pad" x="85" y="100" width="90" height="20" rx="6" />
+                    <rect class="claw" x="40" y="120" width="180" height="40" rx="10" />
+                    <text x="130" y="188" class="val ok">169 N de pico (−62,6%)</text>
+                  </svg>
+                </div>
+                <div class="bars-h" style="margin-top:10px">
+                  <div class="bh"><span>Pico sem PAD</span><i style="--v:100%; background:var(--ink-2)"></i><b>451 N</b></div>
+                  <div class="bh"><span>Pico com PAD</span><i style="--v:37.5%; background:var(--s-red)"></i><b>169 N</b></div>
+                  <div class="bh"><span>Energia no PAD</span><i style="--v:86%; background:var(--s-indigo)"></i><b>86%</b></div>
+                </div>
+                <figcaption class="note" style="margin-top:6px"><span class="tag sim">modelo de impacto 1D</span> Animação ilustrativa; os números vêm da simulação.</figcaption>
+              </figure>
+              <div class="glass card" style="padding:14px 16px">
+                <table class="tbl compact">
+                  <tbody>
+                    <tr><td>Material</td><td>TPU 95A (poliuretano termoplástico)</td></tr>
+                    <tr><td>Preço</td><td>R$ 158,00 / kg</td></tr>
+                    <tr><td>Peso por unidade</td><td>32 g</td></tr>
+                    <tr><td>Rendimento</td><td>≈ 31,25 peças / kg</td></tr>
+                    <tr><td>Tempo de impressão</td><td>1h40 a 2 h</td></tr>
+                    <tr><td>Função</td><td>absorver o choque e proteger a garra</td></tr>
+                    <tr><td>Troca</td><td>a cada 2 meses (última registrada)</td></tr>
+                    <tr><td>Preenchimento</td><td>giroide 40% · <span data-r07="pads.paredes">3</span> paredes</td></tr>
+                  </tbody>
+                </table>
+                <p class="note"><span class="tag eq">especificação: equipe</span> Três números de massa precisam ser fechados: 32 g por peça (especificação), 62 g para 8 peças (conta de custo) e <span data-r07="pads.peca_g" data-d="1">93,1</span> g para 8 no fatiamento do Orca. <b>Pesar um PAD impresso</b> resolve.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7b · Vídeo do impacto (HyperFrames, modelo R03) -->
+        <section class="slide" data-title="Impacto em vídeo">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Testes de Bancada · Impacto</span>
+              <h2>O golpe em <em>câmera lenta</em></h2>
+            </div>
+            <div class="split vid-split" style="--cols:minmax(0,1.5fr) minmax(0,1fr); align-items:start">
+              <figure class="glass media" style="margin:0; background:#f2f6f8">
+                <video id="arq-video-impacto" src="assets/video/impacto_pad_r03.mp4" poster="assets/video/impacto_pad_r03_poster.jpg"
+                       autoplay muted loop playsinline preload="auto" disablepictureinpicture
+                       style="display:block; width:100%; height:auto; max-height:56vh; aspect-ratio:16/9; object-fit:contain"
+                       aria-label="Animação: esfera de aço atinge o PAD laranja no recorte A1 da garra; gráfico mostra força sem e com PAD"></video>
+                <figcaption>10 s de vídeo = 7 ms físicos · deslocamentos ampliados 2× para leitura</figcaption>
+              </figure>
+              <div style="display:grid; gap:10px">
+                <div class="glass card" style="padding:10px 16px">
+                  <table class="tbl vid-tbl">
+                    <tbody>
+                      <tr><td>Impactor</td><td>esfera de aço R20 · 263 g</td></tr>
+                      <tr><td>Velocidade</td><td>1 m/s · 0,132 J</td></tr>
+                      <tr><td>PAD</td><td>TPU 95A · 40% · 6,3 mm</td></tr>
+                      <tr><td>Garra (seção)</td><td>PA-CF Hexa3D 15%</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="g2 vid-stats">
+                  <div class="glass stat sm"><b>169 N</b><span>pico com PAD</span><small>451 N sem PAD · −62,6%</small></div>
+                  <div class="glass stat sm"><b class="ink">4,90 ms</b><span>contato com PAD</span><small>1,83 ms sem PAD</small></div>
+                  <div class="glass stat sm"><b class="ink">1,34 mm</b><span>compressão do PAD</span><small>21% da espessura</small></div>
+                  <div class="glass stat sm"><b class="ink">0,113 J</b><span>energia no PAD</span><small>86% de 0,132 J</small></div>
+                </div>
+              </div>
+            </div>
+            <p class="note">HyperFrames sobre os dados do modelo 1D R03 (molas em série, sem amortecimento). Não é FEA nem ensaio; garra do modelo: Hexa3D 15% (atual: TPMS-D zonal R06).</p>
           </div>
         </section>
         <!-- Materiais -->
@@ -1157,6 +1346,47 @@
           </div>
         </section>
 
+        <!-- Custos -->
+        <section class="slide" data-title="Custos detalhados">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Desenvolvimento · Custos</span>
+              <h2>Quanto custa <em>fazer</em></h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1.3fr) minmax(0,1fr); align-items:start">
+              <div class="glass card" style="padding:16px 18px">
+                <table class="tbl compact">
+                  <thead><tr><th>Item</th><th>Base</th><th>Custo</th></tr></thead>
+                  <tbody>
+                    <tr class="grp"><td colspan="3">Garra em PA-CF (R$ 258/kg × filamento do Orca) · toque numa opção</td></tr>
+                    <tr class="pick" data-k="R07_COM" tabindex="0" role="button" aria-pressed="false"><td><span class="radio"></span>R07 com esqueleto</td><td><span data-r07="R07_COM.fil_g" data-d="0">1.809</span> g</td><td>R$ <span data-r07="R07_COM.custo_rs" data-d="2">466,77</span></td></tr>
+                    <tr class="pick" data-k="R07_SEM" tabindex="0" role="button" aria-pressed="false"><td><span class="radio"></span>R07 sem esqueleto</td><td><span data-r07="R07_SEM.fil_g" data-d="0">1.745</span> g</td><td>R$ <span data-r07="R07_SEM.custo_rs" data-d="2">450,08</span></td></tr>
+                    <tr class="pick" data-k="TPMSD40" tabindex="0" role="button" aria-pressed="false"><td><span class="radio"></span>TPMS-D 40% (proposta inicial)</td><td><span data-r07="TPMSD40.fil_g" data-d="0">2.097</span> g</td><td>R$ <span data-r07="TPMSD40.custo_rs" data-d="2">540,92</span></td></tr>
+                    <tr class="grp"><td colspan="3">PADs em TPU 95A (R$ 158/kg)</td></tr>
+                    <tr><td>Conta da equipe</td><td>62 g / 8 peças</td><td>R$ 1,22/un · R$ 9,76</td></tr>
+                    <tr><td>Fatiamento Orca (só peças)</td><td><span data-r07="pads.peca_g" data-d="1">93,1</span> g / 8</td><td>R$ <span data-r07="pads.custo_un_peca" data-d="2">1,84</span>/un</td></tr>
+                    <tr><td>Fatiamento Orca (com suportes)</td><td><span data-r07="pads.total_g" data-d="1">139,0</span> g / 8</td><td>R$ <span data-r07="pads.custo_un_total" data-d="2">2,75</span>/un</td></tr>
+                    <tr class="grp"><td colspan="3">Componentes</td></tr>
+                    <tr><td>Bico MK8 endurecido</td><td>1 un</td><td>R$ 23,50</td></tr>
+                    <tr><td>Garra antiga · Tritan</td><td>custo informado</td><td>R$ 250,00</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div style="display:grid; gap:14px">
+                <div class="glass stat" id="custo-total" aria-live="polite">
+                  <b id="custo-val">R$ 496 a 512</b>
+                  <span id="custo-rot">garra R07 (sem ou com esqueleto) + 8 PADs + bico</span>
+                  <small id="custo-conta">escolha uma opção na tabela para ver a conta</small>
+                  <div class="cost-bar" id="custo-bar" aria-hidden="true"><i class="c-garra"></i><i class="c-pad"></i><i class="c-bico"></i></div>
+                  <div class="legend" style="margin:8px 0 0"><span><i style="background:var(--ink-2)"></i>garra</span><span><i style="background:var(--s-indigo)"></i>8 PADs</span><span><i style="background:#c27c0e"></i>bico</span></div>
+                </div>
+                <div class="glass stat sm"><b class="ink">R$ 84.000</b><span>custo de uma parada de 45 min (estimado pelo valor final do produto no varejo)</span><small id="custo-paradas">paga 164 a 170 garras completas</small></div>
+                <p class="note" style="margin:0"><span class="tag eq">preços: equipe</span> <span class="tag sim">gramas: Orca</span> A conta da equipe (62 g para 8 PADs) e o fatiamento (93,1 g sem suportes) diferem. Vale pesar um PAD impresso para fechar o número.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- ROI: gasto acumulado com material, Tritan × SAI (valores de exemplo) -->
         <section class="slide" data-title="Retorno (ROI)" id="s-roi">
           <div class="wrap wide">
@@ -1380,238 +1610,6 @@
           </div>
         </section>
 
-        <!-- Arquivo desocultado para revisão: slides retirados no remake (no fim da apresentação) -->
-        <!-- Capa -->
-        <section class="slide arq" data-title="Arquivo · SENAI" id="arq-s-capa">
-          <div class="wrap wide split" style="--cols:minmax(0,1.1fr) minmax(0,1fr)">
-            <div>
-              <span class="kicker">SENAI · RedLab</span>
-              <h1>Garra <em>SAMI</em> mais leve e mais forte</h1>
-              <p class="lead">PAD de sacrifício em TPU 95A para absorver o choque e preenchimento interno otimizado em PA-CF para a garra de ventosas do robô UR30.</p>
-              <div style="display:flex; gap:12px; margin-top:28px; flex-wrap:wrap">
-                <span class="pill">Começar →</span>
-                <span class="pill ghost todo">Apresentadores · Data</span>
-              </div>
-            </div>
-            <div class="g2">
-              <div class="glass stat"><b><span data-r07="R07_COM.pct_tritan" data-d="0" data-sign="1">−5</span> a <span data-r07="R07_SEM.pct_tritan" data-d="0" data-sign="1">−9</span>%</b><span>de massa vs. garra Tritan instalada</span><small>R07 com ou sem esqueleto · Orca</small></div>
-              <div class="glass stat"><b><span data-r07="R07_SEM.kg_pa6" data-d="0">93</span>–<span data-r07="R07_COM.kg_pa6" data-d="0">100</span> kg</b><span>máx. numa asa (PA6-CF)</span><small>garra montada · FE</small></div>
-              <div class="glass stat"><b class="ink">−62,6%</b><span>no pico de força com PAD</span><small>modelo de impacto 1D</small></div>
-              <div class="glass stat"><b class="ink">R$ 84.000</b><span>perdidos por parada</span><small>dados da equipe</small></div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Roteiro -->
-        <section class="slide arq" data-title="Arquivo · Roteiro">
-          <div class="wrap wide split" style="--cols:minmax(0,.9fr) minmax(0,1.3fr)">
-            <div>
-              <span class="kicker">Apresentação</span>
-              <h2>Projeto e <em>integrantes</em></h2>
-              <p class="lead">RedLab · SENAI. Desafio: garra SAMI do robô UR30 que quebra por choque mecânico.</p>
-              <div class="glass card todo" style="margin-top:22px; padding:18px 20px">
-                <p style="margin:0">Integrantes: nome · função (preencher)</p>
-              </div>
-            </div>
-            <ol class="agenda">
-              <li class="glass"><b>01</b><span>Introdução<small>Problema, desperdício, processo produtivo e proposta</small></span></li>
-              <li class="glass"><b>02</b><span>Engenharia de materiais<small>Polímeros da garra e do PAD, giroide, testes e simulações (com e sem esqueleto)</small></span></li>
-              <li class="glass"><b>03</b><span>Hardware de impressão<small>Bico de alta resistência e parâmetros do Orca</small></span></li>
-              <li class="glass"><b>04</b><span>Cálculo de custos<small>Matéria-prima, componentes, fórmulas e taxa de substituição</small></span></li>
-              <li class="glass"><b>05</b><span>Simulação de sistemas<small>Tempos de impressão e teoria das filas</small></span></li>
-              <li class="glass"><b>06</b><span>Metodologias de melhoria<small>Kaizen, Lean, 5W2H e Ishikawa</small></span></li>
-              <li class="glass"><b>07</b><span>Conclusão<small>Custo de oportunidade, riscos e dados abertos no GitHub</small></span></li>
-            </ol>
-          </div>
-        </section>
-
-        <!-- Problema -->
-        <section class="slide arq" data-title="Arquivo · Problema" id="arq-s-intro">
-          <div class="wrap wide">
-            <div class="s-head compact">
-              <span class="kicker">Introdução · Problema</span>
-              <h2>A garra quebra e a linha <em>para</em></h2>
-            </div>
-            <div class="flow">
-              <article class="glass card"><h3>Choque mecânico</h3><p>A garra quebra quando recebe impacto. Na análise, a falha começa entre as camadas, na raiz da flange do robô.</p></article>
-              <article class="glass card"><h3>Troca demorada</h3><p>Substituir a garra exige parada de manutenção de cerca de 45 minutos.</p></article>
-              <article class="glass card"><h3>Desperdício</h3><p>Com a linha parada, caixas deixam de ser produzidas e o custo de oportunidade cresce a cada minuto.</p></article>
-            </div>
-            <div class="glass ticker" id="arq-anim-parada" aria-label="Contador da parada: em 45 minutos a linha perde 280 caixas e R$ 84.000">
-              <span class="t-lbl"><i class="t-dot"></i>Linha parada</span>
-              <b class="t-clock">00:00</b>
-              <div class="t-bar"><i></i></div>
-              <b class="t-rs">R$ 0</b>
-            </div>
-            <div class="g4" style="margin-top:12px">
-              <div class="glass stat sm"><b><span data-count="45">45</span> min</b><span>parada para manutenção</span></div>
-              <div class="glass stat sm"><b class="ink" data-count="280">280</b><span>caixas perdidas</span><small>7 paletes de 40 · 6 caixas/min</small></div>
-              <div class="glass stat sm"><b class="ink"><span data-count="3360">3.360</span> kg</b><span>de produto</span><small>280 caixas × 12 kg</small></div>
-              <div class="glass stat sm"><b>R$ <span data-count="84000">84.000</span></b><span>desperdiçados</span><small>preço de mercado</small></div>
-            </div>
-            <p class="note"><span class="tag eq">dados da equipe</span> Cada palete tem 40 caixas (4 camadas de 10); cada caixa tem 12 itens. A garra instalada (deck do cliente) pesa 2,834 kg e, com duas caixas de 12 kg, chega a 26,834 kg, ou 89% dos 30 kg do UR30.</p>
-          </div>
-        </section>
-
-        <!-- Proposta -->
-        <section class="slide arq" data-title="Arquivo · Proposta">
-          <div class="wrap wide">
-            <div class="s-head compact">
-              <span class="kicker">Introdução · Proposta</span>
-              <h2>PAD de sacrifício + <em>preenchimento</em> otimizado</h2>
-            </div>
-            <div class="split" style="--cols:minmax(0,1fr) minmax(0,1.6fr); align-items:start">
-              <article class="glass card">
-                <h3 style="margin-top:0">PAD de sacrifício</h3>
-                <p>Peça de TPU 95A que recebe o choque no lugar da garra. É barata, imprime rápido e é trocada a cada 2 meses (última troca registrada).</p>
-                <div class="g2" style="margin-top:14px">
-                  <div class="glass stat sm"><b>−62,6%</b><span>pico de força</span><small>451 → 169 N · modelo 1D</small></div>
-                  <div class="glass stat sm"><b class="ink">86%</b><span>da energia no PAD</span><small>0,113 de 0,132 J</small></div>
-                </div>
-              </article>
-              <div>
-                <div class="evo">
-                  <article class="glass card"><span class="tag">instalada</span><h3>Tritan · Hexa3D 30%</h3><p><b data-r07="tritan_g" data-d="0">1.577</b> g de peças impressas (estimado)</p></article>
-                  <article class="glass card"><span class="tag eq">proposta inicial</span><h3>PA-CF · TPMS-D 40%</h3><p><b data-r07="TPMSD40.garra_g" data-d="0">1.785</b> g · <b><span data-r07="TPMSD40.pct_tritan" data-d="1" data-sign="1">+13,2</span>%</b> de massa. Mais forte que 30%, porém mais pesada.</p></article>
-                  <article class="glass card win"><span class="tag ok">resultado</span><h3>PA-CF · R07 (com ou sem esqueleto)</h3><p>Com: <b data-r07="R07_COM.garra_g" data-d="0">1.497</b> g · <b><span data-r07="R07_COM.pct_tritan" data-d="1" data-sign="1">−5,0</span>%</b> · <b><span data-r07="R07_COM.kg_pa6" data-d="0">100</span> kg</b> numa asa.<br>Sem: <b data-r07="R07_SEM.garra_g" data-d="0">1.433</b> g · <b><span data-r07="R07_SEM.pct_tritan" data-d="1" data-sign="1">−9,1</span>%</b> · <b><span data-r07="R07_SEM.kg_pa6" data-d="0">93</span> kg</b>.<br>O 40% uniforme aguenta <span data-r07="UNI_40.kg_pa6" data-d="0">76</span> kg. Escolha entre com e sem: em aberto.</p></article>
-                </div>
-                <p class="note">O preenchimento muda só por dentro: as 5 paredes e o contorno externo continuam iguais. Massas do fatiamento no Orca (K1 Max, 1:1). Resistência por FE da garra montada.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- PAD de sacrifício: especificações e animação do choque -->
-        <section class="slide arq" data-title="Arquivo · PAD de sacrifício" id="arq-s-pad">
-          <div class="wrap wide">
-            <div class="s-head compact">
-              <span class="kicker">Desenvolvimento · Componente de desgaste</span>
-              <h2>O PAD apanha <em>no lugar</em> da garra</h2>
-            </div>
-            <div class="split" style="--cols:minmax(0,1.1fr) minmax(0,1fr); align-items:start">
-              <figure class="glass card anim-card" style="margin:0; padding:14px 16px">
-                <div class="pad-duo">
-                  <svg viewBox="0 0 260 200" class="pad-svg sem" role="img" aria-label="Sem PAD: o golpe vai direto na garra e aparece uma trinca">
-                    <text x="130" y="18" class="ttl">sem PAD</text>
-                    <rect class="hit" x="95" y="30" width="70" height="40" rx="6" />
-                    <rect class="claw" x="40" y="120" width="180" height="40" rx="10" />
-                    <path class="crack" d="M130 120 l-8 14 l10 6 l-6 16" />
-                    <text x="130" y="188" class="val bad">451 N de pico</text>
-                  </svg>
-                  <svg viewBox="0 0 260 200" class="pad-svg com" role="img" aria-label="Com PAD: o PAD de TPU 95A amassa, absorve 86% da energia e a garra fica intacta">
-                    <text x="130" y="18" class="ttl">com PAD</text>
-                    <rect class="hit" x="95" y="30" width="70" height="40" rx="6" />
-                    <rect class="pad" x="85" y="100" width="90" height="20" rx="6" />
-                    <rect class="claw" x="40" y="120" width="180" height="40" rx="10" />
-                    <text x="130" y="188" class="val ok">169 N de pico (−62,6%)</text>
-                  </svg>
-                </div>
-                <div class="bars-h" style="margin-top:10px">
-                  <div class="bh"><span>Pico sem PAD</span><i style="--v:100%; background:var(--ink-2)"></i><b>451 N</b></div>
-                  <div class="bh"><span>Pico com PAD</span><i style="--v:37.5%; background:var(--s-red)"></i><b>169 N</b></div>
-                  <div class="bh"><span>Energia no PAD</span><i style="--v:86%; background:var(--s-indigo)"></i><b>86%</b></div>
-                </div>
-                <figcaption class="note" style="margin-top:6px"><span class="tag sim">modelo de impacto 1D</span> Animação ilustrativa; os números vêm da simulação.</figcaption>
-              </figure>
-              <div class="glass card" style="padding:14px 16px">
-                <table class="tbl compact">
-                  <tbody>
-                    <tr><td>Material</td><td>TPU 95A (poliuretano termoplástico)</td></tr>
-                    <tr><td>Preço</td><td>R$ 158,00 / kg</td></tr>
-                    <tr><td>Peso por unidade</td><td>32 g</td></tr>
-                    <tr><td>Rendimento</td><td>≈ 31,25 peças / kg</td></tr>
-                    <tr><td>Tempo de impressão</td><td>1h40 a 2 h</td></tr>
-                    <tr><td>Função</td><td>absorver o choque e proteger a garra</td></tr>
-                    <tr><td>Troca</td><td>a cada 2 meses (última registrada)</td></tr>
-                    <tr><td>Preenchimento</td><td>giroide 40% · <span data-r07="pads.paredes">3</span> paredes</td></tr>
-                  </tbody>
-                </table>
-                <p class="note"><span class="tag eq">especificação: equipe</span> Três números de massa precisam ser fechados: 32 g por peça (especificação), 62 g para 8 peças (conta de custo) e <span data-r07="pads.peca_g" data-d="1">93,1</span> g para 8 no fatiamento do Orca. <b>Pesar um PAD impresso</b> resolve.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- 7b · Vídeo do impacto (HyperFrames, modelo R03) -->
-        <section class="slide arq" data-title="Arquivo · Impacto em vídeo">
-          <div class="wrap wide">
-            <div class="s-head compact">
-              <span class="kicker">Testes de Bancada · Impacto</span>
-              <h2>O golpe em <em>câmera lenta</em></h2>
-            </div>
-            <div class="split vid-split" style="--cols:minmax(0,1.5fr) minmax(0,1fr); align-items:start">
-              <figure class="glass media" style="margin:0; background:#f2f6f8">
-                <video id="arq-video-impacto" src="assets/video/impacto_pad_r03.mp4" poster="assets/video/impacto_pad_r03_poster.jpg"
-                       autoplay muted loop playsinline preload="auto" disablepictureinpicture
-                       style="display:block; width:100%; height:auto; max-height:56vh; aspect-ratio:16/9; object-fit:contain"
-                       aria-label="Animação: esfera de aço atinge o PAD laranja no recorte A1 da garra; gráfico mostra força sem e com PAD"></video>
-                <figcaption>10 s de vídeo = 7 ms físicos · deslocamentos ampliados 2× para leitura</figcaption>
-              </figure>
-              <div style="display:grid; gap:10px">
-                <div class="glass card" style="padding:10px 16px">
-                  <table class="tbl vid-tbl">
-                    <tbody>
-                      <tr><td>Impactor</td><td>esfera de aço R20 · 263 g</td></tr>
-                      <tr><td>Velocidade</td><td>1 m/s · 0,132 J</td></tr>
-                      <tr><td>PAD</td><td>TPU 95A · 40% · 6,3 mm</td></tr>
-                      <tr><td>Garra (seção)</td><td>PA-CF Hexa3D 15%</td></tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="g2 vid-stats">
-                  <div class="glass stat sm"><b>169 N</b><span>pico com PAD</span><small>451 N sem PAD · −62,6%</small></div>
-                  <div class="glass stat sm"><b class="ink">4,90 ms</b><span>contato com PAD</span><small>1,83 ms sem PAD</small></div>
-                  <div class="glass stat sm"><b class="ink">1,34 mm</b><span>compressão do PAD</span><small>21% da espessura</small></div>
-                  <div class="glass stat sm"><b class="ink">0,113 J</b><span>energia no PAD</span><small>86% de 0,132 J</small></div>
-                </div>
-              </div>
-            </div>
-            <p class="note">HyperFrames sobre os dados do modelo 1D R03 (molas em série, sem amortecimento). Não é FEA nem ensaio; garra do modelo: Hexa3D 15% (atual: TPMS-D zonal R06).</p>
-          </div>
-        </section>
-
-        <!-- Custos -->
-        <section class="slide arq" data-title="Arquivo · Custos">
-          <div class="wrap wide">
-            <div class="s-head compact">
-              <span class="kicker">Desenvolvimento · Custos</span>
-              <h2>Quanto custa <em>fazer</em></h2>
-            </div>
-            <div class="split" style="--cols:minmax(0,1.3fr) minmax(0,1fr); align-items:start">
-              <div class="glass card" style="padding:16px 18px">
-                <table class="tbl compact">
-                  <thead><tr><th>Item</th><th>Base</th><th>Custo</th></tr></thead>
-                  <tbody>
-                    <tr class="grp"><td colspan="3">Garra em PA-CF (R$ 258/kg × filamento do Orca) · toque numa opção</td></tr>
-                    <tr class="pick" data-k="R07_COM" tabindex="0" role="button" aria-pressed="false"><td><span class="radio"></span>R07 com esqueleto</td><td><span data-r07="R07_COM.fil_g" data-d="0">1.809</span> g</td><td>R$ <span data-r07="R07_COM.custo_rs" data-d="2">466,77</span></td></tr>
-                    <tr class="pick" data-k="R07_SEM" tabindex="0" role="button" aria-pressed="false"><td><span class="radio"></span>R07 sem esqueleto</td><td><span data-r07="R07_SEM.fil_g" data-d="0">1.745</span> g</td><td>R$ <span data-r07="R07_SEM.custo_rs" data-d="2">450,08</span></td></tr>
-                    <tr class="pick" data-k="TPMSD40" tabindex="0" role="button" aria-pressed="false"><td><span class="radio"></span>TPMS-D 40% (proposta inicial)</td><td><span data-r07="TPMSD40.fil_g" data-d="0">2.097</span> g</td><td>R$ <span data-r07="TPMSD40.custo_rs" data-d="2">540,92</span></td></tr>
-                    <tr class="grp"><td colspan="3">PADs em TPU 95A (R$ 158/kg)</td></tr>
-                    <tr><td>Conta da equipe</td><td>62 g / 8 peças</td><td>R$ 1,22/un · R$ 9,76</td></tr>
-                    <tr><td>Fatiamento Orca (só peças)</td><td><span data-r07="pads.peca_g" data-d="1">93,1</span> g / 8</td><td>R$ <span data-r07="pads.custo_un_peca" data-d="2">1,84</span>/un</td></tr>
-                    <tr><td>Fatiamento Orca (com suportes)</td><td><span data-r07="pads.total_g" data-d="1">139,0</span> g / 8</td><td>R$ <span data-r07="pads.custo_un_total" data-d="2">2,75</span>/un</td></tr>
-                    <tr class="grp"><td colspan="3">Componentes</td></tr>
-                    <tr><td>Bico MK8 endurecido</td><td>1 un</td><td>R$ 23,50</td></tr>
-                    <tr><td>Garra antiga · Tritan</td><td>custo informado</td><td>R$ 250,00</td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <div style="display:grid; gap:14px">
-                <div class="glass stat" id="custo-total" aria-live="polite">
-                  <b id="custo-val">R$ 496 a 512</b>
-                  <span id="custo-rot">garra R07 (sem ou com esqueleto) + 8 PADs + bico</span>
-                  <small id="custo-conta">escolha uma opção na tabela para ver a conta</small>
-                  <div class="cost-bar" id="custo-bar" aria-hidden="true"><i class="c-garra"></i><i class="c-pad"></i><i class="c-bico"></i></div>
-                  <div class="legend" style="margin:8px 0 0"><span><i style="background:var(--ink-2)"></i>garra</span><span><i style="background:var(--s-indigo)"></i>8 PADs</span><span><i style="background:#c27c0e"></i>bico</span></div>
-                </div>
-                <div class="glass stat sm"><b class="ink">R$ 84.000</b><span>custo de uma parada de 45 min</span><small id="custo-paradas">paga 164 a 170 garras completas</small></div>
-                <p class="note" style="margin:0"><span class="tag eq">preços: equipe</span> <span class="tag sim">gramas: Orca</span> A conta da equipe (62 g para 8 PADs) e o fatiamento (93,1 g sem suportes) diferem. Vale pesar um PAD impresso para fechar o número.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-
       </div>
 
       <!-- Pandinha RedLab: caminha na capa e aponta o QR -->
@@ -1665,15 +1663,15 @@
     <figure><img src="" alt=""><figcaption></figcaption></figure>
   </dialog>
 
-  <script src="assets/js/main.js?v=r07m"></script>
-  <script src="assets/js/bancada-dados.js?v=r07m"></script>
-  <script src="assets/js/bancada.js?v=r07m"></script>
-  <script src="assets/js/r07-dados.js?v=r07m"></script>
-  <script src="assets/js/r07.js?v=r07m"></script>
-  <script src="assets/js/conjunto-dados.js?v=r07m"></script>
-  <script src="assets/js/conjunto.js?v=r07m"></script>
-  <script src="assets/js/sai.js?v=r07m"></script>
-  <script src="assets/js/anim.js?v=r07m"></script>
-  <script type="module" src="assets/js/viewer3d.js?v=r07m"></script>
+  <script src="assets/js/main.js?v=r07n"></script>
+  <script src="assets/js/bancada-dados.js?v=r07n"></script>
+  <script src="assets/js/bancada.js?v=r07n"></script>
+  <script src="assets/js/r07-dados.js?v=r07n"></script>
+  <script src="assets/js/r07.js?v=r07n"></script>
+  <script src="assets/js/conjunto-dados.js?v=r07n"></script>
+  <script src="assets/js/conjunto.js?v=r07n"></script>
+  <script src="assets/js/sai.js?v=r07n"></script>
+  <script src="assets/js/anim.js?v=r07n"></script>
+  <script type="module" src="assets/js/viewer3d.js?v=r07n"></script>
 </body>
 </html>
