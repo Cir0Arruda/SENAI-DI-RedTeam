@@ -789,3 +789,4 @@ dialog.qr-big .nav-btn { position: absolute; top: 12px; right: 12px; }
   .logos .lg-fca { height: 32px; }
   .logos .lg-aji { height: 36px; }
 }
+.logos.logos-end { margin: 48px auto 0; justify-content: center; }
