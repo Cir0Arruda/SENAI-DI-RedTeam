@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=r07j">
+  <link rel="stylesheet" href="assets/css/style.css?v=r07l">
   <script type="importmap">
     { "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
@@ -294,26 +294,29 @@
               <span class="kicker">Projeto SAI · PAD de sacrifício</span>
               <h2>O PAD apanha <em>no lugar</em> da garra</h2>
             </div>
-            <div class="split" style="--cols:minmax(0,1.3fr) minmax(0,1fr); align-items:start">
-              <div style="display:grid; gap:12px">
-                <figure class="glass media pad-video" style="margin:0; background:#f2f6fa">
-                  <div class="pv-wrap">
+            <div class="split" style="--cols:minmax(0,1.75fr) minmax(0,1fr); align-items:stretch">
+              <figure class="glass media pad-video" style="margin:0; background:#f2f6fa">
+                  <div class="pv-grid">
                     <video id="video-impacto" src="assets/video/pad_impacto_limpo.mp4" poster="assets/video/pad_impacto_limpo_poster.jpg"
                            autoplay muted loop playsinline preload="auto" disablepictureinpicture
-                           aria-label="Animação: uma esfera de aço bate no PAD laranja que envolve o ressalto da garra; ao lado, a força sem PAD forma um pico alto e estreito e com PAD fica baixa e espalhada no tempo"></video>
-                    <div class="pv-legend" aria-hidden="true">
-                      <span><i style="background:#1d3550"></i>sem PAD</span>
-                      <span><i style="background:#d4691c"></i>com PAD</span>
-                      <em>força que chega à garra</em>
+                           aria-label="Animação: uma esfera de aço bate no PAD laranja que envolve o ressalto da garra"></video>
+                    <div class="pv-chart" id="pv-chart" role="img" aria-label="Gráfico animado junto com o vídeo: força que chega à garra ao longo do golpe; sem PAD o pico é de 450,9 N em 0,9 ms, com PAD fica em 168,5 N, 63% menor, e o golpe dura mais">
+                      <div class="pv-head"><b>Força que chega à garra</b>
+                        <span class="legend" style="margin:0"><span><i style="background:#5b5bd6"></i>sem PAD</span><span><i style="background:#e5232f"></i>com PAD</span></span>
+                      </div>
+                      <div class="pv-svg"></div>
+                      <div class="pv-read" id="pv-read" aria-hidden="true">&nbsp;</div>
                     </div>
                   </div>
                 </figure>
+              <div style="display:grid; gap:12px; align-content:start">
+                <div class="glass stat pad-hero"><b>−63%</b><span>na força que chega à garra</span><small>mesma batida, com e sem PAD</small></div>
                 <div class="glass card" style="padding:14px 16px">
                   <p style="margin:0">O PAD é um anel de TPU 95A, uma borracha dura impressa, que abraça cada ressalto da garra: é ali que ficam os parafusos e onde a trinca começava. Quando algo bate, <b>ele amassa primeiro</b> e espalha o golpe no tempo, então a força que chega à garra cai para pouco mais de um terço. Se ele estragar, troca-se só o PAD, que é barato e imprime rápido.</p>
                 </div>
               </div>
-              <div style="display:grid; gap:12px">
-                <div class="glass stat pad-hero"><b>−63%</b><span>na força que chega à garra</span><small>mesma batida, com e sem PAD</small></div>
+            </div>
+            <div class="g2 pad-lims" style="margin-top:12px">
                 <article class="glass card lim ok">
                   <span class="tag ok">o PAD se sacrifica, a garra fica inteira</span>
                   <b class="lim-n">≈ 240 N</b>
@@ -326,9 +329,8 @@
                   <p>É a força que quebra a garra sem esqueleto, com o PAD já esmagado.</p>
                   <p class="lim-a">É como <b>dois adultos (≈ 140 kg)</b> em pé sobre esse ponto. Com o PAD, a batida precisa ter <b>2,2 vezes mais energia</b>: um peso de 1 kg caindo de 27 cm, contra 12 cm sem PAD.</p>
                 </article>
-                <p class="note" style="margin:0"><span class="tag sim">estimativa</span> Modelo simplificado de molas com a garra sem esqueleto; não é ensaio.</p>
-              </div>
             </div>
+                <p class="note" style="margin:8px 0 0"><span class="tag sim">estimativa</span> Modelo simplificado de molas com a garra sem esqueleto; não é ensaio.</p>
           </div>
         </section>
         <!-- Materiais -->
@@ -373,27 +375,41 @@
           </div>
         </section>
 
-        <!-- Padrão giroide: animação de um corte se movendo -->
+        <!-- Padrão giroide: garra 25% e PAD 40% lado a lado + onde ele está no SAI -->
         <section class="slide" data-title="Giroide" id="s-giroide">
-          <div class="wrap wide split" style="--cols:minmax(0,1fr) minmax(0,1.1fr)">
+          <div class="wrap wide split" style="--cols:minmax(0,1.05fr) minmax(0,1fr); align-items:center">
             <figure class="glass card anim-card" style="margin:0; padding:14px">
-              <canvas id="anim-giroide" width="360" height="360" role="img" aria-label="Animação: corte do preenchimento giroide subindo camada a camada; as paredes mudam de forma e se cruzam em todas as direções"></canvas>
-              <div class="seg" role="tablist" aria-label="Densidade do giroide" id="giroide-dens" style="margin-top:10px">
-                <button class="on" data-t="0.25">25% · garra</button>
-                <button data-t="0.40">40% · PAD</button>
+              <div class="gir-duo">
+                <div class="gir-cell">
+                  <canvas class="giroide" data-thr="0.39" data-rgb="229,35,47" width="320" height="320" role="img" aria-label="Animação: corte do giroide 25% da garra subindo camada a camada; paredes finas que mudam de forma e se cruzam"></canvas>
+                  <span><b>Garra</b> · giroide 25%</span>
+                </div>
+                <div class="gir-cell">
+                  <canvas class="giroide" data-thr="0.62" data-rgb="91,91,214" width="320" height="320" role="img" aria-label="Animação: corte do giroide 40% do PAD subindo camada a camada; paredes mais grossas, com menos espaço vazio"></canvas>
+                  <span><b>PAD</b> · giroide 40%</span>
+                </div>
               </div>
-              <figcaption class="note" style="margin-top:8px">Cada quadro é uma camada. A superfície é sen x·cos y + sen y·cos z + sen z·cos x = 0, a mesma do Orca. Altura: <b id="giroide-z">0,0</b> mm.</figcaption>
+              <figcaption class="note" style="margin-top:10px">Os dois cortes sobem juntos, camada por camada, como a impressora faz. A superfície é sen x·cos y + sen y·cos z + sen z·cos x = 0, a mesma do Orca. Altura: <b id="giroide-z">0,0</b> mm.</figcaption>
             </figure>
             <div>
-              <span class="kicker">Desenvolvimento · Padrão de preenchimento</span>
-              <h2>Por que <em>giroide</em></h2>
-              <ul class="adv">
-                <li class="glass"><b>01</b><span>Distribui a carga do impacto e a pressão em <b>todas as direções</b>, sem plano fraco.</span></li>
-                <li class="glass"><b>02</b><span>Reduz bastante o <b>peso</b> da estrutura.</span></li>
-                <li class="glass"><b>03</b><span>Mantém alta <b>resistência</b> mesmo com preenchimento baixo (20% a 25%).</span></li>
-                <li class="glass"><b>04</b><span>Imprime mais <b>rápido</b>: a trajetória é contínua.</span></li>
+              <span class="kicker">Projeto SAI · Padrão de preenchimento</span>
+              <h2>Giroide: o <em>miolo</em> do SAI</h2>
+              <ul class="adv gir-adv">
+                <li class="glass"><b>01</b><span>Espalha a carga e o impacto em <b>todas as direções</b>, sem plano fraco.</span></li>
+                <li class="glass"><b>02</b><span>Deixa a peça <b>leve</b> e ainda <b>resistente</b> com pouco material.</span></li>
+                <li class="glass"><b>03</b><span>Imprime <b>rápido</b>: a trajetória do bico é contínua.</span></li>
               </ul>
-              <p class="note">Na garra, o giroide de 25% é a base do R07; as zonas de reforço só existem na versão com esqueleto. No PAD, o giroide é de 40%.</p>
+              <div class="glass card" style="padding:12px 16px; margin-top:12px">
+                <h3 style="margin:0 0 6px; font-size:16px">Onde ele está no SAI</h3>
+                <table class="tbl compact">
+                  <tbody>
+                    <tr><td><b>Garra superior</b></td><td>giroide <b>25%</b>, sem esqueleto, com reforço nos furos (100%), no colar (55%), nos ressaltos (35%) e no assento (20%)</td></tr>
+                    <tr><td><b>Garras inferiores</b></td><td>giroide <b>20%</b>: trabalham bem abaixo do limite</td></tr>
+                    <tr><td><b>PAD</b></td><td>giroide <b>40%</b> em TPU 95A, 3 paredes: amassa por igual e devolve a forma</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="note">Na garra o giroide leva a carga com o mínimo de peso; no PAD o giroide mais denso vira uma mola que espalha o golpe no tempo. O exterior não muda: 5 paredes em volta de tudo.</p>
             </div>
           </div>
         </section>
@@ -1090,44 +1106,97 @@
           </div>
         </section>
 
-        <!-- Custos -->
-        <section class="slide" data-title="Custos">
+        <!-- Custos: garra SAI sem esqueleto × Tritan -->
+        <section class="slide" data-title="Custos" id="s-custo">
           <div class="wrap wide">
             <div class="s-head compact">
-              <span class="kicker">Desenvolvimento · Custos</span>
-              <h2>Quanto custa <em>fazer</em></h2>
+              <span class="kicker">Custos · Garra SAI sem esqueleto</span>
+              <h2>Quanto custa <em>fazer</em> o SAI</h2>
             </div>
-            <div class="split" style="--cols:minmax(0,1.3fr) minmax(0,1fr); align-items:start">
-              <div class="glass card" style="padding:16px 18px">
-                <table class="tbl compact">
-                  <thead><tr><th>Item</th><th>Base</th><th>Custo</th></tr></thead>
+            <div class="split" style="--cols:minmax(0,1.25fr) minmax(0,1fr); align-items:start">
+              <div class="glass card" style="padding:14px 18px">
+                <table class="tbl compact custo-tbl">
+                  <thead><tr><th></th><th>Tritan (atual)</th><th>SAI sem esqueleto</th></tr></thead>
                   <tbody>
-                    <tr class="grp"><td colspan="3">Garra em PA-CF (R$ 258/kg × filamento do Orca) · toque numa opção</td></tr>
-                    <tr class="pick" data-k="R07_COM" tabindex="0" role="button" aria-pressed="false"><td><span class="radio"></span>R07 com esqueleto</td><td><span data-r07="R07_COM.fil_g" data-d="0">1.809</span> g</td><td>R$ <span data-r07="R07_COM.custo_rs" data-d="2">466,77</span></td></tr>
-                    <tr class="pick" data-k="R07_SEM" tabindex="0" role="button" aria-pressed="false"><td><span class="radio"></span>R07 sem esqueleto</td><td><span data-r07="R07_SEM.fil_g" data-d="0">1.745</span> g</td><td>R$ <span data-r07="R07_SEM.custo_rs" data-d="2">450,08</span></td></tr>
-                    <tr class="pick" data-k="TPMSD40" tabindex="0" role="button" aria-pressed="false"><td><span class="radio"></span>TPMS-D 40% (proposta inicial)</td><td><span data-r07="TPMSD40.fil_g" data-d="0">2.097</span> g</td><td>R$ <span data-r07="TPMSD40.custo_rs" data-d="2">540,92</span></td></tr>
-                    <tr class="grp"><td colspan="3">PADs em TPU 95A (R$ 158/kg)</td></tr>
-                    <tr><td>Conta da equipe</td><td>62 g / 8 peças</td><td>R$ 1,22/un · R$ 9,76</td></tr>
-                    <tr><td>Fatiamento Orca (só peças)</td><td><span data-r07="pads.peca_g" data-d="1">93,1</span> g / 8</td><td>R$ <span data-r07="pads.custo_un_peca" data-d="2">1,84</span>/un</td></tr>
-                    <tr><td>Fatiamento Orca (com suportes)</td><td><span data-r07="pads.total_g" data-d="1">139,0</span> g / 8</td><td>R$ <span data-r07="pads.custo_un_total" data-d="2">2,75</span>/un</td></tr>
-                    <tr class="grp"><td colspan="3">Componentes</td></tr>
-                    <tr><td>Bico MK8 endurecido</td><td>1 un</td><td>R$ 23,50</td></tr>
-                    <tr><td>Garra antiga · Tritan</td><td>custo informado</td><td>R$ 250,00</td></tr>
+                    <tr><td>Material</td><td>Tritan importado</td><td>PA-CF e TPU 95A nacionais</td></tr>
+                    <tr><td>Garra (3 peças)</td><td>R$ 250,00 <small>custo informado</small></td><td>R$ <span data-r07="R07_SEM.custo_rs" data-d="2">450,08</span> <small><span data-r07="R07_SEM.fil_g" data-d="0">1.745</span> g × R$ 258/kg</small></td></tr>
+                    <tr><td>8 PADs</td><td class="na">—</td><td>R$ 21,96 <small><span data-r07="pads.total_g" data-d="0">139</span> g × R$ 158/kg</small></td></tr>
+                    <tr><td>Bico endurecido</td><td class="na">—</td><td>R$ 23,50</td></tr>
+                    <tr class="total"><td>Total por garra</td><td>R$ 250,00</td><td><b>R$ 495,54</b></td></tr>
+                    <tr><td>Prazo do material</td><td>15 a 20 dias</td><td>5 a 8 dias úteis</td></tr>
+                    <tr><td>Impressão</td><td>6 a 8,5 h por peça</td><td><span data-r07="R07_SEM.tempo_h" data-d="0">75</span> h a garra + <span data-r07="pads.tempo_h" data-d="0">11</span> h os PADs</td></tr>
+                    <tr><td>Quebras por ano</td><td>4 <small>a cada 3 meses</small></td><td>0 <small>pelas simulações</small></td></tr>
+                    <tr class="total"><td>Gasto com peças no ano</td><td>R$ 1.000,00 <small>4 × R$ 250</small></td><td><b>R$ 627,33</b> <small>garra + 6 trocas de PAD</small></td></tr>
                   </tbody>
                 </table>
               </div>
-              <div style="display:grid; gap:14px">
-                <div class="glass stat" id="custo-total" aria-live="polite">
-                  <b id="custo-val">R$ 496 a 512</b>
-                  <span id="custo-rot">garra R07 (sem ou com esqueleto) + 8 PADs + bico</span>
-                  <small id="custo-conta">escolha uma opção na tabela para ver a conta</small>
-                  <div class="cost-bar" id="custo-bar" aria-hidden="true"><i class="c-garra"></i><i class="c-pad"></i><i class="c-bico"></i></div>
-                  <div class="legend" style="margin:8px 0 0"><span><i style="background:var(--ink-2)"></i>garra</span><span><i style="background:var(--s-indigo)"></i>8 PADs</span><span><i style="background:#c27c0e"></i>bico</span></div>
+              <div style="display:grid; gap:12px">
+                <div class="glass card chart" style="padding:14px 18px">
+                  <h4>Para onde vão os R$ 495,54</h4>
+                  <p class="sub">custo de material de uma garra SAI completa</p>
+                  <div class="cost-bar sai-bar" aria-hidden="true"><i class="c-garra" style="--w:90.83%"></i><i class="c-pad" style="--w:4.43%"></i><i class="c-bico" style="--w:4.74%"></i></div>
+                  <div class="legend" style="margin:8px 0 0"><span><i style="background:var(--ink-2)"></i>garra · 91%</span><span><i style="background:var(--s-indigo)"></i>8 PADs · 4%</span><span><i style="background:#c27c0e"></i>bico · 5%</span></div>
                 </div>
-                <div class="glass stat sm"><b class="ink">R$ 84.000</b><span>custo de uma parada de 45 min</span><small id="custo-paradas">paga 164 a 170 garras completas</small></div>
-                <p class="note" style="margin:0"><span class="tag eq">preços: equipe</span> <span class="tag sim">gramas: Orca</span> A conta da equipe (62 g para 8 PADs) e o fatiamento (93,1 g sem suportes) diferem. Vale pesar um PAD impresso para fechar o número.</p>
+                <div class="glass card chart" style="padding:14px 18px">
+                  <h4>Tritan × SAI</h4>
+                  <p class="sub">R$ · só peças, sem contar a linha parada</p>
+                  <div class="cmp-bars">
+                    <div class="cb-group"><span class="cb-t">Uma garra</span>
+                      <div class="cb"><span>Tritan</span><i style="--w:25%; background:#5b5bd6"></i><b>R$ 250</b></div>
+                      <div class="cb"><span>SAI</span><i style="--w:49.55%; background:#e5232f"></i><b>R$ 495,54</b></div>
+                    </div>
+                    <div class="cb-group"><span class="cb-t">Peças em 1 ano</span>
+                      <div class="cb"><span>Tritan</span><i style="--w:100%; background:#5b5bd6"></i><b>R$ 1.000</b></div>
+                      <div class="cb"><span>SAI</span><i style="--w:62.73%; background:#e5232f"></i><b>R$ 627,33</b></div>
+                    </div>
+                  </div>
+                </div>
+                <p class="note" style="margin:0">Uma garra SAI custa R$ 245,54 a mais, mas como ela não quebra a cada 3 meses, o gasto com peças no ano já é <b>37% menor</b>, antes de contar a linha parada. <span class="tag eq">preços: equipe</span> <span class="tag sim">gramas e horas: Orca</span> Fora da conta: mão de obra, energia e preparação da impressora.</p>
               </div>
             </div>
+          </div>
+        </section>
+
+        <!-- ROI: custo acumulado no ano, Tritan × SAI -->
+        <section class="slide" data-title="Retorno (ROI)" id="s-roi">
+          <div class="wrap wide">
+            <div class="s-head compact" style="display:flex; justify-content:space-between; align-items:end; gap:16px; flex-wrap:wrap">
+              <div>
+                <span class="kicker">Custos · Retorno do investimento</span>
+                <h2>O SAI se paga na <em>primeira</em> quebra evitada</h2>
+              </div>
+              <div class="seg" id="roi-cen" role="tablist" aria-label="Cenário do SAI">
+                <button class="on" role="tab" aria-selected="true" data-c="sim">Pelas simulações</button>
+                <button role="tab" aria-selected="false" data-c="cons">Conservador</button>
+              </div>
+            </div>
+            <div class="split" style="--cols:minmax(0,1.35fr) minmax(0,1fr); align-items:start">
+              <div class="glass card chart" style="padding:14px 18px">
+                <h4>Custo acumulado em 12 meses</h4>
+                <p class="sub">peças + custo de oportunidade das paradas · R$</p>
+                <div class="legend"><span><i style="background:#5b5bd6"></i>Tritan (atual)</span><span><i style="background:#e5232f"></i>SAI sem esqueleto</span></div>
+                <div id="chart-roi" class="roi-host"></div>
+                <p class="note" id="roi-cen-txt" style="margin:4px 0 0">&nbsp;</p>
+              </div>
+              <div style="display:grid; gap:12px">
+                <div class="g2 roi-kpi">
+                  <div class="glass stat sm"><b id="roi-eco">R$ 336.373</b><span>economia no 1º ano</span><small id="roi-eco-s">4 paradas evitadas</small></div>
+                  <div class="glass stat sm"><b class="ink" id="roi-x">536×</b><span>de retorno sobre o gasto com o SAI</span><small id="roi-x-s">R$ 336.373 ÷ R$ 627,33</small></div>
+                  <div class="glass stat sm"><b class="ink" id="roi-h">R$ 0,07</b><span>por hora com o SAI</span><small>Tritan: R$ 38,47 por hora</small></div>
+                  <div class="glass stat sm"><b class="ink" id="roi-pb">13 h</b><span>de operação pagam a garra</span><small id="roi-pb-s">R$ 495,54 ÷ economia por hora</small></div>
+                </div>
+                <div class="glass card" style="padding:12px 16px">
+                  <h3 style="margin:0 0 6px; font-size:15px">Como a conta foi feita</h3>
+                  <ul class="hip">
+                    <li><b>Hoje:</b> a parte superior de Tritan quebra a cada 3 meses, por impactos comuns e pelo erro raro de uma asa pegar as duas caixas. São 4 paradas de 45 min por ano, cada uma com R$ 84.000 de custo de oportunidade e R$ 250 de peça.</li>
+                    <li><b>SAI, pelas simulações:</b> o PAD derruba o golpe comum para 169 N, contra 1.380 N que rompem a garra; as duas caixas numa asa (24 kg) ficam com folga de 3,9×; a fadiga passa de 100 anos. A garra não quebra no ano, e os 8 PADs são trocados a cada 2 meses numa parada programada.</li>
+                    <li><b>Conservador:</b> mesmo assim a garra SAI quebra 1 vez no ano: uma parada e uma garra nova.</li>
+                    <li>Custo por hora com a linha rodando 24 h por dia (8.760 h no ano).</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <p class="note"><span class="tag eq">valores estimados</span> O custo de oportunidade é estimado pelo valor final do produto no varejo (R$ 84.000 por parada de 45 min). As quebras e as horas são hipóteses da equipe; a resistência vem das simulações (FE e modelo de impacto), não de ensaio.</p>
           </div>
         </section>
 
@@ -1167,10 +1236,10 @@
                   <li><span>280 × 12 kg</span><b>3.360 kg</b></li>
                   <li><span>R$ 84.000 ÷ 280</span><b>R$ 300/caixa</b></li>
                 </ol>
-                <p class="note">Uma parada de 45 min paga de 164 a 170 garras completas (garra + 8 PADs + bico).</p>
+                <p class="note">Valor estimado pelo valor final do produto no varejo. Uma parada de 45 min paga 169 garras SAI completas (R$ 495,54).</p>
               </article>
             </div>
-            <p class="note"><span class="tag eq">preços e produção: equipe</span> <span class="tag sim">gramas: Orca</span> Custo das melhorias por garra: garra R07 + 8 PADs + bico = R$ 483 a 512, conforme a opção de esqueleto e a massa do PAD (equipe ou Orca).</p>
+            <p class="note"><span class="tag eq">preços: equipe</span> <span class="tag eq">valores da linha: estimados pelo valor final do produto no varejo</span> <span class="tag sim">gramas: Orca</span> Garra SAI escolhida (sem esqueleto) + 8 PADs + bico = R$ 495,54.</p>
           </div>
         </section>
 
@@ -1272,7 +1341,7 @@
               <h2>Custo de oportunidade e <em>risco</em></h2>
             </div>
             <div class="g3" style="align-items:stretch">
-              <div class="glass stat"><b>R$ 84.000</b><span>por parada de 45 min</span><small>280 caixas · dados da equipe</small></div>
+              <div class="glass stat"><b>R$ 84.000</b><span>por parada de 45 min</span><small>280 caixas · estimado pelo valor final do produto no varejo</small></div>
               <div class="glass stat"><b class="ink">R$ 496</b><span>garra R07 sem esqueleto + 8 PADs + bico</span><small>com esqueleto: R$ 512 · Orca + preços da equipe</small></div>
               <div class="glass stat"><b class="ink">169×</b><span>uma parada paga garras novas</span><small>84.000 ÷ 496 · custo de oportunidade estimado</small></div>
             </div>
@@ -1545,6 +1614,47 @@
           </div>
         </section>
 
+        <!-- Custos -->
+        <section class="slide" data-title="Custos">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Desenvolvimento · Custos</span>
+              <h2>Quanto custa <em>fazer</em></h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1.3fr) minmax(0,1fr); align-items:start">
+              <div class="glass card" style="padding:16px 18px">
+                <table class="tbl compact">
+                  <thead><tr><th>Item</th><th>Base</th><th>Custo</th></tr></thead>
+                  <tbody>
+                    <tr class="grp"><td colspan="3">Garra em PA-CF (R$ 258/kg × filamento do Orca) · toque numa opção</td></tr>
+                    <tr class="pick" data-k="R07_COM" tabindex="0" role="button" aria-pressed="false"><td><span class="radio"></span>R07 com esqueleto</td><td><span data-r07="R07_COM.fil_g" data-d="0">1.809</span> g</td><td>R$ <span data-r07="R07_COM.custo_rs" data-d="2">466,77</span></td></tr>
+                    <tr class="pick" data-k="R07_SEM" tabindex="0" role="button" aria-pressed="false"><td><span class="radio"></span>R07 sem esqueleto</td><td><span data-r07="R07_SEM.fil_g" data-d="0">1.745</span> g</td><td>R$ <span data-r07="R07_SEM.custo_rs" data-d="2">450,08</span></td></tr>
+                    <tr class="pick" data-k="TPMSD40" tabindex="0" role="button" aria-pressed="false"><td><span class="radio"></span>TPMS-D 40% (proposta inicial)</td><td><span data-r07="TPMSD40.fil_g" data-d="0">2.097</span> g</td><td>R$ <span data-r07="TPMSD40.custo_rs" data-d="2">540,92</span></td></tr>
+                    <tr class="grp"><td colspan="3">PADs em TPU 95A (R$ 158/kg)</td></tr>
+                    <tr><td>Conta da equipe</td><td>62 g / 8 peças</td><td>R$ 1,22/un · R$ 9,76</td></tr>
+                    <tr><td>Fatiamento Orca (só peças)</td><td><span data-r07="pads.peca_g" data-d="1">93,1</span> g / 8</td><td>R$ <span data-r07="pads.custo_un_peca" data-d="2">1,84</span>/un</td></tr>
+                    <tr><td>Fatiamento Orca (com suportes)</td><td><span data-r07="pads.total_g" data-d="1">139,0</span> g / 8</td><td>R$ <span data-r07="pads.custo_un_total" data-d="2">2,75</span>/un</td></tr>
+                    <tr class="grp"><td colspan="3">Componentes</td></tr>
+                    <tr><td>Bico MK8 endurecido</td><td>1 un</td><td>R$ 23,50</td></tr>
+                    <tr><td>Garra antiga · Tritan</td><td>custo informado</td><td>R$ 250,00</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div style="display:grid; gap:14px">
+                <div class="glass stat" id="custo-total" aria-live="polite">
+                  <b id="custo-val">R$ 496 a 512</b>
+                  <span id="custo-rot">garra R07 (sem ou com esqueleto) + 8 PADs + bico</span>
+                  <small id="custo-conta">escolha uma opção na tabela para ver a conta</small>
+                  <div class="cost-bar" id="custo-bar" aria-hidden="true"><i class="c-garra"></i><i class="c-pad"></i><i class="c-bico"></i></div>
+                  <div class="legend" style="margin:8px 0 0"><span><i style="background:var(--ink-2)"></i>garra</span><span><i style="background:var(--s-indigo)"></i>8 PADs</span><span><i style="background:#c27c0e"></i>bico</span></div>
+                </div>
+                <div class="glass stat sm"><b class="ink">R$ 84.000</b><span>custo de uma parada de 45 min</span><small id="custo-paradas">paga 164 a 170 garras completas</small></div>
+                <p class="note" style="margin:0"><span class="tag eq">preços: equipe</span> <span class="tag sim">gramas: Orca</span> A conta da equipe (62 g para 8 PADs) e o fatiamento (93,1 g sem suportes) diferem. Vale pesar um PAD impresso para fechar o número.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
   </template>
 
   <dialog class="qr-big" id="qr-dialog" aria-label="QR code da apresentação">
@@ -1557,14 +1667,15 @@
     <figure><img src="" alt=""><figcaption></figcaption></figure>
   </dialog>
 
-  <script src="assets/js/main.js?v=r07j"></script>
-  <script src="assets/js/bancada-dados.js?v=r07j"></script>
-  <script src="assets/js/bancada.js?v=r07j"></script>
-  <script src="assets/js/r07-dados.js?v=r07j"></script>
-  <script src="assets/js/r07.js?v=r07j"></script>
-  <script src="assets/js/conjunto-dados.js?v=r07j"></script>
-  <script src="assets/js/conjunto.js?v=r07j"></script>
-  <script src="assets/js/anim.js?v=r07j"></script>
-  <script type="module" src="assets/js/viewer3d.js?v=r07j"></script>
+  <script src="assets/js/main.js?v=r07l"></script>
+  <script src="assets/js/bancada-dados.js?v=r07l"></script>
+  <script src="assets/js/bancada.js?v=r07l"></script>
+  <script src="assets/js/r07-dados.js?v=r07l"></script>
+  <script src="assets/js/r07.js?v=r07l"></script>
+  <script src="assets/js/conjunto-dados.js?v=r07l"></script>
+  <script src="assets/js/conjunto.js?v=r07l"></script>
+  <script src="assets/js/sai.js?v=r07l"></script>
+  <script src="assets/js/anim.js?v=r07l"></script>
+  <script type="module" src="assets/js/viewer3d.js?v=r07l"></script>
 </body>
 </html>

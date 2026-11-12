@@ -95,37 +95,39 @@
     if (reduce) { slots.forEach(p => mk('rect', { x: p.x, y: p.y, width: 17, height: 14, rx: 2, class: 'bx' }, pal)); total = 280; palN = 7; hud(); }
   }
 
-  /* ---------- Giroide: corte que sobe camada a camada ---------- */
-  const cv = document.getElementById('anim-giroide');
-  if (cv) {
-    const ctx = cv.getContext('2d');
-    const N = 240, img = ctx.createImageData(N, N), off = document.createElement('canvas');
-    off.width = off.height = N;
-    const octx = off.getContext('2d');
+  /* ---------- Giroide: corte que sobe camada a camada (garra 25% e PAD 40% lado a lado) ---------- */
+  const cvs = [...document.querySelectorAll('canvas.giroide')];
+  if (cvs.length) {
+    const N = 200, CELL_MM = 10, PERIODS = 2;
     const zEl = document.getElementById('giroide-z');
-    let z = 0.9, thr = 0.39;                                   // |f| < 0,39 ≈ 25% do volume; 0,62 ≈ 40%
-    const CELL_MM = 10, PERIODS = 2;
+    let z = 0.9;
     const sx = new Float32Array(N), cx = new Float32Array(N);
     for (let i = 0; i < N; i++) { const a = (i / N) * PERIODS * 2 * Math.PI; sx[i] = Math.sin(a); cx[i] = Math.cos(a); }
+    // |f| < limiar: 0,39 ≈ 25% do volume (garra); 0,62 ≈ 40% (PAD)
+    const views = cvs.map(cv => {
+      const off = document.createElement('canvas'); off.width = off.height = N;
+      const octx = off.getContext('2d');
+      return { cv, ctx: cv.getContext('2d'), off, octx, img: octx.createImageData(N, N), thr: +cv.dataset.thr,
+               rgb: (cv.dataset.rgb || '229,35,47').split(',').map(Number) };
+    });
     const draw = () => {
-      const sz = Math.sin(z), cz = Math.cos(z), d = img.data;
-      for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) {
-        const f = sx[i] * cx[j] + sx[j] * cz + sz * cx[i];
-        const k = (j * N + i) * 4, a = Math.abs(f);
-        if (a < thr) { const e = 1 - a / thr; d[k] = 229 - 40 * e; d[k + 1] = 35 + 10 * (1 - e); d[k + 2] = 47; d[k + 3] = 255; }
-        else { d[k] = 247; d[k + 1] = 245; d[k + 2] = 252; d[k + 3] = 255; }
-      }
-      octx.putImageData(img, 0, 0);
-      ctx.imageSmoothingEnabled = true;
-      ctx.drawImage(off, 0, 0, cv.width, cv.height);
+      const sz = Math.sin(z), cz = Math.cos(z);
+      views.forEach(v => {
+        const d = v.img.data, [r, g, b] = v.rgb;
+        for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) {
+          const f = sx[i] * cx[j] + sx[j] * cz + sz * cx[i];
+          const k = (j * N + i) * 4, a = Math.abs(f);
+          if (a < v.thr) { const e = 1 - a / v.thr; d[k] = r - 40 * e; d[k + 1] = g - 10 * e; d[k + 2] = b - 10 * e; d[k + 3] = 255; }
+          else { d[k] = 247; d[k + 1] = 245; d[k + 2] = 252; d[k + 3] = 255; }
+        }
+        v.octx.putImageData(v.img, 0, 0);
+        v.ctx.imageSmoothingEnabled = true;
+        v.ctx.drawImage(v.off, 0, 0, v.cv.width, v.cv.height);
+      });
       if (zEl) zEl.textContent = fmt(((z / (2 * Math.PI)) * CELL_MM) % (CELL_MM * 10), 1);
     };
     draw();
-    steps.add({ active: () => isOn(cv) && !reduce, tick: dt => { z += dt * 0.9; draw(); } });
-    document.querySelectorAll('#giroide-dens button').forEach(b => b.addEventListener('click', () => {
-      document.querySelectorAll('#giroide-dens button').forEach(o => o.classList.toggle('on', o === b));
-      thr = +b.dataset.t > 0.3 ? 0.62 : 0.39; draw();
-    }));
+    steps.add({ active: () => isOn(cvs[0]) && !reduce, tick: dt => { z += dt * 0.9; draw(); } });
   }
 
   /* ---------- Custo: começa na opção escolhida (sem esqueleto); tocar outra linha mostra a conta dela ---------- */
