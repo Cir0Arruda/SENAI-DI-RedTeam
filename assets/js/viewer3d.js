@@ -94,7 +94,8 @@ function makeViewer(box) {
       g.add(pivot); items.push({ pivot, home: ctr.clone(), halves, delay: (i / 2) * 0.35 });
     }
     const ease = t => t < 0 ? 0 : t > 1 ? 1 : 1 - Math.pow(1 - t, 3);
-    g.userData.anim = t => {
+    g.userData.anim = t0 => {
+      const t = t0 * 0.5;                 // metade da velocidade: o encaixe dos PADs fica mais fácil de acompanhar
       const T = 7, u = t % T;
       items.forEach(it => {
         // 0–1,6 s: girando no alto · 1,6–3,4 s: desce e fecha · 3,4–6,4 s: montado · 6,4–7 s: sobe de novo

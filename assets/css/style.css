@@ -794,24 +794,24 @@ dialog.qr-big .nav-btn { position: absolute; top: 12px; right: 12px; }
 /* materiais em linguagem simples */
 .mat-fig img { display: block; width: 100%; height: auto; max-height: 300px; object-fit: contain; }
 .mat-leg { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; }
-.mat-leg li { display: grid; grid-template-columns: 16px 1fr; gap: 8px; align-items: start; font-size: 13.5px; line-height: 1.4; color: var(--ink-2); }
+.mat-leg li { display: grid; grid-template-columns: 16px 1fr; gap: 8px; align-items: start; font-size: 15px; line-height: 1.4; color: var(--ink-2); }
 .mat-leg i { width: 16px; height: 16px; margin-top: 2px; border-radius: 4px; }
 .mat-leg .k-casca { background: #fff; border: 3px solid #2b2d36; }
 .mat-leg .k-trama { background: repeating-linear-gradient(135deg, #8a8c96 0 1px, #f2f2f4 1px 4px); border: 1px solid #c9cad1; }
 .mat-leg .k-anel { background: #fff; border: 3px solid #d0378f; }
-.mat-why { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.mat-c { padding: 14px 16px; }
-.mat-c h3 { margin: 4px 0 4px; font-size: 16px; }
-.mat-c p { margin: 0; font-size: 14px; line-height: 1.45; }
+.mat-why { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.mat-c { padding: 18px 20px; }
+.mat-c h3 { margin: 6px 0 8px; font-size: 21px; line-height: 1.25; }
+.mat-c p { margin: 0; font-size: 17px; line-height: 1.5; }
 .mat-c.red { border: 1.5px solid rgba(229, 35, 47, .45); }
-.mat-n { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--red); }
+.mat-n { font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--red); }
 @media (max-width: 900px) { .mat-why { grid-template-columns: 1fr; } }
 .mx-win .mx-sigla { margin: 0 0 6px; font-size: 15px; color: var(--ink); }
 .mx-win .mx-sigla b { color: var(--red); font-weight: 700; }
 
 /* materiais: vídeo com peso ↔ vista 3D por dentro, troca automática */
 .mat-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 8px; }
-.mat-auto { font-size: 12px; color: var(--muted, #8a8a99); }
+.mat-auto { font-size: 14px; color: var(--muted, #8a8a99); }
 .mat-stage { display: grid; }
 .mat-pane { grid-area: 1 / 1; visibility: hidden; opacity: 0; transition: opacity .45s ease, visibility 0s linear .45s; min-width: 0; }
 .mat-pane.on { visibility: visible; opacity: 1; transition: opacity .45s ease; }
@@ -821,3 +821,49 @@ dialog.qr-big .nav-btn { position: absolute; top: 12px; right: 12px; }
 .mat-zonas { grid-template-columns: 1fr 1fr; gap: 4px 14px; margin-top: 8px; }
 .mat-zonas i { border: 1px solid rgba(0, 0, 0, .12); }
 @media (max-width: 600px) { .mat-zonas { grid-template-columns: 1fr; } }
+
+/* capa: foto da garra atual no canto (o problema logo na abertura) */
+.capa-foto { margin: 0; }
+.capa-foto img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(21,21,29,.08); box-shadow: var(--shadow); }
+.capa-foto figcaption { margin-bottom: 8px; font-size: 13px; line-height: 1.4; color: var(--ink-2); }
+.capa-foto .tag { margin-right: 4px; }
+@media (min-width: 1101px) {
+  .capa-sai { display: grid; align-content: center; column-gap: 32px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, min(300px, 26%));
+    grid-template-areas: "logos ." "h1 h1" "lead foto" "team foto"; }
+  .capa-sai > .logos { grid-area: logos; justify-self: start; }
+  .capa-sai > h1 { grid-area: h1; }
+  .capa-sai > .lead { grid-area: lead; }
+  .capa-sai > .team { grid-area: team; }
+  .capa-sai > .capa-foto { grid-area: foto; align-self: start; }
+}
+@media (max-width: 1100px) { .capa-foto { margin-top: 22px; max-width: 520px; } }
+#mat-tabs button { font-size: 15px; height: 38px; padding: 0 16px; }
+
+/* fonte dos dados técnicos (Autodesk Fusion) */
+.fonte-row { display: flex; justify-content: space-between; align-items: center; gap: 8px 18px; flex-wrap: wrap; margin-top: 8px; }
+.fonte { display: inline-flex; align-items: center; gap: 8px; margin: 0; padding: 4px 12px 4px 4px; border-radius: 999px; background: rgba(255,255,255,.75); border: 1px solid rgba(21,21,29,.08); font-size: 12px; line-height: 1.3; color: var(--ink-2); }
+.fonte img { width: 28px; height: 28px; border-radius: 6px; flex: none; }
+.fonte b { color: var(--ink); font-weight: 600; margin-right: 4px; }
+
+/* Encerramento com referências */
+.fim { text-align: center; }
+.fim h1 { font-size: clamp(48px, 5vw, 84px); margin: 6px 0 4px; }
+.fim .logos.logos-end { margin: 16px auto 0; }
+.refs { margin-top: 18px; padding: 16px 20px 14px; text-align: left; }
+.refs-head { display: flex; align-items: baseline; gap: 6px 14px; flex-wrap: wrap; margin-bottom: 10px; }
+.refs-head h3 { margin: 0; font-size: 18px; }
+.refs-head span { font-size: 13px; color: var(--ink-2); }
+.refs-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px 20px; }
+.refs-grid h4 { margin: 0 0 6px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--red); }
+.refs-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.refs-grid li { font-size: 12.5px; line-height: 1.42; color: var(--ink-2); }
+.refs-grid li b { color: var(--ink); font-weight: 600; }
+.refs-grid a { color: var(--ink); text-decoration: underline; text-decoration-color: rgba(229,35,47,.5); text-underline-offset: 2px; white-space: nowrap; }
+.refs-grid a:hover { color: var(--red); }
+.refs-foot { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 14px; }
+.refs-foot .gh { height: 42px; font-size: 14px; padding: 0 18px; }
+.refs-foot .gh svg { width: 18px; height: 18px; }
+.fonte.fonte-fim { margin-top: 12px; font-size: 13px; }
+@media (max-width: 1100px) { .refs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .refs-grid { grid-template-columns: 1fr; } .refs-grid a { white-space: normal; } }

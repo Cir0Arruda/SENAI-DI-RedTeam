@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=r08g">
+  <link rel="stylesheet" href="assets/css/style.css?v=r08h">
   <script type="importmap">
     { "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
@@ -67,10 +67,14 @@
                 <li><b>Bruno Santos</b><span>E.M. Eletroeletrônica</span></li>
                 <li><b>Ciro Arruda</b><span>Montador de Veículos Automotores</span></li>
                 <li><b>Renan Hernandes</b><span>Téc. Fabricação Mecânica</span></li>
-                <li><b>Vitor Mendonça</b><span>CAI Mecânica</span></li>
+                <li><b>Victor Mendonça</b><span>CAI Mecânica</span></li>
                 <li><b>Vitor Caceres</b><span>Mestrando em Materiais · Unicamp</span></li>
               </ul>
             </div>
+            <figure class="capa-foto">
+              <figcaption><span class="tag bad">O problema</span> A garra atual rompe na raiz, onde se prende ao robô.</figcaption>
+              <img src="assets/img/problema/garra_linha.webp" alt="Garra de ventosas atual montada no robô da linha, com o ponto de ruptura em destaque" width="1083" height="708">
+            </figure>
           </div>
         </section>
 
@@ -361,7 +365,10 @@
                   <p class="lim-a">É como <b>dois adultos (≈ 140 kg)</b> em pé sobre esse ponto. Com o PAD, a batida precisa ter <b>2,2 vezes mais energia</b>: um peso de 1 kg caindo de 27 cm, contra 12 cm sem PAD.</p>
                 </article>
             </div>
-                <p class="note" style="margin:8px 0 0"><span class="tag sim">estimativa</span> Modelo simplificado de molas com a garra SAI; a animação é ilustrativa. Não é ensaio.</p>
+                <div class="fonte-row">
+                  <p class="note" style="margin:0"><span class="tag sim">estimativa</span> Modelo simplificado de molas com a garra SAI; a animação é ilustrativa. Não é ensaio.</p>
+                  <p class="fonte"><img src="assets/img/logos/fusion.webp" alt="" width="28" height="28"><span><b>Fonte: Autodesk Fusion</b> Licença Educacional · versão 2706.1.17 · modelo 3D e simulação de referência</span></p>
+                </div>
           </div>
         </section>
 
@@ -567,34 +574,70 @@
           </div>
         </section>
 
-        <!-- Encerramento -->
-        <section class="slide" data-title="Encerramento">
-          <div class="wrap" style="text-align:center">
-            <span class="kicker">Obrigado</span>
-            <h1>Perguntas<em>?</em></h1>
-            <p class="lead" style="margin:0 auto">Seção de dúvidas</p>
-            <div class="logos logos-end" aria-label="Instituições parceiras">
-              <img src="assets/img/logos/senai.webp" alt="SENAI" class="lg-senai">
-              <img src="assets/img/logos/fca-unicamp.webp" alt="FCA Unicamp Limeira" class="lg-fca">
-              <img src="assets/img/logos/ciesp.webp" alt="CIESP" class="lg-ciesp">
-              <img src="assets/img/logos/ajinomoto.webp" alt="Ajinomoto" class="lg-aji">
+        <!-- Encerramento: perguntas, logos e referências (tudo detalhado em dados/REFERENCIAS.md) -->
+        <section class="slide" data-title="Encerramento" id="s-fim">
+          <div class="wrap wide fim">
+            <div class="fim-top">
+              <span class="kicker">Obrigado</span>
+              <h1>Perguntas<em>?</em></h1>
+              <p class="lead" style="margin:0 auto">Seção de dúvidas</p>
+              <div class="logos logos-end" aria-label="Instituições parceiras">
+                <img src="assets/img/logos/senai.webp" alt="SENAI" class="lg-senai">
+                <img src="assets/img/logos/fca-unicamp.webp" alt="FCA Unicamp Limeira" class="lg-fca">
+                <img src="assets/img/logos/ciesp.webp" alt="CIESP" class="lg-ciesp">
+                <img src="assets/img/logos/ajinomoto.webp" alt="Ajinomoto" class="lg-aji">
+              </div>
             </div>
-            <!-- Links de acesso aos dados, retirados por enquanto:
-            <p class="lead" style="margin:0 auto">Todos os números deste site saem de arquivos de simulação e fatiamento. Os dados, scripts, logs, modelos 3D, fatiamentos do Orca, vídeos e o relatório estão abertos no GitHub.</p>
-            <div class="links">
-              <a class="gh" href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/dados" target="_blank" rel="noopener">
-                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-                Dados no GitHub
-              </a>
+            <div class="glass card refs">
+              <div class="refs-head">
+                <h3>Referências</h3>
+                <span>Todos os números da apresentação saem destes arquivos. São simulações, fatiamentos e cálculos: nenhum é ensaio físico.</span>
+              </div>
+              <div class="refs-grid">
+                <div>
+                  <h4>Simulações no Autodesk Fusion</h4>
+                  <ul>
+                    <li><b>[F1]</b> Garra superior maciça em PA6-CF, 24 kg numa asa: tensão estática, 498.261 nós, FS mínimo 19,8. <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/brutos/fusion/preparacao_garra/SAMI_PA6CF_24kg_Relatorio_Fusion.html" target="_blank" rel="noopener">relatório</a></li>
+                    <li><b>[F2]</b> Mesma garra em Tritan TX1001: FS mínimo 11,5; o PA6-CF deforma 65% menos. <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/brutos/fusion/preparacao_garra/SAMI_TRITAN_24kg_Relatorio_Fusion.html" target="_blank" rel="noopener">relatório</a> · <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/brutos/fusion/preparacao_garra/COMPARACAO_SAMI_2026-11-11.md" target="_blank" rel="noopener">comparação</a></li>
+                    <li><b>[F3]</b> Esfera de 50 mm com 100 N, para conferir o método. <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/brutos/fusion/RESULTADOS_ESFERA_SUNLU.md" target="_blank" rel="noopener">resultados</a></li>
+                    <li><b>[F4]</b> Garra R07 com preenchimento: a malha falhou no Fusion; o pico usa o fator 2,2 calibrado no R06. <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/RELATORIO_R07.md" target="_blank" rel="noopener">registro</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Fatiamento e simulações próprias</h4>
+                  <ul>
+                    <li><b>[O1]</b> OrcaSlicer 2.5.0, K1 Max 1:1: garra SAI 1.433 g e 75,2 h; PADs 139 g. <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/dados/brutos/desempenho/05_Orca/R07" target="_blank" rel="noopener">logs</a> · <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/dados/orca" target="_blank" rel="noopener">dados</a></li>
+                    <li><b>[E1]</b> FE por voxels de 3 mm da garra montada: rompe com 93 kg numa asa. <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/montagem/montagem_R07_SEM.json" target="_blank" rel="noopener">dados</a> · <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/scripts/r07_montagem.py" target="_blank" rel="noopener">script</a></li>
+                    <li><b>[E2]</b> Tranco transiente (Newmark, 24 kg em 10 ms): FS 2,65. <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/impacto/impacto_F25_SEM.json" target="_blank" rel="noopener">dados</a></li>
+                    <li><b>[E3]</b> PAD, modelo de molas 1D: −63% na força. <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/impacto/pad_limites.json" target="_blank" rel="noopener">dados</a></li>
+                    <li><b>[E4–E6]</b> Fadiga (S-N + Miner), custos e durabilidade. <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/fadiga/r07_vida.json" target="_blank" rel="noopener">fadiga</a> · <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/estudo_custos/ESTUDO_CUSTOS_DURABILIDADE.md" target="_blank" rel="noopener">custos</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Materiais e literatura</h4>
+                  <ul>
+                    <li><b>[M1]</b> <a href="https://store.bblcdn.com/b2abc59ac250492b979a52f1ce3e61b3.pdf" target="_blank" rel="noopener">Bambu PA6-CF, ficha V3.0</a>: tração XY/Z 102/48 MPa.</li>
+                    <li><b>[M2]</b> <a href="https://forward-am.com/wp-content/uploads/2024/10/Ultrafuse_PAHT_CF15_TDS_EN_v3.5-1.pdf" target="_blank" rel="noopener">Forward AM PAHT CF15 v3.5</a>: pior caso, Z 18,2 MPa.</li>
+                    <li><b>[M3]</b> <a href="https://productcatalog.eastman.com/tds/ProdDatasheet.aspx?pn=tritan+copolyester+tx1001&amp;product=71070312" target="_blank" rel="noopener">Eastman Tritan TX1001</a> · <b>[M4]</b> <a href="https://store.bblcdn.com/s6/default/a6ca55f14aa54ddb92679d06df4700ae/Bambu_TPU_95A_HF_Technical_Data_Sheet.pdf" target="_blank" rel="noopener">Bambu TPU 95A HF</a></li>
+                    <li><b>[L1–L3]</b> Gibson e Ashby, <i>Cellular Solids</i> (1997); Miner (1945); Archard (1953).</li>
+                    <li><b>[L4]</b> <a href="https://www.nist.gov/publications/weld-formation-during-material-extrusion-additive-manufacturing" target="_blank" rel="noopener">NIST: colagem entre camadas</a> · <b>[N1]</b> EN 13155</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Testes</h4>
+                  <ul>
+                    <li><b>[T1]</b> Ensaios de bancada propostos, ainda não feitos: carga de prova, ruptura, 10⁵ ciclos, tranco e fluência. <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/RELATORIO_R07.md" target="_blank" rel="noopener">plano</a></li>
+                    <li><b>[T2]</b> Conferências: malhas STL fechadas, fatiamentos revisados e esfera no Fusion. <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/dados/brutos/desempenho/06_Engenharia/R05_CONFERENCIA_ORCA" target="_blank" rel="noopener">conferência</a></li>
+                    <li><b>Dados da equipe:</b> preços, quebras a cada 3 meses e parada de 45 min. <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/README.md" target="_blank" rel="noopener">registro</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="refs-foot">
+                <a class="gh" href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/REFERENCIAS.md" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>Referências completas no GitHub</a>
+                <a class="gh ghost" href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/tag/dados-2026-11-12" target="_blank" rel="noopener">Modelos 3D, fatiamentos, vídeos e logs</a>
+              </div>
+              <p class="fonte fonte-fim"><img src="assets/img/logos/fusion.webp" alt="" width="28" height="28"><span><b>Simulado no Autodesk Fusion</b> Licença Educacional · versão 2706.1.17</span></p>
             </div>
-            <div class="links">
-              <a class="gh ghost" href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/RELATORIO_R07.md" target="_blank" rel="noopener">Relatório R07</a>
-              <a class="gh ghost" href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/decisao/dados_comparativos.csv" target="_blank" rel="noopener">Tabela comparativa (CSV)</a>
-              <a class="gh ghost" href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/dados/scripts" target="_blank" rel="noopener">Scripts das simulações</a>
-              <a class="gh ghost" href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/decisao/peso_conjunto.csv" target="_blank" rel="noopener">Peso do conjunto (CSV)</a>
-              <a class="gh ghost" href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/tag/dados-2026-11-12" target="_blank" rel="noopener">Arquivos completos: 3D, Orca, vídeos e logs</a>
-            </div>
-            -->
           </div>
         </section>
 
@@ -1911,15 +1954,15 @@
     <figure><img src="" alt=""><figcaption></figcaption></figure>
   </dialog>
 
-  <script src="assets/js/main.js?v=r08g"></script>
-  <script src="assets/js/bancada-dados.js?v=r08g"></script>
-  <script src="assets/js/bancada.js?v=r08g"></script>
-  <script src="assets/js/r07-dados.js?v=r08g"></script>
-  <script src="assets/js/r07.js?v=r08g"></script>
-  <script src="assets/js/conjunto-dados.js?v=r08g"></script>
-  <script src="assets/js/conjunto.js?v=r08g"></script>
-  <script src="assets/js/sai.js?v=r08g"></script>
-  <script src="assets/js/anim.js?v=r08g"></script>
-  <script type="module" src="assets/js/viewer3d.js?v=r08g"></script>
+  <script src="assets/js/main.js?v=r08h"></script>
+  <script src="assets/js/bancada-dados.js?v=r08h"></script>
+  <script src="assets/js/bancada.js?v=r08h"></script>
+  <script src="assets/js/r07-dados.js?v=r08h"></script>
+  <script src="assets/js/r07.js?v=r08h"></script>
+  <script src="assets/js/conjunto-dados.js?v=r08h"></script>
+  <script src="assets/js/conjunto.js?v=r08h"></script>
+  <script src="assets/js/sai.js?v=r08h"></script>
+  <script src="assets/js/anim.js?v=r08h"></script>
+  <script type="module" src="assets/js/viewer3d.js?v=r08h"></script>
 </body>
 </html>

@@ -1,0 +1,158 @@
+{
+ "entradas": {
+  "preco_pacf_kg": 258.0,
+  "preco_tpu_kg": 158.0,
+  "tritan_garra_rs": 250.0,
+  "tritan_quebras_ano": 4,
+  "parada_min": 45,
+  "caixas_por_parada": 280,
+  "custo_oportunidade_parada_rs": 84000.0,
+  "prazo_tritan_dias": [
+   15,
+   20
+  ],
+  "prazo_pacf_dias_uteis": [
+   5,
+   8
+  ],
+  "bico_rs": 23.5,
+  "fil_garra_g": 1744.5,
+  "garra_g": 1432.8,
+  "sup_g": 666.4,
+  "inf_g": 383.2,
+  "tempo_garra_h": 75.2,
+  "fil_pads_g": 139.01,
+  "tempo_pads_h": 11.0,
+  "sz24_MPa": 12.34,
+  "sz_tranco24_MPa": 18.09,
+  "S_pa6cf_MPa": 48.0,
+  "S_paht_MPa": 18.2,
+  "reducao_pad": 0.63,
+  "HIP_ciclos_h_real": 180,
+  "HIP_ciclos_h_relatorio": 480,
+  "HIP_horas_ano": 8760,
+  "HIP_potencia_impressora_kW": 0.3,
+  "HIP_tarifa_kWh": 0.9,
+  "HIP_refugo": 0.1,
+  "HIP_trocas_pad_ano": 6
+ },
+ "durabilidade": {
+  "PA6-CF (TDS seco)": {
+   "N_rotina_12kg": 518302535.4405292,
+   "anos_rotina_180h": 328.70531166953907,
+   "anos_rotina_480h": 123.26449187607716,
+   "horas_rotina_480h_confere_site": 1079796.9488344358,
+   "eventos_24kg_estatico": 26863751.82440805,
+   "eventos_30kg_estatico": 6115871.2383173965,
+   "eventos_tranco24_sem_pad": 1703138.6316718743,
+   "eventos_tranco24_com_pad": 403238973.0210288,
+   "FS_tranco_sem_pad": 2.6533996683250414,
+   "FS_tranco_com_pad": 7.171350454932544,
+   "dano_ano_rotina": 0.0030422386389829348,
+   "dano_ano_52_erros_24kg": 1.935693879987139e-06,
+   "dano_ano_52_trancos_com_pad": 1.2895578919473196e-07,
+   "vida_anos_cenario_misto": 328.4823833839354
+  },
+  "PAHT CF15 (pior adesão entre camadas)": {
+   "N_rotina_12kg": 4072772.1087118317,
+   "anos_rotina_180h": 2.5829351272906087,
+   "anos_rotina_480h": 0.9686006727339782,
+   "horas_rotina_480h_confere_site": 8484.94189314965,
+   "eventos_24kg_estatico": 1658.7472649501037,
+   "eventos_30kg_estatico": 33.47536142872874,
+   "eventos_tranco24_sem_pad": 1.1493162851247922,
+   "eventos_tranco24_com_pad": 2100693.2374583604,
+   "FS_tranco_sem_pad": 1.0060807075732447,
+   "FS_tranco_com_pad": 2.7191370474952565,
+   "dano_ano_rotina": 0.38715645214402206,
+   "dano_ano_52_erros_24kg": 0.031348958999829424,
+   "dano_ano_52_trancos_com_pad": 2.475373323090004e-05,
+   "vida_anos_cenario_misto": 2.3893140421400423
+  }
+ },
+ "aquisicao": {
+  "garra_material": 450.08,
+  "pads_material": 21.96,
+  "bico": 23.5,
+  "slide_atual": 495.54,
+  "energia_impressao": 23.27,
+  "refugo_10pct": 47.2,
+  "completo_sem_mao_de_obra": 566.02,
+  "so_peca_superior_material": 209.33,
+  "frac_superior": 0.465
+ },
+ "troca_pads_rs": 24.93,
+ "pads_ano_rs": 149.6,
+ "cenarios": {
+  "otimista: vida 36 meses, sem quebra": {
+   "pecas_24m": {
+    "tritan": 2000.0,
+    "sai": 865.22,
+    "garras_sai": 1
+   },
+   "pecas_36m": {
+    "tritan": 3000.0,
+    "sai": 1014.82,
+    "garras_sai": 1
+   },
+   "com_parada_24m": {
+    "tritan": 674000.0,
+    "sai": 865.22,
+    "garras_sai": 1
+   },
+   "com_parada_36m": {
+    "tritan": 1011000.0,
+    "sai": 1014.82,
+    "garras_sai": 1
+   }
+  },
+  "base: vida 24 meses, sem quebra": {
+   "pecas_24m": {
+    "tritan": 2000.0,
+    "sai": 865.22,
+    "garras_sai": 1
+   },
+   "pecas_36m": {
+    "tritan": 3000.0,
+    "sai": 1532.41,
+    "garras_sai": 2
+   },
+   "com_parada_24m": {
+    "tritan": 674000.0,
+    "sai": 865.22,
+    "garras_sai": 1
+   },
+   "com_parada_36m": {
+    "tritan": 1011000.0,
+    "sai": 1532.41,
+    "garras_sai": 2
+   }
+  },
+  "conservador: vida 12 meses + 1 quebra/ano": {
+   "pecas_24m": {
+    "tritan": 2000.0,
+    "sai": 2417.99,
+    "garras_sai": 2
+   },
+   "pecas_36m": {
+    "tritan": 3000.0,
+    "sai": 3602.77,
+    "garras_sai": 3
+   },
+   "com_parada_24m": {
+    "tritan": 674000.0,
+    "sai": 170417.99,
+    "garras_sai": 2
+   },
+   "com_parada_36m": {
+    "tritan": 1011000.0,
+    "sai": 255602.77,
+    "garras_sai": 3
+   }
+  }
+ },
+ "tritan_ano_pecas": 1000.0,
+ "tritan_ano_paradas": 336000.0,
+ "tritan_horas_paradas_ano": 3.0,
+ "tritan_caixas_perdidas_ano": 1120
+}
