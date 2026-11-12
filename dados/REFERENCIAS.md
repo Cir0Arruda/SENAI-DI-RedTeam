@@ -141,6 +141,7 @@ Dados: [`montagem/montagem_R07_SEM.json`](https://github.com/Cir0Arruda/SENAI-DI
 - Conteúdo: vida estimada de 12 a 36 meses, custo de aquisição completo e cenários de 24 e 36 meses.
 - Estudo: [`estudo_custos/ESTUDO_CUSTOS_DURABILIDADE.md`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/estudo_custos/ESTUDO_CUSTOS_DURABILIDADE.md).
 - Script: [`estudo_custos.py`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/scripts/estudo_custos.py).
+- Custo real em 2 anos (slides de Custos e Retorno): [`custos/CUSTO_REAL.md`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/custos/CUSTO_REAL.md), com as entradas e fontes em [`custos/entradas_custo.json`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/custos/entradas_custo.json) e o modelo em [`custo_real.py`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/scripts/custo_real.py).
 
 **[E7] Vídeos e figuras.**
 - São renderizados só a partir dos campos já calculados; nenhum vídeo cria resultado novo.

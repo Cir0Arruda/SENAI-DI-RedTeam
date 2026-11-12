@@ -101,7 +101,6 @@ sup, ie, idr = orca['mass_g']['peca'], b20['INFERIOR_ESQ']['mass_g']['peca'], b2
 fil = round(orca['orca_total_g'] + b20['INFERIOR_ESQ']['orca_total_g'] + b20['INFERIOR_DIR']['orca_total_g'], 1)   # 1.744,5 g, como no slide
 horas = (orca['time_s'] + b20['INFERIOR_ESQ']['time_s'] + b20['INFERIOR_DIR']['time_s']) / 3600
 ok(14, 'garra SAI impressa (g)', 1433, sup + ie + idr, 0, 'Orca', '1.433 g')
-ok(10, 'filamento da garra (g)', 1744.5, fil, 1, 'Orca', '1.744,5')
 ok(14, 'tempo de impressão da garra (h)', 75.2, horas, 1, 'Orca', '75,2 h')
 ok(10, 'filamento dos PADs (g)', 139, pads['Orca_summary']['total_filament_mass_g'], 0, 'Orca', '139')
 ok(0, 'tempo dos PADs (h)', 11.0, pads['Orca_summary']['prediction_s'] / 3600, 1, 'Orca')
@@ -112,28 +111,44 @@ ok(10, 'mais leve que a atual (g)', 51, 2834 - conj, 0, 'peso_conjunto.csv + PAD
 ok(13, 'mais leve que a atual (%)', 1.8, (2834 - conj) / 2834 * 100, 1, 'peso_conjunto.csv + PADs', '(−1,8%)')
 ok(12, 'garra sozinha, menos que a de Tritan (g)', 144, float(peso['TRITAN']['garra_g']) - (sup + ie + idr), 0, 'peso_conjunto.csv', '144 g menos')
 
-# ---------- custos (slides 10, 11, 13) ----------
-PA, TPU, BICO, TRI = 258, 158, 23.50, 250
-garra_rs, pads_rs = round(fil / 1000 * PA, 2), round(139.0 / 1000 * TPU, 2)
-aq = garra_rs + pads_rs + BICO
-ok(10, 'material da garra (R$)', 450.08, fil / 1000 * PA, 2, 'Orca × R$ 258/kg', '450,08')
-ok(10, 'material dos PADs (R$)', 21.96, 139.0 / 1000 * TPU, 2, 'Orca × R$ 158/kg', 'R$ 21,96')
-ok(10, 'custo de aquisição (R$)', 495.54, aq, 2, 'soma', 'R$ 495,54')
-ok(10, 'gasto no ano: garra + 6 trocas de PAD (R$)', 627.30, aq + 6 * pads_rs, 2, 'soma', 'R$ 627,30')
-ok(10, 'diferença na compra (R$)', 245.54, aq - TRI, 2, 'soma', 'R$ 245,54')
-ok(10, 'gasto no ano menor (%)', 37, (1 - (aq + 6 * pads_rs) / (4 * TRI)) * 100, 0, 'soma', '37% menor')
-ok(10, 'fatia da garra (%)', 91, garra_rs / aq * 100, 0, 'soma', 'garra · 91%')
-ok(10, 'fatia dos PADs (%)', 4, pads_rs / aq * 100, 0, 'soma', '8 PADs · 4%')
-ok(10, 'fatia do bico (%)', 5, BICO / aq * 100, 0, 'soma', 'bico · 5%')
-sai24 = aq + 12 * pads_rs
-ok(11, 'Tritan em 24 meses (R$)', 2000, 8 * TRI, 0, 'quebra a cada 3 meses')
-ok(11, 'SAI em 24 meses (R$)', 759.06, sai24, 2, 'garra + 12 trocas de PAD', 'R$ 759,06')
-ok(11, 'economia em 2 anos (R$)', 1240.94, 8 * TRI - sai24, 2, 'conta', 'R$ 1.240,94')
-ok(11, 'retorno (%)', 163, (8 * TRI - sai24) / sai24 * 100, 0, 'conta', '163%')
-pb = next(m for m in range(1, 25) if TRI * (m // 3) > aq + pads_rs * (m // 2))
-ok(11, 'mês em que o SAI se paga', 9, pb, 0, 'conta', '9 meses')
-ok(11, 'SAI R$ por hora (24 h × 730 h/mês)', 0.04, sai24 / (24 * 730), 2, 'conta', 'R$ 0,04')
-ok(11, 'Tritan R$ por hora', 0.11, 8 * TRI / (24 * 730), 2, 'conta', 'R$ 0,11')
+# ---------- custo real (slides 10, 11, 13): custo_real.json, refeito em parte aqui ----------
+E = {k: v['valor'] for k, v in J('custos/entradas_custo.json')['entradas'].items()}
+CR = J('custos/custo_real.json')
+P, CO = CR['cenarios']['previsto'], CR['cenarios']['conservador']
+S24, T24 = CR['periodo_24m']['sai'], CR['periodo_24m']['tritan']
+EV = CR['eventos']
+ok(0, 'filamento da garra no modelo = Orca (g)', E['sai_fil_g'], fil, 1, 'Orca')
+ok(10, 'material da garra SAI = Orca × R$ 420/kg', 732.69, fil / 1000 * E['preco_pacf_kg'], 2, 'entradas_custo.json')
+ok(0, 'material da garra no modelo (R$)', 732.69, CR['impressoes']['sai']['material'], 2, 'custo_real.json')
+ok(0, 'material dos PADs = 139 g × R$ 158/kg', CR['impressoes']['pads']['material'], 139.0 / 1000 * E['preco_tpu_kg'], 2, 'entradas_custo.json')
+ok(0, 'peça superior de Tritan = 0,81 kg × R$ 220/kg', CR['impressoes']['tritan']['material'], E['tritan_sup_kg'] * E['preco_tritan_kg'], 2, 'entradas_custo.json')
+ok(11, 'caixa = R$ 300 × margem de 30%', 90, E['preco_caixa_rs'] * E['margem_bruta'], 0, 'entradas_custo.json', 'R$ 90 por caixa')
+ok(0, 'quebra do Tritan: total = direto + 280 caixas × R$ 90', EV['tritan']['total'], EV['tritan']['direto'] + 280 * 90, 2, 'custo_real.json')
+ok(0, 'caixas por mês (6/min × 60 × 730)', CR['producao']['caixas_por_mes'], 6 * 60 * 8760 / 12, 0, 'entradas_custo.json')
+ok(10, 'garra SAI pronta e instalada (R$)', 1121.29, EV['sai_inicio']['direto'], 2, 'custo_real.json', 'R$ 1.121,29')
+ok(10, 'encontro direto (milhões de caixas)', 4.6, P['encontro_direto']['caixas'] / 1e6, 1, 'custo_real.json', '4,6 milhões de caixas')
+ok(10, 'encontro direto (meses)', 17.5, P['encontro_direto']['mes'], 1, 'custo_real.json', '(17,5 meses)')
+ok(10, 'custo direto 24 meses, Tritan (R$)', 2342.48, T24['direto'], 2, 'custo_real.json', 'R$ 2.342,48')
+ok(10, 'custo direto 24 meses, SAI (R$)', 1854.74, S24['direto'], 2, 'custo_real.json', 'R$ 1.854,74')
+ok(10, 'tabela = série do gráfico (SAI, 24 meses)', S24['direto'], P['direto_24m']['sai'], 2, 'custo_real.json')
+ok(10, 'tabela = série do gráfico (Tritan, 24 meses)', T24['direto'], P['direto_24m']['tritan'], 2, 'custo_real.json')
+ok(10, 'SAI custa menos no ciclo (%)', 21, P['direto_24m']['economia'] / P['direto_24m']['tritan'] * 100, 0, 'custo_real.json', '21% menos')
+ok(10, 'por mil caixas, Tritan (R$)', 0.37, P['por_mil_caixas_direto']['tritan'], 2, 'custo_real.json', 'R$ 0,37')
+ok(10, 'por mil caixas, SAI (R$)', 0.29, P['por_mil_caixas_direto']['sai'], 2, 'custo_real.json', 'R$ 0,29')
+ok(10, 'filamento em 24 meses, SAI (R$)', 908.37, S24['material'], 2, 'custo_real.json', 'R$ 908,37')
+ok(10, 'mão de obra + inspeção em 24 meses, SAI (R$)', 564.84, S24['mao_de_obra'] + S24['inspecao'], 2, 'custo_real.json', 'R$ 564,84')
+ok(10, 'trocas de PAD no ciclo (a cada 3 meses, a 24ª vai com a garra)', 7, S24['eventos']['trocas_pad'], 0, 'custo_real.json', '7 trocas de PAD')
+ok(11, 'SAI se paga, previsto (dias)', 79, P['encontro_total']['dias'], 0, 'custo_real.json', 'se paga em 79 dias')
+ok(11, 'SAI se paga, conservador (dias)', 118, CO['encontro_total']['dias'], 0, 'custo_real.json')
+ok(11, 'caixas até o retorno (mil)', 683, P['encontro_total']['caixas'] / 1000, 0, 'custo_real.json', '683 mil')
+ok(11, 'economia em 2 anos com as caixas (R$ mil)', 148, P['total_24m']['economia'] / 1000, 0, 'custo_real.json', 'R$ 148 mil')
+ok(11, 'economia conservadora (R$ mil)', 84, CO['total_24m']['economia'] / 1000, 0, 'custo_real.json')
+ok(11, 'caixas a mais em 2 anos', 1640, P['caixas_perdidas_24m']['tritan'] - P['caixas_perdidas_24m']['sai'], 0, 'custo_real.json', '1.640')
+ok(11, 'caixas perdidas pelo Tritan (8 × 280)', 2240, 8 * 280, 0, 'equipe', 'Tritan perde 2.240')
+ok(11, 'paradas surpresa em 2 anos (Tritan)', 8, P['paradas_surpresa_24m']['tritan'], 0, 'custo_real.json', '8 → 0')
+ok(11, 'vida no pior caso no slide (anos)', 2.4, E['vida_pior_caso_anos'], 1, 'estudo_custos.json', '2,4 anos do pior caso')
+ok(13, 'caixas a mais por ano', 820, (P['caixas_perdidas_24m']['tritan'] - P['caixas_perdidas_24m']['sai']) / 2, 0, 'custo_real.json', 'sobram 820 caixas')
+ok(13, 'se paga em cerca de 79 dias (conclusão)', 79, P['encontro_total']['dias'], 0, 'custo_real.json', 'se paga em cerca de 79 dias')
 
 # ---------- Fusion (slides 6, 14) ----------
 res = camp['results']

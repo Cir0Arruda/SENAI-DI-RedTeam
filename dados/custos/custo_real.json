@@ -1,0 +1,654 @@
+{
+ "gerado_por": "dados/scripts/custo_real.py",
+ "entradas": "dados/custos/entradas_custo.json",
+ "producao": {
+  "caixas_por_min": 6,
+  "caixas_por_mes": 262800,
+  "caixas_24m": 6307200,
+  "valor_caixa_rs": 90.0,
+  "preco_caixa_rs": 300,
+  "margem_bruta": 0.3
+ },
+ "impressora_rs_h": 1.38,
+ "inspecao_trimestre_rs": 32.75,
+ "impressoes": {
+  "sai": {
+   "nome": "garra SAI (3 peças)",
+   "horas": 75.2,
+   "kg": 1.7445,
+   "material": 732.69,
+   "energia": 15.87,
+   "impressora": 103.4,
+   "bico": 15.04,
+   "consumiveis": 3.0,
+   "refugo": 86.7,
+   "mao_de_obra": 87.16,
+   "total": 1043.86
+  },
+  "pads": {
+   "nome": "8 PADs",
+   "horas": 11.0,
+   "kg": 0.139,
+   "material": 21.96,
+   "energia": 1.63,
+   "impressora": 15.12,
+   "bico": 0.0,
+   "consumiveis": 1.0,
+   "refugo": 1.94,
+   "mao_de_obra": 20.66,
+   "total": 62.31
+  },
+  "tritan": {
+   "nome": "peça superior de Tritan",
+   "horas": 35.13825,
+   "kg": 0.81,
+   "material": 178.2,
+   "energia": 5.33,
+   "impressora": 48.32,
+   "bico": 0.0,
+   "consumiveis": 1.0,
+   "refugo": 11.59,
+   "mao_de_obra": 25.7,
+   "total": 270.13
+  }
+ },
+ "paradas": {
+  "sai_troca": {
+   "min": 30,
+   "mao_de_obra": 15.12,
+   "caixas": 180,
+   "producao_rs": 16200.0
+  },
+  "pads": {
+   "min": 10,
+   "mao_de_obra": 5.04,
+   "caixas": 60,
+   "producao_rs": 5400.0
+  },
+  "corretiva": {
+   "min": 45,
+   "mao_de_obra": 22.67,
+   "caixas": 280,
+   "producao_rs": 25200.0
+  }
+ },
+ "eventos": {
+  "sai_inicio": {
+   "nome": "compra e instalação da garra SAI (com 8 PADs)",
+   "material": 754.65,
+   "energia": 17.5,
+   "impressora": 118.52,
+   "bico": 15.04,
+   "consumiveis": 4.0,
+   "refugo": 88.64,
+   "mao_de_obra": 122.94,
+   "direto": 1121.29,
+   "parada_min": 30,
+   "caixas": 180,
+   "producao_rs": 16200.0,
+   "total": 17321.29
+  },
+  "sai_troca": {
+   "nome": "troca preventiva da garra SAI (com 8 PADs novos)",
+   "material": 754.65,
+   "energia": 17.5,
+   "impressora": 118.52,
+   "bico": 15.04,
+   "consumiveis": 4.0,
+   "refugo": 88.64,
+   "mao_de_obra": 122.94,
+   "direto": 1121.29,
+   "parada_min": 30,
+   "caixas": 180,
+   "producao_rs": 16200.0,
+   "total": 17321.29
+  },
+  "pads": {
+   "nome": "troca dos 8 PADs",
+   "material": 21.96,
+   "energia": 1.63,
+   "impressora": 15.12,
+   "bico": 0.0,
+   "consumiveis": 1.0,
+   "refugo": 1.94,
+   "mao_de_obra": 25.7,
+   "direto": 67.35,
+   "parada_min": 10,
+   "caixas": 60,
+   "producao_rs": 5400.0,
+   "total": 5467.35
+  },
+  "tritan": {
+   "nome": "quebra da garra de Tritan (troca corretiva)",
+   "material": 178.2,
+   "energia": 5.33,
+   "impressora": 48.32,
+   "bico": 0.0,
+   "consumiveis": 1.0,
+   "refugo": 11.59,
+   "mao_de_obra": 48.37,
+   "direto": 292.81,
+   "parada_min": 45,
+   "caixas": 280,
+   "producao_rs": 25200.0,
+   "total": 25492.81
+  },
+  "sai_quebra": {
+   "nome": "quebra inesperada da garra SAI (conservador)",
+   "material": 754.65,
+   "energia": 17.5,
+   "impressora": 118.52,
+   "bico": 15.04,
+   "consumiveis": 4.0,
+   "refugo": 88.64,
+   "mao_de_obra": 130.49,
+   "direto": 1128.84,
+   "parada_min": 45,
+   "caixas": 280,
+   "producao_rs": 25200.0,
+   "total": 26328.84
+  }
+ },
+ "periodo_24m": {
+  "sai": {
+   "material": 908.37,
+   "energia": 28.91,
+   "impressora": 224.36,
+   "bico": 15.04,
+   "consumiveis": 11.0,
+   "refugo": 102.22,
+   "mao_de_obra": 302.84,
+   "direto": 1854.74,
+   "caixas": 600,
+   "producao_rs": 54000.0,
+   "total": 55854.74,
+   "inspecao": 262.0,
+   "eventos": {
+    "garras": 1,
+    "trocas_pad": 7,
+    "paradas_programadas": 8,
+    "paradas_surpresa": 0
+   }
+  },
+  "tritan": {
+   "material": 1425.6,
+   "energia": 42.64,
+   "impressora": 386.56,
+   "bico": 0.0,
+   "consumiveis": 8.0,
+   "refugo": 92.72,
+   "mao_de_obra": 386.96,
+   "direto": 2342.48,
+   "caixas": 2240,
+   "producao_rs": 201600.0,
+   "total": 203942.48,
+   "inspecao": 0.0,
+   "eventos": {
+    "quebras": 8,
+    "paradas_programadas": 0,
+    "paradas_surpresa": 8
+   }
+  }
+ },
+ "cenarios": {
+  "previsto": {
+   "serie_direto": [
+    {
+     "mes": 0,
+     "caixas": 0,
+     "tritan": 0.0,
+     "sai": 1121.29
+    },
+    {
+     "mes": 3,
+     "caixas": 788400,
+     "tritan": 292.81,
+     "sai": 1221.39
+    },
+    {
+     "mes": 6,
+     "caixas": 1576800,
+     "tritan": 585.62,
+     "sai": 1321.49
+    },
+    {
+     "mes": 9,
+     "caixas": 2365200,
+     "tritan": 878.43,
+     "sai": 1421.59
+    },
+    {
+     "mes": 12,
+     "caixas": 3153600,
+     "tritan": 1171.24,
+     "sai": 1521.69
+    },
+    {
+     "mes": 15,
+     "caixas": 3942000,
+     "tritan": 1464.05,
+     "sai": 1621.79
+    },
+    {
+     "mes": 18,
+     "caixas": 4730400,
+     "tritan": 1756.86,
+     "sai": 1721.89
+    },
+    {
+     "mes": 21,
+     "caixas": 5518800,
+     "tritan": 2049.67,
+     "sai": 1821.99
+    },
+    {
+     "mes": 24,
+     "caixas": 6307200,
+     "tritan": 2342.48,
+     "sai": 1854.74
+    }
+   ],
+   "serie_total": [
+    {
+     "mes": 0,
+     "caixas": 0,
+     "tritan": 0.0,
+     "sai": 17321.29
+    },
+    {
+     "mes": 3,
+     "caixas": 788400,
+     "tritan": 25492.81,
+     "sai": 22821.39
+    },
+    {
+     "mes": 6,
+     "caixas": 1576800,
+     "tritan": 50985.62,
+     "sai": 28321.49
+    },
+    {
+     "mes": 9,
+     "caixas": 2365200,
+     "tritan": 76478.43,
+     "sai": 33821.59
+    },
+    {
+     "mes": 12,
+     "caixas": 3153600,
+     "tritan": 101971.24,
+     "sai": 39321.69
+    },
+    {
+     "mes": 15,
+     "caixas": 3942000,
+     "tritan": 127464.05,
+     "sai": 44821.79
+    },
+    {
+     "mes": 18,
+     "caixas": 4730400,
+     "tritan": 152956.86,
+     "sai": 50321.89
+    },
+    {
+     "mes": 21,
+     "caixas": 5518800,
+     "tritan": 178449.67,
+     "sai": 55821.99
+    },
+    {
+     "mes": 24,
+     "caixas": 6307200,
+     "tritan": 203942.48,
+     "sai": 73176.03
+    },
+    {
+     "mes": 27,
+     "caixas": 7095600,
+     "tritan": 229435.29,
+     "sai": 78676.13
+    },
+    {
+     "mes": 30,
+     "caixas": 7884000,
+     "tritan": 254928.1,
+     "sai": 84176.23
+    }
+   ],
+   "encontro_direto": {
+    "mes": 17.46,
+    "dias": 531,
+    "caixas": 4587333,
+    "valor_rs": 1703.73
+   },
+   "encontro_total": {
+    "mes": 2.6,
+    "dias": 79,
+    "caixas": 683054,
+    "valor_rs": 22086.47
+   },
+   "direto_24m": {
+    "tritan": 2342.48,
+    "sai": 1854.74,
+    "economia": 487.74
+   },
+   "total_24m": {
+    "tritan": 203942.48,
+    "sai": 55854.74,
+    "economia": 148087.74
+   },
+   "por_mil_caixas_direto": {
+    "tritan": 0.37,
+    "sai": 0.29
+   },
+   "por_mil_caixas_total": {
+    "tritan": 32.33,
+    "sai": 8.86
+   },
+   "vida_meses": 24,
+   "quebras_sai_ano": 0.0,
+   "trocas_garra_24m": 0,
+   "trocas_pad_24m": 7,
+   "paradas_surpresa_24m": {
+    "tritan": 8,
+    "sai": 0
+   },
+   "caixas_perdidas_24m": {
+    "tritan": 2240,
+    "sai": 600
+   }
+  },
+  "conservador": {
+   "serie_direto": [
+    {
+     "mes": 0,
+     "caixas": 0,
+     "tritan": 0.0,
+     "sai": 1121.29
+    },
+    {
+     "mes": 3,
+     "caixas": 788400,
+     "tritan": 292.81,
+     "sai": 1503.6
+    },
+    {
+     "mes": 6,
+     "caixas": 1576800,
+     "tritan": 585.62,
+     "sai": 1885.91
+    },
+    {
+     "mes": 9,
+     "caixas": 2365200,
+     "tritan": 878.43,
+     "sai": 2268.22
+    },
+    {
+     "mes": 12,
+     "caixas": 3153600,
+     "tritan": 1171.24,
+     "sai": 3704.47
+    },
+    {
+     "mes": 15,
+     "caixas": 3942000,
+     "tritan": 1464.05,
+     "sai": 4086.78
+    },
+    {
+     "mes": 18,
+     "caixas": 4730400,
+     "tritan": 1756.86,
+     "sai": 4469.09
+    },
+    {
+     "mes": 21,
+     "caixas": 5518800,
+     "tritan": 2049.67,
+     "sai": 4851.4
+    },
+    {
+     "mes": 24,
+     "caixas": 6307200,
+     "tritan": 2342.48,
+     "sai": 5166.36
+    }
+   ],
+   "serie_total": [
+    {
+     "mes": 0,
+     "caixas": 0,
+     "tritan": 0.0,
+     "sai": 17321.29
+    },
+    {
+     "mes": 3,
+     "caixas": 788400,
+     "tritan": 25492.81,
+     "sai": 29403.6
+    },
+    {
+     "mes": 6,
+     "caixas": 1576800,
+     "tritan": 50985.62,
+     "sai": 41485.91
+    },
+    {
+     "mes": 9,
+     "caixas": 2365200,
+     "tritan": 76478.43,
+     "sai": 53568.22
+    },
+    {
+     "mes": 12,
+     "caixas": 3153600,
+     "tritan": 101971.24,
+     "sai": 77504.47
+    },
+    {
+     "mes": 15,
+     "caixas": 3942000,
+     "tritan": 127464.05,
+     "sai": 89586.78
+    },
+    {
+     "mes": 18,
+     "caixas": 4730400,
+     "tritan": 152956.86,
+     "sai": 101669.09
+    },
+    {
+     "mes": 21,
+     "caixas": 5518800,
+     "tritan": 178449.67,
+     "sai": 113751.4
+    },
+    {
+     "mes": 24,
+     "caixas": 6307200,
+     "tritan": 203942.48,
+     "sai": 137687.65
+    },
+    {
+     "mes": 27,
+     "caixas": 7095600,
+     "tritan": 229435.29,
+     "sai": 149769.96
+    },
+    {
+     "mes": 30,
+     "caixas": 7884000,
+     "tritan": 254928.1,
+     "sai": 161852.27
+    }
+   ],
+   "encontro_direto": null,
+   "encontro_total": {
+    "mes": 3.87,
+    "dias": 118,
+    "caixas": 1018314,
+    "valor_rs": 32927.06
+   },
+   "direto_24m": {
+    "tritan": 2342.48,
+    "sai": 5166.36,
+    "economia": -2823.88
+   },
+   "total_24m": {
+    "tritan": 203942.48,
+    "sai": 120366.36,
+    "economia": 83576.12
+   },
+   "por_mil_caixas_direto": {
+    "tritan": 0.37,
+    "sai": 0.82
+   },
+   "por_mil_caixas_total": {
+    "tritan": 32.33,
+    "sai": 19.08
+   },
+   "vida_meses": 12,
+   "quebras_sai_ano": 1,
+   "trocas_garra_24m": 1,
+   "trocas_pad_24m": 6,
+   "paradas_surpresa_24m": {
+    "tritan": 8,
+    "sai": 2
+   },
+   "caixas_perdidas_24m": {
+    "tritan": 2240,
+    "sai": 1280
+   }
+  }
+ },
+ "vida": {
+  "pior_caso_anos": 2.39,
+  "troca_preventiva_meses": 24,
+  "pads_meses": 3
+ },
+ "sensibilidade": [
+  {
+   "caso": "PA6-CF pelo preço da equipe (R$ 258/kg)",
+   "mudanca": {
+    "preco_pacf_kg": 258
+   },
+   "encontro_direto_meses": 12.62,
+   "encontro_total_dias": 78,
+   "economia_direta_24m": 798.61,
+   "economia_total_24m": 148398.61
+  },
+  {
+   "caso": "PA6-CF Bambu Lab (R$ 786/kg)",
+   "mudanca": {
+    "preco_pacf_kg": 786
+   },
+   "encontro_direto_meses": null,
+   "encontro_total_dias": 82,
+   "economia_direta_24m": -214.6,
+   "economia_total_24m": 147385.4
+  },
+  {
+   "caso": "material da peça de Tritan a R$ 250 (valor da equipe), mais os custos ocultos",
+   "mudanca": {
+    "preco_tritan_kg": 308.641975308642
+   },
+   "encontro_direto_meses": 12.55,
+   "encontro_total_dias": 79,
+   "economia_direta_24m": 1090.86,
+   "economia_total_24m": 148690.86
+  },
+  {
+   "caso": "caixa pelo preço de fábrica sem impostos (R$ 225)",
+   "mudanca": {
+    "preco_caixa_rs": 225
+   },
+   "encontro_direto_meses": 17.46,
+   "encontro_total_dias": 81,
+   "economia_direta_24m": 487.74,
+   "economia_total_24m": 111187.74
+  },
+  {
+   "caso": "inspeção semanal do PAD com a linha parada (fora da janela de limpeza)",
+   "mudanca": {
+    "inspecao_perde_producao": true
+   },
+   "encontro_direto_meses": 17.46,
+   "encontro_total_dias": null,
+   "economia_direta_24m": 487.74,
+   "economia_total_24m": -132712.26
+  },
+  {
+   "caso": "caixa pelo faturamento (R$ 300, sem margem)",
+   "mudanca": {
+    "margem_bruta": 1.0
+   },
+   "encontro_direto_meses": 17.46,
+   "encontro_total_dias": 76,
+   "economia_direta_24m": 487.74,
+   "economia_total_24m": 492487.74
+  },
+  {
+   "caso": "caixa pelo EBITDA do setor (10%)",
+   "mudanca": {
+    "margem_bruta": 0.1
+   },
+   "encontro_direto_meses": 17.46,
+   "encontro_total_dias": 88,
+   "economia_direta_24m": 487.74,
+   "economia_total_24m": 49687.74
+  },
+  {
+   "caso": "trocas programadas dentro da janela de sanitização (sem perder caixas)",
+   "mudanca": {
+    "parada_programada_perde_producao": false
+   },
+   "encontro_direto_meses": 17.46,
+   "encontro_total_dias": 4,
+   "economia_direta_24m": 487.74,
+   "economia_total_24m": 202087.74
+  },
+  {
+   "caso": "mão de obra mais cara (R$ 43,91/h)",
+   "mudanca": {
+    "rs_h_tecnico": 43.91
+   },
+   "encontro_direto_meses": 18.77,
+   "encontro_total_dias": 79,
+   "economia_direta_24m": 407.18,
+   "economia_total_24m": 148007.18
+  },
+  {
+   "caso": "impressora a 280 W e tarifa B3 (R$ 0,99/kWh)",
+   "mudanca": {
+    "impressora_kw": 0.28,
+    "tarifa_kwh_rs": 0.99
+   },
+   "encontro_direto_meses": 17.37,
+   "encontro_total_dias": 79,
+   "economia_direta_24m": 502.93,
+   "economia_total_24m": 148102.93
+  },
+  {
+   "caso": "refugo de 20% no PA6-CF",
+   "mudanca": {
+    "refugo_pacf": 0.2
+   },
+   "encontro_direto_meses": 18.81,
+   "encontro_total_dias": 79,
+   "economia_direta_24m": 401.04,
+   "economia_total_24m": 148001.04
+  },
+  {
+   "caso": "Tritan quebra só 2 vezes por ano",
+   "mudanca": {
+    "quebras_tritan_ano": 2
+   },
+   "encontro_direto_meses": null,
+   "encontro_total_dias": 218,
+   "economia_direta_24m": -683.5,
+   "economia_total_24m": 46116.5
+  }
+ ]
+}

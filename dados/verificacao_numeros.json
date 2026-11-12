@@ -1,5 +1,5 @@
 {
- "conferidos": 65,
+ "conferidos": 80,
  "problemas": [],
  "linhas": [
   {
@@ -283,14 +283,6 @@
    "fonte": "Orca"
   },
   {
-   "slide": 10,
-   "item": "filamento da garra (g)",
-   "mostrado": 1744.5,
-   "calculado": 1744.5,
-   "status": "OK",
-   "fonte": "Orca"
-  },
-  {
    "slide": 14,
    "item": "tempo de impressão da garra (h)",
    "mostrado": 75.2,
@@ -347,132 +339,260 @@
    "fonte": "peso_conjunto.csv"
   },
   {
-   "slide": 10,
-   "item": "material da garra (R$)",
-   "mostrado": 450.08,
-   "calculado": 450.081,
+   "slide": 0,
+   "item": "filamento da garra no modelo = Orca (g)",
+   "mostrado": 1744.5,
+   "calculado": 1744.5,
    "status": "OK",
-   "fonte": "Orca × R$ 258/kg"
+   "fonte": "Orca"
   },
   {
    "slide": 10,
-   "item": "material dos PADs (R$)",
+   "item": "material da garra SAI = Orca × R$ 420/kg",
+   "mostrado": 732.69,
+   "calculado": 732.69,
+   "status": "OK",
+   "fonte": "entradas_custo.json"
+  },
+  {
+   "slide": 0,
+   "item": "material da garra no modelo (R$)",
+   "mostrado": 732.69,
+   "calculado": 732.69,
+   "status": "OK",
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 0,
+   "item": "material dos PADs = 139 g × R$ 158/kg",
    "mostrado": 21.96,
    "calculado": 21.962,
    "status": "OK",
-   "fonte": "Orca × R$ 158/kg"
+   "fonte": "entradas_custo.json"
   },
   {
-   "slide": 10,
-   "item": "custo de aquisição (R$)",
-   "mostrado": 495.54,
-   "calculado": 495.54,
+   "slide": 0,
+   "item": "peça superior de Tritan = 0,81 kg × R$ 220/kg",
+   "mostrado": 178.2,
+   "calculado": 178.2,
    "status": "OK",
-   "fonte": "soma"
-  },
-  {
-   "slide": 10,
-   "item": "gasto no ano: garra + 6 trocas de PAD (R$)",
-   "mostrado": 627.3,
-   "calculado": 627.3,
-   "status": "OK",
-   "fonte": "soma"
-  },
-  {
-   "slide": 10,
-   "item": "diferença na compra (R$)",
-   "mostrado": 245.54,
-   "calculado": 245.54,
-   "status": "OK",
-   "fonte": "soma"
-  },
-  {
-   "slide": 10,
-   "item": "gasto no ano menor (%)",
-   "mostrado": 37,
-   "calculado": 37.27,
-   "status": "OK",
-   "fonte": "soma"
-  },
-  {
-   "slide": 10,
-   "item": "fatia da garra (%)",
-   "mostrado": 91,
-   "calculado": 90.8262,
-   "status": "OK",
-   "fonte": "soma"
-  },
-  {
-   "slide": 10,
-   "item": "fatia dos PADs (%)",
-   "mostrado": 4,
-   "calculado": 4.4315,
-   "status": "OK",
-   "fonte": "soma"
-  },
-  {
-   "slide": 10,
-   "item": "fatia do bico (%)",
-   "mostrado": 5,
-   "calculado": 4.7423,
-   "status": "OK",
-   "fonte": "soma"
+   "fonte": "entradas_custo.json"
   },
   {
    "slide": 11,
-   "item": "Tritan em 24 meses (R$)",
-   "mostrado": 2000,
-   "calculado": 2000,
+   "item": "caixa = R$ 300 × margem de 30%",
+   "mostrado": 90,
+   "calculado": 90.0,
    "status": "OK",
-   "fonte": "quebra a cada 3 meses"
+   "fonte": "entradas_custo.json"
+  },
+  {
+   "slide": 0,
+   "item": "quebra do Tritan: total = direto + 280 caixas × R$ 90",
+   "mostrado": 25492.81,
+   "calculado": 25492.81,
+   "status": "OK",
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 0,
+   "item": "caixas por mês (6/min × 60 × 730)",
+   "mostrado": 262800,
+   "calculado": 262800.0,
+   "status": "OK",
+   "fonte": "entradas_custo.json"
+  },
+  {
+   "slide": 10,
+   "item": "garra SAI pronta e instalada (R$)",
+   "mostrado": 1121.29,
+   "calculado": 1121.29,
+   "status": "OK",
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 10,
+   "item": "encontro direto (milhões de caixas)",
+   "mostrado": 4.6,
+   "calculado": 4.5873,
+   "status": "OK",
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 10,
+   "item": "encontro direto (meses)",
+   "mostrado": 17.5,
+   "calculado": 17.46,
+   "status": "OK",
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 10,
+   "item": "custo direto 24 meses, Tritan (R$)",
+   "mostrado": 2342.48,
+   "calculado": 2342.48,
+   "status": "OK",
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 10,
+   "item": "custo direto 24 meses, SAI (R$)",
+   "mostrado": 1854.74,
+   "calculado": 1854.74,
+   "status": "OK",
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 10,
+   "item": "tabela = série do gráfico (SAI, 24 meses)",
+   "mostrado": 1854.74,
+   "calculado": 1854.74,
+   "status": "OK",
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 10,
+   "item": "tabela = série do gráfico (Tritan, 24 meses)",
+   "mostrado": 2342.48,
+   "calculado": 2342.48,
+   "status": "OK",
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 10,
+   "item": "SAI custa menos no ciclo (%)",
+   "mostrado": 21,
+   "calculado": 20.8215,
+   "status": "OK",
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 10,
+   "item": "por mil caixas, Tritan (R$)",
+   "mostrado": 0.37,
+   "calculado": 0.37,
+   "status": "OK",
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 10,
+   "item": "por mil caixas, SAI (R$)",
+   "mostrado": 0.29,
+   "calculado": 0.29,
+   "status": "OK",
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 10,
+   "item": "filamento em 24 meses, SAI (R$)",
+   "mostrado": 908.37,
+   "calculado": 908.37,
+   "status": "OK",
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 10,
+   "item": "mão de obra + inspeção em 24 meses, SAI (R$)",
+   "mostrado": 564.84,
+   "calculado": 564.84,
+   "status": "OK",
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 10,
+   "item": "trocas de PAD no ciclo (a cada 3 meses, a 24ª vai com a garra)",
+   "mostrado": 7,
+   "calculado": 7,
+   "status": "OK",
+   "fonte": "custo_real.json"
   },
   {
    "slide": 11,
-   "item": "SAI em 24 meses (R$)",
-   "mostrado": 759.06,
-   "calculado": 759.06,
+   "item": "SAI se paga, previsto (dias)",
+   "mostrado": 79,
+   "calculado": 79,
    "status": "OK",
-   "fonte": "garra + 12 trocas de PAD"
+   "fonte": "custo_real.json"
   },
   {
    "slide": 11,
-   "item": "economia em 2 anos (R$)",
-   "mostrado": 1240.94,
-   "calculado": 1240.94,
+   "item": "SAI se paga, conservador (dias)",
+   "mostrado": 118,
+   "calculado": 118,
    "status": "OK",
-   "fonte": "conta"
+   "fonte": "custo_real.json"
   },
   {
    "slide": 11,
-   "item": "retorno (%)",
-   "mostrado": 163,
-   "calculado": 163.4838,
+   "item": "caixas até o retorno (mil)",
+   "mostrado": 683,
+   "calculado": 683.054,
    "status": "OK",
-   "fonte": "conta"
+   "fonte": "custo_real.json"
   },
   {
    "slide": 11,
-   "item": "mês em que o SAI se paga",
-   "mostrado": 9,
-   "calculado": 9,
+   "item": "economia em 2 anos com as caixas (R$ mil)",
+   "mostrado": 148,
+   "calculado": 148.0877,
    "status": "OK",
-   "fonte": "conta"
+   "fonte": "custo_real.json"
   },
   {
    "slide": 11,
-   "item": "SAI R$ por hora (24 h × 730 h/mês)",
-   "mostrado": 0.04,
-   "calculado": 0.0433,
+   "item": "economia conservadora (R$ mil)",
+   "mostrado": 84,
+   "calculado": 83.5761,
    "status": "OK",
-   "fonte": "conta"
+   "fonte": "custo_real.json"
   },
   {
    "slide": 11,
-   "item": "Tritan R$ por hora",
-   "mostrado": 0.11,
-   "calculado": 0.1142,
+   "item": "caixas a mais em 2 anos",
+   "mostrado": 1640,
+   "calculado": 1640,
    "status": "OK",
-   "fonte": "conta"
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 11,
+   "item": "caixas perdidas pelo Tritan (8 × 280)",
+   "mostrado": 2240,
+   "calculado": 2240,
+   "status": "OK",
+   "fonte": "equipe"
+  },
+  {
+   "slide": 11,
+   "item": "paradas surpresa em 2 anos (Tritan)",
+   "mostrado": 8,
+   "calculado": 8,
+   "status": "OK",
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 11,
+   "item": "vida no pior caso no slide (anos)",
+   "mostrado": 2.4,
+   "calculado": 2.39,
+   "status": "OK",
+   "fonte": "estudo_custos.json"
+  },
+  {
+   "slide": 13,
+   "item": "caixas a mais por ano",
+   "mostrado": 820,
+   "calculado": 820.0,
+   "status": "OK",
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 13,
+   "item": "se paga em cerca de 79 dias (conclusão)",
+   "mostrado": 79,
+   "calculado": 79,
+   "status": "OK",
+   "fonte": "custo_real.json"
   },
   {
    "slide": 14,

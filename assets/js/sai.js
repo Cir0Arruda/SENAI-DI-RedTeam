@@ -1,4 +1,4 @@
-// Projeto SAI: gráfico de força junto com o vídeo do PAD, barras de custo e gráfico de retorno (ROI).
+// Projeto SAI: gráfico de força junto com o vídeo do PAD, matriz de prioridade e Materiais. Custos e Retorno ficam em custo.js.
 (() => {
   const NS = 'http://www.w3.org/2000/svg';
   const RED = '#e5232f', INDIGO = '#5b5bd6';          // mesma paleta validada dos outros gráficos
@@ -65,135 +65,6 @@
       requestAnimationFrame(loop);
     };
     requestAnimationFrame(loop);
-  }
-
-  /* ---------- Custos: barras crescem quando o slide abre ---------- */
-  function costBars() {
-    const s = document.getElementById('s-custo');
-    if (!s) return;
-    const bars = [...s.querySelectorAll('.sai-bar i, .cmp-bars i')];
-    const grow = () => {
-      bars.forEach(b => { b.style.transition = 'none'; b.style.width = '0'; });
-      void s.offsetWidth;
-      bars.forEach((b, i) => { b.style.transition = `width .9s cubic-bezier(.2,.7,.2,1) ${reduce ? 0 : i * 0.08}s`; b.style.width = 'var(--w)'; });
-    };
-    document.addEventListener('slidechange', ev => { if (ev.detail.slide === s) grow(); });
-    if (isOn(s)) grow(); else bars.forEach(b => { b.style.width = 'var(--w)'; });
-  }
-
-  /* ---------- ROI: gasto acumulado com material em 24 meses, Tritan × SAI (valores de exemplo) ---------- */
-  function roi() {
-    const host = document.getElementById('chart-roi');
-    if (!host) return;
-    const MESES = 24, TRITAN = 250, SAI = 495.54, PADS = 21.96, HORAS = 730 * MESES;
-    const trocasPad = Array.from({ length: MESES / 2 }, (_, i) => [2 * (i + 1), PADS]);
-    // eventos [mês, valor em R$ de material]
-    const tritan = Array.from({ length: MESES / 3 }, (_, i) => [3 * (i + 1), TRITAN]);
-    const cen = {
-      sim:  { sai: [[0, SAI], ...trocasPad], quebras: 0,
-              txt: 'Pelas simulações a garra SAI não quebra; só os PADs são trocados a cada 2 meses.' },
-      cons: { sai: [[0, SAI], ...trocasPad, [6, SAI], [18, SAI]], quebras: 2,
-              txt: 'Conservador: a garra SAI quebra 1 vez por ano e é trocada inteira.' }
-    };
-    const acum = (ev, m) => ev.filter(e => e[0] <= m).reduce((a, e) => a + e[1], 0);
-    const W = 540, H = 280, L = 62, R = 84, T = 14, B = 30, yMax = 2200;
-    const x = m => L + (m / MESES) * (W - L - R), y = v => T + (1 - v / yMax) * (H - T - B);
-    const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img' }, host);
-    const grid = el('g', { class: 'grid' }, svg), axis = el('g', { class: 'axis' }, svg);
-    for (let v = 0; v <= 2000; v += 500) {
-      el('line', { x1: L, x2: W - R, y1: y(v), y2: y(v) }, grid);
-      el('text', { x: L - 8, y: y(v) + 4, 'text-anchor': 'end' }, axis).textContent = `R$ ${fmt(v)}`;
-    }
-    for (let m = 0; m <= MESES; m += 6) el('text', { x: x(m), y: H - 8, 'text-anchor': 'middle' }, axis).textContent = m ? `${m} meses` : 'início';
-    const step = ev => {
-      let d = `M${x(0)},${y(0)}`, v = 0;
-      for (let m = 0; m <= MESES; m++) {
-        const nv = acum(ev, m);
-        d += ` H${x(m).toFixed(1)}`;
-        if (nv !== v) { d += ` V${y(nv).toFixed(1)}`; v = nv; }
-      }
-      return d;
-    };
-    const clip = el('clipPath', { id: 'roi-clip' }, el('defs', {}, svg));
-    const cr = el('rect', { x: 0, y: 0, width: W, height: H }, clip);
-    const g = el('g', { 'clip-path': 'url(#roi-clip)' }, svg);
-    el('path', { d: step(tritan), fill: 'none', stroke: INDIGO, 'stroke-width': 2.2, 'stroke-linejoin': 'round' }, g);
-    const pSai = el('path', { fill: 'none', stroke: RED, 'stroke-width': 2.2, 'stroke-linejoin': 'round' }, g);
-    // marcadores das quebras da garra de Tritan
-    tritan.forEach(([m]) => el('circle', { cx: x(m), cy: y(acum(tritan, m)), r: 3.5, fill: INDIGO, stroke: '#fff', 'stroke-width': 2 }, g));
-    el('text', { x: x(3) + 6, y: y(acum(tritan, 3)) + 19, class: 'lbl' }, g).textContent = '1 quebra';
-    el('text', { x: x(MESES) + 8, y: y(acum(tritan, MESES)) + 4, class: 'lbl' }, g).textContent = `R$ ${fmt(acum(tritan, MESES))}`;
-    const endS = el('text', { x: x(MESES) + 8, class: 'lbl red' }, g);
-    const pbDot = el('circle', { r: 5, fill: '#fff', stroke: RED, 'stroke-width': 2.5 }, g);
-    const pbTxt = el('text', { class: 'lbl red', 'text-anchor': 'middle' }, g);
-    // hover
-    const cross = el('line', { y1: T, y2: H - B, stroke: 'rgba(21,21,29,.3)', 'stroke-dasharray': '3 3', opacity: 0 }, svg);
-    const tip = document.createElement('div'); tip.className = 'tip'; host.appendChild(tip);
-    let cur = 'sim';
-    const hit = el('rect', { x: L, y: T, width: W - L - R, height: H - T - B, fill: 'transparent' }, svg);
-    hit.addEventListener('pointermove', ev => {
-      const r = svg.getBoundingClientRect(), hr = host.getBoundingClientRect();
-      const m = Math.max(0, Math.min(MESES, Math.round(((ev.clientX - r.left) * (W / r.width) - L) / (W - L - R) * MESES)));
-      const a = acum(tritan, m), b = acum(cen[cur].sai, m), d = a - b;
-      cross.setAttribute('x1', x(m)); cross.setAttribute('x2', x(m)); cross.setAttribute('opacity', 1);
-      tip.innerHTML = `<b>${m ? `${m}º mês` : 'início'}</b>
-        <div class="r"><i style="background:${INDIGO}"></i>Tritan: R$ ${fmt(a, 2)}</div>
-        <div class="r"><i style="background:${RED}"></i>SAI: R$ ${fmt(b, 2)}</div>
-        <div>${d >= 0 ? `economia: R$ ${fmt(d, 2)}` : `ainda falta: R$ ${fmt(-d, 2)}`}</div>`;
-      tip.classList.add('on');
-      const hx = ev.clientX - hr.left, hy = ev.clientY - hr.top;
-      tip.style.left = `${Math.min(Math.max(hx + 14, 8), host.clientWidth - tip.offsetWidth - 8)}px`;
-      tip.style.top = `${Math.max(hy - tip.offsetHeight - 10, 8)}px`;
-    });
-    hit.addEventListener('pointerleave', () => { cross.setAttribute('opacity', 0); tip.classList.remove('on'); });
-
-    const $ = id => document.getElementById(id);
-    const setNum = (e, txt) => { e.textContent = txt; e.dataset.final = txt; };
-    const count = (e, to, f) => {
-      e.dataset.final = f(to);
-      if (reduce) { e.textContent = f(to); return; }
-      const t0 = performance.now();
-      const st = now => { const k = Math.max(0, Math.min(1, (now - t0) / 900)); e.textContent = f(to * ease(k)); if (k < 1) requestAnimationFrame(st); };
-      requestAnimationFrame(st);
-    };
-    const play = () => {
-      if (reduce) { cr.setAttribute('width', W); return; }
-      const t0 = performance.now();
-      const st = now => { const k = Math.max(0, Math.min(1, (now - t0) / 1600)); cr.setAttribute('width', L + ease(k) * (W - L)); if (k < 1) requestAnimationFrame(st); };
-      cr.setAttribute('width', L); requestAnimationFrame(st);
-    };
-    const show = (c, anim) => {
-      cur = c;
-      const C = cen[c], hoje = acum(tritan, MESES), sai = acum(C.sai, MESES);
-      const eco = hoje - sai, pct = eco / sai * 100;
-      let pb = null;
-      // primeiro mês a partir do qual o SAI fica sempre abaixo da Tritan
-      for (let m = MESES; m >= 1 && acum(C.sai, m) <= acum(tritan, m); m--) pb = m;
-      pSai.setAttribute('d', step(C.sai));
-      endS.setAttribute('y', y(sai) + 4);
-      endS.textContent = `R$ ${fmt(sai)}`;
-      if (pb !== null) {
-        const py = y(acum(C.sai, pb));
-        pbDot.setAttribute('cx', x(pb)); pbDot.setAttribute('cy', py); pbDot.setAttribute('opacity', 1);
-        pbTxt.setAttribute('x', x(pb)); pbTxt.setAttribute('y', py + 22); pbTxt.textContent = 'se paga aqui';
-      } else { pbDot.setAttribute('opacity', 0); pbTxt.textContent = ''; }
-      $('roi-cen-txt').textContent = C.txt;
-      $('roi-eco-s').textContent = `Tritan R$ ${fmt(hoje)} × SAI R$ ${fmt(sai, 2)}`;
-      $('roi-x-s').textContent = `R$ ${fmt(eco, 2)} ÷ R$ ${fmt(sai, 2)} gastos com o SAI`;
-      $('roi-h-s').textContent = `Tritan: R$ ${fmt(hoje / HORAS, 2)} por hora`;
-      const fE = v => `R$ ${fmt(v, 2)}`, fX = v => `${fmt(v)}%`, fH = v => `R$ ${fmt(v, 2)}`, fP = v => `${fmt(v)} meses`;
-      const els = [[$('roi-eco'), eco, fE], [$('roi-x'), pct, fX], [$('roi-h'), sai / HORAS, fH], [$('roi-pb'), pb || MESES, fP]];
-      els.forEach(([e, v, f]) => (anim ? count(e, v, f) : setNum(e, f(v))));
-      svg.setAttribute('aria-label', `Gasto acumulado com material em ${MESES} meses: garra de Tritan R$ ${fmt(hoje)}; garra SAI R$ ${fmt(sai, 2)}${pb ? `; o SAI se paga no ${pb}º mês` : ''}.`);
-    };
-    show('sim', false);
-    document.querySelectorAll('#roi-cen button').forEach(b => b.addEventListener('click', () => {
-      document.querySelectorAll('#roi-cen button').forEach(o => { o.classList.toggle('on', o === b); o.setAttribute('aria-selected', o === b); });
-      show(b.dataset.c, true); play();
-    }));
-    const slide = host.closest('.slide');
-    document.addEventListener('slidechange', ev => { if (ev.detail.slide === slide) play(); });
-    if (isOn(host)) play();
   }
 
   /* ---------- Payback: simulação com controles (só material, 24 meses) ---------- */
@@ -426,5 +297,5 @@
     if (isOn(seg)) show('mat-video');
   }
 
-  padChart(); costBars(); roi(); payback(); matriz(); matPanes();
+  padChart(); payback(); matriz(); matPanes();
 })();

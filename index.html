@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=r08v">
+  <link rel="stylesheet" href="assets/css/style.css?v=r10a">
   <script type="importmap">
     { "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
@@ -90,7 +90,7 @@
               <li class="glass"><b>01</b><span>Introdução<small>As dores da Ajinomoto: a garra quebra, a linha para e o custo de oportunidade</small></span></li>
               <li class="glass"><b>02</b><span>Ideias anteriores<small>Matriz de prioridade: valor agregado × complexidade</small></span></li>
               <li class="glass"><b>03</b><span>Projeto SAI<small>A solução: material novo, estrutura interna leve e PAD de sacrifício</small></span></li>
-              <li class="glass"><b>04</b><span>Custos<small>Custo de aquisição, peso e retorno do investimento</small></span></li>
+              <li class="glass"><b>04</b><span>Custos<small>Custo real em 2 anos, com os gastos ocultos, e retorno contado em caixas</small></span></li>
               <li class="glass"><b>05</b><span>Sustentabilidade e conclusão<small>Descarte e reciclagem, segurança, peso, caixas garantidas e durabilidade</small></span></li>
             </ol>
           </div>
@@ -411,98 +411,92 @@
           </div>
         </section>
 
-        <!-- Custos: aquisição da garra SAI × Tritan -->
+        <!-- Custos: custo real em 2 anos (Tritan × SAI) e retorno com a produção -->
+<!-- CUSTO:INICIO (gerado por dados/scripts/custo_slides.py a partir de dados/custos/custo_real.json) -->
         <section class="slide" data-title="Custos" id="s-custo">
           <div class="wrap wide">
             <div class="s-head compact">
-              <span class="kicker">Custos · Aquisição</span>
-              <h2>Quanto custa <em>a garra SAI</em></h2>
+              <span class="kicker">Custos · Custo real em 2 anos</span>
+              <h2>Quanto custa a garra SAI <em>de verdade</em></h2>
             </div>
-            <div class="split" style="--cols:minmax(0,1.25fr) minmax(0,1fr); align-items:start">
-              <div class="glass card" style="padding:14px 18px">
-                <table class="tbl compact custo-tbl">
-                  <thead><tr><th></th><th>Tritan (atual)</th><th>Garra SAI</th></tr></thead>
-                  <tbody>
-                    <tr><td>Material</td><td>Tritan importado</td><td>Nylon com fibra de carbono + borracha (PADs), nacionais</td></tr>
-                    <tr><td>Garra (3 peças)</td><td>R$ 250,00</td><td>R$ <span data-r07="R07_SEM.custo_rs" data-d="2">450,08</span> <small><span data-r07="R07_SEM.fil_g" data-d="1">1.744,5</span> g de material</small></td></tr>
-                    <tr><td>8 PADs de proteção</td><td class="na">—</td><td>R$ 21,96 <small><span data-r07="pads.total_g" data-d="0">139</span> g de material</small></td></tr>
-                    <tr><td>Bico da impressora</td><td class="na">—</td><td>R$ 23,50 <small>bico endurecido</small></td></tr>
-                    <tr class="total"><td>Custo de aquisição</td><td>R$ 250,00</td><td><b>R$ 495,54</b></td></tr>
-                    <tr><td>Peso da garra montada</td><td>2,834 kg</td><td><b>2,783 kg</b> <small>51 g mais leve, já com os 8 PADs</small></td></tr>
-                    <tr><td>Prazo do material</td><td>15 a 20 dias</td><td>5 a 8 dias úteis</td></tr>
-                    <tr><td>Trocas por ano</td><td>4 garras <small>quebra a cada 3 meses</small></td><td>6 jogos de 8 PADs <small>a cada 2 meses</small></td></tr>
-                    <tr class="total"><td>Gasto com peças no ano</td><td>R$ 1.000,00</td><td><b>R$ 627,30</b> <small>garra + trocas de PAD</small></td></tr>
-                  </tbody>
-                </table>
+            <div class="split" style="--cols:minmax(0,1.08fr) minmax(0,1fr); align-items:start">
+              <div class="glass card chart" style="padding:14px 18px">
+                <h4>Custo direto acumulado no ciclo de 2 anos <span class="tag sim" style="margin-left:6px">estimativa</span></h4>
+                <p class="sub">material, energia, impressora, refugo e mão de obra · sem a produção parada · R$</p>
+                <div class="legend"><span><i style="background:#5b5bd6"></i>Tritan (atual)</span><span><i style="background:#e5232f"></i>Garra SAI</span></div>
+                <div id="chart-custo" class="roi-host"></div>
+                <p class="note" style="margin:4px 0 0">A garra SAI começa mais cara: <b>R$ 1.121,29</b> para imprimir, montar e instalar. As linhas se cruzam com <b>4,6 milhões de caixas</b> (17,5 meses). No fim dos 2 anos ela custa <b>21% menos</b>.</p>
               </div>
               <div style="display:grid; gap:12px">
-                <div class="glass card chart" style="padding:14px 18px">
-                  <h4>Para onde vão os R$ 495,54</h4>
-                  <p class="sub">material de uma garra SAI completa</p>
-                  <div class="cost-bar sai-bar" aria-hidden="true"><i class="c-garra" style="--w:90.83%"></i><i class="c-pad" style="--w:4.43%"></i><i class="c-bico" style="--w:4.74%"></i></div>
-                  <div class="legend" style="margin:8px 0 0"><span><i style="background:var(--ink-2)"></i>garra · 91%</span><span><i style="background:var(--s-indigo)"></i>8 PADs · 4%</span><span><i style="background:#c27c0e"></i>bico · 5%</span></div>
+                <div class="glass card" style="padding:12px 16px">
+                  <h3 style="margin:0 0 6px; font-size:15px">Para onde vai o dinheiro em 2 anos</h3>
+                  <table class="tbl compact custo-tbl">
+                    <thead><tr><th></th><th>Tritan (atual)</th><th>Garra SAI</th></tr></thead>
+                    <tbody>
+                    <tr><td>O que acontece</td><td>8 quebras <small>troca corretiva</small></td><td>1 garra + 7 trocas de PAD <small>troca preventiva</small></td></tr>
+                    <tr><td>Filamento <small>PA6-CF R$ 420/kg · TPU R$ 158/kg · Tritan R$ 220/kg</small></td><td>R$ 1.425,60</td><td>R$ 908,37</td></tr>
+                    <tr><td>Energia <small>impressora e secador de filamento</small></td><td>R$ 42,64</td><td>R$ 28,91</td></tr>
+                    <tr><td>Impressora <small>depreciação, desgaste e bico endurecido</small></td><td>R$ 386,56</td><td>R$ 239,40</td></tr>
+                    <tr><td>Impressões perdidas <small>refugo e consumíveis</small></td><td>R$ 100,72</td><td>R$ 113,22</td></tr>
+                    <tr><td>Mão de obra <small>imprimir, acabar, trocar e inspecionar</small></td><td>R$ 386,96</td><td>R$ 564,84</td></tr>
+                    <tr class="total"><td>Custo direto em 2 anos</td><td>R$ 2.342,48</td><td><b>R$ 1.854,74</b></td></tr>
+                    <tr><td>Por mil caixas produzidas</td><td>R$ 0,37</td><td><b>R$ 0,29</b></td></tr>
+                    </tbody>
+                  </table>
                 </div>
-                <div class="glass card chart" style="padding:14px 18px">
-                  <h4>Tritan × SAI</h4>
-                  <p class="sub">R$ · só peças</p>
-                  <div class="cmp-bars">
-                    <div class="cb-group"><span class="cb-t">Comprar uma garra</span>
-                      <div class="cb"><span>Tritan</span><i style="--w:25%; background:#5b5bd6"></i><b>R$ 250</b></div>
-                      <div class="cb"><span>SAI</span><i style="--w:49.55%; background:#e5232f"></i><b>R$ 495,54</b></div>
-                    </div>
-                    <div class="cb-group"><span class="cb-t">Peças em 1 ano</span>
-                      <div class="cb"><span>Tritan</span><i style="--w:100%; background:#5b5bd6"></i><b>R$ 1.000</b></div>
-                      <div class="cb"><span>SAI</span><i style="--w:62.73%; background:#e5232f"></i><b>R$ 627,30</b></div>
-                    </div>
-                  </div>
-                </div>
-                <p class="note" style="margin:0">Comprar a garra SAI custa R$ 245,54 a mais, mas como ela dura cerca de 24 meses em vez de quebrar a cada 3, o gasto com peças no ano fica <b>37% menor</b>. O retorno mês a mês está no próximo slide. <span class="tag eq">valores de exemplo</span> Preços da equipe; fora da conta: mão de obra e energia.</p>
+                <p class="note" style="margin:0"><span class="tag sim">preços de mercado</span> Lojas e tarifas de nov/2026: energia R$ 0,70/kWh (indústria, CPFL), técnico R$ 30,23/h com encargos, impressora K1 Max R$ 5.500 em 5.000 h. Tempos de troca e refugo são hipóteses. Fontes em <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/custos/entradas_custo.json" target="_blank" rel="noopener">entradas_custo.json</a>.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- ROI: gasto acumulado com material, Tritan × SAI (valores de exemplo) -->
+        <!-- Retorno: custo total com a produção parada, por caixas produzidas -->
         <section class="slide" data-title="Retorno (ROI)" id="s-roi">
           <div class="wrap wide">
             <div class="s-head compact" style="display:flex; justify-content:space-between; align-items:end; gap:16px; flex-wrap:wrap">
               <div>
-                <span class="kicker">Custos · Retorno do investimento</span>
-                <h2>Com o tempo, o SAI <em>gasta menos</em> material</h2>
+                <span class="kicker">Custos · Retorno com a produção</span>
+                <h2>Contando as caixas, o SAI <em id="roi2-tit">se paga em 79 dias</em></h2>
               </div>
-              <div class="seg" id="roi-cen" role="tablist" aria-label="Cenário do SAI">
-                <button class="on" role="tab" aria-selected="true" data-c="sim">Pelas simulações</button>
-                <button role="tab" aria-selected="false" data-c="cons">Conservador</button>
+              <div class="seg" id="roi2-cen" role="tablist" aria-label="Cenário do SAI">
+                <button class="on" role="tab" aria-selected="true" data-c="previsto">Previsto</button>
+                <button role="tab" aria-selected="false" data-c="conservador">Conservador</button>
               </div>
             </div>
-            <div class="split" style="--cols:minmax(0,1fr) minmax(0,1fr); align-items:start">
+            <div class="split" style="--cols:minmax(0,1.08fr) minmax(0,1fr); align-items:start">
               <div class="glass card chart" style="padding:14px 18px">
-                <h4>Gasto acumulado com material em 24 meses <span class="tag eq" style="margin-left:6px">exemplo</span></h4>
-                <p class="sub">peças compradas e impressas · R$</p>
+                <h4>Custo total acumulado por caixas produzidas <span class="tag sim" style="margin-left:6px">estimativa</span></h4>
+                <p class="sub">custo direto + caixas que deixam de sair nas paradas (R$ 90 por caixa: margem de 30%) · R$</p>
                 <div class="legend"><span><i style="background:#5b5bd6"></i>Tritan (atual)</span><span><i style="background:#e5232f"></i>Garra SAI</span></div>
-                <div id="chart-roi" class="roi-host"></div>
-                <p class="note" id="roi-cen-txt" style="margin:4px 0 0">&nbsp;</p>
+                <div id="chart-roi2" class="roi-host"></div>
+                <p class="note" id="roi2-txt" style="margin:4px 0 0">Previsto: a garra SAI é trocada a cada 2 anos e os PADs a cada trimestre, sempre com data marcada.</p>
               </div>
               <div style="display:grid; gap:12px">
                 <div class="g2 roi-kpi">
-                  <div class="glass stat sm"><b id="roi-eco">R$ 1.240,94</b><span>economia em 2 anos</span><small id="roi-eco-s">Tritan R$ 2.000 × SAI R$ 759,06</small></div>
-                  <div class="glass stat sm"><b class="ink" id="roi-x">163%</b><span>de retorno sobre o gasto com o SAI</span><small id="roi-x-s">R$ 1.240,94 ÷ R$ 759,06 gastos com o SAI</small></div>
-                  <div class="glass stat sm"><b class="ink" id="roi-pb">9 meses</b><span>para o SAI se pagar</span><small>depois disso, só economia</small></div>
-                  <div class="glass stat sm"><b class="ink" id="roi-h">R$ 0,04</b><span>de material por hora com o SAI</span><small id="roi-h-s">Tritan: R$ 0,11 por hora</small></div>
+                  <div class="glass stat sm"><b id="roi2-pb">79 dias</b><span>para o SAI se pagar</span><small id="roi2-pb-s">cerca de 683 mil de caixas produzidas</small></div>
+                  <div class="glass stat sm"><b class="ink" id="roi2-eco">R$ 148 mil</b><span>de economia em 2 anos</span><small id="roi2-eco-s">Tritan R$ 204 mil × SAI R$ 56 mil</small></div>
+                  <div class="glass stat sm"><b class="ink" id="roi2-cx">1.640</b><span>caixas a mais em 2 anos</span><small id="roi2-cx-s">Tritan perde 2.240; SAI 600</small></div>
+                  <div class="glass stat sm"><b class="ink" id="roi2-sp">8 → 0</b><span>paradas surpresa em 2 anos</span><small>viram trocas com data marcada</small></div>
                 </div>
-                <div class="glass card" style="padding:12px 16px">
-                  <h3 style="margin:0 0 6px; font-size:15px">Como a conta foi feita <span class="tag eq" style="margin-left:4px">valores de exemplo</span></h3>
+                <div class="glass card prev-card" style="padding:12px 16px">
+                  <h3 style="margin:0 0 8px; font-size:15px">Da manutenção corretiva para a preventiva</h3>
+                  <div class="prev-tl" aria-hidden="true">
+                    <div class="pt-row"><span class="pt-l">Tritan</span><div class="pt-bar tri"><i style="--x:6.25%"></i><i style="--x:18.75%"></i><i style="--x:31.25%"></i><i style="--x:43.75%"></i><i style="--x:56.25%"></i><i style="--x:68.75%"></i><i style="--x:81.25%"></i><i style="--x:93.75%"></i></div></div>
+                    <div class="pt-row"><span class="pt-l">SAI</span><div class="pt-bar sai"><i style="--x:12.50%"></i><i style="--x:25.00%"></i><i style="--x:37.50%"></i><i style="--x:50.00%"></i><i style="--x:62.50%"></i><i style="--x:75.00%"></i><i style="--x:87.50%"></i><i class="g" style="--x:100%"></i></div></div>
+                    <div class="pt-ax"><span>início</span><span>1 ano</span><span>2 anos</span></div>
+                  </div>
                   <ul class="hip">
-                    <li><b>Tritan:</b> a parte superior quebra a cada 3 meses, por impactos e pelo erro de uma asa pegar as duas caixas: R$ 250 por quebra.</li>
-                    <li><b>SAI, pelas simulações:</b> o PAD leva o golpe comum a 169 N (a garra rompe com 1.380 N); 24 kg numa asa com folga de 3,9×. <b>Vida estimada: 24 meses</b> em 24/7, já no pior caso de colagem entre camadas (2,4 anos, arredondado para baixo); faixa de 12 a 36 meses. Uma garra de R$ 495,54 cobre os 24 meses; 8 PADs (R$ 21,96) trocados a cada 2 meses.</li>
-                    <li><b>Conservador:</b> a garra SAI quebra 1 vez por ano e é trocada inteira.</li>
-                    <li>Só material (preços da equipe, gramas do Orca), com a linha 24 h por dia. Quebras e trocas foram estipuladas; a resistência vem das simulações, não de ensaio, e as 280 caixas perdidas por quebra não entram.</li>
+                    <li><b>Hoje, corretiva:</b> a garra quebra sem aviso, cerca de 4 vezes por ano, e a linha para na hora: 45 min e 280 caixas por quebra.</li>
+                    <li><b>Com o SAI, preventiva:</b> PADs a cada trimestre (10 min) e garra nova a cada 2 anos (30 min), antes dos 2,4 anos do pior caso. Data marcada, peça pronta e técnico escalado.</li>
+                    <li><b>Previsível:</b> a troca entra no plano de manutenção. Se for feita na janela semanal de limpeza, a perda de caixas cai a zero.</li>
                   </ul>
                 </div>
               </div>
             </div>
+            <p class="note" style="margin:8px 0 0"><span class="tag sim">estimativa</span> Custo esperado: a quebra do Tritan é aleatória (média de 1 a cada 3 meses, dado da equipe), por isso a linha é contínua. Cada quebra soma a reimpressão da peça superior, a troca e as caixas paradas. A caixa vale a margem bruta do setor (30% de R$ 300), não o preço. Conservador: a garra SAI dura só 12 meses e ainda quebra 1 vez por ano. A inspeção semanal do PAD entra na janela de limpeza.</p>
           </div>
         </section>
+<!-- CUSTO:FIM -->
 
         <!-- Sustentabilidade e segurança -->
         <section class="slide" data-title="Sustentabilidade e segurança" id="s-sustent">
@@ -562,7 +556,7 @@
                 <article class="glass card conc"><span class="conc-n">02</span><h3>O peso</h3>
                   <p>Conjunto de <b>2,783 kg</b>, já com os 8 PADs: <b>−51 g</b> (−1,8%) em relação à garra atual, sem mudar nada por fora. Mais folga para o UR30.</p></article>
                 <article class="glass card conc"><span class="conc-n">03</span><h3>Custo de oportunidade</h3>
-                  <p>Cada quebra evitada garante <b>280 caixas</b> (3.360 itens) que deixariam de ser produzidas: <b>1.120 caixas por ano</b>. Só com material, o SAI se paga em cerca de 9 meses.</p></article>
+                  <p>Cada quebra evitada garante <b>280 caixas</b> (3.360 itens) que deixariam de ser produzidas: <b>1.120 caixas por ano</b>. Descontadas as trocas programadas, sobram 820 caixas a mais por ano, e o SAI se paga em cerca de 79 dias.</p></article>
                 <article class="glass card conc"><span class="conc-n">04</span><h3>Manutenção preventiva e controle</h3>
                   <p>A quebra deixa de ser surpresa: o PAD é o ponto de troca, a cada 2 meses, numa parada programada. Dá para controlar por checklist (PAD amassado = trocar) e manter PADs e uma garra reserva em estoque.</p></article>
                 <article class="glass card conc"><span class="conc-n">05</span><h3>Durabilidade</h3>
@@ -609,7 +603,7 @@
                     <li><b>[E1]</b> FE por voxels de 3 mm da garra montada: rompe com 93 kg numa asa. <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/montagem/montagem_R07_SEM.json" target="_blank" rel="noopener">dados</a> · <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/scripts/r07_montagem.py" target="_blank" rel="noopener">script</a></li>
                     <li><b>[E2]</b> Tranco transiente (Newmark, 24 kg em 10 ms): FS 2,65. <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/impacto/impacto_F25_SEM.json" target="_blank" rel="noopener">dados</a></li>
                     <li><b>[E3]</b> PAD, modelo de molas 1D: −63% na força. <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/impacto/pad_limites.json" target="_blank" rel="noopener">dados</a></li>
-                    <li><b>[E4–E6]</b> Fadiga (S-N + Miner), custos e durabilidade. <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/fadiga/r07_vida.json" target="_blank" rel="noopener">fadiga</a> · <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/estudo_custos/ESTUDO_CUSTOS_DURABILIDADE.md" target="_blank" rel="noopener">custos</a></li>
+                    <li><b>[E4–E6]</b> Fadiga (S-N + Miner), custos e durabilidade. <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/fadiga/r07_vida.json" target="_blank" rel="noopener">fadiga</a> · <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/estudo_custos/ESTUDO_CUSTOS_DURABILIDADE.md" target="_blank" rel="noopener">durabilidade</a> · <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/custos/CUSTO_REAL.md" target="_blank" rel="noopener">custo real</a></li>
                   </ul>
                 </div>
                 <div>
@@ -1953,15 +1947,17 @@
     <figure><img src="" alt=""><figcaption></figcaption></figure>
   </dialog>
 
-  <script src="assets/js/main.js?v=r08v"></script>
-  <script src="assets/js/bancada-dados.js?v=r08v"></script>
-  <script src="assets/js/bancada.js?v=r08v"></script>
-  <script src="assets/js/r07-dados.js?v=r08v"></script>
-  <script src="assets/js/r07.js?v=r08v"></script>
-  <script src="assets/js/conjunto-dados.js?v=r08v"></script>
-  <script src="assets/js/conjunto.js?v=r08v"></script>
-  <script src="assets/js/sai.js?v=r08v"></script>
-  <script src="assets/js/anim.js?v=r08v"></script>
-  <script type="module" src="assets/js/viewer3d.js?v=r08v"></script>
+  <script src="assets/js/main.js?v=r10a"></script>
+  <script src="assets/js/bancada-dados.js?v=r10a"></script>
+  <script src="assets/js/bancada.js?v=r10a"></script>
+  <script src="assets/js/r07-dados.js?v=r10a"></script>
+  <script src="assets/js/r07.js?v=r10a"></script>
+  <script src="assets/js/conjunto-dados.js?v=r10a"></script>
+  <script src="assets/js/conjunto.js?v=r10a"></script>
+  <script src="assets/js/sai.js?v=r10a"></script>
+  <script src="assets/js/custo-dados.js?v=r10a"></script>
+  <script src="assets/js/custo.js?v=r10a"></script>
+  <script src="assets/js/anim.js?v=r10a"></script>
+  <script type="module" src="assets/js/viewer3d.js?v=r10a"></script>
 </body>
 </html>

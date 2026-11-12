@@ -1,0 +1,67 @@
+{
+ "o_que_e": "Entradas do modelo de custo real da garra SAI × garra de Tritan (dados/scripts/custo_real.py). tipo: equipe = informado pela equipe; medido = arquivo do projeto; pesquisa = valor de mercado com fonte (nov/2026); HIP = hipótese. Na dúvida, o valor base favorece o Tritan.",
+ "data": "2026-11-12",
+ "entradas": {
+  "caixas_por_min": {"valor": 6, "tipo": "equipe", "fonte": "equipe: cerca de 6 caixas por minuto"},
+  "horas_ano": {"valor": 8760, "tipo": "HIP", "fonte": "linha 24 h por dia, 365 dias (mesma hipótese do estudo de fadiga)"},
+  "caixas_parada_corretiva": {"valor": 280, "tipo": "equipe", "fonte": "equipe: 280 caixas por parada"},
+  "min_parada_corretiva": {"valor": 45, "tipo": "equipe", "fonte": "equipe: parada de 45 min"},
+  "quebras_tritan_ano": {"valor": 4, "tipo": "equipe", "fonte": "equipe: quebra a cada 3 meses"},
+  "preco_caixa_rs": {"valor": 300, "tipo": "equipe", "fonte": "equipe: R$ 84.000 por 280 caixas. Confere com o varejo: 12 kg a cerca de R$ 21–28/kg (distribuidoras, nov/2026)"},
+  "margem_bruta": {"valor": 0.30, "tipo": "pesquisa", "fonte": "margem bruta de fabricantes de alimentos no Brasil em 2025: M. Dias Branco 32,2% (infomoney.com.br, fev/2026), Camil 22,4% (visnoinvest.com.br, mai/2026). A caixa que não sai é margem perdida, não faturamento"},
+
+  "preco_pacf_kg": {"valor": 420, "tipo": "pesquisa", "fonte": "PA6-CF nacional 1 kg: Voolt3D R$ 420 e Creality Hyper PA6-CF R$ 434 (nov/2026). O valor da equipe (R$ 258) está abaixo do mercado; Bambu Lab sai por R$ 745–827"},
+  "preco_tpu_kg": {"valor": 158, "tipo": "equipe", "fonte": "equipe; confere com o mercado: mediana de R$ 159,90 (melhorfilamento.com.br, 2026), Brasfila R$ 158"},
+  "preco_tritan_kg": {"valor": 220, "tipo": "pesquisa", "fonte": "Tritan TX1001 nacional (3DX CPE, certificado NSF 51 para alimentos) R$ 220/kg (loja3dxfilamentos.com.br, nov/2026)"},
+  "consumiveis_rs_impressao": {"valor": 1.0, "tipo": "pesquisa", "fonte": "álcool isopropílico, cola e sílica por impressão (preços Magazine Luiza, nov/2026); quantidade por impressão é HIP"},
+
+  "impressora_kw": {"valor": 0.20, "tipo": "HIP", "fonte": "K1 Max: média de 150–250 W imprimindo (filamino.com, out/2026); fechada X1C medida com ABS ~150 W (forum.bambulab.com). Medir com tomada medidora"},
+  "tarifa_kwh_rs": {"valor": 0.70, "tipo": "pesquisa", "fonte": "CPFL Paulista A4 verde 2026 (REH 3.579/2026), com ICMS 18% e PIS/COFINS, média ponderada ponta/fora ponta"},
+  "secador_kw": {"valor": 0.12, "tipo": "pesquisa", "fonte": "Sunlu S4 medido a 70 °C: 0,81 kWh em 6 h (techtest.org, abr/2026)"},
+  "secagem_pacf_h_kg": {"valor": 12, "tipo": "pesquisa", "fonte": "Bambu, Polymaker e Flashforge PA6-CF: 80 °C por 8–12 h; secador doméstico chega a 70 °C, por isso o topo da faixa"},
+  "secagem_tpu_h_kg": {"valor": 8, "tipo": "HIP", "fonte": "TPU: secagem típica de 4–8 h"},
+  "secagem_tritan_h_kg": {"valor": 6, "tipo": "pesquisa", "fonte": "Eastman Tritan (extrusão): 82 °C por 6–8 h"},
+  "secador_na_impressao_kw": {"valor": 0.068, "tipo": "pesquisa", "fonte": "PA-CF impresso direto do secador aquecido (Polymaker); Sunlu S4 a 50 °C ~68 W (techtest.org)"},
+
+  "impressora_preco_rs": {"valor": 5500, "tipo": "pesquisa", "fonte": "Creality K1 Max no Brasil: R$ 4.940–6.507 à vista (Amazon, Zema, Megamamute, nov/2026)"},
+  "impressora_vida_h": {"valor": 5000, "tipo": "pesquisa", "fonte": "vida típica de referência para depreciação (snapmaker.com, all3dp.com)"},
+  "desgaste_geral_rs_h": {"valor": 0.275, "tipo": "pesquisa", "fonte": "hotend cerâmico R$ 300 a cada 2.000 h (HIP) + placa PEI R$ 250 a cada 2.000 h (tecnocubo, amazon.com.br, forum.bambulab.com)"},
+  "bico_cf_rs_h": {"valor": 0.20, "tipo": "pesquisa", "fonte": "bico de aço endurecido ~R$ 60 a cada ~300 h com fibra de carbono (lojas BR nov/2026; guias de desgaste 200–500 h). Só nas impressões de PA6-CF"},
+  "refugo_pacf": {"valor": 0.10, "tipo": "pesquisa", "fonte": "cerca de 10% do filamento é perdido em falhas (Filamentive, citado em PMC9706623); vale para material, energia e horas de máquina"},
+  "refugo_tpu": {"valor": 0.05, "tipo": "HIP", "fonte": "peças pequenas de TPU em extrusora direta: abaixo do PA-CF"},
+  "refugo_tritan": {"valor": 0.05, "tipo": "HIP", "fonte": "copoliéster imprime com menos falha que o PA-CF; valor baixo favorece o Tritan"},
+
+  "rs_h_tecnico": {"valor": 30.23, "tipo": "pesquisa", "fonte": "técnico de manutenção industrial, interior de SP: R$ 3.500/mês (Novo CAGED via salario.com.br, nov/2026) × 1,9 de encargos e benefícios (contabilidadezen.com.br, 2026) ÷ 220 h"},
+  "preparo_min_impressao": {"valor": 21, "tipo": "pesquisa", "fonte": "15 min para preparar e iniciar + 6 min para retirar da mesa (modelo de custo FDM Top3D 2019; HIP de 15 min para reimpressão com perfil salvo)"},
+  "pos_min_peca_grande": {"valor": 30, "tipo": "HIP", "fonte": "remoção de suporte, rebarba e conferência dos furos: 15–60 min por peça (sinterit.com)"},
+  "pos_min_pads": {"valor": 20, "tipo": "HIP", "fonte": "suporte das 8 metades de PAD"},
+  "montagem_sai_min": {"valor": 20, "tipo": "HIP", "fonte": "montar as 3 peças e os 8 PADs antes de levar ao robô"},
+  "troca_garra_min": {"valor": 20, "tipo": "HIP", "fonte": "UR30, flange ISO 9409-1-80-6-M8 a 16 Nm (datasheet UR30): travar a célula, 6 parafusos, conferir TCP e carga, ciclo de teste; faixa 10–45 min"},
+  "troca_pads_min": {"valor": 10, "tipo": "HIP", "fonte": "8 PADs encaixados, cerca de 1 min cada + teste; faixa 5–20 min"},
+  "inspecao_min_semana": {"valor": 5, "tipo": "HIP", "fonte": "checklist semanal do PAD (amassado = trocar) na manutenção preventiva, feito na janela semanal de limpeza, com a célula já parada"},
+  "inspecao_perde_producao": {"valor": false, "tipo": "HIP", "fonte": "a inspeção entra na janela semanal de sanitização (a linha já está parada para limpeza). Se parar a linha fora dela, são 390 caixas por trimestre: ver a sensibilidade"},
+  "parada_programada_perde_producao": {"valor": true, "tipo": "HIP", "fonte": "conservador: a troca programada também para a linha. Fábricas de alimentos têm janelas semanais de 4–8 h de sanitização (qualityassurancemag.com) em que a troca caberia sem perder nada"},
+
+  "sai_fil_g": {"valor": 1744.5, "tipo": "medido", "fonte": "Orca: 3 peças da garra SAI com suportes"},
+  "sai_horas": {"valor": 75.2, "tipo": "medido", "fonte": "Orca: tempo das 3 peças"},
+  "sai_impressoes": {"valor": 3, "tipo": "medido", "fonte": "3 peças, 3 impressões"},
+  "pads_fil_g": {"valor": 139.0, "tipo": "medido", "fonte": "Orca: 8 PADs com suporte"},
+  "pads_horas": {"valor": 11.0, "tipo": "medido", "fonte": "Orca: tempo dos 8 PADs (uma mesa)"},
+  "tritan_garra_horas": {"valor": 80.5, "tipo": "medido", "fonte": "Orca: garra com favo 3D 30% (o preenchimento da garra atual) no mesmo perfil da K1 Max (DECISAO_ESQUELETO.json)"},
+  "tritan_sup_frac": {"valor": 0.4365, "tipo": "HIP", "fonte": "a quebra troca só a peça superior: 688,27 g de 1.576,87 g (peso_conjunto.csv); tempo proporcional à massa. Trocar a garra inteira favoreceria o SAI"},
+  "tritan_sup_kg": {"valor": 0.81, "tipo": "HIP", "fonte": "peça superior de Tritan com suportes: 688 g + 17% de suporte, a proporção da peça superior do SAI no Orca (782 ÷ 666 g)"},
+
+  "vida_pior_caso_anos": {"valor": 2.39, "tipo": "medido", "fonte": "estudo_custos.json: pior colagem entre camadas, rotina + 52 erros + 52 trancos por ano, 180 ciclos/h 24/7"},
+  "sai_troca_preventiva_meses": {"valor": 24, "tipo": "equipe", "fonte": "equipe: manutenção preventiva da garra a cada 2 anos (abaixo dos 2,4 anos do pior caso)"},
+  "pads_troca_meses": {"valor": 3, "tipo": "equipe", "fonte": "equipe: PADs trocados a cada trimestre"},
+  "horizonte_meses": {"valor": 30, "tipo": "HIP", "fonte": "mostra a troca preventiva aos 24 meses e chega perto dos 2,4 anos"},
+  "conservador_quebras_sai_ano": {"valor": 1, "tipo": "HIP", "fonte": "cenário conservador do estudo de durabilidade: a garra SAI quebra 1 vez por ano mesmo assim"},
+  "conservador_vida_meses": {"valor": 12, "tipo": "HIP", "fonte": "cenário conservador do estudo de durabilidade: pior colagem com 480 ciclos/h dá 1,0 ano; garra nova a cada 12 meses"}
+ },
+ "valores_da_equipe_substituidos": {
+  "preco_pacf_kg": "R$ 258/kg (abaixo do mercado; o modelo usa R$ 420)",
+  "tritan_quebra_rs": "R$ 250 por quebra (o modelo calcula a peça superior pelo preço de mercado: 0,81 kg × R$ 220)",
+  "faturamento_parada_rs": "R$ 84.000 por parada (faturamento; o modelo usa a margem bruta de 30%: R$ 25.200)",
+  "bico_rs": "R$ 23,50 de uma vez (o modelo usa o desgaste do bico por hora de PA6-CF)"
+ }
+}
