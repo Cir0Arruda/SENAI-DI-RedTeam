@@ -35,14 +35,15 @@ Links internos apontam para este repositório: <https://github.com/Cir0Arruda/SE
 
 ## 2. Simulações no Autodesk Fusion
 
-**[F1] Garra superior maciça em PA6-CF, 24 kg.** Criado em 11/11/2026, 00:28.
+**[F1] Garra superior maciça em PA6-CF, 24 kg divididos nas 4 interfaces.** Criado em 11/11/2026, 00:28.
 
 | Item | Valor |
 |---|---|
-| Estudo | tensão estática, malha adaptativa (10% refinado) |
-| Malha | 498.261 nós e 339.001 elementos |
+| Estudo | tensão estática, linear, isotrópico |
+| Peça | só a superior, **maciça (100%)**: sem preenchimento, paredes nem camadas |
+| Malha | 3 mm, parabólica, 498.261 nós e 339.001 elementos; sem refinamento adaptativo (0 etapas) e sem estudo de convergência |
 | Fixação | furos da flange do robô |
-| Carga | 4 × 88,84 N em −Z = 355,36 N, ou seja, 24 kg × (9,81 + 5 m/s²) |
+| Carga | 4 × 88,84 N em −Z = 355,36 N, ou seja, 24 kg × (9,81 + 5 m/s²), **dividida igualmente nas 4 interfaces (as duas asas)**. O caso de 24 kg numa asa só está no [E1]. |
 | Material | Bambu PA6-CF: E 4.430 MPa, resistência 102 MPa ([M1]) |
 | Resultado | von Mises máxima 3,23 MPa · 1ª principal 5,16 MPa · **FS mínimo 19,8** |
 
@@ -51,7 +52,8 @@ Links internos apontam para este repositório: <https://github.com/Cir0Arruda/SE
 **[F2] Mesma garra em Tritan TX1001 (referência da garra atual).** Criado em 11/11/2026, 00:58.
 - Mesma malha, fixação e carga do [F1].
 - Material: E 1.548 MPa, resistência 58 MPa ([M3]).
-- Resultado: von Mises máxima 3,22 MPa · **FS mínimo 11,5**.
+- Resultado: von Mises máxima 3,22 MPa · 1ª principal 5,03 MPa · **FS mínimo 11,5**.
+- O FS 11,5 corresponde ao critério de ruptura (58 ÷ 5,03), mas o cabeçalho do relatório exportado mostra "resistência a escoamento". Pelo escoamento seria 13,3 (43 ÷ 3,22). Conferir no Fusion.
 - O PA6-CF teve cerca de **65% menos deslocamento** que o Tritan.
 - Relatório: [`SAMI_TRITAN_24kg_Relatorio_Fusion.html`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/brutos/fusion/preparacao_garra/SAMI_TRITAN_24kg_Relatorio_Fusion.html).
 - Evidência (hash SHA-256 do arquivo original): [`_evidence.json`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/brutos/fusion/preparacao_garra/SAMI_TRITAN_24kg_Relatorio_Fusion_evidence.json).
