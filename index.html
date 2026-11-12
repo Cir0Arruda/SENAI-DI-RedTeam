@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=r07z">
+  <link rel="stylesheet" href="assets/css/style.css?v=r08a">
   <script type="importmap">
     { "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
@@ -32,7 +32,7 @@
       <button class="rail-btn" data-go="#s-sai" title="Projeto SAI: solução e PAD">
         <svg class="i" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg>
       </button>
-      <button class="rail-btn" data-go="#s-hw" title="Hardware e custos">
+      <button class="rail-btn" data-go="#s-custos" title="Custos e retorno">
         <svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .8-3 2s1.3 1.7 3 2 3 .8 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"/></svg>
       </button>
       <button class="rail-btn" data-go="#s-sustent" title="Sustentabilidade e conclusão">
@@ -86,7 +86,7 @@
               <li class="glass"><b>01</b><span>Introdução<small>As dores da Ajinomoto: a garra quebra, a linha para e o custo de oportunidade</small></span></li>
               <li class="glass"><b>02</b><span>Ideias anteriores<small>Matriz de prioridade: valor agregado × complexidade</small></span></li>
               <li class="glass"><b>03</b><span>Projeto SAI<small>A solução: material novo, estrutura interna sem esqueleto e PAD de sacrifício</small></span></li>
-              <li class="glass"><b>04</b><span>Hardware e custos<small>Impressora, custo SAI × Tritan, retorno e payback</small></span></li>
+              <li class="glass"><b>04</b><span>Custos<small>Custo SAI × Tritan, retorno e fórmulas</small></span></li>
               <li class="glass"><b>05</b><span>Sustentabilidade e conclusão<small>Descarte e reciclagem, segurança, peso, caixas garantidas e durabilidade</small></span></li>
             </ol>
           </div>
@@ -450,103 +450,8 @@
           </div>
         </section>
 
-        <!-- Hardware de impressão -->
-        <section class="slide" data-title="Hardware de impressão" id="s-hw">
-          <div class="wrap wide">
-            <div class="s-head compact">
-              <span class="kicker">Desenvolvimento · Hardware de impressão</span>
-              <h2>Bico de alta <em>resistência</em></h2>
-            </div>
-            <div class="g3" style="align-items:start">
-              <article class="glass card">
-                <h3 style="margin-top:0">Por que trocar o bico</h3>
-                <p>A fibra de carbono do PA-CF é abrasiva. O próprio Orca avisa em todos os fatiamentos: <i>dureza do bico (HRC) menor que a exigida pelo filamento</i>. Bico de latão comum se desgasta e altera a extrusão.</p>
-                <div class="glass stat sm" style="margin-top:14px"><b>R$ 23,50</b><span>bico MK8 endurecido</span><small>dado da equipe</small></div>
-              </article>
-              <div class="glass card" style="padding:16px 18px">
-                <h3 style="margin:0 0 6px; font-size:17px">Garra · PA6-CF</h3>
-                <table class="tbl compact">
-                  <tbody>
-                    <tr><td>Impressora</td><td>Creality K1 Max</td></tr>
-                    <tr><td>Bico</td><td>0,4 mm, endurecido</td></tr>
-                    <tr><td>Camada</td><td>0,2 mm</td></tr>
-                    <tr><td>Paredes</td><td>5 perímetros</td></tr>
-                    <tr><td>Preenchimento</td><td>giroide + zonas R07</td></tr>
-                    <tr><td>Escala</td><td>1:1, sem alterar o exterior</td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="glass card" style="padding:16px 18px">
-                <h3 style="margin:0 0 6px; font-size:17px">PAD · TPU 95A</h3>
-                <table class="tbl compact">
-                  <tbody>
-                    <tr><td>Paredes</td><td><span data-r07="pads.paredes">3</span> perímetros</td></tr>
-                    <tr><td>Preenchimento</td><td>giroide <span>40%</span></td></tr>
-                    <tr><td>8 PADs (peças)</td><td><span data-r07="pads.peca_g" data-d="1">93,1</span> g</td></tr>
-                    <tr><td>Com suportes</td><td><span data-r07="pads.total_g" data-d="1">139,0</span> g</td></tr>
-                    <tr><td>Tempo (8 PADs)</td><td><span data-r07="pads.tempo_h" data-d="1">11,0</span> h</td></tr>
-                  </tbody>
-                </table>
-                <p class="note"><span class="tag sim">Orca</span> Por que giroide: espalha a carga em todas as direções e mantém boa resistência com 20–25% de preenchimento.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Custos: garra SAI sem esqueleto × Tritan -->
-        <section class="slide" data-title="Custos" id="s-custo">
-          <div class="wrap wide">
-            <div class="s-head compact">
-              <span class="kicker">Custos · Garra SAI sem esqueleto</span>
-              <h2>Quanto custa <em>fazer</em> o SAI</h2>
-            </div>
-            <div class="split" style="--cols:minmax(0,1.25fr) minmax(0,1fr); align-items:start">
-              <div class="glass card" style="padding:14px 18px">
-                <table class="tbl compact custo-tbl">
-                  <thead><tr><th></th><th>Tritan (atual)</th><th>SAI sem esqueleto</th></tr></thead>
-                  <tbody>
-                    <tr><td>Material</td><td>Tritan importado</td><td>PA-CF e TPU 95A nacionais</td></tr>
-                    <tr><td>Garra (3 peças)</td><td>R$ 250,00 <small>custo informado</small></td><td>R$ <span data-r07="R07_SEM.custo_rs" data-d="2">450,08</span> <small><span data-r07="R07_SEM.fil_g" data-d="0">1.745</span> g × R$ 258/kg</small></td></tr>
-                    <tr><td>8 PADs</td><td class="na">—</td><td>R$ 21,96 <small><span data-r07="pads.total_g" data-d="0">139</span> g × R$ 158/kg</small></td></tr>
-                    <tr><td>Bico endurecido</td><td class="na">—</td><td>R$ 23,50</td></tr>
-                    <tr class="total"><td>Total por garra</td><td>R$ 250,00</td><td><b>R$ 495,54</b></td></tr>
-                    <tr><td>Prazo do material</td><td>15 a 20 dias</td><td>5 a 8 dias úteis</td></tr>
-                    <tr><td>Impressão</td><td>6 a 8,5 h por peça</td><td><span data-r07="R07_SEM.tempo_h" data-d="0">75</span> h a garra + <span data-r07="pads.tempo_h" data-d="0">11</span> h os PADs</td></tr>
-                    <tr><td>Quebras por ano</td><td>4 <small>a cada 3 meses</small></td><td>0 <small>pelas simulações</small></td></tr>
-                    <tr class="total"><td>Gasto com peças no ano</td><td>R$ 1.000,00 <small>4 × R$ 250</small></td><td><b>R$ 627,33</b> <small>garra + 6 trocas de PAD</small></td></tr>
-                    <tr class="total"><td>Payback</td><td class="na">—</td><td><b>≈ 9 meses</b> <small>só com material · simulação no slide Payback</small></td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <div style="display:grid; gap:12px">
-                <div class="glass card chart" style="padding:14px 18px">
-                  <h4>Para onde vão os R$ 495,54</h4>
-                  <p class="sub">custo de material de uma garra SAI completa</p>
-                  <div class="cost-bar sai-bar" aria-hidden="true"><i class="c-garra" style="--w:90.83%"></i><i class="c-pad" style="--w:4.43%"></i><i class="c-bico" style="--w:4.74%"></i></div>
-                  <div class="legend" style="margin:8px 0 0"><span><i style="background:var(--ink-2)"></i>garra · 91%</span><span><i style="background:var(--s-indigo)"></i>8 PADs · 4%</span><span><i style="background:#c27c0e"></i>bico · 5%</span></div>
-                </div>
-                <div class="glass card chart" style="padding:14px 18px">
-                  <h4>Tritan × SAI</h4>
-                  <p class="sub">R$ · só peças, sem contar as caixas que deixam de ser produzidas</p>
-                  <div class="cmp-bars">
-                    <div class="cb-group"><span class="cb-t">Uma garra</span>
-                      <div class="cb"><span>Tritan</span><i style="--w:25%; background:#5b5bd6"></i><b>R$ 250</b></div>
-                      <div class="cb"><span>SAI</span><i style="--w:49.55%; background:#e5232f"></i><b>R$ 495,54</b></div>
-                    </div>
-                    <div class="cb-group"><span class="cb-t">Peças em 1 ano</span>
-                      <div class="cb"><span>Tritan</span><i style="--w:100%; background:#5b5bd6"></i><b>R$ 1.000</b></div>
-                      <div class="cb"><span>SAI</span><i style="--w:62.73%; background:#e5232f"></i><b>R$ 627,33</b></div>
-                    </div>
-                  </div>
-                </div>
-                <p class="note" style="margin:0">Uma garra SAI custa R$ 245,54 a mais, mas como ela não quebra a cada 3 meses, o gasto com peças no ano já é <b>37% menor</b>, antes de contar as caixas que deixam de ser produzidas. <span class="tag eq">preços: equipe</span> <span class="tag sim">gramas e horas: Orca</span> Fora da conta: mão de obra, energia e preparação da impressora.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <!-- Custos -->
-        <section class="slide" data-title="Custos detalhados">
+        <section class="slide" data-title="Custos detalhados" id="s-custos">
           <div class="wrap wide">
             <div class="s-head compact">
               <span class="kicker">Desenvolvimento · Custos</span>
@@ -626,46 +531,6 @@
               </div>
             </div>
             <p class="note"><span class="tag eq">valores de exemplo</span> As quebras e as trocas foram estipuladas e serão ajustadas conforme o tempo de uso real da garra. Só entra material (preços da equipe e gramas do Orca); a resistência vem das simulações (FE e modelo de impacto), não de ensaio. A produção da linha não entra nesta conta: cada quebra evitada ainda garante 280 caixas que deixariam de ser produzidas.</p>
-          </div>
-        </section>
-
-        <!-- Payback: simulação com controles -->
-        <section class="slide" data-title="Payback" id="s-payback">
-          <div class="wrap wide">
-            <div class="s-head compact">
-              <span class="kicker">Custos · Simulação de payback</span>
-              <h2>Em quanto tempo o SAI <em>se paga</em></h2>
-            </div>
-            <div class="split" style="--cols:minmax(0,.85fr) minmax(0,1.4fr); align-items:start">
-              <div style="display:grid; gap:12px">
-                <div class="glass card pb-ctl" style="padding:14px 18px">
-                  <h3 style="margin:0 0 10px; font-size:16px">Mude as hipóteses <span class="tag eq" style="margin-left:4px">exemplo</span></h3>
-                  <label for="pb-tri">A garra de Tritan quebra a cada <output id="pb-tri-o">3 meses</output></label>
-                  <input id="pb-tri" type="range" min="1" max="12" step="1" value="3">
-                  <label for="pb-pad">Os PADs do SAI são trocados a cada <output id="pb-pad-o">2 meses</output></label>
-                  <input id="pb-pad" type="range" min="1" max="6" step="1" value="2">
-                  <span class="pb-lbl">A garra SAI quebra</span>
-                  <div class="seg" id="pb-sai" role="tablist" aria-label="Quantas vezes a garra SAI quebra">
-                    <button class="on" role="tab" aria-selected="true" data-n="0">nunca</button>
-                    <button role="tab" aria-selected="false" data-n="12">1× por ano</button>
-                    <button role="tab" aria-selected="false" data-n="6">2× por ano</button>
-                  </div>
-                  <button type="button" class="pb-reset" id="pb-reset">voltar ao cenário das simulações</button>
-                </div>
-                <div class="g2 roi-kpi">
-                  <div class="glass stat sm"><b id="pb-mes">9 meses</b><span>para o SAI se pagar</span><small id="pb-mes-s">só com material</small></div>
-                  <div class="glass stat sm"><b class="ink" id="pb-cx">2.240</b><span>caixas garantidas em 24 meses</span><small id="pb-cx-s">8 quebras evitadas × 280 caixas</small></div>
-                </div>
-              </div>
-              <div class="glass card chart" style="padding:14px 18px">
-                <h4>Gasto acumulado com material em 24 meses</h4>
-                <p class="sub" id="pb-sub">Tritan R$ 2.000 × SAI R$ 759,06 · economia de R$ 1.240,94</p>
-                <div class="legend"><span><i style="background:#5b5bd6"></i>Tritan (atual)</span><span><i style="background:#e5232f"></i>SAI sem esqueleto</span></div>
-                <div id="chart-pb" class="roi-host"></div>
-                <p class="note" style="margin:4px 0 0">Material: garra de Tritan R$ 250 por quebra; garra SAI R$ 495,54 (troca inteira se quebrar); 8 PADs R$ 21,96 por troca. Cada quebra evitada garante 280 caixas que deixariam de ser produzidas.</p>
-              </div>
-            </div>
-            <p class="note"><span class="tag eq">valores de exemplo</span> As quebras e as trocas são estipuladas e serão ajustadas conforme o tempo de uso real. Pelas simulações (FE e impacto) a garra SAI não quebra em uso normal; não é ensaio.</p>
           </div>
         </section>
 
@@ -1784,6 +1649,141 @@
           </div>
         </section>
 
+        <!-- Hardware de impressão -->
+        <section class="slide" data-title="Hardware de impressão" id="s-hw">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Desenvolvimento · Hardware de impressão</span>
+              <h2>Bico de alta <em>resistência</em></h2>
+            </div>
+            <div class="g3" style="align-items:start">
+              <article class="glass card">
+                <h3 style="margin-top:0">Por que trocar o bico</h3>
+                <p>A fibra de carbono do PA-CF é abrasiva. O próprio Orca avisa em todos os fatiamentos: <i>dureza do bico (HRC) menor que a exigida pelo filamento</i>. Bico de latão comum se desgasta e altera a extrusão.</p>
+                <div class="glass stat sm" style="margin-top:14px"><b>R$ 23,50</b><span>bico MK8 endurecido</span><small>dado da equipe</small></div>
+              </article>
+              <div class="glass card" style="padding:16px 18px">
+                <h3 style="margin:0 0 6px; font-size:17px">Garra · PA6-CF</h3>
+                <table class="tbl compact">
+                  <tbody>
+                    <tr><td>Impressora</td><td>Creality K1 Max</td></tr>
+                    <tr><td>Bico</td><td>0,4 mm, endurecido</td></tr>
+                    <tr><td>Camada</td><td>0,2 mm</td></tr>
+                    <tr><td>Paredes</td><td>5 perímetros</td></tr>
+                    <tr><td>Preenchimento</td><td>giroide + zonas R07</td></tr>
+                    <tr><td>Escala</td><td>1:1, sem alterar o exterior</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="glass card" style="padding:16px 18px">
+                <h3 style="margin:0 0 6px; font-size:17px">PAD · TPU 95A</h3>
+                <table class="tbl compact">
+                  <tbody>
+                    <tr><td>Paredes</td><td><span data-r07="pads.paredes">3</span> perímetros</td></tr>
+                    <tr><td>Preenchimento</td><td>giroide <span>40%</span></td></tr>
+                    <tr><td>8 PADs (peças)</td><td><span data-r07="pads.peca_g" data-d="1">93,1</span> g</td></tr>
+                    <tr><td>Com suportes</td><td><span data-r07="pads.total_g" data-d="1">139,0</span> g</td></tr>
+                    <tr><td>Tempo (8 PADs)</td><td><span data-r07="pads.tempo_h" data-d="1">11,0</span> h</td></tr>
+                  </tbody>
+                </table>
+                <p class="note"><span class="tag sim">Orca</span> Por que giroide: espalha a carga em todas as direções e mantém boa resistência com 20–25% de preenchimento.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Custos: garra SAI sem esqueleto × Tritan -->
+        <section class="slide" data-title="Custos" id="s-custo">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Custos · Garra SAI sem esqueleto</span>
+              <h2>Quanto custa <em>fazer</em> o SAI</h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1.25fr) minmax(0,1fr); align-items:start">
+              <div class="glass card" style="padding:14px 18px">
+                <table class="tbl compact custo-tbl">
+                  <thead><tr><th></th><th>Tritan (atual)</th><th>SAI sem esqueleto</th></tr></thead>
+                  <tbody>
+                    <tr><td>Material</td><td>Tritan importado</td><td>PA-CF e TPU 95A nacionais</td></tr>
+                    <tr><td>Garra (3 peças)</td><td>R$ 250,00 <small>custo informado</small></td><td>R$ <span data-r07="R07_SEM.custo_rs" data-d="2">450,08</span> <small><span data-r07="R07_SEM.fil_g" data-d="0">1.745</span> g × R$ 258/kg</small></td></tr>
+                    <tr><td>8 PADs</td><td class="na">—</td><td>R$ 21,96 <small><span data-r07="pads.total_g" data-d="0">139</span> g × R$ 158/kg</small></td></tr>
+                    <tr><td>Bico endurecido</td><td class="na">—</td><td>R$ 23,50</td></tr>
+                    <tr class="total"><td>Total por garra</td><td>R$ 250,00</td><td><b>R$ 495,54</b></td></tr>
+                    <tr><td>Prazo do material</td><td>15 a 20 dias</td><td>5 a 8 dias úteis</td></tr>
+                    <tr><td>Impressão</td><td>6 a 8,5 h por peça</td><td><span data-r07="R07_SEM.tempo_h" data-d="0">75</span> h a garra + <span data-r07="pads.tempo_h" data-d="0">11</span> h os PADs</td></tr>
+                    <tr><td>Quebras por ano</td><td>4 <small>a cada 3 meses</small></td><td>0 <small>pelas simulações</small></td></tr>
+                    <tr class="total"><td>Gasto com peças no ano</td><td>R$ 1.000,00 <small>4 × R$ 250</small></td><td><b>R$ 627,33</b> <small>garra + 6 trocas de PAD</small></td></tr>
+                    <tr class="total"><td>Payback</td><td class="na">—</td><td><b>≈ 9 meses</b> <small>só com material · simulação no slide Payback</small></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div style="display:grid; gap:12px">
+                <div class="glass card chart" style="padding:14px 18px">
+                  <h4>Para onde vão os R$ 495,54</h4>
+                  <p class="sub">custo de material de uma garra SAI completa</p>
+                  <div class="cost-bar sai-bar" aria-hidden="true"><i class="c-garra" style="--w:90.83%"></i><i class="c-pad" style="--w:4.43%"></i><i class="c-bico" style="--w:4.74%"></i></div>
+                  <div class="legend" style="margin:8px 0 0"><span><i style="background:var(--ink-2)"></i>garra · 91%</span><span><i style="background:var(--s-indigo)"></i>8 PADs · 4%</span><span><i style="background:#c27c0e"></i>bico · 5%</span></div>
+                </div>
+                <div class="glass card chart" style="padding:14px 18px">
+                  <h4>Tritan × SAI</h4>
+                  <p class="sub">R$ · só peças, sem contar as caixas que deixam de ser produzidas</p>
+                  <div class="cmp-bars">
+                    <div class="cb-group"><span class="cb-t">Uma garra</span>
+                      <div class="cb"><span>Tritan</span><i style="--w:25%; background:#5b5bd6"></i><b>R$ 250</b></div>
+                      <div class="cb"><span>SAI</span><i style="--w:49.55%; background:#e5232f"></i><b>R$ 495,54</b></div>
+                    </div>
+                    <div class="cb-group"><span class="cb-t">Peças em 1 ano</span>
+                      <div class="cb"><span>Tritan</span><i style="--w:100%; background:#5b5bd6"></i><b>R$ 1.000</b></div>
+                      <div class="cb"><span>SAI</span><i style="--w:62.73%; background:#e5232f"></i><b>R$ 627,33</b></div>
+                    </div>
+                  </div>
+                </div>
+                <p class="note" style="margin:0">Uma garra SAI custa R$ 245,54 a mais, mas como ela não quebra a cada 3 meses, o gasto com peças no ano já é <b>37% menor</b>, antes de contar as caixas que deixam de ser produzidas. <span class="tag eq">preços: equipe</span> <span class="tag sim">gramas e horas: Orca</span> Fora da conta: mão de obra, energia e preparação da impressora.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Payback: simulação com controles -->
+        <section class="slide" data-title="Payback" id="s-payback">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Custos · Simulação de payback</span>
+              <h2>Em quanto tempo o SAI <em>se paga</em></h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,.85fr) minmax(0,1.4fr); align-items:start">
+              <div style="display:grid; gap:12px">
+                <div class="glass card pb-ctl" style="padding:14px 18px">
+                  <h3 style="margin:0 0 10px; font-size:16px">Mude as hipóteses <span class="tag eq" style="margin-left:4px">exemplo</span></h3>
+                  <label for="pb-tri">A garra de Tritan quebra a cada <output id="pb-tri-o">3 meses</output></label>
+                  <input id="pb-tri" type="range" min="1" max="12" step="1" value="3">
+                  <label for="pb-pad">Os PADs do SAI são trocados a cada <output id="pb-pad-o">2 meses</output></label>
+                  <input id="pb-pad" type="range" min="1" max="6" step="1" value="2">
+                  <span class="pb-lbl">A garra SAI quebra</span>
+                  <div class="seg" id="pb-sai" role="tablist" aria-label="Quantas vezes a garra SAI quebra">
+                    <button class="on" role="tab" aria-selected="true" data-n="0">nunca</button>
+                    <button role="tab" aria-selected="false" data-n="12">1× por ano</button>
+                    <button role="tab" aria-selected="false" data-n="6">2× por ano</button>
+                  </div>
+                  <button type="button" class="pb-reset" id="pb-reset">voltar ao cenário das simulações</button>
+                </div>
+                <div class="g2 roi-kpi">
+                  <div class="glass stat sm"><b id="pb-mes">9 meses</b><span>para o SAI se pagar</span><small id="pb-mes-s">só com material</small></div>
+                  <div class="glass stat sm"><b class="ink" id="pb-cx">2.240</b><span>caixas garantidas em 24 meses</span><small id="pb-cx-s">8 quebras evitadas × 280 caixas</small></div>
+                </div>
+              </div>
+              <div class="glass card chart" style="padding:14px 18px">
+                <h4>Gasto acumulado com material em 24 meses</h4>
+                <p class="sub" id="pb-sub">Tritan R$ 2.000 × SAI R$ 759,06 · economia de R$ 1.240,94</p>
+                <div class="legend"><span><i style="background:#5b5bd6"></i>Tritan (atual)</span><span><i style="background:#e5232f"></i>SAI sem esqueleto</span></div>
+                <div id="chart-pb" class="roi-host"></div>
+                <p class="note" style="margin:4px 0 0">Material: garra de Tritan R$ 250 por quebra; garra SAI R$ 495,54 (troca inteira se quebrar); 8 PADs R$ 21,96 por troca. Cada quebra evitada garante 280 caixas que deixariam de ser produzidas.</p>
+              </div>
+            </div>
+            <p class="note"><span class="tag eq">valores de exemplo</span> As quebras e as trocas são estipuladas e serão ajustadas conforme o tempo de uso real. Pelas simulações (FE e impacto) a garra SAI não quebra em uso normal; não é ensaio.</p>
+          </div>
+        </section>
+
   </template>
 
   <dialog class="qr-big" id="qr-dialog" aria-label="QR code da apresentação">
@@ -1796,15 +1796,15 @@
     <figure><img src="" alt=""><figcaption></figcaption></figure>
   </dialog>
 
-  <script src="assets/js/main.js?v=r07z"></script>
-  <script src="assets/js/bancada-dados.js?v=r07z"></script>
-  <script src="assets/js/bancada.js?v=r07z"></script>
-  <script src="assets/js/r07-dados.js?v=r07z"></script>
-  <script src="assets/js/r07.js?v=r07z"></script>
-  <script src="assets/js/conjunto-dados.js?v=r07z"></script>
-  <script src="assets/js/conjunto.js?v=r07z"></script>
-  <script src="assets/js/sai.js?v=r07z"></script>
-  <script src="assets/js/anim.js?v=r07z"></script>
-  <script type="module" src="assets/js/viewer3d.js?v=r07z"></script>
+  <script src="assets/js/main.js?v=r08a"></script>
+  <script src="assets/js/bancada-dados.js?v=r08a"></script>
+  <script src="assets/js/bancada.js?v=r08a"></script>
+  <script src="assets/js/r07-dados.js?v=r08a"></script>
+  <script src="assets/js/r07.js?v=r08a"></script>
+  <script src="assets/js/conjunto-dados.js?v=r08a"></script>
+  <script src="assets/js/conjunto.js?v=r08a"></script>
+  <script src="assets/js/sai.js?v=r08a"></script>
+  <script src="assets/js/anim.js?v=r08a"></script>
+  <script type="module" src="assets/js/viewer3d.js?v=r08a"></script>
 </body>
 </html>
