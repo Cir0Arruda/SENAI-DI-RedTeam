@@ -30,7 +30,7 @@
     onSlide(el, start); if (isOn(el)) start();
   });
 
-  /* ---------- Parada da linha: relógio de 45 min, R$ 84.000 ---------- */
+  /* ---------- Parada da linha: relógio de 45 min, 280 caixas que deixam de ser produzidas ---------- */
   const tk = document.getElementById('anim-parada');
   if (tk) {
     const clock = tk.querySelector('.t-clock'), rs = tk.querySelector('.t-rs'), bar = tk.querySelector('.t-bar i');
@@ -38,7 +38,7 @@
     const draw = p => {
       const min = 45 * p, mm = Math.floor(min), ss = Math.floor((min - mm) * 60);
       clock.textContent = `${String(mm).padStart(2, '0')}:${String(ss).padStart(2, '0')}`;
-      rs.textContent = `R$ ${fmt(84000 * p)}`;
+      rs.textContent = `${fmt(280 * p)} caixas`;
       bar.style.width = `${p * 100}%`;
     };
     steps.add({ active: () => run && isOn(tk), tick: dt => { t = Math.min(9, t + dt); draw(t / 9); if (t >= 9) run = false; } });
@@ -150,7 +150,6 @@
       val.textContent = `R$ ${fmt(a)} a ${fmt(b)}`;
       rot.textContent = 'garra R07 (sem ou com esqueleto) + 8 PADs + bico';
       conta.textContent = 'toque numa opção da tabela para ver a conta';
-      par.textContent = `paga ${fmt(84000 / b)} a ${fmt(84000 / a)} garras completas`;
       bar.classList.add('range'); setBar((V.R07_SEM.custo_rs + V.R07_COM.custo_rs) / 2, padRs, bico, MAX);
     };
     const pick = k => {
@@ -158,7 +157,6 @@
       val.textContent = `R$ ${fmt(t, 2)}`;
       rot.textContent = `garra ${v.rot} + 8 PADs + bico`;
       conta.textContent = `${fmt(v.custo_rs, 2)} + ${fmt(padRs, 2)} + ${fmt(bico, 2)} · PADs com suportes (Orca)`;
-      par.textContent = `paga ${fmt(84000 / t)} garras completas`;
       bar.classList.remove('range'); setBar(v.custo_rs, padRs, bico, MAX);
       val.classList.remove('pop'); void val.offsetWidth; val.classList.add('pop');
     };

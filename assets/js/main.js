@@ -37,6 +37,7 @@
   railBtns.forEach(b => b.addEventListener('click', () => go(+b.dataset.idx)));
 
   document.addEventListener('keydown', e => {
+    if (e.target.closest && e.target.closest('input, select, textarea')) return;   // setas movem o controle, não o slide
     if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); go(cur + 1); }
     else if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); go(cur - 1); }
     else if (e.key === 'Home') go(0);
