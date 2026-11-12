@@ -20,7 +20,7 @@
     const D = window.IMPACTO_1D;
     if (!box || !v || !D) return;
     const host = box.querySelector('.pv-svg'), read = document.getElementById('pv-read');
-    const W = 340, H = 230, L = 34, R = 10, T = 20, B = 24, tMax = 7, fMax = 500;
+    const W = 300, H = 205, L = 40, R = 22, T = 30, B = 26, tMax = 7, fMax = 500;
     const x = t => L + (t / tMax) * (W - L - R), y = f => T + (1 - f / fMax) * (H - T - B);
     const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, 'aria-hidden': 'true' }, host);
     const grid = el('g', { class: 'grid' }, svg), axis = el('g', { class: 'axis' }, svg);
@@ -28,7 +28,7 @@
       el('line', { x1: L, x2: W - R, y1: y(f), y2: y(f) }, grid);
       el('text', { x: L - 6, y: y(f) + 4, 'text-anchor': 'end' }, axis).textContent = f;
     }
-    el('text', { x: L - 6, y: T - 10, 'text-anchor': 'end' }, axis).textContent = 'N';
+    el('text', { x: L - 6, y: T - 14, 'text-anchor': 'end' }, axis).textContent = 'N';
     for (let t = 0; t <= tMax; t++) el('text', { x: x(t), y: H - 8, 'text-anchor': 'middle' }, axis).textContent = t === tMax ? `${t} ms` : t;
     const clip = el('clipPath', { id: 'pv-clip' }, el('defs', {}, svg));
     const cr = el('rect', { x: 0, y: 0, width: L, height: H }, clip);
@@ -40,7 +40,7 @@
     const pS = peak(1), pC = peak(2);
     const lS = el('text', { x: x(pS[0]) + 8, y: y(pS[1]) + 4, class: 'lbl', opacity: 0 }, svg);
     lS.textContent = `${fmt(pS[1], 1)} N`;
-    const lC = el('text', { x: x(pC[0]), y: y(pC[2]) - 10, class: 'lbl cut', 'text-anchor': 'middle', opacity: 0 }, svg);
+    const lC = el('text', { x: x(pC[0]) + 2, y: y(pC[2]) - 12, class: 'lbl cut', 'text-anchor': 'start', opacity: 0 }, svg);
     lC.textContent = `${fmt(pC[2], 1)} N · −${fmt((1 - pC[2] / pS[1]) * 100, 0)}%`;
     const head = el('line', { y1: T, y2: H - B, stroke: 'rgba(21,21,29,.35)', 'stroke-dasharray': '3 3' }, svg);
     const dS = el('circle', { r: 4, fill: INDIGO, stroke: '#fff', 'stroke-width': 2 }, svg);
@@ -95,7 +95,7 @@
               txt: 'Conservador: a garra SAI quebra 1 vez por ano e é trocada inteira.' }
     };
     const acum = (ev, m) => ev.filter(e => e[0] <= m).reduce((a, e) => a + e[1], 0);
-    const W = 640, H = 300, L = 62, R = 84, T = 14, B = 30, yMax = 2200;
+    const W = 540, H = 280, L = 62, R = 84, T = 14, B = 30, yMax = 2200;
     const x = m => L + (m / MESES) * (W - L - R), y = v => T + (1 - v / yMax) * (H - T - B);
     const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img' }, host);
     const grid = el('g', { class: 'grid' }, svg), axis = el('g', { class: 'axis' }, svg);
@@ -120,7 +120,7 @@
     const pSai = el('path', { fill: 'none', stroke: RED, 'stroke-width': 2.2, 'stroke-linejoin': 'round' }, g);
     // marcadores das quebras da garra de Tritan
     tritan.forEach(([m]) => el('circle', { cx: x(m), cy: y(acum(tritan, m)), r: 3.5, fill: INDIGO, stroke: '#fff', 'stroke-width': 2 }, g));
-    el('text', { x: x(3) + 6, y: y(acum(tritan, 3)) - 8, class: 'lbl' }, g).textContent = '1 quebra';
+    el('text', { x: x(3) + 6, y: y(acum(tritan, 3)) + 19, class: 'lbl' }, g).textContent = '1 quebra';
     el('text', { x: x(MESES) + 8, y: y(acum(tritan, MESES)) + 4, class: 'lbl' }, g).textContent = `R$ ${fmt(acum(tritan, MESES))}`;
     const endS = el('text', { x: x(MESES) + 8, class: 'lbl red' }, g);
     const pbDot = el('circle', { r: 5, fill: '#fff', stroke: RED, 'stroke-width': 2.5 }, g);

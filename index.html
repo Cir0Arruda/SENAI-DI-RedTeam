@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=r08h">
+  <link rel="stylesheet" href="assets/css/style.css?v=r08t">
   <script type="importmap">
     { "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
@@ -220,7 +220,7 @@
               <span class="kicker">O material</span>
               <h2>Por que trocamos <em>o material</em></h2>
             </div>
-            <div class="split" style="--cols:minmax(0,.8fr) minmax(0,1.2fr); align-items:start">
+            <div class="split" style="--cols:minmax(0,1.15fr) minmax(0,.85fr); align-items:start">
               <figure class="glass card mat-fig" style="margin:0; padding:12px 14px">
                 <div class="mat-top">
                   <div class="seg" id="mat-tabs" role="tablist" aria-label="Vista da garra SAI">
@@ -231,7 +231,7 @@
                 </div>
                 <div class="mat-stage">
                   <div class="mat-pane on" id="mat-video">
-                    <video id="video-mat" src="assets/video/carga_sai.mp4" poster="assets/video/carga_sai_poster.jpg" muted playsinline preload="metadata"
+                    <video id="video-mat" src="assets/video/carga_sai.mp4?v=2" poster="assets/video/carga_sai_poster.jpg?v=2" muted playsinline preload="metadata"
                            aria-label="Simulação: a garra SAI recebe de 0 a 24 kg numa asa; a cor mostra onde ela trabalha mais. Ela aguenta com folga e só quebraria perto de 93 kg."></video>
                   </div>
                   <div class="mat-pane" id="mat-3d">
@@ -306,7 +306,7 @@
               <span class="kicker">Projeto SAI · PAD de sacrifício</span>
               <h2>O PAD apanha <em>no lugar</em> da garra</h2>
             </div>
-            <div class="split" style="--cols:minmax(0,1.75fr) minmax(0,1fr); align-items:stretch">
+            <div class="split" style="--cols:minmax(0,1.45fr) minmax(0,1fr); align-items:stretch">
               <figure class="glass media pad-video" style="margin:0; background:#f2f6fa">
                   <div class="pv-grid">
                     <video id="video-impacto" src="assets/video/pad_impacto_limpo.mp4" poster="assets/video/pad_impacto_limpo_poster.jpg"
@@ -324,7 +324,7 @@
               <div style="display:grid; gap:12px; align-content:start">
                 <div class="glass stat pad-hero"><b>−63%</b><span>na força que chega à garra</span><small>mesma batida, com e sem PAD</small></div>
                 <div class="glass card" style="padding:14px 16px">
-                  <p style="margin:0">O PAD é um anel de TPU 95A, uma borracha dura impressa, que abraça cada ressalto da garra: é ali que ficam os parafusos e onde a trinca começava. Quando algo bate, <b>ele amassa primeiro</b> e espalha o golpe no tempo, então a força que chega à garra cai para pouco mais de um terço. Se ele estragar, troca-se só o PAD, que é barato e imprime rápido.</p>
+                  <p style="margin:0">Anel de TPU 95A, uma borracha dura impressa, que abraça cada ressalto da garra, onde ficam os parafusos e onde a trinca começava. Na batida <b>ele amassa primeiro</b> e a força na garra cai a pouco mais de um terço. Se estragar, troca-se só o PAD.</p>
                 </div>
               </div>
             </div>
@@ -355,19 +355,19 @@
                 <article class="glass card lim ok">
                   <span class="tag ok">o PAD se sacrifica, a garra fica inteira</span>
                   <b class="lim-n">≈ 240 N</b>
-                  <p>É a força em que o PAD se esmaga e precisa ser trocado. A garra recebe só 17% do que a quebraria.</p>
-                  <p class="lim-a">É como apoiar as <b>duas caixas da linha (24 kg)</b> sobre um ponto do tamanho de uma moeda.</p>
+                  <p>O PAD se esmaga e é trocado. A garra recebe só 17% do que a quebraria.</p>
+                  <p class="lim-a">Como as <b>duas caixas da linha (24 kg)</b> sobre um ponto do tamanho de uma moeda.</p>
                 </article>
                 <article class="glass card lim bad">
                   <span class="tag bad">o PAD e a garra quebram</span>
                   <b class="lim-n">≈ 1.380 N</b>
-                  <p>É a força que quebra a garra SAI, com o PAD já esmagado.</p>
-                  <p class="lim-a">É como <b>dois adultos (≈ 140 kg)</b> em pé sobre esse ponto. Com o PAD, a batida precisa ter <b>2,2 vezes mais energia</b>: um peso de 1 kg caindo de 27 cm, contra 12 cm sem PAD.</p>
+                  <p>Quebra a garra SAI, com o PAD já esmagado.</p>
+                  <p class="lim-a">Como <b>dois adultos (≈ 140 kg)</b> sobre esse ponto. Com o PAD a batida precisa de <b>2,2× mais energia</b>: 1 kg caindo de 27 cm, contra 12 cm.</p>
                 </article>
             </div>
                 <div class="fonte-row">
-                  <p class="note" style="margin:0"><span class="tag sim">estimativa</span> Modelo simplificado de molas com a garra SAI; a animação é ilustrativa. Não é ensaio.</p>
-                  <p class="fonte"><img src="assets/img/logos/fusion.webp" alt="" width="28" height="28"><span><b>Fonte: Autodesk Fusion</b> Licença Educacional · versão 2706.1.17 · modelo 3D e simulação de referência</span></p>
+                  <p class="note" style="margin:0"><span class="tag sim">estimativa</span> Modelo de molas; animação ilustrativa. Não é ensaio.</p>
+                  <p class="fonte"><img src="assets/img/logos/fusion.webp" alt="" width="28" height="28"><span><b>Fonte: Autodesk Fusion</b> Licença Educacional · versão 2706.1.17 · modelo 3D e simulação</span></p>
                 </div>
           </div>
         </section>
@@ -475,7 +475,7 @@
                 <button role="tab" aria-selected="false" data-c="cons">Conservador</button>
               </div>
             </div>
-            <div class="split" style="--cols:minmax(0,1.35fr) minmax(0,1fr); align-items:start">
+            <div class="split" style="--cols:minmax(0,1fr) minmax(0,1fr); align-items:start">
               <div class="glass card chart" style="padding:14px 18px">
                 <h4>Gasto acumulado com material em 24 meses <span class="tag eq" style="margin-left:6px">exemplo</span></h4>
                 <p class="sub">peças compradas e impressas · R$</p>
@@ -493,15 +493,14 @@
                 <div class="glass card" style="padding:12px 16px">
                   <h3 style="margin:0 0 6px; font-size:15px">Como a conta foi feita <span class="tag eq" style="margin-left:4px">valores de exemplo</span></h3>
                   <ul class="hip">
-                    <li><b>Tritan:</b> a parte superior quebra a cada 3 meses, por impactos comuns e pelo erro raro de uma asa pegar as duas caixas. Cada quebra custa R$ 250 de peça.</li>
-                    <li><b>SAI, pelas simulações:</b> o PAD derruba o golpe comum para 169 N, contra 1.380 N que rompem a garra; as duas caixas numa asa (24 kg) ficam com folga de 3,9×; a fadiga passa de 100 anos. A garra custa R$ 495,54 e não quebra; os 8 PADs (R$ 21,96) são trocados a cada 2 meses.</li>
-                    <li><b>Conservador:</b> mesmo assim a garra SAI quebra 1 vez por ano e é trocada inteira.</li>
-                    <li>Material por hora com a linha rodando 24 h por dia.</li>
+                    <li><b>Tritan:</b> a parte superior quebra a cada 3 meses, por impactos e pelo erro de uma asa pegar as duas caixas: R$ 250 por quebra.</li>
+                    <li><b>SAI, pelas simulações:</b> o PAD leva o golpe comum a 169 N (a garra rompe com 1.380 N); 24 kg numa asa com folga de 3,9×; fadiga acima de 100 anos. Garra de R$ 495,54 sem quebra; 8 PADs (R$ 21,96) trocados a cada 2 meses.</li>
+                    <li><b>Conservador:</b> a garra SAI quebra 1 vez por ano e é trocada inteira.</li>
+                    <li>Só material (preços da equipe, gramas do Orca), com a linha 24 h por dia. Quebras e trocas foram estipuladas; a resistência vem das simulações, não de ensaio, e as 280 caixas perdidas por quebra não entram.</li>
                   </ul>
                 </div>
               </div>
             </div>
-            <p class="note"><span class="tag eq">valores de exemplo</span> As quebras e as trocas foram estipuladas e serão ajustadas conforme o tempo de uso real da garra. Só entra material (preços da equipe e gramas do Orca); a resistência vem das simulações (FE e modelo de impacto), não de ensaio. A produção da linha não entra nesta conta: cada quebra evitada ainda garante 280 caixas que deixariam de ser produzidas.</p>
           </div>
         </section>
 
@@ -1954,15 +1953,15 @@
     <figure><img src="" alt=""><figcaption></figcaption></figure>
   </dialog>
 
-  <script src="assets/js/main.js?v=r08h"></script>
-  <script src="assets/js/bancada-dados.js?v=r08h"></script>
-  <script src="assets/js/bancada.js?v=r08h"></script>
-  <script src="assets/js/r07-dados.js?v=r08h"></script>
-  <script src="assets/js/r07.js?v=r08h"></script>
-  <script src="assets/js/conjunto-dados.js?v=r08h"></script>
-  <script src="assets/js/conjunto.js?v=r08h"></script>
-  <script src="assets/js/sai.js?v=r08h"></script>
-  <script src="assets/js/anim.js?v=r08h"></script>
-  <script type="module" src="assets/js/viewer3d.js?v=r08h"></script>
+  <script src="assets/js/main.js?v=r08t"></script>
+  <script src="assets/js/bancada-dados.js?v=r08t"></script>
+  <script src="assets/js/bancada.js?v=r08t"></script>
+  <script src="assets/js/r07-dados.js?v=r08t"></script>
+  <script src="assets/js/r07.js?v=r08t"></script>
+  <script src="assets/js/conjunto-dados.js?v=r08t"></script>
+  <script src="assets/js/conjunto.js?v=r08t"></script>
+  <script src="assets/js/sai.js?v=r08t"></script>
+  <script src="assets/js/anim.js?v=r08t"></script>
+  <script type="module" src="assets/js/viewer3d.js?v=r08t"></script>
 </body>
 </html>

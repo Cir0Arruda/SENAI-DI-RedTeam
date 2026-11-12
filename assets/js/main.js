@@ -95,7 +95,22 @@
     }
     set(lo);
   }
-  const fitAll = () => slides.forEach(fit);
+  // Escala de leitura: no computador, todo texto dos slides abaixo de 16 px cresce (+20% até 13 px, +15% até 16 px).
+  // Lê os tamanhos originais uma vez e grava em px, então não acumula; no celular volta ao tamanho do CSS.
+  const txt = slides.flatMap(s => [...s.querySelectorAll('*')]).filter(e => !e.closest('svg'));
+  let escala = null;
+  function legivel() {
+    const on = innerWidth > 900;
+    if (on === escala) return;
+    escala = on;
+    if (!on) { txt.forEach(e => { if (e.dataset.fs0) e.style.fontSize = ''; }); return; }
+    const novo = txt.map(e => {
+      const f = parseFloat(getComputedStyle(e).fontSize);
+      return f < 13 ? f * 1.2 : f < 16 ? f * 1.15 : 0;
+    });
+    txt.forEach((e, i) => { if (novo[i]) { e.dataset.fs0 = 1; e.style.fontSize = `${novo[i].toFixed(1)}px`; } });
+  }
+  const fitAll = () => { legivel(); slides.forEach(fit); };
   let t = null;
   const later = () => { clearTimeout(t); t = setTimeout(fitAll, 120); };
   fitAll();

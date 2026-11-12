@@ -47,25 +47,24 @@ PICO, MAG, VMAX = float(D['PICO']), 15.0, 0.40          # mesma escala de cor do
 KG_MAX = J['kg_max_PA6-CF_Z48']
 
 X0, Y0, _ = proj(D['cen'])
-xl = (X0.min() - 20, X0.max() + 20); yl = (Y0.min() - 34, Y0.max() + 20)
+xl = (X0.min() - 8, X0.max() + 8); yl = (Y0.min() - 62, Y0.max() + 6)
 nramp, nhold = FPS * 6, FPS * 3
 N = nramp + nhold
 
 fig = plt.figure(figsize=(9.6, 7.2), dpi=DPI)
 fig.patch.set_facecolor('white')
-fig.text(0.04, 0.925, 'Garra SAI com 24 kg numa asa só', fontsize=22, fontweight='bold', color=INK)
-fig.text(0.04, 0.88, 'Se a seladora erra, as duas caixas caem numa asa. A cor mostra onde a garra trabalha.',
-         fontsize=12, color=MUTED)
-kgtxt = fig.text(0.96, 0.925, '', fontsize=26, fontweight='bold', color=KG, ha='right')
-ax = fig.add_axes([0.03, 0.21, 0.94, 0.64])
+fig.text(0.035, 0.915, 'Garra SAI com 24 kg', fontsize=34, fontweight='bold', color=INK)
+fig.text(0.035, 0.855, 'Duas caixas numa asa só. A cor mostra o esforço.', fontsize=21, color=MUTED)
+kgtxt = fig.text(0.965, 0.915, '', fontsize=40, fontweight='bold', color=KG, ha='right')
+ax = fig.add_axes([0.0, 0.19, 1.0, 0.655])
 ax.set_xlim(*xl); ax.set_ylim(*yl); ax.set_aspect('equal'); ax.axis('off')
-badge = fig.text(0.5, 0.125, '', fontsize=16, fontweight='bold', color=OK, ha='center')
-cax = fig.add_axes([0.30, 0.055, 0.40, 0.022])
+badge = fig.text(0.5, 0.135, '', fontsize=25, fontweight='bold', color=OK, ha='center')
+cax = fig.add_axes([0.33, 0.06, 0.34, 0.03])
 cb = fig.colorbar(plt.cm.ScalarMappable(cmap=CMAP, norm=plt.Normalize(0, VMAX)), cax=cax, orientation='horizontal')
 cb.set_ticks([]); cb.outline.set_linewidth(0.6)
-fig.text(0.29, 0.06, 'pouco esforço', fontsize=11, color=MUTED, ha='right', va='center')
-fig.text(0.71, 0.06, 'mais esforço', fontsize=11, color=MUTED, ha='left', va='center')
-fig.text(0.5, 0.012, 'Simulação por computador · estimativa, não é ensaio', fontsize=9, color=MUTED, ha='center')
+fig.text(0.32, 0.075, 'pouco esforço', fontsize=20, color=MUTED, ha='right', va='center')
+fig.text(0.68, 0.075, 'mais esforço', fontsize=20, color=MUTED, ha='left', va='center')
+fig.text(0.5, 0.012, 'Simulação por computador · estimativa, não é ensaio', fontsize=15, color=MUTED, ha='center')
 tip = int(np.argmax(np.linalg.norm(D['U'], axis=1)))
 st = {'sc': None, 'arrow': None}
 
@@ -77,14 +76,14 @@ def frame(i):
     kgtxt.set_text(f'{kg:4.1f} kg'.replace('.', ','))
     if st['sc'] is not None:
         st['sc'].remove()
-    st['sc'] = cloud(ax, D['cen'] + D['U'] * MAG * f, D['fi_z'] * PICO * f, VMAX, s=11)
+    st['sc'] = cloud(ax, D['cen'] + D['U'] * MAG * f, D['fi_z'] * PICO * f, VMAX, s=15)
     if st['arrow'] is not None:
         st['arrow'].remove()
     px, py, _ = proj((D['cen'][tip] + D['U'][tip] * MAG * f)[None])
     st['arrow'] = ax.annotate(f'{kg:.0f} kg', xy=(px[0], py[0]), xytext=(px[0], py[0] - 14 - 18 * f),
-                              ha='left', va='center', fontsize=14, fontweight='bold', color=KG,
+                              ha='left', va='center', fontsize=26, fontweight='bold', color=KG,
                               arrowprops=dict(arrowstyle='<-', color=KG, lw=2.6, relpos=(0, 0.5), shrinkA=0, shrinkB=2), zorder=10)
-    badge.set_text(f'✓ Aguenta os 24 kg com folga: só quebraria com cerca de {KG_MAX:.0f} kg' if i >= nramp - 1 else '')
+    badge.set_text(f'✓ Aguenta com folga: só quebraria com {KG_MAX:.0f} kg' if i >= nramp - 1 else '')
     return []
 
 

@@ -867,3 +867,59 @@ dialog.qr-big .nav-btn { position: absolute; top: 12px; right: 12px; }
 .fonte.fonte-fim { margin-top: 12px; font-size: 13px; }
 @media (max-width: 1100px) { .refs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) { .refs-grid { grid-template-columns: 1fr; } .refs-grid a { white-space: normal; } }
+
+/* Telas baixas de computador (notebook): moldura mais fina para sobrar altura ao slide, assim o ajuste à tela
+   reduz menos e as letras ficam maiores */
+@media (min-width: 901px) and (max-height: 900px) {
+  .shell { inset: 10px; padding: 8px 8px 8px 0; }
+  .topbar { padding: 12px 24px 2px; }
+  .footbar { padding: 6px 24px 10px; }
+  .slide { padding-top: 10px; padding-bottom: 10px; }
+  .s-head.compact { margin-bottom: 12px; }
+  .s-head.compact h2 { margin: 8px 0 4px; }
+  .s-head.compact .kicker { height: 26px; }
+}
+
+/* Letras pequenas maiores (legibilidade na projeção): etiquetas, notas, legendas, eixos e referências */
+.tag { font-size: 12px; height: 24px; }
+.note { font-size: 14px; }
+.stat small { font-size: 13px; }
+.chart .sub { font-size: 13px; }
+.legend { font-size: 13px; }
+.chart .axis text, .pv-svg .axis text { font-size: 13px; }
+.pv-head { font-size: 14px; }
+.pv-read { font-size: 13.5px; }
+.bh span small, .gr span small, .tbl small.muted, .custo-tbl td small, #tbl-conjunto td small { font-size: 12px; }
+.pad-svg .ttl { font-size: 20px; }
+.pad-svg .val { font-size: 17px; }
+.pad-lims .pad-anim .bh { font-size: 13.5px; }
+.mx-svg .mx-qt { font-size: 12.5px; }
+.hip li { font-size: 14px; }
+.refs-head span { font-size: 14px; }
+.refs-grid h4 { font-size: 14px; }
+.refs-grid li { font-size: 13.5px; }
+.fonte, .fonte.fonte-fim { font-size: 13.5px; }
+/* Encerramento: título e logos um pouco menores para sobrar altura às referências */
+.fim h1 { font-size: clamp(40px, 4.2vw, 66px); margin: 4px 0 2px; }
+.fim .logos.logos-end { margin-top: 10px; zoom: .85; }
+.refs { margin-top: 12px; }
+
+/* PAD e ROI mais compactos, para o texto não encolher no ajuste à tela */
+#s-pad .pad-hero { padding: 12px 18px; }
+#s-pad .pad-hero b { font-size: clamp(40px, 4.4vw, 62px); }
+#s-pad .fonte-row { flex-wrap: nowrap; margin-top: 10px; }
+#s-pad .fonte-row .note { flex: 0 1 auto; }
+#s-pad .lim { padding: 12px 14px; }
+#s-pad .lim p { line-height: 1.38; }
+#s-roi .roi-kpi .stat.sm { padding: 12px 14px; }
+#s-pad .pad-hero { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 16px; align-items: center; }
+#s-pad .pad-hero b { grid-row: span 2; }
+#s-pad .pad-hero span, #s-pad .pad-hero small { align-self: end; }
+#s-pad .pad-hero small { align-self: start; }
+.pad-lims .lim { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; column-gap: 12px; align-content: start; }
+.pad-lims .lim .lim-n { order: -1; }
+.pad-lims .lim .tag { justify-self: start; margin: 0; }
+.pad-lims .lim p { grid-column: 1 / -1; }
+.pad-lims .pad-anim .pad-svg { max-height: 104px; }
+#s-pad .pad-svg .val { font-size: 19px; }
+#s-pad .pv-svg .axis text, #s-pad .pv-svg .lbl { font-size: 14px; }
