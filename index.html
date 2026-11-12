@@ -35,7 +35,7 @@
       <button class="rail-btn" data-go="#s-formulas" title="Fórmulas de custo">
         <svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .8-3 2s1.3 1.7 3 2 3 .8 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"/></svg>
       </button>
-      <button class="rail-btn" data-go="#s-sustent" title="Sustentabilidade e segurança">
+      <button class="rail-btn" data-go="#s-sustent" title="Sustentabilidade e conclusão">
         <svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
       </button>
       <div class="rail-logo">RL</div>
@@ -87,7 +87,7 @@
               <li class="glass"><b>02</b><span>Ideias anteriores<small>Matriz de prioridade: valor agregado × complexidade</small></span></li>
               <li class="glass"><b>03</b><span>Projeto SAI<small>A solução: material novo, estrutura interna sem esqueleto e PAD de sacrifício</small></span></li>
               <li class="glass"><b>04</b><span>Custos<small>Fórmulas de custo da garra SAI</small></span></li>
-              <li class="glass"><b>05</b><span>Sustentabilidade e segurança<small>Descarte e reciclagem, segurança e ergonomia</small></span></li>
+              <li class="glass"><b>05</b><span>Sustentabilidade e conclusão<small>Descarte e reciclagem, segurança, peso, caixas garantidas e durabilidade</small></span></li>
             </ol>
           </div>
         </section>
@@ -527,6 +527,38 @@
                 </article>
               </div>
             </div>
+          </div>
+        </section>
+
+        <!-- Conclusão: o que o SAI resolve -->
+        <section class="slide" data-title="Conclusão" id="s-conclusao">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Conclusão</span>
+              <h2>O que o SAI <em>resolve</em></h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,.8fr) minmax(0,1.3fr); align-items:start">
+              <figure class="glass card" style="margin:0; padding:10px">
+                <div class="glass viewer" data-viewer3d data-part="encaixe" style="aspect-ratio:5/4">
+                  <div class="vmsg">Carregando modelo…</div>
+                  <span class="vhint">garra superior + 8 PADs · arraste para girar</span>
+                </div>
+                <figcaption class="note" style="margin:8px 6px 2px">Os PADs giram, descem e se fecham em volta dos ressaltos: é a peça que se troca, não a garra.</figcaption>
+              </figure>
+              <div class="conc-grid">
+                <article class="glass card conc"><span class="conc-n">01</span><h3>A dor</h3>
+                  <p>A garra de Tritan rompia a cada 3 meses e a paletização parava ou virava manual. Com o PAD, o golpe chega à garra <b>63% mais fraco</b>.</p></article>
+                <article class="glass card conc"><span class="conc-n">02</span><h3>O peso</h3>
+                  <p>Conjunto de <b>2,690 kg</b>: <b>−144 g</b> (−5,1%) em relação à garra atual, sem mudar nada por fora. Mais folga para o UR30.</p></article>
+                <article class="glass card conc"><span class="conc-n">03</span><h3>Custo de oportunidade</h3>
+                  <p>Cada quebra evitada garante <b>280 caixas</b> (3.360 itens) que deixariam de ser produzidas: <b>1.120 caixas por ano</b>. Só com material, o SAI se paga em cerca de 9 meses.</p></article>
+                <article class="glass card conc"><span class="conc-n">04</span><h3>Manutenção preventiva e controle</h3>
+                  <p>A quebra deixa de ser surpresa: o PAD é o ponto de troca, a cada 2 meses, numa parada programada. Dá para controlar por checklist (PAD amassado = trocar) e manter PADs e uma garra reserva em estoque.</p></article>
+                <article class="glass card conc"><span class="conc-n">05</span><h3>Durabilidade</h3>
+                  <p>Pelas simulações, a garra aguenta <b>93 kg</b> numa asa (3,9× as duas caixas), recebe 169 N num golpe comum contra 1.380 N que a rompem, e a fadiga passa de 100 anos. Quem gasta é o PAD.</p></article>
+              </div>
+            </div>
+            <p class="note"><span class="tag sim">estimativas</span> Resultados de simulação (Orca, FE e modelo de impacto) e dados de produção da equipe; a próxima etapa é confirmar em bancada.</p>
           </div>
         </section>
 
@@ -1749,38 +1781,6 @@
               </div>
             </div>
             <p class="note"><span class="tag eq">valores de exemplo</span> As quebras e as trocas foram estipuladas e serão ajustadas conforme o tempo de uso real da garra. Só entra material (preços da equipe e gramas do Orca); a resistência vem das simulações (FE e modelo de impacto), não de ensaio. A produção da linha não entra nesta conta: cada quebra evitada ainda garante 280 caixas que deixariam de ser produzidas.</p>
-          </div>
-        </section>
-
-        <!-- Conclusão: o que o SAI resolve -->
-        <section class="slide" data-title="Conclusão" id="s-conclusao">
-          <div class="wrap wide">
-            <div class="s-head compact">
-              <span class="kicker">Conclusão</span>
-              <h2>O que o SAI <em>resolve</em></h2>
-            </div>
-            <div class="split" style="--cols:minmax(0,.8fr) minmax(0,1.3fr); align-items:start">
-              <figure class="glass card" style="margin:0; padding:10px">
-                <div class="glass viewer" data-viewer3d data-part="encaixe" style="aspect-ratio:5/4">
-                  <div class="vmsg">Carregando modelo…</div>
-                  <span class="vhint">garra superior + 8 PADs · arraste para girar</span>
-                </div>
-                <figcaption class="note" style="margin:8px 6px 2px">Os PADs giram, descem e se fecham em volta dos ressaltos: é a peça que se troca, não a garra.</figcaption>
-              </figure>
-              <div class="conc-grid">
-                <article class="glass card conc"><span class="conc-n">01</span><h3>A dor</h3>
-                  <p>A garra de Tritan rompia a cada 3 meses e a paletização parava ou virava manual. Com o PAD, o golpe chega à garra <b>63% mais fraco</b>.</p></article>
-                <article class="glass card conc"><span class="conc-n">02</span><h3>O peso</h3>
-                  <p>Conjunto de <b>2,690 kg</b>: <b>−144 g</b> (−5,1%) em relação à garra atual, sem mudar nada por fora. Mais folga para o UR30.</p></article>
-                <article class="glass card conc"><span class="conc-n">03</span><h3>Custo de oportunidade</h3>
-                  <p>Cada quebra evitada garante <b>280 caixas</b> (3.360 itens) que deixariam de ser produzidas: <b>1.120 caixas por ano</b>. Só com material, o SAI se paga em cerca de 9 meses.</p></article>
-                <article class="glass card conc"><span class="conc-n">04</span><h3>Manutenção preventiva e controle</h3>
-                  <p>A quebra deixa de ser surpresa: o PAD é o ponto de troca, a cada 2 meses, numa parada programada. Dá para controlar por checklist (PAD amassado = trocar) e manter PADs e uma garra reserva em estoque.</p></article>
-                <article class="glass card conc"><span class="conc-n">05</span><h3>Durabilidade</h3>
-                  <p>Pelas simulações, a garra aguenta <b>93 kg</b> numa asa (3,9× as duas caixas), recebe 169 N num golpe comum contra 1.380 N que a rompem, e a fadiga passa de 100 anos. Quem gasta é o PAD.</p></article>
-              </div>
-            </div>
-            <p class="note"><span class="tag sim">estimativas</span> Resultados de simulação (Orca, FE e modelo de impacto) e dados de produção da equipe; a próxima etapa é confirmar em bancada.</p>
           </div>
         </section>
 
