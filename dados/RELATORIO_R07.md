@@ -112,6 +112,19 @@ A massa da garra instalada (Tritan Hexa3D 30%, deck do cliente) é **estimada**:
 
 \* A lei homogeneizada (Gibson-Ashby) não distingue o tipo de célula na mesma densidade. Por isso Hexa3D e TPMS-D recebem a resistência do giroide de mesma %.
 
+**Peso × erro de processo (2 caixas numa asa = 24 kg, 355,4 N).** Garra montada inteira (superior + inferior), ponto crítico na raiz da flange do superior:
+
+| Variante | Massa vs Tritan | Aguenta (PA6-CF) | FS 24 kg PA6-CF | Aguenta (PAHT CF15) | FS 24 kg PAHT | Tranco 24 kg FS PA6 / PAHT |
+|---|---|---|---|---|---|---|
+| R07 COM | −5,0% | 100,3 kg | 4,18 | 38,0 kg | 1,58 | 2,82 / 1,07 |
+| R07 SEM | −9,1% | 93,3 kg | 3,89 | 35,4 kg | 1,47 | 2,65 / 1,01 |
+| Giroide 30% | −5,4% | 61,6 kg | 2,57 | 23,4 kg | **0,97 (não aguenta)** | 1,72 / **0,65** |
+| Giroide 35% | +1,7% | 68,5 kg | 2,85 | 26,0 kg | 1,08 | não rodado |
+| Giroide 40% | +8,8% | 75,9 kg | 3,16 | 28,8 kg | 1,20 | 2,15 / **0,81** |
+| R06 | +4,1% | 61,6 kg | 2,57 | 23,3 kg | **0,97 (não aguenta)** | não rodado |
+
+Referência de bancada (Fusion R04, peça **maciça**, 24 kg): FS > 8 em PA6-CF e em Tritan. A Tritan instalada com Hexa3D 30% não tem FE com preenchimento, então não há número de carga máxima para ela.
+
 Leitura:
 1. **Peso:** as duas versões R07 cumprem a meta de 5–10% mais leve que a garra instalada:
    - COM esqueleto: −80 g;

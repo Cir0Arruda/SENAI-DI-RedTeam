@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=r07c">
+  <link rel="stylesheet" href="assets/css/style.css?v=r07d">
   <script type="importmap">
     { "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
@@ -41,7 +41,7 @@
       <button class="rail-btn" data-go="20" title="Comparação e decisão">
         <svg class="i" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
       </button>
-      <button class="rail-btn" data-go="29" title="Conclusão e dados">
+      <button class="rail-btn" data-go="30" title="Conclusão e dados">
         <svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
       </button>
       <div class="rail-logo">RT</div>
@@ -655,10 +655,39 @@
               </div>
               <div class="glass card" style="padding:12px 14px; overflow:auto">
                 <table class="tbl compact">
-                  <thead><tr><th>Variante</th><th>Sup. g</th><th>Inf. g</th><th>Garra g</th><th>vs Tritan</th><th>Filam. g</th><th>Tempo</th><th>Custo</th></tr></thead>
+                  <thead><tr><th>Variante</th><th>Sup. g</th><th>Inf. g</th><th>Garra g</th><th>vs Tritan</th><th>Aguenta (asa)</th><th>Tempo</th><th>Custo</th></tr></thead>
                   <tbody id="tbl-orca"></tbody>
                 </table>
-                <p class="note"><span class="tag sim">Orca CLI</span> K1 Max 1:1, PA6-CF 1,10 g/cm³, 5 paredes. Tritan = Hexa3D 30% × 1,18/1,10. Custo = R$ 258/kg × filamento com suportes. Inferior direita = espelho da esquerda.</p>
+                <p class="note"><span class="tag sim">Orca CLI</span> K1 Max 1:1, PA6-CF 1,10 g/cm³, 5 paredes. Tritan = Hexa3D 30% × 1,18/1,10. Custo = R$ 258/kg × filamento com suportes. Inferior direita = espelho da esquerda. <b>Aguenta</b> = carga máxima numa asa da garra montada (FE, PA6-CF); ≈ = sem FE próprio, recebe o giroide de mesma densidade.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Peso × carga suportada (erro de processo: 24 kg numa asa) -->
+        <section class="slide" data-title="Peso × carga" id="s-peso-carga">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Comparação · Peso × resistência</span>
+              <h2>Mais leve <em>e</em> aguenta os 24 kg?</h2>
+            </div>
+            <div class="g4" style="margin-bottom:14px">
+              <div class="glass stat sm"><b class="ink">24 kg</b><span>erro de processo</span><small>2 caixas numa asa só · 355 N com g + 5 m/s²</small></div>
+              <div class="glass stat sm"><b><span data-r07="R07_COM.kg_pa6" data-d="0">100</span> kg</b><span>R07 com esqueleto aguenta</span><small>FS <span data-r07="R07_COM.fs24_pa6" data-d="1">4,2</span> a 24 kg · <span data-r07="R07_COM.pct_tritan" data-d="1" data-sign="1">−5,0</span>% de massa</small></div>
+              <div class="glass stat sm"><b class="ink"><span data-r07="UNI_30.kg_pa6" data-d="0">62</span> kg</b><span>giroide 30% uniforme</span><small>mesma massa, <span class="cnt">38</span>% menos carga que o R07</small></div>
+              <div class="glass stat sm"><b class="ink">FS &gt; 8</b><span>teste de bancada R04</span><small>Fusion, peça maciça, 24 kg · PA6-CF e Tritan</small></div>
+            </div>
+            <div class="split" style="--cols:minmax(0,.95fr) minmax(0,1.15fr); align-items:start">
+              <div class="glass chart" id="chart-r07-pesocarga">
+                <h4>Massa da garra × carga máxima numa asa</h4>
+                <p class="sub">garra montada (superior + inferior) · ● PA6-CF, Z 48 MPa · ○ PAHT CF15, Z 18,2 MPa</p>
+              </div>
+              <div class="glass card" style="padding:12px 14px; overflow:auto">
+                <table class="tbl compact">
+                  <thead><tr><th rowspan="2">Variante</th><th rowspan="2">Garra</th><th colspan="2">PA6-CF</th><th colspan="2">PAHT CF15</th><th rowspan="2">Tranco 24 kg<br>FS PA6 / PAHT</th></tr><tr><th>aguenta</th><th>FS 24</th><th>aguenta</th><th>FS 24</th></tr></thead>
+                  <tbody id="tbl-pesocarga"></tbody>
+                </table>
+                <p class="note"><span class="tag sim">FE voxels 3 mm</span> Garra montada (superior + inferior), engaste na flange, 2 caixas numa asa; ponto crítico na raiz da flange. Pico × 2,2 (calibrado no Fusion R06). Tranco = carga em 10 ms, peça superior. <b class="fs-bad">⚠ FS &lt; 1</b> = rompe entre camadas antes dos 24 kg. A Tritan instalada não tem FE com preenchimento; o R04 de bancada é a peça maciça.</p>
               </div>
             </div>
           </div>
@@ -962,11 +991,11 @@
     <figure><img src="" alt=""><figcaption></figcaption></figure>
   </dialog>
 
-  <script src="assets/js/main.js?v=r07c"></script>
-  <script src="assets/js/bancada-dados.js?v=r07c"></script>
-  <script src="assets/js/bancada.js?v=r07c"></script>
-  <script src="assets/js/r07-dados.js?v=r07c"></script>
-  <script src="assets/js/r07.js?v=r07c"></script>
-  <script type="module" src="assets/js/viewer3d.js?v=r07c"></script>
+  <script src="assets/js/main.js?v=r07d"></script>
+  <script src="assets/js/bancada-dados.js?v=r07d"></script>
+  <script src="assets/js/bancada.js?v=r07d"></script>
+  <script src="assets/js/r07-dados.js?v=r07d"></script>
+  <script src="assets/js/r07.js?v=r07d"></script>
+  <script type="module" src="assets/js/viewer3d.js?v=r07d"></script>
 </body>
 </html>

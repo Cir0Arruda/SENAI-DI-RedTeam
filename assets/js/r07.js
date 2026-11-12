@@ -105,6 +105,48 @@
     el('line', { x1: L, x2: L, y1: T - 4, y2: H - 10, stroke: 'rgba(21,21,29,.25)' }, svg);
   }
 
+  /* ---------- Massa × carga máxima numa asa (garra montada); faixa PAHT → PA6-CF ---------- */
+  function chartPesoCarga() {
+    const host = document.getElementById('chart-r07-pesocarga');
+    if (!host) return;
+    const keys = ['R07_COM', 'R07_SEM', 'UNI_30', 'UNI_35', 'UNI_40', 'R06'];
+    const W = 560, H = 300, L = 44, R = 18, T = 14, B = 34, x0 = 1350, x1 = 1800, yMax = 110;
+    const x = g => L + ((g - x0) / (x1 - x0)) * (W - L - R), y = kg => T + (1 - kg / yMax) * (H - T - B);
+    const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Massa da garra versus carga máxima numa asa: ' + keys.map(k => `${V[k].rot} ${fmt(V[k].garra_g, 0)} g, ${fmt(V[k].kg_pa6, 0)} kg PA6-CF, ${fmt(V[k].kg_paht, 0)} kg PAHT`).join('; ') }, host);
+    const grid = el('g', { class: 'grid' }, svg), axis = el('g', { class: 'axis' }, svg);
+    for (let k = 0; k <= 100; k += 20) {
+      el('line', { x1: L, x2: W - R, y1: y(k), y2: y(k) }, grid);
+      el('text', { x: L - 8, y: y(k) + 4, 'text-anchor': 'end' }, axis).textContent = k;
+    }
+    for (let g = 1400; g <= x1; g += 100) el('text', { x: x(g), y: H - 14, 'text-anchor': 'middle' }, axis).textContent = fmt(g, 0);
+    el('text', { x: (L + W - R) / 2, y: H - 1, 'text-anchor': 'middle' }, axis).textContent = 'massa da garra impressa (g)';
+    el('text', { x: 4, y: T - 2 }, axis).textContent = 'kg';
+    // meta de massa (−5 a −10% da Tritan) e linha da Tritan
+    el('rect', { x: x(D.tritan_g * 0.90), y: T, width: x(D.tritan_g * 0.95) - x(D.tritan_g * 0.90), height: H - T - B, fill: 'rgba(31,157,107,.10)' }, svg);
+    el('line', { x1: x(D.tritan_g), x2: x(D.tritan_g), y1: T, y2: H - B, stroke: 'rgba(21,21,29,.45)', 'stroke-dasharray': '3 3' }, svg);
+    el('text', { x: x(D.tritan_g) + 4, y: T + 10, class: 'lbl', style: 'font-size:10px' }, svg).textContent = `Tritan ${fmt(D.tritan_g, 0)} g`;
+    el('text', { x: x(D.tritan_g * 0.925), y: T + 10, class: 'lbl', 'text-anchor': 'middle', style: 'font-size:10px; fill:#1f7d58' }, svg).textContent = 'meta';
+    // erro de processo: 24 kg numa asa
+    el('line', { x1: L, x2: W - R, y1: y(24), y2: y(24), stroke: '#c2410c', 'stroke-width': 1.5, 'stroke-dasharray': '5 4' }, svg);
+    el('text', { x: L + 6, y: y(24) + 15, class: 'lbl', style: 'font-size:11px; fill:#9a3412' }, svg).textContent = '24 kg · 2 caixas numa asa';
+    const off = { R07_COM: [9, 4, 'start'], R07_SEM: [-9, 4, 'end'], UNI_30: [9, 4, 'start'], UNI_35: [9, 4, 'start'], UNI_40: [9, 4, 'start'], R06: [9, 4, 'start'] };
+    const SH = { R07_COM: 'R07 com', R07_SEM: 'R07 sem', UNI_30: 'Giroide 30%', UNI_35: 'Giroide 35%', UNI_40: 'Giroide 40%', R06: 'R06' };
+    const tip = makeTip(host);
+    keys.forEach(k => {
+      const v = V[k], cx = x(v.garra_g), c = col(k), [dx, dy, a] = off[k];
+      el('line', { x1: cx, x2: cx, y1: y(v.kg_paht), y2: y(v.kg_pa6), stroke: c, 'stroke-width': 2, opacity: .45 }, svg);
+      el('circle', { cx, cy: y(v.kg_paht), r: 5, fill: '#fff', stroke: c, 'stroke-width': 2 }, svg);
+      el('circle', { cx, cy: y(v.kg_pa6), r: 6, fill: c, stroke: '#fff', 'stroke-width': 2 }, svg);
+      el('text', { x: cx + dx, y: y(v.kg_pa6) + dy, class: 'lbl', 'text-anchor': a, style: 'font-size:11px' }, svg).textContent = `${SH[k]} · ${fmt(v.kg_pa6, 0)} kg`;
+      const hit = el('rect', { x: cx - 14, y: y(v.kg_pa6) - 14, width: 28, height: y(v.kg_paht) - y(v.kg_pa6) + 28, fill: 'transparent' }, svg);
+      hit.addEventListener('pointermove', ev => {
+        const p = pointer(svg, host, ev, W);
+        tip.show(`<b>${v.rot}</b> · ${fmt(v.garra_g, 0)} g (${sgn(v.pct_tritan)}% vs Tritan)<div class="r"><i style="background:${c}"></i>PA6-CF: ${fmt(v.kg_pa6)} kg · FS 24 kg ${fmt(v.fs24_pa6, 2)}</div><div class="r"><i style="background:#fff; box-shadow:inset 0 0 0 2px ${c}"></i>PAHT CF15: ${fmt(v.kg_paht)} kg · FS 24 kg ${fmt(v.fs24_paht, 2)}${v.fs24_paht < 1 ? ' ⚠' : ''}</div>Flecha a 24 kg: ${fmt(v.desl24, 2)} mm`, p.hx, p.hy);
+      });
+      hit.addEventListener('pointerleave', () => tip.hide());
+    });
+  }
+
   /* ---------- Impacto: σZ no ponto crítico ao longo do tempo ---------- */
   function chartImpacto() {
     const host = document.getElementById('chart-r07-impacto');
@@ -157,7 +199,16 @@
     if (orca) orca.innerHTML = ['R07_COM', 'R07_SEM', 'HEXA30', 'UNI_30', 'UNI_35', 'UNI_40', 'TPMSD40', 'R06'].map(k => {
       const v = V[k];
       return `<tr${k === 'R07_COM' ? ' class="hl"' : ''}><td><span class="sw" style="background:${col(k)}"></span>${v.rot}</td><td>${fmt(v.sup_g, 0)}</td><td>${fmt(v.inf_g, 0)} ×2</td><td><b>${fmt(v.garra_g, 0)}</b></td>
-        <td>${sgn(v.pct_tritan)}%</td><td>${fmt(v.fil_g, 0)}</td><td>${fmt(v.tempo_h, 1)} h</td><td>R$ ${fmt(v.custo_rs, 2)}</td></tr>`;
+        <td>${sgn(v.pct_tritan)}%</td><td>${v.proprio_fe ? '' : '≈ '}${fmt(v.kg_pa6, 0)} kg <small class="muted">FS ${fmt(v.fs24_pa6, 1)}</small></td><td>${fmt(v.tempo_h, 1)} h</td><td>R$ ${fmt(v.custo_rs, 2)}</td></tr>`;
+    }).join('');
+    const SHORT = { R07_COM: 'R07 com', R07_SEM: 'R07 sem', UNI_30: 'Giroide 30%', UNI_35: 'Giroide 35%', UNI_40: 'Giroide 40%', R06: 'R06 zonal' };
+    const fsCell = f => f < 1 ? `<td class="fs-bad" title="FS < 1: rompe antes dos 24 kg">⚠ ${fmt(f, 2)}</td>` : `<td>${fmt(f, 2)}</td>`;
+    const pc = document.getElementById('tbl-pesocarga');
+    if (pc) pc.innerHTML = ['R07_COM', 'R07_SEM', 'UNI_30', 'UNI_35', 'UNI_40', 'R06'].map(k => {
+      const v = V[k], im = v.impacto;
+      return `<tr${k === 'R07_COM' ? ' class="hl"' : ''}><td class="nw"><span class="sw" style="background:${col(k)}"></span>${SHORT[k]}</td><td>${fmt(v.garra_g, 0)} g</td>
+        <td><b>${fmt(v.kg_pa6, 1)} kg</b></td>${fsCell(v.fs24_pa6)}<td>${fmt(v.kg_paht, 1)} kg</td>${fsCell(v.fs24_paht)}
+        ${im ? `<td${im.fs_paht < 1 ? ' class="fs-bad"' : ''}>${fmt(im.fs_pa6, 2)} / ${im.fs_paht < 1 ? '⚠ ' : ''}${fmt(im.fs_paht, 2)}</td>` : '<td><span class="na">não rodado</span></td>'}</tr>`;
     }).join('');
     const vida = document.getElementById('tbl-vida');
     if (vida) vida.innerHTML = ['R06', 'R07_COM', 'R07_SEM', 'UNI_30', 'UNI_40'].map(k => {
@@ -215,7 +266,7 @@
     });
   }
 
-  chartMassa(); chartCarga(); chartImpacto(); tables(); mapas(); galeria(); video();
+  chartMassa(); chartPesoCarga(); chartCarga(); chartImpacto(); tables(); mapas(); galeria(); video();
 })();
 
 // Animações: números contam até o valor e barras/linhas entram quando o slide abre.
