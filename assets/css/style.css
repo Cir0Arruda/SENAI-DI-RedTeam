@@ -119,7 +119,7 @@ code, pre, kbd { font-family: var(--mono); }
 .deck { position: relative; min-height: 0; }
 .slide {
   position: absolute; inset: 0;
-  display: grid; align-content: center;
+  display: grid; align-content: center; align-content: safe center;
   padding: 24px clamp(24px, 5vw, 72px);
   overflow: auto;
   opacity: 0; visibility: hidden; pointer-events: none;
@@ -553,13 +553,14 @@ dialog.lightbox figcaption { padding: 8px 6px 2px; font-size: 13px; color: var(-
 @keyframes draw { from { stroke-dashoffset: 700; } to { stroke-dashoffset: 0; } }
 
 /* QR no rodapé (todos os slides) */
-.qr { display: inline-flex; align-items: center; gap: 10px; padding: 4px 12px 4px 4px; border-radius: 14px; background: var(--glass-3); border: 1px solid var(--stroke); text-align: left; transition: transform .3s var(--ease), box-shadow .3s; }
+.qr { display: inline-flex; align-items: center; gap: 10px; padding: 0 12px 0 0; height: 40px; overflow: visible; border-radius: 14px; background: var(--glass-3); border: 1px solid var(--stroke); text-align: left; transition: transform .3s var(--ease), box-shadow .3s; }
 .qr:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -14px rgba(229, 35, 47, .6); }
-.qr img { width: 52px; height: 52px; border-radius: 8px; background: #fff; display: block; image-rendering: pixelated; }
+.qr img { width: 40px; height: 40px; border-radius: 6px; background: #fff; display: block; image-rendering: pixelated; }
 .qr span { font-size: 12px; line-height: 1.3; color: var(--muted); }
 .qr span b { display: block; font-size: 13px; color: var(--ink); }
-.stage.is-cover .qr img { width: 76px; height: 76px; }
+.stage.is-cover .qr img { width: 76px; height: 76px; margin-top: -36px; box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--red-ring); }
 .stage.is-cover .qr { box-shadow: 0 0 0 3px var(--red-ring); }
+.qr:hover img { transform: scale(1.04); }
 dialog.qr-big { border: 0; padding: 28px 28px 20px; border-radius: 28px; background: #fff; text-align: center; box-shadow: 0 40px 100px -30px rgba(21, 21, 29, .6); }
 dialog.qr-big::backdrop { background: rgba(21, 21, 29, .65); backdrop-filter: blur(4px); }
 dialog.qr-big img { width: min(70vmin, 420px); height: auto; display: block; image-rendering: pixelated; }
@@ -614,3 +615,10 @@ dialog.qr-big .nav-btn { position: absolute; top: 12px; right: 12px; }
   /* custos: o total fica acima da tabela para quem toca numa opção ver o valor mudar */
   .slide[data-title="Custos"] .split > div:last-child { order: -1; }
 }
+
+/* Peso do conjunto */
+#tbl-conjunto tr.ref td { background: rgba(21,21,29,.04); font-weight: 600; }
+#tbl-conjunto td small { font-weight: 400; font-size: 11px; }
+#s-conjunto .tbl { font-size: 12.5px; }
+#tbl-conjunto td, #s-conjunto .tbl th { padding: 4px 7px; }
+

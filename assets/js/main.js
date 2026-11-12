@@ -73,3 +73,39 @@
   document.addEventListener('visibilitychange', play);
   ['pointerdown', 'keydown'].forEach(ev => document.addEventListener(ev, play, { once: true }));
 })();
+
+// Ajuste à tela: no computador, se o conteúdo de um slide não cabe na altura, reduz proporcionalmente (zoom) até caber.
+// No celular (≤ 900 px de largura) mantém a rolagem normal.
+(() => {
+  const slides = [...document.querySelectorAll('.slide')];
+  const MIN = 0.6;
+  function fit(s) {
+    const kids = [...s.children];
+    const set = z => kids.forEach(k => { k.style.zoom = z === 1 ? '' : z.toFixed(3); });
+    const fits = () => s.scrollHeight - s.clientHeight <= 1;
+    set(1);
+    if (innerWidth <= 900 || fits()) return;
+    // busca binária do maior zoom que cabe (o texto reflui ao reduzir, então a proporção simples encolhe demais)
+    let lo = MIN, hi = 1;
+    for (let n = 0; n < 8; n++) {
+      const mid = (lo + hi) / 2;
+      set(mid);
+      if (fits()) lo = mid; else hi = mid;
+    }
+    set(lo);
+  }
+  const fitAll = () => slides.forEach(fit);
+  let t = null;
+  const later = () => { clearTimeout(t); t = setTimeout(fitAll, 120); };
+  fitAll();
+  addEventListener('load', fitAll);
+  addEventListener('resize', later);
+  document.fonts?.ready.then(fitAll);
+  // imagens que carregam depois e abas que trocam o conteúdo
+  document.addEventListener('load', e => { if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') later(); }, true);
+  document.addEventListener('loadedmetadata', later, true);
+  document.addEventListener('click', e => { const s = e.target.closest('.slide'); if (s && e.target.closest('button')) setTimeout(() => fit(s), 80); });
+  // o slide ativo entra com animação (translateY), que infla a medida: mede de novo depois que ela termina
+  document.addEventListener('slidechange', e => setTimeout(() => fit(e.detail.slide), 950));
+  setTimeout(fitAll, 1000);
+})();
