@@ -378,5 +378,52 @@
     if (reduce || isOn(host)) host.classList.add('play');
   }
 
-  padChart(); costBars(); roi(); payback(); matriz();
+  /* ---------- Materiais: vídeo da garra com peso → vista 3D por dentro, troca automática ---------- */
+  function matPanes() {
+    const seg = document.getElementById('mat-tabs');
+    if (!seg) return;
+    const slide = seg.closest('.slide'), v = document.getElementById('video-mat'), cut = document.getElementById('mat-cut');
+    let timer = 0, raf = 0, autoCut = true;
+    const clear = () => { clearTimeout(timer); cancelAnimationFrame(raf); };
+    const setCut = val => { if (!cut) return; cut.value = Math.round(val); cut.dispatchEvent(new Event('input')); };
+    // corte automático: desce até 40% da altura, segura e volta (para mostrar o miolo)
+    const animCut = () => {
+      if (!cut || reduce || !autoCut) return;
+      const t0 = performance.now(), D = 11000;
+      const st = now => {
+        const k = Math.max(0, Math.min(1, (now - t0) / D));
+        const f = k < .35 ? ease(k / .35) : k < .75 ? 1 : 1 - ease((k - .75) / .25);
+        setCut(100 - 60 * f);
+        if (k < 1 && autoCut) raf = requestAnimationFrame(st);
+      };
+      raf = requestAnimationFrame(st);
+    };
+    const show = (id, auto = true) => {
+      clear();
+      seg.querySelectorAll('button').forEach(b => {
+        const on = b.dataset.pane === id;
+        b.classList.toggle('on', on); b.setAttribute('aria-selected', on);
+        document.getElementById(b.dataset.pane).classList.toggle('on', on);
+      });
+      if (id === 'mat-video') {
+        setCut(100);
+        v.currentTime = 0; v.play().catch(() => {});
+      } else {
+        v.pause();
+        window.dispatchEvent(new Event('resize'));
+        animCut();
+        if (auto) timer = setTimeout(() => { if (isOn(seg)) show('mat-video'); }, 12000);
+      }
+    };
+    v.addEventListener('ended', () => { timer = setTimeout(() => { if (isOn(seg)) show('mat-3d'); }, 2500); });
+    seg.querySelectorAll('button').forEach(b => b.addEventListener('click', () => show(b.dataset.pane)));
+    if (cut) cut.addEventListener('pointerdown', () => { autoCut = false; cancelAnimationFrame(raf); });
+    document.addEventListener('slidechange', ev => {
+      if (ev.detail.slide === slide) { autoCut = true; show('mat-video'); }
+      else { clear(); v.pause(); }
+    });
+    if (isOn(seg)) show('mat-video');
+  }
+
+  padChart(); costBars(); roi(); payback(); matriz(); matPanes();
 })();

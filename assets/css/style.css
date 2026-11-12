@@ -808,3 +808,16 @@ dialog.qr-big .nav-btn { position: absolute; top: 12px; right: 12px; }
 @media (max-width: 900px) { .mat-why { grid-template-columns: 1fr; } }
 .mx-win .mx-sigla { margin: 0 0 6px; font-size: 15px; color: var(--ink); }
 .mx-win .mx-sigla b { color: var(--red); font-weight: 700; }
+
+/* materiais: vídeo com peso ↔ vista 3D por dentro, troca automática */
+.mat-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 8px; }
+.mat-auto { font-size: 12px; color: var(--muted, #8a8a99); }
+.mat-stage { display: grid; }
+.mat-pane { grid-area: 1 / 1; visibility: hidden; opacity: 0; transition: opacity .45s ease, visibility 0s linear .45s; min-width: 0; }
+.mat-pane.on { visibility: visible; opacity: 1; transition: opacity .45s ease; }
+#video-mat { display: block; width: 100%; height: auto; border-radius: 12px; background: #fff; }
+#mat-3d .viewer { width: 100%; aspect-ratio: 16 / 9; }
+#mat-3d .cutrow { margin-top: 8px; }
+.mat-zonas { grid-template-columns: 1fr 1fr; gap: 4px 14px; margin-top: 8px; }
+.mat-zonas i { border: 1px solid rgba(0, 0, 0, .12); }
+@media (max-width: 600px) { .mat-zonas { grid-template-columns: 1fr; } }
