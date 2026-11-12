@@ -74,7 +74,10 @@ ok(14, 'tranco 24 kg em 10 ms: FS = 48 ÷ σZ pico', 2.65, 48 / imp['sigma_Z_pic
 
 # ---------- fadiga (slides 11, 13) ----------
 anos = vida['PA6-CF valor usado no FE (Z=48 MPa)']['fadiga']['horas_so_12kg'] / 8760
-ok(13, 'fadiga, PA6-CF da ficha: passa de 100 anos', 1, float(anos > 100), 0, 'r07_vida.json', 'passa de 100 anos')
+ok(0, 'fadiga, PA6-CF da ficha: passa de 100 anos', 1, float(anos > 100), 0, 'r07_vida.json')
+cus = J('estudo_custos/estudo_custos.json')['durabilidade']['PAHT CF15 (pior adesão entre camadas)']
+ok(11, 'vida no pior caso de colagem (anos)', 2.4, cus['vida_anos_cenario_misto'], 1, 'estudo_custos.json', '2,4 anos')
+ok(11, 'vida estimada = pior caso arredondado para baixo (meses)', 24, (cus['vida_anos_cenario_misto'] * 12) // 12 * 12, 0, 'estudo_custos.json', 'Vida estimada: 24 meses')
 
 # ---------- PAD (slides 8, 11, 13) ----------
 ok(8, 'pico sem PAD (N)', 451, r03['peak_force_without_PAD_N'], 0, 'parametros_resultados_R03.json', '451 N')

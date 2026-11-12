@@ -1,5 +1,5 @@
 {
- "conferidos": 63,
+ "conferidos": 65,
  "problemas": [],
  "linhas": [
   {
@@ -131,12 +131,28 @@
    "fonte": "impacto_F25_SEM.json"
   },
   {
-   "slide": 13,
+   "slide": 0,
    "item": "fadiga, PA6-CF da ficha: passa de 100 anos",
    "mostrado": 1,
    "calculado": 1.0,
    "status": "OK",
    "fonte": "r07_vida.json"
+  },
+  {
+   "slide": 11,
+   "item": "vida no pior caso de colagem (anos)",
+   "mostrado": 2.4,
+   "calculado": 2.3893,
+   "status": "OK",
+   "fonte": "estudo_custos.json"
+  },
+  {
+   "slide": 11,
+   "item": "vida estimada = pior caso arredondado para baixo (meses)",
+   "mostrado": 24,
+   "calculado": 24.0,
+   "status": "OK",
+   "fonte": "estudo_custos.json"
   },
   {
    "slide": 8,

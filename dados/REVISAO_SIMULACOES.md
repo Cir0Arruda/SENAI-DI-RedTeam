@@ -4,7 +4,7 @@ Data: 12/11/2026. Revisei os relatórios do Fusion, os projetos do Orca (configu
 
 Nada foi recalculado no Fusion nem enviado à impressora. Refiz as contas a partir dos arquivos e conferi se cada número do slide sai da fonte certa.
 
-Foram **duas varreduras completas**. A segunda (seção 7) refez tudo depois das correções: 63 números conferidos por script, 0 com problema.
+Foram **duas varreduras completas**. A segunda (seção 7) refez tudo depois das correções: 65 números conferidos por script, 0 com problema.
 
 ---
 
@@ -24,7 +24,7 @@ Foram **duas varreduras completas**. A segunda (seção 7) refez tudo depois das
    - 24 kg numa asa só.
 
    É dele que saem os 93 kg e o FS 3,9. Ele usa um **fator de pico de 2,2**. Antes dizia "calibrado no Fusion do R06", sem arquivo. **Refiz a calibração** (seção 4, item 1): a mesma peça maciça do [F1] no FE por voxels dá 3,23 ÷ 1,46 = **2,2** pela tensão de von Mises. O número está certo, mas pela 1ª tensão principal seria 2,7.
-4. **Os erros encontrados foram corrigidos** (seção 3): 6 na primeira varredura e 12 na segunda, quase todos de texto. Nenhum muda a conclusão.
+4. **Os erros encontrados foram corrigidos** (seção 3): 6 na primeira varredura e 13 na segunda, quase todos de texto. Nenhum muda a conclusão.
 5. **Os arquivos 3D existem e são públicos**, mas estão espalhados em 3 zips, que somam 1,4 GB, com nomes confusos. Falta um pacote final do SAI pronto para a Ajinomoto: seção 6.
 
 ---
@@ -85,6 +85,7 @@ O item 4 foi conferido no inventário da montagem original: ela tem só a garra 
 | 16 | Encerramento [F4], `REFERENCIAS.md`, `RELATORIO_R07.md`, `README.md` | "Fator 2,2 calibrado no R06", sem arquivo. | "calibrado contra o [F1] na mesma peça maciça" + `fusion/calibracao_pico.json` |
 | 17 | Giroide (9), layout | A tabela "Onde ele está no SAI" não quebrava linha e escondia o texto atrás de uma rolagem lateral. | A tabela quebra linha |
 | 18 | Conclusão (13), layout | A nota de rodapé ficava cortada (20 px) em 1536 × 730: o ajuste de zoom acertava no limite e depois não cabia. | O ajuste confere o resultado e reduz até caber |
+| 19 | Custos (10), ROI (11) e Conclusão (13) | Os slides falavam em "sem quebra" e "fadiga acima de 100 anos", sem dizer quanto a garra SAI dura. | "Vida estimada: 24 meses" em 24/7 (pior caso de colagem, 2,4 anos, arredondado para baixo; faixa de 12 a 36 meses), do `estudo_custos.json` |
 
 ---
 
@@ -188,7 +189,7 @@ Também não existe um **STEP do SAI com as zonas internas**. As zonas só exist
 
 | Conferência | Como | Resultado |
 |---|---|---|
-| Números dos slides | `scripts/verifica_numeros.py`: 63 números, cada um refeito a partir do JSON de origem, com o arredondamento do slide e conferindo se o texto está mesmo no slide | **63 de 63 batem** (`verificacao_numeros.json`) |
+| Números dos slides | `scripts/verifica_numeros.py`: 65 números, cada um refeito a partir do JSON de origem, com o arredondamento do slide e conferindo se o texto está mesmo no slide | **65 de 65 batem** (`verificacao_numeros.json`) |
 | Texto mostrado no navegador | texto renderizado dos 14 slides visíveis, procurando os valores antigos (627,33; 7–8; 1.745 g; 2,690; 144 g mais leve; R06; 450,7; NaN; undefined) | nenhum aparece |
 | Valores preenchidos por script | `data-r07` na página: R$ 450,08; 1.744,5 g; 139 g | batem com o Orca |
 | Gráfico do PAD | rótulos lidos na página | 450,9 N → 168,5 N · −63%, iguais ao R03 |
