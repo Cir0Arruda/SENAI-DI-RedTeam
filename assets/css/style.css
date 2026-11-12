@@ -661,3 +661,5 @@ dialog.qr-big .nav-btn { position: absolute; top: 12px; right: 12px; }
   .pv-legend { position: static; width: auto; padding: 8px 12px 10px; }
   .capa-sai h1 { font-size: clamp(48px, 15vw, 80px); }
 }
+#s-solucao tr.total td { border-top: 1.5px solid rgba(21,21,29,.18); font-weight: 600; }
+#s-solucao tr.total td:last-child b { color: var(--red); }
