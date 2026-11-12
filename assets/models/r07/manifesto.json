@@ -1,0 +1,62 @@
+{
+ "sup_solido": {
+  "fonte": "desempenho/04_Modificadores/R07/SUPERIOR_MOD_SOLIDO_100.stl",
+  "cm3": 99.1,
+  "faces": 20206
+ },
+ "sup_colar": {
+  "fonte": "desempenho/04_Modificadores/R07/SUPERIOR_MOD_COLAR_55.stl",
+  "cm3": 119.5,
+  "faces": 10646
+ },
+ "sup_rosa": {
+  "fonte": "desempenho/04_Modificadores/R07/SUPERIOR_MOD_ROSA_35.stl",
+  "cm3": 144.8,
+  "faces": 15666
+ },
+ "sup_amarelo": {
+  "fonte": "desempenho/04_Modificadores/R07/SUPERIOR_MOD_AMARELO_20.stl",
+  "cm3": 27.2,
+  "faces": 3196
+ },
+ "sup_sem_solido": {
+  "fonte": "desempenho/04_Modificadores/R07/SEM_ALMAS_SUPERIOR/SUPERIOR_MOD_SOLIDO_100.stl",
+  "cm3": 17.2,
+  "faces": 9064
+ },
+ "inf_solido": {
+  "fonte": "desempenho/04_Modificadores/R07/INFERIOR_ESQ_MOD_SOLIDO_100.stl",
+  "cm3": 22.9,
+  "faces": 7594
+ },
+ "inf_rosa": {
+  "fonte": "desempenho/04_Modificadores/R07/INFERIOR_ESQ_MOD_ROSA_35.stl",
+  "cm3": 59.7,
+  "faces": 8454
+ },
+ "inf_pes": {
+  "fonte": "desempenho/04_Modificadores/R07/INFERIOR_ESQ_MOD_PES_35.stl",
+  "cm3": 48.0,
+  "faces": 7986
+ },
+ "inf_amarelo": {
+  "fonte": "desempenho/04_Modificadores/R07/INFERIOR_ESQ_MOD_AMARELO_20.stl",
+  "cm3": 33.1,
+  "faces": 5578
+ },
+ "sup_sem_colar": {
+  "fonte": "desempenho/04_Modificadores/R07/SEM_ALMAS_SUPERIOR/SUPERIOR_MOD_COLAR_55.stl",
+  "cm3": 142.5,
+  "faces": 8858
+ },
+ "sup_sem_rosa": {
+  "fonte": "desempenho/04_Modificadores/R07/SEM_ALMAS_SUPERIOR/SUPERIOR_MOD_ROSA_35.stl",
+  "cm3": 151.3,
+  "faces": 15096
+ },
+ "sup_sem_amarelo": {
+  "fonte": "desempenho/04_Modificadores/R07/SEM_ALMAS_SUPERIOR/SUPERIOR_MOD_AMARELO_20.stl",
+  "cm3": 27.8,
+  "faces": 3142
+ }
+}

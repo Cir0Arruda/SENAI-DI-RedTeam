@@ -1,0 +1,404 @@
+{
+  "R07_COM": {
+    "variante": "R07_COM",
+    "massa_FE_g": {
+      "superior_g": 846.9,
+      "inferior_g": 470.3
+    },
+    "desalinhamento_grade_mm": 0.251,
+    "casos": {
+      "ONE_24": {
+        "desl_max_mm": 1.539,
+        "reacao_N": [
+          -0.0,
+          0.0,
+          355.4
+        ],
+        "FI_z_superior": 0.1088,
+        "FI_xy_superior": 0.0502,
+        "hot_superior": [
+          -544.8,
+          338.5,
+          341.4
+        ],
+        "FI_z_inferior": 0.0698,
+        "FI_xy_inferior": 0.0473,
+        "hot_inferior": [
+          -430.8,
+          398.5,
+          242.4
+        ],
+        "FI_giroide_max": 0.1711
+      },
+      "ONE_30": {
+        "desl_max_mm": 1.924,
+        "reacao_N": [
+          -0.0,
+          0.0,
+          444.2
+        ],
+        "FI_z_superior": 0.136,
+        "FI_xy_superior": 0.0627,
+        "hot_superior": [
+          -544.8,
+          338.5,
+          341.4
+        ],
+        "FI_z_inferior": 0.0872,
+        "FI_xy_inferior": 0.0591,
+        "hot_inferior": [
+          -430.8,
+          398.5,
+          242.4
+        ],
+        "FI_giroide_max": 0.2139
+      }
+    },
+    "peca_critica": "superior",
+    "rigidez_asa_montada_N_mm": 230.9,
+    "sigma_Z_24kg_MPa_(x PICO)": 11.49,
+    "kg_max_PA6-CF_Z48": 100.3,
+    "FS_24kg_PA6-CF_Z48": 4.18,
+    "FS_30kg_PA6-CF_Z48": 3.34,
+    "kg_max_PAHT_CF15_Z18.2": 38.0,
+    "FS_24kg_PAHT_CF15_Z18.2": 1.58,
+    "FS_30kg_PAHT_CF15_Z18.2": 1.27,
+    "PICO": 2.2,
+    "tempo_s": 156.5
+  },
+  "R07_SEM": {
+    "variante": "R07_SEM",
+    "massa_FE_g": {
+      "superior_g": 788.2,
+      "inferior_g": 455.8
+    },
+    "desalinhamento_grade_mm": 0.251,
+    "casos": {
+      "ONE_24": {
+        "desl_max_mm": 1.642,
+        "reacao_N": [
+          -0.0,
+          -0.0,
+          355.4
+        ],
+        "FI_z_superior": 0.1169,
+        "FI_xy_superior": 0.052,
+        "hot_superior": [
+          -544.8,
+          338.5,
+          341.4
+        ],
+        "FI_z_inferior": 0.0696,
+        "FI_xy_inferior": 0.0477,
+        "hot_inferior": [
+          -430.8,
+          398.5,
+          242.4
+        ],
+        "FI_giroide_max": 0.1789
+      },
+      "ONE_30": {
+        "desl_max_mm": 2.052,
+        "reacao_N": [
+          -0.0,
+          -0.0,
+          444.2
+        ],
+        "FI_z_superior": 0.1461,
+        "FI_xy_superior": 0.065,
+        "hot_superior": [
+          -544.8,
+          338.5,
+          341.4
+        ],
+        "FI_z_inferior": 0.087,
+        "FI_xy_inferior": 0.0597,
+        "hot_inferior": [
+          -430.8,
+          398.5,
+          242.4
+        ],
+        "FI_giroide_max": 0.2236
+      }
+    },
+    "peca_critica": "superior",
+    "rigidez_asa_montada_N_mm": 216.4,
+    "sigma_Z_24kg_MPa_(x PICO)": 12.34,
+    "kg_max_PA6-CF_Z48": 93.3,
+    "FS_24kg_PA6-CF_Z48": 3.89,
+    "FS_30kg_PA6-CF_Z48": 3.11,
+    "kg_max_PAHT_CF15_Z18.2": 35.4,
+    "FS_24kg_PAHT_CF15_Z18.2": 1.47,
+    "FS_30kg_PAHT_CF15_Z18.2": 1.18,
+    "PICO": 2.2,
+    "tempo_s": 175.4
+  },
+  "UNI_30": {
+    "variante": "UNI_30",
+    "massa_FE_g": {
+      "superior_g": 773.8,
+      "inferior_g": 499.2
+    },
+    "desalinhamento_grade_mm": 0.251,
+    "casos": {
+      "ONE_24": {
+        "desl_max_mm": 1.729,
+        "reacao_N": [
+          0.0,
+          -0.0,
+          355.4
+        ],
+        "FI_z_superior": 0.177,
+        "FI_xy_superior": 0.0717,
+        "hot_superior": [
+          -544.8,
+          338.5,
+          341.4
+        ],
+        "FI_z_inferior": 0.0636,
+        "FI_xy_inferior": 0.0446,
+        "hot_inferior": [
+          -430.8,
+          398.5,
+          242.4
+        ],
+        "FI_giroide_max": 0.2945
+      },
+      "ONE_30": {
+        "desl_max_mm": 2.162,
+        "reacao_N": [
+          0.0,
+          -0.0,
+          444.2
+        ],
+        "FI_z_superior": 0.2213,
+        "FI_xy_superior": 0.0896,
+        "hot_superior": [
+          -544.8,
+          338.5,
+          341.4
+        ],
+        "FI_z_inferior": 0.0795,
+        "FI_xy_inferior": 0.0558,
+        "hot_inferior": [
+          -430.8,
+          398.5,
+          242.4
+        ],
+        "FI_giroide_max": 0.3682
+      }
+    },
+    "peca_critica": "superior",
+    "rigidez_asa_montada_N_mm": 205.5,
+    "sigma_Z_24kg_MPa_(x PICO)": 18.69,
+    "kg_max_PA6-CF_Z48": 61.6,
+    "FS_24kg_PA6-CF_Z48": 2.57,
+    "FS_30kg_PA6-CF_Z48": 2.05,
+    "kg_max_PAHT_CF15_Z18.2": 23.4,
+    "FS_24kg_PAHT_CF15_Z18.2": 0.97,
+    "FS_30kg_PAHT_CF15_Z18.2": 0.78,
+    "PICO": 2.2,
+    "tempo_s": 99.8
+  },
+  "UNI_40": {
+    "variante": "UNI_40",
+    "massa_FE_g": {
+      "superior_g": 892.9,
+      "inferior_g": 564.6
+    },
+    "desalinhamento_grade_mm": 0.251,
+    "casos": {
+      "ONE_24": {
+        "desl_max_mm": 1.428,
+        "reacao_N": [
+          -0.0,
+          -0.0,
+          355.4
+        ],
+        "FI_z_superior": 0.1437,
+        "FI_xy_superior": 0.0608,
+        "hot_superior": [
+          -544.8,
+          338.5,
+          341.4
+        ],
+        "FI_z_inferior": 0.0573,
+        "FI_xy_inferior": 0.0408,
+        "hot_inferior": [
+          -430.8,
+          398.5,
+          242.4
+        ],
+        "FI_giroide_max": 0.2568
+      },
+      "ONE_30": {
+        "desl_max_mm": 1.784,
+        "reacao_N": [
+          -0.0,
+          -0.0,
+          444.2
+        ],
+        "FI_z_superior": 0.1796,
+        "FI_xy_superior": 0.076,
+        "hot_superior": [
+          -544.8,
+          338.5,
+          341.4
+        ],
+        "FI_z_inferior": 0.0716,
+        "FI_xy_inferior": 0.0509,
+        "hot_inferior": [
+          -430.8,
+          398.5,
+          242.4
+        ],
+        "FI_giroide_max": 0.321
+      }
+    },
+    "peca_critica": "superior",
+    "rigidez_asa_montada_N_mm": 248.9,
+    "sigma_Z_24kg_MPa_(x PICO)": 15.17,
+    "kg_max_PA6-CF_Z48": 75.9,
+    "FS_24kg_PA6-CF_Z48": 3.16,
+    "FS_30kg_PA6-CF_Z48": 2.53,
+    "kg_max_PAHT_CF15_Z18.2": 28.8,
+    "FS_24kg_PAHT_CF15_Z18.2": 1.2,
+    "FS_30kg_PAHT_CF15_Z18.2": 0.96,
+    "PICO": 2.2,
+    "tempo_s": 71.5
+  },
+  "R06": {
+    "variante": "R06",
+    "massa_FE_g": {
+      "superior_g": 786.0,
+      "inferior_g": 465.9
+    },
+    "desalinhamento_grade_mm": 0.251,
+    "casos": {
+      "ONE_24": {
+        "desl_max_mm": 1.894,
+        "reacao_N": [
+          -0.0,
+          0.0,
+          355.4
+        ],
+        "FI_z_superior": 0.1772,
+        "FI_xy_superior": 0.081,
+        "hot_superior": [
+          -544.8,
+          338.5,
+          341.4
+        ],
+        "FI_z_inferior": 0.0795,
+        "FI_xy_inferior": 0.0526,
+        "hot_inferior": [
+          -430.8,
+          398.5,
+          242.4
+        ],
+        "FI_giroide_max": 0.3061
+      },
+      "ONE_30": {
+        "desl_max_mm": 2.367,
+        "reacao_N": [
+          -0.0,
+          0.0,
+          444.2
+        ],
+        "FI_z_superior": 0.2214,
+        "FI_xy_superior": 0.1012,
+        "hot_superior": [
+          -544.8,
+          338.5,
+          341.4
+        ],
+        "FI_z_inferior": 0.0993,
+        "FI_xy_inferior": 0.0657,
+        "hot_inferior": [
+          -430.8,
+          398.5,
+          242.4
+        ],
+        "FI_giroide_max": 0.3826
+      }
+    },
+    "peca_critica": "superior",
+    "rigidez_asa_montada_N_mm": 187.6,
+    "sigma_Z_24kg_MPa_(x PICO)": 18.71,
+    "kg_max_PA6-CF_Z48": 61.6,
+    "FS_24kg_PA6-CF_Z48": 2.57,
+    "FS_30kg_PA6-CF_Z48": 2.05,
+    "kg_max_PAHT_CF15_Z18.2": 23.3,
+    "FS_24kg_PAHT_CF15_Z18.2": 0.97,
+    "FS_30kg_PAHT_CF15_Z18.2": 0.78,
+    "PICO": 2.2,
+    "tempo_s": 75.0
+  },
+  "UNI_35": {
+    "variante": "UNI_35",
+    "massa_FE_g": {
+      "superior_g": 833.3,
+      "inferior_g": 531.9
+    },
+    "desalinhamento_grade_mm": 0.251,
+    "casos": {
+      "ONE_24": {
+        "desl_max_mm": 1.568,
+        "reacao_N": [
+          0.0,
+          -0.0,
+          355.4
+        ],
+        "FI_z_superior": 0.1593,
+        "FI_xy_superior": 0.0639,
+        "hot_superior": [
+          -544.8,
+          338.5,
+          341.4
+        ],
+        "FI_z_inferior": 0.0604,
+        "FI_xy_inferior": 0.0427,
+        "hot_inferior": [
+          -430.8,
+          398.5,
+          242.4
+        ],
+        "FI_giroide_max": 0.276
+      },
+      "ONE_30": {
+        "desl_max_mm": 1.96,
+        "reacao_N": [
+          0.0,
+          -0.0,
+          444.2
+        ],
+        "FI_z_superior": 0.1991,
+        "FI_xy_superior": 0.0798,
+        "hot_superior": [
+          -544.8,
+          338.5,
+          341.4
+        ],
+        "FI_z_inferior": 0.0755,
+        "FI_xy_inferior": 0.0534,
+        "hot_inferior": [
+          -430.8,
+          398.5,
+          242.4
+        ],
+        "FI_giroide_max": 0.345
+      }
+    },
+    "peca_critica": "superior",
+    "rigidez_asa_montada_N_mm": 226.6,
+    "sigma_Z_24kg_MPa_(x PICO)": 16.82,
+    "kg_max_PA6-CF_Z48": 68.5,
+    "FS_24kg_PA6-CF_Z48": 2.85,
+    "FS_30kg_PA6-CF_Z48": 2.28,
+    "kg_max_PAHT_CF15_Z18.2": 26.0,
+    "FS_24kg_PAHT_CF15_Z18.2": 1.08,
+    "FS_30kg_PAHT_CF15_Z18.2": 0.87,
+    "PICO": 2.2,
+    "tempo_s": 87.4
+  }
+}

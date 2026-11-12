@@ -198,7 +198,53 @@
     Object.keys(INFO).forEach(mm => Object.keys(INFO[mm]).forEach(rr => { if (INFO[mm][rr]) new Image().src = `assets/img/bancada/${mm}_${rr}.png`; }));
   }
 
+  /* ---------- R07: carga máxima numa asa (barras agrupadas, linhas de 24 e 30 kg) ---------- */
+  function barsCarga() {
+    const host = document.getElementById('chart-r07-carga');
+    if (!host) return;
+    const S = [{ k: 'PA6-CF (Z 48 MPa)', c: RED }, { k: 'PAHT CF15 (Z 18,2 MPa)', c: INDIGO }];
+    const data = [
+      { k: 'R06', v: [70.7, 26.8] },
+      { k: 'R07 com', v: [115.6, 43.8] },
+      { k: 'R07 sem', v: [108.8, 41.2] },
+      { k: 'Sem, denso', v: [110.9, 42.0] }
+    ];
+    const W = 560, bh = 15, inner = 3, gap = 16, L = 84, R = 52, T = 26;
+    const rowH = 2 * bh + inner, H = T + data.length * (rowH + gap) + 14;
+    const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Carga máxima numa asa: ' + data.map(d => `${d.k} ${fmt(d.v[0])} kg (PA6-CF), ${fmt(d.v[1])} kg (PAHT CF15)`).join('; ') }, host);
+    const max = 130, x = v => L + (v / max) * (W - L - R);
+    const tip = makeTip(host);
+    // legenda
+    S.forEach((s, j) => {
+      const lx = L + j * 190;
+      el('rect', { x: lx, y: 2, width: 10, height: 10, rx: 3, fill: s.c }, svg);
+      el('text', { x: lx + 16, y: 11, class: 'lbl' }, svg).textContent = s.k;
+    });
+    // referências 24 / 30 kg
+    [[24, '24', 'end', -3], [30, '30 kg', 'start', 3]].forEach(([v, t, a, dx]) => {
+      el('line', { x1: x(v), x2: x(v), y1: T - 4, y2: H - 10, stroke: 'rgba(21,21,29,.45)', 'stroke-dasharray': '3 3' }, svg);
+      el('text', { x: x(v) + dx, y: H, class: 'lbl', 'text-anchor': a, style: 'font-size:10px' }, svg).textContent = t;
+    });
+    data.forEach((d, i) => {
+      const y0 = T + i * (rowH + gap);
+      el('text', { x: 0, y: y0 + rowH / 2 + 4, class: 'lbl' }, svg).textContent = d.k;
+      d.v.forEach((v, j) => {
+        const y = y0 + j * (bh + inner), w = x(v) - L;
+        el('path', { d: `M${L},${y} h${w - 4} a4,4 0 0 1 4,4 v${bh - 8} a4,4 0 0 1 -4,4 h${-(w - 4)} z`, fill: S[j].c }, svg);
+        el('text', { x: x(v) + 6, y: y + bh - 3, class: 'lbl', style: 'font-size:11px' }, svg).textContent = `${fmt(v, 0)} kg`;
+      });
+      const hit = el('rect', { x: 0, y: y0 - gap / 2, width: W, height: rowH + gap, fill: 'transparent' }, svg);
+      hit.addEventListener('pointermove', ev => {
+        const p = pointer(svg, host, ev, W);
+        tip.show(`<b>${d.k}</b>` + S.map((s, j) => `<div class="r"><i style="background:${s.c}"></i>${s.k}: ${fmt(d.v[j])} kg · FS 24 kg ${fmt(d.v[j] / 24, 2)}</div>`).join(''), p.hx, p.hy);
+      });
+      hit.addEventListener('pointerleave', () => tip.hide());
+    });
+    el('line', { x1: L, x2: L, y1: T - 4, y2: H - 10, stroke: 'rgba(21,21,29,.25)' }, svg);
+  }
+
   barsDesl();
+  // barsCarga(): substituído por r07.js (dados da garra montada)
   lineImpacto();
   barsArea();
   maps();

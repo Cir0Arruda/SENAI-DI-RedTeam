@@ -1,0 +1,67 @@
+{
+  "method": "Gibson-Ashby: E*=Es*phi^2, sigma*=0,3*sigma_s*phi^1,5, rho*=rho_s*phi (mesma hipótese do R06)",
+  "base": "Bambu PA6-CF V3 XY: E 4430 MPa, nu 0,39 (proxy), rho 1090, UTS 102 MPa; Z: E 2170, UTS 48",
+  "status": "HIPOTESE de homogeneizacao do giroide, nao calibrada por ensaio",
+  "cards": {
+    "SOLIDO_100": {
+      "phi": 1.0,
+      "E_MPa": 4430.0,
+      "nu": 0.39,
+      "density_kg_m3": 1090.0,
+      "UTS_MPa": 102.0
+    },
+    "GIROIDE_55": {
+      "phi": 0.55,
+      "E_MPa": 1340.1,
+      "nu": 0.3,
+      "density_kg_m3": 599.5,
+      "UTS_MPa": 12.48
+    },
+    "GIROIDE_35": {
+      "phi": 0.35,
+      "E_MPa": 542.7,
+      "nu": 0.3,
+      "density_kg_m3": 381.5,
+      "UTS_MPa": 6.34
+    },
+    "GIROIDE_20": {
+      "phi": 0.2,
+      "E_MPa": 177.2,
+      "nu": 0.3,
+      "density_kg_m3": 218.0,
+      "UTS_MPa": 2.74
+    },
+    "GIROIDE_25": {
+      "phi": 0.25,
+      "E_MPa": 276.9,
+      "nu": 0.3,
+      "density_kg_m3": 272.5,
+      "UTS_MPa": 3.82
+    },
+    "GIROIDE_32": {
+      "phi": 0.323,
+      "E_MPa": 462.2,
+      "nu": 0.3,
+      "density_kg_m3": 352.1,
+      "UTS_MPa": 5.62
+    }
+  },
+  "assign_COM": {
+    "CASCA": "SOLIDO_100",
+    "TUBOS": "SOLIDO_100",
+    "ALMAS": "SOLIDO_100",
+    "COLAR": "GIROIDE_55",
+    "ROSA": "GIROIDE_35",
+    "AMARELO": "GIROIDE_20",
+    "BASE": "GIROIDE_25"
+  },
+  "assign_SEM_ISO": {
+    "CASCA": "SOLIDO_100",
+    "TUBOS": "SOLIDO_100",
+    "ALMAS": "GIROIDE_32",
+    "COLAR": "GIROIDE_55",
+    "ROSA": "GIROIDE_35",
+    "AMARELO": "GIROIDE_20",
+    "BASE": "GIROIDE_32"
+  }
+}

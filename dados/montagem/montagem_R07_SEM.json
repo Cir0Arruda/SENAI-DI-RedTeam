@@ -1,0 +1,67 @@
+{
+  "variante": "R07_SEM",
+  "massa_FE_g": {
+    "superior_g": 788.2,
+    "inferior_g": 455.8
+  },
+  "desalinhamento_grade_mm": 0.251,
+  "casos": {
+    "ONE_24": {
+      "desl_max_mm": 1.642,
+      "reacao_N": [
+        -0.0,
+        -0.0,
+        355.4
+      ],
+      "FI_z_superior": 0.1169,
+      "FI_xy_superior": 0.052,
+      "hot_superior": [
+        -544.8,
+        338.5,
+        341.4
+      ],
+      "FI_z_inferior": 0.0696,
+      "FI_xy_inferior": 0.0477,
+      "hot_inferior": [
+        -430.8,
+        398.5,
+        242.4
+      ],
+      "FI_giroide_max": 0.1789
+    },
+    "ONE_30": {
+      "desl_max_mm": 2.052,
+      "reacao_N": [
+        -0.0,
+        -0.0,
+        444.2
+      ],
+      "FI_z_superior": 0.1461,
+      "FI_xy_superior": 0.065,
+      "hot_superior": [
+        -544.8,
+        338.5,
+        341.4
+      ],
+      "FI_z_inferior": 0.087,
+      "FI_xy_inferior": 0.0597,
+      "hot_inferior": [
+        -430.8,
+        398.5,
+        242.4
+      ],
+      "FI_giroide_max": 0.2236
+    }
+  },
+  "peca_critica": "superior",
+  "rigidez_asa_montada_N_mm": 216.4,
+  "sigma_Z_24kg_MPa_(x PICO)": 12.34,
+  "kg_max_PA6-CF_Z48": 93.3,
+  "FS_24kg_PA6-CF_Z48": 3.89,
+  "FS_30kg_PA6-CF_Z48": 3.11,
+  "kg_max_PAHT_CF15_Z18.2": 35.4,
+  "FS_24kg_PAHT_CF15_Z18.2": 1.47,
+  "FS_30kg_PAHT_CF15_Z18.2": 1.18,
+  "PICO": 2.2,
+  "tempo_s": 175.4
+}

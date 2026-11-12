@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Red Team · SENAI</title>
+  <meta name="description" content="Garra SAMI do robô UR30: PAD de sacrifício, preenchimento interno R07, testes de bancada, simulações e dados.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=r07c">
   <script type="importmap">
     { "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
@@ -25,19 +26,22 @@
       <button class="rail-btn" data-go="0" title="Início">
         <svg class="i" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
       </button>
-      <button class="rail-btn" data-go="1" title="Testes de Bancada">
+      <button class="rail-btn" data-go="2" title="Introdução: o problema">
+        <svg class="i" viewBox="0 0 24 24"><path d="M12 3l9 16H3zM12 10v4M12 17v.01"/></svg>
+      </button>
+      <button class="rail-btn" data-go="4" title="Desenvolvimento: materiais, custos e produção">
+        <svg class="i" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg>
+      </button>
+      <button class="rail-btn" data-go="9" title="Testes de bancada (Fusion e PAD)">
         <svg class="i" viewBox="0 0 24 24"><path d="M9 3v6l-5 9a2 2 0 0 0 1.7 3h12.6a2 2 0 0 0 1.7-3l-5-9V3M8 3h8M7 15h10"/></svg>
       </button>
-      <button class="rail-btn" data-go="2" title="Modelo 3D">
+      <button class="rail-btn" data-go="17" title="Orca: estrutura interna">
         <svg class="i" viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9zM12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>
       </button>
-      <button class="rail-btn" data-go="4" title="Resultados Fusion">
+      <button class="rail-btn" data-go="20" title="Comparação e decisão">
         <svg class="i" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
       </button>
-      <button class="rail-btn" data-go="6" title="Impacto com PAD">
-        <svg class="i" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
-      </button>
-      <button class="rail-btn" data-go="11" title="Encerramento">
+      <button class="rail-btn" data-go="29" title="Conclusão e dados">
         <svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
       </button>
       <div class="rail-logo">RT</div>
@@ -46,26 +50,268 @@
     <main class="stage">
       <header class="topbar">
         <div class="top-title">Red Team <span id="sec-title">· SENAI</span></div>
-        <div class="counter" id="counter">01 / 11</div>
+        <div class="counter" id="counter">01 / 01</div>
       </header>
 
       <div class="deck" id="deck">
 
-        <!-- 1 · Capa -->
+        <!-- Capa -->
         <section class="slide on" data-title="SENAI">
-          <div class="wrap">
-            <span class="kicker">SENAI · Red Team</span>
-            <h1 class="todo">Título da <em>apresentação</em></h1>
-            <p class="lead todo">Subtítulo ou frase de abertura. Substitua este texto pelo conteúdo real.</p>
-            <div style="display:flex; gap:12px; margin-top:28px; flex-wrap:wrap">
-              <span class="pill">Começar →</span>
-              <span class="pill ghost todo">Apresentador · Data</span>
+          <div class="wrap wide split" style="--cols:minmax(0,1.1fr) minmax(0,1fr)">
+            <div>
+              <span class="kicker">SENAI · Red Team</span>
+              <h1>Garra <em>SAMI</em> mais leve e mais forte</h1>
+              <p class="lead">PAD de sacrifício em TPU 95A para absorver o choque e preenchimento interno otimizado em PA-CF para a garra de ventosas do robô UR30.</p>
+              <div style="display:flex; gap:12px; margin-top:28px; flex-wrap:wrap">
+                <span class="pill">Começar →</span>
+                <span class="pill ghost todo">Apresentadores · Data</span>
+              </div>
+            </div>
+            <div class="g2">
+              <div class="glass stat"><b><span data-r07="R07_COM.pct_tritan" data-d="1" data-sign="1">−5,0</span>%</b><span>de massa vs. garra Tritan instalada</span><small>R07 com esqueleto · Orca</small></div>
+              <div class="glass stat"><b><span data-r07="R07_COM.kg_pa6" data-d="0">100</span> kg</b><span>máx. numa asa (PA6-CF)</span><small>garra montada · FE</small></div>
+              <div class="glass stat"><b class="ink">−62,6%</b><span>no pico de força com PAD</span><small>modelo de impacto 1D</small></div>
+              <div class="glass stat"><b class="ink">R$ 84.000</b><span>perdidos por parada</span><small>dados da equipe</small></div>
             </div>
           </div>
         </section>
 
+        <!-- Roteiro -->
+        <section class="slide" data-title="Roteiro">
+          <div class="wrap wide split" style="--cols:minmax(0,.9fr) minmax(0,1.3fr)">
+            <div>
+              <span class="kicker">Apresentação</span>
+              <h2>Projeto e <em>integrantes</em></h2>
+              <p class="lead">Red Team · SENAI. Desafio: garra SAMI do robô UR30 que quebra por choque mecânico.</p>
+              <div class="glass card todo" style="margin-top:22px; padding:18px 20px">
+                <p style="margin:0">Integrantes: nome · função (preencher)</p>
+              </div>
+            </div>
+            <ol class="agenda">
+              <li class="glass"><b>01</b><span>Introdução<small>Contexto do problema e limitações</small></span></li>
+              <li class="glass"><b>02</b><span>Engenharia de materiais<small>Polímeros da garra e do PAD de sacrifício</small></span></li>
+              <li class="glass"><b>03</b><span>Hardware de impressão<small>Bico de alta resistência e parâmetros do Orca</small></span></li>
+              <li class="glass"><b>04</b><span>Custos e produção<small>Matéria-prima, componentes, troca e teoria das filas</small></span></li>
+              <li class="glass"><b>05</b><span>Testes e simulações<small>Fusion, impacto, estrutura interna e comparação com e sem esqueleto</small></span></li>
+              <li class="glass"><b>06</b><span>Conclusão<small>Custo de oportunidade, riscos e dados abertos no GitHub</small></span></li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- Problema -->
+        <section class="slide" data-title="Problema" id="s-intro">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Introdução · Problema</span>
+              <h2>A garra quebra e a linha <em>para</em></h2>
+            </div>
+            <div class="flow">
+              <article class="glass card"><h3>Choque mecânico</h3><p>A garra quebra quando recebe impacto. Na análise, a falha começa entre as camadas, na raiz da flange do robô.</p></article>
+              <article class="glass card"><h3>Troca demorada</h3><p>Substituir a garra exige parada de manutenção de cerca de 45 minutos.</p></article>
+              <article class="glass card"><h3>Desperdício</h3><p>Com a linha parada, caixas deixam de ser produzidas e o custo de oportunidade cresce a cada minuto.</p></article>
+            </div>
+            <div class="g4" style="margin-top:16px">
+              <div class="glass stat sm"><b>45 min</b><span>parada para manutenção</span></div>
+              <div class="glass stat sm"><b class="ink">280</b><span>caixas perdidas</span><small>7 paletes de 40 · 6 caixas/min</small></div>
+              <div class="glass stat sm"><b class="ink">3.360 kg</b><span>de produto</span><small>280 caixas × 12 kg</small></div>
+              <div class="glass stat sm"><b>R$ 84.000</b><span>desperdiçados</span><small>preço de mercado</small></div>
+            </div>
+            <p class="note"><span class="tag eq">dados da equipe</span> Cada palete tem 40 caixas (4 camadas de 10); cada caixa tem 12 itens. A garra instalada (deck do cliente) pesa 2,834 kg e, com duas caixas de 12 kg, chega a 26,834 kg, ou 89% dos 30 kg do UR30.</p>
+          </div>
+        </section>
+
+        <!-- Proposta -->
+        <section class="slide" data-title="Proposta">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Introdução · Proposta</span>
+              <h2>PAD de sacrifício + <em>preenchimento</em> otimizado</h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1fr) minmax(0,1.6fr); align-items:start">
+              <article class="glass card">
+                <h3 style="margin-top:0">PAD de sacrifício</h3>
+                <p>Peça de TPU 95A que recebe o choque no lugar da garra. É barata, imprime rápido e é trocada a cada 2 meses (última troca registrada).</p>
+                <div class="g2" style="margin-top:14px">
+                  <div class="glass stat sm"><b>−62,6%</b><span>pico de força</span><small>451 → 169 N · modelo 1D</small></div>
+                  <div class="glass stat sm"><b class="ink">86%</b><span>da energia no PAD</span><small>0,113 de 0,132 J</small></div>
+                </div>
+              </article>
+              <div>
+                <div class="evo">
+                  <article class="glass card"><span class="tag">instalada</span><h3>Tritan · Hexa3D 30%</h3><p><b data-r07="tritan_g" data-d="0">1.577</b> g de peças impressas (estimado)</p></article>
+                  <article class="glass card"><span class="tag eq">proposta inicial</span><h3>PA-CF · TPMS-D 40%</h3><p><b data-r07="TPMSD40.garra_g" data-d="0">1.785</b> g · <b><span data-r07="TPMSD40.pct_tritan" data-d="1" data-sign="1">+13,2</span>%</b> de massa. Mais forte que 30%, porém mais pesada.</p></article>
+                  <article class="glass card win"><span class="tag ok">resultado</span><h3>PA-CF · R07 com esqueleto</h3><p><b data-r07="R07_COM.garra_g" data-d="0">1.497</b> g · <b><span data-r07="R07_COM.pct_tritan" data-d="1" data-sign="1">−5,0</span>%</b>. Material só onde a falha começa: <b><span data-r07="R07_COM.kg_pa6" data-d="0">100</span> kg</b> numa asa, contra <span data-r07="UNI_40.kg_pa6" data-d="0">76</span> kg do 40% uniforme.</p></article>
+                </div>
+                <p class="note">O preenchimento muda só por dentro: as 5 paredes e o contorno externo continuam iguais. Massas do fatiamento no Orca (K1 Max, 1:1). Resistência por FE da garra montada.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Materiais -->
+        <section class="slide" data-title="Materiais" id="s-desenv">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Desenvolvimento · Engenharia de materiais</span>
+              <h2>Tritan → <em>PA-CF</em> + TPU 95A</h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1.4fr) minmax(0,1fr); align-items:start">
+              <div class="glass card" style="padding:16px 18px">
+                <table class="tbl compact">
+                  <thead><tr><th></th><th>Tritan (antes)</th><th>PA-CF (garra)</th><th>TPU 95A (PAD)</th></tr></thead>
+                  <tbody>
+                    <tr><td>Custo</td><td>R$ 250,00</td><td>R$ 258,00/kg</td><td>R$ 158,00/kg</td></tr>
+                    <tr><td>Prazo de entrega</td><td>15–20 dias (importado)</td><td>7 dias úteis</td><td>5–8 dias úteis</td></tr>
+                    <tr><td>Densidade (fatiamento)</td><td>1,18 g/cm³</td><td>1,10 g/cm³</td><td>1,22 g/cm³</td></tr>
+                    <tr><td>Módulo de Young</td><td>1.548 MPa</td><td>4.430 MPa</td><td class="na">flexível</td></tr>
+                    <tr><td>Tração máx. (Fusion)</td><td>58 MPa</td><td>102 MPa</td><td class="na">—</td></tr>
+                    <tr><td>Temperatura (HDT)</td><td class="na">—</td><td>164 °C</td><td class="na">—</td></tr>
+                    <tr><td>Função</td><td>garra</td><td>garra estrutural</td><td>absorver choque</td></tr>
+                  </tbody>
+                </table>
+                <p class="note"><span class="tag eq">custos e prazos: equipe</span> <span class="tag sim">propriedades: entradas do Fusion e do Orca</span></p>
+              </div>
+              <div style="display:grid; gap:14px">
+                <div class="glass stat sm"><b>2,9×</b><span>mais rígido que o Tritan</span><small>deslocamento no Fusion: 0,23 → 0,08 mm</small></div>
+                <div class="glass stat sm"><b class="ink"><span data-r07="HEXA30.pct_tritan" data-d="1" data-sign="1">−6,8</span>%</b><span>de massa só pela densidade</span><small>mesmo Hexa3D 30%: Tritan × PA6-CF (Orca)</small></div>
+                <div class="glass stat sm"><b class="ink">0,83</b><span>ranking multiobjetivo (TOPSIS)</span><small>PA6-CF 1º lugar · 2º colocado 0,52</small></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Hardware de impressão -->
+        <section class="slide" data-title="Hardware de impressão">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Desenvolvimento · Hardware de impressão</span>
+              <h2>Bico de alta <em>resistência</em></h2>
+            </div>
+            <div class="g3" style="align-items:start">
+              <article class="glass card">
+                <h3 style="margin-top:0">Por que trocar o bico</h3>
+                <p>A fibra de carbono do PA-CF é abrasiva. O próprio Orca avisa em todos os fatiamentos: <i>dureza do bico (HRC) menor que a exigida pelo filamento</i>. Bico de latão comum se desgasta e altera a extrusão.</p>
+                <div class="glass stat sm" style="margin-top:14px"><b>R$ 23,50</b><span>bico MK8 endurecido</span><small>dado da equipe</small></div>
+              </article>
+              <div class="glass card" style="padding:16px 18px">
+                <h3 style="margin:0 0 6px; font-size:17px">Garra · PA6-CF</h3>
+                <table class="tbl compact">
+                  <tbody>
+                    <tr><td>Impressora</td><td>Creality K1 Max</td></tr>
+                    <tr><td>Bico</td><td>0,4 mm, endurecido</td></tr>
+                    <tr><td>Camada</td><td>0,2 mm</td></tr>
+                    <tr><td>Paredes</td><td>5 perímetros</td></tr>
+                    <tr><td>Preenchimento</td><td>giroide + zonas R07</td></tr>
+                    <tr><td>Escala</td><td>1:1, sem alterar o exterior</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="glass card" style="padding:16px 18px">
+                <h3 style="margin:0 0 6px; font-size:17px">PAD · TPU 95A</h3>
+                <table class="tbl compact">
+                  <tbody>
+                    <tr><td>Paredes</td><td><span data-r07="pads.paredes">3</span> perímetros</td></tr>
+                    <tr><td>Preenchimento</td><td>giroide <span>40%</span></td></tr>
+                    <tr><td>8 PADs (peças)</td><td><span data-r07="pads.peca_g" data-d="1">93,1</span> g</td></tr>
+                    <tr><td>Com suportes</td><td><span data-r07="pads.total_g" data-d="1">139,0</span> g</td></tr>
+                    <tr><td>Tempo (8 PADs)</td><td><span data-r07="pads.tempo_h" data-d="1">11,0</span> h</td></tr>
+                  </tbody>
+                </table>
+                <p class="note"><span class="tag sim">Orca</span> Por que giroide: espalha a carga em todas as direções e mantém boa resistência com 20–25% de preenchimento.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Custos -->
+        <section class="slide" data-title="Custos">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Desenvolvimento · Custos</span>
+              <h2>Quanto custa <em>fazer</em></h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1.3fr) minmax(0,1fr); align-items:start">
+              <div class="glass card" style="padding:16px 18px">
+                <table class="tbl compact">
+                  <thead><tr><th>Item</th><th>Base</th><th>Custo</th></tr></thead>
+                  <tbody>
+                    <tr class="grp"><td colspan="3">Garra em PA-CF (R$ 258/kg × filamento do Orca, com suportes)</td></tr>
+                    <tr class="hl"><td>R07 com esqueleto</td><td><span data-r07="R07_COM.fil_g" data-d="0">1.809</span> g</td><td>R$ <span data-r07="R07_COM.custo_rs" data-d="2">466,77</span></td></tr>
+                    <tr><td>R07 sem esqueleto</td><td><span data-r07="R07_SEM.fil_g" data-d="0">1.745</span> g</td><td>R$ <span data-r07="R07_SEM.custo_rs" data-d="2">450,08</span></td></tr>
+                    <tr><td>TPMS-D 40% (proposta inicial)</td><td><span data-r07="TPMSD40.fil_g" data-d="0">2.097</span> g</td><td>R$ <span data-r07="TPMSD40.custo_rs" data-d="2">540,92</span></td></tr>
+                    <tr class="grp"><td colspan="3">PADs em TPU 95A (R$ 158/kg)</td></tr>
+                    <tr><td>Conta da equipe</td><td>62 g / 8 peças</td><td>R$ 1,22/un · R$ 9,76</td></tr>
+                    <tr><td>Fatiamento Orca (só peças)</td><td><span data-r07="pads.peca_g" data-d="1">93,1</span> g / 8</td><td>R$ <span data-r07="pads.custo_un_peca" data-d="2">1,84</span>/un</td></tr>
+                    <tr><td>Fatiamento Orca (com suportes)</td><td><span data-r07="pads.total_g" data-d="1">139,0</span> g / 8</td><td>R$ <span data-r07="pads.custo_un_total" data-d="2">2,75</span>/un</td></tr>
+                    <tr class="grp"><td colspan="3">Componentes</td></tr>
+                    <tr><td>Bico MK8 endurecido</td><td>1 un</td><td>R$ 23,50</td></tr>
+                    <tr><td>Garra antiga · Tritan</td><td>custo informado</td><td>R$ 250,00</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div style="display:grid; gap:14px">
+                <div class="glass stat"><b>≈ R$ 512</b><span>garra R07 + 8 PADs + bico</span><small>466,77 + 21,96 + 23,50 · com suportes</small></div>
+                <div class="glass stat sm"><b class="ink">R$ 84.000</b><span>custo de uma parada de 45 min</span><small>≈ 164 garras completas</small></div>
+                <p class="note" style="margin:0"><span class="tag eq">preços: equipe</span> <span class="tag sim">gramas: Orca</span> A conta da equipe (62 g para 8 PADs) e o fatiamento (93,1 g sem suportes) diferem. Vale pesar um PAD impresso para fechar o número.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Produção e filas -->
+        <section class="slide" data-title="Produção e filas">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Desenvolvimento · Simulação de sistemas</span>
+              <h2>Ritmo da linha e <em>tempo de espera</em></h2>
+            </div>
+            <div class="g4">
+              <div class="glass stat sm"><b>6</b><span>caixas por minuto</span><small>12 kg por caixa</small></div>
+              <div class="glass stat sm"><b class="ink">40</b><span>caixas por palete</span><small>4 camadas de 10</small></div>
+              <div class="glass stat sm"><b class="ink">7–8</b><span>paletes por parada</span><small>≈ 280 caixas · 3.360 itens</small></div>
+              <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.tempo_h" data-d="1">78,9</span> h</b><span>para imprimir uma garra R07</span><small>Orca, K1 Max · 3 peças</small></div>
+            </div>
+            <div class="split even" style="margin-top:16px; align-items:start">
+              <article class="glass card">
+                <h3 style="margin-top:0">Tempo de impressão</h3>
+                <table class="tbl compact">
+                  <tbody>
+                    <tr><td>Tritan, por peça (equipe)</td><td>6 a 8,5 h</td></tr>
+                    <tr><td>PA-CF superior R07 (Orca)</td><td>38,0 h</td></tr>
+                    <tr><td>PA-CF inferior R07, cada (Orca)</td><td>20,5 h</td></tr>
+                    <tr><td>8 PADs TPU 95A (Orca)</td><td><span data-r07="pads.tempo_h" data-d="1">11,0</span> h</td></tr>
+                    <tr><td>4 PADs (equipe)</td><td>1h40 a 2h</td></tr>
+                  </tbody>
+                </table>
+                <p class="note">Como a garra leva mais de 3 dias para imprimir, ela precisa estar pronta <b>antes</b> da quebra: estoque de reposição.</p>
+              </article>
+              <article class="glass card todo">
+                <h3 style="margin-top:0">Teoria das filas</h3>
+                <p>Taxa de chegada de falhas (λ), taxa de reparo (μ) e tempo médio de espera (Wq) para a troca de garra e de PAD. Preencher com os dados de operação.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Metodologias -->
+        <section class="slide" data-title="Metodologias">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Desenvolvimento · Melhoria contínua</span>
+              <h2>Kaizen, Lean, 5W2H e <em>Ishikawa</em></h2>
+            </div>
+            <div class="g4">
+              <article class="glass card todo"><h3 style="margin-top:0">Kaizen</h3><p>Melhoria contínua: PAD trocado de forma planejada, sem parada não programada.</p></article>
+              <article class="glass card todo"><h3 style="margin-top:0">Lean</h3><p>Eliminar o desperdício de 45 min de parada e de produto não embalado.</p></article>
+              <article class="glass card todo"><h3 style="margin-top:0">5W2H</h3><p>O quê, por quê, onde, quando, quem, como e quanto custa a troca da garra.</p></article>
+              <article class="glass card todo"><h3 style="margin-top:0">Ishikawa</h3><p>Causas da quebra: material (Tritan), método (preenchimento uniforme), máquina (2 caixas numa asa), medida.</p></article>
+            </div>
+            <p class="note">Conteúdo a completar pela equipe (contorno tracejado).</p>
+          </div>
+        </section>
+
         <!-- 2 · Testes de Bancada: abertura -->
-        <section class="slide" data-title="Testes de Bancada">
+        <section class="slide" data-title="Testes de Bancada" id="s-testes">
           <div class="wrap wide split">
             <div>
               <span class="kicker">Testes de Bancada</span>
@@ -90,8 +336,9 @@
           </div>
         </section>
 
-        <!-- 3 · Modelo 3D -->
-        <section class="slide" data-title="Modelo 3D" data-viewer>
+
+        <!-- Modelo 3D -->
+        <section class="slide" data-title="Modelo 3D">
           <div class="wrap wide split" style="--cols:minmax(0,.8fr) minmax(0,1.5fr)">
             <div>
               <span class="kicker">Testes de Bancada · Modelo 3D</span>
@@ -108,8 +355,8 @@
                 <div class="zone"><i style="background:#f07c24"></i>PADs (laranja) · TPU 95A, núcleo 40%</div>
               </div>
             </div>
-            <div class="glass viewer" id="viewer">
-              <div class="vmsg" id="viewer-msg">Carregando modelo…</div>
+            <div class="glass viewer" data-viewer3d data-tabs="viewer-parts" data-info="viewer-info">
+              <div class="vmsg">Carregando modelo…</div>
               <span class="vhint">STL · mm</span>
             </div>
           </div>
@@ -314,10 +561,10 @@
         </section>
 
         <!-- 9 · Estratégia de impressão -->
-        <section class="slide" data-title="Impressão zonal">
+        <section class="slide" data-title="Orca R06 zonal" id="s-orca">
           <div class="wrap wide split" style="--cols:minmax(0,1fr) minmax(0,1.2fr)">
             <div>
-              <span class="kicker">Testes de Bancada · Impressão</span>
+              <span class="kicker">Orca · Estrutura interna R06</span>
               <h2>Reforço só <em>por dentro</em></h2>
               <p class="lead">As cores são preenchimento interno do fatiamento. Cada zona é recortada do núcleo da peça, 2 mm abaixo da superfície (5 perímetros). O exterior não muda.</p>
               <div class="glass card" style="margin-top:20px; padding:18px 20px">
@@ -343,44 +590,357 @@
           </div>
         </section>
 
-        <!-- 10 · Validado × pendente -->
-        <section class="slide" data-title="Status">
+
+        <!-- R07: esqueleto (camadas) -->
+        <section class="slide" data-title="Esqueleto R07">
           <div class="wrap wide">
             <div class="s-head compact">
-              <span class="kicker">Testes de Bancada · Status</span>
+              <span class="kicker">Orca · Estrutura interna R07</span>
+              <h2>Esqueleto <em>interno</em> + giroide</h2>
+            </div>
+            <figure class="glass media" style="margin:0 0 16px; background:#fff">
+              <img style="max-height:31vh; width:auto; max-width:100%; margin:0 auto; display:block; object-fit:contain" src="assets/img/bancada/r07_camadas.png" alt="Três camadas reais do G-code da peça superior R07: almas sólidas em azul ligando o cubo aos ressaltos, anéis rosa e amarelo nos ressaltos e o colar roxo com anel e seis raios na flange do robô">
+              <figcaption>G-code real (Orca, K1 Max, 1:1) da peça superior. Azul: almas e tubos. Roxo: colar. Rosa: ressaltos. Amarelo: assento. As paredes externas seguem o contorno original.</figcaption>
+            </figure>
+            <div class="g4">
+              <div class="glass stat sm"><b><span data-r07="R07_COM.garra_g" data-d="0">1.497</span> g</b><span>garra completa</span><small>R06: <span data-r07="R06.garra_g" data-d="0">1.642</span> g · −8,8%</small></div>
+              <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.sup_g" data-d="0">731</span> g</b><span>superior · giroide 25%</span><small>R06: 754 g · −3,1%</small></div>
+              <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.inf_g" data-d="0">383</span> g</b><span>cada inferior · giroide 20%</span><small>R06: 444 g · −13,7%</small></div>
+              <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.tempo_h" data-d="1">78,9</span> h</b><span>impressão total</span><small>R06: 85,8 h · filamento <span data-r07="R07_COM.fil_g" data-d="0">1.809</span> g</small></div>
+            </div>
+            <p class="note">Almas de 3 mm a 100%, tubos de 7,5 mm nos furos, colar 55%, ressaltos 35%, assento 20%. Tudo fica 2,25 mm para dentro (5 perímetros). Massas do fatiamento, sem suportes.</p>
+          </div>
+        </section>
+
+        <!-- R07: estrutura interna em 3D -->
+        <section class="slide" data-title="Estrutura interna 3D">
+          <div class="wrap wide split" style="--cols:minmax(0,.85fr) minmax(0,1.5fr)">
+            <div>
+              <span class="kicker">Orca · Estrutura interna em 3D</span>
+              <h2>O que fica <em>por dentro</em></h2>
+              <p class="lead">Peça translúcida e as zonas de preenchimento do Orca. Use o corte para descer pelas camadas.</p>
+              <div class="seg" id="viewer2-parts" style="margin-top:18px" role="tablist" aria-label="Variante exibida">
+                <button class="on" data-part="r07_sup_com" data-info="Superior R07 com esqueleto: almas + tubos 100% (99 cm³), colar 55% (120 cm³), ressaltos 35% (145 cm³), assento 20% (27 cm³)">Superior com</button>
+                <button data-part="r07_sup_sem" data-info="Superior R07 sem esqueleto: só os tubos dos furos a 100% (17 cm³); colar, ressaltos e assento iguais">Superior sem</button>
+                <button data-part="r07_inf" data-info="Inferior R07: tubos dos furos 100%, ressaltos e bases das ventosas 35%, assento 20% (sem almas)">Inferior</button>
+              </div>
+              <p class="note" id="viewer2-info">Superior R07 com esqueleto: almas + tubos 100% (99 cm³), colar 55% (120 cm³), ressaltos 35% (145 cm³), assento 20% (27 cm³)</p>
+              <div class="cutrow"><label for="viewer2-cut">Corte</label><input id="viewer2-cut" type="range" min="5" max="100" value="100" data-out="viewer2-cut-out"><output id="viewer2-cut-out">peça inteira</output></div>
+              <div class="zones" style="margin-top:14px">
+                <div class="zone"><i style="background:#1e6fb8"></i>Almas e tubos<b>100%</b></div>
+                <div class="zone"><i style="background:#7b3fe4"></i>Colar da flange<b>55%</b></div>
+                <div class="zone"><i style="background:#f03cf0"></i>Ressaltos / bases<b>35%</b></div>
+                <div class="zone"><i style="background:#f5c400"></i>Assento<b>20%</b></div>
+                <div class="zone"><i style="background:#e7e5ef"></i>Restante · giroide<b>25% / 20%</b></div>
+              </div>
+            </div>
+            <div class="glass viewer" data-viewer3d data-tabs="viewer2-parts" data-info="viewer2-info" data-cut="viewer2-cut">
+              <div class="vmsg">Carregando modelo…</div>
+              <span class="vhint">modificadores do Orca · mm</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Fatiamento comparativo -->
+        <section class="slide" data-title="Fatiamento comparativo" id="s-comp">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Comparação · Orca</span>
+              <h2>Peso de cada <em>opção</em></h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1fr) minmax(0,1.15fr); align-items:start">
+              <div class="glass chart" id="chart-r07-massa">
+                <h4>Massa da garra impressa vs. Tritan instalada</h4>
+                <p class="sub">superior + 2 inferiores · % de variação · faixa verde = meta de 5 a 10% mais leve</p>
+              </div>
+              <div class="glass card" style="padding:12px 14px; overflow:auto">
+                <table class="tbl compact">
+                  <thead><tr><th>Variante</th><th>Sup. g</th><th>Inf. g</th><th>Garra g</th><th>vs Tritan</th><th>Filam. g</th><th>Tempo</th><th>Custo</th></tr></thead>
+                  <tbody id="tbl-orca"></tbody>
+                </table>
+                <p class="note"><span class="tag sim">Orca CLI</span> K1 Max 1:1, PA6-CF 1,10 g/cm³, 5 paredes. Tritan = Hexa3D 30% × 1,18/1,10. Custo = R$ 258/kg × filamento com suportes. Inferior direita = espelho da esquerda.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Garra montada: resistência -->
+        <section class="slide" data-title="Garra montada">
+          <div class="wrap wide split" style="--cols:minmax(0,1fr) minmax(0,1.15fr)">
+            <div>
+              <span class="kicker">Comparação · Peças unidas</span>
+              <h2>A garra <em>montada</em> numa asa</h2>
+              <p class="lead">Superior + inferior unidas, engaste nos furos da flange e as duas caixas numa asa só (erro da seladora), com a aceleração do robô (g + 5 m/s²).</p>
+              <div class="g2" style="margin-top:18px">
+                <div class="glass stat sm"><b>+<span class="cnt">63</span>%</b><span>de carga com a mesma massa</span><small>R07 com <span data-r07="R07_COM.kg_pa6" data-d="1">100,3</span> kg × giroide 30% <span data-r07="UNI_30.kg_pa6" data-d="1">61,6</span> kg</small></div>
+                <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.fs30_pa6" data-d="2">3,34</span></b><span>FS com 30 kg (PA6-CF)</span><small>PAHT CF15: <span data-r07="R07_COM.fs30_paht" data-d="2">1,27</span></small></div>
+                <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.desl24" data-d="2">1,54</span> mm</b><span>flecha da asa a 24 kg</span><small>giroide 30%: <span data-r07="UNI_30.desl24" data-d="2">1,73</span> mm</small></div>
+                <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.k_asa" data-d="0">231</span> N/mm</b><span>rigidez da asa</span><small>R06: <span data-r07="R06.k_asa" data-d="0">188</span> N/mm</small></div>
+              </div>
+            </div>
+            <div class="glass chart" id="chart-r07-carga">
+              <h4>Carga máxima numa asa · garra montada</h4>
+              <p class="sub">kg até romper entre camadas · linhas em 24 e 30 kg · FE por voxels, pico × 2,2</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Mapas da montagem -->
+        <section class="slide" data-title="Mapas da montagem">
+          <div class="wrap wide">
+            <div class="s-head compact" style="display:flex; justify-content:space-between; align-items:end; gap:16px; flex-wrap:wrap">
+              <div>
+                <span class="kicker">Comparação · Onde a tensão aparece</span>
+                <h2>Como a malha <em>absorve</em> o peso</h2>
+              </div>
+              <div class="seg" id="mapa-montagem" aria-label="Variante">
+                <button class="on" data-v="R07_COM">R07 com</button>
+                <button data-v="R07_SEM">R07 sem</button>
+                <button data-v="UNI_30">Giroide 30%</button>
+                <button data-v="UNI_35">35%</button>
+                <button data-v="UNI_40">40%</button>
+                <button data-v="R06">R06</button>
+              </div>
+            </div>
+            <figure class="glass media" style="margin:0; background:#fff">
+              <img id="mapa-montagem-img" style="max-height:46vh; width:auto; max-width:100%; margin:0 auto; display:block" src="assets/img/r07/montagem_R07_COM.jpg" alt="Mapa de índice de falha da garra montada">
+              <figcaption id="mapa-montagem-cap"></figcaption>
+            </figure>
+            <p class="note">Cor = índice de falha local (0 = sem carga). A carga sai da asa carregada (direita), passa pelo colar e chega aos furos da flange. Com o colar e os tubos do R07, o caminho fica mais largo e o pico na raiz da flange cai. <span class="tag sim">FE voxels 3 mm</span> Cada mapa tem a própria escala de cor.</p>
+          </div>
+        </section>
+
+        <!-- Impacto 3D: vídeo -->
+        <section class="slide" data-title="Impacto 3D">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Comparação · Impacto</span>
+              <h2>O tranco de 24 kg em <em>câmera lenta</em></h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1.6fr) minmax(0,1fr); align-items:start">
+              <figure class="glass media" style="margin:0; background:#fff">
+                <video id="video-r07" src="assets/video/impacto_r07_comparativo.mp4" poster="assets/video/impacto_r07_poster.jpg"
+                       muted loop playsinline preload="metadata" disablepictureinpicture controls
+                       style="display:block; width:100%; height:auto; max-height:56vh; aspect-ratio:16/9; object-fit:contain"
+                       aria-label="Animação: corte vertical da peça superior das quatro variantes durante o tranco de 24 kg, colorido pelo índice de falha, com a curva de tensão entre camadas embaixo"></video>
+                <figcaption>8 s de vídeo = 80 ms físicos · corte do cubo até a asa · deformação ampliada 25×</figcaption>
+              </figure>
+              <div style="display:grid; gap:10px">
+                <div class="glass card" style="padding:10px 16px">
+                  <table class="tbl vid-tbl">
+                    <tbody>
+                      <tr><td>Carga</td><td>24 kg numa asa · g + 5 m/s²</td></tr>
+                      <tr><td>Subida</td><td>10 ms (tranco seco)</td></tr>
+                      <tr><td>Amortecimento</td><td>3% (Rayleigh)</td></tr>
+                      <tr><td>Solver</td><td>Newmark, passo de 0,5 ms</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="g2 vid-stats">
+                  <div class="glass stat sm"><b><span data-r07="R07_COM.impacto.fd" data-d="2">1,70</span>×</b><span>fator dinâmico</span><small>o tranco amplifica a carga estática</small></div>
+                  <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.impacto.sz" data-d="1">17,0</span> MPa</b><span>pico R07 com</span><small>giroide 30%: <span data-r07="UNI_30.impacto.sz" data-d="1">28,0</span> MPa</small></div>
+                  <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.impacto.fs_pa6" data-d="2">2,82</span></b><span>FS no tranco (PA6-CF)</span><small>sem esqueleto: <span data-r07="R07_SEM.impacto.fs_pa6" data-d="2">2,65</span></small></div>
+                  <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.impacto.f1" data-d="1">31,0</span> Hz</b><span>frequência com 24 kg</span><small>giroide 30%: <span data-r07="UNI_30.impacto.f1" data-d="1">27,5</span> Hz</small></div>
+                </div>
+              </div>
+            </div>
+            <p class="note"><span class="tag sim">FE transiente 3D</span> Peça superior, voxels de 3 mm, giroide homogeneizado (Gibson-Ashby). Estimativa, não é ensaio.</p>
+          </div>
+        </section>
+
+        <!-- Impacto: como o material reage -->
+        <section class="slide" data-title="Reação ao impacto">
+          <div class="wrap wide split" style="--cols:minmax(0,1.35fr) minmax(0,1fr)">
+            <div class="glass chart" id="chart-r07-impacto">
+              <h4>Tensão entre camadas no ponto crítico durante o tranco</h4>
+              <p class="sub">MPa ao longo de 80 ms · passe o mouse para ver quanto o giroide trabalha</p>
+              <div class="legend"></div>
+            </div>
+            <div>
+              <span class="kicker">Comparação · Material e preenchimento</span>
+              <h2>Quem segura o <em>tranco</em></h2>
+              <ul class="plain">
+                <li>A carga chega em 10 ms e a asa oscila a cerca de 30 Hz. O pico vem em ≈ 22 ms, 1,7× acima da carga estática.</li>
+                <li>A tensão se concentra na <b>raiz da flange</b> (parede sólida). No R07 o colar e os tubos abrem o caminho, e o giroide trabalha a só <b><span data-r07="R07_COM.impacto.fi_gir" data-d="2">0,26</span></b> da resistência dele.</li>
+                <li>No giroide 30% uniforme não há reforço: o preenchimento chega a <b><span data-r07="UNI_30.impacto.fi_gir" data-d="2">0,46</span></b> da resistência e o pico sobe para <span data-r07="UNI_30.impacto.sz" data-d="1">28,0</span> MPa.</li>
+                <li>Com PAHT CF15 (resistência Z de 18,2 MPa), só as versões R07 ficam com FS ≥ 1 no tranco (<span data-r07="R07_COM.impacto.fs_paht" data-d="2">1,07</span> e <span data-r07="R07_SEM.impacto.fs_paht" data-d="2">1,01</span>).</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Decisão com × sem -->
+        <section class="slide" data-title="Com × sem esqueleto">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Comparação · Decisão</span>
+              <h2>Com ou <em>sem</em> esqueleto?</h2>
+            </div>
+            <div class="glass card" style="padding:12px 14px; overflow:auto">
+              <table class="tbl compact">
+                <thead><tr><th>Variante</th><th>Garra</th><th>vs Tritan</th><th>Máx. numa asa PA6-CF / PAHT (kg)</th><th>FS 30 kg PAHT</th><th>Flecha 24 kg</th><th>Tranco: pico · FS PAHT</th></tr></thead>
+                <tbody id="tbl-decisao"></tbody>
+              </table>
+            </div>
+            <div class="g3" style="margin-top:14px">
+              <article class="glass card" style="padding:16px 18px"><h3 style="margin:0 0 6px; font-size:17px">Com esqueleto</h3><p style="font-size:14px">+65 g e margem máxima: +7,5% de carga, +6,7% de rigidez e +6% de margem no tranco. Indicado para filamento de menor adesão entre camadas, trancos e fadiga.</p></article>
+              <article class="glass card" style="padding:16px 18px"><h3 style="margin:0 0 6px; font-size:17px">Sem esqueleto</h3><p style="font-size:14px">A mais leve (<span data-r07="R07_SEM.pct_tritan" data-d="1" data-sign="1">−9,1</span>% vs Tritan) e ainda com FS 3,1 a 30 kg em PA6-CF. Indicado se o peso for o critério principal.</p></article>
+              <article class="glass card" style="padding:16px 18px"><h3 style="margin:0 0 6px; font-size:17px">Uniforme 30–40%</h3><p style="font-size:14px">Não recomendado: ou é mais pesado que o Tritan, ou é 25–40% mais fraco que o R07. TPMS-D 40% e Hexa3D usam a resistência do giroide de mesma %.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Fadiga e longo prazo -->
+        <section class="slide" data-title="Fadiga e longo prazo">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Comparação · Longo prazo</span>
+              <h2>Fadiga, fluência e <em>desgaste</em></h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1.2fr) minmax(0,1fr); align-items:start">
+              <div class="glass card" style="padding:14px 16px">
+                <table class="tbl compact">
+                  <thead><tr><th>Vida estimada (garra montada)</th><th>PAHT · só 12 kg</th><th>PAHT · 1% com 24 kg</th><th>PA6-CF · 1% com 24 kg</th></tr></thead>
+                  <tbody id="tbl-vida"></tbody>
+                </table>
+                <p class="note">Curva S-N conservadora (30% da resistência em 10⁷ ciclos), regra de Miner, 480 ciclos/h. <b>Estimativa</b>, não é ensaio. O erro da seladora não pode ser rotina: com PAHT, mesmo o R07 tem poucas centenas de horas se 1% dos ciclos for com 24 kg numa asa.</p>
+              </div>
+              <div class="g2">
+                <div class="glass stat sm"><b class="ink">0,49 → 0,89 mm</b><span>flecha a 12 kg em 10.000 h</span><small>fluência estimada · R06: 0,60 → 1,08 mm</small></div>
+                <div class="glass stat sm"><b class="ink">1 MPa</b><span>esmagamento nos furos M6</span><small>&lt; 0,03 mm³ de desgaste por furo em 10.000 h</small></div>
+                <div class="glass stat sm"><b class="ink">164 °C</b><span>HDT do PA6-CF</span><small>segura a fluência em operação 24/7</small></div>
+                <div class="glass stat sm"><b class="ink">2×</b><span>carga de prova sugerida</span><small>24 kg numa asa, 1 min, sem trinca</small></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Galeria -->
+        <section class="slide" data-title="Galeria">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Comparação · Todas as figuras</span>
+              <h2>Galeria de <em>testes</em></h2>
+            </div>
+            <div class="gal">
+              <a href="assets/img/r07/01_massa_garra.jpg" data-zoom="Massa impressa da garra por variante vs. Tritan instalada (Orca)"><img loading="lazy" src="assets/img/r07/01_massa_garra.jpg" alt="Barras de massa da garra por variante"><span>Massa da garra</span></a>
+              <a href="assets/img/r07/02_garra_completa_payload.jpg" data-zoom="Garra completa e garra + 2 caixas vs. payload de 30 kg do UR30"><img loading="lazy" src="assets/img/r07/02_garra_completa_payload.jpg" alt="Massa da garra com caixas frente ao payload"><span>Payload do UR30</span></a>
+              <a href="assets/img/r07/03_carga_maxima_montagem.jpg" data-zoom="Carga máxima numa asa, garra montada (FE)"><img loading="lazy" src="assets/img/r07/03_carga_maxima_montagem.jpg" alt="Carga máxima por variante"><span>Carga máxima</span></a>
+              <a href="assets/img/r07/04_fs_24_30.jpg" data-zoom="Fatores de segurança com 24 e 30 kg numa asa"><img loading="lazy" src="assets/img/r07/04_fs_24_30.jpg" alt="Fatores de segurança por variante"><span>Fatores de segurança</span></a>
+              <a href="assets/img/r07/05_massa_x_resistencia.jpg" data-zoom="Compromisso massa × resistência"><img loading="lazy" src="assets/img/r07/05_massa_x_resistencia.jpg" alt="Dispersão massa contra carga máxima"><span>Massa × resistência</span></a>
+              <a href="assets/img/r07/06_rigidez_deslocamento.jpg" data-zoom="Flecha a 24 kg e rigidez da asa montada"><img loading="lazy" src="assets/img/r07/06_rigidez_deslocamento.jpg" alt="Rigidez e deslocamento por variante"><span>Rigidez e flecha</span></a>
+              <a href="assets/img/r07/07_mapas_montagem_lado_a_lado.jpg" data-zoom="Mapas de índice de falha da garra montada, lado a lado"><img loading="lazy" src="assets/img/r07/07_mapas_montagem_lado_a_lado.jpg" alt="Mosaico de mapas da garra montada"><span>Mapas da montagem</span></a>
+              <a href="assets/img/r07/08_mapas_superior_lado_a_lado.jpg" data-zoom="Mapas da peça superior isolada, lado a lado"><img loading="lazy" src="assets/img/r07/08_mapas_superior_lado_a_lado.jpg" alt="Mosaico de mapas da peça superior"><span>Mapas da superior</span></a>
+              <a href="assets/img/r07/09_impacto_curvas.jpg" data-zoom="Impacto: tensão e índice do giroide ao longo do tempo"><img loading="lazy" src="assets/img/r07/09_impacto_curvas.jpg" alt="Curvas do impacto no tempo"><span>Curvas do impacto</span></a>
+              <a href="assets/img/r07/10_impacto_resumo.jpg" data-zoom="Impacto: pico, fator dinâmico e FS por variante"><img loading="lazy" src="assets/img/r07/10_impacto_resumo.jpg" alt="Resumo do impacto por variante"><span>Resumo do impacto</span></a>
+              <a href="assets/img/r07/11_impacto_snapshot_pico.jpg" data-zoom="Seção crítica no instante de pico do impacto"><img loading="lazy" src="assets/img/r07/11_impacto_snapshot_pico.jpg" alt="Seção no pico do impacto"><span>Seção no pico</span></a>
+              <a href="assets/img/r07/12_fadiga.jpg" data-zoom="Vida estimada em fadiga (peça superior, r07_vida)"><img loading="lazy" src="assets/img/r07/12_fadiga.jpg" alt="Vida em fadiga por variante"><span>Fadiga</span></a>
+            </div>
+            <p class="note">Clique para ampliar. Todas geradas por <code>r07_galeria.py</code> a partir dos resultados em <code>dados/</code>.</p>
+          </div>
+        </section>
+
+        <!-- Fusion R07 -->
+        <section class="slide" data-title="Fusion R07">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Comparação · Validação no Fusion</span>
+              <h2>Fusion: casca + núcleo <em>homogeneizado</em></h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1.1fr) minmax(0,1fr); align-items:start">
+              <div class="glass card" style="padding:16px 18px">
+                <table class="tbl compact">
+                  <tbody>
+                    <tr><td>Modelo</td><td>superior R07 · 2 corpos</td></tr>
+                    <tr><td>Casca (5 paredes)</td><td>282 cm³ · PA6-CF sólido</td></tr>
+                    <tr><td>Núcleo (giroide + zonas)</td><td>1.110 cm³ · E = 790 MPa</td></tr>
+                    <tr><td>Restrição</td><td>furos da flange (95 faces)</td></tr>
+                    <tr><td>Carga</td><td>−355,36 N em Z na asa (24 kg × (g + 5))</td></tr>
+                    <tr><td>Malha do núcleo</td><td>67.739 tetraedros · 105.928 nós</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <article class="glass card">
+                <h3 class="st"><span class="pend"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Em andamento</h3>
+                <p>O primeiro solve na nuvem falhou na malha da casca: a casca vem de uma operação booleana e tem triângulos muito finos (razão de aspecto de até 3.500). O núcleo gerou malha sem erro. Próximo passo: refazer a malha da casca e resolver de novo para calibrar o fator de pico (hoje 2,2, medido no R06).</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Status -->
+        <section class="slide" data-title="Status" id="s-conc">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Conclusão · Status</span>
               <h2>O que já foi testado e o que <em>falta</em></h2>
             </div>
             <div class="g2">
               <article class="glass card">
                 <h3 class="st"><span class="ok"><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>Concluído</h3>
                 <ul class="status-list ok">
-                  <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Tensão estática no Fusion, PA6-CF e Tritan, corpo superior maciço</li>
-                  <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Cálculo de impacto 1D com e sem PAD, com estudo de sensibilidade</li>
-                  <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>8 STLs de PAD e 3 da garra exportados, fechados e verificados</li>
-                  <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Modificadores de preenchimento zonal preparados no Orca</li>
+                  <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Fusion: tensão estática PA6-CF × Tritan (peça maciça)</li>
+                  <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Impacto 1D com e sem PAD + sensibilidade</li>
+                  <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Orca: 11 fatiamentos reais (R06, R07 com/sem, uniformes 30/35/40%, Hexa3D 30%, TPMS-D 40%) + PADs</li>
+                  <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>FE da garra montada (superior + inferior) a 24 kg, 30 kg e máximo</li>
+                  <li><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Impacto 3D transiente: R07 com/sem, giroide 30% e 40%</li>
                 </ul>
               </article>
               <article class="glass card">
                 <h3 class="st"><span class="pend"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Pendente</h3>
                 <ul class="status-list pend">
-                  <li><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Impacto 3D: massa efetiva do robô e velocidade reais</li>
-                  <li><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Temperatura, ruptura e delaminação das camadas</li>
-                  <li><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Amortecimento real: curva força × compressão do PAD</li>
-                  <li><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Desgaste e durabilidade em operação 24/7</li>
-                  <li><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Massa e consumo de filamento (fatiamento K1 Max em andamento)</li>
+                  <li><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Fusion R07: refazer a malha da casca e calibrar o fator de pico</li>
+                  <li><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Bancada: carga de prova 2×, ruptura numa asa e tranco de E-stop</li>
+                  <li><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Pesar um PAD e uma garra impressos para fechar custo e massa</li>
+                  <li><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Curva força × compressão real do PAD (amortecimento)</li>
                 </ul>
               </article>
             </div>
-            <p class="note">Os estudos estáticos usam a peça maciça. Ainda não representam o miolo zonal TPMS-D impresso.</p>
           </div>
         </section>
 
-        <!-- 11 · Encerramento -->
+        <!-- Conclusão -->
+        <section class="slide" data-title="Conclusão">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Conclusão · Impacto financeiro</span>
+              <h2>Custo de oportunidade e <em>risco</em></h2>
+            </div>
+            <div class="g3" style="align-items:stretch">
+              <div class="glass stat"><b>R$ 84.000</b><span>por parada de 45 min</span><small>280 caixas · dados da equipe</small></div>
+              <div class="glass stat"><b class="ink">≈ R$ 512</b><span>garra R07 + 8 PADs + bico</span><small>Orca + preços da equipe</small></div>
+              <div class="glass stat"><b class="ink">≈ 164×</b><span>uma parada paga garras novas</span><small>84.000 ÷ 512</small></div>
+            </div>
+            <div class="split even" style="margin-top:16px; align-items:start">
+              <article class="glass card todo">
+                <h3 style="margin-top:0">Custo de fazer hoje</h3>
+                <p>Impacto no orçamento de produzir a garra e os PADs nas condições atuais. Preencher com o orçamento da equipe.</p>
+              </article>
+              <article class="glass card">
+                <h3 style="margin-top:0">Plano de contingência</h3>
+                <p>Como a garra R07 leva cerca de <span data-r07="R07_COM.tempo_h" data-d="0">79</span> h para imprimir, ter uma garra reserva pronta e PADs em estoque (troca a cada 2 meses). <span class="todo">Quebra simultânea de garra e robô: definir com a equipe.</span></p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Encerramento -->
         <section class="slide" data-title="Encerramento">
           <div class="wrap" style="text-align:center">
             <span class="kicker">Obrigado</span>
-            <h1 class="todo">Perguntas<em>?</em></h1>
-            <p class="lead todo" style="margin:0 auto">Contato ou mensagem final.</p>
+            <h1>Perguntas<em>?</em></h1>
+            <p class="lead" style="margin:0 auto">Todos os números deste site saem de arquivos de simulação e fatiamento. Os dados, scripts e o relatório estão abertos no GitHub.</p>
+            <div class="links">
+              <a class="gh" href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/dados" target="_blank" rel="noopener">
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                Dados no GitHub
+              </a>
+            </div>
+            <div class="links">
+              <a class="gh ghost" href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/RELATORIO_R07.md" target="_blank" rel="noopener">Relatório R07</a>
+              <a class="gh ghost" href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/decisao/dados_comparativos.csv" target="_blank" rel="noopener">Tabela comparativa (CSV)</a>
+              <a class="gh ghost" href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/dados/scripts" target="_blank" rel="noopener">Scripts das simulações</a>
+            </div>
           </div>
         </section>
 
@@ -398,9 +958,15 @@
     </main>
   </div>
 
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/bancada-dados.js"></script>
-  <script src="assets/js/bancada.js"></script>
-  <script type="module" src="assets/js/viewer3d.js"></script>
+  <dialog class="lightbox" id="lightbox" aria-label="Figura ampliada">
+    <figure><img src="" alt=""><figcaption></figcaption></figure>
+  </dialog>
+
+  <script src="assets/js/main.js?v=r07c"></script>
+  <script src="assets/js/bancada-dados.js?v=r07c"></script>
+  <script src="assets/js/bancada.js?v=r07c"></script>
+  <script src="assets/js/r07-dados.js?v=r07c"></script>
+  <script src="assets/js/r07.js?v=r07c"></script>
+  <script type="module" src="assets/js/viewer3d.js?v=r07c"></script>
 </body>
 </html>
