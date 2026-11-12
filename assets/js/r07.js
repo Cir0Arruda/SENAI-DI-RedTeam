@@ -219,7 +219,13 @@
     document.querySelectorAll('[data-r07]').forEach(e => {
       const [k, ...path] = e.dataset.r07.split('.');
       let v = path.reduce((o, p) => (o == null ? o : o[p]), k === 'pads' ? D.pads : k === 'tritan_g' ? D.tritan_g : V[k]);
+      if (typeof v === 'number' && e.dataset.pct) { e.textContent = fmt(v * 100, 0); return; }
       if (typeof v === 'number') e.textContent = (e.dataset.sign ? sgn(v, +(e.dataset.d || 0)) : fmt(v, +(e.dataset.d || 0)));
+    });
+    // números dos vídeos (data-vid="video.variante.campo"), de dados/videos/videos_r07.json
+    document.querySelectorAll('[data-vid]').forEach(e => {
+      const v = e.dataset.vid.split('.').reduce((o, p) => (o == null ? o : o[p]), D.videos);
+      if (typeof v === 'number') e.textContent = fmt(v, +(e.dataset.d || 0));
     });
   }
 
@@ -256,17 +262,43 @@
   }
 
   /* ---------- Vídeo do impacto R07: toca só com o slide aberto ---------- */
+  // vídeos que tocam do início quando o slide abre (#video-r07 e todo <video data-autoplay>)
   function video() {
-    const v = document.getElementById('video-r07');
-    if (!v) return;
-    const s = v.closest('.slide');
-    v.muted = true;
-    document.addEventListener('slidechange', () => {
-      if (s.classList.contains('on')) { v.currentTime = 0; v.play().catch(() => {}); } else v.pause();
+    const vids = [document.getElementById('video-r07'), ...document.querySelectorAll('video[data-autoplay]')].filter(Boolean);
+    vids.forEach(v => { v.muted = true; });
+    document.addEventListener('slidechange', () => vids.forEach(v => {
+      const on = v.closest('.slide').classList.contains('on') && !v.closest('[hidden]');
+      if (on) { v.currentTime = 0; v.play().catch(() => {}); } else v.pause();
+    }));
+  }
+
+  // seletores de vídeo: botões com data-src trocam o <video> alvo (data-target) e a legenda
+  function videoTabs() {
+    document.querySelectorAll('.seg[data-video]').forEach(seg => {
+      const v = document.getElementById(seg.dataset.video), cap = document.getElementById(seg.dataset.cap);
+      seg.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+        seg.querySelectorAll('button').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); });
+        v.poster = b.dataset.poster; v.src = b.dataset.src; v.load(); v.play().catch(() => {});
+        if (cap) cap.textContent = b.dataset.cap;
+      }));
     });
   }
 
-  chartMassa(); chartPesoCarga(); chartCarga(); chartImpacto(); tables(); mapas(); galeria(); video();
+  // slide do esqueleto: COM / SEM / inferior / encaixe
+  function esqueleto() {
+    const seg = document.getElementById('esq-tabs');
+    if (!seg) return;
+    const img = document.getElementById('esq-img'), img2 = document.getElementById('esq-img2'), cap = document.getElementById('esq-cap');
+    seg.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+      seg.querySelectorAll('button').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); });
+      img.src = b.dataset.img; img.alt = b.dataset.alt; cap.textContent = b.dataset.cap;
+      img2.hidden = !b.dataset.img2;
+      if (b.dataset.img2) { img2.src = b.dataset.img2; img2.alt = b.dataset.alt + ' (sem esqueleto)'; }
+      img.closest('.esq-imgs').classList.toggle('two', !!b.dataset.img2);
+    }));
+  }
+
+  chartMassa(); chartPesoCarga(); chartCarga(); chartImpacto(); tables(); mapas(); galeria(); video(); videoTabs(); esqueleto();
 })();
 
 // Animações: números contam até o valor e barras/linhas entram quando o slide abre.

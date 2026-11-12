@@ -41,6 +41,8 @@ def main():
         'fadiga/r07_vida.json': R / 'r07_vida.json',
         'materiais/materiais_R07.json': R / 'materiais_R07.json',
         'fusion/fusion_build_2corpos.json': R / 'fusion_build_2corpos.json',
+        'videos/videos_r07.json': R / 'VIDEOS' / 'videos_r07.json',
+        'orca/camadas_r07.json': R / 'camadas_r07.json',
     }
     for f in sorted((R / 'MONTAGEM').glob('montagem_*.json')):
         files[f'montagem/{f.name}'] = f
@@ -57,7 +59,7 @@ def main():
     rel_md = (R / 'RELATORIO_R07.md').read_text(encoding='utf-8')
     (OUT / 'RELATORIO_R07.md').write_text(LOCAL.sub('', rel_md), encoding='utf-8')
     for s in ['r07_comparativo.py', 'r07_uniforme_fe.py', 'r07_montagem.py', 'r07_impacto.py',
-              'r07_decisao.py', 'r07_galeria.py', 'r07_publicar_dados.py']:
+              'r07_decisao.py', 'r07_galeria.py', 'r07_publicar_dados.py', 'r07_videos.py', 'r07_camadas.py', 'r07_encaixe.py']:
         if (ROOT / 'scripts' / s).exists():
             copy(ROOT / 'scripts' / s, OUT / 'scripts' / s); n += 1
     print(n + 1, 'arquivos em', OUT)

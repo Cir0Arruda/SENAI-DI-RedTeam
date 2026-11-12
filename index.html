@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=r07d">
+  <link rel="stylesheet" href="assets/css/style.css?v=r07e">
   <script type="importmap">
     { "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
@@ -41,7 +41,7 @@
       <button class="rail-btn" data-go="20" title="Comparação e decisão">
         <svg class="i" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
       </button>
-      <button class="rail-btn" data-go="30" title="Conclusão e dados">
+      <button class="rail-btn" data-go="32" title="Conclusão e dados">
         <svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
       </button>
       <div class="rail-logo">RT</div>
@@ -592,23 +592,34 @@
 
 
         <!-- R07: esqueleto (camadas) -->
-        <section class="slide" data-title="Esqueleto R07">
+        <section class="slide" data-title="Esqueleto R07" id="s-esqueleto">
           <div class="wrap wide">
-            <div class="s-head compact">
-              <span class="kicker">Orca · Estrutura interna R07</span>
-              <h2>Esqueleto <em>interno</em> + giroide</h2>
+            <div class="s-head compact" style="display:flex; justify-content:space-between; align-items:end; gap:16px; flex-wrap:wrap">
+              <div>
+                <span class="kicker">Orca · Estrutura interna R07</span>
+                <h2>Esqueleto <em>interno</em> + giroide</h2>
+              </div>
+              <div class="seg" id="esq-tabs" role="tablist" aria-label="Vista da estrutura interna">
+                <button class="on" role="tab" data-img="assets/img/r07/camadas_r07_superior.jpg" data-cap="G-code real (Orca, K1 Max, 1:1) da peça superior COM esqueleto. Azul: almas e tubos 100%. Roxo: colar 55%. Rosa: ressaltos 35%. Amarelo: assento 20%. O resto é giroide 25%." data-alt="Três camadas reais do G-code do superior com esqueleto: almas azuis ligando o cubo aos ressaltos, anéis rosa e amarelo e o colar roxo na flange">Com esqueleto</button>
+                <button role="tab" data-img="assets/img/r07/camadas_r07_superior_sem.jpg" data-cap="G-code real do superior SEM esqueleto: mesmas zonas, mas só os tubos dos furos ficam a 100%. Na camada de 40 mm não há nenhuma alma: é só giroide 25%." data-alt="Três camadas reais do G-code do superior sem esqueleto: só os tubos dos furos em azul, sem as almas">Sem esqueleto</button>
+                <button role="tab" data-img="assets/img/r07/camadas_r07_inferior.jpg" data-cap="G-code real da inferior direita COM esqueleto (giroide 20%). As almas azuis sobem das bases das ventosas (Z 20 mm) até os anéis do encaixe com o superior (Z 70 mm)." data-alt="Três camadas reais do G-code da inferior: pés com almas, corpo com anéis rosa e amarelo e o anel do encaixe no topo">Inferior</button>
+                <button role="tab" data-img="assets/img/r07/encaixe_r07_com.jpg" data-img2="assets/img/r07/encaixe_r07_sem.jpg" data-cap="Corte vertical da garra montada pelos anéis da asa direita (modificadores do Orca, não é FE). À esquerda COM: a alma da inferior (azul) chega até o encaixe e continua no superior. À direita SEM: só os tubos dos furos." data-alt="Corte vertical da garra montada mostrando o esqueleto azul da inferior chegando ao encaixe com o superior, com e sem esqueleto">Encaixe com × sem</button>
+              </div>
             </div>
-            <figure class="glass media" style="margin:0 0 16px; background:#fff">
-              <img style="max-height:31vh; width:auto; max-width:100%; margin:0 auto; display:block; object-fit:contain" src="assets/img/bancada/r07_camadas.png" alt="Três camadas reais do G-code da peça superior R07: almas sólidas em azul ligando o cubo aos ressaltos, anéis rosa e amarelo nos ressaltos e o colar roxo com anel e seis raios na flange do robô">
-              <figcaption>G-code real (Orca, K1 Max, 1:1) da peça superior. Azul: almas e tubos. Roxo: colar. Rosa: ressaltos. Amarelo: assento. As paredes externas seguem o contorno original.</figcaption>
+            <figure class="glass media esq-fig" style="margin:0 0 14px; background:#fff">
+              <div class="esq-imgs">
+                <img id="esq-img" src="assets/img/r07/camadas_r07_superior.jpg" alt="Três camadas reais do G-code do superior com esqueleto: almas azuis ligando o cubo aos ressaltos, anéis rosa e amarelo e o colar roxo na flange">
+                <img id="esq-img2" hidden alt="">
+              </div>
+              <figcaption id="esq-cap">G-code real (Orca, K1 Max, 1:1) da peça superior COM esqueleto. Azul: almas e tubos 100%. Roxo: colar 55%. Rosa: ressaltos 35%. Amarelo: assento 20%. O resto é giroide 25%.</figcaption>
             </figure>
             <div class="g4">
-              <div class="glass stat sm"><b><span data-r07="R07_COM.garra_g" data-d="0">1.497</span> g</b><span>garra completa</span><small>R06: <span data-r07="R06.garra_g" data-d="0">1.642</span> g · −8,8%</small></div>
-              <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.sup_g" data-d="0">731</span> g</b><span>superior · giroide 25%</span><small>R06: 754 g · −3,1%</small></div>
-              <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.inf_g" data-d="0">383</span> g</b><span>cada inferior · giroide 20%</span><small>R06: 444 g · −13,7%</small></div>
-              <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.tempo_h" data-d="1">78,9</span> h</b><span>impressão total</span><small>R06: 85,8 h · filamento <span data-r07="R07_COM.fil_g" data-d="0">1.809</span> g</small></div>
+              <div class="glass stat sm"><b><span data-r07="R07_COM.garra_g" data-d="0">1.498</span> g</b><span>garra COM esqueleto</span><small><span data-r07="R07_COM.pct_tritan" data-d="1" data-sign="1">−5,0</span>% vs Tritan · aguenta <span data-r07="R07_COM.kg_pa6" data-d="0">100</span> kg</small></div>
+              <div class="glass stat sm"><b class="ink"><span data-r07="R07_SEM.garra_g" data-d="0">1.433</span> g</b><span>garra SEM esqueleto</span><small><span data-r07="R07_SEM.pct_tritan" data-d="1" data-sign="1">−9,1</span>% vs Tritan · aguenta <span data-r07="R07_SEM.kg_pa6" data-d="0">93</span> kg</small></div>
+              <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.sup_g" data-d="0">731</span> / <span data-r07="R07_SEM.sup_g" data-d="0">666</span> g</b><span>superior com / sem</span><small>giroide 25% · inferior <span data-r07="R07_COM.inf_g" data-d="0">383</span> g cada (20%)</small></div>
+              <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.tempo_h" data-d="1">78,9</span> / <span data-r07="R07_SEM.tempo_h" data-d="1">75,2</span> h</b><span>impressão com / sem</span><small>filamento <span data-r07="R07_COM.fil_g" data-d="0">1.809</span> / <span data-r07="R07_SEM.fil_g" data-d="0">1.745</span> g</small></div>
             </div>
-            <p class="note">Almas de 3 mm a 100%, tubos de 7,5 mm nos furos, colar 55%, ressaltos 35%, assento 20%. Tudo fica 2,25 mm para dentro (5 perímetros). Massas do fatiamento, sem suportes.</p>
+            <p class="note">Almas de 3 mm a 100%, tubos de 7,5 mm nos furos, colar 55%, ressaltos 35%, assento 20%. Tudo fica 2,25 mm para dentro (5 perímetros): o exterior não muda. Massas do fatiamento, sem suportes.</p>
           </div>
         </section>
 
@@ -622,7 +633,7 @@
               <div class="seg" id="viewer2-parts" style="margin-top:18px" role="tablist" aria-label="Variante exibida">
                 <button class="on" data-part="r07_sup_com" data-info="Superior R07 com esqueleto: almas + tubos 100% (99 cm³), colar 55% (120 cm³), ressaltos 35% (145 cm³), assento 20% (27 cm³)">Superior com</button>
                 <button data-part="r07_sup_sem" data-info="Superior R07 sem esqueleto: só os tubos dos furos a 100% (17 cm³); colar, ressaltos e assento iguais">Superior sem</button>
-                <button data-part="r07_inf" data-info="Inferior R07: tubos dos furos 100%, ressaltos e bases das ventosas 35%, assento 20% (sem almas)">Inferior</button>
+                <button data-part="r07_inf" data-info="Inferior R07 com esqueleto: almas + tubos 100% (23 cm³) subindo até o encaixe, ressaltos e bases das ventosas 35%, assento 20%">Inferior</button>
               </div>
               <p class="note" id="viewer2-info">Superior R07 com esqueleto: almas + tubos 100% (99 cm³), colar 55% (120 cm³), ressaltos 35% (145 cm³), assento 20% (27 cm³)</p>
               <div class="cutrow"><label for="viewer2-cut">Corte</label><input id="viewer2-cut" type="range" min="5" max="100" value="100" data-out="viewer2-cut-out"><output id="viewer2-cut-out">peça inteira</output></div>
@@ -690,6 +701,32 @@
                 <p class="note"><span class="tag sim">FE voxels 3 mm</span> Garra montada (superior + inferior), engaste na flange, 2 caixas numa asa; ponto crítico na raiz da flange. Pico × 2,2 (calibrado no Fusion R06). Tranco = carga em 10 ms, peça superior. <b class="fs-bad">⚠ FS &lt; 1</b> = rompe entre camadas antes dos 24 kg. A Tritan instalada não tem FE com preenchimento; o R04 de bancada é a peça maciça.</p>
               </div>
             </div>
+          </div>
+        </section>
+
+        <!-- Vídeo: uma asa pega os 24 kg (garra montada, COM × SEM × uniforme) -->
+        <section class="slide" data-title="24 kg numa asa" id="s-video-carga">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Comparação · Erro de processo</span>
+              <h2>Uma asa pega os <em>24 kg</em> de uma vez</h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1.75fr) minmax(0,1fr); align-items:start">
+              <figure class="glass media" style="margin:0; background:#fff">
+                <video id="video-carga" data-autoplay src="assets/video/carga_24kg_asa.mp4" poster="assets/video/carga_24kg_asa_poster.jpg"
+                       muted loop playsinline preload="metadata" disablepictureinpicture controls
+                       style="display:block; width:100%; height:auto; max-height:56vh; aspect-ratio:16/9; object-fit:contain"
+                       aria-label="Animação: garra montada com esqueleto, sem esqueleto e giroide 30% uniforme recebendo de 0 a 24 kg numa asa, colorida pela tensão entre camadas; as duas versões R07 aguentam e o giroide 30% rompe só no PAHT"></video>
+                <figcaption>Carga sobe de 0 a 24 kg em 6 s · deformação ampliada 15× · cor = tensão entre camadas ÷ resistência</figcaption>
+              </figure>
+              <div style="display:grid; gap:10px">
+                <div class="glass stat sm"><b><span data-r07="R07_COM.fs24_pa6" data-d="2">4,18</span></b><span>FS a 24 kg · R07 com</span><small>aguenta até <span data-r07="R07_COM.kg_pa6" data-d="0">100</span> kg em PA6-CF · <span data-r07="R07_COM.kg_paht" data-d="0">38</span> kg em PAHT</small></div>
+                <div class="glass stat sm"><b class="ink"><span data-r07="R07_SEM.fs24_pa6" data-d="2">3,89</span></b><span>FS a 24 kg · R07 sem</span><small>aguenta até <span data-r07="R07_SEM.kg_pa6" data-d="0">93</span> kg em PA6-CF · <span data-r07="R07_SEM.kg_paht" data-d="0">35</span> kg em PAHT</small></div>
+                <div class="glass stat sm"><b class="ink"><span data-r07="UNI_30.fs24_paht" data-d="2">0,97</span></b><span>FS PAHT · giroide 30%</span><small>mesma massa do R07 com; em PAHT rompe antes dos 24 kg</small></div>
+                <p class="note" style="margin:0">As duas versões R07 seguram os 24 kg numa asa com folga, com ou sem esqueleto. O pico fica na raiz da flange do superior; a inferior trabalha bem abaixo.</p>
+              </div>
+            </div>
+            <p class="note"><span class="tag sim">FE voxels 3 mm</span> Garra montada (superior + inferior direita), junta tratada como colada, giroide homogeneizado, pico × 2,2 (calibrado no Fusion R06). Linear-elástico: o campo escala com o peso. Estimativa, não é ensaio.</p>
           </div>
         </section>
 
@@ -774,6 +811,38 @@
               </div>
             </div>
             <p class="note"><span class="tag sim">FE transiente 3D</span> Peça superior, voxels de 3 mm, giroide homogeneizado (Gibson-Ashby). Estimativa, não é ensaio.</p>
+          </div>
+        </section>
+
+        <!-- Vídeos: o tranco por dentro (distribuição × absorção pelo giroide) -->
+        <section class="slide" data-title="Tranco por dentro" id="s-video-tranco">
+          <div class="wrap wide">
+            <div class="s-head compact" style="display:flex; justify-content:space-between; align-items:end; gap:16px; flex-wrap:wrap">
+              <div>
+                <span class="kicker">Comparação · Impacto em 3D</span>
+                <h2>O tranco <em>por dentro</em> da peça</h2>
+              </div>
+              <div class="seg" data-video="video-tranco" data-cap="video-tranco-cap" role="tablist" aria-label="Vídeo exibido">
+                <button class="on" role="tab" aria-selected="true" data-src="assets/video/impacto_distribuicao.mp4" data-poster="assets/video/impacto_distribuicao_poster.jpg" data-cap="80 ms em 11 s · cada ponto é um voxel de 3 mm · os mais solicitados aparecem por cima · deformação ampliada 40×">Como se distribui</button>
+                <button role="tab" aria-selected="false" data-src="assets/video/absorcao_giroide.mp4" data-poster="assets/video/absorcao_giroide_poster.jpg" data-cap="Só os voxels de giroide · cor = quanto da própria resistência ele usa · curva = % da energia de deformação no giroide">Como o giroide absorve</button>
+              </div>
+            </div>
+            <div class="split" style="--cols:minmax(0,1.75fr) minmax(0,1fr); align-items:start">
+              <figure class="glass media" style="margin:0; background:#fff">
+                <video id="video-tranco" data-autoplay src="assets/video/impacto_distribuicao.mp4" poster="assets/video/impacto_distribuicao_poster.jpg"
+                       muted loop playsinline preload="metadata" disablepictureinpicture controls
+                       style="display:block; width:100%; height:auto; max-height:56vh; aspect-ratio:16/9; object-fit:contain"
+                       aria-label="Animação 3D da peça superior com e sem esqueleto durante o tranco de 24 kg: a solicitação sai da asa e chega à raiz da flange"></video>
+                <figcaption id="video-tranco-cap">80 ms em 11 s · cada ponto é um voxel de 3 mm · os mais solicitados aparecem por cima · deformação ampliada 40×</figcaption>
+              </figure>
+              <div style="display:grid; gap:10px">
+                <div class="glass stat sm"><b><span data-r07="R07_COM.impacto.t_pico" data-d="1">21,5</span> ms</b><span>pico do tranco</span><small>a onda sai da asa e chega à flange depois que a carga já entrou (10 ms)</small></div>
+                <div class="glass stat sm"><b class="ink"><span data-vid="absorcao_giroide.F25_COM.pct_energia_giroide_no_pico" data-d="0">–</span>%</b><span>da energia fica no giroide</span><small>no pico, R07 com · sem esqueleto: <span data-vid="absorcao_giroide.F25_SEM.pct_energia_giroide_no_pico" data-d="0">–</span>%</small></div>
+                <div class="glass stat sm"><b class="ink"><span data-r07="R07_COM.impacto.fi_gir" data-d="2" data-pct="1">26</span>%</b><span>da resistência do giroide</span><small>usada no pico · sem esqueleto: <span data-r07="R07_SEM.impacto.fi_gir" data-d="2" data-pct="1">27</span>%</small></div>
+                <p class="note" style="margin:0">O giroide divide a carga com a casca e as almas e fica longe do limite. Quem decide a ruptura é a camada sólida na raiz da flange.</p>
+              </div>
+            </div>
+            <p class="note"><span class="tag sim">FE transiente 3D</span> Peça superior, Newmark + Rayleigh 3%, voxels de 3 mm, giroide homogeneizado, massa de 24 kg nos ressaltos. Linear-elástico: mostra energia guardada, não dano. Estimativa, não é ensaio.</p>
           </div>
         </section>
 
@@ -991,11 +1060,11 @@
     <figure><img src="" alt=""><figcaption></figcaption></figure>
   </dialog>
 
-  <script src="assets/js/main.js?v=r07d"></script>
-  <script src="assets/js/bancada-dados.js?v=r07d"></script>
-  <script src="assets/js/bancada.js?v=r07d"></script>
-  <script src="assets/js/r07-dados.js?v=r07d"></script>
-  <script src="assets/js/r07.js?v=r07d"></script>
-  <script type="module" src="assets/js/viewer3d.js?v=r07d"></script>
+  <script src="assets/js/main.js?v=r07e"></script>
+  <script src="assets/js/bancada-dados.js?v=r07e"></script>
+  <script src="assets/js/bancada.js?v=r07e"></script>
+  <script src="assets/js/r07-dados.js?v=r07e"></script>
+  <script src="assets/js/r07.js?v=r07e"></script>
+  <script type="module" src="assets/js/viewer3d.js?v=r07e"></script>
 </body>
 </html>

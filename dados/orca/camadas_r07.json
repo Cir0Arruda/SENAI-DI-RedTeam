@@ -1,0 +1,106 @@
+{
+  "SUPERIOR": {
+    "8.00": {
+      "zones": [
+        "esqueleto 100%",
+        "rosa 35%",
+        "amarelo 20%"
+      ],
+      "segments": {
+        "wall": 5755,
+        "infill": 26420,
+        "skin": 4238
+      }
+    },
+    "40.00": {
+      "zones": [
+        "esqueleto 100%"
+      ],
+      "segments": {
+        "wall": 3561,
+        "infill": 20684,
+        "skin": 2938
+      }
+    },
+    "74.00": {
+      "zones": [
+        "esqueleto 100%",
+        "colar 55%"
+      ],
+      "segments": {
+        "wall": 1804,
+        "infill": 11622,
+        "skin": 3401
+      }
+    }
+  },
+  "SUPERIOR_SEM": {
+    "8.00": {
+      "zones": [
+        "tubos 100%",
+        "rosa 35%",
+        "amarelo 20%"
+      ],
+      "segments": {
+        "wall": 5755,
+        "infill": 27087,
+        "skin": 3561
+      }
+    },
+    "40.00": {
+      "zones": [],
+      "segments": {
+        "wall": 3561,
+        "infill": 22319,
+        "skin": 1769
+      }
+    },
+    "74.00": {
+      "zones": [
+        "tubos 100%",
+        "colar 55%"
+      ],
+      "segments": {
+        "wall": 1804,
+        "infill": 14551,
+        "skin": 2251
+      }
+    }
+  },
+  "INFERIOR": {
+    "20.00": {
+      "zones": [
+        "esqueleto 100%",
+        "pés 35%"
+      ],
+      "segments": {
+        "wall": 4542,
+        "infill": 12693,
+        "skin": 1515
+      }
+    },
+    "52.00": {
+      "zones": [
+        "esqueleto 100%",
+        "rosa 35%",
+        "amarelo 20%"
+      ],
+      "segments": {
+        "wall": 2544,
+        "infill": 11831,
+        "skin": 2734
+      }
+    },
+    "70.00": {
+      "zones": [
+        "esqueleto 100%",
+        "rosa 35%"
+      ],
+      "segments": {
+        "wall": 1652,
+        "infill": 1,
+        "skin": 873
+      }
+    }
+  }
+}

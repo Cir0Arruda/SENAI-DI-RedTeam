@@ -64,7 +64,7 @@
     "FS_24kg_PAHT_CF15_Z18.2": 1.58,
     "FS_30kg_PAHT_CF15_Z18.2": 1.27,
     "PICO": 2.2,
-    "tempo_s": 156.5
+    "tempo_s": 89.7
   },
   "R07_SEM": {
     "variante": "R07_SEM",
@@ -131,7 +131,7 @@
     "FS_24kg_PAHT_CF15_Z18.2": 1.47,
     "FS_30kg_PAHT_CF15_Z18.2": 1.18,
     "PICO": 2.2,
-    "tempo_s": 175.4
+    "tempo_s": 88.6
   },
   "UNI_30": {
     "variante": "UNI_30",
@@ -198,7 +198,7 @@
     "FS_24kg_PAHT_CF15_Z18.2": 0.97,
     "FS_30kg_PAHT_CF15_Z18.2": 0.78,
     "PICO": 2.2,
-    "tempo_s": 99.8
+    "tempo_s": 83.5
   },
   "UNI_40": {
     "variante": "UNI_40",

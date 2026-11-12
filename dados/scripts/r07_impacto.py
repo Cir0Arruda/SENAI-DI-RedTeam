@@ -97,6 +97,8 @@ def run(m, name):
     nsteps = int(round(T_END_MS / DT_MS))
     hist = {'t_ms': [], 'disp_mm': [], 'FI_z': [], 'FI_xy': [], 'FI_giroide': [], 'F_N': []}
     frames = []
+    C3 = '--campos3d' in sys.argv
+    f3 = {'t': [], 'fi_s': [], 'fi_g': [], 'ue': [], 'E_sol': [], 'E_gir': [], 'e_el': []}
     U = np.zeros(ndof)
     t0 = time.time()
     for k in range(1, nsteps + 1):
@@ -123,6 +125,17 @@ def run(m, name):
         hist['t_ms'].append(round(t * 1000, 2)); hist['disp_mm'].append(float(disp[payload].mean()))
         hist['FI_z'].append(float(fz_all.max())); hist['FI_xy'].append(float(fxy_all.max()))
         hist['FI_giroide'].append(float(finf.max())); hist['F_N'].append(round(F24 * min(1.0, t / (TR_MS / 1000)), 1))
+        if C3 and k % 2 == 0:   # campos 3D por voxel (vídeos): índice de falha sólido/giroide e energia de deformação por classe
+            es = np.zeros(len(cen)); eg = np.zeros(len(cen))
+            for c, (sig, fr) in stc.items():
+                w = 0.5 * (sig * eps).sum(1) * fr * H ** 3          # N·mm = mJ
+                if c >= 0.999:
+                    es += w
+                else:
+                    eg += w
+            f3['t'].append(t * 1000); f3['fi_s'].append(np.maximum(fz_all, fxy_all).astype(np.float16))
+            f3['fi_g'].append(finf.astype(np.float16)); f3['ue'].append(U[L['edofs']].reshape(-1, 8, 3).mean(1).astype(np.float16))
+            f3['E_sol'].append(float(es.sum())); f3['E_gir'].append(float(eg.sum())); f3['e_el'].append((es + eg).astype(np.float16))
         if k % 2 == 0:
             ue = U[L['edofs']].reshape(-1, 8, 3).mean(1)[sec]
             fi = np.maximum(np.maximum(fz_all, fxy_all), finf)[sec]
@@ -146,6 +159,9 @@ def run(m, name):
                         t=np.array([f[0] for f in frames]), us=np.array([f[1] for f in frames]),
                         uz=np.array([f[2] for f in frames]), fi=np.array([f[3] for f in frames]),
                         lab=np.array([1.0 if solid_frac[j] > 0.5 else 0.0 for j in sec]))
+    if C3:
+        np.savez_compressed(OUT / f'campos3d_{name}.npz', cen=cen.astype(np.float32), solid_frac=solid_frac.astype(np.float32),
+                            **{k_: np.array(v_) for k_, v_ in f3.items()}, H=H, PICO=PICO, TR_MS=TR_MS)
     print(json.dumps({k: v_ for k, v_ in rec.items() if k != 'hist'}, ensure_ascii=False), flush=True)
     return rec
 
@@ -208,4 +224,5 @@ if __name__ == '__main__':
         m = p.load_model()
         for n in names:
             run(m, n)
-    video(names)
+    if '--campos3d' not in sys.argv:   # só campos: não sobrescreve o vídeo comparativo de 4 variantes
+        video(names)

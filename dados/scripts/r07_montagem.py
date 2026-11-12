@@ -102,6 +102,16 @@ def evaluate(c: Combo, name, du, dl, kgs=(24.0, 30.0)):
             rec[f'hot_{tag}'] = cen[i].round(1).tolist()
         rec['FI_giroide_max'] = round(inf, 4)
         out['casos'][k] = rec
+        if k == 'ONE_24' and '--campos' in sys.argv:   # campos por voxel p/ os vídeos (carga linear: escala com o peso)
+            fg = np.zeros(len(cen), np.float32)
+            for cl, (s_, f_) in st.items():
+                if cl < 0.999:
+                    m_ = f_ > 0.05
+                    fg[m_] = np.maximum(fg[m_], v.vm(s_[m_]) / v.infill_strength(cl))
+            Ue = U[L['edofs']].reshape(-1, 8, 3).mean(1)
+            np.savez_compressed(OUT / f'campos_{name}_ONE_24.npz', cen=cen.astype(np.float32), U=Ue.astype(np.float32),
+                                fi_solido=np.where(has, np.maximum(fxy, fz), 0).astype(np.float32), fi_z=np.where(has, fz, 0).astype(np.float32),
+                                fi_giroide=fg, frac_solido=fr.astype(np.float32), dono=owner.astype(np.int8), H=H, PICO=PICO)
         if k == 'ONE_24':
             fi = np.where(has, np.maximum(fxy, fz), 0)
             fig, axs = plt.subplots(1, 2, figsize=(14, 6), layout='constrained')

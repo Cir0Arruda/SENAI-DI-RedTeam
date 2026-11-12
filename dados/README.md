@@ -25,10 +25,24 @@ A garra instalada é de Tritan Hexa3D 30%. Sua massa é estimada como o fatiamen
 | `fadiga/` | vida estimada da peça superior | curva S-N normalizada conservadora + regra de Miner |
 | `decisao/` | tabela consolidada para decidir com × sem esqueleto (`DECISAO_ESQUELETO.json`, `dados_comparativos.csv`) | junta as pastas acima |
 | `materiais/`, `fusion/` | cartões de material e montagem do modelo do Fusion | |
+| `videos/` | números mostrados junto dos vídeos (`videos_r07.json`) | gerados por `scripts/r07_videos.py` só com campos já calculados |
 | `scripts/` | scripts Python que geraram os resultados, as figuras e o vídeo | |
 
 Cargas: massa × (g + 5 m/s²), com as duas caixas numa asa só (erro da seladora). 24 kg → 355,4 N; 30 kg → 444,2 N.
 Resistência entre camadas (Z): PA6-CF 48 MPa e PAHT CF15 18,2 MPa (TDS dos fabricantes).
+
+## Vídeos de simulação
+
+Os vídeos do site são renderizados a partir dos campos já calculados. Nenhum vídeo cria resultado novo.
+
+| Vídeo | O que mostra | De onde vem |
+|---|---|---|
+| `impacto_r07_comparativo.mp4` | corte vertical da peça superior das 4 variantes durante o tranco | `r07_impacto.py` |
+| `carga_24kg_asa.mp4` | garra montada com e sem esqueleto e giroide 30% uniforme, carga de 0 a 24 kg numa asa; FS final de cada uma | `r07_montagem.py --campos` (FE estático linear: o campo escala com o peso) |
+| `impacto_distribuicao.mp4` | peça superior com e sem esqueleto, índice de falha voxel a voxel durante os 80 ms do tranco | `r07_impacto.py --campos3d` |
+| `absorcao_giroide.mp4` | só o giroide: quanto da própria resistência ele usa e a parcela da energia de deformação que ele guarda | `r07_impacto.py --campos3d` |
+
+As figuras de camadas (`camadas_r07_*.jpg`) vêm dos G-codes reais do Orca. O corte do encaixe (`encaixe_r07_*.jpg`) é feito com os modificadores do Orca, então mostra geometria e não é FE.
 
 ## Limites
 
