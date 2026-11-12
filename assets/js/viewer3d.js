@@ -17,7 +17,9 @@ const PARTS = {
   pads: { shell: 'pads', color: C.pad },
   r07_sup_com: { shell: 'garra_superior', zones: [['r07/sup_solido', C.solido], ['r07/sup_colar', C.colar], ['r07/sup_rosa', C.rosa], ['r07/sup_amarelo', C.amarelo]] },
   r07_sup_sem: { shell: 'garra_superior', zones: [['r07/sup_sem_solido', C.solido], ['r07/sup_sem_colar', C.colar], ['r07/sup_sem_rosa', C.rosa], ['r07/sup_sem_amarelo', C.amarelo]] },
-  r07_inf: { shell: 'garra_inferior', zones: [['r07/inf_solido', C.solido], ['r07/inf_rosa', C.rosa], ['r07/inf_pes', C.pes], ['r07/inf_amarelo', C.amarelo]] }
+  r07_inf: { shell: 'garra_inferior', zones: [['r07/inf_solido', C.solido], ['r07/inf_rosa', C.rosa], ['r07/inf_pes', C.pes], ['r07/inf_amarelo', C.amarelo]] },
+  // garra superior + 8 metades de PAD na posição de montagem (animação de encaixe)
+  encaixe: { shell: 'garra_superior', pads: ['A1', 'A2', 'A3', 'A4'].flatMap(a => [`pads_montados/${a}_L`, `pads_montados/${a}_R`]) }
 };
 
 function makeViewer(box) {
@@ -45,8 +47,8 @@ function makeViewer(box) {
     renderer.domElement.addEventListener('pointerdown', () => { controls.autoRotate = false; });
     new ResizeObserver(resize).observe(box);
     resize();
-    const first = tabs.querySelector('button.on') || tabs.querySelector('button');
-    show(first.dataset.part);
+    const first = tabs && (tabs.querySelector('button.on') || tabs.querySelector('button'));
+    show(first ? first.dataset.part : box.dataset.part);
   }
 
   function resize() {
@@ -58,6 +60,7 @@ function makeViewer(box) {
 
   function loop() {
     if (!running) return;
+    if (group && group.userData.anim) group.userData.anim(performance.now() / 1000);
     controls.update(); renderer.render(scene, camera);
     requestAnimationFrame(loop);
   }
@@ -70,18 +73,54 @@ function makeViewer(box) {
     if (out) out.textContent = f >= 1 ? 'peça inteira' : `corte a ${Math.round((bb.max.y - bb.min.y) * f)} mm da base`;
   }
 
+  // Cada PAD (par de metades) gira em torno do próprio ressalto e desce até encaixar; as metades se fecham.
+  function addPads(g, padGeos, c) {
+    const items = [];
+    for (let i = 0; i < padGeos.length; i += 2) {
+      const pair = padGeos.slice(i, i + 2).map(src => {
+        const geo = src.clone(); geo.translate(-c.x, -c.y, -c.z); geo.rotateX(-Math.PI / 2); geo.computeVertexNormals();
+        geo.computeBoundingBox(); return geo;
+      });
+      const bb = new THREE.Box3(); pair.forEach(geo => bb.union(geo.boundingBox));
+      const ctr = bb.getCenter(new THREE.Vector3());
+      const pivot = new THREE.Group(); pivot.position.copy(ctr);
+      const halves = pair.map(geo => {
+        geo.translate(-ctr.x, -ctr.y, -ctr.z);
+        const m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: C.pad, roughness: 0.5, metalness: 0.02, side: THREE.DoubleSide }));
+        const hc = geo.boundingBox.clone().translate(new THREE.Vector3(-ctr.x, -ctr.y, -ctr.z)).getCenter(new THREE.Vector3());
+        m.userData.dir = new THREE.Vector3(hc.x, 0, hc.z).normalize();
+        pivot.add(m); return m;
+      });
+      g.add(pivot); items.push({ pivot, home: ctr.clone(), halves, delay: (i / 2) * 0.35 });
+    }
+    const ease = t => t < 0 ? 0 : t > 1 ? 1 : 1 - Math.pow(1 - t, 3);
+    g.userData.anim = t => {
+      const T = 7, u = t % T;
+      items.forEach(it => {
+        // 0–1,6 s: girando no alto · 1,6–3,4 s: desce e fecha · 3,4–6,4 s: montado · 6,4–7 s: sobe de novo
+        const p = u < 6.4 ? ease((u - 1.6 - it.delay) / 1.8) : 1 - ease((u - 6.4) / 0.6);
+        const lift = (1 - p) * 80, open = (1 - p) * 26;
+        it.pivot.position.set(it.home.x, it.home.y + lift, it.home.z);
+        it.pivot.rotation.y = (1 - p) * (t * 1.6 + it.delay * 3);
+        it.halves.forEach(h => h.position.copy(h.userData.dir).multiplyScalar(open));
+      });
+    };
+  }
+
   async function show(name) {
     const def = PARTS[name], my = ++token;
     msg.textContent = 'Carregando modelo…'; msg.style.display = '';
     try {
-      const names = [def.shell, ...(def.zones || []).map(z => z[0])];
+      const names = [def.shell, ...(def.zones || []).map(z => z[0]), ...(def.pads || [])];
       const geos = await Promise.all(names.map(loadRaw));
       if (my !== token) return;
       const shellGeo = geos[0];
       shellGeo.computeBoundingBox();
       const c = shellGeo.boundingBox.getCenter(new THREE.Vector3());
       const g = new THREE.Group();
+      const nz = (def.zones || []).length;
       geos.forEach((src, i) => {
+        if (i > nz) return;            // PADs posicionados: tratados abaixo
         const geo = src.clone();
         geo.translate(-c.x, -c.y, -c.z);
         geo.rotateX(-Math.PI / 2);     // STL em Z-up → cena Y-up
@@ -98,9 +137,12 @@ function makeViewer(box) {
         if (hasZones && !zone) mesh.renderOrder = 2;
         g.add(mesh);
       });
+      if (def.pads) addPads(g, geos.slice(1 + nz), c);
       if (group) { scene.remove(group); group.traverse(o => { if (o.isMesh) { o.geometry.dispose(); o.material.dispose(); } }); }
       group = g; scene.add(group);
+      if (group.userData.anim) group.userData.anim(1e-3 + 5);   // mede já montado
       group.userData.bb = new THREE.Box3().setFromObject(group);
+      if (def.pads) group.userData.bb.max.y += 80;                    // espaço para os PADs subirem
       if (cut) { cut.closest('.cutrow').hidden = !def.zones; setCut(); }
       const sph = group.userData.bb.getBoundingSphere(new THREE.Sphere());
       const r = sph.radius;
@@ -117,7 +159,7 @@ function makeViewer(box) {
     }
   }
 
-  tabs.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+  if (tabs) tabs.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
     tabs.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
     if (info) info.textContent = b.dataset.info || '';
     if (started) show(b.dataset.part);

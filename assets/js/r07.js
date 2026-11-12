@@ -284,6 +284,21 @@
     });
   }
 
+  // slide da solução: alterna entre o vídeo da carga e a vista 3D por dentro (sem esqueleto)
+  function solucao() {
+    const seg = document.getElementById('sol-tabs');
+    if (!seg) return;
+    const v = document.getElementById('video-sol');
+    seg.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+      seg.querySelectorAll('button').forEach(x => {
+        const on = x === b; x.classList.toggle('on', on); x.setAttribute('aria-selected', on);
+        document.getElementById(x.dataset.pane).hidden = !on;
+      });
+      if (v) { if (b.dataset.pane === 'sol-video') { v.currentTime = 0; v.play().catch(() => {}); } else v.pause(); }
+      window.dispatchEvent(new Event('resize'));
+    }));
+  }
+
   // slide do esqueleto: COM / SEM / inferior / encaixe
   function esqueleto() {
     const seg = document.getElementById('esq-tabs');
@@ -298,7 +313,7 @@
     }));
   }
 
-  chartMassa(); chartPesoCarga(); chartCarga(); chartImpacto(); tables(); mapas(); galeria(); video(); videoTabs(); esqueleto();
+  chartMassa(); chartPesoCarga(); chartCarga(); chartImpacto(); tables(); mapas(); galeria(); video(); videoTabs(); esqueleto(); solucao();
 })();
 
 // Animações: números contam até o valor e barras/linhas entram quando o slide abre.

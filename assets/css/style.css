@@ -622,3 +622,42 @@ dialog.qr-big .nav-btn { position: absolute; top: 12px; right: 12px; }
 #s-conjunto .tbl { font-size: 12.5px; }
 #tbl-conjunto td, #s-conjunto .tbl th { padding: 4px 7px; }
 
+
+/* ---------- Remake: capa SAI, custo de oportunidade, solução e PAD ---------- */
+.capa-sai { display: flex; flex-direction: column; justify-content: center; min-height: 100%; }
+.capa-sai h1 { font-size: clamp(56px, 9vw, 128px); margin: 10px 0 14px; }
+.capa-sai .lead { max-width: 640px; }
+.team { margin-top: 34px; }
+.team h3 { margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+.team-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.team-list li { padding: 10px 16px; border-radius: 999px; background: rgba(255,255,255,.7); border: 1px solid rgba(21,21,29,.08); font-weight: 500; }
+.co-head { display: flex; align-items: center; justify-content: space-between; gap: 10px 16px; flex-wrap: wrap; margin: 14px 0 10px; }
+.co-head h3 { margin: 0; font-size: 18px; }
+.co-head h3 small { font-weight: 400; color: var(--ink-2); font-size: 14px; }
+.num-ph { display: grid; place-items: center; text-align: center; min-height: 46vh; gap: 6px; }
+.num-ph b { font-size: 22px; }
+.num-ph p { margin: 0; color: var(--ink-2); max-width: 520px; }
+.card.win { box-shadow: 0 0 0 2px var(--red), var(--shadow); }
+#s-sai .viewer, #s-solucao .viewer { width: 100%; }
+#s-solucao .zones { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 6px 14px; }
+#s-solucao .zone { font-size: 13px; }
+.pv-wrap { position: relative; }
+.pv-wrap video { display: block; width: 100%; height: auto; max-height: 54vh; aspect-ratio: 1680/630; object-fit: contain; }
+.pv-legend { position: absolute; right: 2.5%; top: 6%; width: 36%; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; font-size: clamp(11px, 1vw, 14px); color: var(--ink-2); }
+.pv-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.pv-legend i { width: 18px; height: 4px; border-radius: 2px; }
+.pv-legend em { flex-basis: 100%; order: -1; font-style: normal; font-weight: 600; color: var(--ink); }
+.pad-hero { padding: 16px 20px; }
+.pad-hero b { font-size: clamp(44px, 5.4vw, 72px); line-height: 1; }
+.lim { padding: 14px 16px; }
+.lim .tag { margin-bottom: 6px; }
+.lim-n { display: block; font-size: clamp(26px, 2.6vw, 36px); font-weight: 600; letter-spacing: -.03em; line-height: 1.1; }
+.lim.ok .lim-n { color: #17784f; }
+.lim.bad .lim-n { color: var(--red); }
+.lim p { margin: 4px 0 0; font-size: 14px; line-height: 1.45; }
+.lim-a { color: var(--ink-2); }
+.tag.bad { background: rgba(229, 35, 47, .1); color: #b3141e; border-color: transparent; }
+@media (max-width: 900px) {
+  .pv-legend { position: static; width: auto; padding: 8px 12px 10px; }
+  .capa-sai h1 { font-size: clamp(48px, 15vw, 80px); }
+}

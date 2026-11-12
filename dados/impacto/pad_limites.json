@@ -1,0 +1,42 @@
+{
+ "modelo": "1D em série, estimativa (não é FEA nem ensaio)",
+ "garra": "R07 sem esqueleto, seção local do encaixe; ruptura do FE da garra montada",
+ "k_pad_N_mm": 125.5,
+ "k_garra_local_N_mm": 791.7,
+ "k_tpu_macico_N_mm": 761.0,
+ "golpe_referencia": {
+  "massa_kg": 0.263,
+  "v_m_s": 1.0,
+  "energia_J": 0.132,
+  "pico_sem_PAD_N": 456.3,
+  "pico_com_PAD_N": 168.8,
+  "reducao_pct": 63.0
+ },
+ "pad_no_limite": {
+  "compressao_mm": 1.88,
+  "forca_N": 237.0,
+  "forca_kgf": 24.1,
+  "energia_J": 0.258,
+  "garra_pct_da_ruptura": 17.0,
+  "garra_fs": 5.8
+ },
+ "garra_rompe": {
+  "forca_N": 1382.0,
+  "forca_kgf": 140.9,
+  "energia_com_PAD_J": 2.65,
+  "energia_sem_PAD_J": 1.21,
+  "vezes_mais_energia_com_PAD": 2.2
+ },
+ "analogias": {
+  "pad_queda_celular_200g_cm": 13.0,
+  "garra_queda_1kg_com_PAD_cm": 27.0,
+  "garra_queda_1kg_sem_PAD_cm": 12.0
+ },
+ "hipoteses": [
+  "área de contato 100 mm² e lei do PAD do modelo R03",
+  "núcleo giroide 40% esmagado a 44% de deformação (Gibson-Ashby)",
+  "garra local = viga substituta do R03 com giroide 25%",
+  "ruptura = carga máxima do FE da garra montada R07 SEM (PA6-CF, Z 48 MPa), limite conservador",
+  "sem amortecimento, sem efeito de taxa, sem rasgo do TPU"
+ ]
+}

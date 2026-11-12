@@ -128,7 +128,7 @@
     }));
   }
 
-  /* ---------- Custo: escolha da opção (neutro até alguém tocar) ---------- */
+  /* ---------- Custo: começa na opção escolhida (sem esqueleto); tocar outra linha mostra a conta dela ---------- */
   const D = window.R07;
   const rows = [...document.querySelectorAll('tr.pick')];
   if (rows.length && D) {
@@ -170,7 +170,9 @@
       r.addEventListener('click', () => choose(r));
       r.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); choose(r); } });
     });
-    neutral();
+    // opção escolhida pela equipe: R07 sem esqueleto
+    const sem = rows.find(r => r.dataset.k === 'R07_SEM');
+    sem ? choose(sem) : neutral();
   }
 
   /* ---------- QR ampliado ---------- */
