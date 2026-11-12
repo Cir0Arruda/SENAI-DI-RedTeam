@@ -790,3 +790,19 @@ dialog.qr-big .nav-btn { position: absolute; top: 12px; right: 12px; }
   .logos .lg-aji { height: 36px; }
 }
 .logos.logos-end { margin: 48px auto 0; justify-content: center; }
+
+/* materiais em linguagem simples */
+.mat-fig img { display: block; width: 100%; height: auto; max-height: 300px; object-fit: contain; }
+.mat-leg { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; }
+.mat-leg li { display: grid; grid-template-columns: 16px 1fr; gap: 8px; align-items: start; font-size: 13.5px; line-height: 1.4; color: var(--ink-2); }
+.mat-leg i { width: 16px; height: 16px; margin-top: 2px; border-radius: 4px; }
+.mat-leg .k-casca { background: #fff; border: 3px solid #2b2d36; }
+.mat-leg .k-trama { background: repeating-linear-gradient(135deg, #8a8c96 0 1px, #f2f2f4 1px 4px); border: 1px solid #c9cad1; }
+.mat-leg .k-anel { background: #fff; border: 3px solid #d0378f; }
+.mat-why { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.mat-c { padding: 14px 16px; }
+.mat-c h3 { margin: 4px 0 4px; font-size: 16px; }
+.mat-c p { margin: 0; font-size: 14px; line-height: 1.45; }
+.mat-c.red { border: 1.5px solid rgba(229, 35, 47, .45); }
+.mat-n { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--red); }
+@media (max-width: 900px) { .mat-why { grid-template-columns: 1fr; } }
