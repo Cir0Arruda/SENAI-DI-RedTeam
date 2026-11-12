@@ -1,0 +1,44 @@
+{
+  "members": [
+    {
+      "class": "BRepBody",
+      "doc": "Returns a collection of all of the lumps in the body.",
+      "name": "lumps",
+      "namespace": "adsk.fusion",
+      "readonly": true,
+      "type": "property"
+    },
+    {
+      "class": "BRepBody",
+      "doc": "Returns the bounding box of this body.",
+      "name": "boundingBox",
+      "namespace": "adsk.fusion",
+      "readonly": true,
+      "type": "property"
+    },
+    {
+      "class": "BRepBody",
+      "doc": "Read-write property that gets and sets the current appearance of the body. Setting this property will result in applying\nan override appearance to the body and the AppearanceSourceType property will return OverrideAppearanceSource. Setting\nthis property to null will remove any override.\nThis property is only valid if the IsTransient property is false.",
+      "name": "appearance",
+      "namespace": "adsk.fusion",
+      "type": "property"
+    },
+    {
+      "class": "BRepBody",
+      "doc": "Gets and sets the material assigned to this body.\nThis property is only valid if the IsTransient property is false.",
+      "name": "material",
+      "namespace": "adsk.fusion",
+      "type": "property"
+    },
+    {
+      "class": "BRepBody",
+      "doc": "Read-write property that gets the source of the appearance for the body. If this returns OverrideAppearanceSource, an override exists\non this body. The override can be removed by setting the Appearance property to null.\nThis property is only valid if the IsTransient property is false.",
+      "name": "appearanceSourceType",
+      "namespace": "adsk.fusion",
+      "readonly": true,
+      "type": "property"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

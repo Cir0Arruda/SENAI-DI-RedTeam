@@ -1,0 +1,14 @@
+{
+  "revision": "R02",
+  "status": "envelopes_verified_not_sliced_or_printed",
+  "units": "mm",
+  "core_infill_percent": 40,
+  "pattern": "gyroid, hypothesis accepted",
+  "walls": 3,
+  "nominal_line_width_mm": 0.4,
+  "nominal_wall_mm": 1.2,
+  "layer_mm": 0.2,
+  "top_bottom_mm": 1.2,
+  "source_build_direction": "source component Z",
+  "note": "Centered XY, minZ0. Confirm orientation, supports and retention in slicer; thin roof may be all solid skins. 40% does not mean 40% of solid whole-envelope mass."
+}

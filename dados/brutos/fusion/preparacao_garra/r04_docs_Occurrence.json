@@ -1,0 +1,13 @@
+{
+  "members": [
+    {
+      "class": "Occurrence",
+      "doc": "Gets and sets if the light bulb of this occurrence as displayed in the browser is on or off.\nAn occurrence will only be visible if the light bulb is switched on. However,\nthe light bulb can be on and the occurrence still invisible if a higher level occurrence\nin the assembly context is not visible because its light bulb is off.",
+      "name": "isLightBulbOn",
+      "namespace": "adsk.fusion",
+      "type": "property"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

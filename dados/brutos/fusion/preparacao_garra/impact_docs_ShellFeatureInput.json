@@ -1,0 +1,20 @@
+{
+  "members": [
+    {
+      "class": "ShellFeatureInput",
+      "doc": "Gets and sets the inside thickness.",
+      "name": "insideThickness",
+      "namespace": "adsk.fusion",
+      "type": "property"
+    },
+    {
+      "class": "ShellFeatureInput",
+      "doc": "Gets and sets the outside thickness.",
+      "name": "outsideThickness",
+      "namespace": "adsk.fusion",
+      "type": "property"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

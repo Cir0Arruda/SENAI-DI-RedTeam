@@ -1,0 +1,30 @@
+{
+  "members": [
+    {
+      "class": "InterferenceResult",
+      "doc": "Returns the first entity involved in the interference",
+      "name": "entityOne",
+      "namespace": "adsk.fusion",
+      "readonly": true,
+      "type": "property"
+    },
+    {
+      "class": "InterferenceResult",
+      "doc": "Returns the second entity involved in the interference",
+      "name": "entityTwo",
+      "namespace": "adsk.fusion",
+      "readonly": true,
+      "type": "property"
+    },
+    {
+      "class": "InterferenceResult",
+      "doc": "Returns a transient BRepBody that represents the volume of interference.",
+      "name": "interferenceBody",
+      "namespace": "adsk.fusion",
+      "readonly": true,
+      "type": "property"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

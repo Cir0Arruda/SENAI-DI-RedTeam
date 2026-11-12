@@ -1,0 +1,14 @@
+{
+  "members": [
+    {
+      "class": "Appearances",
+      "doc": "\nAdd an Appearance to a Design by copying an existing Appearance from Favorites, a Library or from the\nappearances stored in the Design. This method currently only applies to the Appearances collection from a Design and\ncannot be used to copy an Appearance to a library.\nappearanceToCopy : The Appearance you want to copy. The Appearance to copy can be from Favorites, a Library or from the\nappearances stored in the Design.\nname : The Appearance name to apply to the copy.\nReturns the newly created Appearance or null if the copy operation failed.\n",
+      "name": "addByCopy",
+      "namespace": "adsk.core",
+      "signature": "(appearanceToCopy: Appearance, name: str) -> adsk.core.Appearance",
+      "type": "function"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

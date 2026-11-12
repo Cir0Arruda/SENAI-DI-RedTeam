@@ -1,0 +1,6 @@
+Abra ABRIR_RELATORIO.html ou01_Relatorio/RELATORIO_SAMI_HEXA15.pdf.
+A revisão atual usa garra PA-CF:5 perímetros e Hexa3D15%; PAD TPU95A40%.
+Cálculo matemático1D com hipóteses. A animação é cinemática ilustrativa2x, não FEA nem previsão de falha.
+Os3D são geometrias nominais; o preenchimento é parâmetro de fatiador e não foi gerado no CAD.
+Os arquivos anteriores30% e o estudo bloqueado estão somente em05_Historico. Não são o resultado deste caso.
+Nenhum novo job Fusion ou custo em nuvem. Desgaste, temperatura e vida útil não foram caracterizados.

@@ -1,0 +1,155 @@
+{
+  "revision": "R05",
+  "confirmation": "Native Orca CLI calculations and actual Gcode confirmed; GUI import awaits custom-preset warning approval",
+  "external_gripper_geometry_changes_prohibited": true,
+  "original_source_CAD_unchanged": true,
+  "cases": [
+    {
+      "case": "SUPERIOR",
+      "original_native_sliced_archive": "desempenho\\05_Orca\\Resultado_SUPERIOR_K1MAX\\SUPERIOR_K1MAX_FATIADO_REFERENCIA.3mf",
+      "slicing_completed_and_Gcode_present": true,
+      "outside": false,
+      "material_type": [
+        "PA6-CF"
+      ],
+      "density": [
+        "1.09"
+      ],
+      "normal_project_scale": 1,
+      "main_sparse_density": "20%",
+      "sparse_pattern": "tpmsd",
+      "walls": "5",
+      "modifier_densities": [
+        "30%",
+        "50%",
+        "70%"
+      ],
+      "part_mass_g": 780.3264879513956,
+      "all_filament_mass_g": 895.37,
+      "warnings": [
+        {
+          "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+          "level": "3",
+          "error_code": "1000C002"
+        }
+      ],
+      "image": "SUPERIOR_PREENCHIMENTOS_INTERNOS.png"
+    },
+    {
+      "case": "INFERIOR_ESQ",
+      "original_native_sliced_archive": "desempenho\\05_Orca\\Resultado_INFERIOR_ESQ_K1MAX\\INFERIOR_ESQ_K1MAX_FATIADO_REFERENCIA.3mf",
+      "slicing_completed_and_Gcode_present": true,
+      "outside": false,
+      "material_type": [
+        "PA6-CF"
+      ],
+      "density": [
+        "1.09"
+      ],
+      "normal_project_scale": 1,
+      "main_sparse_density": "20%",
+      "sparse_pattern": "tpmsd",
+      "walls": "5",
+      "modifier_densities": [
+        "30%",
+        "50%",
+        "70%"
+      ],
+      "part_mass_g": 419.3411806988694,
+      "all_filament_mass_g": 517.13,
+      "warnings": [
+        {
+          "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+          "level": "3",
+          "error_code": "1000C002"
+        }
+      ],
+      "image": "INFERIOR_ESQ_PREENCHIMENTOS_INTERNOS.png"
+    },
+    {
+      "case": "INFERIOR_DIR",
+      "original_native_sliced_archive": "desempenho\\05_Orca\\Resultado_INFERIOR_DIR_K1MAX\\INFERIOR_DIR_K1MAX_FATIADO_REFERENCIA.3mf",
+      "slicing_completed_and_Gcode_present": true,
+      "outside": false,
+      "material_type": [
+        "PA6-CF"
+      ],
+      "density": [
+        "1.09"
+      ],
+      "normal_project_scale": 1,
+      "main_sparse_density": "20%",
+      "sparse_pattern": "tpmsd",
+      "walls": "5",
+      "modifier_densities": [
+        "30%",
+        "50%",
+        "70%"
+      ],
+      "part_mass_g": 419.31618617619506,
+      "all_filament_mass_g": 517.15,
+      "warnings": [
+        {
+          "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+          "level": "3",
+          "error_code": "1000C002"
+        }
+      ],
+      "image": "INFERIOR_DIR_PREENCHIMENTOS_INTERNOS.png"
+    },
+    {
+      "case": "PAD",
+      "original_native_sliced_archive": "desempenho\\05_Orca\\Resultado_PAD_K1MAX\\PAD_K1MAX_FATIADO_REFERENCIA.3mf",
+      "slicing_completed_and_Gcode_present": true,
+      "outside": false,
+      "material_type": [
+        "TPU"
+      ],
+      "density": [
+        "1.22"
+      ],
+      "normal_project_scale": 1,
+      "main_sparse_density": "40%",
+      "sparse_pattern": "gyroid",
+      "walls": "3",
+      "modifier_densities": [],
+      "part_mass_g": 93.0596892177923,
+      "all_filament_mass_g": 139.01,
+      "warnings": [
+        {
+          "msg": "bed_temperature_too_high_than_filament",
+          "level": "3",
+          "error_code": "1000C001"
+        },
+        {
+          "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+          "level": "3",
+          "error_code": "1000C002"
+        }
+      ],
+      "image": "PAD_PREENCHIMENTOS_INTERNOS.png"
+    }
+  ],
+  "GUI_session_discrepancy": "Session initially showedPLA Basic and only2modifiers. Saved user file preserved as05_Orca/R05_SESSAO_USUARIO_PRESERVADA.3mf. Do not use it for the confirmed campaign. Canonical4projects copied from verified R04 package to05_Orca/CONFIRMADO_R05.",
+  "GUI_current": "Opening CONFIRMADO_R05/GARRA_SUPERIOR_TPMSD_K1MAX_ESCALA_REAL.3mf; awaiting custom K1Max preset warning; approval requested, not assumed. No sending to printer.",
+  "physics": {
+    "new_solver_jobs": 0,
+    "new_results": false,
+    "impact": "blocked_effective_PA_zonal_laws_PAD_compression_contact",
+    "temperature": "blocked_thermal_and_temperature_dependent_data",
+    "wear_and_life": "blocked_calibrated_laws_and_actual_duty",
+    "damping": "standard_Fusion_hyperelastic_is_elastic_not_hysteresis"
+  },
+  "video": "paused",
+  "sources": [
+    {
+      "title": "Autodesk Hyperelastic materials",
+      "url": "https://help.autodesk.com/cloudhelp/ENU/Fusion-Simulate/files/SIM-HYPERELASTIC-MATERIALS-CONCEPT.htm"
+    },
+    {
+      "title": "León-Calero et al2021, Polymers13,3551",
+      "url": "https://www.mdpi.com/2073-4360/13/20/3551",
+      "applicability": "Primary experimental TPU compression/unloading data,10/20/50/80/100percent, slow10mm/min to25percent strain, fourcycles. Does not directly characterize this40percent PAD at robot impact rates."
+    }
+  ]
+}

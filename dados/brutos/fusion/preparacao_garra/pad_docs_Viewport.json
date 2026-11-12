@@ -1,0 +1,30 @@
+{
+  "members": [
+    {
+      "class": "Viewport",
+      "doc": "\nSaves the current view to the specified image file. The view is re-rendered to the specified size and not\njust scaled from the existing view. This allows you to generate higher resolution images than you could\ndo with just a screen capture.\nfilename : The full filename, including the path, of the image file. The type of image file to be created is inferred from the extension of the filename.\nwidth : The width in pixels of the output image. A value of zero indicates that the current width of the viewport is to be used.\nheight : The height in pixels of the output image. A value of zero indicates that the current height of the viewport is to be used.\nReturns true if the operation was successful.\n",
+      "name": "saveAsImageFile",
+      "namespace": "adsk.core",
+      "signature": "(filename: str, width: int, height: int) -> bool",
+      "type": "function"
+    },
+    {
+      "class": "Viewport",
+      "doc": "\nForces a camera change so that all of the graphics are visible in the viewport.\nReturns true if the fit was successful.\n",
+      "name": "fit",
+      "namespace": "adsk.core",
+      "signature": "() -> bool",
+      "type": "function"
+    },
+    {
+      "class": "Viewport",
+      "doc": "\nSaves the current view to the specified image file. The view is re-rendered to the specified size and not\njust scaled from the existing view. This allows you to generate higher resolution images than you could\ndo with just a screen capture.\noptions : A SaveImageFileOptions object that defines the various options that define how the image should be created.\nThe SaveImageFileOptions can be created by using the static create method on the SaveImageFileOptions class.\nReturns true if the operation was successful.\n",
+      "name": "saveAsImageFileWithOptions",
+      "namespace": "adsk.core",
+      "signature": "(options: SaveImageFileOptions) -> bool",
+      "type": "function"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

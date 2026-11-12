@@ -1,0 +1,151 @@
+{
+  "SUPERIOR": {
+    "figure": "desempenho\\06_Engenharia\\R06\\CAMADAS_R06_SUPERIOR.png",
+    "layers": {
+      "6.00": {
+        "zones": [
+          "ROSA70",
+          "AZUL50",
+          "AMARELO30"
+        ],
+        "segments": {
+          "wall": 6270,
+          "infill": 28629,
+          "skin": 7300
+        },
+        "align_offset_xy_mm": [
+          727.83,
+          -161.25
+        ]
+      },
+      "22.00": {
+        "zones": [
+          "ROSA70",
+          "AZUL50",
+          "AMARELO30"
+        ],
+        "segments": {
+          "wall": 5947,
+          "infill": 55372,
+          "skin": 4538
+        },
+        "align_offset_xy_mm": [
+          727.83,
+          -161.25
+        ]
+      },
+      "55.00": {
+        "zones": [
+          "AZUL50"
+        ],
+        "segments": {
+          "wall": 4003,
+          "infill": 48374,
+          "skin": 1735
+        },
+        "align_offset_xy_mm": [
+          727.83,
+          -161.25
+        ]
+      }
+    }
+  },
+  "INFERIOR_ESQ": {
+    "figure": "desempenho\\06_Engenharia\\R06\\CAMADAS_R06_INFERIOR_ESQ.png",
+    "layers": {
+      "20.00": {
+        "zones": [
+          "AZUL50"
+        ],
+        "segments": {
+          "wall": 4544,
+          "infill": 14994,
+          "skin": 1495
+        },
+        "align_offset_xy_mm": [
+          855.33,
+          -133.0
+        ]
+      },
+      "52.00": {
+        "zones": [
+          "ROSA70",
+          "AZUL50",
+          "AMARELO30"
+        ],
+        "segments": {
+          "wall": 2510,
+          "infill": 33805,
+          "skin": 3081
+        },
+        "align_offset_xy_mm": [
+          855.33,
+          -133.0
+        ]
+      },
+      "68.00": {
+        "zones": [
+          "ROSA70"
+        ],
+        "segments": {
+          "wall": 1649,
+          "infill": 1,
+          "skin": 830
+        },
+        "align_offset_xy_mm": [
+          855.33,
+          -133.0
+        ]
+      }
+    }
+  },
+  "INFERIOR_DIR": {
+    "figure": "desempenho\\06_Engenharia\\R06\\CAMADAS_R06_INFERIOR_DIR.png",
+    "layers": {
+      "20.00": {
+        "zones": [
+          "AZUL50"
+        ],
+        "segments": {
+          "wall": 4542,
+          "infill": 14987,
+          "skin": 1501
+        },
+        "align_offset_xy_mm": [
+          600.33,
+          -133.0
+        ]
+      },
+      "52.00": {
+        "zones": [
+          "ROSA70",
+          "AZUL50",
+          "AMARELO30"
+        ],
+        "segments": {
+          "wall": 2544,
+          "infill": 32373,
+          "skin": 3220
+        },
+        "align_offset_xy_mm": [
+          600.33,
+          -133.0
+        ]
+      },
+      "68.00": {
+        "zones": [
+          "ROSA70"
+        ],
+        "segments": {
+          "wall": 1641,
+          "infill": 1,
+          "skin": 830
+        },
+        "align_offset_xy_mm": [
+          600.33,
+          -133.0
+        ]
+      }
+    }
+  }
+}

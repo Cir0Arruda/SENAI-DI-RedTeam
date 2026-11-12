@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-11",
+  "phase": "pad95_geometry_complete_event_study_blocked",
+  "geometry": "SAMI_PAD95_CONFORMAL_R01.f3d",
+  "report": "PAD95_RELATORIO_R01.md",
+  "image": "SAMI_PAD95_MONTAGEM_R01.png",
+  "print_parts": 8,
+  "cad_interference_check": "passed against primary structure only",
+  "event_study": {
+    "file": "SAMI_PAD95_EVENTO_A1_ESTUDO_PENDENTE.f3d",
+    "name": "A1 PAD95 40pct - PENDENTE CALIBRACAO",
+    "type": "Dynamic Event Simulation",
+    "duration_s": 0.02,
+    "result_intervals": 40,
+    "precheck": "blocked",
+    "visible_messages": [
+      "material with invalid properties",
+      "no contacts or connectors between independent bodies"
+    ],
+    "velocity_applied": false,
+    "supports_applied": false,
+    "contacts_applied": false,
+    "mesh_generated": false,
+    "submitted": false,
+    "solved": false
+  },
+  "infill": "40pct gyroid specified for slicer, not explicit CAD or calibrated FEA",
+  "durability_hours": null,
+  "wear_rate": null,
+  "impact_reduction_percent": null,
+  "animation_created": false,
+  "next_required": "Calibrate printed shell/core compression, unloading and rate response; qualify retention; finish contacts, supports and velocity; solve one A1 case with mesh/energy checks before sweep."
+}

@@ -1,0 +1,75 @@
+[
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 66174,
+    "volume_mm3": 815631.5906075956,
+    "CAD_volume_cm3": 815.9197910970213,
+    "volume_error_percent": 0.03532215942919963,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "03_STL_Garra\\GARRA_INFERIOR_ESQ_BASE20.stl",
+    "type": "whole_part",
+    "dimensions_mm": [
+      203.0,
+      287.9991912841797,
+      72.70001220703125
+    ],
+    "shift_world_mm": [
+      -705.3338012695312,
+      283.0005569458008,
+      197.17337036132812
+    ]
+  },
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 552,
+    "volume_mm3": 180557.58884469885,
+    "CAD_volume_cm3": 180.8002280104275,
+    "volume_error_percent": 0.1342029091438148,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "04_Modificadores\\INFERIOR_ESQ\\MOD_ROSA_70.stl",
+    "type": "nonprinting_modifier",
+    "infill_percent": 70
+  },
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 196,
+    "volume_mm3": 725676.0354793674,
+    "CAD_volume_cm3": 725.6467382971352,
+    "volume_error_percent": 0.004037389088372777,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "04_Modificadores\\INFERIOR_ESQ\\MOD_AZUL_50.stl",
+    "type": "nonprinting_modifier",
+    "infill_percent": 50
+  },
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 1200,
+    "volume_mm3": 724925.2324033167,
+    "CAD_volume_cm3": 725.6917600398583,
+    "volume_error_percent": 0.10562716551990814,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "04_Modificadores\\INFERIOR_ESQ\\MOD_AMARELO_30.stl",
+    "type": "nonprinting_modifier",
+    "infill_percent": 30
+  }
+]

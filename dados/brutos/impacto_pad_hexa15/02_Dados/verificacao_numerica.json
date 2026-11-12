@@ -1,0 +1,9 @@
+{
+  "energy_balance_max_abs_error_J": 8.326672684688674e-17,
+  "time_samples": 1401,
+  "duration_ms": 7,
+  "formula_peak_and_time_history_consistent": true,
+  "visual_body_facets": 28440,
+  "visual_pad_facets": 9998,
+  "visual_mesh_decimation_display_only": false
+}

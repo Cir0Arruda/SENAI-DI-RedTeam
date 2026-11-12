@@ -1,0 +1,277 @@
+{
+  "document": "SAMI - PAD95 CONFORMAL - PROTOTIPO R01",
+  "components": [
+    {
+      "name": "3113636",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 0.2515564769749655,
+          "faces": 1
+        }
+      ]
+    },
+    {
+      "name": "3150308",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 0.044532075864637186,
+          "faces": 4
+        }
+      ]
+    },
+    {
+      "name": "KQ2E08-021",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 5.078580467181658,
+          "faces": 22
+        }
+      ]
+    },
+    {
+      "name": "KQ2E08-022",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 1.0819815734989482,
+          "faces": 23
+        }
+      ]
+    },
+    {
+      "name": "0106936",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 3.600600893514714,
+          "faces": 12
+        }
+      ]
+    },
+    {
+      "name": "SE-0406194",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 36.0195672058809,
+          "faces": 7
+        }
+      ]
+    },
+    {
+      "name": "SE-0400777",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 2.0910045395002834,
+          "faces": 29
+        }
+      ]
+    },
+    {
+      "name": "SE-0406197_1",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 0.2501454099168471,
+          "faces": 14
+        }
+      ]
+    },
+    {
+      "name": "3150310",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 0.006278080219117772,
+          "faces": 3
+        }
+      ]
+    },
+    {
+      "name": "Arruela_M16",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 1.5835983168583425,
+          "faces": 4
+        }
+      ]
+    },
+    {
+      "name": "3150310_MIR1",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 0.006278080219117772,
+          "faces": 3
+        }
+      ]
+    },
+    {
+      "name": "SE-0406194_MIR1",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 36.0195672058821,
+          "faces": 7
+        }
+      ]
+    },
+    {
+      "name": "0106936_MIR1",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 3.600600893514768,
+          "faces": 12
+        }
+      ]
+    },
+    {
+      "name": "SE-0400777_MIR1",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 2.091004539500277,
+          "faces": 29
+        }
+      ]
+    },
+    {
+      "name": "SE-0406197_1_MIR1",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 0.2501454099168478,
+          "faces": 14
+        }
+      ]
+    },
+    {
+      "name": "Arruela_M16_MIR",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 1.5835983168583425,
+          "faces": 4
+        }
+      ]
+    },
+    {
+      "name": "KQ2E08-022_MIR",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 1.08198157349895,
+          "faces": 23
+        }
+      ]
+    },
+    {
+      "name": "Suporte_Vacuostato",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 2.910244165091893,
+          "faces": 30
+        }
+      ]
+    },
+    {
+      "name": "3113636_MIR1",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 0.2515564769749655,
+          "faces": 1
+        }
+      ]
+    },
+    {
+      "name": "3150308_MIR1",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 0.044532075864637186,
+          "faces": 4
+        }
+      ]
+    },
+    {
+      "name": "KQ2E08-021_MIR",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 5.078580467181658,
+          "faces": 22
+        }
+      ]
+    },
+    {
+      "name": "SE-0406197",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 35.08623763196012,
+          "faces": 221
+        }
+      ]
+    },
+    {
+      "name": "SE-0406197_MIR1",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 35.08623763201645,
+          "faces": 221
+        }
+      ]
+    },
+    {
+      "name": "Suporte_Vacuostato_1",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 2.910244165091886,
+          "faces": 30
+        }
+      ]
+    },
+    {
+      "name": "Suporte_Ventosas_S",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 815.9197910970163,
+          "faces": 1413
+        }
+      ]
+    },
+    {
+      "name": "Vacuostato",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 23.088009924702014,
+          "faces": 915
+        }
+      ]
+    },
+    {
+      "name": "Corpo Supor",
+      "bodies": [
+        {
+          "name": "Corpo1",
+          "volume_cm3": 1391.1909963637681,
+          "faces": 2676
+        }
+      ]
+    }
+  ],
+  "backup": "FUSION\\preparacao_garra\\SAMI_RECUPERADO_ANTES_PAD95_2026-11-11.f3d",
+  "occurrences": 136
+}

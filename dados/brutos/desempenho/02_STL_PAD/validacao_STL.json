@@ -1,0 +1,194 @@
+[
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 6682,
+    "volume_mm3": 17728.945168586873,
+    "CAD_volume_cm3": 17.734651023776557,
+    "volume_error_percent": 0.032173484451623116,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 2,
+    "global_winding_flipped": false,
+    "file": "PAD95_R02_A1_L_ENVELOPE_INFILL40.stl",
+    "dimensions_mm": [
+      71.42987060546875,
+      51.6363525390625,
+      25.500335693359375
+    ],
+    "shift_from_world_mm": [
+      -674.0489196777344,
+      204.81878662109375,
+      269.37335205078125
+    ]
+  },
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 3314,
+    "volume_mm3": 10933.379688661546,
+    "CAD_volume_cm3": 10.93741976401281,
+    "volume_error_percent": 0.03693810275581473,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "PAD95_R02_A1_R_ENVELOPE_INFILL40.stl",
+    "dimensions_mm": [
+      37.93597412109375,
+      59.28843688964844,
+      25.50048828125
+    ],
+    "shift_from_world_mm": [
+      -697.3589782714844,
+      226.65131378173828,
+      269.3728942871094
+    ]
+  },
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 6490,
+    "volume_mm3": 12686.464276829485,
+    "CAD_volume_cm3": 12.693371382482114,
+    "volume_error_percent": 0.05441505999077871,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "PAD95_R02_A2_L_ENVELOPE_INFILL40.stl",
+    "dimensions_mm": [
+      71.42938232421875,
+      59.993408203125,
+      25.501556396484375
+    ],
+    "shift_from_world_mm": [
+      -680.6184997558594,
+      338.997314453125,
+      269.371826171875
+    ]
+  },
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 5458,
+    "volume_mm3": 11573.09894816877,
+    "CAD_volume_cm3": 11.580308135340633,
+    "volume_error_percent": 0.06225384581834274,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "PAD95_R02_A2_R_ENVELOPE_INFILL40.stl",
+    "dimensions_mm": [
+      71.42999267578125,
+      52.349578857421875,
+      25.5
+    ],
+    "shift_from_world_mm": [
+      -674.0488586425781,
+      360.82276916503906,
+      269.3733825683594
+    ]
+  },
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 5264,
+    "volume_mm3": 11573.031660935701,
+    "CAD_volume_cm3": 11.582325613019455,
+    "volume_error_percent": 0.08024253845278186,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "PAD95_R02_A3_L_ENVELOPE_INFILL40.stl",
+    "dimensions_mm": [
+      71.42990112304688,
+      52.362640380859375,
+      25.500030517578125
+    ],
+    "shift_from_world_mm": [
+      -481.61878967285156,
+      360.8162078857422,
+      269.37335205078125
+    ]
+  },
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 6184,
+    "volume_mm3": 12693.135172725588,
+    "CAD_volume_cm3": 12.700482128381877,
+    "volume_error_percent": 0.05784784846766032,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "PAD95_R02_A3_R_ENVELOPE_INFILL40.stl",
+    "dimensions_mm": [
+      71.42935180664062,
+      59.993408203125,
+      25.50164794921875
+    ],
+    "shift_from_world_mm": [
+      -475.0491485595703,
+      338.997314453125,
+      269.3717346191406
+    ]
+  },
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 3738,
+    "volume_mm3": 10938.508700310345,
+    "CAD_volume_cm3": 10.943191269518172,
+    "volume_error_percent": 0.042789795887699045,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "PAD95_R02_A4_L_ENVELOPE_INFILL40.stl",
+    "dimensions_mm": [
+      37.93743896484375,
+      59.28831481933594,
+      25.5001220703125
+    ],
+    "shift_from_world_mm": [
+      -458.3094177246094,
+      226.65125274658203,
+      269.3732604980469
+    ]
+  },
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 7390,
+    "volume_mm3": 17736.504148613894,
+    "CAD_volume_cm3": 17.742084554473216,
+    "volume_error_percent": 0.03145293238901486,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "PAD95_R02_A4_R_ENVELOPE_INFILL40.stl",
+    "dimensions_mm": [
+      71.42984008789062,
+      51.6395263671875,
+      25.50042724609375
+    ],
+    "shift_from_world_mm": [
+      -481.61875915527344,
+      204.82037353515625,
+      269.37335205078125
+    ]
+  }
+]

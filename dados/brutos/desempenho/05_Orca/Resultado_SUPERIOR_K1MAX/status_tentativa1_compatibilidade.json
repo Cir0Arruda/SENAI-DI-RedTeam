@@ -1,0 +1,14 @@
+{
+  "case": "SUPERIOR",
+  "status": "failed",
+  "start_UTC": "2026-11-11T15:28:13.055618+00:00",
+  "input": "desempenho\\05_Orca\\GARRA_SUPERIOR_TPMSD_K1MAX_ESCALA_REAL.3mf",
+  "output": "desempenho\\05_Orca\\Resultado_SUPERIOR_K1MAX\\SUPERIOR_K1MAX_FATIADO_REFERENCIA.3mf",
+  "printer_reference": "Creality K1 Max300mm,0.4mm",
+  "orientation": "original source Z-up",
+  "scale": 1,
+  "slicing_not_FEA": true,
+  "sent_to_printer": false,
+  "returncode": 4294967279,
+  "end_UTC": "2026-11-11T15:28:14.353225+00:00"
+}

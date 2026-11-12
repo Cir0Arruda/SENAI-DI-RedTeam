@@ -1,0 +1,13 @@
+{
+  "members": [
+    {
+      "class": "Material",
+      "doc": "Returns the name of this Material. This is the name of the material as seen in the user interface.\nThe name can only be edited if the material is in a Design or the favorites list.",
+      "name": "name",
+      "namespace": "adsk.core",
+      "type": "property"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

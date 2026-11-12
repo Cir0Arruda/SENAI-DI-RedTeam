@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "text": "{\n    \"message\": \"{\\\"dup\\\": [[\\\"CASCA\\\", \\\"R07_PA6CF_SOLIDO_100\\\"], [\\\"NUCLEO\\\", \\\"R07_PA6CF_NUCLEO_COM\\\"]], \\\"ok\\\": [\\\"CASCA\\\", \\\"NUCLEO\\\"], \\\"after\\\": [[\\\"CASCA\\\", \\\"R07_PA6CF_SOLIDO_100_Y\\\", 28780], [\\\"NUCLEO\\\", \\\"R07_PA6CF_NUCLEO_COM_Y\\\", 10038]]}\\n\",\n    \"success\": true\n}",
+      "type": "text"
+    }
+  ]
+}

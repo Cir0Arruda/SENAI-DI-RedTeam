@@ -1,0 +1,50 @@
+{
+  "document": "SAMI PAD95 EVENTO A1 - GEOMETRIA NAO CALIBRADA",
+  "bodies": [
+    "Corpo Supor",
+    "PAD95_A1_L_ENVELOPE_INFILL40",
+    "PAD95_A1_R_ENVELOPE_INFILL40",
+    "PAD95_A2_L_ENVELOPE_INFILL40",
+    "PAD95_A2_R_ENVELOPE_INFILL40",
+    "PAD95_A3_L_ENVELOPE_INFILL40",
+    "PAD95_A3_R_ENVELOPE_INFILL40",
+    "PAD95_A4_L_ENVELOPE_INFILL40",
+    "PAD95_A4_R_ENVELOPE_INFILL40",
+    "IMPACTOR_ACO_R20_GAP1mm"
+  ],
+  "event_plan": {
+    "status": "geometry_prepared_not_solved",
+    "region": "A1",
+    "sphere_radius_mm": 20,
+    "mass_kg": 0.26305602486058527,
+    "density_kg_m3": 7850,
+    "initial_gap_mm": 1,
+    "velocity_direction": [
+      0.837191883459278,
+      0.5469092706015384,
+      0
+    ],
+    "velocity_cases_m_s": [
+      0.5,
+      1,
+      2
+    ],
+    "energy_cases_J": [
+      0.03288200310757316,
+      0.13152801243029263,
+      0.5261120497211705
+    ],
+    "event_duration_s_hypothesis": 0.02,
+    "output_intervals": 40,
+    "contact": "separation/sliding impactor-PAD; PAD-PA contact and retention require calibration",
+    "boundary": "flange hole XYZ fixation exploratory, same as baseline",
+    "infill": "40pct gyroid core, skin 1.2mm; CAD envelope is not an effective 40pct FEA law",
+    "blockers": [
+      "40pct compression loading/unloading curve",
+      "rate/damping law",
+      "retention/contact characterization",
+      "PA-CF failure/directional data for failure prediction"
+    ],
+    "submitted": false
+  }
+}

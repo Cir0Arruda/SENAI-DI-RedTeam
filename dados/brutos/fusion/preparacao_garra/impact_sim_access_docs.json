@@ -1,0 +1,220 @@
+{
+  "classes": [
+    {
+      "doc": "\n** This class is a preview feature and may change in future releases. Do not use it in distributed programs. **\n\nObject that represents a study inside a simulation model.\n",
+      "functions": [
+        {
+          "doc": "Activates this study",
+          "name": "activate"
+        },
+        {
+          "doc": "Creates a copy of this study",
+          "name": "clone"
+        },
+        {
+          "doc": "Deletes this study from the simulation model",
+          "name": "deleteMe"
+        },
+        {
+          "doc": "Initiates a solve operation for this study",
+          "name": "solve"
+        },
+        {
+          "doc": "Initiates mesh generation for this study",
+          "name": "generateMesh"
+        },
+        {
+          "doc": "Opens the results viewer for this study, transitioning the Simulation workspace\ninto the Results environment",
+          "name": "showResults"
+        },
+        {
+          "doc": "Closes the results viewer for this study, returning the Simulation workspace to the\nsetup environment",
+          "name": "exitResults"
+        }
+      ],
+      "name": "Study",
+      "namespace": "adsk.sim",
+      "properties": [
+        {
+          "doc": "The type of study",
+          "name": "type"
+        },
+        {
+          "doc": "The name of the study as displayed in the browser",
+          "name": "name"
+        },
+        {
+          "doc": "The LoadCases collection that provides access to existing load cases in the study",
+          "name": "loadCases"
+        },
+        {
+          "doc": "All settings for this study",
+          "name": "settings"
+        },
+        {
+          "doc": "Gets the current pre-check state of the study indicating whether it is ready to solve",
+          "name": "precheckState"
+        },
+        {
+          "doc": "Gets the pre-check messages (errors and warnings) for this study",
+          "name": "precheckMessages"
+        },
+        {
+          "doc": "Gets whether this study is the active study in the simulation model",
+          "name": "isActive"
+        },
+        {
+          "doc": "The Contacts collection that provides access to existing contacts in the study",
+          "name": "contacts"
+        },
+        {
+          "doc": "Returns the material assignments for all bodies in the study",
+          "name": "materialAssignments"
+        },
+        {
+          "doc": "Gets the current state of this study's solve results",
+          "name": "resultState"
+        },
+        {
+          "doc": "Gets the current state of this study's mesh",
+          "name": "meshState"
+        },
+        {
+          "doc": "The PointMasses collection that provides access to the point masses in the study",
+          "name": "pointMasses"
+        },
+        {
+          "doc": "Returns the safety factor thresholds used for results visualization color bands",
+          "name": "safetyFactorThresholds"
+        }
+      ],
+      "type": "class"
+    },
+    {
+      "attributes": [
+        {
+          "doc": "Metric (SI) unit system\nLength: mm, Mass: kg, Time: s, Force: N, Pressure: MPa,\nTemperature: K, Energy: J, Power: W, Acceleration: m/s^2, Flow Rate: CMH, Angle: deg,\nVelocity: m/s, Viscosity: Ns/m^2.",
+          "name": "MetricSIUnitSystem"
+        },
+        {
+          "doc": "U.S. (in) unit system\nLength: in, Mass: lbmass, Time: s, Force: lbforce, Pressure: psi,\nTemperature: F, Energy: Btu, Power: Btu/s, Acceleration: ft/s^2, Flow Rate: CFM, Angle: deg,\nVelocity: ft/s, Viscosity: lbforce * s/ft^2.",
+          "name": "ImperialUnitSystem"
+        },
+        {
+          "doc": "Custom unit system that allows any combination of units per quantity.",
+          "name": "CustomUnitSystem"
+        }
+      ],
+      "doc": "\n** This enum is a preview feature and may change in future releases. Do not use it in distributed programs. **\n\nPredefined unit systems available for simulation studies.\n\nAttributes:\n    MetricSIUnitSystem: Metric (SI) unit system:\n        Length: mm, Mass: kg, Time: s, Force: N, Pressure: MPa,\n        Temperature: K, Energy: J, Power: W, Acceleration: m/s^2, Flow Rate: CMH, Angle: deg,\n        Velocity: m/s, Viscosity: Ns/m^2.\n    ImperialUnitSystem: U.S. (in) unit system:\n        Length: in, Mass: lbmass, Time: s, Force: lbforce, Pressure: psi,\n        Temperature: F, Energy: Btu, Power: Btu/s, Acceleration: ft/s^2, Flow Rate: CFM, Angle: deg,\n        Velocity: ft/s, Viscosity: lbforce * s/ft^2.\n    CustomUnitSystem: Custom unit system that allows any combination of units per quantity.\n",
+      "name": "SimulationUnitSystems",
+      "namespace": "adsk.sim",
+      "type": "class"
+    },
+    {
+      "attributes": [
+        {
+          "doc": "The mesh state is unknown or the study does not support mesh generation.",
+          "name": "UnknownMeshState"
+        },
+        {
+          "doc": "No mesh is available. The study has not been meshed.",
+          "name": "NoMeshState"
+        },
+        {
+          "doc": "A mesh is available and up to date with the current study definition.",
+          "name": "UpToDateMeshState"
+        },
+        {
+          "doc": "A mesh is available but the study has been modified since the last mesh generation.",
+          "name": "OutOfDateMeshState"
+        },
+        {
+          "doc": "The last mesh generation failed with errors.",
+          "name": "FailedMeshState"
+        },
+        {
+          "doc": "Mesh generation is currently in progress.",
+          "name": "MeshingMeshState"
+        }
+      ],
+      "doc": "\n** This enum is a preview feature and may change in future releases. Do not use it in distributed programs. **\n\nThe state of the study's mesh.\n\nAttributes:\n    UnknownMeshState: The mesh state is unknown or the study does not support mesh generation.\n    NoMeshState: No mesh is available. The study has not been meshed.\n    UpToDateMeshState: A mesh is available and up to date with the current study definition.\n    OutOfDateMeshState: A mesh is available but the study has been modified since the last mesh generation.\n    FailedMeshState: The last mesh generation failed with errors.\n    MeshingMeshState: Mesh generation is currently in progress.\n",
+      "name": "StudyMeshStates",
+      "namespace": "adsk.sim",
+      "type": "class"
+    },
+    {
+      "attributes": [
+        {
+          "doc": "The result state is unknown or has not been computed yet.",
+          "name": "UnknownResultState"
+        },
+        {
+          "doc": "No results are available. The study has not been solved.",
+          "name": "NoResultState"
+        },
+        {
+          "doc": "Results are available and up to date with the current study definition.",
+          "name": "UpToDateResultState"
+        },
+        {
+          "doc": "Results are available but the study has been modified since the last solve.",
+          "name": "OutOfDateResultState"
+        },
+        {
+          "doc": "The last solve failed with errors.",
+          "name": "FailedResultState"
+        },
+        {
+          "doc": "A solve is currently in progress.",
+          "name": "SolvingResultState"
+        }
+      ],
+      "doc": "\n** This enum is a preview feature and may change in future releases. Do not use it in distributed programs. **\n\nThe state of the study's solve results.\n\nAttributes:\n    UnknownResultState: The result state is unknown or has not been computed yet.\n    NoResultState: No results are available. The study has not been solved.\n    UpToDateResultState: Results are available and up to date with the current study definition.\n    OutOfDateResultState: Results are available but the study has been modified since the last solve.\n    FailedResultState: The last solve failed with errors.\n    SolvingResultState: A solve is currently in progress.\n",
+      "name": "StudyResultStates",
+      "namespace": "adsk.sim",
+      "type": "class"
+    },
+    {
+      "attributes": [
+        {
+          "doc": "Unknown study type.",
+          "name": "UnknownStudyType"
+        },
+        {
+          "doc": "Structural linear static stress simulation study type.",
+          "name": "LinearStaticStressStudyType"
+        },
+        {
+          "doc": "Modal frequencies simulation study type.",
+          "name": "ModalFrequenciesStudyType"
+        },
+        {
+          "doc": "Electronics cooling simulation study type.",
+          "name": "ElectronicsCoolingStudyType"
+        },
+        {
+          "doc": "Thermal simulation study type.",
+          "name": "ThermalStudyType"
+        },
+        {
+          "doc": "Thermal stress simulation study type.",
+          "name": "ThermalStressStudyType"
+        },
+        {
+          "doc": "Structural buckling simulation study type.",
+          "name": "StructuralBucklingStudyType"
+        },
+        {
+          "doc": "Injection molding simulation study type.",
+          "name": "InjectionMoldingStudyType"
+        }
+      ],
+      "doc": "\n** This enum is a preview feature and may change in future releases. Do not use it in distributed programs. **\n\nSimulation study types.\n\nAttributes:\n    UnknownStudyType: Unknown study type.\n    LinearStaticStressStudyType: Structural linear static stress simulation study type.\n    ModalFrequenciesStudyType: Modal frequencies simulation study type.\n    ElectronicsCoolingStudyType: Electronics cooling simulation study type.\n    ThermalStudyType: Thermal simulation study type.\n    ThermalStressStudyType: Thermal stress simulation study type.\n    StructuralBucklingStudyType: Structural buckling simulation study type.\n    InjectionMoldingStudyType: Injection molding simulation study type.\n",
+      "name": "StudyTypes",
+      "namespace": "adsk.sim",
+      "type": "class"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

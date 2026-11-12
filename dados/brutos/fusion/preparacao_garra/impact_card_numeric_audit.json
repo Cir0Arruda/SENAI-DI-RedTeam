@@ -1,0 +1,362 @@
+[
+  {
+    "name": "HYPER_PAD_EQ_40_PELE_HIPOTESE_E7_905",
+    "props": [
+      {
+        "id": "physmat_Type",
+        "value": "physmat_generic",
+        "units": null
+      },
+      {
+        "id": "common_Shared_Asset",
+        "value": "common_shared",
+        "units": null
+      },
+      {
+        "id": "structural_Behavior",
+        "value": "structural_isotropic",
+        "units": null
+      },
+      {
+        "id": "structural_Damping_coefficient",
+        "value": 0.0,
+        "units": "Unitless"
+      },
+      {
+        "id": "structural_Density",
+        "value": 766.8571428571429,
+        "units": "KilogramPerCubicMeter"
+      },
+      {
+        "id": "structural_Minimum_tensile_strength",
+        "value": 0.0,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Minimum_yield_stress",
+        "value": 0.0,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Poisson_ratio",
+        "value": 0.3,
+        "units": "Unitless"
+      },
+      {
+        "id": "structural_Poisson_ratio_12",
+        "value": 0.3,
+        "units": "Unitless"
+      },
+      {
+        "id": "structural_Poisson_ratio_23",
+        "value": 0.3,
+        "units": "Unitless"
+      },
+      {
+        "id": "structural_Poisson_ratio_X",
+        "value": 0.3,
+        "units": "Unitless"
+      },
+      {
+        "id": "structural_Poisson_ratio_Y",
+        "value": 0.3,
+        "units": "Unitless"
+      },
+      {
+        "id": "structural_Poisson_ratio_Z",
+        "value": 0.3,
+        "units": "Unitless"
+      },
+      {
+        "id": "structural_Shear_modulus",
+        "value": 3040.723981900453,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Shear_modulus_12",
+        "value": 3040.723981900453,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Shear_modulus_X",
+        "value": 3040.723981900453,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Shear_modulus_Y",
+        "value": 3040.723981900453,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Shear_modulus_Z",
+        "value": 3040.723981900453,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Specific_heat",
+        "value": 0.0,
+        "units": "JoulePerGramCelsius"
+      },
+      {
+        "id": "structural_Thermal_conductivity",
+        "value": 0.0,
+        "units": "WattPerMeterKelvin"
+      },
+      {
+        "id": "structural_Thermal_conductivity_X",
+        "value": 0.0,
+        "units": "WattPerMeterKelvin"
+      },
+      {
+        "id": "structural_Thermal_conductivity_Y",
+        "value": 0.0,
+        "units": "WattPerMeterKelvin"
+      },
+      {
+        "id": "structural_Thermal_conductivity_Z",
+        "value": 0.0,
+        "units": "WattPerMeterKelvin"
+      },
+      {
+        "id": "structural_Thermal_expansion_coefficient",
+        "value": 0.0,
+        "units": "MicrometerPerMeterCelsius"
+      },
+      {
+        "id": "structural_Thermal_expansion_coefficient_1",
+        "value": 0.0,
+        "units": "MicrometerPerMeterCelsius"
+      },
+      {
+        "id": "structural_Thermal_expansion_coefficient_2",
+        "value": 0.0,
+        "units": "MicrometerPerMeterCelsius"
+      },
+      {
+        "id": "structural_Thermal_expansion_coefficient_X",
+        "value": 0.0,
+        "units": "MicrometerPerMeterCelsius"
+      },
+      {
+        "id": "structural_Thermal_expansion_coefficient_Y",
+        "value": 0.0,
+        "units": "MicrometerPerMeterCelsius"
+      },
+      {
+        "id": "structural_Thermal_expansion_coefficient_Z",
+        "value": 0.0,
+        "units": "MicrometerPerMeterCelsius"
+      },
+      {
+        "id": "structural_Young_modulus",
+        "value": 7905.882352941178,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Young_modulus_1",
+        "value": 7905.882352941178,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Young_modulus_2",
+        "value": 7905.882352941178,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Young_modulus_X",
+        "value": 7905.882352941178,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Young_modulus_Y",
+        "value": 7905.882352941178,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Young_modulus_Z",
+        "value": 7905.882352941178,
+        "units": "Kilopascal"
+      }
+    ]
+  },
+  {
+    "name": "HYPER_PA_EQ_30_HIPOTESE_E398_7",
+    "props": [
+      {
+        "id": "physmat_Type",
+        "value": "physmat_generic",
+        "units": null
+      },
+      {
+        "id": "common_Shared_Asset",
+        "value": "common_shared",
+        "units": null
+      },
+      {
+        "id": "structural_Behavior",
+        "value": "structural_isotropic",
+        "units": null
+      },
+      {
+        "id": "structural_Damping_coefficient",
+        "value": 0.0,
+        "units": "Unitless"
+      },
+      {
+        "id": "structural_Density",
+        "value": 327.0,
+        "units": "KilogramPerCubicMeter"
+      },
+      {
+        "id": "structural_Minimum_tensile_strength",
+        "value": 0.0,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Minimum_yield_stress",
+        "value": 0.0,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Poisson_ratio",
+        "value": 0.3,
+        "units": "Unitless"
+      },
+      {
+        "id": "structural_Poisson_ratio_12",
+        "value": 0.3,
+        "units": "Unitless"
+      },
+      {
+        "id": "structural_Poisson_ratio_23",
+        "value": 0.3,
+        "units": "Unitless"
+      },
+      {
+        "id": "structural_Poisson_ratio_X",
+        "value": 0.3,
+        "units": "Unitless"
+      },
+      {
+        "id": "structural_Poisson_ratio_Y",
+        "value": 0.3,
+        "units": "Unitless"
+      },
+      {
+        "id": "structural_Poisson_ratio_Z",
+        "value": 0.3,
+        "units": "Unitless"
+      },
+      {
+        "id": "structural_Shear_modulus",
+        "value": 153346.15384615384,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Shear_modulus_12",
+        "value": 153346.15384615384,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Shear_modulus_X",
+        "value": 153346.15384615384,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Shear_modulus_Y",
+        "value": 153346.15384615384,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Shear_modulus_Z",
+        "value": 153346.15384615384,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Specific_heat",
+        "value": 0.0,
+        "units": "JoulePerGramCelsius"
+      },
+      {
+        "id": "structural_Thermal_conductivity",
+        "value": 0.0,
+        "units": "WattPerMeterKelvin"
+      },
+      {
+        "id": "structural_Thermal_conductivity_X",
+        "value": 0.0,
+        "units": "WattPerMeterKelvin"
+      },
+      {
+        "id": "structural_Thermal_conductivity_Y",
+        "value": 0.0,
+        "units": "WattPerMeterKelvin"
+      },
+      {
+        "id": "structural_Thermal_conductivity_Z",
+        "value": 0.0,
+        "units": "WattPerMeterKelvin"
+      },
+      {
+        "id": "structural_Thermal_expansion_coefficient",
+        "value": 0.0,
+        "units": "MicrometerPerMeterCelsius"
+      },
+      {
+        "id": "structural_Thermal_expansion_coefficient_1",
+        "value": 0.0,
+        "units": "MicrometerPerMeterCelsius"
+      },
+      {
+        "id": "structural_Thermal_expansion_coefficient_2",
+        "value": 0.0,
+        "units": "MicrometerPerMeterCelsius"
+      },
+      {
+        "id": "structural_Thermal_expansion_coefficient_X",
+        "value": 0.0,
+        "units": "MicrometerPerMeterCelsius"
+      },
+      {
+        "id": "structural_Thermal_expansion_coefficient_Y",
+        "value": 0.0,
+        "units": "MicrometerPerMeterCelsius"
+      },
+      {
+        "id": "structural_Thermal_expansion_coefficient_Z",
+        "value": 0.0,
+        "units": "MicrometerPerMeterCelsius"
+      },
+      {
+        "id": "structural_Young_modulus",
+        "value": 398700.0,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Young_modulus_1",
+        "value": 398700.0,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Young_modulus_2",
+        "value": 398700.0,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Young_modulus_X",
+        "value": 398700.0,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Young_modulus_Y",
+        "value": 398700.0,
+        "units": "Kilopascal"
+      },
+      {
+        "id": "structural_Young_modulus_Z",
+        "value": 398700.0,
+        "units": "Kilopascal"
+      }
+    ]
+  }
+]

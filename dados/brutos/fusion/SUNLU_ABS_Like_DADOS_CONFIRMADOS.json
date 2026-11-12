@@ -1,0 +1,48 @@
+{
+  "material": "SUNLU ABS-Like padrao",
+  "status": "Dados confirmados apenas; sem material de calculo completo",
+  "source": {
+    "title": "SUNLU TDS SL-TE-WI-100 A/0",
+    "url": "https://media.sunlu.com/prod/20260331/cdd6ab82-85d8-49ea-b432-12c6c9c5c005.pdf?filename=TDS"
+  },
+  "properties": {
+    "solid_density_kg_m3": 1190,
+    "solid_density_tolerance_kg_m3": 30,
+    "tensile_strength_MPa": 28,
+    "flexural_strength_MPa": 36,
+    "flexural_modulus_MPa": 980,
+    "elongation_at_break_percent": 25,
+    "notched_izod_J_m": 70,
+    "shore_D": 80,
+    "thermal_expansion_per_K": 0.000101,
+    "HDT_C": 50,
+    "HDT_test_stress_MPa": 0.45,
+    "Tg_C": 44,
+    "mold_shrinkage_percent": 8
+  },
+  "missing": [
+    "Young modulus in tension",
+    "Poisson ratio",
+    "thermal conductivity",
+    "specific heat",
+    "yield stress",
+    "compressive strength",
+    "temperature-dependent constitutive data"
+  ],
+  "conditions": {
+    "mechanical_direction": "Z",
+    "post_cure_recommended_minutes": [
+      3,
+      5
+    ],
+    "actual_post_cure": "not provided"
+  },
+  "notes": [
+    "Flexural modulus is not assigned as Young modulus.",
+    "Tensile strength is not assigned as yield stress.",
+    "HDT is not assigned as a conductivity or maximum service temperature.",
+    "No unverified solver values were assigned.",
+    "The current default steel solver material is not representative of this resin. All calculations remain pending.",
+    "The existing 80 C thermal setup is exploratory; no high-temperature resin behavior is validated."
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "rows": [
+    {
+      "pad": "PAD95_A1_L_ENVELOPE_INFILL40:1",
+      "solid": true,
+      "lumps": 1,
+      "volume_cm3": 11.909291424080077,
+      "overlaps_with_primary_structure": []
+    },
+    {
+      "pad": "PAD95_A1_R_ENVELOPE_INFILL40:1",
+      "solid": true,
+      "lumps": 1,
+      "volume_cm3": 7.303531306186353,
+      "overlaps_with_primary_structure": []
+    },
+    {
+      "pad": "PAD95_A2_L_ENVELOPE_INFILL40:1",
+      "solid": true,
+      "lumps": 1,
+      "volume_cm3": 7.996236742538147,
+      "overlaps_with_primary_structure": []
+    },
+    {
+      "pad": "PAD95_A2_R_ENVELOPE_INFILL40:1",
+      "solid": true,
+      "lumps": 1,
+      "volume_cm3": 9.127427287289409,
+      "overlaps_with_primary_structure": []
+    },
+    {
+      "pad": "PAD95_A3_L_ENVELOPE_INFILL40:1",
+      "solid": true,
+      "lumps": 1,
+      "volume_cm3": 9.12928414006086,
+      "overlaps_with_primary_structure": []
+    },
+    {
+      "pad": "PAD95_A3_R_ENVELOPE_INFILL40:1",
+      "solid": true,
+      "lumps": 1,
+      "volume_cm3": 8.005238260269953,
+      "overlaps_with_primary_structure": []
+    },
+    {
+      "pad": "PAD95_A4_L_ENVELOPE_INFILL40:1",
+      "solid": true,
+      "lumps": 1,
+      "volume_cm3": 7.302373117269207,
+      "overlaps_with_primary_structure": []
+    },
+    {
+      "pad": "PAD95_A4_R_ENVELOPE_INFILL40:1",
+      "solid": true,
+      "lumps": 1,
+      "volume_cm3": 11.914789094875712,
+      "overlaps_with_primary_structure": []
+    }
+  ],
+  "checked": "static CAD intersections with upper body and both lower supports only; not a motion/hoses/fastener access test",
+  "passed": true
+}

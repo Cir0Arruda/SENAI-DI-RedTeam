@@ -1,0 +1,178 @@
+{
+  "roles": [
+    {
+      "role": "Bottom surface",
+      "filament_mm": 78.23596000000013,
+      "volume_cm3": 0.18817953659288625,
+      "mass_g": 0.22957903464332122
+    },
+    {
+      "role": "Bridge",
+      "filament_mm": 422.6490399999998,
+      "volume_cm3": 1.0165900755691892,
+      "mass_g": 1.2402398921944109
+    },
+    {
+      "role": "Custom",
+      "filament_mm": 109.71125999999978,
+      "volume_cm3": 0.26388650520581053,
+      "mass_g": 0.32194153635108885
+    },
+    {
+      "role": "Gap infill",
+      "filament_mm": 26.643970000000003,
+      "volume_cm3": 0.06408625812982617,
+      "mass_g": 0.07818523491838793
+    },
+    {
+      "role": "Inner wall",
+      "filament_mm": 9059.43059000108,
+      "volume_cm3": 21.790484199616373,
+      "mass_g": 26.584390723531975
+    },
+    {
+      "role": "Internal Bridge",
+      "filament_mm": 428.62288000000086,
+      "volume_cm3": 1.0309588446477593,
+      "mass_g": 1.2577697904702663
+    },
+    {
+      "role": "Internal solid infill",
+      "filament_mm": 6199.896330000171,
+      "volume_cm3": 14.912498271937435,
+      "mass_g": 18.193247891763672
+    },
+    {
+      "role": "Outer wall",
+      "filament_mm": 4770.652899999993,
+      "volume_cm3": 11.474764954216782,
+      "mass_g": 13.999213244144475
+    },
+    {
+      "role": "Overhang wall",
+      "filament_mm": 185.97888999999986,
+      "volume_cm3": 0.4473316533248813,
+      "mass_g": 0.5457446170563551
+    },
+    {
+      "role": "Sparse infill",
+      "filament_mm": 9385.063249998586,
+      "volume_cm3": 22.57372253474819,
+      "mass_g": 27.53994149239279
+    },
+    {
+      "role": "Support",
+      "filament_mm": 9325.07021000027,
+      "volume_cm3": 22.42942236298981,
+      "mass_g": 27.36389528284757
+    },
+    {
+      "role": "Support interface",
+      "filament_mm": 406.1361099999971,
+      "volume_cm3": 0.9768718243303565,
+      "mass_g": 1.1917836256830348
+    },
+    {
+      "role": "Top surface",
+      "filament_mm": 708.7126300000004,
+      "volume_cm3": 1.7046536438093878,
+      "mass_g": 2.079677445447453
+    }
+  ],
+  "category_mass_g": {
+    "peca": 91.7479893665631,
+    "custom_outros": 0.32194153635108885,
+    "suporte": 28.555678908530602
+  },
+  "tracked_deposition_moves": 781284,
+  "method": "positive E during XY/arc moves, by FEATURE tags; retractions and E-only priming excluded",
+  "density_g_cm3": 1.22,
+  "filament_diameter_mm": 1.75,
+  "not_measured_mass": true,
+  "object_role_mass_g": {
+    "SEM_OBJETO": {
+      "Custom": 0.32194153635108885,
+      "Support": 24.494318450775932,
+      "Inner wall": 23.823109807244986,
+      "Outer wall": 12.538844253681525,
+      "Gap infill": 0.07571114658754269,
+      "Bottom surface": 0.20986549929265694,
+      "Internal solid infill": 16.338837403699294,
+      "Sparse infill": 24.68798890097184,
+      "Internal Bridge": 1.1259930709253985,
+      "Top surface": 1.8529130120037398,
+      "Support interface": 1.067878845312099,
+      "Overhang wall": 0.493218335561217,
+      "Bridge": 1.1076051412566927
+    },
+    "PAD95_R02_A4_L_ENVELOPE_INFILL40": {
+      "Support": 2.8695768320721293,
+      "Inner wall": 2.761280916285722,
+      "Outer wall": 1.460368990463045,
+      "Bottom surface": 0.01971353535066403,
+      "Gap infill": 0.002474088330845262,
+      "Internal solid infill": 1.8544104880642298,
+      "Sparse infill": 2.85195259142518,
+      "Internal Bridge": 0.13177671954486733,
+      "Top surface": 0.2267644334437127,
+      "Support interface": 0.12390478037093532,
+      "Overhang wall": 0.05252628149513755,
+      "Bridge": 0.13263475093771646
+    }
+  },
+  "Orca_summary": {
+    "prediction_s": 37772,
+    "total_filament_mass_g": 120.63,
+    "outside": "false",
+    "support_used": "true",
+    "warnings": [
+      {
+        "msg": "bed_temperature_too_high_than_filament",
+        "level": "3",
+        "error_code": "1000C001"
+      }
+    ],
+    "filament": {
+      "id": "1",
+      "tray_info_idx": "GFN98",
+      "type": "TPU",
+      "color": "#F27A20",
+      "used_m": "41.11",
+      "used_g": "120.63",
+      "group_id": "0",
+      "nozzle_diameter": "0.40",
+      "volume_type": "Standard",
+      "used_for_object": "true",
+      "used_for_support": "true"
+    },
+    "actual_Gcode_in_archive": true
+  },
+  "effective_settings": {
+    "printer_model": "Bambu Lab X1",
+    "printer_settings_id": "Bambu Lab X1 0.4 nozzle",
+    "printable_area": [
+      "0x0",
+      "256x0",
+      "256x256",
+      "0x256"
+    ],
+    "wall_loops": "3",
+    "sparse_infill_density": "40%",
+    "sparse_infill_pattern": "gyroid",
+    "filament_density": [
+      "1.22"
+    ],
+    "filament_type": [
+      "TPU"
+    ],
+    "layer_height": "0.2",
+    "nozzle_temperature": [
+      "230"
+    ],
+    "curr_bed_type": "Textured PEI Plate",
+    "textured_plate_temp": [
+      "50"
+    ]
+  },
+  "tracked_mass_difference_from_Orca_g": -0.004390188555206009
+}

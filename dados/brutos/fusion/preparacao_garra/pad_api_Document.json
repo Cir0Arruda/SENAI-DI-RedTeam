@@ -1,0 +1,14 @@
+{
+  "members": [
+    {
+      "class": "Document",
+      "doc": "\nCauses this document to become the active document in the user interface.\nReturns true if the activation was successful.\n",
+      "name": "activate",
+      "namespace": "adsk.core",
+      "signature": "() -> bool",
+      "type": "function"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

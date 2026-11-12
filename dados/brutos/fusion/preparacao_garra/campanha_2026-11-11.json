@@ -1,0 +1,112 @@
+{
+  "phase": "solved_exploratory",
+  "document": "SAMI PA6CF - CORPO SUPERIOR - EXPLORATORIO 24kg",
+  "study": "Estudo 1 - Tensão estática",
+  "date": "2026-11-11",
+  "geometry": {
+    "source_component": "Corpo Supor",
+    "volume_cm3": 1391.1909963637681,
+    "face_count": 2676,
+    "infill": "solid CAD, 100%; other infills not solved",
+    "assembly_scope": "upper structure only; lower structure, hardware and PADs excluded"
+  },
+  "material": {
+    "candidate": "Bambu PA6-CF V3.0",
+    "name_in_fusion": "PA6CF_Bambu_V3_EXPLORATORIO_E4430_nu039",
+    "density_kg_m3": 1090,
+    "E_MPa": 4430,
+    "nu": 0.39,
+    "nu_status": "proxy from another PA6 source, not measured PA6-CF",
+    "UTS_MPa": 102,
+    "model": "exploratory isotropic linear XY; no directional failure or impact calibration"
+  },
+  "boundary_conditions": {
+    "fixed": "6 flange cylindrical hole walls, radius 4.2mm; UX UY UZ",
+    "loaded": "4 planar interface faces at CAD z=-74.5mm",
+    "area_each_mm2": 779.4206429,
+    "force_each_N": [
+      0,
+      0,
+      -88.8399
+    ],
+    "total_force_N": [
+      0,
+      0,
+      -355.3596
+    ],
+    "force_per_entity": true
+  },
+  "operating_assumptions": {
+    "payload_kg": 24,
+    "gravity_m_s2": 9.80665,
+    "vertical_acceleration_m_s2": 5,
+    "distribution": "equal between four interfaces",
+    "omissions": [
+      "self-weight",
+      "lower assembly inertia and moments",
+      "robot/flange compliance",
+      "bolt preload and friction",
+      "PAD compliance",
+      "vacuum-loss or unequal-load cases"
+    ]
+  },
+  "mesh": {
+    "absolute_target_mm": 3,
+    "convergence": "not established",
+    "nodes": 498261,
+    "elements": 339001,
+    "order": "parabolic",
+    "curved_elements": true,
+    "adaptive_refinement_steps": 0
+  },
+  "precheck": "ready_to_solve",
+  "submission": {
+    "status": "completed_successfully_observed_Fusion",
+    "cost_display": "static study credit column blank; no priced transaction displayed",
+    "cloud_save": "user completed Save dialog"
+  },
+  "results": {
+    "von_mises_max": {
+      "value": 3.232,
+      "unit": "MPa",
+      "evidence": "Fusion result legend",
+      "precision": "display rounded"
+    },
+    "safety_factor_min": {
+      "value": 19.755,
+      "unit": "dimensionless",
+      "criterion": "ultimate tensile strength as displayed",
+      "evidence": "Fusion guided results"
+    },
+    "displacement_max": {
+      "value": 0.08,
+      "unit": "mm",
+      "evidence": "Fusion exported figure 17",
+      "precision": "display rounded"
+    },
+    "convergence_verified": false,
+    "first_principal_max": {
+      "value": 5.163,
+      "unit": "MPa",
+      "evidence": "Fusion exported figure 15"
+    },
+    "native_report": "SAMI_PA6CF_24kg_Relatorio_Fusion.html"
+  },
+  "remaining_cases": {
+    "impact": "needs actual dynamic contact model; static case is not impact",
+    "PAD": "PU97A product and constitutive curves missing",
+    "thermal": "candidate-grade conductivity and temperature-dependent mechanics missing",
+    "24_7": "fatigue/creep/relaxation laws and actual load spectrum missing"
+  },
+  "cloud_document_id": "urn:adsk.wipprod:dm.lineage:qGiN74eQQtSYmI4lNtmWQA",
+  "archive": {
+    "path": "FUSION\\preparacao_garra\\SAMI_PA6CF_BASELINE_24kg_2026-11-11.f3d",
+    "bytes": 7854216,
+    "crc_ok": true
+  },
+  "final_archive": {
+    "path": "FUSION\\preparacao_garra\\SAMI_PA6CF_RESULTADO_ESTATICO_2026-11-11.f3d",
+    "bytes": 7876256,
+    "crc_ok": true
+  }
+}

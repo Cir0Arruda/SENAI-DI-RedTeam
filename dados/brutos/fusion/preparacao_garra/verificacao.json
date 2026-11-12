@@ -1,0 +1,10 @@
+{
+  "stdio_initialize_tools_call": "passed",
+  "tool_count": 6,
+  "live_official_backend": "passed",
+  "mass_numeric_validation": "passed",
+  "negative_mass_rejected": true,
+  "registered_tools_in_chat": "passed",
+  "archive_crc": "passed",
+  "new_solver_jobs": 0
+}

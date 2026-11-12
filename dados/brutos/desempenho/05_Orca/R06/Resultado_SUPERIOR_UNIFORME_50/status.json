@@ -1,0 +1,25 @@
+{
+  "case": "SUPERIOR_UNIFORME_50",
+  "start_UTC": "2026-11-11T18:30:36.974740+00:00",
+  "input": "desempenho\\05_Orca\\R06\\GARRA_SUPERIOR_UNIFORME_50_K1MAX.3mf",
+  "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+  "scale": 1,
+  "sent_to_printer": false,
+  "returncode": 0,
+  "ok": true,
+  "end_UTC": "2026-11-11T18:48:27.305389+00:00",
+  "mass_g": {
+    "peca": 909.5699826137762,
+    "adesao": 2.6008775670930913,
+    "suporte": 113.48711411678013
+  },
+  "orca_total_g": 1025.66,
+  "time_s": 154929,
+  "warnings": [
+    {
+      "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+      "level": "3",
+      "error_code": "1000C002"
+    }
+  ]
+}

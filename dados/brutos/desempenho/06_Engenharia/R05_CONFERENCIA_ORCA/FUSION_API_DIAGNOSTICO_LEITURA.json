@@ -1,0 +1,98 @@
+{
+  "adsk.sim.Study": {
+    "members": [
+      {
+        "class": "Study",
+        "doc": "\nInitiates mesh generation for this study.\nThe study must support mesh generation and must not already have an up-to-date mesh.\nMesh generation must not already be in progress and no other job may be in progress\nfor this study.\nReturns a MeshFuture object that can be used to monitor the mesh generation operation,\nor null if mesh generation could not be initiated.\n",
+        "name": "generateMesh",
+        "namespace": "adsk.sim",
+        "signature": "() -> adsk.sim.MeshFuture",
+        "type": "function"
+      },
+      {
+        "class": "Study",
+        "doc": "\nOpens the results viewer for this study, transitioning the Simulation workspace\ninto the Results environment.\nThe study must be the active study; call activate() first if it is not (check isActive).\nThe study must also have results available; check resultState first (it should be\nUpToDateResultState or OutOfDateResultState).\nThis uses the modern results viewer, which is a preview capability that may be disabled\nby product configuration; where it is not available the call returns false (the legacy\nresults viewer is not supported).\nReturns false if the study is not active, no results are available, the modern results\nviewer is not available, or the viewer could not be opened.\nCurrently only Linear Static Stress studies are supported.\nReturns true if the results viewer was successfully opened, false otherwise.\n",
+        "name": "showResults",
+        "namespace": "adsk.sim",
+        "signature": "() -> bool",
+        "type": "function"
+      },
+      {
+        "class": "Study",
+        "doc": "\nCloses the results viewer for this study, returning the Simulation workspace to the\nsetup environment. This is the counterpart to showResults().\nThe call is idempotent: if the results viewer is not currently open, it returns true.\nReturns true if the results viewer is no longer open after the call (including when it\nwas not open to begin with), false if it could not be closed.\n",
+        "name": "exitResults",
+        "namespace": "adsk.sim",
+        "signature": "() -> bool",
+        "type": "function"
+      },
+      {
+        "class": "Study",
+        "doc": "Returns the material assignments for all bodies in the study.",
+        "name": "materialAssignments",
+        "namespace": "adsk.sim",
+        "readonly": true,
+        "type": "property"
+      },
+      {
+        "class": "Study",
+        "doc": "Gets the current state of this study's solve results.",
+        "name": "resultState",
+        "namespace": "adsk.sim",
+        "readonly": true,
+        "type": "property"
+      }
+    ],
+    "message": "API documentation query completed",
+    "success": true
+  },
+  "adsk.sim.MaterialAssignment": {
+    "members": [
+      {
+        "class": "MaterialAssignment",
+        "doc": "Gets the core Material object for this assignment (override if present, otherwise the model material).",
+        "name": "material",
+        "namespace": "adsk.sim",
+        "readonly": true,
+        "type": "property"
+      },
+      {
+        "class": "MaterialAssignment",
+        "doc": "\nReverts this material to the original design model material, removing any study-specific override.\nThis is a no-op if already using the model material.\nReturns true if the material was successfully reverted or was already the model material.\n",
+        "name": "revertToModelMaterial",
+        "namespace": "adsk.sim",
+        "signature": "() -> bool",
+        "type": "function"
+      },
+      {
+        "class": "MaterialAssignment",
+        "doc": "\nAssigns a new material to the body associated with this MaterialAssignment, overriding any current material assignment.\nThe material can be from a material library or a document material.\nmaterial : The material to assign.\nReturns true if the material was successfully assigned.\n",
+        "name": "assignMaterial",
+        "namespace": "adsk.sim",
+        "signature": "(material: Material) -> bool",
+        "type": "function"
+      },
+      {
+        "class": "MaterialAssignment",
+        "doc": "Indicates whether the original design material was used or the material is overridden by the study.",
+        "name": "isModelMaterial",
+        "namespace": "adsk.sim",
+        "readonly": true,
+        "type": "property"
+      },
+      {
+        "class": "MaterialAssignment",
+        "doc": "Gets whether the assigned material is valid for this study type.\nA value of false indicates that material values are out of limits and simulation cannot be performed.",
+        "name": "isMaterialValid",
+        "namespace": "adsk.sim",
+        "readonly": true,
+        "type": "property"
+      }
+    ],
+    "message": "API documentation query completed",
+    "success": true
+  },
+  "adsk.sim.MaterialAssignments": {
+    "message": "API documentation query completed",
+    "success": true
+  }
+}

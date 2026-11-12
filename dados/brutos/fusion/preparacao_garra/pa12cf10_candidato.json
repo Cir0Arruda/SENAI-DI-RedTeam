@@ -1,0 +1,17 @@
+{
+  "id": "polymaker_fiberon_pa12cf10_v11_dry",
+  "manufacturer": "Polymaker",
+  "product": "Fiberon PA12-CF10",
+  "revision": "V1.1",
+  "source_url": "https://cdn.shopify.com/s/files/1/0548/7299/7945/files/TDS_FIBERON_PA12-CF10_V1.1_EN.pdf?v=1740427088",
+  "discovery_url": "https://wiki.polymaker.com/polymaker-products/more-about-our-products/documents/technical-data-sheets/nylon/fiberon-tm-pa12-cf10",
+  "local_source": "fontes_industriais/PA12_CF10_V1_1.pdf",
+  "density_g_cm3": 1.06,
+  "dry": {"E_MPa": {"XY": 3311.2, "Z": 1806.6}, "tensile_strength_MPa": {"XY": 77.4, "Z": 52.2}, "elongation_percent": {"XY": 4.2, "Z": 5.0}, "charpy_XY_notched_kJ_m2": 9.9, "charpy_unnotched_kJ_m2": {"XY": 33.7, "Z": 27.6}},
+  "wet": {"E_MPa": {"XY": 3131.7, "Z": 1622.0}, "tensile_strength_MPa": {"XY": 71.7, "Z": 42.1}},
+  "Tg_C": 55,
+  "HDT_C": {"1.8_MPa": 105, "0.45_MPa": 131},
+  "nu_measured": null,
+  "solver": {"name": "Fiberon_PA12CF10_V11_DRY_EXPLORATORIO", "E_MPa": 3311.2, "nu": 0.39, "nu_status": "proxy from a different PA12 modeling source, not measured for this composite", "nu_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10023978/", "UTS_MPa": 77.4, "density_kg_m3": 1060, "type": "isotropic XY linear exploration; no impact failure or damping calibration"},
+  "missing": ["temperature-dependent curves", "full orthotropic elastic constants", "rate-dependent failure", "fatigue", "creep", "thermal conductivity", "specific heat", "CTE"]
+}

@@ -1,0 +1,38 @@
+{
+  "members": [
+    {
+      "class": "ExportManager",
+      "doc": "\nCreates an STEPExportOptions object that's used to export a design in STEP format. Creation\nof the STEPExportOptions object does not perform the export. You must pass this object to the\nExportManager.execute method to perform the export. The STEPExportOptions supports any available\noptions when exporting to STEP format.\nfilename : The filename of the STEP file to be created.\ngeometry : The geometry to export. Valid geometry for this is currently a Component object. This argument is optional\nand if not specified, it results in the root component and it entire contents being exported.\nThe created STEPExportOptions object or null if the creation failed.\n",
+      "name": "createSTEPExportOptions",
+      "namespace": "adsk.fusion",
+      "signature": "(*args) -> adsk.fusion.STEPExportOptions",
+      "type": "function"
+    },
+    {
+      "class": "ExportManager",
+      "doc": "\nCreates an FusionArchiveExportOptions object that's used to export a design in Fusion archive format. Creation\nof the FusionArchiveExportOptions object does not perform the export. You must pass this object to the\nExportManager.execute method to perform the export. The FusionArchiveExportOptions supports any available\noptions when exporting to Fusion archive format.\nfilename : The filename of the Fusion archive file to be created.\ngeometry : The geometry to export. Valid geometry for this is currently a Component object. This argument is optional\nand if not specified, it results in the root component and it entire contents being exported.\nThe created FusionArchiveExportOptions object or null if the creation failed.\n",
+      "name": "createFusionArchiveExportOptions",
+      "namespace": "adsk.fusion",
+      "signature": "(*args) -> adsk.fusion.FusionArchiveExportOptions",
+      "type": "function"
+    },
+    {
+      "class": "ExportManager",
+      "doc": "\nCreates an STLExportOptions object that's used to export a design in STL format. Creation\nof the STLExportOptions object does not perform the export. You must pass this object to the\nExportManager.execute method to perform the export.\ngeometry : The geometry to export. This can be a BRepBody, Occurrence, or Component object.\nfilename : The filename of the STL file to be created. This is optional and can be left out if the mesh will be opened in a mesh editor.\nThe created createSTLExportOptions object or null if the creation failed.\n",
+      "name": "createSTLExportOptions",
+      "namespace": "adsk.fusion",
+      "signature": "(*args) -> adsk.fusion.STLExportOptions",
+      "type": "function"
+    },
+    {
+      "class": "ExportManager",
+      "doc": "\n** This method is a preview feature and may change in future releases. Do not use it in distributed programs. **\n\nCreates a STEPFlatPatternExportOptions object that's used to export a flat pattern in STEP format. Creation\nof the STEPFlatPatternExportOptions object does not perform the export. You must pass this object to the\nExportManager.execute method to perform the export.\nfilename : The filename of the STEP file to be created.\nflatPattern : The FlatPattern object to export.\nThe created STEPFlatPatternExportOptions object or null if the creation failed.\n",
+      "name": "createSTEPExportOptionsForFlatPattern",
+      "namespace": "adsk.fusion",
+      "signature": "(filename: str, flatPattern: FlatPattern) -> adsk.fusion.STEPFlatPatternExportOptions",
+      "type": "function"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

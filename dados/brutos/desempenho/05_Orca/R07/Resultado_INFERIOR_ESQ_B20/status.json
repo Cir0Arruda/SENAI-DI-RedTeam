@@ -1,0 +1,25 @@
+{
+  "case": "INFERIOR_ESQ_B20",
+  "start_UTC": "2026-11-11T22:44:30.301387+00:00",
+  "input": "desempenho\\05_Orca\\R07\\GARRA_INFERIOR_ESQ_R07_ESQUELETO_GIROIDE20_K1MAX.3mf",
+  "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+  "scale": 1,
+  "sent_to_printer": false,
+  "returncode": 0,
+  "ok": true,
+  "end_UTC": "2026-11-11T22:45:11.841716+00:00",
+  "mass_g": {
+    "peca": 383.23881584767577,
+    "adesao": 1.5574985431698605,
+    "suporte": 96.22785913455489
+  },
+  "orca_total_g": 481.02,
+  "time_s": 73660,
+  "warnings": [
+    {
+      "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+      "level": "3",
+      "error_code": "1000C002"
+    }
+  ]
+}

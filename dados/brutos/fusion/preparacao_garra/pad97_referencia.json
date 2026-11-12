@@ -1,0 +1,30 @@
+{
+  "manufacturer": "Lubrizol",
+  "product": "ESTANE X-595A-11",
+  "type": "polyester TPU, extrusion grade",
+  "source_url": "https://www.lubrizol.com/-/media/Lubrizol/Engineered-Polymers/Documents/Engineered-Polymer-TDS/ESTANE-X595-A11.pdf",
+  "retrieved": "2026-11-11",
+  "evidence": "Primary manufacturer PDF indexed text; local download denied, no full PDF archived",
+  "status": "documentary reference, not purchase recommendation or validated FFF filament",
+  "density_g_cm3": 1.22,
+  "hardness_Shore_A": 97,
+  "stress_at_100_percent_elongation_MPa": 13.2389775,
+  "stress_at_300_percent_elongation_MPa": 23.53596,
+  "UTS_MPa": 49.03325,
+  "elongation_break_percent": 550,
+  "tear_Die_C_kN_m": 127.48645,
+  "compression_set_percent": {
+    "23C_22h": 20,
+    "70C_22h": 50
+  },
+  "Vicat_C": 115,
+  "missing": [
+    "current supply confirmation",
+    "manufacturing route qualification",
+    "Poisson and bulk response",
+    "compression loading/unloading curves",
+    "rate/temperature dependence",
+    "hysteresis and relaxation",
+    "PAD geometry/contact/retention"
+  ]
+}

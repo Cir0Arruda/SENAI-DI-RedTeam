@@ -1,0 +1,11 @@
+{
+  "status": "sliced",
+  "start_UTC": "2026-11-11T15:05:58.308490+00:00",
+  "input": "desempenho\\05_Orca\\PADs_TPU95A40_PREPARADO.3mf",
+  "output": "desempenho\\05_Orca\\Resultado_PAD\\PADs_TPU95A40_FATIADO_TESTE.3mf",
+  "slicing_only_not_FEA": true,
+  "sent_to_printer": false,
+  "returncode": 0,
+  "output_exists": true,
+  "end_UTC": "2026-11-11T15:06:25.274004+00:00"
+}

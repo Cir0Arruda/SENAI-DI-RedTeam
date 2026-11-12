@@ -1,0 +1,33 @@
+{
+  "design": "N9_COM",
+  "mass_model_g": 754.0,
+  "solid_cm3": 480.3,
+  "infill_cm3": 994.5,
+  "base_phi": 0.12,
+  "web_t": 3.0,
+  "cases": {
+    "ONE_24": {
+      "disp_max_mm": 0.5786,
+      "iters": 29,
+      "reaction_N": [
+        -0.0,
+        0.0,
+        355.36
+      ],
+      "solid_vm_max_MPa": 4.344,
+      "solid_FI_xy_max": 0.0438,
+      "solid_FI_z_max": 0.098,
+      "infill_FI_max": {
+        "0.12": 0.1045,
+        "0.25": 0.0327,
+        "0.4": 0.0449,
+        "0.55": 0.1505
+      },
+      "hot_xyz": [
+        -544.8,
+        338.5,
+        341.4
+      ]
+    }
+  }
+}

@@ -1,0 +1,4 @@
+warning: desempenho\05_Orca\PADs_TPU95A40_PREPARADO.3mf: value "" for printhost_authorization_type is not valid, using "key" instead
+warning: desempenho\05_Orca\PADs_TPU95A40_PREPARADO.3mf: value "" for printhost_ssl_ignore_revoke is not valid, using "0" instead
+Project export to desempenho\05_Orca\Resultado_PAD/desempenho\05_Orca\Resultado_PAD\PADs_TPU95A40_FATIADO_TESTE.3mf failed
+Slic3r::CLI::run found error, exit

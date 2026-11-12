@@ -1,0 +1,74 @@
+{
+  "method": "analytical lumped elastic springs, hypothetical, not Fusion or experimental results",
+  "impactor_mass_kg": 0.26305602486058527,
+  "pad_total_thickness_mm": 6.3,
+  "assumed_constant_loaded_area_mm2": 100,
+  "assumed_Eeq_MPa": 7.905882352941179,
+  "pad_stiffness_N_mm": 125.49019607843142,
+  "speed_cases_rigid_backing": [
+    {
+      "velocity_m_s": 0.5,
+      "energy_J": 0.03288200310757316,
+      "peak_force_N": 90.84458175830794,
+      "compression_mm": 0.723917760886516,
+      "global_compression_percent": 11.49075810930978,
+      "core_compression_percent": 16.898173690161446,
+      "linear_model_large_strain_limitation": true
+    },
+    {
+      "velocity_m_s": 1,
+      "energy_J": 0.13152801243029263,
+      "peak_force_N": 181.68916351661588,
+      "compression_mm": 1.447835521773032,
+      "global_compression_percent": 22.98151621861956,
+      "core_compression_percent": 33.79634738032289,
+      "linear_model_large_strain_limitation": true
+    },
+    {
+      "velocity_m_s": 2,
+      "energy_J": 0.5261120497211705,
+      "peak_force_N": 363.37832703323176,
+      "compression_mm": 2.895671043546064,
+      "global_compression_percent": 45.96303243723912,
+      "core_compression_percent": 67.59269476064578,
+      "linear_model_large_strain_limitation": true
+    }
+  ],
+  "parametric_comparison_v1m_s": [
+    {
+      "assumed_gripper_stiffness_N_mm": 100,
+      "bare_peak_N": 162.19001968696634,
+      "padded_peak_N": 120.99437856534982,
+      "reduction_percent": 25.399615340774893,
+      "pad_compression_mm": 0.964173954192631,
+      "assumed_not_measured": true
+    },
+    {
+      "assumed_gripper_stiffness_N_mm": 500,
+      "bare_peak_N": 362.6679092920859,
+      "padded_peak_N": 162.44403710132482,
+      "reduction_percent": 55.20859912353164,
+      "pad_compression_mm": 1.2944759206511816,
+      "assumed_not_measured": true
+    },
+    {
+      "assumed_gripper_stiffness_N_mm": 1000,
+      "bare_peak_N": 512.8898759583633,
+      "padded_peak_N": 171.26087844629805,
+      "reduction_percent": 66.6086451548127,
+      "pad_compression_mm": 1.364735125118937,
+      "assumed_not_measured": true
+    }
+  ],
+  "full_elastic_contact_ms_rigid_backing": 4.548509438808502,
+  "durability_hours": null,
+  "wear_rate": null,
+  "fatigue_cycles": null,
+  "caveats": [
+    "constant area and linear stiffness assumed",
+    "density/infill scaling uncalibrated",
+    "no robot effective mass, anisotropic failure, preload, damping, temperature or contact redistribution modeled",
+    "elastic energy storage is not dissipated energy",
+    "real 30pct PA-CF walls and core stiffness not computed"
+  ]
+}

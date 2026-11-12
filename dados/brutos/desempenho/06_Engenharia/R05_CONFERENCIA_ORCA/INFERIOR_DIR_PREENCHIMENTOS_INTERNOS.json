@@ -1,0 +1,33 @@
+{
+  "source_gcode": "desempenho\\05_Orca\\Resultado_INFERIOR_DIR_K1MAX\\plate_1.gcode",
+  "method": "Native Gcode sparse-infill segments coloured by midpoint containment in exact STL modifier plane sections; walls and solid infill separately displayed. Density values are settings, not measured porosity. Supports omitted.",
+  "actual_native_toolpaths": true,
+  "records": [
+    {
+      "layer_Z_mm": 10.0,
+      "sparse_extrusion_segments_by_mask_percent": {
+        "20": 2325,
+        "50": 6964
+      },
+      "walls": 3505,
+      "solid_skin_segments": 1705
+    },
+    {
+      "layer_Z_mm": 45.0,
+      "sparse_extrusion_segments_by_mask_percent": {
+        "20": 6594,
+        "30": 4562,
+        "50": 21229
+      },
+      "walls": 2671,
+      "solid_skin_segments": 1497
+    },
+    {
+      "layer_Z_mm": 69.0,
+      "sparse_extrusion_segments_by_mask_percent": {},
+      "walls": 1660,
+      "solid_skin_segments": 846
+    }
+  ],
+  "not_FEA": true
+}

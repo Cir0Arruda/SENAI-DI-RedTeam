@@ -1,0 +1,206 @@
+Relatório de estudo
+Cabeçalho
+Propriedades do relatório
+Modelo de simulação 1
+Estudo 1 - Tensão estática
+Propriedades do estudo
+Configuração do estudo
+Configurações
+Materiais
+Contatos
+Malha
+Caso de carga1
+Restrições
+Cargas
+Resultados guiados
+Fator de segurança
+Resultados
+Fator de segurança
+Tensão
+Deslocamento
+Relatório de estudo
+|
+| Arquivo analisado
+| SAMI PA6CF - CORPO SUPERIOR - EXPLORATORIO 24kg
+| Versão
+| Autodesk Fusion (2706.1.17)
+| Data de criação
+| 2026-11-11, 00:28:13
+| Autor
+| usuario
+Propriedades do relatório
+| Propriedades do relatório
+| Título | Estudos
+| Autor | usuario
+Modelo de simulação 1
+Estudo 1 - Tensão estática
+Propriedades do estudo
+| Propriedades do estudo
+| Tipo de estudo
+| Tensão estática
+| Data da última modificação
+| 2026-11-11, 00:12:51
+Configuração do estudo
+| Configurações
+|
+Geral
+|
+|
+|
+| Tolerância de contato | 0.10 mm
+| Remover modos de corpo rígido | Nenhum
+|
+Malha
+|
+|
+|
+| Tamanho médio do elemento (% do tamanho do modelo) - Sólidos
+| -
+| Dimensionar tamanho da malha por peça
+| Nenhum
+| Tamanho médio do elemento (valor absoluto)
+| 3.00 mm
+| Ordem dos elementos
+| Parabólico
+| Criar elementos de malha curvos
+| Sim
+| Ângulo máx. de giro em curvas (graus)
+| 60
+| Coeficiente de tamanho máx. de malha adjacente
+| 1.5
+| Proporção máx.
+| 10
+| Tamanho mínimo do elemento (% do tamanho médio)
+| 20
+|
+Refinamento de malha adaptável
+|
+|
+|
+| Número de etapas de refinamento
+| 0
+| Tolerância de convergência dos resultados (%)
+| 20
+| Parte de elementos para refinar (%) | 10
+| Resultados para precisão da linha base | Tensão de Von Mises
+| Materiais
+|
+PA6CF_Bambu_V3_EXPLORATORIO_E4430_nu039
+|
+Componentes
+|
+|
+|
+| Componente
+| Resistência
+| SAMI_SUPERIOR_MACICO | Resistência máxima à tração
+|
+Propriedades
+|
+|
+|
+| Densidade | 1.090E-06 kg / mm^3
+| Módulo de Young | 4430.00 MPa
+| Coeficiente de Poisson | 0.39
+| Resistência a escoamento | 0.00 MPa
+| Resistência máxima à tração | 102.00 MPa
+| Condutividade térmica | 0.00 W / (mm C)
+| Coeficiente de expansão térmica | 0.00 / C
+| Calor específico | 0.00 J / (kg C)
+| Contatos
+| Contact Type
+| Contact Set
+| Penetration Type
+| Bodies
+| Entities
+| Malha
+| Tipo | Sólidos
+| Nós | 498261
+| Elementos | 339001
+Caso de carga1
+| Restrições
+|
+Fixo1
+|
+| Tipo | Fixo
+| Ux | Fixo
+| Uy | Fixo
+| Uz | Fixo
+| Cargas
+|
+Força1
+|
+| Tipo | Força
+| Valor X | 0.00 N
+| Valor Y | 0.00 N
+| Valor Z | -88.84 N
+| Força por entidade | Sim
+Caso de carga1 - Resultados guiados
+| Fator de segurança
+|
+|
+Com os critérios de análise nesta configuração de estudo, espera-se que o projeto dobre permanentemente ou quebre.
+|
+| Próximas etapas |
+| Abaixo do alvo do fator de segurança
+| Validar a configuração do estudo
+Verifique se as cargas não estão definidas muito altas
+Verifique o refinamento da malha e considere aumentá-la em áreas de alta tensão
+Confirme o requisito do fator de segurança
+Se o resultado de deslocamento mostrar um alto deslocamento, considere a possibilidade de executar um estudo não linear para obter mais informações
+| Verificar outros resultados
+Examine a visualização do resultado de destino abaixo para ver onde as áreas mais fracas estão
+Verifique o resultado da tensão para ver se, e onde, o material pode produzir
+Verifique o resultado do deslocamento para ver a que distância do alinhamento original o modelo foi movido
+Observe outros resultados, como forças de reação para verificar a configuração do estudo ou esforço para verificar o desempenho do material
+| Fortalecer áreas fracas
+Adicionar mais material a áreas fracas
+Selecionar um material com maior resistência ao escoamento
+Fortalecer o projeto
+Modificar a forma com um estudo de Design generativo
+| Gerar projetos alternativos
+Adicionar mais material a áreas fracas
+Selecionar um material com maior resistência ao escoamento
+Fortalecer o projeto
+Modificar a forma com um estudo de Design generativo
+| Acima do limite do fator de segurança
+| Validar a configuração do estudo
+Verifique se as cargas não estão definidas muito altas
+Verifique o refinamento da malha e considere aumentá-la em áreas de alta tensão
+Confirme o requisito do fator de segurança
+Se o resultado de deslocamento mostrar um alto deslocamento, considere a possibilidade de executar um estudo não linear para obter mais informações
+| Verificar outros resultados
+Examine a visualização do resultado de destino abaixo para ver onde as áreas mais fracas estão
+Verifique o resultado da tensão para ver se, e onde, o material pode produzir
+Verifique o resultado do deslocamento para ver a que distância do alinhamento original o modelo foi movido
+Observe outros resultados, como forças de reação para verificar a configuração do estudo ou esforço para verificar o desempenho do material
+| Leve no projeto
+Definir um limite superior do Fator de segurança para localizar onde o material pode ser removido
+Remover material de áreas que excedem o limite superior do Fator de segurança
+| Gerar projetos alternativos
+No espaço de trabalho Projeto generativo, crie modificações de projeto
+Remover material desnecessário usando um estudo sobre otimização de forma
+Caso de carga1 - Resultados
+| Resumo de resultados
+| Tipo de resultado
+| Sub-resultado
+| Mínimo
+| Máximo
+| Fator de segurança
+|
+Fator de segurança
+|
+| Tensão
+|
+Von Mises
+|
+|
+1ª principal
+|
+|
+3ª principal
+|
+| Deslocamento
+|
+Total
+|

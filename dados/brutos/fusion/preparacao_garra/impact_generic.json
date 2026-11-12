@@ -1,0 +1,20 @@
+{
+  "generic_cards": [
+    {
+      "name": "PAD_EQ_40_PELE_HIPOTESE_E7_905",
+      "type": "physmat_generic"
+    },
+    {
+      "name": "PA_EQ_30_HIPOTESE_E398_7",
+      "type": "physmat_generic"
+    },
+    {
+      "name": "PAD_EQ_40_PELE_HIPOTESE_E7_905",
+      "type": "physmat_generic"
+    },
+    {
+      "name": "PA_EQ_30_HIPOTESE_E398_7",
+      "type": "physmat_generic"
+    }
+  ]
+}

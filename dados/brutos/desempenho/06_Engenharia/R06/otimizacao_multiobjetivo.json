@@ -1,0 +1,236 @@
+{
+  "level1_materials": {
+    "criteria": [
+      "E_Z/rho",
+      "UTS_Z/rho",
+      "HDT_1.8MPa",
+      "1/rho"
+    ],
+    "scenarios_weights": {
+      "estrutural_24_7": [
+        0.35,
+        0.35,
+        0.25,
+        0.05
+      ],
+      "equilibrado": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "leveza": [
+        0.25,
+        0.2,
+        0.1,
+        0.45
+      ]
+    },
+    "materials": [
+      {
+        "name": "PETG",
+        "id": "petg_polymaker_v2",
+        "values": {
+          "E_Z/rho": 1694.615,
+          "UTS_Z/rho": 35.162,
+          "HDT_1.8MPa": 65.0,
+          "1/rho": 0.769
+        },
+        "pareto": false,
+        "topsis": {
+          "estrutural_24_7": 0.217,
+          "equilibrado": 0.178,
+          "leveza": 0.236
+        },
+        "impact_method": "impact_charpy_unnotched",
+        "source": "https://polymaker.com/wp-content/uploads/lana-downloads/TDS_Polymaker_PETG_V2.0_2025-11-17.pdf"
+      },
+      {
+        "name": "PCTG",
+        "id": "pctg_3dfuel_pro",
+        "values": {
+          "E_Z/rho": 1512.195,
+          "UTS_Z/rho": 36.585,
+          "HDT_1.8MPa": 64.0,
+          "1/rho": 0.813
+        },
+        "pareto": false,
+        "topsis": {
+          "estrutural_24_7": 0.152,
+          "equilibrado": 0.134,
+          "leveza": 0.186
+        },
+        "impact_method": "impact_izod_notched",
+        "source": "https://www.3dfuel.com/pages/pctg"
+      },
+      {
+        "name": "Tritan*",
+        "id": "tritan_tx1001_eastman",
+        "values": {
+          "E_Z/rho": 1311.864,
+          "UTS_Z/rho": 49.153,
+          "HDT_1.8MPa": 85.0,
+          "1/rho": 0.847
+        },
+        "pareto": false,
+        "topsis": {
+          "estrutural_24_7": 0.364,
+          "equilibrado": 0.34,
+          "leveza": 0.352
+        },
+        "impact_method": "impact_izod_notched",
+        "source": "https://productcatalog.eastman.com/tds/ProdDatasheet.aspx?pn=tritan+copolyester+tx1001&product=71070312"
+      },
+      {
+        "name": "PA6 (LEHVOSS)",
+        "id": "pa6_lehvoss9936",
+        "values": {
+          "E_Z/rho": 2240.0,
+          "UTS_Z/rho": 32.8,
+          "HDT_1.8MPa": 90.0,
+          "1/rho": 0.8
+        },
+        "pareto": true,
+        "topsis": {
+          "estrutural_24_7": 0.468,
+          "equilibrado": 0.421,
+          "leveza": 0.486
+        },
+        "impact_method": "impact_reported",
+        "source": "https://www.lehvoss.de/fileadmin/Compounds/PDFs/LUVOCOM_3F/LUVOCOM_3F_PAHT_9936_BK_L/Datasheet_LUVOCOM_R__3F_PAHT_9936_BK_L_Filament.pdf"
+      },
+      {
+        "name": "PA12",
+        "id": "pa12_fiberlogy",
+        "values": {
+          "E_Z/rho": 1386.139,
+          "UTS_Z/rho": 44.554,
+          "HDT_1.8MPa": 55.0,
+          "1/rho": 0.99
+        },
+        "pareto": true,
+        "topsis": {
+          "estrutural_24_7": 0.233,
+          "equilibrado": 0.237,
+          "leveza": 0.432
+        },
+        "impact_method": "impact_charpy_notched",
+        "source": "https://fiberlogy.com/app/uploads/2026/05/FIBERLOGY_NYLONPA12_TDS.pdf"
+      },
+      {
+        "name": "PC",
+        "id": "pc_polymax_v54",
+        "values": {
+          "E_Z/rho": 1805.882,
+          "UTS_Z/rho": 34.815,
+          "HDT_1.8MPa": 99.0,
+          "1/rho": 0.84
+        },
+        "pareto": false,
+        "topsis": {
+          "estrutural_24_7": 0.403,
+          "equilibrado": 0.401,
+          "leveza": 0.4
+        },
+        "impact_method": "impact_charpy_notched",
+        "source": "https://cdn.shopify.com/s/files/1/0548/7299/7945/files/PolyMax_PC_TDS_EN_V5.4.pdf"
+      },
+      {
+        "name": "PA6-CF",
+        "id": "pa6cf_bambu_v3",
+        "values": {
+          "E_Z/rho": 1990.826,
+          "UTS_Z/rho": 44.037,
+          "HDT_1.8MPa": 164.0,
+          "1/rho": 0.917
+        },
+        "pareto": true,
+        "topsis": {
+          "estrutural_24_7": 0.83,
+          "equilibrado": 0.856,
+          "leveza": 0.753
+        },
+        "impact_method": "impact_iso179",
+        "source": "https://store.bblcdn.com/b2abc59ac250492b979a52f1ce3e61b3.pdf"
+      },
+      {
+        "name": "PA12-CF10",
+        "id": "pa12cf10_fiberon",
+        "values": {
+          "E_Z/rho": 1704.34,
+          "UTS_Z/rho": 49.245,
+          "HDT_1.8MPa": 105.0,
+          "1/rho": 0.943
+        },
+        "pareto": true,
+        "topsis": {
+          "estrutural_24_7": 0.524,
+          "equilibrado": 0.512,
+          "leveza": 0.584
+        },
+        "impact_method": "charpy_unnotched",
+        "source": "https://cdn.shopify.com/s/files/1/0548/7299/7945/files/TDS_FIBERON_PA12-CF10_V1.1_EN.pdf?v=1740427088"
+      }
+    ],
+    "excluded_missing_data": [
+      {
+        "name": "TPU95A",
+        "missing": [
+          "HDT18"
+        ]
+      }
+    ],
+    "impact_same_method_kJ_m2_unnotched_XY": {
+      "PETG": 20.24,
+      "TPU95A": 123.2,
+      "PA6-CF": 40.3,
+      "PA12-CF10": 33.7
+    },
+    "ranking_estrutural_24_7": [
+      "PA6-CF",
+      "PA12-CF10",
+      "PA6 (LEHVOSS)",
+      "PC",
+      "Tritan*",
+      "PA12",
+      "PETG",
+      "PCTG"
+    ],
+    "ranking_equilibrado": [
+      "PA6-CF",
+      "PA12-CF10",
+      "PA6 (LEHVOSS)",
+      "PC",
+      "Tritan*",
+      "PA12",
+      "PETG",
+      "PCTG"
+    ],
+    "ranking_leveza": [
+      "PA6-CF",
+      "PA12-CF10",
+      "PA6 (LEHVOSS)",
+      "PA12",
+      "PC",
+      "Tritan*",
+      "PETG",
+      "PCTG"
+    ]
+  },
+  "level2_infill_PA6CF": {
+    "cases": {
+      "UNIFORME_20": {
+        "mass_part_g": 559.9,
+        "total_g": 675.99,
+        "time_h": 26.26
+      },
+      "ZONAL_R06": {
+        "mass_part_g": 754.5,
+        "total_g": 870.54,
+        "time_h": 38.12
+      }
+    },
+    "fea_source": "FEA pendente"
+  },
+  "honesty": "Rankings dependem dos pesos (cenários explícitos). Propriedades de fabricante, não ensaio próprio. Impacto com métodos distintos é só ordinal. Nada aqui é vida em fadiga."
+}

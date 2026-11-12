@@ -1,0 +1,98 @@
+{
+  "SUPERIOR": {
+    "part_lod_cm3": 1391.37,
+    "part_original_cm3": 1391.13,
+    "zones": {
+      "CASCA": {
+        "cm3": 283.53,
+        "faces": 33016,
+        "watertight": true
+      },
+      "BASE20": {
+        "cm3": 562.62,
+        "faces": 8046,
+        "watertight": true
+      },
+      "AMARELO30": {
+        "cm3": 86.64,
+        "faces": 2772,
+        "watertight": true
+      },
+      "AZUL50": {
+        "cm3": 300.74,
+        "faces": 3868,
+        "watertight": true
+      },
+      "ROSA70": {
+        "cm3": 157.84,
+        "faces": 3764,
+        "watertight": true
+      }
+    },
+    "lod_volume_error_pct": 0.017
+  },
+  "INFERIOR_ESQ": {
+    "part_lod_cm3": 815.46,
+    "part_original_cm3": 815.63,
+    "zones": {
+      "CASCA": {
+        "cm3": 213.69,
+        "faces": 20006,
+        "watertight": false
+      },
+      "BASE20": {
+        "cm3": 372.87,
+        "faces": 6218,
+        "watertight": false
+      },
+      "AMARELO30": {
+        "cm3": 76.44,
+        "faces": 2416,
+        "watertight": true
+      },
+      "AZUL50": {
+        "cm3": 83.4,
+        "faces": 3052,
+        "watertight": true
+      },
+      "ROSA70": {
+        "cm3": 69.07,
+        "faces": 1780,
+        "watertight": true
+      }
+    },
+    "lod_volume_error_pct": -0.021
+  },
+  "INFERIOR_DIR": {
+    "part_lod_cm3": 815.46,
+    "part_original_cm3": 815.63,
+    "zones": {
+      "CASCA": {
+        "cm3": 213.6,
+        "faces": 20030,
+        "watertight": false
+      },
+      "BASE20": {
+        "cm3": 373.3,
+        "faces": 6238,
+        "watertight": false
+      },
+      "AMARELO30": {
+        "cm3": 76.39,
+        "faces": 2382,
+        "watertight": true
+      },
+      "AZUL50": {
+        "cm3": 82.97,
+        "faces": 2964,
+        "watertight": true
+      },
+      "ROSA70": {
+        "cm3": 69.21,
+        "faces": 1724,
+        "watertight": true
+      }
+    },
+    "lod_volume_error_pct": -0.021
+  }
+}

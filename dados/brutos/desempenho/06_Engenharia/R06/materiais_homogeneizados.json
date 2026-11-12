@@ -1,0 +1,47 @@
+{
+  "method": "Gibson-Ashby: E*=Es*phi^2 (C=1,n=2, flexão dominante), sensibilidade n=1,5; sigma*=0,3*sigma_s*phi^1,5; rho*=rho_s*phi",
+  "base": "Bambu PA6-CF V3 XY: E 4430 MPa, nu 0,39 (proxy), rho 1090, UTS 102 MPa",
+  "status": "HIPOTESE de homogeneizacao, nao calibrada por ensaio do TPMS-D impresso",
+  "cards": {
+    "CASCA_100": {
+      "phi": 1.0,
+      "E_MPa": 4430.0,
+      "E_MPa_sens_n1_5": 4430.0,
+      "nu": 0.39,
+      "density_kg_m3": 1090.0,
+      "UTS_MPa": 102
+    },
+    "NUCLEO_TPMSD_20": {
+      "phi": 0.2,
+      "E_MPa": 177.2,
+      "E_MPa_sens_n1_5": 396.2,
+      "nu": 0.3,
+      "density_kg_m3": 218.0,
+      "UTS_MPa": 2.74
+    },
+    "NUCLEO_TPMSD_30": {
+      "phi": 0.3,
+      "E_MPa": 398.7,
+      "E_MPa_sens_n1_5": 727.9,
+      "nu": 0.3,
+      "density_kg_m3": 327.0,
+      "UTS_MPa": 5.03
+    },
+    "NUCLEO_TPMSD_50": {
+      "phi": 0.5,
+      "E_MPa": 1107.5,
+      "E_MPa_sens_n1_5": 1566.2,
+      "nu": 0.3,
+      "density_kg_m3": 545.0,
+      "UTS_MPa": 10.82
+    },
+    "NUCLEO_TPMSD_70": {
+      "phi": 0.7,
+      "E_MPa": 2170.7,
+      "E_MPa_sens_n1_5": 2594.5,
+      "nu": 0.3,
+      "density_kg_m3": 763.0,
+      "UTS_MPa": 17.92
+    }
+  }
+}

@@ -1,0 +1,2 @@
+warning: desempenho\05_Orca\GARRA_SUPERIOR_TPMSD_K1MAX_ESCALA_REAL.3mf: value "" for high_precision_gcode is not valid, using "0" instead
+Slic3r::CLI::run found error, exit

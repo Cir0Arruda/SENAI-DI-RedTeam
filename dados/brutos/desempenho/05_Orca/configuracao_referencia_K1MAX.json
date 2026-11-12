@@ -1,0 +1,17 @@
+{
+  "machine": "Creality K1 Max (0.4 nozzle)",
+  "bed_mm": [
+    300,
+    300,
+    300
+  ],
+  "source_process": "0.20mm Standard @Creality K1Max (0.4 nozzle)",
+  "scale": 1,
+  "orientation": "source Z up; no tilted X1 geometry used",
+  "PAD_bed_C": 35,
+  "PAD_nozzle_C": 230,
+  "PA_density_g_cm3": 1.09,
+  "TPU_density_g_cm3": 1.22,
+  "printing_not_qualified": true,
+  "purpose": "material and path estimate, no sending to printer"
+}

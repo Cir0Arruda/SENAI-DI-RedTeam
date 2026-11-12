@@ -1,0 +1,37 @@
+{
+  "selected_type": "adsk::fusion::BRepFace",
+  "design_object": "adsk::fusion::WorkingModel",
+  "body_count": 4,
+  "bodies": [
+    {
+      "name": "PA_CF_A1_SUBMODELO_EQUIVALENTE",
+      "material": "PA_EQ_30_HIPOTESE_E398_7",
+      "id": "PrismMaterial-022"
+    },
+    {
+      "name": "PAD95_R02_A1_L_ENVELOPE_INFILL40",
+      "material": "PAD_EQ_40_PELE_HIPOTESE_E7_905",
+      "id": "PrismMaterial-022"
+    },
+    {
+      "name": "PAD95_R02_A1_R_ENVELOPE_INFILL40",
+      "material": "PAD_EQ_40_PELE_HIPOTESE_E7_905",
+      "id": "PrismMaterial-022"
+    },
+    {
+      "name": "IMPACTOR_ACO_R20_GAP0_1mm",
+      "material": "STEEL_IMPACTOR",
+      "id": "PrismMaterial-018"
+    }
+  ],
+  "favorite_ids": [
+    {
+      "name": "PAD_EQ_40_PELE_HIPOTESE_E7_905",
+      "id": "9C4C50FB-F563-4550-8D1B-6316BEF07D89"
+    },
+    {
+      "name": "PA_EQ_30_HIPOTESE_E398_7",
+      "id": "77E427EE-1008-49A9-BAFF-6BC0E9F57121"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "document": "SAMI R04 - INFERIOR_DIR - MODIFICADORES TPMSD",
+  "component_definitions": 5,
+  "occurrences": 4,
+  "body_definitions": [
+    {
+      "component": "INFERIOR_DIR_AMARELO_30",
+      "body": "INFERIOR_DIR_AMARELO_30",
+      "solid": true,
+      "volume_cm3": 725.6917600504723,
+      "bbox_mm": [
+        92.00000000000003,
+        221.99999999957492,
+        80.0
+      ],
+      "material": "PA6CF_SOLIDO_REFERENCIA_NAO_HOMOGENEIZADO"
+    },
+    {
+      "component": "INFERIOR_DIR_AZUL_50",
+      "body": "INFERIOR_DIR_AZUL_50",
+      "solid": true,
+      "volume_cm3": 725.6467391031836,
+      "bbox_mm": [
+        185.13766429196716,
+        270.60042420782827,
+        85.0
+      ],
+      "material": "PA6CF_SOLIDO_REFERENCIA_NAO_HOMOGENEIZADO"
+    },
+    {
+      "component": "INFERIOR_DIR_ROSA_70",
+      "body": "INFERIOR_DIR_ROSA_70",
+      "solid": true,
+      "volume_cm3": 180.80022801042747,
+      "bbox_mm": [
+        62.99999999999997,
+        192.99999999957487,
+        29.000000000000057
+      ],
+      "material": "PA6CF_SOLIDO_REFERENCIA_NAO_HOMOGENEIZADO"
+    },
+    {
+      "component": "INFERIOR_DIR_BASE_20",
+      "body": "INFERIOR_DIR_BASE_20",
+      "solid": true,
+      "volume_cm3": 815.9197910970199,
+      "bbox_mm": [
+        202.9999999999999,
+        287.99999999999903,
+        72.69999999999999
+      ],
+      "material": "PA6CF_SOLIDO_REFERENCIA_NAO_HOMOGENEIZADO"
+    }
+  ],
+  "warning": "Definition volumes are not occurrence-weighted assembly mass; exclude hardware explicitly."
+}

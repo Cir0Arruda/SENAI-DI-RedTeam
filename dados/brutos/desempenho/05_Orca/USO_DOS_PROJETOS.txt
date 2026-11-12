@@ -1,0 +1,3 @@
+Abrir *K1MAX_ESCALA_REAL.3mf como PROJETO, nao apenas como geometria. Garra: um normal_part e tres modifier_part internos; base20%,30/50/70%,TPMS-D,5paredes. Mascaras nao sao corpos adicionais. PADs40% em projeto separado. Todos escala1:1, sem alterar exterior.
+Resultados_*_K1MAX sao fatiamentos calculados, nao FEA e nao liberacao para imprimir. Avisos de bico/mesa preservados. Nunca enviar estes Gcodes sem revisao do perfil da impressora real.
+Arquivos X1 ou MONTAGEM_ESCALADA sao referencias antigas, nao resultados finais.

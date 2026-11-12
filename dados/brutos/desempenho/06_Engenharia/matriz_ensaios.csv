@@ -1,0 +1,9 @@
+ensaio,estado,dados_necessarios_ou_evidencia
+Impacto3D,bloqueado,"Leis efetivas zonais; compressao/descarga PAD40; contatos, retencao e cinemática reais"
+Temperatura3D,bloqueado,"k,cp,E(T),CTE, condicoes de contorno e condicionamento"
+Ruptura/delaminacao,bloqueado,Criterios direcionais e dados de falha da impressao
+Amortecimento/absorcao,bloqueado,Histerese e dependencia de taxa/temperatura PAD40
+Desgaste/durabilidade,bloqueado,Fluencia/fadiga/rasgo/desgaste e espectro real
+Consumo/peso de polimeros,fatiamento concluido e verificado,Quatro casos escala1; CSV/JSON de massa; sem ferragens
+Exterior da garra,"inalterado, auditado",Mesma tesselação com translacao; modificadores nao imprimiveis
+Video,pausado por usuario,Aguardar resultados completos de engenharia

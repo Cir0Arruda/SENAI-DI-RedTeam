@@ -1,0 +1,155 @@
+{
+  "document": "SAMI R04 - INFERIOR_ESQ - MODIFICADORES TPMSD",
+  "source_transform": [
+    1.0,
+    4.7440683874653e-15,
+    -8.88078564146007e-17,
+    -23.7428095203859,
+    -4.7440683874653e-15,
+    1.0,
+    2.33358097507184e-16,
+    4.63071590256246,
+    8.88078564146018e-17,
+    -2.3335809750718357e-16,
+    1.0,
+    21.798093955103102,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "main_stl_raw": "desempenho\\03_STL_Garra\\origem/GARRA_INFERIOR_ESQ_ENVELOPE.stl",
+  "source_material": "PA6CF_BAMBU_V3_CORPO_REFERENCIA",
+  "scope": {
+    "part": "INFERIOR_ESQ",
+    "source_occurrence": "Suporte_Ventosas_S:1",
+    "source_volume_cm3": 815.9197910970213,
+    "partition_total_cm3": null,
+    "partition_difference_cm3": null,
+    "geometry_mode": "whole PA envelope plus nonprinting modifier masks; not disjoint source partitions",
+    "source_trim_failure": "ASM_EDGECOIN_PROBLEM; no repeat of source intersection",
+    "priority": [
+      70,
+      50,
+      30,
+      20
+    ],
+    "paths_world_cm": [
+      [
+        [
+          -67.73338307306587,
+          21.800055418372644
+        ],
+        [
+          -73.20838303653294,
+          18.850055209186323
+        ],
+        [
+          -78.683383,
+          15.900055
+        ]
+      ],
+      [
+        [
+          -67.73338307306587,
+          21.800055418372644
+        ],
+        [
+          -65.05838303653293,
+          18.850055209186323
+        ],
+        [
+          -62.383383,
+          15.900055
+        ]
+      ],
+      [
+        [
+          -67.73338307306582,
+          34.800055418330146
+        ],
+        [
+          -73.20838303653292,
+          37.75005520916507
+        ],
+        [
+          -78.683383,
+          40.700055
+        ]
+      ],
+      [
+        [
+          -67.73338307306582,
+          34.800055418330146
+        ],
+        [
+          -65.05838303653292,
+          37.75005520916507
+        ],
+        [
+          -62.383383,
+          40.700055
+        ]
+      ],
+      [
+        [
+          -67.73338307306587,
+          21.800055418372644
+        ],
+        [
+          -67.73338307306585,
+          28.300055418351395
+        ],
+        [
+          -67.73338307306582,
+          34.800055418330146
+        ]
+      ]
+    ],
+    "pink_cylinder_radius_mm": 31.5,
+    "pink_z_mm": [
+      264,
+      293
+    ],
+    "yellow_cylinder_radius_mm": 46,
+    "yellow_z_mm": [
+      230,
+      310
+    ],
+    "blue_corridor_width_mm": 16,
+    "zones_are_dimensional_hypotheses_from_2D_image": true,
+    "field_simulation_solved": false
+  },
+  "regions": [
+    {
+      "label": "ROSA",
+      "percent": 70,
+      "modifier_envelope_volume_cm3_not_printed_region_volume": 180.8002280104275,
+      "lumps": 2,
+      "stl_raw": "desempenho\\04_Modificadores\\origem/INFERIOR_ESQ_ROSA_70.stl"
+    },
+    {
+      "label": "AZUL",
+      "percent": 50,
+      "modifier_envelope_volume_cm3_not_printed_region_volume": 725.6467382971352,
+      "lumps": 1,
+      "stl_raw": "desempenho\\04_Modificadores\\origem/INFERIOR_ESQ_AZUL_50.stl"
+    },
+    {
+      "label": "AMARELO",
+      "percent": 30,
+      "modifier_envelope_volume_cm3_not_printed_region_volume": 725.6917600398583,
+      "lumps": 2,
+      "stl_raw": "desempenho\\04_Modificadores\\origem/INFERIOR_ESQ_AMARELO_30.stl"
+    },
+    {
+      "label": "BASE",
+      "percent": 20,
+      "modifier_envelope_volume_cm3_not_printed_region_volume": 815.9197910970213,
+      "lumps": 1,
+      "stl_raw": "desempenho\\04_Modificadores\\origem/INFERIOR_ESQ_BASE_20.stl"
+    }
+  ],
+  "archive": "desempenho\\01_Fusion\\FERRAMENTAS_NAO_SIMULAR\\GARRA_INFERIOR_ESQ_ZONAS_R04.f3d",
+  "tooling_only_do_not_solve_as_physical_bodies": true
+}

@@ -1,0 +1,15 @@
+{
+  "members": [
+    {
+      "class": "OrientedBoundingBox3D",
+      "doc": "\nCreates a transient oriented bounding box object.\ncenterPoint : The center point of the oriented box.\nlengthDirection : A Vector3D object that defines the direction of the length of the oriented bounding box. The magnitude of\nthe vector is ignored and just the direction is used.\nwidthDirection : A Vector3D object that defines the direction of the width of the oriented bounding box. The magnitude of\nthe vector is ignored and just the direction is used. The width direction must be perpendicular to\nthe length direction.\nlength : The length of the oriented bounding box in centimeters.\nwidth : The width of the oriented bounding box in centimeters. The width of the box is always perpendicular to the length.\nheight : The height of the oriented bounding box in centimeters. The height of the box is perpendicular to the length-width plane\nusing the right-hand rule where you cross the length into the width.\nReturns the new oriented bounding box.\n",
+      "name": "create",
+      "namespace": "adsk.core",
+      "signature": "(centerPoint: Point3D, lengthDirection: Vector3D, widthDirection: Vector3D, length: float, width: float, height: float) -> adsk.core.OrientedBoundingBox3D",
+      "staticmethod": true,
+      "type": "function"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

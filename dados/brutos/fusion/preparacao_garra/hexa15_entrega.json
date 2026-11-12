@@ -1,0 +1,27 @@
+{
+  "status": "external_reduced_1D_model_exported",
+  "report_pages": 6,
+  "gripper": {
+    "material_reference": "Bambu PA6-CF",
+    "perimeters": 5,
+    "infill": "Hexa3D15%"
+  },
+  "pad": {
+    "material_reference": "PolyFlex TPU95A",
+    "core_infill_percent": 40
+  },
+  "FEM_actual_gripper_solved": false,
+  "durability_hours": null,
+  "real_dissipation_or_wear": null,
+  "mp4_seconds": 10,
+  "mp4_resolution": [
+    1920,
+    1080
+  ],
+  "video_frames": 300,
+  "no_fusion_job_or_paid_cloud_submission": true,
+  "geometry_nominal_not_Hexa3D_internal_mesh": true,
+  "exported_pad_STL_parts": 8,
+  "pdf_visual_review": "passed",
+  "mp4_decoded_frame_review": "passed"
+}

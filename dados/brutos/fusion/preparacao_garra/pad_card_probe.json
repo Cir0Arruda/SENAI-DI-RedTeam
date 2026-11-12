@@ -1,0 +1,417 @@
+{
+  "rubber_props": [
+    {
+      "id": "physmat_Comments",
+      "type": "adsk::core::StringProperty",
+      "value": ""
+    },
+    {
+      "id": "physmat_Cost",
+      "type": "adsk::core::StringProperty",
+      "value": ""
+    },
+    {
+      "id": "physmat_Keynote",
+      "type": "adsk::core::StringProperty",
+      "value": ""
+    },
+    {
+      "id": "physmat_Keywords",
+      "type": "adsk::core::StringProperty",
+      "value": ""
+    },
+    {
+      "id": "physmat_Label",
+      "type": "adsk::core::StringProperty",
+      "value": ""
+    },
+    {
+      "id": "physmat_Manufacturer",
+      "type": "adsk::core::StringProperty",
+      "value": ""
+    },
+    {
+      "id": "physmat_Mark",
+      "type": "adsk::core::StringProperty",
+      "value": ""
+    },
+    {
+      "id": "physmat_Model",
+      "type": "adsk::core::StringProperty",
+      "value": ""
+    },
+    {
+      "id": "physmat_Type",
+      "type": "adsk::core::ChoiceProperty",
+      "value": "physmat_plastic"
+    },
+    {
+      "id": "physmat_URL",
+      "type": "adsk::core::StringProperty",
+      "value": ""
+    },
+    {
+      "id": "physmat_class",
+      "type": "adsk::core::StringProperty",
+      "value": ""
+    },
+    {
+      "id": "physmat_classification",
+      "type": "adsk::core::StringProperty",
+      "value": "Autodesk.Material Classifications.Plastic.Elastomer.Natural"
+    },
+    {
+      "id": "common_Shared_Asset",
+      "type": "adsk::core::ChoiceProperty",
+      "value": "common_shared"
+    },
+    {
+      "id": "structural_Behavior",
+      "type": "adsk::core::ChoiceProperty",
+      "value": "structural_isotropic"
+    },
+    {
+      "id": "structural_Damping_coefficient",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.0
+    },
+    {
+      "id": "structural_Density",
+      "type": "adsk::core::FloatProperty",
+      "value": 930.0
+    },
+    {
+      "id": "structural_ExternalMaterialID",
+      "type": "adsk::core::StringProperty",
+      "value": "2:MATERIAL:MI_InventorSustainability:781199BA-200C-4B6B-BD14-80CD4C1C23AA:7B7C1432-436E-46BE-8B52-08FB25FD88AA:0"
+    },
+    {
+      "id": "structural_Minimum_tensile_strength",
+      "type": "adsk::core::FloatProperty",
+      "value": 27600.0
+    },
+    {
+      "id": "structural_Minimum_yield_stress",
+      "type": "adsk::core::FloatProperty",
+      "value": 21000.0
+    },
+    {
+      "id": "structural_Poisson_ratio",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.5
+    },
+    {
+      "id": "structural_Poisson_ratio_12",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.5
+    },
+    {
+      "id": "structural_Poisson_ratio_23",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.5
+    },
+    {
+      "id": "structural_Poisson_ratio_X",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.5
+    },
+    {
+      "id": "structural_Poisson_ratio_Y",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.5
+    },
+    {
+      "id": "structural_Poisson_ratio_Z",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.5
+    },
+    {
+      "id": "structural_Shear_modulus",
+      "type": "adsk::core::FloatProperty",
+      "value": 1000.0
+    },
+    {
+      "id": "structural_Shear_modulus_12",
+      "type": "adsk::core::FloatProperty",
+      "value": 1000.0
+    },
+    {
+      "id": "structural_Shear_modulus_X",
+      "type": "adsk::core::FloatProperty",
+      "value": 1000.0
+    },
+    {
+      "id": "structural_Shear_modulus_Y",
+      "type": "adsk::core::FloatProperty",
+      "value": 1000.0
+    },
+    {
+      "id": "structural_Shear_modulus_Z",
+      "type": "adsk::core::FloatProperty",
+      "value": 1000.0
+    },
+    {
+      "id": "structural_Specific_heat",
+      "type": "adsk::core::FloatProperty",
+      "value": 1.88
+    },
+    {
+      "id": "structural_Thermal_conductivity",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.14
+    },
+    {
+      "id": "structural_Thermal_conductivity_X",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.14
+    },
+    {
+      "id": "structural_Thermal_conductivity_Y",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.14
+    },
+    {
+      "id": "structural_Thermal_conductivity_Z",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.14
+    },
+    {
+      "id": "structural_Thermal_expansion_coefficient",
+      "type": "adsk::core::FloatProperty",
+      "value": 6.7
+    },
+    {
+      "id": "structural_Thermal_expansion_coefficient_1",
+      "type": "adsk::core::FloatProperty",
+      "value": 6.7
+    },
+    {
+      "id": "structural_Thermal_expansion_coefficient_2",
+      "type": "adsk::core::FloatProperty",
+      "value": 6.7
+    },
+    {
+      "id": "structural_Thermal_expansion_coefficient_X",
+      "type": "adsk::core::FloatProperty",
+      "value": 6.7
+    },
+    {
+      "id": "structural_Thermal_expansion_coefficient_Y",
+      "type": "adsk::core::FloatProperty",
+      "value": 6.7
+    },
+    {
+      "id": "structural_Thermal_expansion_coefficient_Z",
+      "type": "adsk::core::FloatProperty",
+      "value": 6.7
+    },
+    {
+      "id": "structural_Young_modulus",
+      "type": "adsk::core::FloatProperty",
+      "value": 3000.0
+    },
+    {
+      "id": "structural_Young_modulus_1",
+      "type": "adsk::core::FloatProperty",
+      "value": 3000.0
+    },
+    {
+      "id": "structural_Young_modulus_2",
+      "type": "adsk::core::FloatProperty",
+      "value": 3000.0
+    },
+    {
+      "id": "structural_Young_modulus_X",
+      "type": "adsk::core::FloatProperty",
+      "value": 3000.0
+    },
+    {
+      "id": "structural_Young_modulus_Y",
+      "type": "adsk::core::FloatProperty",
+      "value": 3000.0
+    },
+    {
+      "id": "structural_Young_modulus_Z",
+      "type": "adsk::core::FloatProperty",
+      "value": 3000.0
+    },
+    {
+      "id": "structural_source",
+      "type": "adsk::core::StringProperty",
+      "value": "Autodesk"
+    },
+    {
+      "id": "structural_sourceURL",
+      "type": "adsk::core::StringProperty",
+      "value": ""
+    },
+    {
+      "id": "structural_subclass",
+      "type": "adsk::core::StringProperty",
+      "value": "Elastomer"
+    },
+    {
+      "id": "common_Shared_Asset",
+      "type": "adsk::core::ChoiceProperty",
+      "value": "common_shared"
+    },
+    {
+      "id": "thermal_Behavior",
+      "type": "adsk::core::ChoiceProperty",
+      "value": "thermal_isotropic"
+    },
+    {
+      "id": "thermal_Density",
+      "type": "adsk::core::FloatProperty",
+      "value": 930.0
+    },
+    {
+      "id": "thermal_Electrical_resistivity",
+      "type": "adsk::core::FloatProperty",
+      "value": 1e+16
+    },
+    {
+      "id": "thermal_Emissivity",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.95
+    },
+    {
+      "id": "thermal_Permeability",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.0
+    },
+    {
+      "id": "thermal_Porosity",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.001
+    },
+    {
+      "id": "thermal_Reflectivity",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.0
+    },
+    {
+      "id": "thermal_Specific_heat",
+      "type": "adsk::core::FloatProperty",
+      "value": 2.092
+    },
+    {
+      "id": "thermal_Thermal_conductivity",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.138
+    },
+    {
+      "id": "thermal_Thermal_conductivity_X",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.138
+    },
+    {
+      "id": "thermal_Thermal_conductivity_Y",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.138
+    },
+    {
+      "id": "thermal_Thermal_conductivity_Z",
+      "type": "adsk::core::FloatProperty",
+      "value": 0.138
+    },
+    {
+      "id": "thermal_Transmits_light",
+      "type": "adsk::core::BooleanProperty",
+      "value": false
+    },
+    {
+      "id": "thermal_source",
+      "type": "adsk::core::StringProperty",
+      "value": "Autodesk"
+    },
+    {
+      "id": "thermal_sourceURL",
+      "type": "adsk::core::StringProperty",
+      "value": ""
+    },
+    {
+      "id": "thermal_subclass",
+      "type": "adsk::core::StringProperty",
+      "value": "Plastic"
+    }
+  ],
+  "old_materials": [
+    {
+      "name": "Fiberon_PA12CF10_V11_DRY_EXPLORATORIO",
+      "id": "PrismMaterial-022"
+    },
+    {
+      "name": "PA6CF_Bambu_V3_EXPLORATORIO_E4430_nu039",
+      "id": "D8DCD961-C3EE-46F4-B472-57674CB3A5DE"
+    },
+    {
+      "name": "Aço",
+      "id": "PrismMaterial-018"
+    }
+  ],
+  "appearances": [
+    {
+      "name": "ABS (Branco)",
+      "id": "PrismMaterial-022_physmat_aspects:Prism-374"
+    },
+    {
+      "name": "Acrílico (Transparente)",
+      "id": "PrismMaterial-001_physmat_aspects:Prism-169"
+    },
+    {
+      "name": "Acrílico (Transparente)",
+      "id": "PrismMaterial-052_physmat_aspects:Prism-169"
+    },
+    {
+      "name": "Acrílico (Transparente)",
+      "id": "PrismMaterial-220_physmat_aspects:Prism-169"
+    },
+    {
+      "name": "Acrílico (Transparente)",
+      "id": "PrismMaterial-280_physmat_aspects:Prism-169"
+    },
+    {
+      "name": "Acrílico (Transparente)",
+      "id": "PrismMaterial-283_physmat_aspects:Prism-169"
+    },
+    {
+      "name": "Alumínio - Acetinado",
+      "id": "PrismMaterial-002_physmat_aspects:Prism-028"
+    },
+    {
+      "name": "Alumínio - Acetinado",
+      "id": "PrismMaterial-060_physmat_aspects:Prism-028"
+    },
+    {
+      "name": "Alumínio - Acetinado",
+      "id": "PrismMaterial-061_physmat_aspects:Prism-028"
+    },
+    {
+      "name": "Alumínio - Acetinado",
+      "id": "PrismMaterial-062_physmat_aspects:Prism-028"
+    }
+  ],
+  "nonlinear": [
+    {
+      "name": "Alumínio – puro (baixa resistência)",
+      "id": "C5F2133D-0660-40A6-8BA2-BD45E31374EA"
+    },
+    {
+      "name": "Aço estrutural – resistência elevada",
+      "id": "5255369B-8975-49AF-B4E4-D98CE8D2C9CC"
+    },
+    {
+      "name": "Aço – aço carbono para recipientes de pressão",
+      "id": "F628A5C3-CA0F-4528-91C7-DABB7B6C5699"
+    },
+    {
+      "name": "Aço – estrutural padrão",
+      "id": "9F975E36-76A9-4839-8C25-B20D471C7E11"
+    },
+    {
+      "name": "Aço – inoxidável",
+      "id": "573E7C78-8CC0-40D3-A15F-9F8C107183FA"
+    }
+  ]
+}

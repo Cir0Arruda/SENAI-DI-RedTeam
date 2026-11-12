@@ -1,0 +1,1 @@
+{"zones": {"CASCA": {"n": 1, "cm3": 380.65, "faces": 28780, "solid": true, "mat": "R07_PA6CF_SOLIDO_100", "t": 44.7}, "NUCLEO": {"n": 1, "cm3": 1013.04, "faces": 10038, "solid": true, "mat": "R07_PA6CF_NUCLEO_COM", "t": 51.7}}, "old": [["CASCA", 12174], ["NUCLEO", 4140]], "mass_kg": 0.8127, "t": 53.0}

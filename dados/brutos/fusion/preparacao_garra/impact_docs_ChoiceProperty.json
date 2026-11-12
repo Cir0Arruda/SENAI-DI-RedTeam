@@ -1,0 +1,14 @@
+{
+  "members": [
+    {
+      "class": "ChoiceProperty",
+      "doc": "\nMethod that returns the list of available choices.\nnames : An array of the names of the choices. These coincide with the array of choices returned by the choices argument.\nchoices : An array of the choices. These coincide with the array of names returned by the names argument.\nReturns true if the call was successful.\n",
+      "name": "getChoices",
+      "namespace": "adsk.core",
+      "signature": "() -> bool",
+      "type": "function"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

@@ -1,0 +1,34 @@
+{
+  "members": [
+    {
+      "class": "STLExportOptions",
+      "doc": "Gets and sets the current simple mesh refinement settings. Setting this property\nwill reset the surfaceDeviation, normalDeviation, maximumEdgeLength, and aspectRatio\nto values that correspond to the specified mesh refinement. The default is MeshRefinementMedium.",
+      "name": "meshRefinement",
+      "namespace": "adsk.fusion",
+      "type": "property"
+    },
+    {
+      "class": "STLExportOptions",
+      "doc": "Gets and sets the current surface deviation, or the distance the mesh can deviate\nfrom the actual surface. This is defined in centimeter. Setting this property\nwill automatically set the meshRefinement to MeshRefinementCustom. The default is the value\nassociated with medium mesh refinement.",
+      "name": "surfaceDeviation",
+      "namespace": "adsk.fusion",
+      "type": "property"
+    },
+    {
+      "class": "STLExportOptions",
+      "doc": "Gets and sets the current normal deviation, or the angle the mesh normals at the vertices can deviate\nfrom the actual surface normals. This is defined in radians. Setting this property\nwill automatically set the meshRefinement to MeshRefinementCustom. The default is the value\nassociated with medium mesh refinement.",
+      "name": "normalDeviation",
+      "namespace": "adsk.fusion",
+      "type": "property"
+    },
+    {
+      "class": "STLExportOptions",
+      "doc": "Gets and sets the maximum length of any mesh edge. This is defined in centimeter. Setting this property\nwill automatically set the meshRefinement to MeshRefinementCustom. The default is the value\nassociated with medium mesh refinement.",
+      "name": "maximumEdgeLength",
+      "namespace": "adsk.fusion",
+      "type": "property"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

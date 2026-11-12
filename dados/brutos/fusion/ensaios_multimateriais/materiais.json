@@ -1,0 +1,1202 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-10",
+  "basis": "Existing research guide in workspace; primary sources referenced per property; no new source revalidation in this agent task",
+  "scope": "8 separate grade records; no full material constitutive model implied",
+  "status": "catalog_only; not imported into Fusion by this task",
+  "null_semantics": "Missing is unknown, not zero. Do not supply inherited defaults as confirmed properties.",
+  "global_limitations": [
+    "Typical manufacturer data, not design allowables or measured current lot values.",
+    "No flexural modulus substituted for Young modulus.",
+    "Printed directional values are specimen results, not interlaminar cohesive parameters.",
+    "No Poisson, G, k, cp, alpha, creep, wear or fatigue data fabricated.",
+    "Masses are analytical density-volume calculations, not a mechanical or thermal simulation."
+  ],
+  "materials": [
+    {
+      "id": "petg_polymaker_v2",
+      "name": "Polymaker PETG V2.0",
+      "family": "PETG",
+      "source_url": "https://polymaker.com/wp-content/uploads/lana-downloads/TDS_Polymaker_PETG_V2.0_2025-11-17.pdf",
+      "data_origin": "FFF specimens; XY/Z declared",
+      "conditioning": "100% infill; nozzle 240 C, fan off",
+      "properties": {
+        "density": {
+          "value": 1.3,
+          "unit": "g/cm3",
+          "source_url": "https://polymaker.com/wp-content/uploads/lana-downloads/TDS_Polymaker_PETG_V2.0_2025-11-17.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "young_modulus": {
+          "value": {
+            "XY": 2311,
+            "Z": 2203
+          },
+          "unit": "MPa",
+          "source_url": "https://polymaker.com/wp-content/uploads/lana-downloads/TDS_Polymaker_PETG_V2.0_2025-11-17.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "ultimate_tensile_strength": {
+          "value": {
+            "XY": 47.96,
+            "Z": 45.71
+          },
+          "unit": "MPa",
+          "source_url": "https://polymaker.com/wp-content/uploads/lana-downloads/TDS_Polymaker_PETG_V2.0_2025-11-17.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "elongation_at_break": {
+          "value": {
+            "XY": 9.33,
+            "Z": 3.54
+          },
+          "unit": "%",
+          "source_url": "https://polymaker.com/wp-content/uploads/lana-downloads/TDS_Polymaker_PETG_V2.0_2025-11-17.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "flexural_strength": {
+          "value": {
+            "XY": 80.08,
+            "Z": 57.65
+          },
+          "unit": "MPa",
+          "source_url": "https://polymaker.com/wp-content/uploads/lana-downloads/TDS_Polymaker_PETG_V2.0_2025-11-17.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "flexural_modulus": {
+          "value": {
+            "XY": 2277,
+            "Z": 1959
+          },
+          "unit": "MPa",
+          "source_url": "https://polymaker.com/wp-content/uploads/lana-downloads/TDS_Polymaker_PETG_V2.0_2025-11-17.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "impact_charpy_notched": {
+          "value": {
+            "XY": 4.95
+          },
+          "unit": "kJ/m2",
+          "source_url": "https://polymaker.com/wp-content/uploads/lana-downloads/TDS_Polymaker_PETG_V2.0_2025-11-17.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "method": "ISO 179"
+        },
+        "impact_charpy_unnotched": {
+          "value": {
+            "XY": 20.24,
+            "Z": 15.74
+          },
+          "unit": "kJ/m2",
+          "source_url": "https://polymaker.com/wp-content/uploads/lana-downloads/TDS_Polymaker_PETG_V2.0_2025-11-17.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "method": "ISO 179"
+        },
+        "Tg": {
+          "value": 71.24,
+          "unit": "degC",
+          "source_url": "https://polymaker.com/wp-content/uploads/lana-downloads/TDS_Polymaker_PETG_V2.0_2025-11-17.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "HDT": {
+          "value": {
+            "0.45_MPa": 69,
+            "1.8_MPa": 65
+          },
+          "unit": "degC",
+          "source_url": "https://polymaker.com/wp-content/uploads/lana-downloads/TDS_Polymaker_PETG_V2.0_2025-11-17.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "method": "ISO 75"
+        },
+        "Vicat": {
+          "value": 75,
+          "unit": "degC",
+          "source_url": "https://polymaker.com/wp-content/uploads/lana-downloads/TDS_Polymaker_PETG_V2.0_2025-11-17.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        }
+      },
+      "gaps": {
+        "poisson_ratio": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "shear_modulus": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "thermal_conductivity": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "specific_heat": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "linear_thermal_expansion": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "yield_stress": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "creep_constitutive_data": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "wear_coefficient": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "fatigue_SN_data": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "strain_rate_dependence": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "temperature_dependent_stress_strain": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "interlaminar_fracture_energy": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        }
+      },
+      "mass_estimates": {
+        "method": "density x nominal deposited volume; analytical, not Fusion solver output",
+        "cube_side_mm": 50,
+        "cube_solid_volume_cm3": 125,
+        "cube_solid_mass_g": 162.5,
+        "cube_20pct_core_shell_2mm_material_volume_cm3": 47.1312,
+        "cube_20pct_core_shell_2mm_mass_g": 61.2706,
+        "sphere_diameter_mm": 50,
+        "sphere_solid_volume_cm3": 65.4498469498,
+        "sphere_solid_mass_g": 85.0848
+      }
+    },
+    {
+      "id": "pctg_3dfuel_pro",
+      "name": "3D-Fuel Pro PCTG",
+      "family": "PCTG",
+      "source_url": "https://www.3dfuel.com/pages/pctg",
+      "data_origin": "Mechanical fields: printed orientation table. Thermal/general fields: mixed resin/printed origin without direction",
+      "conditioning": "Full specimen conditioning not recorded in local guide",
+      "properties": {
+        "density": {
+          "value": 1.23,
+          "unit": "g/cm3",
+          "source_url": "https://www.3dfuel.com/pages/pctg",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "young_modulus": {
+          "value": {
+            "XY": 1810,
+            "Z": 1860
+          },
+          "unit": "MPa",
+          "source_url": "https://www.3dfuel.com/pages/pctg",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "ultimate_tensile_strength": {
+          "value": {
+            "XY": 44,
+            "Z": 45
+          },
+          "unit": "MPa",
+          "source_url": "https://www.3dfuel.com/pages/pctg",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "elongation_at_break": {
+          "value": {
+            "XY": 130,
+            "Z": 3.9
+          },
+          "unit": "%",
+          "source_url": "https://www.3dfuel.com/pages/pctg",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "flexural_strength": {
+          "value": {
+            "XY": 72.7,
+            "Z": 71.5
+          },
+          "unit": "MPa",
+          "source_url": "https://www.3dfuel.com/pages/pctg",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "flexural_modulus": {
+          "value": {
+            "XY": 1780,
+            "Z": 1720
+          },
+          "unit": "MPa",
+          "source_url": "https://www.3dfuel.com/pages/pctg",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "impact_izod_notched": {
+          "value": {
+            "XY": 7.5,
+            "Z": 4.7
+          },
+          "unit": "kJ/m2",
+          "source_url": "https://www.3dfuel.com/pages/pctg",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "method": "ISO 180/A"
+        },
+        "Tg": {
+          "value": 84,
+          "unit": "degC",
+          "source_url": "https://cdn.shopify.com/s/files/1/0027/5339/6848/files/3D-Fuel_Pro_PCTG_TDS_9-2-25.pdf?v=1756827548",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "HDT": {
+          "value": {
+            "0.455_MPa": 76,
+            "1.82_MPa": 64
+          },
+          "unit": "degC",
+          "source_url": "https://cdn.shopify.com/s/files/1/0027/5339/6848/files/3D-Fuel_Pro_PCTG_TDS_9-2-25.pdf?v=1756827548",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "method": "ISO 75; ASTM sheet has 74/64, not combined"
+        },
+        "hardness": {
+          "value": 76,
+          "unit": "Shore D",
+          "source_url": "https://cdn.shopify.com/s/files/1/0027/5339/6848/files/3D-Fuel_Pro_PCTG_TDS_9-2-25.pdf?v=1756827548",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        }
+      },
+      "gaps": {
+        "poisson_ratio": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "shear_modulus": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "thermal_conductivity": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "specific_heat": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "linear_thermal_expansion": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "yield_stress": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "creep_constitutive_data": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "wear_coefficient": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "fatigue_SN_data": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "strain_rate_dependence": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "temperature_dependent_stress_strain": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "interlaminar_fracture_energy": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        }
+      },
+      "mass_estimates": {
+        "method": "density x nominal deposited volume; analytical, not Fusion solver output",
+        "cube_side_mm": 50,
+        "cube_solid_volume_cm3": 125,
+        "cube_solid_mass_g": 153.75,
+        "cube_20pct_core_shell_2mm_material_volume_cm3": 47.1312,
+        "cube_20pct_core_shell_2mm_mass_g": 57.9714,
+        "sphere_diameter_mm": 50,
+        "sphere_solid_volume_cm3": 65.4498469498,
+        "sphere_solid_mass_g": 80.5033
+      },
+      "notes": [
+        "Do not replace printed elongation with generic resin value 220%.",
+        "Do not use generic resin impact 93 kJ/m2 as printed impact."
+      ]
+    },
+    {
+      "id": "tritan_tx1001_eastman",
+      "name": "Eastman Tritan TX1001",
+      "family": "Tritan copolyester",
+      "source_url": "https://productcatalog.eastman.com/tds/ProdDatasheet.aspx?pn=tritan+copolyester+tx1001&product=71070312",
+      "data_origin": "Molded material properties; no FFF Z characterization",
+      "conditioning": "Manufacturer typical ISO data; generally 23 C, 50% RH",
+      "properties": {
+        "density": {
+          "value": 1.18,
+          "unit": "g/cm3",
+          "source_url": "https://productcatalog.eastman.com/tds/ProdDatasheet.aspx?pn=tritan+copolyester+tx1001&product=71070312",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "young_modulus": {
+          "value": 1548,
+          "unit": "MPa",
+          "source_url": "https://productcatalog.eastman.com/tds/ProdDatasheet.aspx?pn=tritan+copolyester+tx1001&product=71070312",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "orientation": "not_FFF_directional"
+        },
+        "ultimate_tensile_strength": {
+          "value": 58,
+          "unit": "MPa",
+          "source_url": "https://productcatalog.eastman.com/tds/ProdDatasheet.aspx?pn=tritan+copolyester+tx1001&product=71070312",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "kind": "strength_at_break",
+          "method": "ISO 527"
+        },
+        "yield_stress": {
+          "value": 43,
+          "unit": "MPa",
+          "source_url": "https://productcatalog.eastman.com/tds/ProdDatasheet.aspx?pn=tritan+copolyester+tx1001&product=71070312",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "method": "ISO 527"
+        },
+        "elongation_at_break": {
+          "value": 185,
+          "unit": "%",
+          "source_url": "https://productcatalog.eastman.com/tds/ProdDatasheet.aspx?pn=tritan+copolyester+tx1001&product=71070312",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "method": "ISO 527"
+        },
+        "flexural_strength": {
+          "value": 59,
+          "unit": "MPa",
+          "source_url": "https://productcatalog.eastman.com/tds/ProdDatasheet.aspx?pn=tritan+copolyester+tx1001&product=71070312",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "method": "ISO 178"
+        },
+        "flexural_modulus": {
+          "value": 1495,
+          "unit": "MPa",
+          "source_url": "https://productcatalog.eastman.com/tds/ProdDatasheet.aspx?pn=tritan+copolyester+tx1001&product=71070312",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "method": "ISO 178"
+        },
+        "impact_izod_notched": {
+          "value": {
+            "23_degC": 93,
+            "minus40_degC": 20
+          },
+          "unit": "kJ/m2",
+          "source_url": "https://productcatalog.eastman.com/tds/ProdDatasheet.aspx?pn=tritan+copolyester+tx1001&product=71070312",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "method": "ISO 180"
+        },
+        "HDT": {
+          "value": {
+            "0.455_MPa": 99,
+            "1.82_MPa": 85
+          },
+          "unit": "degC",
+          "source_url": "https://productcatalog.eastman.com/tds/ProdDatasheet.aspx?pn=tritan+copolyester+tx1001&product=71070312",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "method": "ASTM D648"
+        }
+      },
+      "gaps": {
+        "poisson_ratio": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "shear_modulus": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "thermal_conductivity": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "specific_heat": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "linear_thermal_expansion": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "creep_constitutive_data": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "wear_coefficient": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "fatigue_SN_data": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "strain_rate_dependence": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "temperature_dependent_stress_strain": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "interlaminar_fracture_energy": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        }
+      },
+      "mass_estimates": {
+        "method": "density x nominal deposited volume; analytical, not Fusion solver output",
+        "cube_side_mm": 50,
+        "cube_solid_volume_cm3": 125,
+        "cube_solid_mass_g": 147.5,
+        "cube_20pct_core_shell_2mm_material_volume_cm3": 47.1312,
+        "cube_20pct_core_shell_2mm_mass_g": 55.6148,
+        "sphere_diameter_mm": 50,
+        "sphere_solid_volume_cm3": 65.4498469498,
+        "sphere_solid_mass_g": 77.2308
+      },
+      "notes": [
+        "No equivalence to an arbitrary commercial Tritan/PCTG filament.",
+        "ISO and ASTM elongation/strength numbers differ; this record uses ISO mechanical figures."
+      ]
+    },
+    {
+      "id": "tpu95ahf_bambu_v3",
+      "name": "Bambu TPU 95A HF V3.0",
+      "family": "TPU",
+      "source_url": "https://store.bblcdn.com/s6/default/a6ca55f14aa54ddb92679d06df4700ae/Bambu_TPU_95A_HF_Technical_Data_Sheet.pdf",
+      "data_origin": "FFF specimens; XY/Z declared",
+      "conditioning": "100% infill; dried/thermally conditioned 70 C for 12h",
+      "properties": {
+        "density": {
+          "value": 1.22,
+          "unit": "g/cm3",
+          "source_url": "https://store.bblcdn.com/s6/default/a6ca55f14aa54ddb92679d06df4700ae/Bambu_TPU_95A_HF_Technical_Data_Sheet.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "young_modulus": {
+          "value": {
+            "XY": 9.8,
+            "Z": 7.4
+          },
+          "unit": "MPa",
+          "source_url": "https://store.bblcdn.com/s6/default/a6ca55f14aa54ddb92679d06df4700ae/Bambu_TPU_95A_HF_Technical_Data_Sheet.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "ultimate_tensile_strength": {
+          "value": {
+            "XY": 27.3,
+            "Z": 22.3
+          },
+          "unit": "MPa",
+          "source_url": "https://store.bblcdn.com/s6/default/a6ca55f14aa54ddb92679d06df4700ae/Bambu_TPU_95A_HF_Technical_Data_Sheet.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "elongation_at_break": {
+          "value": {
+            "XY": ">650",
+            "Z": ">480"
+          },
+          "unit": "%",
+          "source_url": "https://store.bblcdn.com/s6/default/a6ca55f14aa54ddb92679d06df4700ae/Bambu_TPU_95A_HF_Technical_Data_Sheet.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "impact_iso179": {
+          "value": {
+            "XY": 123.2,
+            "Z": 86.3
+          },
+          "unit": "kJ/m2",
+          "source_url": "https://store.bblcdn.com/s6/default/a6ca55f14aa54ddb92679d06df4700ae/Bambu_TPU_95A_HF_Technical_Data_Sheet.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "method": "ISO 179; notch status unspecified in table"
+        },
+        "Tm": {
+          "value": 183,
+          "unit": "degC",
+          "source_url": "https://store.bblcdn.com/s6/default/a6ca55f14aa54ddb92679d06df4700ae/Bambu_TPU_95A_HF_Technical_Data_Sheet.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        }
+      },
+      "gaps": {
+        "poisson_ratio": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "shear_modulus": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "thermal_conductivity": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "specific_heat": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "linear_thermal_expansion": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "yield_stress": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "creep_constitutive_data": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "wear_coefficient": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "fatigue_SN_data": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "strain_rate_dependence": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "temperature_dependent_stress_strain": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "interlaminar_fracture_energy": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "hyperelastic_viscoelastic_curves": {
+          "value": null,
+          "status": "Required for meaningful large-deformation/time dependent TPU analysis"
+        }
+      },
+      "mass_estimates": {
+        "method": "density x nominal deposited volume; analytical, not Fusion solver output",
+        "cube_side_mm": 50,
+        "cube_solid_volume_cm3": 125,
+        "cube_solid_mass_g": 152.5,
+        "cube_20pct_core_shell_2mm_material_volume_cm3": 47.1312,
+        "cube_20pct_core_shell_2mm_mass_g": 57.5001,
+        "sphere_diameter_mm": 50,
+        "sphere_solid_volume_cm3": 65.4498469498,
+        "sphere_solid_mass_g": 79.8488
+      }
+    },
+    {
+      "id": "pa6_lehvoss9936",
+      "name": "LEHVOSS LUVOCOM 3F PAHT 9936 BK/L",
+      "family": "Formulated PA6, unreinforced structurally",
+      "source_url": "https://www.lehvoss.de/fileadmin/Compounds/PDFs/LUVOCOM_3F/LUVOCOM_3F_PAHT_9936_BK_L/Datasheet_LUVOCOM_R__3F_PAHT_9936_BK_L_Filament.pdf",
+      "data_origin": "FFF printed specimens; special formulation, not generic pure PA6",
+      "conditioning": "Dry, non-annealed, 100% infill",
+      "properties": {
+        "density": {
+          "value": 1.25,
+          "unit": "g/cm3",
+          "source_url": "https://www.lehvoss.de/fileadmin/Compounds/PDFs/LUVOCOM_3F/LUVOCOM_3F_PAHT_9936_BK_L/Datasheet_LUVOCOM_R__3F_PAHT_9936_BK_L_Filament.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "young_modulus": {
+          "value": {
+            "XY": 3050,
+            "Z": 2800
+          },
+          "unit": "MPa",
+          "source_url": "https://www.lehvoss.de/fileadmin/Compounds/PDFs/LUVOCOM_3F/LUVOCOM_3F_PAHT_9936_BK_L/Datasheet_LUVOCOM_R__3F_PAHT_9936_BK_L_Filament.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "ultimate_tensile_strength": {
+          "value": {
+            "XY": 79,
+            "Z": 41
+          },
+          "unit": "MPa",
+          "source_url": "https://www.lehvoss.de/fileadmin/Compounds/PDFs/LUVOCOM_3F/LUVOCOM_3F_PAHT_9936_BK_L/Datasheet_LUVOCOM_R__3F_PAHT_9936_BK_L_Filament.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "elongation_at_break": {
+          "value": {
+            "XY": 4.1,
+            "Z": 1.6
+          },
+          "unit": "%",
+          "source_url": "https://www.lehvoss.de/fileadmin/Compounds/PDFs/LUVOCOM_3F/LUVOCOM_3F_PAHT_9936_BK_L/Datasheet_LUVOCOM_R__3F_PAHT_9936_BK_L_Filament.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "flexural_strength": {
+          "value": {
+            "XY": 115,
+            "Z": 65
+          },
+          "unit": "MPa",
+          "source_url": "https://www.lehvoss.de/fileadmin/Compounds/PDFs/LUVOCOM_3F/LUVOCOM_3F_PAHT_9936_BK_L/Datasheet_LUVOCOM_R__3F_PAHT_9936_BK_L_Filament.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "flexural_modulus": {
+          "value": {
+            "XY": 2730,
+            "Z": 2470
+          },
+          "unit": "MPa",
+          "source_url": "https://www.lehvoss.de/fileadmin/Compounds/PDFs/LUVOCOM_3F/LUVOCOM_3F_PAHT_9936_BK_L/Datasheet_LUVOCOM_R__3F_PAHT_9936_BK_L_Filament.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "impact_reported": {
+          "value": {
+            "XY": 89,
+            "Z": 6
+          },
+          "unit": "kJ/m2",
+          "source_url": "https://www.lehvoss.de/fileadmin/Compounds/PDFs/LUVOCOM_3F/LUVOCOM_3F_PAHT_9936_BK_L/Datasheet_LUVOCOM_R__3F_PAHT_9936_BK_L_Filament.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "method": "Manufacturer labels 1eU and ISO 180; confirm geometry before comparing"
+        },
+        "Tg": {
+          "value": 80,
+          "unit": "degC",
+          "source_url": "https://www.lehvoss.de/fileadmin/Compounds/PDFs/LUVOCOM_3F/LUVOCOM_3F_PAHT_9936_BK_L/Datasheet_LUVOCOM_R__3F_PAHT_9936_BK_L_Filament.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "Tm": {
+          "value": 235,
+          "unit": "degC",
+          "source_url": "https://www.lehvoss.de/fileadmin/Compounds/PDFs/LUVOCOM_3F/LUVOCOM_3F_PAHT_9936_BK_L/Datasheet_LUVOCOM_R__3F_PAHT_9936_BK_L_Filament.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "HDT": {
+          "value": {
+            "1.8_MPa": 90
+          },
+          "unit": "degC",
+          "source_url": "https://www.lehvoss.de/fileadmin/Compounds/PDFs/LUVOCOM_3F/LUVOCOM_3F_PAHT_9936_BK_L/Datasheet_LUVOCOM_R__3F_PAHT_9936_BK_L_Filament.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        }
+      },
+      "gaps": {
+        "poisson_ratio": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "shear_modulus": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "thermal_conductivity": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "specific_heat": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "linear_thermal_expansion": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "yield_stress": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "creep_constitutive_data": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "wear_coefficient": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "fatigue_SN_data": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "strain_rate_dependence": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "temperature_dependent_stress_strain": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "interlaminar_fracture_energy": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        }
+      },
+      "mass_estimates": {
+        "method": "density x nominal deposited volume; analytical, not Fusion solver output",
+        "cube_side_mm": 50,
+        "cube_solid_volume_cm3": 125,
+        "cube_solid_mass_g": 156.25,
+        "cube_20pct_core_shell_2mm_material_volume_cm3": 47.1312,
+        "cube_20pct_core_shell_2mm_mass_g": 58.914,
+        "sphere_diameter_mm": 50,
+        "sphere_solid_volume_cm3": 65.4498469498,
+        "sphere_solid_mass_g": 81.8123
+      }
+    },
+    {
+      "id": "pa12_fiberlogy",
+      "name": "Fiberlogy Nylon PA12",
+      "family": "PA12",
+      "source_url": "https://fiberlogy.com/app/uploads/2026/05/FIBERLOGY_NYLONPA12_TDS.pdf",
+      "data_origin": "Material/source data; no printed XY/Z declaration",
+      "conditioning": "Not established in consulted sheet",
+      "properties": {
+        "density": {
+          "value": 1.01,
+          "unit": "g/cm3",
+          "source_url": "https://fiberlogy.com/app/uploads/2026/05/FIBERLOGY_NYLONPA12_TDS.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "young_modulus": {
+          "value": 1400,
+          "unit": "MPa",
+          "source_url": "https://fiberlogy.com/app/uploads/2026/05/FIBERLOGY_NYLONPA12_TDS.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "orientation": "not_declared"
+        },
+        "yield_stress": {
+          "value": 45,
+          "unit": "MPa",
+          "source_url": "https://fiberlogy.com/app/uploads/2026/05/FIBERLOGY_NYLONPA12_TDS.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "method": "ISO 527"
+        },
+        "elongation_at_break": {
+          "value": ">50",
+          "unit": "%",
+          "source_url": "https://fiberlogy.com/app/uploads/2026/05/FIBERLOGY_NYLONPA12_TDS.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "impact_charpy_notched": {
+          "value": 12,
+          "unit": "kJ/m2",
+          "source_url": "https://fiberlogy.com/app/uploads/2026/05/FIBERLOGY_NYLONPA12_TDS.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "method": "ISO 179, 23 C, direction not declared"
+        },
+        "Tm": {
+          "value": 178,
+          "unit": "degC",
+          "source_url": "https://fiberlogy.com/app/uploads/2026/05/FIBERLOGY_NYLONPA12_TDS.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "HDT": {
+          "value": {
+            "0.45_MPa": 135,
+            "1.8_MPa": 55
+          },
+          "unit": "degC",
+          "source_url": "https://fiberlogy.com/app/uploads/2026/05/FIBERLOGY_NYLONPA12_TDS.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "Vicat": {
+          "value": 145,
+          "unit": "degC",
+          "source_url": "https://fiberlogy.com/app/uploads/2026/05/FIBERLOGY_NYLONPA12_TDS.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        }
+      },
+      "gaps": {
+        "poisson_ratio": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "shear_modulus": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "thermal_conductivity": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "specific_heat": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "linear_thermal_expansion": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "creep_constitutive_data": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "wear_coefficient": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "fatigue_SN_data": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "strain_rate_dependence": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "temperature_dependent_stress_strain": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "interlaminar_fracture_energy": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "printed_XY_Z_strength": {
+          "value": null,
+          "status": "No directional FFF strength published in consulted source"
+        }
+      },
+      "mass_estimates": {
+        "method": "density x nominal deposited volume; analytical, not Fusion solver output",
+        "cube_side_mm": 50,
+        "cube_solid_volume_cm3": 125,
+        "cube_solid_mass_g": 126.25,
+        "cube_20pct_core_shell_2mm_material_volume_cm3": 47.1312,
+        "cube_20pct_core_shell_2mm_mass_g": 47.6025,
+        "sphere_diameter_mm": 50,
+        "sphere_solid_volume_cm3": 65.4498469498,
+        "sphere_solid_mass_g": 66.1043
+      }
+    },
+    {
+      "id": "pc_polymax_v54",
+      "name": "Polymaker PolyMax PC V5.4",
+      "family": "PC",
+      "source_url": "https://cdn.shopify.com/s/files/1/0548/7299/7945/files/PolyMax_PC_TDS_EN_V5.4.pdf",
+      "data_origin": "FFF specimens; XY/Z declared",
+      "conditioning": "Specimens printed in 90 C environment; sheet recommends annealing",
+      "properties": {
+        "density": {
+          "value": 1.19,
+          "unit": "g/cm3",
+          "source_url": "https://cdn.shopify.com/s/files/1/0548/7299/7945/files/PolyMax_PC_TDS_EN_V5.4.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "young_modulus": {
+          "value": {
+            "XY": 2435,
+            "Z": 2149
+          },
+          "unit": "MPa",
+          "source_url": "https://cdn.shopify.com/s/files/1/0548/7299/7945/files/PolyMax_PC_TDS_EN_V5.4.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "ultimate_tensile_strength": {
+          "value": {
+            "XY": 53.44,
+            "Z": 41.43
+          },
+          "unit": "MPa",
+          "source_url": "https://cdn.shopify.com/s/files/1/0548/7299/7945/files/PolyMax_PC_TDS_EN_V5.4.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "elongation_at_break": {
+          "value": {
+            "XY": 4.53,
+            "Z": 2.79
+          },
+          "unit": "%",
+          "source_url": "https://cdn.shopify.com/s/files/1/0548/7299/7945/files/PolyMax_PC_TDS_EN_V5.4.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "flexural_strength": {
+          "value": {
+            "XY": 81.29
+          },
+          "unit": "MPa",
+          "source_url": "https://cdn.shopify.com/s/files/1/0548/7299/7945/files/PolyMax_PC_TDS_EN_V5.4.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "flexural_modulus": {
+          "value": {
+            "XY": 2050
+          },
+          "unit": "MPa",
+          "source_url": "https://cdn.shopify.com/s/files/1/0548/7299/7945/files/PolyMax_PC_TDS_EN_V5.4.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "impact_charpy_notched": {
+          "value": {
+            "XY_ambient": 21.28,
+            "XY_minus30_degC": 9.2
+          },
+          "unit": "kJ/m2",
+          "source_url": "https://cdn.shopify.com/s/files/1/0548/7299/7945/files/PolyMax_PC_TDS_EN_V5.4.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "Tg": {
+          "value": 113,
+          "unit": "degC",
+          "source_url": "https://cdn.shopify.com/s/files/1/0548/7299/7945/files/PolyMax_PC_TDS_EN_V5.4.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "HDT": {
+          "value": {
+            "0.45_MPa": 114,
+            "1.8_MPa": 99
+          },
+          "unit": "degC",
+          "source_url": "https://cdn.shopify.com/s/files/1/0548/7299/7945/files/PolyMax_PC_TDS_EN_V5.4.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "Vicat": {
+          "value": 117,
+          "unit": "degC",
+          "source_url": "https://cdn.shopify.com/s/files/1/0548/7299/7945/files/PolyMax_PC_TDS_EN_V5.4.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        }
+      },
+      "gaps": {
+        "poisson_ratio": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "shear_modulus": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "thermal_conductivity": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "specific_heat": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "linear_thermal_expansion": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "yield_stress": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "creep_constitutive_data": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "wear_coefficient": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "fatigue_SN_data": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "strain_rate_dependence": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "temperature_dependent_stress_strain": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "interlaminar_fracture_energy": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        }
+      },
+      "mass_estimates": {
+        "method": "density x nominal deposited volume; analytical, not Fusion solver output",
+        "cube_side_mm": 50,
+        "cube_solid_volume_cm3": 125,
+        "cube_solid_mass_g": 148.75,
+        "cube_20pct_core_shell_2mm_material_volume_cm3": 47.1312,
+        "cube_20pct_core_shell_2mm_mass_g": 56.0861,
+        "sphere_diameter_mm": 50,
+        "sphere_solid_volume_cm3": 65.4498469498,
+        "sphere_solid_mass_g": 77.8853
+      }
+    },
+    {
+      "id": "pa6cf_bambu_v3",
+      "name": "Bambu PA6-CF V3.0",
+      "family": "PA6 carbon fiber",
+      "source_url": "https://store.bblcdn.com/b2abc59ac250492b979a52f1ce3e61b3.pdf",
+      "data_origin": "FFF specimens; XY/Z declared",
+      "conditioning": "100% infill; dry and thermally treated 80 C for 12h",
+      "properties": {
+        "density": {
+          "value": 1.09,
+          "unit": "g/cm3",
+          "source_url": "https://store.bblcdn.com/b2abc59ac250492b979a52f1ce3e61b3.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "young_modulus": {
+          "value": {
+            "XY": 4430,
+            "Z": 2170
+          },
+          "unit": "MPa",
+          "source_url": "https://store.bblcdn.com/b2abc59ac250492b979a52f1ce3e61b3.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "ultimate_tensile_strength": {
+          "value": {
+            "XY": 102,
+            "Z": 48
+          },
+          "unit": "MPa",
+          "source_url": "https://store.bblcdn.com/b2abc59ac250492b979a52f1ce3e61b3.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "elongation_at_break": {
+          "value": {
+            "XY": 5.8,
+            "Z": 3.7
+          },
+          "unit": "%",
+          "source_url": "https://store.bblcdn.com/b2abc59ac250492b979a52f1ce3e61b3.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "flexural_strength": {
+          "value": {
+            "XY": 151,
+            "Z": 80
+          },
+          "unit": "MPa",
+          "source_url": "https://store.bblcdn.com/b2abc59ac250492b979a52f1ce3e61b3.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "flexural_modulus": {
+          "value": {
+            "XY": 5460,
+            "Z": 2240
+          },
+          "unit": "MPa",
+          "source_url": "https://store.bblcdn.com/b2abc59ac250492b979a52f1ce3e61b3.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "impact_iso179_notched": {
+          "value": {
+            "XY": 13.4
+          },
+          "unit": "kJ/m2",
+          "source_url": "https://store.bblcdn.com/b2abc59ac250492b979a52f1ce3e61b3.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "impact_iso179": {
+          "value": {
+            "XY": 40.3,
+            "Z": 15.5
+          },
+          "unit": "kJ/m2",
+          "source_url": "https://store.bblcdn.com/b2abc59ac250492b979a52f1ce3e61b3.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement",
+          "notch_status": "not explicitly specified for these values"
+        },
+        "Tg": {
+          "value": 68,
+          "unit": "degC",
+          "source_url": "https://store.bblcdn.com/b2abc59ac250492b979a52f1ce3e61b3.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "Tm": {
+          "value": 223,
+          "unit": "degC",
+          "source_url": "https://store.bblcdn.com/b2abc59ac250492b979a52f1ce3e61b3.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "HDT": {
+          "value": {
+            "0.45_MPa": 186,
+            "1.8_MPa": 164
+          },
+          "unit": "degC",
+          "source_url": "https://store.bblcdn.com/b2abc59ac250492b979a52f1ce3e61b3.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "Vicat": {
+          "value": 212,
+          "unit": "degC",
+          "source_url": "https://store.bblcdn.com/b2abc59ac250492b979a52f1ce3e61b3.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        },
+        "crystallization_temperature": {
+          "value": 185,
+          "unit": "degC",
+          "source_url": "https://store.bblcdn.com/b2abc59ac250492b979a52f1ce3e61b3.pdf",
+          "evidence": "Confirmed in previously researched manufacturer source; not a new physical measurement"
+        }
+      },
+      "gaps": {
+        "poisson_ratio": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "shear_modulus": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "thermal_conductivity": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "specific_heat": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "linear_thermal_expansion": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "yield_stress": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "creep_constitutive_data": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "wear_coefficient": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "fatigue_SN_data": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "strain_rate_dependence": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "temperature_dependent_stress_strain": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        },
+        "interlaminar_fracture_energy": {
+          "value": null,
+          "status": "not_reported_in_consulted_sources; do not infer or substitute"
+        }
+      },
+      "mass_estimates": {
+        "method": "density x nominal deposited volume; analytical, not Fusion solver output",
+        "cube_side_mm": 50,
+        "cube_solid_volume_cm3": 125,
+        "cube_solid_mass_g": 136.25,
+        "cube_20pct_core_shell_2mm_material_volume_cm3": 47.1312,
+        "cube_20pct_core_shell_2mm_mass_g": 51.373,
+        "sphere_diameter_mm": 50,
+        "sphere_solid_volume_cm3": 65.4498469498,
+        "sphere_solid_mass_g": 71.3403
+      }
+    }
+  ]
+}

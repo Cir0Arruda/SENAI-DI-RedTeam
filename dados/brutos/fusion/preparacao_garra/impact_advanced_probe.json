@@ -1,0 +1,40 @@
+[
+  {
+    "where": "favorite",
+    "name": "PAD_EQ_40_PELE_HIPOTESE_E7_905",
+    "id": "9C4C50FB-F563-4550-8D1B-6316BEF07D89",
+    "props": [
+      {
+        "id": "structural_Behavior",
+        "value": "structural_isotropic",
+        "type": "adsk::core::ChoiceProperty",
+        "units": null
+      },
+      {
+        "id": "structural_ExternalMaterialID",
+        "value": "",
+        "type": "adsk::core::StringProperty",
+        "units": null
+      }
+    ]
+  },
+  {
+    "where": "design",
+    "name": "PAD_EQ_40_PELE_HIPOTESE_E7_905",
+    "id": "PrismMaterial-022",
+    "props": [
+      {
+        "id": "structural_Behavior",
+        "value": "structural_isotropic",
+        "type": "adsk::core::ChoiceProperty",
+        "units": null
+      },
+      {
+        "id": "structural_ExternalMaterialID",
+        "value": "",
+        "type": "adsk::core::StringProperty",
+        "units": null
+      }
+    ]
+  }
+]

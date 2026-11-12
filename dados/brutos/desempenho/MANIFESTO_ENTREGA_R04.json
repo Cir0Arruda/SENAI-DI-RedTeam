@@ -1,0 +1,860 @@
+{
+  "scope": "Light handoff package: STL, prepared 3MF, clean CAD, report, sources and verified numerical outputs. Large sliced3MF/Gcode remain in local05_Orca/Resultado_*_K1MAX and are deliberately excluded. No videos. No solved FEA.",
+  "files": [
+    {
+      "file": "00_Continuar/CONTINUAR_NO_CLAUDE.md",
+      "bytes": 7529,
+      "sha256": "7ec59be59bfd52d3e55771a664b26b81e0109467593c2f5238381b672a8796bc"
+    },
+    {
+      "file": "00_Continuar/estado.json",
+      "bytes": 4719,
+      "sha256": "cc8627fe3d37587158313a38227ed03e26a1ccfe5cff2e6a52af6bd3ba3b4ed9"
+    },
+    {
+      "file": "01_Fusion/GARRA_INFERIOR_DIR_ZONAS_R04_EXTERIOR_INALTERADO.png",
+      "bytes": 531483,
+      "sha256": "5a80f759c9a5ec21549ba4dbad74bb923affdb9c913ccfa66f70abc297f8a9fd"
+    },
+    {
+      "file": "01_Fusion/GARRA_INFERIOR_ESQ_ZONAS_R04_EXTERIOR_INALTERADO.png",
+      "bytes": 526579,
+      "sha256": "14c65082c9f8a286a3d5870a3eac3893f1636fd3bf64ac7f80107b3109993eab"
+    },
+    {
+      "file": "01_Fusion/GARRA_R04_EXTERIOR_ORIGINAL_PREPARACAO.f3d",
+      "bytes": 8618661,
+      "sha256": "f5123bdbae4e823fc773f167cd4a2acd56e8a5c4b8f9f4dd59e6470c4ad83b7c"
+    },
+    {
+      "file": "01_Fusion/GARRA_R04_EXTERIOR_ORIGINAL_PREPARACAO.png",
+      "bytes": 597220,
+      "sha256": "fd0c35ee9b620116ef65bc7d608504a0c9c2ab531bfef272e99d9e6860e85348"
+    },
+    {
+      "file": "01_Fusion/GARRA_R04_EXTERIOR_ORIGINAL_PREPARACAO.step",
+      "bytes": 30218610,
+      "sha256": "f0b8656ad8e2543737eebfedfdd187a6e1ece8c475609faeea4dd2c128de4e01"
+    },
+    {
+      "file": "01_Fusion/GARRA_SUPERIOR_ZONAS_R04_EXTERIOR_INALTERADO.png",
+      "bytes": 500738,
+      "sha256": "aed8ed3f92105ff880259ffcddf1ea273aff7bc410112dce7804d068651bd31e"
+    },
+    {
+      "file": "01_Fusion/PADs_R04_SEPARADOS.f3d",
+      "bytes": 1482011,
+      "sha256": "ca5bdc3f1fa2a6b9bbf042384ea6f9c2ec57949e24151eb592843e948d8d2d09"
+    },
+    {
+      "file": "01_Fusion/PADs_R04_SEPARADOS.png",
+      "bytes": 281503,
+      "sha256": "c13e5f20905fd90f626390747922183b7481340ece3ce4a2167e2c4deda9bd73"
+    },
+    {
+      "file": "01_Fusion/PADs_R04_SEPARADOS.step",
+      "bytes": 3978894,
+      "sha256": "310d0366de3a84912c53e7e9e90fd0540e66dc75b4f07b597af491ddaf683ae6"
+    },
+    {
+      "file": "02_STL_PAD/exportacao_Fusion.json",
+      "bytes": 2328,
+      "sha256": "7d6f19e75fe0ba29789f313eca6c47102ea928f4cab0174803de4fe863fdf1bf"
+    },
+    {
+      "file": "02_STL_PAD/PAD95_R02_A1_L_ENVELOPE_INFILL40.stl",
+      "bytes": 334184,
+      "sha256": "662067c2f421241102163f3e173ed04fb94d15bbd270226155686269e0451fca"
+    },
+    {
+      "file": "02_STL_PAD/PAD95_R02_A1_R_ENVELOPE_INFILL40.stl",
+      "bytes": 165784,
+      "sha256": "52aa90b725bf146173be02ffbf6ac38062b5df7edbf4f4c10a84c80f16457b9e"
+    },
+    {
+      "file": "02_STL_PAD/PAD95_R02_A2_L_ENVELOPE_INFILL40.stl",
+      "bytes": 324584,
+      "sha256": "a4b4f5930c91baf3e8e4c8e81439a29f4b2dd976373433798ea61371185d2153"
+    },
+    {
+      "file": "02_STL_PAD/PAD95_R02_A2_R_ENVELOPE_INFILL40.stl",
+      "bytes": 272984,
+      "sha256": "fc20c28b4f8d80b52d6ba69e29755d2a10921fd305a43494c656b9b0fadbade4"
+    },
+    {
+      "file": "02_STL_PAD/PAD95_R02_A3_L_ENVELOPE_INFILL40.stl",
+      "bytes": 263284,
+      "sha256": "d0bb412ebfa1fd7bcea42c50cbe3d28f1a1df25dee4807959ee9e3644e6a6b9d"
+    },
+    {
+      "file": "02_STL_PAD/PAD95_R02_A3_R_ENVELOPE_INFILL40.stl",
+      "bytes": 309284,
+      "sha256": "a31f02ab4494ffe52f579f194fc27428c27e4a1f3490aa598fa03818df0d0796"
+    },
+    {
+      "file": "02_STL_PAD/PAD95_R02_A4_L_ENVELOPE_INFILL40.stl",
+      "bytes": 186984,
+      "sha256": "b1ed0fa21f5515bd9da5f0780deb9ac4e9f5f8fdc054cdd84e3131619f8c630b"
+    },
+    {
+      "file": "02_STL_PAD/PAD95_R02_A4_R_ENVELOPE_INFILL40.stl",
+      "bytes": 369584,
+      "sha256": "7b3d203adb6c8a3f32128b51cd2629171b800d4694803acd69e3e9b2238c6a10"
+    },
+    {
+      "file": "02_STL_PAD/PADs_8_PARTES_MESA.stl",
+      "bytes": 2226084,
+      "sha256": "ac7999c7ed42e87e731af7c6879148cf7a182516be3ba09acfeaf84cbf423d9d"
+    },
+    {
+      "file": "02_STL_PAD/validacao_STL.json",
+      "bytes": 5328,
+      "sha256": "59831363919a78a75d3f8b5a900f80f905e5a27cd97446e04ab04919f5166e5e"
+    },
+    {
+      "file": "03_STL_Garra/GARRA_INFERIOR_DIR_BASE20.stl",
+      "bytes": 3308784,
+      "sha256": "df9184e8d21cfffe94f37db66163c4a390155bfe49a05c760c3893ba011a062b"
+    },
+    {
+      "file": "03_STL_Garra/GARRA_INFERIOR_ESQ_BASE20.stl",
+      "bytes": 3308784,
+      "sha256": "01041f7f55f618752e0ed8ab51cce5bccb3bbe7313bce550131554abb0a22641"
+    },
+    {
+      "file": "03_STL_Garra/GARRA_SUPERIOR_BASE20.stl",
+      "bytes": 6017884,
+      "sha256": "355574f4534de5f347298b717490ca27872492615ab57c49986a5ad0e903f082"
+    },
+    {
+      "file": "03_STL_Garra/REFERENCIA_X1/GARRA_INFERIOR_DIR_ORIENTADA_SEM_ESCALA.stl",
+      "bytes": 3308784,
+      "sha256": "bf612c012e9b7c8a6d6c01baffa5c29433a4ad460d36fc196cd7a64756c24a16"
+    },
+    {
+      "file": "03_STL_Garra/REFERENCIA_X1/GARRA_INFERIOR_ESQ_ORIENTADA_SEM_ESCALA.stl",
+      "bytes": 3308784,
+      "sha256": "501e5c051b7c99ce079798e1d5147e05b6f5f4071cd633bce3a7ef33497e5214"
+    },
+    {
+      "file": "03_STL_Garra/REFERENCIA_X1/GARRA_SUPERIOR_ORIENTADA_SEM_ESCALA.stl",
+      "bytes": 6017884,
+      "sha256": "d47cdcb90271be30e0861f2b273e6d8c58ac28c45d936aa96729530c9f270ac5"
+    },
+    {
+      "file": "04_Modificadores/INFERIOR_DIR/MOD_AMARELO_30.stl",
+      "bytes": 60084,
+      "sha256": "f6064872e0ebd0bcbb4f07933f03a94b1c234bced564396ede12be368d237380"
+    },
+    {
+      "file": "04_Modificadores/INFERIOR_DIR/MOD_AZUL_50.stl",
+      "bytes": 9884,
+      "sha256": "abf5ca79224f2be59c060282077d8a0586a060ce5067632f3d76c1ea61ef19e3"
+    },
+    {
+      "file": "04_Modificadores/INFERIOR_DIR/MOD_ROSA_70.stl",
+      "bytes": 27684,
+      "sha256": "6ae287145f7815fa654696f4da4d1b83f58a12b1bc201cd1f97d56d324b4edbf"
+    },
+    {
+      "file": "04_Modificadores/INFERIOR_DIR_regioes.json",
+      "bytes": 4109,
+      "sha256": "707a97f45c3a4f1076eca3c52b116345dd509d84fe7cb7485eeaddf44307b08b"
+    },
+    {
+      "file": "04_Modificadores/INFERIOR_DIR_validacao_STL.json",
+      "bytes": 2249,
+      "sha256": "f65ddf41e9ec9fb4a037eee8964265979f3a0721ae715c1dc6b418ab642ab284"
+    },
+    {
+      "file": "04_Modificadores/INFERIOR_ESQ/MOD_AMARELO_30.stl",
+      "bytes": 60084,
+      "sha256": "4802d71b266b097d1dec56730f86765239974e7f0b5f52b917938db16db617b2"
+    },
+    {
+      "file": "04_Modificadores/INFERIOR_ESQ/MOD_AZUL_50.stl",
+      "bytes": 9884,
+      "sha256": "b7c1160dabcabd50a4d798bffd9a236dc7bc208a660c8b0e6e073dc34017f87b"
+    },
+    {
+      "file": "04_Modificadores/INFERIOR_ESQ/MOD_ROSA_70.stl",
+      "bytes": 27684,
+      "sha256": "e9471f8df8b8a4d2fd962aed4ef5db0c5b1a21d050f3472b9e9657a95e4e5688"
+    },
+    {
+      "file": "04_Modificadores/INFERIOR_ESQ_regioes.json",
+      "bytes": 4102,
+      "sha256": "6e99d3eb6c330360821480b56c13f6b092a9ffaaed4fe0d43a3997a175d26f7e"
+    },
+    {
+      "file": "04_Modificadores/INFERIOR_ESQ_validacao_STL.json",
+      "bytes": 2234,
+      "sha256": "e048b51fc2331edbec51c2ff8c8ee9f0c7e8f77e6a097d215df39531738b88ee"
+    },
+    {
+      "file": "04_Modificadores/REFERENCIA_X1/INFERIOR_DIR/MOD_AMARELO_30.stl",
+      "bytes": 60084,
+      "sha256": "c3ebb94e63add0861d11ad70f246d9d87de66eb2cefc865eb38f739ba124efd9"
+    },
+    {
+      "file": "04_Modificadores/REFERENCIA_X1/INFERIOR_DIR/MOD_AZUL_50.stl",
+      "bytes": 9884,
+      "sha256": "4acb393260975d80213d5553500efe14ed59d3865201bc9fcc8e9e5dd9d03b53"
+    },
+    {
+      "file": "04_Modificadores/REFERENCIA_X1/INFERIOR_DIR/MOD_ROSA_70.stl",
+      "bytes": 27684,
+      "sha256": "6063d4cdfd5175be2e46c35e7f49b27d2485a8a7d308d0bbefad41736ae46019"
+    },
+    {
+      "file": "04_Modificadores/REFERENCIA_X1/INFERIOR_ESQ/MOD_AMARELO_30.stl",
+      "bytes": 60084,
+      "sha256": "e5094e7ae488817d5feb235af7b74590fa5d97d9a952634d439eb710503f27bb"
+    },
+    {
+      "file": "04_Modificadores/REFERENCIA_X1/INFERIOR_ESQ/MOD_AZUL_50.stl",
+      "bytes": 9884,
+      "sha256": "30e103f6a39adb5aa0a4345963980843996f85b06b9963ea15dad94b25751c21"
+    },
+    {
+      "file": "04_Modificadores/REFERENCIA_X1/INFERIOR_ESQ/MOD_ROSA_70.stl",
+      "bytes": 27684,
+      "sha256": "253eb927600aba7daf57f32233c0cb97bffcb8d661d9c530915868171e2601f7"
+    },
+    {
+      "file": "04_Modificadores/REFERENCIA_X1/SUPERIOR/MOD_AMARELO_30.stl",
+      "bytes": 93084,
+      "sha256": "497ab0eeb14a615e1e1e0bb1e5a546fd8c7c28b818ff8cc7d05b6756392f81fc"
+    },
+    {
+      "file": "04_Modificadores/REFERENCIA_X1/SUPERIOR/MOD_AZUL_50.stl",
+      "bytes": 42084,
+      "sha256": "d34c02117a8b1f0641126604a69443ca44372b77ffe50f2673955224c09c81d6"
+    },
+    {
+      "file": "04_Modificadores/REFERENCIA_X1/SUPERIOR/MOD_ROSA_70.stl",
+      "bytes": 43284,
+      "sha256": "9883d8681c225b4bc03dd94a7b93ae705c8f48c2f83c8b59173b8f6d62934c92"
+    },
+    {
+      "file": "04_Modificadores/SUPERIOR/MOD_AMARELO_30.stl",
+      "bytes": 93084,
+      "sha256": "b52870f73b809abff7544d7e29c78502bf9f049c75312c53bdb69f28839455b7"
+    },
+    {
+      "file": "04_Modificadores/SUPERIOR/MOD_AZUL_50.stl",
+      "bytes": 42084,
+      "sha256": "150dce60ddc6afa6c4cff3b9bac9f7e48aceb160799461818ac663f738ba4243"
+    },
+    {
+      "file": "04_Modificadores/SUPERIOR/MOD_ROSA_70.stl",
+      "bytes": 43284,
+      "sha256": "5ac20a39f4bb4ec450c32d14669ce71fd34838833c5f6c40f2902d3b327b6da4"
+    },
+    {
+      "file": "04_Modificadores/SUPERIOR_regioes.json",
+      "bytes": 3977,
+      "sha256": "71f08f66d0fb3b55c20ef8765ef0c9f6b04a9252a8546ee6daf207b2d15ec598"
+    },
+    {
+      "file": "04_Modificadores/SUPERIOR_validacao_STL.json",
+      "bytes": 2221,
+      "sha256": "acf930951e3c95d8b108cf091540e9c699f30cde2d97502bed75db151bd8f311"
+    },
+    {
+      "file": "05_Orca/configuracao_referencia_K1MAX.json",
+      "bytes": 449,
+      "sha256": "2c72d9381e3d379b51a1d8b4b085c36b697c45fb41ac026657d6bce78fe44b9b"
+    },
+    {
+      "file": "05_Orca/GARRA_INFERIOR_DIR_TPMSD_K1MAX_ESCALA_REAL.3mf",
+      "bytes": 926830,
+      "sha256": "fcd169d78cfba80cdf53b346500c74ee939f8170a92f3a2100a88e2c6e110072"
+    },
+    {
+      "file": "05_Orca/GARRA_INFERIOR_ESQ_TPMSD_K1MAX_ESCALA_REAL.3mf",
+      "bytes": 926970,
+      "sha256": "0443f70c180c1185552aa05c5fed7940b3ff1e59ef265a8922be6b9973ae6745"
+    },
+    {
+      "file": "05_Orca/GARRA_SUPERIOR_TPMSD_K1MAX_ESCALA_REAL.3mf",
+      "bytes": 1719988,
+      "sha256": "e61b915ed539770681d570600a3d61c4c6d4fe277933d2dabc9f67f5f1a3ecf8"
+    },
+    {
+      "file": "05_Orca/PADs_TPU95A40_K1MAX_ESCALA_REAL.3mf",
+      "bytes": 614816,
+      "sha256": "799b2cbfd9f6fd9a3fab8181fddaca0e3c3e561c9078393efc4e5bf0aa134bb5"
+    },
+    {
+      "file": "05_Orca/perfil_anterior_resolvido.json",
+      "bytes": 64197,
+      "sha256": "cdd3a5c1716f71ef0078fefee2fc70fc5dd406a892d94041e06d0606433bdcab"
+    },
+    {
+      "file": "05_Orca/Resultado_INFERIOR_DIR_K1MAX/00000.log",
+      "bytes": 110,
+      "sha256": "2a10e1541cf1727478d30020f137e64d6711116e9a3811f70fb4866835d9ea21"
+    },
+    {
+      "file": "05_Orca/Resultado_INFERIOR_DIR_K1MAX/dados_fatiamento.json",
+      "bytes": 4352,
+      "sha256": "df95a42e2cd96e9640eaa50038df0c9f17079415230fa90be8cc5dd31537e9cc"
+    },
+    {
+      "file": "05_Orca/Resultado_INFERIOR_DIR_K1MAX/material_por_funcao.csv",
+      "bytes": 860,
+      "sha256": "cc5c60ea602b64fa4860292e5ed1fbb59024531acd47c1313d78630e332437ca"
+    },
+    {
+      "file": "05_Orca/Resultado_INFERIOR_DIR_K1MAX/Orca_fatiamento.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "05_Orca/Resultado_INFERIOR_DIR_K1MAX/perfil_efetivo.json",
+      "bytes": 32149,
+      "sha256": "2ba17f65feac2b23a845dd98b6d46b25ea4a16fed991e400bba7044317944b5c"
+    },
+    {
+      "file": "05_Orca/Resultado_INFERIOR_DIR_K1MAX/plate_1.png",
+      "bytes": 39844,
+      "sha256": "ea84fb69538f354b5823c46f71900dc59f9f2fb3b781aad59a4efb25737a07fb"
+    },
+    {
+      "file": "05_Orca/Resultado_INFERIOR_DIR_K1MAX/status.json",
+      "bytes": 880,
+      "sha256": "52f6cf0ec737b6694dab0e964dd81f834695c26e733f80bff0aec7f628db2727"
+    },
+    {
+      "file": "05_Orca/Resultado_INFERIOR_DIR_K1MAX/top_1.png",
+      "bytes": 55029,
+      "sha256": "562dcd2b7a5604ed095a021a1eb52bf6856b16102cd901592f20baf7b6b6f519"
+    },
+    {
+      "file": "05_Orca/Resultado_INFERIOR_ESQ_K1MAX/00000.log",
+      "bytes": 110,
+      "sha256": "2a10e1541cf1727478d30020f137e64d6711116e9a3811f70fb4866835d9ea21"
+    },
+    {
+      "file": "05_Orca/Resultado_INFERIOR_ESQ_K1MAX/dados_fatiamento.json",
+      "bytes": 4361,
+      "sha256": "cfe7f1ac5935e9452b16f55ddaa8c348d343b198b5e3ab1e0a0eefb50c4de2b5"
+    },
+    {
+      "file": "05_Orca/Resultado_INFERIOR_ESQ_K1MAX/material_por_funcao.csv",
+      "bytes": 866,
+      "sha256": "11b7f24dd22e9443dcb761c9d1e61254ae6eb02bb3eaa94427371da62dcab631"
+    },
+    {
+      "file": "05_Orca/Resultado_INFERIOR_ESQ_K1MAX/Orca_fatiamento.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "05_Orca/Resultado_INFERIOR_ESQ_K1MAX/perfil_efetivo.json",
+      "bytes": 32149,
+      "sha256": "2ba17f65feac2b23a845dd98b6d46b25ea4a16fed991e400bba7044317944b5c"
+    },
+    {
+      "file": "05_Orca/Resultado_INFERIOR_ESQ_K1MAX/plate_1.png",
+      "bytes": 42205,
+      "sha256": "9ee04adb2f0f11fdce06ac1aa61abcace4d6ae174d85a3011b3cb1db23569c74"
+    },
+    {
+      "file": "05_Orca/Resultado_INFERIOR_ESQ_K1MAX/status.json",
+      "bytes": 880,
+      "sha256": "a4a3d911c38a50adadc3e4c0461bad17291f1e86bde402676b0fcf2fa04c48be"
+    },
+    {
+      "file": "05_Orca/Resultado_INFERIOR_ESQ_K1MAX/top_1.png",
+      "bytes": 58034,
+      "sha256": "ddc97c64b1e36f37adb41f8b844b7f28cdc56ebcd70bf7b6a421520d9df2145c"
+    },
+    {
+      "file": "05_Orca/Resultado_PAD_K1MAX/00000.log",
+      "bytes": 99,
+      "sha256": "1b60ad39b2418ce6520275ac619df8cd88f0ed2560b60abf7e8da6fe7a427010"
+    },
+    {
+      "file": "05_Orca/Resultado_PAD_K1MAX/dados_fatiamento.json",
+      "bytes": 8455,
+      "sha256": "f967839028e4997d68b863396407db711486c3dc9b4c5e17e3043c9f1c036e6b"
+    },
+    {
+      "file": "05_Orca/Resultado_PAD_K1MAX/material_por_funcao.csv",
+      "bytes": 881,
+      "sha256": "52637914eb6512e6d0cf64b0d2298272c9f69ae229be0765e28dd122f87d00a3"
+    },
+    {
+      "file": "05_Orca/Resultado_PAD_K1MAX/Orca_fatiamento.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "05_Orca/Resultado_PAD_K1MAX/perfil_efetivo.json",
+      "bytes": 31494,
+      "sha256": "b107a5ef17a1c472680dbc6c387e0c48e039955987a0abdf65eec050bbe3f8e2"
+    },
+    {
+      "file": "05_Orca/Resultado_PAD_K1MAX/plate_1.png",
+      "bytes": 16311,
+      "sha256": "b666cdf3dd85d6dec9f4818d7667e4a2eccda8f098c92af9dd61d04af43bb0d8"
+    },
+    {
+      "file": "05_Orca/Resultado_PAD_K1MAX/status.json",
+      "bytes": 842,
+      "sha256": "1ab3de7958704daed84656a94e29fb0cc755899558eda9d0e941a707cc0cbc44"
+    },
+    {
+      "file": "05_Orca/Resultado_PAD_K1MAX/top_1.png",
+      "bytes": 12312,
+      "sha256": "a970b44f37620c2d3270905e11376550c013961fa89b0a99071218916d55ed1e"
+    },
+    {
+      "file": "05_Orca/Resultado_SUPERIOR_K1MAX/00000.log",
+      "bytes": 110,
+      "sha256": "2a10e1541cf1727478d30020f137e64d6711116e9a3811f70fb4866835d9ea21"
+    },
+    {
+      "file": "05_Orca/Resultado_SUPERIOR_K1MAX/dados_fatiamento.json",
+      "bytes": 4356,
+      "sha256": "5982059ef51d711cb8ae13155d5082915da5101cb55418fcfa89ed1397b5c7d4"
+    },
+    {
+      "file": "05_Orca/Resultado_SUPERIOR_K1MAX/material_por_funcao.csv",
+      "bytes": 860,
+      "sha256": "ab853810dfaa3bd42efdccbe4265e8feed0d383defe849c871c9084460aa5798"
+    },
+    {
+      "file": "05_Orca/Resultado_SUPERIOR_K1MAX/Orca_fatiamento.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "05_Orca/Resultado_SUPERIOR_K1MAX/Orca_tentativa1_compatibilidade.log",
+      "bytes": 217,
+      "sha256": "61ae3d3074abaab29a127238d226c18aa45e2cbb8d494521a1eceed075fd8b34"
+    },
+    {
+      "file": "05_Orca/Resultado_SUPERIOR_K1MAX/perfil_efetivo.json",
+      "bytes": 32149,
+      "sha256": "2ba17f65feac2b23a845dd98b6d46b25ea4a16fed991e400bba7044317944b5c"
+    },
+    {
+      "file": "05_Orca/Resultado_SUPERIOR_K1MAX/plate_1.png",
+      "bytes": 46853,
+      "sha256": "69303289a5a09837094a2674afdbbd4b8c3305db6213bab886895c3198b5c5bc"
+    },
+    {
+      "file": "05_Orca/Resultado_SUPERIOR_K1MAX/status.json",
+      "bytes": 913,
+      "sha256": "f4e2baf3ee81cd4c437c14f2da0aeb32a6ef74dc79e4ebb1c861fa49f53240eb"
+    },
+    {
+      "file": "05_Orca/Resultado_SUPERIOR_K1MAX/status_tentativa1_compatibilidade.json",
+      "bytes": 630,
+      "sha256": "5f4839889a7bb4c87657c3bdc4349b6f94e4884377a8cd7292cbd76ceb88dacb"
+    },
+    {
+      "file": "05_Orca/Resultado_SUPERIOR_K1MAX/top_1.png",
+      "bytes": 66440,
+      "sha256": "637ae9f1e2d54430f756c9f125c780a750b77ba1e246a509f1eee0f776b62707"
+    },
+    {
+      "file": "05_Orca/USO_DOS_PROJETOS.txt",
+      "bytes": 533,
+      "sha256": "7b77f9e5916a32fd8db5a15ac68f2df72e737c81819f1f62ae826150deec1bb5"
+    },
+    {
+      "file": "06_Engenharia/AUDITORIA_EXTERIOR_INALTERADO.json",
+      "bytes": 6695,
+      "sha256": "d00528ecdf9dc8d5fb377ad8b180690c366244f7eaa0b2193e2a18023e7843a9"
+    },
+    {
+      "file": "06_Engenharia/CAMADAS_REAIS_INTERNO.json",
+      "bytes": 553,
+      "sha256": "7b67af125df6a109bf6ebb7fe30acd8eb846b8e9bcebff984e8da1c208c65c79"
+    },
+    {
+      "file": "06_Engenharia/CAMADAS_REAIS_INTERNO.png",
+      "bytes": 955339,
+      "sha256": "74a066b13f19db4033761830064ef068c07f413c940d6cdbe44a82783d2bc255"
+    },
+    {
+      "file": "06_Engenharia/ficha_TPU95A_fonte.json",
+      "bytes": 1323,
+      "sha256": "d99fd2eed4dbdf3e37fceccd199105e0a1c0d7def4fbd971a6cb88c1836106e5"
+    },
+    {
+      "file": "06_Engenharia/fichas_PA6CF_TRITAN_fontes.json",
+      "bytes": 14432,
+      "sha256": "8b1e23d472195f53ca7f9af087586904a79a458d0688b70e742cc84765b30865"
+    },
+    {
+      "file": "06_Engenharia/FUSION_EXTERIOR_INALTERADO.json",
+      "bytes": 1011,
+      "sha256": "11eb1ddc24826f4728b49601f94ce71a5d3cec030b8e48ddfea730a8b2b5ee00"
+    },
+    {
+      "file": "06_Engenharia/FUSION_GEOMETRIA_ESTUDOS.json",
+      "bytes": 3917,
+      "sha256": "eb38ff854e1e3d26829fc39fda48bdd0a4b1b6d308ca64d111a5778f29f236eb"
+    },
+    {
+      "file": "06_Engenharia/MASSAS_CONSUMO_R04.csv",
+      "bytes": 454,
+      "sha256": "d1f83646358a94f4e22c15fb5ccd9e330d26cbeea12d8c577feeee337a611d31"
+    },
+    {
+      "file": "06_Engenharia/matriz_ensaios.csv",
+      "bytes": 783,
+      "sha256": "0446eb2b71fc9b82ce1197cade2a7d8798406aea469d24911f62fb9ba6e63b83"
+    },
+    {
+      "file": "06_Engenharia/REGISTRO_SIMULACOES_R04.json",
+      "bytes": 1314,
+      "sha256": "bd80675e22f1e46f39ab8c129ce22950b8add463ddf89277487d7539694a2760"
+    },
+    {
+      "file": "06_Engenharia/RELATORIO_TECNICO_R04.md",
+      "bytes": 15062,
+      "sha256": "987e5ab6280d362352cd36d408d56eebd7e58e6f270b538e60597a29616c848f"
+    },
+    {
+      "file": "06_Engenharia/RELATORIO_TECNICO_R04.pdf",
+      "bytes": 1739757,
+      "sha256": "d8ad43ac29aebcb2c7a4030ffd2a70a36931e83f5120077a4d7fb77cf022bb00"
+    },
+    {
+      "file": "06_Engenharia/RESULTADOS_R04.json",
+      "bytes": 1991,
+      "sha256": "6e1190d8ccdd3cc55aa511f402b741df04add83460da56dffa84fd5f6d341513"
+    },
+    {
+      "file": "07_Referencias/K1_perfis.json",
+      "bytes": 4835,
+      "sha256": "a7018df30c41a338a993326723fd53330a5403a748203536df7952473242940a"
+    },
+    {
+      "file": "07_Referencias/K1Max_perfis/Creality K1 Max (0.4 nozzle).json",
+      "bytes": 4386,
+      "sha256": "7a46ae1247aa5702db328ec96339f672749e6716dd02a097a31e89cd3e17dba4"
+    },
+    {
+      "file": "07_Referencias/K1Max_perfis/Creality K1 Max.json",
+      "bytes": 737,
+      "sha256": "1bf2e2377d7323f753f0d3633208b08ba931f6728f6a9edf42afbdd577202e1d"
+    },
+    {
+      "file": "07_Referencias/K1Max_perfis/fdm_creality_common.json",
+      "bytes": 3297,
+      "sha256": "932c7beb257f7c5227bb5334432cca0c835601d8871b35c3e2b86bbe2f29d042"
+    },
+    {
+      "file": "07_Referencias/K1Max_perfis/fdm_machine_common.json",
+      "bytes": 2797,
+      "sha256": "cd8bc41e5742c4255d20286dd22bc70567d5f366975c17cd909e308c9fa224cd"
+    },
+    {
+      "file": "07_Referencias/K1Max_perfis/MAQUINA_K1MAX_RESOLVIDA.json",
+      "bytes": 4806,
+      "sha256": "76fa9d6e1b60be903b5919170798a2a2b9bf579cc62855cb00edaa481aa3d078"
+    },
+    {
+      "file": "07_Referencias/K1Max_perfis/process__0.20mm Standard @Creality K1Max (0.4 nozzle).json",
+      "bytes": 8883,
+      "sha256": "0d3ea121a972358e2a9cfcbac2669998d1370d9779f69747a471db58d0960d25"
+    },
+    {
+      "file": "07_Referencias/K1Max_perfis/process__fdm_process_common.json",
+      "bytes": 2057,
+      "sha256": "1b5498eb7fdb944e478885e4971ea7f7b30b7db101b9438f0002d00bd6c748f8"
+    },
+    {
+      "file": "07_Referencias/K1Max_perfis/process__fdm_process_creality_common.json",
+      "bytes": 3200,
+      "sha256": "40a5e4a485f0e1d6fecd6af17b7b4d478d6c85680da22068edb4ce0a50ae88d3"
+    },
+    {
+      "file": "07_Referencias/K1Max_perfis/PROCESSO_K1MAX_RESOLVIDO.json",
+      "bytes": 9534,
+      "sha256": "bbb3259115277927ac7200d3e8ec7988a2cd74473e93fb26421e464ba6d8712d"
+    },
+    {
+      "file": "07_Referencias/K1Max_perfis/processos_encontrados.json",
+      "bytes": 265,
+      "sha256": "294c2f7d2e4fc8e4a7423350a738036c2dd39489a53df51f3bafdf4d9ae80a92"
+    },
+    {
+      "file": "07_Referencias/K1Max_perfis/processos_K1.json",
+      "bytes": 5657,
+      "sha256": "53cabb349fb0ae88beb8cde4c401307be398bd87de1f5b28bc0f76cad3fe8e11"
+    },
+    {
+      "file": "07_Referencias/model_settings_exemplo.config",
+      "bytes": 1898,
+      "sha256": "3b55bfe29d34c4b5139e4b1aaace42774baade6d3e35260deca201627e1bd35d"
+    },
+    {
+      "file": "07_Referencias/Orca_fonte/bbs_3mf.cpp",
+      "bytes": 512082,
+      "sha256": "381d881d5940b71436ae366e4dffa94ea23216c70b3e0572acab4e38a97d1986"
+    },
+    {
+      "file": "07_Referencias/Orca_fonte/Model.cpp",
+      "bytes": 189046,
+      "sha256": "0ae3759f835cb0c48d1988a6d556558941270c2fa12649981943de9187c98388"
+    },
+    {
+      "file": "07_Referencias/Orca_fonte/OrcaSlicer.cpp",
+      "bytes": 531555,
+      "sha256": "937e3960a3356c43fbb037deac808481de0bcaa7c4f5f29dae72b50f8d65d864"
+    },
+    {
+      "file": "07_Referencias/Orca_fonte/PrintConfig.cpp",
+      "bytes": 742048,
+      "sha256": "bf3328ba933f8250c86c509b32c1d5c95e20f34d8a816b3f5ccefdfce5c03860"
+    },
+    {
+      "file": "07_Referencias/PAD_referencia.png",
+      "bytes": 114282,
+      "sha256": "d51184e4f78206aa1897f7f4d73989869bb572e58495714396c95cf713f8feb5"
+    },
+    {
+      "file": "07_Referencias/perfis_originais/Bambu PA6-CF @base.json",
+      "bytes": 1114,
+      "sha256": "09a3eb6cb26b9e4b1dcc7459092722a23530f465a764753913aa03c943c35057"
+    },
+    {
+      "file": "07_Referencias/perfis_originais/Bambu PA6-CF @BBL X1C.json",
+      "bytes": 1185,
+      "sha256": "80783d20169f5dc21b8e43e90d61af54d5f5fae816339e6b17aa8ecf7b87ed15"
+    },
+    {
+      "file": "07_Referencias/perfis_originais/fdm_filament_common.json",
+      "bytes": 7715,
+      "sha256": "8c7105b7d59a28f600c43a946f067b8b4d707b9711c0bf6b88e9166e48878548"
+    },
+    {
+      "file": "07_Referencias/perfis_originais/fdm_filament_pa.json",
+      "bytes": 2228,
+      "sha256": "8b9745795aecf73476837299eff1fbcaee51ba16878ff258978b67b2d4fbe545"
+    },
+    {
+      "file": "07_Referencias/perfis_originais/fdm_filament_tpu.json",
+      "bytes": 2687,
+      "sha256": "8fc12ed3883ae4419cad7300c28b7d9492c32c20831a820b4c030670fa1bdb49"
+    },
+    {
+      "file": "07_Referencias/perfis_originais/Generic PA-CF @base.json",
+      "bytes": 865,
+      "sha256": "ea19397bace27c50bba860db07ea34eccc974c2cbe5b116a62d42d6b3a53e9d8"
+    },
+    {
+      "file": "07_Referencias/perfis_originais/Generic TPU @base.json",
+      "bytes": 899,
+      "sha256": "d49740f0b817de19ed2ea8261a5d029ec15919d9e6911255a11173ce1109d622"
+    },
+    {
+      "file": "07_Referencias/perfis_originais/Generic TPU.json",
+      "bytes": 651,
+      "sha256": "d88044c664414ce28c49d22f6248cfdf038973c9354508a1ea94cd68e9dba74c"
+    },
+    {
+      "file": "07_Referencias/PolyFlex_TPU95_TDS_EN_V5_4.pdf",
+      "bytes": 261260,
+      "sha256": "cd3fc3ea0e61fdab6dd0b0e535ad70b4d80a188c464643cca529b0b6f698d0dd"
+    },
+    {
+      "file": "07_Referencias/requisitos_analise.png",
+      "bytes": 104094,
+      "sha256": "676cc2f00ce38d9977d147d426a5c504034fb61b0c4b6e06af2ce36fb6046571"
+    },
+    {
+      "file": "07_Referencias/zonas_coloridas.png",
+      "bytes": 454340,
+      "sha256": "9cfb4367b0a4e2375ae97e799146b25dd0824d3fb1356d30f7599a370cb2a559"
+    },
+    {
+      "file": "CLAUDE.md",
+      "bytes": 218,
+      "sha256": "80b6a81005d0810da4998a9480b1dd8060621c707eb0606f8c7bac92c49beffc"
+    },
+    {
+      "file": "LEIA_PRIMEIRO.md",
+      "bytes": 1195,
+      "sha256": "5fe364d91b3f32f088a91cf08f43b8f5c57d56c858371265cb7864b817db9a99"
+    },
+    {
+      "file": "scripts/r04_audit_internal.py",
+      "bytes": 2988,
+      "sha256": "eb7b8bbc210a90b89e71f1d0b6cb4a5aa4bb92e7f8219eef3a5a1a9dfdbf3d1f"
+    },
+    {
+      "file": "scripts/r04_axes.py",
+      "bytes": 1358,
+      "sha256": "1bfe371c97f43675401fa6e7d6e614fd8529a9e77115feebeace2ae12ac09310"
+    },
+    {
+      "file": "scripts/r04_build_part.py",
+      "bytes": 7024,
+      "sha256": "7387a6832f3ad1ef9df0b4e635082b4db3913c5a076b56bdeacba25df9c62df5"
+    },
+    {
+      "file": "scripts/r04_clean_geometry.py",
+      "bytes": 3744,
+      "sha256": "86aa5cf97eba5ef1b96573cd4640bc5241213d065d722dfa58a3370c318f913e"
+    },
+    {
+      "file": "scripts/r04_cli_probe.py",
+      "bytes": 490,
+      "sha256": "b02dd1d989abac5786f047a4039a36fb797fa7b299033f0bfffda616c12a45af"
+    },
+    {
+      "file": "scripts/r04_export_pads.py",
+      "bytes": 2723,
+      "sha256": "8e672a87395f22062c6519636657d7c82fc0188fbf935ef02866274cbeb12254"
+    },
+    {
+      "file": "scripts/r04_extract_slicer.py",
+      "bytes": 4836,
+      "sha256": "f0d23bc94cb46b4bfcbd2e04b553bbab18efe4382dd8ab3a5e93a1029f8c5500"
+    },
+    {
+      "file": "scripts/r04_filament_parents.py",
+      "bytes": 804,
+      "sha256": "9239101b857472b6f0ebeed4bbbc69b70d389f975f6a13a1fe6883fa4b19b2cc"
+    },
+    {
+      "file": "scripts/r04_filament_sources.py",
+      "bytes": 655,
+      "sha256": "7ce8b12dd3bc1a033956178c3411a0a74d80af6cb0a0704c5b5d9984eebfdb5a"
+    },
+    {
+      "file": "scripts/r04_finalize.py",
+      "bytes": 4905,
+      "sha256": "4c3c1633796769333577a36e0004cdd418e543d1d61f62bdfa69ee01bbb70803"
+    },
+    {
+      "file": "scripts/r04_fit_X1.py",
+      "bytes": 2996,
+      "sha256": "70cf16f384d2526067c8c087e429f30172cb839675ad31543b91998c1e8b87b4"
+    },
+    {
+      "file": "scripts/r04_handoff.py",
+      "bytes": 8141,
+      "sha256": "9701135257e6fab8829b63d191ea47ded55d70707bfe9b17269cf2b712086007"
+    },
+    {
+      "file": "scripts/r04_hide_masks.py",
+      "bytes": 1937,
+      "sha256": "bd4f90cab2bf72d34dfda9e0493e99b9928ea893540cdcc06ed2dcf464f87093"
+    },
+    {
+      "file": "scripts/r04_k1_flatten.py",
+      "bytes": 1171,
+      "sha256": "8f6135c9fbb8429a873a22b591794ea7bd28e601960dd28c04fa3fa262dd85ae"
+    },
+    {
+      "file": "scripts/r04_k1_names.py",
+      "bytes": 878,
+      "sha256": "0ff743dd4c6f581ead42774997ec916f2212ad700f43ab81c8fa8645584dbd48"
+    },
+    {
+      "file": "scripts/r04_k1_profile.py",
+      "bytes": 584,
+      "sha256": "37f6d8f1e9f80722f61845c22a45f45dcae1c216650fdc6c33b9fe2702fcd7e7"
+    },
+    {
+      "file": "scripts/r04_larger_machine.py",
+      "bytes": 535,
+      "sha256": "492625e5a42a6b1f4232c85992899e6b58df275c24fede175bc55d734d0029b6"
+    },
+    {
+      "file": "scripts/r04_layer_preview.py",
+      "bytes": 2514,
+      "sha256": "db3a81d3a3c866706c51457bad362aa48bdc2efa8cca739c163a6a9c6c20d20d"
+    },
+    {
+      "file": "scripts/r04_mesh_package.py",
+      "bytes": 4894,
+      "sha256": "a0dd01154c2b3ad29629fd97500d51f11af5961c7ff2cef253e248a39d14e0ee"
+    },
+    {
+      "file": "scripts/r04_orca_k1.py",
+      "bytes": 3510,
+      "sha256": "f19028eb678fa509784316609d1cfbb3ddc5e102125fdfd27c2da63be629d778"
+    },
+    {
+      "file": "scripts/r04_orca_project.py",
+      "bytes": 7167,
+      "sha256": "3a49547cd3c6520c5e19c170e1a08efc776b6f659db9f1cc8632a58e8c728843"
+    },
+    {
+      "file": "scripts/r04_orca_schema.py",
+      "bytes": 678,
+      "sha256": "795fa9d888c175f810c5195b576b60faa0201f56fd62b3f008ef4ab8e9610633"
+    },
+    {
+      "file": "scripts/r04_orca_sources.py",
+      "bytes": 687,
+      "sha256": "64c23440c9c25f2924e133587653a5d209e3db794746dec42863fc0107e5179f"
+    },
+    {
+      "file": "scripts/r04_pad_result.py",
+      "bytes": 856,
+      "sha256": "6755fc81bbac6f4974c08a587cccd8d06357206e031d7a610a815173e7bf81b1"
+    },
+    {
+      "file": "scripts/r04_prepare_config.py",
+      "bytes": 869,
+      "sha256": "ac62751c7c4a7cbb0a8541d7b78a7342bae9da2e12d6cc200db473cc754a341f"
+    },
+    {
+      "file": "scripts/r04_probe.py",
+      "bytes": 978,
+      "sha256": "a4b5502456101c2a9285f8bb4079ad5cd0d4a55205460021c5c21ee4d5fd7ddd"
+    },
+    {
+      "file": "scripts/r04_profiles.py",
+      "bytes": 778,
+      "sha256": "96cd62772d60146f117e7972b1319541bcd29236ec7ea0f6ef23cc5e1961c7b2"
+    },
+    {
+      "file": "scripts/r04_read_template.py",
+      "bytes": 708,
+      "sha256": "8623b3bcd199f5877ad661f8b56ded0b3bba1caf9b262443528c4eb446606053"
+    },
+    {
+      "file": "scripts/r04_results_report.py",
+      "bytes": 27602,
+      "sha256": "9a701f9dd92c12ef31d6145bb847ef24733be60cd5af5ec23116510624054259"
+    },
+    {
+      "file": "scripts/r04_scope.py",
+      "bytes": 1601,
+      "sha256": "bcdc4142f722eb7b56b15776ff63ae62e09c88b7555ba8e10df7f9be78f28416"
+    },
+    {
+      "file": "scripts/r04_slice_gripper.py",
+      "bytes": 1412,
+      "sha256": "9a05b3cf62d2cba1eab4e55d41d329fae29a0c2ae3191a7697895e1085b4da20"
+    },
+    {
+      "file": "scripts/r04_slice_k1.py",
+      "bytes": 1753,
+      "sha256": "eecef85bffcf13683ccd21a116bd7eb08ea6b54bed3c1cbd5dd0684d4f6558a6"
+    },
+    {
+      "file": "scripts/r04_slice_pads.py",
+      "bytes": 1434,
+      "sha256": "9d9dd57d7b94cb7e820a311ba49d202f995f6e13b35a4b9b56b4c4cc73e40bff"
+    },
+    {
+      "file": "scripts/r04_slice_remaining.py",
+      "bytes": 2083,
+      "sha256": "8db2f48ee024363a48e3347d5d17cb01b4565247f8abe77ec0d9878b4a5f4f6c"
+    }
+  ]
+}

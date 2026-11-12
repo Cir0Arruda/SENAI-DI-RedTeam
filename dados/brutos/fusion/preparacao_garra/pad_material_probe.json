@@ -1,0 +1,70 @@
+{
+  "libraries": [
+    {
+      "name": "Biblioteca de aparência do Fusion",
+      "id": "BA5EE55E-9982-449B-9D66-9F036540E140",
+      "materials": [],
+      "colors": []
+    },
+    {
+      "name": "Biblioteca de favoritos",
+      "id": "A784D4BF-F0B4-472E-8BB0-7F2DF02F2D0B",
+      "materials": [],
+      "colors": []
+    },
+    {
+      "name": "Biblioteca de materiais aditivos do Fusion",
+      "id": "37F4D96F-FA9A-42A9-B954-B4E6A53A2515",
+      "materials": [],
+      "colors": []
+    },
+    {
+      "name": "Biblioteca de materiais do Fusion",
+      "id": "C1EEA57C-3F56-45FC-B8CB-A9EC46A9994C",
+      "materials": [
+        {
+          "name": "Borracha",
+          "id": "PrismMaterial-059"
+        },
+        {
+          "name": "Borracha, Silicone",
+          "id": "PrismMaterial-029"
+        },
+        {
+          "name": "Borracha, butil",
+          "id": "PrismMaterial-081"
+        },
+        {
+          "name": "Borracha, natural",
+          "id": "PrismMaterial-015"
+        },
+        {
+          "name": "Borracha, nitril",
+          "id": "PrismMaterial-082"
+        },
+        {
+          "name": "Borracha, preta",
+          "id": "PrismMaterial-053"
+        },
+        {
+          "name": "Espuma de poliuretano",
+          "id": "PrismMaterial-028"
+        }
+      ],
+      "colors": []
+    },
+    {
+      "name": "Biblioteca de materiais não lineares do Fusion",
+      "id": "3C7662D2-1441-4D2C-8CF9-1EC6E8BBF2FB",
+      "materials": [],
+      "colors": []
+    },
+    {
+      "name": "Biblioteca visual privada",
+      "id": "user/5DK2VR2ZRN5JHHXE/content/private/",
+      "materials": [],
+      "colors": []
+    }
+  ],
+  "favorite_candidates": []
+}

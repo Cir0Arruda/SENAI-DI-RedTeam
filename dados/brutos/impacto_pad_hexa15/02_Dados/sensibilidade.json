@@ -1,0 +1,56 @@
+[
+  {
+    "infill_percent": 15.0,
+    "exponent_hypothesis": 1,
+    "E_core_MPa": 664.5,
+    "K_beam_N_mm": 832.6197469629632,
+    "F_bare_N": 468.0017530485366,
+    "F_pad_N": 169.37320483436528,
+    "reduction_percent": 63.80927983045407
+  },
+  {
+    "infill_percent": 15.0,
+    "exponent_hypothesis": 1.5,
+    "E_core_MPa": 257.35974335548286,
+    "K_beam_N_mm": 789.5934059090708,
+    "F_bare_N": 455.7491663344769,
+    "F_pad_N": 168.77199938052877,
+    "reduction_percent": 62.96822641762858
+  },
+  {
+    "infill_percent": 15.0,
+    "exponent_hypothesis": 2,
+    "E_core_MPa": 99.675,
+    "K_beam_N_mm": 772.9293756740742,
+    "F_bare_N": 450.91432563492134,
+    "F_pad_N": 168.5230575149563,
+    "reduction_percent": 62.62636870592586
+  },
+  {
+    "infill_percent": 30.0,
+    "exponent_hypothesis": 1,
+    "E_core_MPa": 1329.0,
+    "K_beam_N_mm": 902.8437131851854,
+    "F_bare_N": 487.33815596653756,
+    "F_pad_N": 170.24259717549594,
+    "reduction_percent": 65.06684422485782
+  },
+  {
+    "infill_percent": 30.0,
+    "exponent_hypothesis": 1.5,
+    "E_core_MPa": 727.9232789243657,
+    "K_beam_N_mm": 839.3222814955247,
+    "F_bare_N": 469.8816690903465,
+    "F_pad_N": 169.46185107332587,
+    "reduction_percent": 63.93520704874687
+  },
+  {
+    "infill_percent": 30.0,
+    "exponent_hypothesis": 2,
+    "E_core_MPa": 398.7,
+    "K_beam_N_mm": 804.5301604740743,
+    "F_bare_N": 460.03967860909427,
+    "F_pad_N": 168.9872595129206,
+    "reduction_percent": 63.26680776235549
+  }
+]

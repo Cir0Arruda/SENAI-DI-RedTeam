@@ -1,0 +1,22 @@
+{
+  "members": [
+    {
+      "class": "StitchFeatures",
+      "doc": "\nCreates a StitchFeatureInput object. Use properties and methods on this object\nto define the stitch feature you want to create and then use the Add method, passing in\nthe StitchFeatureInput object.\nstitchSurfaces : The surfaces (open BRepBodies) to stitch together.\nStitching surfaces can form multiple closed volumes resulting in multiple solids.\nStitch Surfaces can form multiple BRepShells (entirely connected set of entities) that would result in a\nsingle non-solid BRepBody.\ntolerance : ValueInput object that defines the stitching tolerance. It must define a distance value.\noperation : Specifies the operation type for the result when the final result is a closed solid. Otherwise\nthis argument is ignored.\nReturns the newly created StitchFeatureInput object or null if the creation failed.\n",
+      "name": "createInput",
+      "namespace": "adsk.fusion",
+      "signature": "(*args) -> adsk.fusion.StitchFeatureInput",
+      "type": "function"
+    },
+    {
+      "class": "StitchFeatures",
+      "doc": "\nCreates a new stitch feature.\ninput : A StitchFeatureInput object that defines the desired stitch feature. Use the createInput\nmethod to create a new StitchFeatureInput object and then use methods on it\n(the StitchFeatureInput object) to define the stitch feature.\nReturns the newly created StitchFeature object or null if the creation failed.\n",
+      "name": "add",
+      "namespace": "adsk.fusion",
+      "signature": "(input: StitchFeatureInput) -> adsk.fusion.StitchFeature",
+      "type": "function"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

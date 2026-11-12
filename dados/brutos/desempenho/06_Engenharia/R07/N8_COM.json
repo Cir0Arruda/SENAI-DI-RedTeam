@@ -1,0 +1,33 @@
+{
+  "design": "N8_COM",
+  "mass_model_g": 750.6,
+  "solid_cm3": 494.8,
+  "infill_cm3": 980.0,
+  "base_phi": 0.1,
+  "web_t": 3.0,
+  "cases": {
+    "ONE_24": {
+      "disp_max_mm": 0.5889,
+      "iters": 32,
+      "reaction_N": [
+        0.0,
+        -0.0,
+        355.36
+      ],
+      "solid_vm_max_MPa": 4.439,
+      "solid_FI_xy_max": 0.0443,
+      "solid_FI_z_max": 0.0986,
+      "infill_FI_max": {
+        "0.1": 0.1133,
+        "0.25": 0.0301,
+        "0.4": 0.0521,
+        "0.55": 0.1541
+      },
+      "hot_xyz": [
+        -544.8,
+        338.5,
+        341.4
+      ]
+    }
+  }
+}

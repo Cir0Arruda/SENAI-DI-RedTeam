@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-11",
+  "scope": "isolated upper solid CAD body, isotropic exploratory linear static; not assembly validation",
+  "study_document": "SAMI PA6CF - CORPO SUPERIOR - EXPLORATORIO 24kg",
+  "volume_cm3": 1391.1909963637681,
+  "total_force_N": 355.3596,
+  "force_per_interface_N": 88.8399,
+  "interfaces": 4,
+  "mesh": {
+    "nodes": 498261,
+    "elements": 339001,
+    "target_mm": 3,
+    "order": "parabolic",
+    "adaptive_refinements": 0,
+    "convergence_checked": false,
+    "reaction_sum_checked": false
+  },
+  "strength_criterion": "ultimate tensile strength",
+  "studies": [
+    {
+      "study": 1,
+      "material": "Bambu PA6-CF V3.0",
+      "status": "solved",
+      "von_mises_MPa": 3.232,
+      "first_principal_MPa": 5.163,
+      "displacement_mm": 0.08,
+      "safety_factor_reference": 19.755,
+      "report": "SAMI_PA6CF_24kg_Relatorio_Fusion.html"
+    },
+    {
+      "study": 2,
+      "material": "Eastman Tritan TX1001 molded reference",
+      "status": "solved",
+      "von_mises_MPa": 3.222,
+      "first_principal_MPa": 5.025,
+      "displacement_mm": 0.23,
+      "safety_factor_reference": 11.542,
+      "report": "SAMI_TRITAN_24kg_Relatorio_Fusion.html"
+    },
+    {
+      "study": 3,
+      "material": "Polymaker Fiberon PA12-CF10 V1.1",
+      "status": "blocked",
+      "submitted": false,
+      "reason": "Fusion precheck: some components use material with invalid properties; exact internal cause not exposed. UTS criterion persisted, no invented yield."
+    }
+  ],
+  "not_solved": [
+    "impact",
+    "PAD response",
+    "thermal",
+    "fatigue",
+    "creep",
+    "wear",
+    "30/40/60 percent infill"
+  ],
+  "archive": {
+    "file": "SAMI_COMPARACAO_PA6CF_TRITAN_PA12CF_2026-11-11.f3d",
+    "bytes": 8099106,
+    "sha256": "e788a20cb999ceb3e9e08fb19c6fbed1d2458687414cb3c57e90f8f5530c19c8",
+    "crc_verified": true
+  },
+  "readable_report": "COMPARACAO_SAMI_2026-11-11.md"
+}

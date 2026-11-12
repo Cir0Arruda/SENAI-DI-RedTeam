@@ -1,0 +1,22 @@
+{
+  "members": [
+    {
+      "class": "Application",
+      "doc": "Returns the current active product.\nThis will return null if no documents are currently open.",
+      "name": "activeProduct",
+      "namespace": "adsk.core",
+      "readonly": true,
+      "type": "property"
+    },
+    {
+      "class": "Application",
+      "doc": "Returns the collection of material libraries currently available.",
+      "name": "materialLibraries",
+      "namespace": "adsk.core",
+      "readonly": true,
+      "type": "property"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

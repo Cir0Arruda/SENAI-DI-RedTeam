@@ -1,0 +1,200 @@
+{
+  "revision": "R04",
+  "user_rule": "ALTERACOES EXTERNAS PROIBIDAS; cores somente no preenchimento interno. PAD separado, sem alterar a garra.",
+  "status": "passed",
+  "scope": "Printable envelope identity and actual Orca modifier classifications; not a mechanical simulation or per-layer containment test.",
+  "parts": [
+    {
+      "part": "SUPERIOR",
+      "public_STL_vertex_difference_from_native_envelope_mm": 0.0,
+      "exterior_changed": false,
+      "translation_only": true,
+      "scale": 1,
+      "source_BRep_volume_cm3": 1391.1909963638034,
+      "project_checks": [
+        {
+          "file": "05_Orca\\GARRA_SUPERIOR_TPMSD_K1MAX_ESCALA_REAL.3mf",
+          "normal_printed_envelopes": 1,
+          "internal_density_modifiers": [
+            {
+              "subtype": "modifier_part",
+              "name": "MOD_AMARELO_30_NAO_IMPRIMIVEL",
+              "density": "30%",
+              "pattern": "tpmsd"
+            },
+            {
+              "subtype": "modifier_part",
+              "name": "MOD_AZUL_50_NAO_IMPRIMIVEL",
+              "density": "50%",
+              "pattern": "tpmsd"
+            },
+            {
+              "subtype": "modifier_part",
+              "name": "MOD_ROSA_70_NAO_IMPRIMIVEL",
+              "density": "70%",
+              "pattern": "tpmsd"
+            }
+          ],
+          "wall_loops": 5,
+          "base_infill": "20% TPMS-D",
+          "modifiers_are_not_printed_bodies": true
+        },
+        {
+          "file": "05_Orca\\Resultado_SUPERIOR_K1MAX\\SUPERIOR_K1MAX_FATIADO_REFERENCIA.3mf",
+          "normal_printed_envelopes": 1,
+          "internal_density_modifiers": [
+            {
+              "subtype": "modifier_part",
+              "name": "MOD_AMARELO_30_NAO_IMPRIMIVEL",
+              "density": "30%",
+              "pattern": "tpmsd"
+            },
+            {
+              "subtype": "modifier_part",
+              "name": "MOD_AZUL_50_NAO_IMPRIMIVEL",
+              "density": "50%",
+              "pattern": "tpmsd"
+            },
+            {
+              "subtype": "modifier_part",
+              "name": "MOD_ROSA_70_NAO_IMPRIMIVEL",
+              "density": "70%",
+              "pattern": "tpmsd"
+            }
+          ],
+          "wall_loops": 5,
+          "base_infill": "20% TPMS-D",
+          "modifiers_are_not_printed_bodies": true
+        }
+      ]
+    },
+    {
+      "part": "INFERIOR_ESQ",
+      "public_STL_vertex_difference_from_native_envelope_mm": 7.62939453125e-06,
+      "exterior_changed": false,
+      "translation_only": true,
+      "scale": 1,
+      "source_BRep_volume_cm3": 815.9197910970213,
+      "project_checks": [
+        {
+          "file": "05_Orca\\GARRA_INFERIOR_ESQ_TPMSD_K1MAX_ESCALA_REAL.3mf",
+          "normal_printed_envelopes": 1,
+          "internal_density_modifiers": [
+            {
+              "subtype": "modifier_part",
+              "name": "MOD_AMARELO_30_NAO_IMPRIMIVEL",
+              "density": "30%",
+              "pattern": "tpmsd"
+            },
+            {
+              "subtype": "modifier_part",
+              "name": "MOD_AZUL_50_NAO_IMPRIMIVEL",
+              "density": "50%",
+              "pattern": "tpmsd"
+            },
+            {
+              "subtype": "modifier_part",
+              "name": "MOD_ROSA_70_NAO_IMPRIMIVEL",
+              "density": "70%",
+              "pattern": "tpmsd"
+            }
+          ],
+          "wall_loops": 5,
+          "base_infill": "20% TPMS-D",
+          "modifiers_are_not_printed_bodies": true
+        },
+        {
+          "file": "05_Orca\\Resultado_INFERIOR_ESQ_K1MAX\\INFERIOR_ESQ_K1MAX_FATIADO_REFERENCIA.3mf",
+          "normal_printed_envelopes": 1,
+          "internal_density_modifiers": [
+            {
+              "subtype": "modifier_part",
+              "name": "MOD_AMARELO_30_NAO_IMPRIMIVEL",
+              "density": "30%",
+              "pattern": "tpmsd"
+            },
+            {
+              "subtype": "modifier_part",
+              "name": "MOD_AZUL_50_NAO_IMPRIMIVEL",
+              "density": "50%",
+              "pattern": "tpmsd"
+            },
+            {
+              "subtype": "modifier_part",
+              "name": "MOD_ROSA_70_NAO_IMPRIMIVEL",
+              "density": "70%",
+              "pattern": "tpmsd"
+            }
+          ],
+          "wall_loops": 5,
+          "base_infill": "20% TPMS-D",
+          "modifiers_are_not_printed_bodies": true
+        }
+      ]
+    },
+    {
+      "part": "INFERIOR_DIR",
+      "public_STL_vertex_difference_from_native_envelope_mm": 0.0,
+      "exterior_changed": false,
+      "translation_only": true,
+      "scale": 1,
+      "source_BRep_volume_cm3": 815.9197910970199,
+      "project_checks": [
+        {
+          "file": "05_Orca\\GARRA_INFERIOR_DIR_TPMSD_K1MAX_ESCALA_REAL.3mf",
+          "normal_printed_envelopes": 1,
+          "internal_density_modifiers": [
+            {
+              "subtype": "modifier_part",
+              "name": "MOD_AMARELO_30_NAO_IMPRIMIVEL",
+              "density": "30%",
+              "pattern": "tpmsd"
+            },
+            {
+              "subtype": "modifier_part",
+              "name": "MOD_AZUL_50_NAO_IMPRIMIVEL",
+              "density": "50%",
+              "pattern": "tpmsd"
+            },
+            {
+              "subtype": "modifier_part",
+              "name": "MOD_ROSA_70_NAO_IMPRIMIVEL",
+              "density": "70%",
+              "pattern": "tpmsd"
+            }
+          ],
+          "wall_loops": 5,
+          "base_infill": "20% TPMS-D",
+          "modifiers_are_not_printed_bodies": true
+        },
+        {
+          "file": "05_Orca\\Resultado_INFERIOR_DIR_K1MAX\\INFERIOR_DIR_K1MAX_FATIADO_REFERENCIA.3mf",
+          "normal_printed_envelopes": 1,
+          "internal_density_modifiers": [
+            {
+              "subtype": "modifier_part",
+              "name": "MOD_AMARELO_30_NAO_IMPRIMIVEL",
+              "density": "30%",
+              "pattern": "tpmsd"
+            },
+            {
+              "subtype": "modifier_part",
+              "name": "MOD_AZUL_50_NAO_IMPRIMIVEL",
+              "density": "50%",
+              "pattern": "tpmsd"
+            },
+            {
+              "subtype": "modifier_part",
+              "name": "MOD_ROSA_70_NAO_IMPRIMIVEL",
+              "density": "70%",
+              "pattern": "tpmsd"
+            }
+          ],
+          "wall_loops": 5,
+          "base_infill": "20% TPMS-D",
+          "modifiers_are_not_printed_bodies": true
+        }
+      ]
+    }
+  ]
+}

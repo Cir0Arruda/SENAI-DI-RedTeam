@@ -1,0 +1,74 @@
+[
+  {
+    "id": "petg_polymaker_v2",
+    "material": "Polymaker PETG V2.0",
+    "volume_solid_cm3": 692.4420971293735,
+    "density_g_cm3": 1.3,
+    "mass_g": 900.1747262681855,
+    "gravity_force_N": 8.8276984793579,
+    "type": "analytical_mass_not_FEA"
+  },
+  {
+    "id": "pctg_3dfuel_pro",
+    "material": "3D-Fuel Pro PCTG",
+    "volume_solid_cm3": 692.4420971293735,
+    "density_g_cm3": 1.23,
+    "mass_g": 851.7037794691294,
+    "gravity_force_N": 8.352360868930937,
+    "type": "analytical_mass_not_FEA"
+  },
+  {
+    "id": "tritan_tx1001_eastman",
+    "material": "Eastman Tritan TX1001",
+    "volume_solid_cm3": 692.4420971293735,
+    "density_g_cm3": 1.18,
+    "mass_g": 817.0816746126607,
+    "gravity_force_N": 8.012834004340249,
+    "type": "analytical_mass_not_FEA"
+  },
+  {
+    "id": "tpu95ahf_bambu_v3",
+    "material": "Bambu TPU 95A HF V3.0",
+    "volume_solid_cm3": 692.4420971293735,
+    "density_g_cm3": 1.22,
+    "mass_g": 844.7793584978356,
+    "gravity_force_N": 8.284455496012798,
+    "type": "analytical_mass_not_FEA"
+  },
+  {
+    "id": "pa6_lehvoss9936",
+    "material": "LEHVOSS LUVOCOM 3F PAHT 9936 BK/L",
+    "volume_solid_cm3": 692.4420971293735,
+    "density_g_cm3": 1.25,
+    "mass_g": 865.5526214117168,
+    "gravity_force_N": 8.488171614767213,
+    "type": "analytical_mass_not_FEA"
+  },
+  {
+    "id": "pa12_fiberlogy",
+    "material": "Fiberlogy Nylon PA12",
+    "volume_solid_cm3": 692.4420971293735,
+    "density_g_cm3": 1.01,
+    "mass_g": 699.3665181006672,
+    "gravity_force_N": 6.858442664731908,
+    "type": "analytical_mass_not_FEA"
+  },
+  {
+    "id": "pc_polymax_v54",
+    "material": "Polymaker PolyMax PC V5.4",
+    "volume_solid_cm3": 692.4420971293735,
+    "density_g_cm3": 1.19,
+    "mass_g": 824.0060955839543,
+    "gravity_force_N": 8.080739377258386,
+    "type": "analytical_mass_not_FEA"
+  },
+  {
+    "id": "pa6cf_bambu_v3",
+    "material": "Bambu PA6-CF V3.0",
+    "volume_solid_cm3": 692.4420971293735,
+    "density_g_cm3": 1.09,
+    "mass_g": 754.7618858710172,
+    "gravity_force_N": 7.40168564807701,
+    "type": "analytical_mass_not_FEA"
+  }
+]

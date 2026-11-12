@@ -1,0 +1,25 @@
+{
+  "case": "UNI_TPMSD40_SUPERIOR",
+  "start_UTC": "2026-11-12T03:16:42.353667+00:00",
+  "input": "desempenho\\05_Orca\\R07\\COMPARATIVO\\GARRA_SUPERIOR_UNI_TPMSD40_K1MAX.3mf",
+  "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+  "scale": 1,
+  "sent_to_printer": false,
+  "returncode": 0,
+  "ok": true,
+  "end_UTC": "2026-11-12T03:27:11.115007+00:00",
+  "mass_g": {
+    "peca": 793.7465665331803,
+    "adesao": 2.6008775670930913,
+    "suporte": 113.48711411678023
+  },
+  "orca_total_g": 909.83,
+  "time_s": 132397,
+  "warnings": [
+    {
+      "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+      "level": "3",
+      "error_code": "1000C002"
+    }
+  ]
+}

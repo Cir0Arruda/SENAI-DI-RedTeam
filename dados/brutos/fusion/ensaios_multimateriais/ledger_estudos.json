@@ -1,0 +1,25 @@
+{
+  "date_local": "2026-11-10",
+  "document": "Modelo referência",
+  "body": "Corpo1",
+  "volume_solid_cm3": 692.4420971293735,
+  "bounding_box_mm": [125, 250, 50],
+  "physical_material": "steel_unchanged",
+  "material_catalog": {"count": 8, "attribute_group": "FFF_MATERIAL_CATALOG", "kind": "documentary_not_solver_material_cards"},
+  "solver_jobs_submitted": 0,
+  "new_fea_results": 0,
+  "compute_credits_spent": 0,
+  "studies": [
+    {"name": "01 Impacto - PENDENTE DADOS E CONTATOS", "type": "dynamic_event", "duration_s": 0.001, "result_intervals": 25, "state": "initial_structure_only", "solver_submitted": false, "missing": ["constitutive_materials", "loads_or_initial_velocity", "contact_and_target", "boundary_conditions"]},
+    {"name": "Estudo 2 - Térmico", "type": "steady_state_thermal", "state": "precheck_error", "precheck_message": "nenhuma carga com base na temperatura definida", "solver_submitted": false, "missing": ["thermal_material_data", "temperature_based_load", "thermal_boundary_conditions"]}
+  ],
+  "long_term": {"wear": "not_calculated", "creep": "not_calculated", "fatigue": "not_calculated", "life_hours": null},
+  "mass_results_file": "massas_item_aberto.json",
+  "mass_results_kind": "analytical_mass_not_FEA",
+  "mass_attribute": "AnalyticalMasses",
+  "document_saved_observed": true,
+  "backup_file": "../Modelo_referencia_ANTES_ENSAIOS.f3d",
+  "prepared_export_file": "Modelo_referencia_ENSAIOS_INICIAIS.f3d",
+  "export_success_observed": true,
+  "report_kind": "intermediate_execution_audit_not_life_validation"
+}

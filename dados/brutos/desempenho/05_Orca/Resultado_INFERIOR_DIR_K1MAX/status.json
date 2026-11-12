@@ -1,0 +1,18 @@
+{
+  "case": "INFERIOR_DIR",
+  "status": "sliced_verified",
+  "start_UTC": "2026-11-11T15:57:23.232129+00:00",
+  "input": "desempenho\\05_Orca\\GARRA_INFERIOR_DIR_TPMSD_K1MAX_ESCALA_REAL.3mf",
+  "output": "desempenho\\05_Orca\\Resultado_INFERIOR_DIR_K1MAX\\INFERIOR_DIR_K1MAX_FATIADO_REFERENCIA.3mf",
+  "scale": 1,
+  "orientation": "original source Z up",
+  "printer_reference": "Creality K1 Max300mm,0.4mm",
+  "slicing_not_FEA": true,
+  "sent_to_printer": false,
+  "external_modification_prohibited": true,
+  "native_pid": 22976,
+  "returncode": 0,
+  "end_UTC": "2026-11-11T15:59:07.454090+00:00",
+  "verification": "Actual Gcode, outside=false, unit scale, material density, roles, mass agreement<0.02g; fabrication reference only",
+  "native_process_finished": true
+}

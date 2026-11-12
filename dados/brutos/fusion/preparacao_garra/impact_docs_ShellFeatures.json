@@ -1,0 +1,22 @@
+{
+  "members": [
+    {
+      "class": "ShellFeatures",
+      "doc": "\nCreates a ShellFeatureInput object. Use properties and methods on this object\nto define the shell you want to create and then use the Add method, passing in\nthe ShellFeatureInput object.\ninputEntities : The collection contains the faces to remove and the bodies to perform shell.\nFails if any faces are input, and the owning bodies of the faces are also input.\nisTangentChain : A boolean value for setting whether or not faces that are tangentially connected to\nthe input faces (if any) will also be included. It defaults to true.\nReturns the newly created ShellFeatureInput object or null if the creation failed.\n",
+      "name": "createInput",
+      "namespace": "adsk.fusion",
+      "signature": "(inputEntities: ObjectCollection, isTangentChain: bool = True) -> adsk.fusion.ShellFeatureInput",
+      "type": "function"
+    },
+    {
+      "class": "ShellFeatures",
+      "doc": "\nCreates a new shell feature.\ninput : A ShellFeatureInput object that defines the desired shell. Use the createInput\nmethod to create a new ShellFeatureInput object and then use methods on it\n(the ShellFeatureInput object) to define the shell.\nReturns the newly created ShellFeature object or null if the creation failed.\n",
+      "name": "add",
+      "namespace": "adsk.fusion",
+      "signature": "(input: ShellFeatureInput) -> adsk.fusion.ShellFeature",
+      "type": "function"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

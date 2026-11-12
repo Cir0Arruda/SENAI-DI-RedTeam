@@ -1,0 +1,45 @@
+{
+  "connected": true,
+  "upstream_tools": [
+    "fusion_mcp_electronics_read",
+    "fusion_mcp_execute",
+    "fusion_mcp_read",
+    "fusion_mcp_update"
+  ],
+  "reference_files": [
+    {
+      "name": "EstudosRelatório2026-11-11.html",
+      "bytes": 3043330
+    },
+    {
+      "name": "Layout_Parcial_Empilhamento SAMI.bak",
+      "bytes": 2710353
+    },
+    {
+      "name": "Layout_Parcial_Empilhamento SAMI.dwg",
+      "bytes": 2710291
+    },
+    {
+      "name": "Montagem_Geral_Garra.stl",
+      "bytes": 78333884
+    },
+    {
+      "name": "Montagem_Geral_Garra.stp",
+      "bytes": 23413114
+    },
+    {
+      "name": "SAMI_TRITAN_24kg_2026-11-11.html",
+      "bytes": 3093575
+    },
+    {
+      "name": "UR30.step",
+      "bytes": 16485469
+    },
+    {
+      "name": "UR30_techsheet_en.pdf",
+      "bytes": 3167562
+    }
+  ],
+  "solver_automation": "not validated; no solve tool exposed",
+  "study_submission": "disabled in this preparation server"
+}

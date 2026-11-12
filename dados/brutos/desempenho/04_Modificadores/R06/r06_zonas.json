@@ -1,0 +1,222 @@
+{
+  "revision": "R06_ZONAS_INTERNAS",
+  "wall_mm": 2.0,
+  "pitch_mm": 1.0,
+  "priority": [
+    70,
+    50,
+    30,
+    20
+  ],
+  "r_boss_mm": 31.5,
+  "yellow_band_mm": 16.0,
+  "blue_width_mm": 18.0,
+  "z_interface_mm": 267.4,
+  "z_window_mm": 30.0,
+  "exterior_changed": false,
+  "parts": {
+    "SUPERIOR": {
+      "source": "SUPERIOR_BASE_20.stl",
+      "part_cm3": 1391.13,
+      "core_cm3": 1112.79,
+      "zones_cm3": {
+        "CASCA": 278.35,
+        "BASE20": 564.59,
+        "AMARELO30": 86.7,
+        "AZUL50": 301.42,
+        "ROSA70": 160.07
+      },
+      "paths_xy_mm": [
+        [
+          [
+            -577.8,
+            383.0
+          ],
+          [
+            -478.33,
+            218.0
+          ]
+        ],
+        [
+          [
+            -577.8,
+            383.0
+          ],
+          [
+            -478.33,
+            348.0
+          ]
+        ],
+        [
+          [
+            -577.8,
+            383.0
+          ],
+          [
+            -677.33,
+            218.0
+          ]
+        ],
+        [
+          [
+            -577.8,
+            383.0
+          ],
+          [
+            -677.33,
+            348.0
+          ]
+        ]
+      ],
+      "partition_sum_cm3": 1391.13,
+      "partition_error_pct": 0.0,
+      "modifier_volume_outside_part_cm3": {
+        "ROSA70": 0.0,
+        "AZUL50": 0.0,
+        "AMARELO30": 0.0
+      }
+    },
+    "INFERIOR_ESQ": {
+      "source": "INFERIOR_ESQ_BASE_20.stl",
+      "part_cm3": 815.63,
+      "core_cm3": 605.14,
+      "zones_cm3": {
+        "CASCA": 210.49,
+        "BASE20": 375.03,
+        "AMARELO30": 76.57,
+        "AZUL50": 83.27,
+        "ROSA70": 70.28
+      },
+      "paths_xy_mm": [
+        [
+          [
+            -677.33,
+            218.0
+          ],
+          [
+            -791.0,
+            155.0
+          ]
+        ],
+        [
+          [
+            -677.33,
+            218.0
+          ],
+          [
+            -619.0,
+            155.0
+          ]
+        ],
+        [
+          [
+            -677.33,
+            348.0
+          ],
+          [
+            -791.0,
+            410.0
+          ]
+        ],
+        [
+          [
+            -677.33,
+            348.0
+          ],
+          [
+            -619.0,
+            410.0
+          ]
+        ],
+        [
+          [
+            -677.33,
+            218.0
+          ],
+          [
+            -677.33,
+            348.0
+          ]
+        ]
+      ],
+      "partition_sum_cm3": 815.64,
+      "partition_error_pct": 0.0012,
+      "modifier_volume_outside_part_cm3": {
+        "ROSA70": 0.0,
+        "AZUL50": 0.0,
+        "AMARELO30": 0.0
+      }
+    },
+    "INFERIOR_DIR": {
+      "source": "INFERIOR_DIR_BASE_20.stl",
+      "part_cm3": 815.63,
+      "core_cm3": 605.3,
+      "zones_cm3": {
+        "CASCA": 210.33,
+        "BASE20": 375.47,
+        "AMARELO30": 76.52,
+        "AZUL50": 83.05,
+        "ROSA70": 70.26
+      },
+      "paths_xy_mm": [
+        [
+          [
+            -478.33,
+            218.0
+          ],
+          [
+            -536.0,
+            155.0
+          ]
+        ],
+        [
+          [
+            -478.33,
+            218.0
+          ],
+          [
+            -364.0,
+            155.0
+          ]
+        ],
+        [
+          [
+            -478.33,
+            348.0
+          ],
+          [
+            -536.0,
+            410.0
+          ]
+        ],
+        [
+          [
+            -478.33,
+            348.0
+          ],
+          [
+            -364.0,
+            410.0
+          ]
+        ],
+        [
+          [
+            -478.33,
+            218.0
+          ],
+          [
+            -478.33,
+            348.0
+          ]
+        ]
+      ],
+      "partition_sum_cm3": 815.63,
+      "partition_error_pct": 0.0,
+      "modifier_volume_outside_part_cm3": {
+        "ROSA70": 0.0,
+        "AZUL50": 0.0,
+        "AMARELO30": 0.0
+      }
+    }
+  }
+}

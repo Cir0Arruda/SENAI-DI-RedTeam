@@ -1,0 +1,134 @@
+[
+  {
+    "part": "SUPERIOR",
+    "printer_reference": "Bambu X1, not confirmed user production printer",
+    "tilt_deg": 40.0,
+    "tilt_axis_azimuth_deg": 285.0,
+    "Z_spin_deg": 5.0,
+    "rotation_matrix": [
+      [
+        0.7838394690688282,
+        -0.14405615487287488,
+        -0.6040227735550536
+      ],
+      [
+        0.009864760292534,
+        0.975484641760687,
+        -0.21984631039295385
+      ],
+      [
+        0.6208851530148456,
+        0.1663656753428016,
+        0.766044443118978
+      ]
+    ],
+    "translation_after_rotation_mm": [
+      3.9822706606611007,
+      7.865901765976687,
+      97.19082192626912
+    ],
+    "actual_dimensions_after_rotation_mm": [
+      240.1954973463109,
+      240.1640278197664,
+      206.2827151569175
+    ],
+    "scale": 1.0,
+    "full_vertex_fit_verified": true,
+    "limit_mm": [
+      244,
+      244,
+      244
+    ],
+    "not_print_or_mechanical_validation": true,
+    "layer_direction_changed_relative_to_source": true,
+    "project": "desempenho\\05_Orca\\GARRA_SUPERIOR_TPMSD_REF_X1_ORIENTADA.3mf"
+  },
+  {
+    "part": "INFERIOR_ESQ",
+    "printer_reference": "Bambu X1, not confirmed user production printer",
+    "tilt_deg": 40.0,
+    "tilt_axis_azimuth_deg": 0.0,
+    "Z_spin_deg": 0.0,
+    "rotation_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.766044443118978,
+        -0.6427876096865393
+      ],
+      [
+        0.0,
+        0.6427876096865393,
+        0.766044443118978
+      ]
+    ],
+    "translation_after_rotation_mm": [
+      -0.0,
+      8.377501054251937,
+      92.52547869461307
+    ],
+    "actual_dimensions_after_rotation_mm": [
+      203.0,
+      237.2901453901122,
+      206.3544145842892
+    ],
+    "scale": 1.0,
+    "full_vertex_fit_verified": true,
+    "limit_mm": [
+      244,
+      244,
+      244
+    ],
+    "not_print_or_mechanical_validation": true,
+    "layer_direction_changed_relative_to_source": true,
+    "project": "desempenho\\05_Orca\\GARRA_INFERIOR_ESQ_TPMSD_REF_X1_ORIENTADA.3mf"
+  },
+  {
+    "part": "INFERIOR_DIR",
+    "printer_reference": "Bambu X1, not confirmed user production printer",
+    "tilt_deg": 40.0,
+    "tilt_axis_azimuth_deg": 0.0,
+    "Z_spin_deg": 0.0,
+    "rotation_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.766044443118978,
+        -0.6427876096865393
+      ],
+      [
+        0.0,
+        0.6427876096865393,
+        0.766044443118978
+      ]
+    ],
+    "translation_after_rotation_mm": [
+      -0.0,
+      8.377501054251937,
+      92.52546888645251
+    ],
+    "actual_dimensions_after_rotation_mm": [
+      202.99996948242188,
+      237.2901453901122,
+      206.35974965428238
+    ],
+    "scale": 1.0,
+    "full_vertex_fit_verified": true,
+    "limit_mm": [
+      244,
+      244,
+      244
+    ],
+    "not_print_or_mechanical_validation": true,
+    "layer_direction_changed_relative_to_source": true,
+    "project": "desempenho\\05_Orca\\GARRA_INFERIOR_DIR_TPMSD_REF_X1_ORIENTADA.3mf"
+  }
+]

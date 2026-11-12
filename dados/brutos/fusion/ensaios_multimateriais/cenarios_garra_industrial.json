@@ -1,0 +1,341 @@
+{
+  "scenario_id": "garra_industrial_demonstrativo_v1",
+  "date": "2026-11-10",
+  "status": "DEFINED_NOT_SIMULATED",
+  "authorization_basis": "Parent task: industrial gripper reference, infill 30/40/60/100, demonstration assumptions",
+  "purpose": "Comparable exploratory loading cases; not an industrial service certification",
+  "geometry_reference": {
+    "name": "ModeloReferencia",
+    "bounding_box_mm": [
+      125,
+      250,
+      50
+    ],
+    "solid_CAD_volume_cm3": 692.442,
+    "mount_hole_count": 2,
+    "status": "Provided by parent, not independently inspected in CAD",
+    "contact_patch_assumed_mm": [
+      40,
+      40
+    ],
+    "contact_patch_area_mm2": 1600,
+    "lever_arm_assumed_mm": 200,
+    "mount_model": "Use CAD verified support faces and two mount holes. Preliminary rigid fixture idealization; bolt preload, fit, washer areas and actuator compliance are not known."
+  },
+  "assumptions": {
+    "payload_mass_kg": 2,
+    "gravity_m_s2": 9.80665,
+    "vertical_upward_acceleration_m_s2": 5.0,
+    "number_of_opposed_jaws": 2,
+    "normal_force_per_jaw_N": 100,
+    "friction_coefficient_assumed": 0.3,
+    "ambient_temperature_degC": 25,
+    "friction_sensitivity": [
+      0.15,
+      0.3,
+      0.5
+    ],
+    "normal_force_sensitivity_per_jaw_N": [
+      50,
+      100,
+      150
+    ],
+    "infill_percent": [
+      30,
+      40,
+      60,
+      100
+    ],
+    "cycle_period_s": 10,
+    "clamped_duration_per_cycle_s": 4,
+    "released_duration_per_cycle_s": 6,
+    "thermal_contact_temperature_degC": [
+      40,
+      60
+    ],
+    "thermal_contact_duration_per_cycle_s": 4,
+    "reference_stress_free_temperature_degC": 25,
+    "convection_h_assumed_W_m2K": 10,
+    "impact_effective_mass_kg": 2,
+    "impact_initial_velocity_m_s": 0.25,
+    "impact_event_count_test": [
+      1,
+      100
+    ],
+    "impact_ramp_time_ms": 10,
+    "impact_note": "Ramp is numerical loading assumption, not measured contact duration or peak force."
+  },
+  "analytical_checks": {
+    "payload_effective_downward_force_N": 29.6133,
+    "payload_tangential_force_per_jaw_N": 14.80665,
+    "available_friction_total_N": 60.0,
+    "antislip_margin_ratio": 2.0261166435351683,
+    "normal_pressure_on_assumed_patch_MPa": 0.0625,
+    "bending_moment_from_normal_with_assumed_lever_Nm": 20.0,
+    "moment_from_shear_with_assumed_lever_Nm": 2.9613300000000002,
+    "impact_kinetic_energy_J": 0.0625,
+    "impact_equivalent_free_fall_height_mm": 3.186613165556026,
+    "cycle_count_per_hour": 360
+  },
+  "life_checkpoints": [
+    {
+      "hours": 1000,
+      "cycles": 360000,
+      "clamped_hours": 400.0,
+      "simulated_life_result": null,
+      "status": "schedule_only; no calibrated fatigue/creep/wear law"
+    },
+    {
+      "hours": 5000,
+      "cycles": 1800000,
+      "clamped_hours": 2000.0,
+      "simulated_life_result": null,
+      "status": "schedule_only; no calibrated fatigue/creep/wear law"
+    },
+    {
+      "hours": 10000,
+      "cycles": 3600000,
+      "clamped_hours": 4000.0,
+      "simulated_life_result": null,
+      "status": "schedule_only; no calibrated fatigue/creep/wear law"
+    }
+  ],
+  "cases": [
+    {
+      "id": "S01_hold",
+      "type": "static",
+      "description": "100 N normal plus 9.80665 N shear per jaw, gravity/selfweight separate",
+      "normal_N": 100,
+      "tangential_N_per_jaw": 9.80665
+    },
+    {
+      "id": "S02_accelerating",
+      "type": "static_equivalent",
+      "description": "100 N normal plus effective payload shear; actual acceleration is not solved dynamically",
+      "normal_N": 100,
+      "tangential_N_per_jaw": 14.80665
+    },
+    {
+      "id": "S03_fixture_idealization",
+      "type": "sensitivity",
+      "description": "Compare rigid fixture against realistic bolt/contact support when dimensions and hardware are known; fixed edge peaks are not failure proof"
+    },
+    {
+      "id": "T01_contact40",
+      "type": "thermal",
+      "description": "40 C contact patch, ambient25 C, h10 assumed, stressfree25 C"
+    },
+    {
+      "id": "T02_contact60",
+      "type": "thermal",
+      "description": "60 C contact patch, ambient25 C, h10 assumed, stressfree25 C; investigate loss of stiffness, not just HDT"
+    },
+    {
+      "id": "I01_moderate_event",
+      "type": "dynamic_event",
+      "description": "2 kg effective rigid striker at .25 m/s into functional contact patch, kinetic energy .0625 J; mounted jaw responds. Moderate is scenario label, not severity certification"
+    },
+    {
+      "id": "L01_time_checkpoints",
+      "type": "long_term",
+      "description": "1000/5000/10000 h schedule only until creep, fatigue and wear laws are calibrated; no invented lifetime"
+    }
+  ],
+  "infill_modeling": {
+    "allowed": "Explicitly model actual slicer architecture with external skins, or use independently calibrated effective orthotropic properties",
+    "not_allowed": [
+      "Scale all E/strength by nominal infill percent and present as validated",
+      "Change only density of a solid body and call this infill stiffness simulation",
+      "Assume 30% infill equals 30% total mass with solid walls"
+    ],
+    "mass_bounds": "f * rho * solid_CAD_volume <= nominal mass <= rho * solid_CAD_volume only as loose bounds for a fully solid reference envelope; actual CAD subtraction/skins must be measured."
+  },
+  "sources": {
+    "gripper_formula": "https://assets.robotiq.com/website-assets/support_documents/document/2F-85_2F-140_General_PDF_20200211.pdf",
+    "gripper_context": "https://robotiq.com/hubfs/Product-sheets/Adaptive%20Grippers/Product-sheet-Adaptive-Grippers-EN.pdf"
+  },
+  "material_proxies": [
+    {
+      "family": "PA6",
+      "property": "thermal_conductivity",
+      "value": 0.37,
+      "unit": "W/(m K)",
+      "proxy_grade": "Ensinger TECAMID 6 natural stock shape",
+      "source_url": "https://www.ensinger-online.com/modules/public/sheet/createsheet.php?FILENAME=TECAMID+6+natural.PDF&FL=0&SID=2133",
+      "condition": "Manufacturer stock shape; not printed target filament",
+      "classification": "different_grade_proxy",
+      "target_grade_validated": false
+    },
+    {
+      "family": "PA6",
+      "property": "specific_heat",
+      "value": 1600,
+      "unit": "J/(kg K)",
+      "proxy_grade": "Ensinger TECAMID 6 natural stock shape",
+      "source_url": "https://www.ensinger-online.com/modules/public/sheet/createsheet.php?FILENAME=TECAMID+6+natural.PDF&FL=0&SID=2133",
+      "condition": "Converted from J/(g K) by factor1000",
+      "classification": "different_grade_proxy",
+      "target_grade_validated": false
+    },
+    {
+      "family": "PA6",
+      "property": "linear_thermal_expansion",
+      "value": 9.7e-05,
+      "unit": "1/K",
+      "proxy_grade": "Ensinger TECAMID 6 natural stock shape",
+      "source_url": "https://www.ensinger-online.com/modules/public/sheet/createsheet.php?FILENAME=TECAMID+6+natural.PDF&FL=0&SID=2133",
+      "condition": "Longitudinal CLTE 23-60 C. Other temperature intervals and grades differ",
+      "classification": "different_grade_proxy",
+      "target_grade_validated": false
+    },
+    {
+      "family": "PA12",
+      "property": "thermal_conductivity",
+      "value": 0.3,
+      "unit": "W/(m K)",
+      "proxy_grade": "Ensinger TECAMID 12 natural stock shape",
+      "source_url": "https://www.ensingerplastics.com/en/shapes/pa12-tecamid-12-natural",
+      "condition": "Manufacturer stock shape; not printed target filament",
+      "classification": "different_grade_proxy",
+      "target_grade_validated": false
+    },
+    {
+      "family": "PA12",
+      "property": "specific_heat",
+      "value": 1800,
+      "unit": "J/(kg K)",
+      "proxy_grade": "Ensinger TECAMID 12 natural stock shape",
+      "source_url": "https://www.ensingerplastics.com/en/shapes/pa12-tecamid-12-natural",
+      "condition": "Converted from J/(g K) by factor1000",
+      "classification": "different_grade_proxy",
+      "target_grade_validated": false
+    },
+    {
+      "family": "PA12",
+      "property": "linear_thermal_expansion",
+      "value": 0.00015,
+      "unit": "1/K",
+      "proxy_grade": "Ensinger TECAMID 12 natural stock shape",
+      "source_url": "https://www.ensingerplastics.com/en/shapes/pa12-tecamid-12-natural",
+      "condition": "Longitudinal CLTE 23-60 C. Other temperature intervals and grades differ",
+      "classification": "different_grade_proxy",
+      "target_grade_validated": false
+    },
+    {
+      "family": "PC",
+      "property": "thermal_conductivity",
+      "value": 0.25,
+      "unit": "W/(m K)",
+      "proxy_grade": "Ensinger TECANAT natural stock shape",
+      "source_url": "https://www.ensinger-online.com/modules/public/sheet/createsheet.php?FILENAME=TECANAT_natural_0.PDF&FL=0&SID=1346&ZOOM=1.2",
+      "condition": "Manufacturer stock shape; not printed target filament",
+      "classification": "different_grade_proxy",
+      "target_grade_validated": false
+    },
+    {
+      "family": "PC",
+      "property": "specific_heat",
+      "value": 1300,
+      "unit": "J/(kg K)",
+      "proxy_grade": "Ensinger TECANAT natural stock shape",
+      "source_url": "https://www.ensinger-online.com/modules/public/sheet/createsheet.php?FILENAME=TECANAT_natural_0.PDF&FL=0&SID=1346&ZOOM=1.2",
+      "condition": "Converted from J/(g K) by factor1000",
+      "classification": "different_grade_proxy",
+      "target_grade_validated": false
+    },
+    {
+      "family": "PC",
+      "property": "linear_thermal_expansion",
+      "value": 8e-05,
+      "unit": "1/K",
+      "proxy_grade": "Ensinger TECANAT natural stock shape",
+      "source_url": "https://www.ensinger-online.com/modules/public/sheet/createsheet.php?FILENAME=TECANAT_natural_0.PDF&FL=0&SID=1346&ZOOM=1.2",
+      "condition": "Longitudinal CLTE 23-60 C. Other temperature intervals and grades differ",
+      "classification": "different_grade_proxy",
+      "target_grade_validated": false
+    },
+    {
+      "family": "PA6",
+      "property": "poisson_ratio",
+      "value": 0.39,
+      "unit": "1",
+      "proxy_grade": "PA6 matrix in thermoplastic tape study",
+      "source_url": "https://recipp.ipp.pt/bitstreams/d975a4ec-e230-4160-a03c-17ec170fca87/download",
+      "condition": "Thesis reports producer properties; precise resin grade not established here",
+      "classification": "literature_proxy_grade_unresolved",
+      "target_grade_validated": false
+    },
+    {
+      "family": "PA12",
+      "property": "poisson_ratio",
+      "value": 0.39,
+      "unit": "1",
+      "proxy_grade": "PA12 filament in Alzyod/Ficzere FFF process model",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10023978/",
+      "condition": "Published modeling input, not an independently measured Fiberlogy value",
+      "classification": "literature_model_input",
+      "target_grade_validated": false
+    },
+    {
+      "family": "PC",
+      "property": "poisson_ratio",
+      "value": 0.37,
+      "unit": "1",
+      "proxy_grade": "Polycarbonate model pipe specimens",
+      "source_url": "https://api.lib.kyushu-u.ac.jp/opac_download_md/6787558/eng3267.pdf",
+      "condition": "Thesis experimental pipe specimen properties; grade different/unidentified",
+      "classification": "experimental_different_product_proxy",
+      "target_grade_validated": false
+    },
+    {
+      "family": "TPU95A",
+      "property": "poisson_ratio",
+      "value": 0.4,
+      "unit": "1",
+      "proxy_grade": "TPU95A specimens in Haid2024",
+      "source_url": "https://shura.shu.ac.uk/33603/1/Haid_2024_PhD_TowardsConcussionPrevention.pdf",
+      "condition": "Measured nu_zx .40 +/- .01 in specific printed grade/process; not Bambu HF",
+      "classification": "experimental_different_product_proxy",
+      "target_grade_validated": false
+    },
+    {
+      "family": "TPU",
+      "property": "thermal_conductivity_range",
+      "value": [
+        0.19,
+        0.25
+      ],
+      "unit": "W/(m K)",
+      "proxy_grade": "BASF Elastollan soft-to-hard family",
+      "source_url": "https://download.basf.com/p1/8a8082587fd4b608017ff4e900830157/en/Elastollan",
+      "condition": "Representative family range; no exact Bambu grade mapping",
+      "classification": "manufacturer_family_range",
+      "target_grade_validated": false
+    },
+    {
+      "family": "TPU",
+      "property": "specific_heat_range",
+      "value": [
+        1700,
+        2300
+      ],
+      "unit": "J/(kg K)",
+      "proxy_grade": "BASF Elastollan soft-to-hard family",
+      "source_url": "https://download.basf.com/p1/8a8082587fd4b608017ff4e900830157/en/Elastollan",
+      "condition": "Representative room/melt range, not exact Bambu grade",
+      "classification": "manufacturer_family_range",
+      "target_grade_validated": false
+    },
+    {
+      "family": "TPU",
+      "property": "linear_thermal_expansion",
+      "value": null,
+      "unit": "1/K",
+      "proxy_grade": "BASF Elastollan C95A /1195A curves",
+      "source_url": "https://www.basf.com/dam/jcr%3A19c11827-1bc0-3b0f-a3f4-4fc2b986d54f/Elastollan_Properties-Physical-Properties.pdf",
+      "condition": "Temperature/hardness dependent plotted curves; no numeric digitization verified, leave pending",
+      "classification": "requires_curve_digitization_or_measurement",
+      "target_grade_validated": false
+    }
+  ]
+}

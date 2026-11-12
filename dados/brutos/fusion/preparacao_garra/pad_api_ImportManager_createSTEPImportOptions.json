@@ -1,0 +1,22 @@
+{
+  "members": [
+    {
+      "class": "ImportManager",
+      "doc": "\nCreates an STEPImportOptions object that's used to import a design from STEP format. Creation\nof the STEPImportOptions object does not perform the import. You must pass this object to one of the\nImportManager import methods to perform the import. The STEPImportOptions supports any available\noptions when importing from STEP format.\nfilename : The filename or URL of the STEP file to be imported.\nThe created STEPImportOptions object or null if the creation failed.\n",
+      "name": "createSTEPImportOptions",
+      "namespace": "adsk.core",
+      "signature": "(filename: str) -> adsk.core.STEPImportOptions",
+      "type": "function"
+    },
+    {
+      "class": "ImportManager",
+      "doc": "\nExecutes the import operation to import a file (of the format specified by the input ImportOptions object)\nto a new document.\nThis method does not support the DXF2DImportOptions or SVGImportOptions objects. Use ImportToTarget or\nImportToTarget2 for those types.\nimportOptions : An ImportOptions object that is created using one of the create methods on the ImportManager object. This\ndefines the type of file and any available options supported for that file type.\nReturns the newly created Document object or null if the creation failed.\nA new unnamed, unsaved document will be opened in Fusion as a result.\n",
+      "name": "importToNewDocument",
+      "namespace": "adsk.core",
+      "signature": "(importOptions: ImportOptions) -> adsk.core.Document",
+      "type": "function"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

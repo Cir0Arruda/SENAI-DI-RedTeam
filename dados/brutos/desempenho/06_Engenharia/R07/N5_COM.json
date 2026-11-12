@@ -1,0 +1,33 @@
+{
+  "design": "N5_COM",
+  "mass_model_g": 738.7,
+  "solid_cm3": 494.8,
+  "infill_cm3": 980.0,
+  "base_phi": 0.12,
+  "web_t": 3.0,
+  "cases": {
+    "ONE_24": {
+      "disp_max_mm": 0.6488,
+      "iters": 29,
+      "reaction_N": [
+        -0.0,
+        0.0,
+        355.36
+      ],
+      "solid_vm_max_MPa": 6.09,
+      "solid_FI_xy_max": 0.0567,
+      "solid_FI_z_max": 0.1396,
+      "infill_FI_max": {
+        "0.12": 0.1308,
+        "0.25": 0.0296,
+        "0.4": 0.0444,
+        "0.55": 0.1585
+      },
+      "hot_xyz": [
+        -544.8,
+        338.5,
+        341.4
+      ]
+    }
+  }
+}

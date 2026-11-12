@@ -1,0 +1,120 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 2
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "duration": 10,
+    "samples": [
+      0,
+      3.63,
+      7
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 0,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      0,
+      3.63,
+      7
+    ],
+    "checked": 0,
+    "passed": 0
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 80
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 1,
+    "findings": [
+      {
+        "code": "audio_none",
+        "severity": "info",
+        "message": "The film has no sound: no clip in it plays audio.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0
+      }
+    ]
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  },
+  "saved": {
+    "id": "f4279a04-e688-441d-93e3-ff7fbb032573",
+    "revision": "a4b98ee6-d3a2-472c-8c13-901a424baaae",
+    "report": "SAMI_Impacto_PAD_Hexa3D15_2026-11-11\\04_Animacao\\projeto_editavel\\.hyperframes\\artifacts\\checks\\f4279a04-e688-441d-93e3-ff7fbb032573.json",
+    "attribution": "recorded-revision"
+  },
+  "_meta": {
+    "version": "0.9.33",
+    "latestVersion": "0.9.33",
+    "updateAvailable": false,
+    "checkedAt": "2026-11-11T13:39:30.168Z",
+    "skillsOutdated": 7,
+    "skillsMissing": 2,
+    "updateNotice": "For the user: 7 installed HyperFrames skills are out of date and 2 core skills are missing (this run is HyperFrames CLI 0.9.33). To update them, run: npx hyperframes update"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "members": [
+    {
+      "class": "Occurrences",
+      "doc": "\nMethod that creates a new component and an occurrence that references it.\ntransform : A transform that defines the location for the new occurrence.\nReturns the newly created occurrence or null if the creation failed.\n",
+      "name": "addNewComponent",
+      "namespace": "adsk.fusion",
+      "signature": "(transform: Matrix3D) -> adsk.fusion.Occurrence",
+      "type": "function"
+    },
+    {
+      "class": "Occurrences",
+      "doc": "\nMethod that creates a new occurrence by creating a new component that is a copy of an existing\ncomponent. This is the equivalent of copying and using the 'Paste New' command in the user interface. This\nis different from the addExistingComponent in that it's not a new instance to the existing component but a\nnew component is created that has its own definition (sketches, features, etc.) and a new occurrence instance\nis created to reference this new component.\ncomponent : The existing component to create a copy of.\ntransform : A transform that defines the location for the new occurrence\nReturns the newly created occurrence or null if the creation failed. The newly created component can be\nobtained by using the component property of the returned Occurrence.\n",
+      "name": "addNewComponentCopy",
+      "namespace": "adsk.fusion",
+      "signature": "(component: Component, transform: Matrix3D) -> adsk.fusion.Occurrence",
+      "type": "function"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

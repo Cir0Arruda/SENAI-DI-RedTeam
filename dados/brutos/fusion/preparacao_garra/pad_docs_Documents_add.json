@@ -1,0 +1,14 @@
+{
+  "members": [
+    {
+      "class": "Documents",
+      "doc": "\nCreates and opens a new document of the specified type.\nCreating a document is not supported within any of the Command related events.\nWhen a command is running, a transaction is open, and creating and closing documents cannot\nbe transacted and, as a result, cannot be contained within a command transaction.\ndocumentType : A value from the DocumentTypes enum that specifies the type of document to create.\nvisible : Optional argument specifying is the document should be visible or not. Currently, documents can only\nbe created visibly so this argument must always be true.\noptions : Various options that are supported that are specific to the document type. See the documentation\nfor the DocumentTypes enum for information about the options supported for the various types.\nReturns the created document\n",
+      "name": "add",
+      "namespace": "adsk.core",
+      "signature": "(*args) -> adsk.core.Document",
+      "type": "function"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

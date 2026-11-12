@@ -1,0 +1,154 @@
+{
+  "document": "SAMI R04 - INFERIOR_DIR - MODIFICADORES TPMSD",
+  "source_transform": [
+    -1.0,
+    2.1350442802019064e-16,
+    -4.01175475545761e-15,
+    -91.82395662574281,
+    -2.1350442802019e-16,
+    -1.0,
+    -1.57271088101042e-16,
+    51.96939493418261,
+    -4.01175475545761e-15,
+    -1.5727108810104113e-16,
+    1.0,
+    21.7980939551029,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "main_stl_raw": "desempenho\\03_STL_Garra\\origem/GARRA_INFERIOR_DIR_ENVELOPE.stl",
+  "source_material": "PA6CF_BAMBU_V3_CORPO_REFERENCIA",
+  "scope": {
+    "part": "INFERIOR_DIR",
+    "source_occurrence": "Suporte_Ventosas_S:2",
+    "source_volume_cm3": 815.9197910970199,
+    "partition_total_cm3": null,
+    "partition_difference_cm3": null,
+    "geometry_mode": "whole PA envelope plus nonprinting modifier masks; not disjoint source partitions",
+    "source_trim_failure": "ASM_EDGECOIN_PROBLEM; no repeat of source intersection",
+    "priority": [
+      70,
+      50,
+      30,
+      20
+    ],
+    "paths_world_cm": [
+      [
+        [
+          -47.83338307306287,
+          21.800055418372594
+        ],
+        [
+          -50.508383036531434,
+          18.850055209186298
+        ],
+        [
+          -53.183383,
+          15.900055
+        ]
+      ],
+      [
+        [
+          -47.83338307306287,
+          21.800055418372594
+        ],
+        [
+          -42.358383036531436,
+          18.850055209186298
+        ],
+        [
+          -36.883383,
+          15.900055
+        ]
+      ],
+      [
+        [
+          -47.83338307306283,
+          34.80005541833008
+        ],
+        [
+          -50.50838303653141,
+          37.75005520916504
+        ],
+        [
+          -53.183383,
+          40.700055
+        ]
+      ],
+      [
+        [
+          -47.83338307306283,
+          34.80005541833008
+        ],
+        [
+          -42.35838303653142,
+          37.75005520916504
+        ],
+        [
+          -36.883383,
+          40.700055
+        ]
+      ],
+      [
+        [
+          -47.83338307306287,
+          21.800055418372594
+        ],
+        [
+          -47.83338307306285,
+          28.300055418351338
+        ],
+        [
+          -47.83338307306283,
+          34.80005541833008
+        ]
+      ]
+    ],
+    "pink_cylinder_radius_mm": 31.5,
+    "pink_z_mm": [
+      264,
+      293
+    ],
+    "yellow_cylinder_radius_mm": 46,
+    "yellow_z_mm": [
+      230,
+      310
+    ],
+    "blue_corridor_width_mm": 16,
+    "zones_are_dimensional_hypotheses_from_2D_image": true,
+    "field_simulation_solved": false
+  },
+  "regions": [
+    {
+      "label": "ROSA",
+      "percent": 70,
+      "modifier_envelope_volume_cm3_not_printed_region_volume": 180.80022801042747,
+      "lumps": 2,
+      "stl_raw": "desempenho\\04_Modificadores\\origem/INFERIOR_DIR_ROSA_70.stl"
+    },
+    {
+      "label": "AZUL",
+      "percent": 50,
+      "modifier_envelope_volume_cm3_not_printed_region_volume": 725.6467391031836,
+      "lumps": 1,
+      "stl_raw": "desempenho\\04_Modificadores\\origem/INFERIOR_DIR_AZUL_50.stl"
+    },
+    {
+      "label": "AMARELO",
+      "percent": 30,
+      "modifier_envelope_volume_cm3_not_printed_region_volume": 725.6917600504723,
+      "lumps": 2,
+      "stl_raw": "desempenho\\04_Modificadores\\origem/INFERIOR_DIR_AMARELO_30.stl"
+    },
+    {
+      "label": "BASE",
+      "percent": 20,
+      "modifier_envelope_volume_cm3_not_printed_region_volume": 815.9197910970199,
+      "lumps": 1,
+      "stl_raw": "desempenho\\04_Modificadores\\origem/INFERIOR_DIR_BASE_20.stl"
+    }
+  ],
+  "archive": "desempenho\\01_Fusion/GARRA_INFERIOR_DIR_ZONAS_R04.f3d"
+}

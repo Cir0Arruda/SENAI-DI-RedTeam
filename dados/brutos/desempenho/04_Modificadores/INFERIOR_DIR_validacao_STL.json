@@ -1,0 +1,75 @@
+[
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 66174,
+    "volume_mm3": 815631.5458998041,
+    "CAD_volume_cm3": 815.9197910970199,
+    "volume_error_percent": 0.03532763886365163,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "03_STL_Garra\\GARRA_INFERIOR_DIR_BASE20.stl",
+    "type": "whole_part",
+    "dimensions_mm": [
+      202.99996948242188,
+      287.99920654296875,
+      72.70001220703125
+    ],
+    "shift_world_mm": [
+      -450.3338165283203,
+      283.00054931640625,
+      197.17337036132812
+    ]
+  },
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 552,
+    "volume_mm3": 180557.5296122036,
+    "CAD_volume_cm3": 180.80022801042747,
+    "volume_error_percent": 0.1342356704383564,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "04_Modificadores\\INFERIOR_DIR\\MOD_ROSA_70.stl",
+    "type": "nonprinting_modifier",
+    "infill_percent": 70
+  },
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 196,
+    "volume_mm3": 725676.2894374576,
+    "CAD_volume_cm3": 725.6467391031836,
+    "volume_error_percent": 0.004072275486344052,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "04_Modificadores\\INFERIOR_DIR\\MOD_AZUL_50.stl",
+    "type": "nonprinting_modifier",
+    "infill_percent": 50
+  },
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 1200,
+    "volume_mm3": 724898.9031456806,
+    "CAD_volume_cm3": 725.6917600504723,
+    "volume_error_percent": 0.10925532690858179,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "04_Modificadores\\INFERIOR_DIR\\MOD_AMARELO_30.stl",
+    "type": "nonprinting_modifier",
+    "infill_percent": 30
+  }
+]

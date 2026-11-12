@@ -1,0 +1,36 @@
+{
+  "cards": {
+    "NUCLEO_COM": {
+      "E_MPa": 790.26,
+      "density_kg_m3": 392.66,
+      "UTS_MPa": 13.73,
+      "nu": 0.3
+    },
+    "NUCLEO_SEM": {
+      "E_MPa": 483.56,
+      "density_kg_m3": 332.29,
+      "UTS_MPa": 6.48,
+      "nu": 0.3
+    },
+    "NUCLEO_SEM_ISO": {
+      "E_MPa": 617.76,
+      "density_kg_m3": 389.94,
+      "UTS_MPa": 7.78,
+      "nu": 0.3
+    }
+  },
+  "bodies": {
+    "CASCA": {
+      "cm3": 281.98,
+      "faces": 12178,
+      "watertight": false,
+      "lumps": 2
+    },
+    "NUCLEO": {
+      "cm3": 1110.07,
+      "faces": 4140,
+      "watertight": true,
+      "lumps": 1
+    }
+  }
+}

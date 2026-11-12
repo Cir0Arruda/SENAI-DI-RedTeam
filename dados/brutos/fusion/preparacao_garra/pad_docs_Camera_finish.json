@@ -1,0 +1,41 @@
+{
+  "members": [
+    {
+      "class": "Camera",
+      "doc": "Gets and sets the position of the eye in world space.",
+      "name": "eye",
+      "namespace": "adsk.core",
+      "type": "property"
+    },
+    {
+      "class": "Camera",
+      "doc": "Gets and sets the camera target point in world space.",
+      "name": "target",
+      "namespace": "adsk.core",
+      "type": "property"
+    },
+    {
+      "class": "Camera",
+      "doc": "Defines the 'up' direction for the camera which controls the orientation of the camera around the line\ndefined between the eye and target points.",
+      "name": "upVector",
+      "namespace": "adsk.core",
+      "type": "property"
+    },
+    {
+      "class": "Camera",
+      "doc": "** This property is retired. **\n\nThis property has been replaced by the getExtents and setExtents methods.\nDefines the area that's visible by the camera. This\nvalue is the radius of a sphere centered at the target point.\nThe camera will display everything within that sphere and\neverything in front of and behind the sphere. Additional\ngeometry outside of the sphere will also be visible depending\non the shape of the window. Setting this\nvalue can cause the eye and/or perspective angle to be\nmodified when the camera type is perspective.",
+      "name": "viewExtents",
+      "namespace": "adsk.core",
+      "type": "property"
+    },
+    {
+      "class": "Camera",
+      "doc": "If this property is true, when this camera is applied to a viewport it\nwill modify the camera such that the entire model is displayed in the viewport.\nWhen getting a camera from a viewport or creating a camera using Camera.create(),\nthis property defaults to false.",
+      "name": "isFitView",
+      "namespace": "adsk.core",
+      "type": "property"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

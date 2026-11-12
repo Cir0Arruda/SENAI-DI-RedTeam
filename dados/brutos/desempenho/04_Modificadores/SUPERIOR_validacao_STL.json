@@ -1,0 +1,75 @@
+[
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 120356,
+    "volume_mm3": 1391133.5975352263,
+    "CAD_volume_cm3": 1391.1909963638034,
+    "volume_error_percent": 0.00412587694479352,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "03_STL_Garra\\GARRA_SUPERIOR_BASE20.stl",
+    "type": "whole_part",
+    "dimensions_mm": [
+      260.9991760253906,
+      248.50242614746094,
+      85.0
+    ],
+    "shift_world_mm": [
+      -577.8334197998047,
+      311.2492446899414,
+      264.8733825683594
+    ]
+  },
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 864,
+    "volume_mm3": 360814.443049062,
+    "CAD_volume_cm3": 361.60045602085495,
+    "volume_error_percent": 0.21737056983899922,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "04_Modificadores\\SUPERIOR\\MOD_ROSA_70.stl",
+    "type": "nonprinting_modifier",
+    "infill_percent": 70
+  },
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 840,
+    "volume_mm3": 888303.055868091,
+    "CAD_volume_cm3": 888.2798565157026,
+    "volume_error_percent": 0.002611716591141286,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "04_Modificadores\\SUPERIOR\\MOD_AZUL_50.stl",
+    "type": "nonprinting_modifier",
+    "infill_percent": 50
+  },
+  {
+    "unit": "mm",
+    "native_to_mm_scale": 1,
+    "triangles": 1860,
+    "volume_mm3": 1648089.9114649326,
+    "CAD_volume_cm3": 1650.1385971307604,
+    "volume_error_percent": 0.12415233904534873,
+    "bad_edges": 0,
+    "winding_mismatches": 0,
+    "degenerate_removed": 0,
+    "opposite_zero_volume_flap_triangles_removed": 0,
+    "global_winding_flipped": false,
+    "file": "04_Modificadores\\SUPERIOR\\MOD_AMARELO_30.stl",
+    "type": "nonprinting_modifier",
+    "infill_percent": 30
+  }
+]

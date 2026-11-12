@@ -1,0 +1,26 @@
+{
+  "programs": [],
+  "stream_groups": [],
+  "streams": [
+    {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "avg_frame_rate": "30/1",
+      "nb_frames": "300"
+    }
+  ],
+  "format": {
+    "duration": "10.000000"
+  },
+  "bytes": 2174312,
+  "decoded_frames_reviewed_pending": false,
+  "region_motion_difference_bbox": [
+    74,
+    6,
+    758,
+    540
+  ],
+  "sound": "none, intentional10s engineering demonstration",
+  "visual_review": "decoded peak and rebound checked; no sphere/legend overlap in final position"
+}

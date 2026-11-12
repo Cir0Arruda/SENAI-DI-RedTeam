@@ -1,0 +1,98 @@
+{
+  "document": "SAMI R04 - ESTUDOS - EXTERIOR ORIGINAL SEM MASCARAS",
+  "bodies": [
+    {
+      "name": "GARRA_INFERIOR_ESQ_EXTERIOR_ORIGINAL",
+      "source": "Suporte_Ventosas_S:1",
+      "volume_cm3": 815.9197910970213,
+      "material_reference": "PA6CF_BAMBU_V3_CORPO_REFERENCIA_SOLID_REFERENCE_ONLY_R04",
+      "is_PAD": false,
+      "geometry_unchanged": true
+    },
+    {
+      "name": "GARRA_SUPERIOR_EXTERIOR_ORIGINAL",
+      "source": "Novo_Suport:1+Corpo Supor:1",
+      "volume_cm3": 1391.1909963638034,
+      "material_reference": "PA6CF_BAMBU_V3_CORPO_REFERENCIA_SOLID_REFERENCE_ONLY_R04",
+      "is_PAD": false,
+      "geometry_unchanged": true
+    },
+    {
+      "name": "GARRA_INFERIOR_DIR_EXTERIOR_ORIGINAL",
+      "source": "Suporte_Ventosas_S:2",
+      "volume_cm3": 815.9197910970199,
+      "material_reference": "PA6CF_BAMBU_V3_CORPO_REFERENCIA_SOLID_REFERENCE_ONLY_R04",
+      "is_PAD": false,
+      "geometry_unchanged": true
+    },
+    {
+      "name": "PAD95_R02_A1_L_ENVELOPE_INFILL40",
+      "source": "PAD95_R02_A1_L_ENVELOPE_INFILL40:1",
+      "volume_cm3": 17.734651023776557,
+      "material_reference": "PU95A_POLYFLEX_V54_REFERENCIA_NAO_CALIBRADO_40pct_SOLID_REFERENCE_ONLY_R04",
+      "is_PAD": true,
+      "geometry_unchanged": true
+    },
+    {
+      "name": "PAD95_R02_A1_R_ENVELOPE_INFILL40",
+      "source": "PAD95_R02_A1_R_ENVELOPE_INFILL40:1",
+      "volume_cm3": 10.93741976401281,
+      "material_reference": "PU95A_POLYFLEX_V54_REFERENCIA_NAO_CALIBRADO_40pct_SOLID_REFERENCE_ONLY_R04",
+      "is_PAD": true,
+      "geometry_unchanged": true
+    },
+    {
+      "name": "PAD95_R02_A2_L_ENVELOPE_INFILL40",
+      "source": "PAD95_R02_A2_L_ENVELOPE_INFILL40:1",
+      "volume_cm3": 12.693371382482114,
+      "material_reference": "PU95A_POLYFLEX_V54_REFERENCIA_NAO_CALIBRADO_40pct_SOLID_REFERENCE_ONLY_R04",
+      "is_PAD": true,
+      "geometry_unchanged": true
+    },
+    {
+      "name": "PAD95_R02_A2_R_ENVELOPE_INFILL40",
+      "source": "PAD95_R02_A2_R_ENVELOPE_INFILL40:1",
+      "volume_cm3": 11.580308135340633,
+      "material_reference": "PU95A_POLYFLEX_V54_REFERENCIA_NAO_CALIBRADO_40pct_SOLID_REFERENCE_ONLY_R04",
+      "is_PAD": true,
+      "geometry_unchanged": true
+    },
+    {
+      "name": "PAD95_R02_A3_L_ENVELOPE_INFILL40",
+      "source": "PAD95_R02_A3_L_ENVELOPE_INFILL40:1",
+      "volume_cm3": 11.582325613019455,
+      "material_reference": "PU95A_POLYFLEX_V54_REFERENCIA_NAO_CALIBRADO_40pct_SOLID_REFERENCE_ONLY_R04",
+      "is_PAD": true,
+      "geometry_unchanged": true
+    },
+    {
+      "name": "PAD95_R02_A3_R_ENVELOPE_INFILL40",
+      "source": "PAD95_R02_A3_R_ENVELOPE_INFILL40:1",
+      "volume_cm3": 12.700482128381877,
+      "material_reference": "PU95A_POLYFLEX_V54_REFERENCIA_NAO_CALIBRADO_40pct_SOLID_REFERENCE_ONLY_R04",
+      "is_PAD": true,
+      "geometry_unchanged": true
+    },
+    {
+      "name": "PAD95_R02_A4_L_ENVELOPE_INFILL40",
+      "source": "PAD95_R02_A4_L_ENVELOPE_INFILL40:1",
+      "volume_cm3": 10.943191269518172,
+      "material_reference": "PU95A_POLYFLEX_V54_REFERENCIA_NAO_CALIBRADO_40pct_SOLID_REFERENCE_ONLY_R04",
+      "is_PAD": true,
+      "geometry_unchanged": true
+    },
+    {
+      "name": "PAD95_R02_A4_R_ENVELOPE_INFILL40",
+      "source": "PAD95_R02_A4_R_ENVELOPE_INFILL40:1",
+      "volume_cm3": 17.742084554473216,
+      "material_reference": "PU95A_POLYFLEX_V54_REFERENCIA_NAO_CALIBRADO_40pct_SOLID_REFERENCE_ONLY_R04",
+      "is_PAD": true,
+      "geometry_unchanged": true
+    }
+  ],
+  "modifier_body_count": 0,
+  "jobs_submitted": 0,
+  "mesh_generated": false,
+  "simulation_status": "prepared_geometry_only; zonal effective laws and PAD contact/dissipation missing",
+  "archive": "desempenho\\01_Fusion\\GARRA_R04_EXTERIOR_ORIGINAL_PREPARACAO.f3d"
+}

@@ -1,0 +1,41 @@
+{
+  "part_cm3": 1391.79,
+  "NUCLEO_EQ": {
+    "E_MPa": 316.7,
+    "density_kg_m3": 288.4,
+    "UTS_MPa": 4.2,
+    "nu": 0.3
+  },
+  "nucleo_frac_cm3": {
+    "GIROIDE_35": 143.67,
+    "GIROIDE_20": 27.16,
+    "GIROIDE_25": 720.66
+  },
+  "bodies": {
+    "FIXO": {
+      "cm3": 298.56,
+      "faces": 15766,
+      "watertight": false,
+      "lumps": 7
+    },
+    "ALMAS": {
+      "cm3": 82.26,
+      "faces": 4360,
+      "watertight": true,
+      "lumps": 7
+    },
+    "COLAR": {
+      "cm3": 119.48,
+      "faces": 3566,
+      "watertight": true,
+      "lumps": 20
+    },
+    "NUCLEO": {
+      "cm3": 891.49,
+      "faces": 8492,
+      "watertight": false,
+      "lumps": 11
+    }
+  },
+  "sum_cm3": 1391.79
+}

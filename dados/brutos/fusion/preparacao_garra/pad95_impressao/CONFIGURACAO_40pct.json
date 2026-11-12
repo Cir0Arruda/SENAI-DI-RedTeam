@@ -1,0 +1,17 @@
+{
+  "status": "proposed_not_sliced_or_printed",
+  "units": "mm",
+  "material": "PU/TPU 95A FFF, PolyFlex V5.4 reference",
+  "infill_core_percent": 40,
+  "pattern": "gyroid",
+  "line_width_mm": 0.4,
+  "walls": 3,
+  "wall_nominal_mm": 1.2,
+  "layer_height_mm": 0.2,
+  "top_bottom_layers": 6,
+  "nozzle_reference_C": 230,
+  "bed_reference_C": 50,
+  "orientation": "individual files centered XY, minimum Z=0; confirm support and layer direction in slicer",
+  "no_supports_generated": true,
+  "warning": "STL is a closed envelope; generate infill in slicer. Do not use bulk linear properties to claim 40pct impact response."
+}

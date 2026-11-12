@@ -1,0 +1,148 @@
+{
+  "document": "SAMI - PAD95 CONFORMAL - PROTOTIPO R01",
+  "status": "geometry_created_not_simulated",
+  "pads": [
+    {
+      "region": "A1",
+      "center_local_cm": [
+        -11.0282670572,
+        -12.6480648562,
+        -5.9
+      ],
+      "center_world_cm": [
+        -67.73338307306587,
+        21.800055418372644,
+        28.037336860271097
+      ],
+      "halves": [
+        {
+          "component": "PAD95_A1_L_ENVELOPE_INFILL40",
+          "volume_envelope_cm3": 11.909291424080077,
+          "faces": 46,
+          "lumps": 1
+        },
+        {
+          "component": "PAD95_A1_R_ENVELOPE_INFILL40",
+          "volume_envelope_cm3": 7.303531306186353,
+          "faces": 32,
+          "lumps": 1
+        }
+      ],
+      "neighbor_tools": 2,
+      "maximum_outer_radius_mm": 39,
+      "nominal_flange_radius_mm": 31,
+      "nominal_radial_clearance_mm": 0.5,
+      "envelope_height_mm": 20.5,
+      "retention_groove_width_mm": 3.5,
+      "retention_groove_depth_mm": 1.2,
+      "split_gap_mm": 0.8
+    },
+    {
+      "region": "A2",
+      "center_local_cm": [
+        -11.0282670572,
+        0.3519351437575,
+        -5.9
+      ],
+      "center_world_cm": [
+        -67.73338307306582,
+        34.800055418330146,
+        28.037336860271097
+      ],
+      "halves": [
+        {
+          "component": "PAD95_A2_L_ENVELOPE_INFILL40",
+          "volume_envelope_cm3": 7.996236742538147,
+          "faces": 43,
+          "lumps": 1
+        },
+        {
+          "component": "PAD95_A2_R_ENVELOPE_INFILL40",
+          "volume_envelope_cm3": 9.127427287289409,
+          "faces": 49,
+          "lumps": 1
+        }
+      ],
+      "neighbor_tools": 4,
+      "maximum_outer_radius_mm": 39,
+      "nominal_flange_radius_mm": 31,
+      "nominal_radial_clearance_mm": 0.5,
+      "envelope_height_mm": 20.5,
+      "retention_groove_width_mm": 3.5,
+      "retention_groove_depth_mm": 1.2,
+      "split_gap_mm": 0.8
+    },
+    {
+      "region": "A3",
+      "center_local_cm": [
+        8.871732942803,
+        0.3519351437575,
+        -5.9
+      ],
+      "center_world_cm": [
+        -47.833383073062826,
+        34.80005541833009,
+        28.037336860271097
+      ],
+      "halves": [
+        {
+          "component": "PAD95_A3_L_ENVELOPE_INFILL40",
+          "volume_envelope_cm3": 9.12928414006086,
+          "faces": 46,
+          "lumps": 1
+        },
+        {
+          "component": "PAD95_A3_R_ENVELOPE_INFILL40",
+          "volume_envelope_cm3": 8.005238260269953,
+          "faces": 40,
+          "lumps": 1
+        }
+      ],
+      "neighbor_tools": 2,
+      "maximum_outer_radius_mm": 39,
+      "nominal_flange_radius_mm": 31,
+      "nominal_radial_clearance_mm": 0.5,
+      "envelope_height_mm": 20.5,
+      "retention_groove_width_mm": 3.5,
+      "retention_groove_depth_mm": 1.2,
+      "split_gap_mm": 0.8
+    },
+    {
+      "region": "A4",
+      "center_local_cm": [
+        8.871732942803,
+        -12.6480648562,
+        -5.9
+      ],
+      "center_world_cm": [
+        -47.83338307306286,
+        21.800055418372594,
+        28.037336860271097
+      ],
+      "halves": [
+        {
+          "component": "PAD95_A4_L_ENVELOPE_INFILL40",
+          "volume_envelope_cm3": 7.302373117269207,
+          "faces": 37,
+          "lumps": 1
+        },
+        {
+          "component": "PAD95_A4_R_ENVELOPE_INFILL40",
+          "volume_envelope_cm3": 11.914789094875712,
+          "faces": 50,
+          "lumps": 1
+        }
+      ],
+      "neighbor_tools": 4,
+      "maximum_outer_radius_mm": 39,
+      "nominal_flange_radius_mm": 31,
+      "nominal_radial_clearance_mm": 0.5,
+      "envelope_height_mm": 20.5,
+      "retention_groove_width_mm": 3.5,
+      "retention_groove_depth_mm": 1.2,
+      "split_gap_mm": 0.8
+    }
+  ],
+  "archive": "FUSION\\preparacao_garra\\SAMI_PAD95_CONFORMAL_R01.f3d",
+  "infill_note": "CAD envelopes are solid; 40% applies to core in slicer and is not a homogenized FEA material"
+}

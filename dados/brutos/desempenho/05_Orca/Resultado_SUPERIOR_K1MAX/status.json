@@ -1,0 +1,17 @@
+{
+  "case": "SUPERIOR",
+  "status": "sliced_verified",
+  "start_UTC": "2026-11-11T12:31:12.380764-03:00",
+  "input": "desempenho\\05_Orca\\GARRA_SUPERIOR_TPMSD_K1MAX_ESCALA_REAL.3mf",
+  "output": "desempenho\\05_Orca\\Resultado_SUPERIOR_K1MAX\\SUPERIOR_K1MAX_FATIADO_REFERENCIA.3mf",
+  "printer_reference": "Creality K1 Max300mm,0.4mm",
+  "orientation": "original source Z-up",
+  "scale": 1,
+  "slicing_not_FEA": true,
+  "sent_to_printer": false,
+  "monitor": "Detached native calculation completed; output verified; no duplicate job",
+  "native_pid": 25024,
+  "verification": "Actual Gcode, outside=false, unit scale, material density, roles, mass agreement<0.02g; fabrication reference only",
+  "native_process_finished": true,
+  "end_time_from_gcode_header": "2026-11-11 12:50:39 America/Sao_Paulo"
+}

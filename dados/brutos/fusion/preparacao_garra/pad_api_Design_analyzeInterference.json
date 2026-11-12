@@ -1,0 +1,14 @@
+{
+  "members": [
+    {
+      "class": "Design",
+      "doc": "\nCalculates the interference between the input bodies and/or occurrences.\ninput : An InterferenceInput that defines all of the necessary input needed to calculate the interference.\nAn InterferenceInput object is created using the createInterferenceInput method.\nReturns an InterferenceResults object that can be used to examine the interference results.\n",
+      "name": "analyzeInterference",
+      "namespace": "adsk.fusion",
+      "signature": "(input: InterferenceInput) -> adsk.fusion.InterferenceResults",
+      "type": "function"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

@@ -1,0 +1,25 @@
+{
+  "case": "UNI_HONEYCOMB3D30_SUPERIOR",
+  "start_UTC": "2026-11-12T03:01:14.147016+00:00",
+  "input": "desempenho\\05_Orca\\R07\\COMPARATIVO\\GARRA_SUPERIOR_UNI_HONEYCOMB3D30_K1MAX.3mf",
+  "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+  "scale": 1,
+  "sent_to_printer": false,
+  "returncode": 0,
+  "ok": true,
+  "end_UTC": "2026-11-12T03:03:36.778164+00:00",
+  "mass_g": {
+    "peca": 641.6084724040426,
+    "adesao": 2.6008775670930913,
+    "suporte": 113.48711411678012
+  },
+  "orca_total_g": 757.7,
+  "time_s": 123066,
+  "warnings": [
+    {
+      "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+      "level": "3",
+      "error_code": "1000C002"
+    }
+  ]
+}

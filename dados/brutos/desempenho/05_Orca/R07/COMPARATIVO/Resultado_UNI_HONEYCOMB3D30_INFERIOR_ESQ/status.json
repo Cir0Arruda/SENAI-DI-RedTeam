@@ -1,0 +1,25 @@
+{
+  "case": "UNI_HONEYCOMB3D30_INFERIOR_ESQ",
+  "start_UTC": "2026-11-12T03:04:21.148520+00:00",
+  "input": "desempenho\\05_Orca\\R07\\COMPARATIVO\\GARRA_INFERIOR_ESQ_UNI_HONEYCOMB3D30_K1MAX.3mf",
+  "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+  "scale": 1,
+  "sent_to_printer": false,
+  "returncode": 0,
+  "ok": true,
+  "end_UTC": "2026-11-12T03:06:05.948096+00:00",
+  "mass_g": {
+    "peca": 414.18065801454725,
+    "adesao": 1.5574985431698605,
+    "suporte": 96.2278930600936
+  },
+  "orca_total_g": 511.97,
+  "time_s": 83300,
+  "warnings": [
+    {
+      "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+      "level": "3",
+      "error_code": "1000C002"
+    }
+  ]
+}

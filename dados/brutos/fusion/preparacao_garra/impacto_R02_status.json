@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-11",
+  "status": "blocked",
+  "document": "SAMI A1 IMPACTO HIPOTESE - SEM VIDA UTIL",
+  "archive": "SAMI_A1_IMPACTO_R02_BLOQUEADO.f3d",
+  "geometry": "SAMI_PAD95_CONFORMAL_R02.f3d",
+  "geometry_revision": "R02, +5mm upward relative to R01",
+  "material_assignment_update": "new uniquely named HYPER favorite overrides applied to PA and both A1 PAD halves; advanced-property mode recognized in study UI",
+  "precheck_after_new_assignment": {
+    "status": "failed",
+    "messages": [
+      "Some components are using a material with invalid properties",
+      "Model has no contacts or connectors defined between independent bodies"
+    ],
+    "specific_invalid_field": "not exposed; not established",
+    "scope": "new local A1 study only"
+  },
+  "prepared_geometry": {
+    "pa_local_envelope_cm3": 98.82387185936514,
+    "pad_local_envelope_cm3": 28.672070787789366,
+    "sphere_radius_mm": 20,
+    "sphere_mass_kg": 0.26305602486058527,
+    "nominal_sphere_gap_name_mm": 0.1,
+    "actual_minimum_gap_mm": null,
+    "gap_note": "nominal name based on maximum PAD radius; groove changes actual initial gap; measure before solving"
+  },
+  "proposed_impact": {
+    "velocity_m_s": 1,
+    "kinetic_energy_J": 0.13152801243029263,
+    "duration_s": 0.003,
+    "output_intervals": 40,
+    "velocity_applied": false,
+    "supports_applied": false,
+    "contacts_applied": false,
+    "settings_applied": false,
+    "mesh_generated": false,
+    "note": "proposed local case, not measured robot collision; artificial cut must be constrained only on cut faces"
+  },
+  "hypothetical_materials": {
+    "PA": {
+      "name": "HYPER_PA_EQ_30_HIPOTESE_E398_7",
+      "E_MPa": 398.7,
+      "density_kg_m3": 327,
+      "nu": 0.3,
+      "MR_A01_MPa": 0,
+      "MR_A10_MPa": 76.6730769231,
+      "MR_D1_MPa": 166.125,
+      "basis": "Esolid4430*0.30^2; ignores stiffness/mass contribution of actual dense perimeters; not calibrated printed PA-CF; neo-Hookean surrogate not a PA-CF failure model"
+    },
+    "PAD": {
+      "name": "HYPER_PAD_EQ_40_PELE_HIPOTESE_E7_905",
+      "E_MPa": 7.905882352941178,
+      "density_kg_m3": 766.8571428571429,
+      "nu": 0.3,
+      "MR_A01_MPa": 0,
+      "MR_A10_MPa": 1.52036199095,
+      "MR_D1_MPa": 3.2941176471,
+      "basis": "local 6.3mm radial stack, two solid1.2mm skins and3.9mm core E33.6*0.4^2; uncalibrated uniform surrogate"
+    }
+  },
+  "submitted": false,
+  "solved": false,
+  "cost_displayed": null,
+  "impact_reduction_percent": null,
+  "peak_contact_force_N": null,
+  "strain_or_distortion_results": null,
+  "wear_rate": null,
+  "life_hours": null,
+  "fatigue_cycles": null,
+  "animation_created": false,
+  "thermal_solved": false,
+  "next_action": "Identify precise material validation cause before another precheck; then configure and audit cut restraints, retention/contact, velocity, actual gap, duration and mesh. Do not repeat unchanged precheck or claim local equivalent validates actual 30/40pct prints. No life/failure claims from elastic law."
+}

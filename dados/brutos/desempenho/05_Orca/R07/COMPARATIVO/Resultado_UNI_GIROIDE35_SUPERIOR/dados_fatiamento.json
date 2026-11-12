@@ -1,0 +1,160 @@
+{
+  "roles": [
+    {
+      "role": "Bridge",
+      "filament_mm": 2480.090390000041,
+      "volume_cm3": 5.965316464432436,
+      "mass_g": 6.5618481108756805
+    },
+    {
+      "role": "Brim",
+      "filament_mm": 983.0174900000014,
+      "volume_cm3": 2.36443415190281,
+      "mass_g": 2.6008775670930913
+    },
+    {
+      "role": "Gap infill",
+      "filament_mm": 533.5395600000494,
+      "volume_cm3": 1.2833130334795093,
+      "mass_g": 1.4116443368274603
+    },
+    {
+      "role": "Inner wall",
+      "filament_mm": 60233.42744007314,
+      "volume_cm3": 144.87837131511114,
+      "mass_g": 159.36620844662227
+    },
+    {
+      "role": "Internal Bridge",
+      "filament_mm": 1946.1629100000034,
+      "volume_cm3": 4.681070374007848,
+      "mass_g": 5.149177411408633
+    },
+    {
+      "role": "Internal solid infill",
+      "filament_mm": 35773.46148000089,
+      "volume_cm3": 86.04525851833381,
+      "mass_g": 94.6497843701672
+    },
+    {
+      "role": "Outer wall",
+      "filament_mm": 14750.412930016117,
+      "volume_cm3": 35.47890087530268,
+      "mass_g": 39.02679096283295
+    },
+    {
+      "role": "Overhang wall",
+      "filament_mm": 557.7096099999974,
+      "volume_cm3": 1.3414488166720093,
+      "mass_g": 1.4755936983392104
+    },
+    {
+      "role": "Sparse infill",
+      "filament_mm": 149495.7257293575,
+      "volume_cm3": 359.57935954729345,
+      "mass_g": 395.5372955020228
+    },
+    {
+      "role": "Support",
+      "filament_mm": 39344.22552001329,
+      "volume_cm3": 94.63395254512244,
+      "mass_g": 104.09734779963469
+    },
+    {
+      "role": "Support interface",
+      "filament_mm": 3548.9192699998043,
+      "volume_cm3": 8.536151197404955,
+      "mass_g": 9.389766317145451
+    },
+    {
+      "role": "Top surface",
+      "filament_mm": 1217.6746500000008,
+      "volume_cm3": 2.928850765784746,
+      "mass_g": 3.2217358423632207
+    }
+  ],
+  "category_mass_g": {
+    "peca": 706.4000786814594,
+    "adesao": 2.6008775670930913,
+    "suporte": 113.48711411678013
+  },
+  "tracked_deposition_moves": 14938065,
+  "method": "positive E during XY/arc moves, by native TYPE or FEATURE tags; retractions and E-only priming excluded",
+  "density_g_cm3": 1.1,
+  "filament_diameter_mm": 1.75,
+  "not_measured_mass": true,
+  "object_role_mass_g": {
+    "SEM_OBJETO": {
+      "Brim": 2.6008775670930913
+    },
+    "GARRA_SUPERIOR_R07_ZONAS_INTERNAS": {
+      "Support": 104.09734779963469,
+      "Inner wall": 159.36620844662227,
+      "Outer wall": 39.02679096283295,
+      "Gap infill": 1.4116443368274603,
+      "Internal solid infill": 94.6497843701672,
+      "Sparse infill": 395.5372955020228,
+      "Support interface": 9.389766317145451,
+      "Overhang wall": 1.4755936983392104,
+      "Bridge": 6.5618481108756805,
+      "Top surface": 3.2217358423632207,
+      "Internal Bridge": 5.149177411408633
+    }
+  },
+  "Orca_summary": {
+    "prediction_s": 123050,
+    "total_filament_mass_g": 822.49,
+    "outside": "false",
+    "support_used": "true",
+    "warnings": [
+      {
+        "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+        "level": "3",
+        "error_code": "1000C002"
+      }
+    ],
+    "filament": {
+      "id": "1",
+      "tray_info_idx": "OFniMuTN",
+      "type": "PA6-CF",
+      "color": "#50565E",
+      "used_m": "310.86",
+      "used_g": "822.49",
+      "group_id": "0",
+      "nozzle_diameter": "0.40",
+      "volume_type": "Standard",
+      "used_for_object": "true",
+      "used_for_support": "true"
+    },
+    "actual_Gcode_in_archive": true
+  },
+  "effective_settings": {
+    "printer_model": "Creality K1 Max",
+    "printer_settings_id": "Creality K1 Max (0.4 nozzle)(GARRA_SUPERIOR_TPMSD_K1MAX_ESCALA_REAL.3mf)",
+    "printable_area": [
+      "0x0",
+      "300x0",
+      "300x300",
+      "0x300"
+    ],
+    "wall_loops": "5",
+    "sparse_infill_density": "35%",
+    "sparse_infill_pattern": "gyroid",
+    "filament_density": [
+      "1.1"
+    ],
+    "filament_type": [
+      "PA6-CF"
+    ],
+    "layer_height": "0.2",
+    "nozzle_temperature": [
+      "275",
+      "275"
+    ],
+    "curr_bed_type": "Textured PEI Plate",
+    "textured_plate_temp": [
+      "100"
+    ]
+  },
+  "tracked_mass_difference_from_Orca_g": -0.001929634667362734
+}

@@ -1,0 +1,40 @@
+{
+  "revision": "R04_internal_only",
+  "external_changes_prohibited": true,
+  "new_Fusion_solver_jobs": 0,
+  "old_static_baselines_repeated": false,
+  "new_study_geometry": "01_Fusion/GARRA_R04_EXTERIOR_ORIGINAL_PREPARACAO.f3d",
+  "geometry_prepared": true,
+  "actual_internal_lattice_or_effective_laws_prepared": false,
+  "mesh_generated": false,
+  "contacts_and_supports_validated": false,
+  "cost_displayed": null,
+  "submission_id": null,
+  "cases": [
+    {
+      "case": "PA_TPMSD_ZONAL_SEM_PAD_IMPACTO",
+      "status": "blocked",
+      "solver_run": false,
+      "results": null
+    },
+    {
+      "case": "PA_TPMSD_ZONAL_COM_PAD40_IMPACTO",
+      "status": "blocked",
+      "solver_run": false,
+      "results": null
+    },
+    {
+      "case": "TERMICO_TRANSIENTE_SERVICO",
+      "status": "blocked",
+      "solver_run": false,
+      "results": null
+    },
+    {
+      "case": "DESGASTE_FADIGA_FLUENCIA_24_7",
+      "status": "blocked",
+      "solver_run": false,
+      "results": null
+    }
+  ],
+  "reason": "Current CAD retains solid envelopes, not explicit TPMS-D or calibrated regional shell/core. Prior A1 had invalid material and missing contacts; no unchanged re-precheck. Constitutive/contact/load data remain missing. Slicing is not mechanical simulation."
+}

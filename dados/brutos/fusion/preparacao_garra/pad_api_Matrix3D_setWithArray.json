@@ -1,0 +1,14 @@
+{
+  "members": [
+    {
+      "class": "Matrix3D",
+      "doc": "\nSets the contents of the array using a 16 element array.\ncells : The array of cell values.\nReturns true if successful.\n",
+      "name": "setWithArray",
+      "namespace": "adsk.core",
+      "signature": "(cells: list[float]) -> bool",
+      "type": "function"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

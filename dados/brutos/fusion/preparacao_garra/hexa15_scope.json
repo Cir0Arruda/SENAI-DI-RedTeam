@@ -1,0 +1,27 @@
+{
+  "gripper_user_confirmed": {
+    "material_family": "PA-CF",
+    "perimeters": 5,
+    "infill_pattern": "Hexa3D",
+    "infill_percent": 15
+  },
+  "gripper_hypotheses": {
+    "line_width_mm": 0.4,
+    "layer_height_mm": 0.2,
+    "top_bottom_mm": 1.2,
+    "orientation": "not mapped to CAD"
+  },
+  "pad_retained_from_prior_request": {
+    "material": "PU/TPU95A",
+    "infill_percent": 40
+  },
+  "pad_hypotheses": {
+    "perimeters": 3,
+    "line_width_mm": 0.4,
+    "wall_nominal_mm": 1.2,
+    "top_bottom_mm": 1.2,
+    "pattern": "gyroid"
+  },
+  "not_sliced": true,
+  "no_Hexa3D_explicit_mesh_or_calibration": true
+}

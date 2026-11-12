@@ -1,0 +1,26 @@
+{
+  "rows": [
+    {
+      "document": "SAMI R04 - SUPERIOR - MODIFICADORES TPMSD",
+      "visible_printable_envelopes": 1,
+      "nonprinting_masks_hidden": 3,
+      "body_volumes_unchanged": true,
+      "archive": "desempenho\\01_Fusion/GARRA_SUPERIOR_ZONAS_R04.f3d"
+    },
+    {
+      "document": "SAMI R04 - INFERIOR_ESQ - MODIFICADORES TPMSD",
+      "visible_printable_envelopes": 1,
+      "nonprinting_masks_hidden": 3,
+      "body_volumes_unchanged": true,
+      "archive": "desempenho\\01_Fusion/GARRA_INFERIOR_ESQ_ZONAS_R04.f3d"
+    },
+    {
+      "document": "SAMI R04 - INFERIOR_DIR - MODIFICADORES TPMSD",
+      "visible_printable_envelopes": 1,
+      "nonprinting_masks_hidden": 3,
+      "body_volumes_unchanged": true,
+      "archive": "desempenho\\01_Fusion/GARRA_INFERIOR_DIR_ZONAS_R04.f3d"
+    }
+  ],
+  "new_simulation_jobs": 0
+}

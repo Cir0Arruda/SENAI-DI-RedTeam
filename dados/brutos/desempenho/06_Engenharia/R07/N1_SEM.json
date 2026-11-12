@@ -1,0 +1,33 @@
+{
+  "design": "N1_SEM",
+  "mass_model_g": 676.3,
+  "solid_cm3": 398.8,
+  "infill_cm3": 1076.0,
+  "base_phi": 0.15,
+  "web_t": 0.0,
+  "cases": {
+    "ONE_24": {
+      "disp_max_mm": 0.7741,
+      "iters": 27,
+      "reaction_N": [
+        -0.0,
+        0.0,
+        355.36
+      ],
+      "solid_vm_max_MPa": 7.531,
+      "solid_FI_xy_max": 0.0584,
+      "solid_FI_z_max": 0.1716,
+      "infill_FI_max": {
+        "0.15": 0.2018,
+        "0.25": 0.0361,
+        "0.4": 0.052,
+        "0.45": 0.2213
+      },
+      "hot_xyz": [
+        -544.8,
+        338.5,
+        341.4
+      ]
+    }
+  }
+}

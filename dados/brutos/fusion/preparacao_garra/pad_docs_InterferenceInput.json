@@ -1,0 +1,13 @@
+{
+  "members": [
+    {
+      "class": "InterferenceInput",
+      "doc": "Gets and sets whether any coincident faces in the input bodies are considered as interference\nor not. This property defaults to False for a newly created InterferenceInput object.",
+      "name": "areCoincidentFacesIncluded",
+      "namespace": "adsk.fusion",
+      "type": "property"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

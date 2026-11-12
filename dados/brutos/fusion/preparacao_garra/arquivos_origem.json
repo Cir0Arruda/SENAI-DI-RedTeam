@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Layout_Parcial_Empilhamento SAMI.bak",
+    "bytes": 2710353,
+    "sha256": "6756b6d20ce642511414a498bf2f8176f18f9b828500860447ea18c9bebabdcb"
+  },
+  {
+    "name": "Layout_Parcial_Empilhamento SAMI.dwg",
+    "bytes": 2710291,
+    "sha256": "f35a76ebff91f01504826a351dceb4fc14f2201a5556d3d7ee74b4a7530ff698"
+  },
+  {
+    "name": "Montagem_Geral_Garra.stl",
+    "bytes": 78333884,
+    "sha256": "874fab9b10e1a6be56627e197d86d394be8cad298dda03ad57d09449fdb0b10c"
+  },
+  {
+    "name": "Montagem_Geral_Garra.stp",
+    "bytes": 23413114,
+    "sha256": "169cafb686de98662e14d105a4298ace43a7fca4905cb891eb76a38473f6d26f"
+  },
+  {
+    "name": "UR30.step",
+    "bytes": 16485469,
+    "sha256": "c4566ca7be993501069289db0797ef561fbd90b14b8aa90e6911c8417763d0c3"
+  },
+  {
+    "name": "UR30_techsheet_en.pdf",
+    "bytes": 3167562,
+    "sha256": "61e9fcdc8d4c5febec100cf4e211caf5acb8cb2659f2c56eff348aad62c2941e"
+  }
+]

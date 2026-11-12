@@ -1,0 +1,95 @@
+{
+  "phase": "R04_TPMSD_zonal_internal_only_slicing_verified_FEA_pending",
+  "updated": "2026-11-11",
+  "mcp": {
+    "name": "fusion-compact",
+    "transport": "stdio",
+    "official_backend": "http://127.0.0.1:27182/mcp",
+    "protocol_smoke_test": "passed",
+    "live_connection": "passed",
+    "client_reload_may_be_required": false,
+    "registered_tools_live_test": "inspect_active and estimate_mass passed in this chat"
+  },
+  "reference": {
+    "file": "~/Downloads/Compartilhado_10.11/Montagem_Geral_Garra.stp",
+    "sha256": "169cafb686de98662e14d105a4298ace43a7fca4905cb891eb76a38473f6d26f",
+    "fusion_document": "SAMI - PREPARACAO PA-CF Tritan PAD - SEM SIMULACAO",
+    "component_definitions": 39,
+    "occurrences": 136,
+    "solid_body_definitions": 27,
+    "imported_new_document": true,
+    "source_unit": "mm"
+  },
+  "candidate_materials": [
+    "Bambu PA6-CF V3.0",
+    "Eastman Tritan TX1001 molded reference",
+    "Polymaker Fiberon PA12-CF10 V1.1"
+  ],
+  "pad_material": "PU/TPU95A FFF reference PolyFlex V5.4, explicitly supersedes PU97A for new PAD R01",
+  "density_only_polymer_saving_percent": 7.6271186440678,
+  "actual_assembly_saving": null,
+  "baseline_masses_from_user_images_kg": [
+    2.834,
+    3.03
+  ],
+  "payload_from_user_image_kg": 24,
+  "next_gates": [
+    "Identify exact material validation failure in new local A1 study without inventing yield/UTS",
+    "Configure and audit actual cut restraints, contacts/retention, impact velocity and gap",
+    "Generate and check mesh, cost and energy before sending a job",
+    "Characterize printed shell/core, rate, hysteresis and damage before service-life claims"
+  ],
+  "next_instruction": "Read desempenho/00_Continuar/estado.json and R05_CONFERENCIA_ORCA/CONFIRMACAO_R05.json. Original top-level upper3MF was changed toPLA Basic with only2modifiers in GUI and preserved asR05_SESSAO_USUARIO_PRESERVADA. Use canonical4inputs in05_Orca/CONFIRMADO_R05. CLI outputs confirmed; GUI import awaiting user approval of custom preset warning. No newFEA results; no unchanged recheck. External changes prohibited; video paused.",
+  "archive": "FUSION\\preparacao_garra\\SAMI_PREPARACAO_PA_CF_TRITAN_PAD.f3d",
+  "archive_crc_verified": true,
+  "current_campaign": "comparacao_2026-11-11.json",
+  "latest_results": {
+    "von_mises_MPa": 3.232,
+    "first_principal_MPa": 5.163,
+    "displacement_mm": 0.08,
+    "safety_factor_reference": 19.755
+  },
+  "latest_studies": [
+    {
+      "study": 1,
+      "material": "Bambu PA6-CF V3.0",
+      "status": "solved",
+      "von_mises_MPa": 3.232,
+      "first_principal_MPa": 5.163,
+      "displacement_mm": 0.08,
+      "safety_factor_reference": 19.755,
+      "report": "SAMI_PA6CF_24kg_Relatorio_Fusion.html"
+    },
+    {
+      "study": 2,
+      "material": "Eastman Tritan TX1001 molded reference",
+      "status": "solved",
+      "von_mises_MPa": 3.222,
+      "first_principal_MPa": 5.025,
+      "displacement_mm": 0.23,
+      "safety_factor_reference": 11.542,
+      "report": "SAMI_TRITAN_24kg_Relatorio_Fusion.html"
+    },
+    {
+      "study": 3,
+      "material": "Polymaker Fiberon PA12-CF10 V1.1",
+      "status": "blocked",
+      "submitted": false,
+      "reason": "Fusion precheck: some components use material with invalid properties; exact internal cause not exposed. UTS criterion persisted, no invented yield."
+    }
+  ],
+  "solved_studies_total": 2,
+  "latest_results_study_id": 1,
+  "current_pad_campaign": "R04_ZONAL_TPMSD",
+  "pad_geometry": "SAMI_PAD95_CONFORMAL_R02.f3d",
+  "latest_pad_report": "desempenho\\06_Engenharia\\RELATORIO_TECNICO_R04.pdf",
+  "latest_pad_scope": "hexa15_scope.json",
+  "latest_pad_image": "SAMI_PAD95_MONTAGEM_R02.png",
+  "latest_impact_archive": "SAMI_A1_IMPACTO_R02_BLOQUEADO.f3d",
+  "pad_stl_package_R02_verified": true,
+  "new_impact_jobs_submitted": 0,
+  "desktop_delivery_folder": "desempenho",
+  "latest_external_model": "R04 infill20/30/50/70,5walls; PAD40; actual slicer only, no new mechanical/thermal/life result",
+  "latest_visual_confirmation": "desempenho/06_Engenharia/R05_CONFERENCIA_ORCA/CONFERENCIA_ORCA_R05.html",
+  "canonical_Orca_inputs": "desempenho/05_Orca/CONFIRMADO_R05"
+}

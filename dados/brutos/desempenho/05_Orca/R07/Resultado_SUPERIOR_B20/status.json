@@ -1,0 +1,25 @@
+{
+  "case": "SUPERIOR_B20",
+  "start_UTC": "2026-11-11T22:39:26.769888+00:00",
+  "input": "desempenho\\05_Orca\\R07\\GARRA_SUPERIOR_R07_ESQUELETO_GIROIDE20_K1MAX.3mf",
+  "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+  "scale": 1,
+  "sent_to_printer": false,
+  "returncode": 0,
+  "ok": true,
+  "end_UTC": "2026-11-11T22:41:11.638505+00:00",
+  "mass_g": {
+    "peca": 692.8160164330999,
+    "adesao": 2.600877646467394,
+    "suporte": 113.48701775637733
+  },
+  "orca_total_g": 808.9,
+  "time_s": 129296,
+  "warnings": [
+    {
+      "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+      "level": "3",
+      "error_code": "1000C002"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "classes": [
+    {
+      "doc": "\n** This class is a preview feature and may change in future releases. Do not use it in distributed programs. **\n\nProvides access to a material assignment in the study.\n",
+      "functions": [
+        {
+          "doc": "Reverts this material to the original design model material, removing any study-specific override",
+          "name": "revertToModelMaterial"
+        },
+        {
+          "doc": "Assigns a new material to the body associated with this MaterialAssignment, overriding any current material assignment",
+          "name": "assignMaterial"
+        }
+      ],
+      "name": "MaterialAssignment",
+      "namespace": "adsk.sim",
+      "properties": [
+        {
+          "doc": "Indicates whether the original design material was used or the material is overridden by the study",
+          "name": "isModelMaterial"
+        },
+        {
+          "doc": "Gets or sets the safety factor type used for this material in safety factor calculations",
+          "name": "safetyFactorType"
+        },
+        {
+          "doc": "Gets the core Material object for this assignment (override if present, otherwise the model material)",
+          "name": "material"
+        },
+        {
+          "doc": "Gets the material category (e",
+          "name": "category"
+        },
+        {
+          "doc": "Gets whether the assigned material is valid for this study type",
+          "name": "isMaterialValid"
+        },
+        {
+          "doc": "Gets the design body that this material is assigned to",
+          "name": "body"
+        }
+      ],
+      "type": "class"
+    },
+    {
+      "doc": "\n** This class is a preview feature and may change in future releases. Do not use it in distributed programs. **\n\nProvides access to the material assignments for all bodies in the study.\n",
+      "functions": [
+        {
+          "doc": "Returns the material assignment at the given index",
+          "name": "item"
+        }
+      ],
+      "name": "MaterialAssignments",
+      "namespace": "adsk.sim",
+      "properties": [
+        {
+          "doc": "Returns the number of material assignments (one per body)",
+          "name": "count"
+        }
+      ],
+      "type": "class"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

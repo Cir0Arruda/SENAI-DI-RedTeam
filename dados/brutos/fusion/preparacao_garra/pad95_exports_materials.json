@@ -1,0 +1,78 @@
+{
+  "pads": [
+    {
+      "component": "PAD95_A1_R_ENVELOPE_INFILL40",
+      "volume_envelope_cm3": 7.303531306186353,
+      "solid_mass_reference_g": 8.910308193547351,
+      "surface_cm2": 33.59747267721801,
+      "stl": "FUSION\\preparacao_garra/PAD95_A1_R_ENVELOPE_INFILL40.stl"
+    },
+    {
+      "component": "PAD95_A2_R_ENVELOPE_INFILL40",
+      "volume_envelope_cm3": 9.127427287289409,
+      "solid_mass_reference_g": 11.13546129049308,
+      "surface_cm2": 45.63613834149047,
+      "stl": "FUSION\\preparacao_garra/PAD95_A2_R_ENVELOPE_INFILL40.stl"
+    },
+    {
+      "component": "PAD95_A1_L_ENVELOPE_INFILL40",
+      "volume_envelope_cm3": 11.909291424080077,
+      "solid_mass_reference_g": 14.529335537377694,
+      "surface_cm2": 51.77877508185496,
+      "stl": "FUSION\\preparacao_garra/PAD95_A1_L_ENVELOPE_INFILL40.stl"
+    },
+    {
+      "component": "PAD95_A2_L_ENVELOPE_INFILL40",
+      "volume_envelope_cm3": 7.996236742538147,
+      "solid_mass_reference_g": 9.75540882589654,
+      "surface_cm2": 38.29812844917498,
+      "stl": "FUSION\\preparacao_garra/PAD95_A2_L_ENVELOPE_INFILL40.stl"
+    },
+    {
+      "component": "PAD95_A3_L_ENVELOPE_INFILL40",
+      "volume_envelope_cm3": 9.12928414006086,
+      "solid_mass_reference_g": 11.13772665087425,
+      "surface_cm2": 45.6392107965194,
+      "stl": "FUSION\\preparacao_garra/PAD95_A3_L_ENVELOPE_INFILL40.stl"
+    },
+    {
+      "component": "PAD95_A4_L_ENVELOPE_INFILL40",
+      "volume_envelope_cm3": 7.302373117269207,
+      "solid_mass_reference_g": 8.908895203068433,
+      "surface_cm2": 33.59418836993094,
+      "stl": "FUSION\\preparacao_garra/PAD95_A4_L_ENVELOPE_INFILL40.stl"
+    },
+    {
+      "component": "PAD95_A3_R_ENVELOPE_INFILL40",
+      "volume_envelope_cm3": 8.005238260269953,
+      "solid_mass_reference_g": 9.766390677529342,
+      "surface_cm2": 38.311400464719405,
+      "stl": "FUSION\\preparacao_garra/PAD95_A3_R_ENVELOPE_INFILL40.stl"
+    },
+    {
+      "component": "PAD95_A4_R_ENVELOPE_INFILL40",
+      "volume_envelope_cm3": 11.914789094875712,
+      "solid_mass_reference_g": 14.536042695748367,
+      "surface_cm2": 51.78579210764137,
+      "stl": "FUSION\\preparacao_garra/PAD95_A4_R_ENVELOPE_INFILL40.stl"
+    }
+  ],
+  "physical_material": "PU95A_POLYFLEX_V54_REFERENCIA_NAO_CALIBRADO_40pct",
+  "color_fields": [
+    "opaque_albedo",
+    "opaque_luminance_modifier",
+    "opaque_mfp_modifier",
+    "surface_albedo"
+  ],
+  "changed_structural_materials": [
+    {
+      "component": "Suporte_Ventosas_S",
+      "previous": "Aço"
+    },
+    {
+      "component": "Corpo Supor",
+      "previous": "Aço"
+    }
+  ],
+  "study_results_created": false
+}

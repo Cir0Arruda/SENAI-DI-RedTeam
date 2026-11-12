@@ -1,0 +1,14 @@
+{
+  "members": [
+    {
+      "class": "BRepBodies",
+      "doc": "\nCreates a new BRepBody object. The input can be a persisted or transient BRepBody and the\nresult is a persisted BRepBody. In a direct modeling design, the BRepBody is created within\nthe component the BRepBodies collection was obtained from. In a parametric modeling design,\nthe new BRepBody is created within the specified Base Feature.\nBecause of a current limitation, if you want to create a BRepBody in a parametric model,\nyou must first call the edit method of the base feature, then use the add method to create\nthe body, and finally call the finishEdit method of the base feature. The base\nfeature must be in an 'edit' state to be able to add any additional items to it.\nbody : The input BRepBody. Typically this is a transient BRepBody but that's not a requirement. In\nany case, there is not any association back to the original BRepBody.\ntargetBaseFeature : The BaseFeature object that this BRep body will be associated with. This is an optional\nrequirement. It is required in a parametric modeling design but is ignored in a direct\nmodeling design.\nReturns the newly created BRepBody or null if the creation failed.\n",
+      "name": "add",
+      "namespace": "adsk.fusion",
+      "signature": "(*args) -> adsk.fusion.BRepBody",
+      "type": "function"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

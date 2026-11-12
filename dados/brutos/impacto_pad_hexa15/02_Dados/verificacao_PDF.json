@@ -1,0 +1,55 @@
+{
+  "pages": 6,
+  "stats": [
+    {
+      "page": 1,
+      "characters": 1526,
+      "first_text": [
+        "R03 |11/11/2026 |1",
+        "1. Escopo e resultado disponÃ­vel"
+      ]
+    },
+    {
+      "page": 2,
+      "characters": 2119,
+      "first_text": [
+        "R03 |11/11/2026 |2",
+        "2. Materiais, paredes e modelo matemÃ¡tico"
+      ]
+    },
+    {
+      "page": 3,
+      "characters": 1014,
+      "first_text": [
+        "R03 |11/11/2026 |3",
+        "3. ForÃ§a e deformaÃ§Ã£o do modelo reduzido"
+      ]
+    },
+    {
+      "page": 4,
+      "characters": 2579,
+      "first_text": [
+        "R03 |11/11/2026 |4",
+        "4. Energia e validade da aproximaÃ§Ã£o"
+      ]
+    },
+    {
+      "page": 5,
+      "characters": 1260,
+      "first_text": [
+        "R03 |11/11/2026 |5",
+        "5. Imagens e animaÃ§Ã£o da regiÃ£o protegida"
+      ]
+    },
+    {
+      "page": 6,
+      "characters": 3343,
+      "first_text": [
+        "R03 |11/11/2026 |6",
+        "6. Massa, durabilidade e operaÃ§Ã£o24/7"
+      ]
+    }
+  ],
+  "rendered_for_visual_review": true,
+  "visual_review": "six pages reviewed; final page5 updated images reviewed; no clipping or overlap"
+}

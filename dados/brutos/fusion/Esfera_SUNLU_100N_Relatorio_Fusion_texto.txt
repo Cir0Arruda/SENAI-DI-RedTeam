@@ -1,0 +1,176 @@
+
+Relatório de estudo
+Cabeçalho
+Propriedades do relatório
+Modelo de simulação 1
+Estudo 1 - Tensão estática
+Propriedades do estudo
+Configuração do estudo
+Configurações
+Materiais
+Contatos
+Malha
+Caso de carga1
+Restrições
+Cargas
+Resultados guiados
+Fator de segurança
+Resultados
+Fator de segurança
+Tensão
+Deslocamento
+Relatório de estudo
+Arquivo analisado
+Esfera 50mm SUNLU - Ensaios exploratorios
+Versão
+Autodesk Fusion (2706.1.17)
+Data de criação
+2026-11-10, 09:56:35
+Autor
+usuario
+Resumo
+Teste exploratorio: esfera solida de 50 mm, carga distribuida de 100 N na calota superior e calota inferior fixa. Material SUNLU ABS-Like com E=1020 MPa de TDS anterior; nu=0,35, k=0,30 W/mK e cp=1030 J/kgK sao aproximacoes de literatura para outra resina SLA. Densidade=1190 kg/m3, UTS=28 MPa e alpha=101e-6/K da TDS atual SUNLU. Sem validacao de lote, pos-cura, anisotropia ou resistencia a compressao. Fator de seguranca usa UTS; nao certifica capacidade de compressao. Malha configurada em 2,5 mm, sem estudo de convergencia. Estudos termico e termomecanico 80 C preparados, mas nao resolvidos por saldo insuficiente (3 creditos cada). 80 C excede Tg=44 C e HDT=50 C; nao ha propriedades dependentes de temperatura.
+Propriedades do relatório
+Propriedades do relatório
+Título
+Estudos
+Autor
+usuario
+Modelo de simulação 1
+Estudo 1 - Tensão estática
+Propriedades do estudo
+Propriedades do estudo
+Tipo de estudo
+Tensão estática
+Data da última modificação
+2026-11-10, 09:40:56
+Configuração do estudo
+Configurações
+Geral
+Tolerância de contato
+0.10 mm
+Remover modos de corpo rígido
+Nenhum
+Malha
+Tamanho médio do elemento (% do tamanho do modelo) - Sólidos
+-
+Dimensionar tamanho da malha por peça
+Nenhum
+Tamanho médio do elemento (valor absoluto)
+2.50 mm
+Ordem dos elementos
+Parabólico
+Criar elementos de malha curvos
+Sim
+Ângulo máx. de giro em curvas (graus)
+60
+Coeficiente de tamanho máx. de malha adjacente
+1.5
+Proporção máx.
+10
+Tamanho mínimo do elemento (% do tamanho médio)
+20
+Refinamento de malha adaptável
+Número de etapas de refinamento
+0
+Tolerância de convergência dos resultados (%)
+20
+Parte de elementos para refinar (%)
+10
+Resultados para precisão da linha base
+Tensão de Von Mises
+Materiais
+SUNLU ABS-Like - MODELO EXPLORATORIO
+Componentes
+Componente
+Resistência
+Esfera 50mm - SUNLU ABS-Like - EXPLORATORIO
+Resistência máxima à tração
+Propriedades
+Densidade
+1.190E-06 kg / mm^3
+Módulo de Young
+1020.00 MPa
+Coeficiente de Poisson
+0.35
+Resistência a escoamento
+0.00 MPa
+Resistência máxima à tração
+28.00 MPa
+Condutividade térmica
+3.000E-04 W / (mm C)
+Coeficiente de expansão térmica
+1.010E-04 / C
+Calor específico
+1030.00 J / (kg C)
+Contatos
+Contact Type
+Contact Set
+Penetration Type
+Bodies
+Entities
+Malha
+Tipo
+Sólidos
+Nós
+33245
+Elementos
+23151
+Caso de carga1
+Restrições
+Fixo1
+Tipo
+Fixo
+Ux
+Fixo
+Uy
+Fixo
+Uz
+Fixo
+Cargas
+Força1
+Tipo
+Força
+Valor X
+0.00 N
+Valor Y
+0.00 N
+Valor Z
+-100.00 N
+Força por entidade
+Nenhum
+Caso de carga1 - Resultados guiados
+Fator de segurança
+Com os critérios de análise nesta configuração de estudo, há a oportunidade de reduzir o volume de material e o custo deste projeto.
+Próximas etapas
+Acima do limite do fator de segurança
+Validar a configuração do estudo
+Verifique se as cargas não estão definidas muito altas
+Verifique o refinamento da malha e considere aumentá-la em áreas de alta tensão
+Confirme o requisito do fator de segurança
+Se o resultado de deslocamento mostrar um alto deslocamento, considere a possibilidade de executar um estudo não linear para obter mais informações
+Verificar outros resultados
+Examine a visualização do resultado de destino abaixo para ver onde as áreas mais fracas estão
+Verifique o resultado da tensão para ver se, e onde, o material pode produzir
+Verifique o resultado do deslocamento para ver a que distância do alinhamento original o modelo foi movido
+Observe outros resultados, como forças de reação para verificar a configuração do estudo ou esforço para verificar o desempenho do material
+Leve no projeto
+Definir um limite superior do Fator de segurança para localizar onde o material pode ser removido
+Remover material de áreas que excedem o limite superior do Fator de segurança
+Gerar projetos alternativos
+No espaço de trabalho Projeto generativo, crie modificações de projeto
+Remover material desnecessário usando um estudo sobre otimização de forma
+Caso de carga1 - Resultados
+Resumo de resultados
+Tipo de resultado
+Sub-resultado
+Mínimo
+Máximo
+Fator de segurança
+Fator de segurança
+Tensão
+Von Mises
+1ª principal
+3ª principal
+Deslocamento
+Total

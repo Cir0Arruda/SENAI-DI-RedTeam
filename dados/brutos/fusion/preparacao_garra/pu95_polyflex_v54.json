@@ -1,0 +1,49 @@
+{
+  "id": "pu95_polyflex_v54_reference",
+  "product": "Polymaker PolyFlex TPU95",
+  "revision": "V5.4",
+  "source_url": "https://cdn.shopify.com/s/files/1/0548/7299/7945/files/PolyFlex_TPU95_TDS_EN_V5.4.pdf?v=1731956391",
+  "specimen": {
+    "process": "FFF",
+    "orientation": "XY",
+    "infill_percent": 100,
+    "nozzle_C": 230,
+    "bed_C": 50
+  },
+  "properties": {
+    "density_g_cm3": {
+      "range": [
+        1.2,
+        1.24
+      ],
+      "adopted_midpoint": 1.22
+    },
+    "E_MPa": {
+      "value": 33.6,
+      "uncertainty": 0.9,
+      "status": "manufacturer XY, not 40pct infill"
+    },
+    "nu": {
+      "value": 0.49,
+      "status": "explicit assumption, not measured for product"
+    },
+    "engineering_stress_MPa_at_elongation_percent": {
+      "100": 11.1,
+      "200": 15.0,
+      "300": 21.0,
+      "400": 25.8
+    },
+    "elongation_break_percent": 551.2,
+    "hardness_Shore_A": 95
+  },
+  "status": "basic CAD card; no calibrated 40pct dynamic material law",
+  "missing": [
+    "compression and unloading of printed 40pct shell/core",
+    "viscoelastic damping/rate curves",
+    "thermal constitutive data",
+    "fatigue and wear",
+    "retention/preload friction",
+    "full directional PA-CF failure model"
+  ],
+  "not_a_market_median": true
+}

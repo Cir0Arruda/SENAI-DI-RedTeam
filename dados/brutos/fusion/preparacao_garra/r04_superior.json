@@ -1,0 +1,162 @@
+{
+  "document": "SAMI R04 - SUPERIOR - MODIFICADORES TPMSD",
+  "source_transform": [
+    1.0,
+    2.67734552435273e-15,
+    3.81639164713393e-17,
+    -56.705116015865826,
+    -2.67734552435273e-15,
+    1.0,
+    2.12016690773224e-16,
+    34.44812027457262,
+    -3.816391647133873e-17,
+    -2.120166907732241e-16,
+    1.0,
+    33.937336860271095,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "main_stl_raw": "desempenho\\03_STL_Garra\\origem/GARRA_SUPERIOR_ENVELOPE.stl",
+  "source_material": "PA6CF_BAMBU_V3_CORPO_REFERENCIA",
+  "scope": {
+    "part": "SUPERIOR",
+    "source_occurrence": "Novo_Suport:1+Corpo Supor:1",
+    "source_volume_cm3": 1391.1909963638034,
+    "partition_total_cm3": null,
+    "partition_difference_cm3": null,
+    "geometry_mode": "whole PA envelope plus nonprinting modifier masks; not disjoint source partitions",
+    "source_trim_failure": "ASM_EDGECOIN_PROBLEM; no repeat of source intersection",
+    "priority": [
+      70,
+      50,
+      30,
+      20
+    ],
+    "paths_world_cm": [
+      [
+        [
+          -67.73338307306587,
+          21.800055418372644
+        ],
+        [
+          -65.1,
+          27.5
+        ],
+        [
+          -62.0,
+          33.6
+        ]
+      ],
+      [
+        [
+          -47.83338307306287,
+          21.800055418372594
+        ],
+        [
+          -50.5,
+          27.5
+        ],
+        [
+          -53.5,
+          33.6
+        ]
+      ],
+      [
+        [
+          -67.73338307306582,
+          34.800055418330146
+        ],
+        [
+          -64.0,
+          36.4
+        ],
+        [
+          -62.4,
+          38.3
+        ]
+      ],
+      [
+        [
+          -47.83338307306283,
+          34.80005541833008
+        ],
+        [
+          -51.6,
+          36.4
+        ],
+        [
+          -53.1,
+          38.3
+        ]
+      ],
+      [
+        [
+          -65.1,
+          27.5
+        ],
+        [
+          -62.4,
+          31.5
+        ],
+        [
+          -57.783383,
+          33.2
+        ],
+        [
+          -53.2,
+          31.5
+        ],
+        [
+          -50.5,
+          27.5
+        ]
+      ]
+    ],
+    "pink_cylinder_radius_mm": 31.5,
+    "pink_z_mm": [
+      264,
+      293
+    ],
+    "yellow_cylinder_radius_mm": 46,
+    "yellow_z_mm": [
+      230,
+      310
+    ],
+    "blue_corridor_width_mm": 18,
+    "zones_are_dimensional_hypotheses_from_2D_image": true,
+    "field_simulation_solved": false
+  },
+  "regions": [
+    {
+      "label": "ROSA",
+      "percent": 70,
+      "modifier_envelope_volume_cm3_not_printed_region_volume": 361.60045602085495,
+      "lumps": 4,
+      "stl_raw": "desempenho\\04_Modificadores\\origem/SUPERIOR_ROSA_70.stl"
+    },
+    {
+      "label": "AZUL",
+      "percent": 50,
+      "modifier_envelope_volume_cm3_not_printed_region_volume": 888.2798565157026,
+      "lumps": 1,
+      "stl_raw": "desempenho\\04_Modificadores\\origem/SUPERIOR_AZUL_50.stl"
+    },
+    {
+      "label": "AMARELO",
+      "percent": 30,
+      "modifier_envelope_volume_cm3_not_printed_region_volume": 1650.1385971307604,
+      "lumps": 4,
+      "stl_raw": "desempenho\\04_Modificadores\\origem/SUPERIOR_AMARELO_30.stl"
+    },
+    {
+      "label": "BASE",
+      "percent": 20,
+      "modifier_envelope_volume_cm3_not_printed_region_volume": 1391.1909963638034,
+      "lumps": 1,
+      "stl_raw": "desempenho\\04_Modificadores\\origem/SUPERIOR_BASE_20.stl"
+    }
+  ],
+  "archive": "desempenho\\01_Fusion/GARRA_SUPERIOR_ZONAS_R04.f3d"
+}

@@ -1,0 +1,14 @@
+{
+  "members": [
+    {
+      "class": "TemporaryBRepManager",
+      "doc": "\nCreates a temporary spherical BRepBody object.\ncenter : The center point of the sphere.\nradius : The radius of the sphere in centimeters.\nReturns the newly created temporary BRepBody object or null in the case of failure.\n",
+      "name": "createSphere",
+      "namespace": "adsk.fusion",
+      "signature": "(center: Point3D, radius: float) -> adsk.fusion.BRepBody",
+      "type": "function"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

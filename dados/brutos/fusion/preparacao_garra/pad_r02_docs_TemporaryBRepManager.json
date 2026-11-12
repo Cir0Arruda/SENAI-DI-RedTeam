@@ -1,0 +1,14 @@
+{
+  "members": [
+    {
+      "class": "TemporaryBRepManager",
+      "doc": "\nGive an array of curve geometry objects, this method creates a new wire body.\ncurves : An array containing the input Curve3D objects. These can be Arc3D, Circle3D, Ellipse3D, EllipticalArc3D or Line3D objects.\nedgeMap : An array of edges in the returned body. The order that the edges are in this collection is the\nsame order as the original corresponding Curve3D object is in the input curves array. This allows you to\nmap between the original input curve and created edge.\nallowSelfIntersections : Specifies if you want to allow self-intersection in the input curves or not.\nReturns the B-Rep body containing the created wire or null in the case of failure.\n",
+      "name": "createWireFromCurves",
+      "namespace": "adsk.fusion",
+      "signature": "(curves: list[Curve3D], allowSelfIntersections: bool = False) -> adsk.fusion.BRepBody",
+      "type": "function"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

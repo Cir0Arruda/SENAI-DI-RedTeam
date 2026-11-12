@@ -23,10 +23,32 @@ A garra instalada é de Tritan Hexa3D 30%. Sua massa é estimada como o fatiamen
 | `montagem/` | garra **montada** (superior + inferior): carga máxima numa asa, FS a 24/30 kg, rigidez, flecha | FE por voxels de 3 mm, giroide homogeneizado (Gibson-Ashby), pico × 2,2 (calibrado no Fusion do R06) |
 | `impacto/` | tranco de 24 kg numa asa aplicado em 10 ms; séries no tempo (`hist`) | FE transiente 3D (Newmark, Rayleigh 3%) da peça superior |
 | `fadiga/` | vida estimada da peça superior | curva S-N normalizada conservadora + regra de Miner |
-| `decisao/` | tabela consolidada para decidir com × sem esqueleto (`DECISAO_ESQUELETO.json`, `dados_comparativos.csv`) | junta as pastas acima |
+| `decisao/` | tabela consolidada para decidir com × sem esqueleto (`DECISAO_ESQUELETO.json`, `dados_comparativos.csv`) e peso do conjunto inteiro de cada rodada (`peso_conjunto.csv`) | junta as pastas acima; o conjunto vem de `scripts/conjunto_dados.py` |
+| `brutos/` | todos os logs, JSON, CSV, relatórios em texto e scripts gerados nas rodadas (R04 a R07, Fusion, impacto do PAD) | cópia das pastas de trabalho, sem caminhos locais |
 | `materiais/`, `fusion/` | cartões de material e montagem do modelo do Fusion | |
 | `videos/` | números mostrados junto dos vídeos (`videos_r07.json`) | gerados por `scripts/r07_videos.py` só com campos já calculados |
 | `scripts/` | scripts Python que geraram os resultados, as figuras e o vídeo | |
+
+## Arquivos completos (Release)
+
+Os arquivos grandes estão na [Release `dados-2026-11-12`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/tag/dados-2026-11-12), porque o GitHub não aceita arquivos acima de 100 MB no repositório. Dentro de cada zip, `desempenho/` é a pasta das rodadas da garra (R04 a R07), `fusion/` é a dos estudos do Fusion e `impacto_pad_hexa15/` é a do estudo de impacto do PAD.
+
+| Pacote | Conteúdo | Tamanho |
+|---|---|---|
+| [`orca_fatiados_R07.zip`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/orca_fatiados_R07.zip) | 15 fatiamentos R07 (com e sem esqueleto, giroide 30/35/40%, TPMS-D 40%, Hexa3D 30%), cada um com o G-code dentro | 1,04 GB |
+| [`orca_fatiados_R06.zip`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/orca_fatiados_R06.zip) | 6 fatiamentos R06 (zonas TPMS-D e superior uniforme 20/30/50%) | 583 MB |
+| [`orca_fatiados_R04.zip`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/orca_fatiados_R04.zip) | 5 fatiamentos da 1ª rodada (3 peças da garra e PADs) | 266 MB |
+| [`orca_projetos_3mf.zip`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/orca_projetos_3mf.zip) | 40 projetos do Orca ainda não fatiados, com os modificadores internos | 84 MB |
+| [`modelos_3d.zip`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/modelos_3d.zip) | 259 modelos STL, STEP e Fusion (.f3d): garra, PADs, modificadores, esfera de ensaio | 300 MB |
+| [`fe_campos_npz.zip`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/fe_campos_npz.zip) | 12 campos de FE (tensão, deslocamento, índice de falha) em NumPy | 255 MB |
+| [`relatorios_imagens_videos.zip`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/relatorios_imagens_videos.zip) | 230 imagens, relatórios em PDF e os vídeos de simulação | 74 MB |
+| [`textos_logs_dados.zip`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/textos_logs_dados.zip) | os mesmos 486 arquivos de `brutos/`: logs do Orca, JSON, CSV, scripts e relatórios em texto | 7 MB |
+
+Ficaram de fora: os G-codes soltos (já estão dentro dos `*_FATIADO.3mf`), os zips antigos de entrega (duplicam os arquivos acima), fichas técnicas e código de terceiros, ambientes Python e notas de trabalho. Os caminhos de pastas do computador foram trocados por caminhos relativos.
+
+## Peso do conjunto inteiro
+
+`decisao/peso_conjunto.csv` soma as três peças impressas (superior, inferior esquerda e inferior direita) de cada rodada e o resto da montagem (ferragens, ventosas e PADs). O resto é 2,834 kg (garra instalada, dado da equipe) − 1,577 kg (Tritan estimado) = 1,257 kg e é tratado como igual em todas as opções, o que é uma hipótese. Ficam de fora o projeto antigo da montagem reduzida a 44,5% no Orca (só visualização), os testes X1 inclinados a 40° e o valor de 3,03 kg de outra foto, ainda não conferido.
 
 Cargas: massa × (g + 5 m/s²), com as duas caixas numa asa só (erro da seladora). 24 kg → 355,4 N; 30 kg → 444,2 N.
 Resistência entre camadas (Z): PA6-CF 48 MPa e PAHT CF15 18,2 MPa (TDS dos fabricantes).

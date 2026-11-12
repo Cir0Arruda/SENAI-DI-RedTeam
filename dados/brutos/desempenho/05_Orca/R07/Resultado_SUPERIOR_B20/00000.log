@@ -1,0 +1,3 @@
+Slic3r::PresetBundle::find_preset_vendor Could not find vendor for preset Creality K1 Max (0.4 nozzle)(GARRA_SUPERIOR_TPMSD_K1MAX_ESCALA_REAL.3mf)
+Slic3r::PresetBundle::find_preset_vendor Could not find vendor for preset SAMI_R07_ESQUELETO_GIROIDE20_5paredes
+Detected missing Voronoi vertex even after the rotation of input.

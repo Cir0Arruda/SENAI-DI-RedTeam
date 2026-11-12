@@ -1,0 +1,43 @@
+{
+  "active": "Modelo referência (~recovered)",
+  "documents": [
+    "SAMI PA6CF - CORPO SUPERIOR - EXPLORATORIO 24kg (~recovered)",
+    "Modelo referência (~recovered)"
+  ],
+  "bodies": [
+    {
+      "component": "Modelo referência (~recovered)",
+      "body": "Corpo1",
+      "volume_cm3": 692.4420971293735,
+      "material": "Aço",
+      "faces": 12,
+      "min": [
+        0.0,
+        -12.5,
+        -5.0
+      ],
+      "max": [
+        12.5,
+        12.5,
+        0.0
+      ]
+    },
+    {
+      "component": "Modelo referência (~recovered)",
+      "body": "Corpo2",
+      "volume_cm3": 50.26548245743886,
+      "material": "Aço",
+      "faces": 3,
+      "min": [
+        16.0,
+        -3.0,
+        -4.0
+      ],
+      "max": [
+        20.0,
+        1.0,
+        0.0
+      ]
+    }
+  ]
+}

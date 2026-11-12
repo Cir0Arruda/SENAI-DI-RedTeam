@@ -1,0 +1,162 @@
+[
+  {
+    "file": "PAD95_A1_R_ENVELOPE_INFILL40.stl",
+    "triangles": 1754,
+    "units": "mm",
+    "native_to_mm_scale": 1,
+    "dimensions_mm": [
+      25.9488525390625,
+      56.34696960449219,
+      20.50048828125
+    ],
+    "bottom_z_mm": 0,
+    "mesh_volume_mm3": 7301.210808520415,
+    "cad_volume_mm3": 7303.5313061863535,
+    "volume_error_percent": 0.031772269723449355,
+    "nonmanifold_or_boundary_edges_at_0_000001mm_weld": 0,
+    "opposite_winding_mismatches": 0,
+    "degenerate_triangles_removed_under_0_000001mm": 0,
+    "opposite_duplicate_zero_volume_flap_triangles_removed": 0,
+    "sha256": "d71dbf1881ee9a3f2c154c2cdc5777a4f41430bf58348d7c4fd67d592937f06d"
+  },
+  {
+    "file": "PAD95_A2_R_ENVELOPE_INFILL40.stl",
+    "triangles": 4146,
+    "units": "mm",
+    "native_to_mm_scale": 1,
+    "dimensions_mm": [
+      71.429931640625,
+      52.349578857421875,
+      20.5
+    ],
+    "bottom_z_mm": 0,
+    "mesh_volume_mm3": 9120.379392434903,
+    "cad_volume_mm3": 9127.427287289409,
+    "volume_error_percent": 0.07721666393684347,
+    "nonmanifold_or_boundary_edges_at_0_000001mm_weld": 0,
+    "opposite_winding_mismatches": 0,
+    "degenerate_triangles_removed_under_0_000001mm": 0,
+    "opposite_duplicate_zero_volume_flap_triangles_removed": 0,
+    "sha256": "060c829671b735efe6efac52ac1b8d16685ebd0f047de89e57caa9fc02f079a0"
+  },
+  {
+    "file": "PAD95_A1_L_ENVELOPE_INFILL40.stl",
+    "triangles": 3724,
+    "units": "mm",
+    "native_to_mm_scale": 1,
+    "dimensions_mm": [
+      71.42987060546875,
+      47.00370788574219,
+      20.50030517578125
+    ],
+    "bottom_z_mm": 0,
+    "mesh_volume_mm3": 11903.926114329051,
+    "cad_volume_mm3": 11909.291424080076,
+    "volume_error_percent": 0.04505146074582259,
+    "nonmanifold_or_boundary_edges_at_0_000001mm_weld": 0,
+    "opposite_winding_mismatches": 0,
+    "degenerate_triangles_removed_under_0_000001mm": 0,
+    "opposite_duplicate_zero_volume_flap_triangles_removed": 2,
+    "sha256": "88f5296ca690d6dd10c05b16102c3b4899635b2e9489d0b799b07aae49c9343b"
+  },
+  {
+    "file": "PAD95_A2_L_ENVELOPE_INFILL40.stl",
+    "triangles": 4088,
+    "units": "mm",
+    "native_to_mm_scale": 1,
+    "dimensions_mm": [
+      51.84857177734375,
+      59.3448486328125,
+      20.501556396484375
+    ],
+    "bottom_z_mm": 0,
+    "mesh_volume_mm3": 7996.817638309752,
+    "cad_volume_mm3": 7996.236742538147,
+    "volume_error_percent": 0.007264614471882926,
+    "nonmanifold_or_boundary_edges_at_0_000001mm_weld": 0,
+    "opposite_winding_mismatches": 0,
+    "degenerate_triangles_removed_under_0_000001mm": 0,
+    "opposite_duplicate_zero_volume_flap_triangles_removed": 0,
+    "sha256": "6ddf97ed78aa511e60bc1f4ca6e82d24caec2526406fa235e583fb02634235c6"
+  },
+  {
+    "file": "PAD95_A3_L_ENVELOPE_INFILL40.stl",
+    "triangles": 3952,
+    "units": "mm",
+    "native_to_mm_scale": 1,
+    "dimensions_mm": [
+      71.42990112304688,
+      52.362640380859375,
+      20.500030517578125
+    ],
+    "bottom_z_mm": 0,
+    "mesh_volume_mm3": 9121.58338207734,
+    "cad_volume_mm3": 9129.284140060861,
+    "volume_error_percent": 0.08435226536250058,
+    "nonmanifold_or_boundary_edges_at_0_000001mm_weld": 0,
+    "opposite_winding_mismatches": 0,
+    "degenerate_triangles_removed_under_0_000001mm": 0,
+    "opposite_duplicate_zero_volume_flap_triangles_removed": 0,
+    "sha256": "18bb0a03a8e49840c1a4a33f75a1d94442c9869d9a420427e048d1292eeb0144"
+  },
+  {
+    "file": "PAD95_A4_L_ENVELOPE_INFILL40.stl",
+    "triangles": 1746,
+    "units": "mm",
+    "native_to_mm_scale": 1,
+    "dimensions_mm": [
+      25.943695068359375,
+      56.34478759765625,
+      20.5006103515625
+    ],
+    "bottom_z_mm": 0,
+    "mesh_volume_mm3": 7299.748712919339,
+    "cad_volume_mm3": 7302.373117269207,
+    "volume_error_percent": 0.035939061284910374,
+    "nonmanifold_or_boundary_edges_at_0_000001mm_weld": 0,
+    "opposite_winding_mismatches": 0,
+    "degenerate_triangles_removed_under_0_000001mm": 0,
+    "opposite_duplicate_zero_volume_flap_triangles_removed": 0,
+    "sha256": "2074a0a562203f415d03c7a28c9bde31fb2ec7254345bbfc045f23196aeb21de"
+  },
+  {
+    "file": "PAD95_A3_R_ENVELOPE_INFILL40.stl",
+    "triangles": 4220,
+    "units": "mm",
+    "native_to_mm_scale": 1,
+    "dimensions_mm": [
+      51.85626220703125,
+      59.344757080078125,
+      20.50164794921875
+    ],
+    "bottom_z_mm": 0,
+    "mesh_volume_mm3": 8001.592113775592,
+    "cad_volume_mm3": 8005.238260269954,
+    "volume_error_percent": 0.04554700779434878,
+    "nonmanifold_or_boundary_edges_at_0_000001mm_weld": 0,
+    "opposite_winding_mismatches": 0,
+    "degenerate_triangles_removed_under_0_000001mm": 0,
+    "opposite_duplicate_zero_volume_flap_triangles_removed": 0,
+    "sha256": "8b00bf7a8fd3cbc55bdb839fb7f9627cd95a2a20259f68bfe10016d865c6f4d3"
+  },
+  {
+    "file": "PAD95_A4_R_ENVELOPE_INFILL40.stl",
+    "triangles": 4406,
+    "units": "mm",
+    "native_to_mm_scale": 1,
+    "dimensions_mm": [
+      71.42984008789062,
+      47.007904052734375,
+      20.500274658203125
+    ],
+    "bottom_z_mm": 0,
+    "mesh_volume_mm3": 11910.899467883102,
+    "cad_volume_mm3": 11914.789094875712,
+    "volume_error_percent": 0.03264537006603636,
+    "nonmanifold_or_boundary_edges_at_0_000001mm_weld": 0,
+    "opposite_winding_mismatches": 0,
+    "degenerate_triangles_removed_under_0_000001mm": 0,
+    "opposite_duplicate_zero_volume_flap_triangles_removed": 0,
+    "sha256": "cf3d2abde975a494364b01d4342383c7207d03f3f89eeb01cd6af1dd3056a70f"
+  }
+]

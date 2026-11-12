@@ -1,0 +1,12 @@
+{
+  "case": "SUPERIOR",
+  "status": "cancelled_reference_changed_by_user",
+  "start_UTC": "2026-11-11T15:15:45.860639+00:00",
+  "input": "desempenho\\05_Orca\\GARRA_SUPERIOR_TPMSD_REF_X1_ORIENTADA.3mf",
+  "output": "desempenho\\05_Orca\\Resultado_SUPERIOR_X1_REF\\GARRA_SUPERIOR_TPMSD_X1_REF_FATIADA.3mf",
+  "printer": "X1 reference, production printer unconfirmed",
+  "scale": 1,
+  "slicing_not_FEA": true,
+  "sent_to_printer": false,
+  "reason": "User authorized larger printer to retain source orientation and scale1"
+}

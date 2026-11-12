@@ -1,0 +1,277 @@
+{
+  "UNI_GIROIDE30_SUPERIOR": {
+    "case": "UNI_GIROIDE30_SUPERIOR",
+    "start_UTC": "2026-11-12T02:38:33.069165+00:00",
+    "input": "desempenho\\05_Orca\\R07\\COMPARATIVO\\GARRA_SUPERIOR_UNI_GIROIDE30_K1MAX.3mf",
+    "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+    "scale": 1,
+    "sent_to_printer": false,
+    "returncode": 0,
+    "ok": true,
+    "end_UTC": "2026-11-12T02:41:50.333741+00:00",
+    "mass_g": {
+      "peca": 651.8790044975045,
+      "adesao": 2.6008775670930913,
+      "suporte": 113.48711411678023
+    },
+    "orca_total_g": 767.97,
+    "time_s": 113542,
+    "warnings": [
+      {
+        "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+        "level": "3",
+        "error_code": "1000C002"
+      }
+    ]
+  },
+  "UNI_GIROIDE30_INFERIOR_ESQ": {
+    "case": "UNI_GIROIDE30_INFERIOR_ESQ",
+    "start_UTC": "2026-11-12T02:43:02.199294+00:00",
+    "input": "desempenho\\05_Orca\\R07\\COMPARATIVO\\GARRA_INFERIOR_ESQ_UNI_GIROIDE30_K1MAX.3mf",
+    "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+    "scale": 1,
+    "sent_to_printer": false,
+    "returncode": 0,
+    "ok": true,
+    "end_UTC": "2026-11-12T02:44:51.611006+00:00",
+    "mass_g": {
+      "peca": 419.87489300017404,
+      "adesao": 1.5574985431698605,
+      "suporte": 96.22789306009363
+    },
+    "orca_total_g": 517.66,
+    "time_s": 78278,
+    "warnings": [
+      {
+        "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+        "level": "3",
+        "error_code": "1000C002"
+      }
+    ]
+  },
+  "UNI_GIROIDE40_SUPERIOR": {
+    "case": "UNI_GIROIDE40_SUPERIOR",
+    "start_UTC": "2026-11-12T02:46:13.544087+00:00",
+    "input": "desempenho\\05_Orca\\R07\\COMPARATIVO\\GARRA_SUPERIOR_UNI_GIROIDE40_K1MAX.3mf",
+    "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+    "scale": 1,
+    "sent_to_printer": false,
+    "returncode": 0,
+    "ok": true,
+    "end_UTC": "2026-11-12T02:51:17.757051+00:00",
+    "mass_g": {
+      "peca": 760.900285699911,
+      "adesao": 2.6008775670930913,
+      "suporte": 113.4871141167801
+    },
+    "orca_total_g": 876.99,
+    "time_s": 133733,
+    "warnings": [
+      {
+        "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+        "level": "3",
+        "error_code": "1000C002"
+      }
+    ]
+  },
+  "UNI_GIROIDE40_INFERIOR_ESQ": {
+    "case": "UNI_GIROIDE40_INFERIOR_ESQ",
+    "start_UTC": "2026-11-12T02:52:46.024137+00:00",
+    "input": "desempenho\\05_Orca\\R07\\COMPARATIVO\\GARRA_INFERIOR_ESQ_UNI_GIROIDE40_K1MAX.3mf",
+    "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+    "scale": 1,
+    "sent_to_printer": false,
+    "returncode": 0,
+    "ok": true,
+    "end_UTC": "2026-11-12T02:54:40.066133+00:00",
+    "mass_g": {
+      "peca": 477.52451614668917,
+      "adesao": 1.5574985431698605,
+      "suporte": 96.22789306009355
+    },
+    "orca_total_g": 575.31,
+    "time_s": 89176,
+    "warnings": [
+      {
+        "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+        "level": "3",
+        "error_code": "1000C002"
+      }
+    ]
+  },
+  "R07_SEM_SUPERIOR": {
+    "case": "R07_SEM_SUPERIOR",
+    "start_UTC": "2026-11-12T02:55:26.627915+00:00",
+    "input": "desempenho\\05_Orca\\R07\\COMPARATIVO\\GARRA_SUPERIOR_R07_SEM_ESQUELETO_GIROIDE25_K1MAX.3mf",
+    "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+    "scale": 1,
+    "sent_to_printer": false,
+    "returncode": 0,
+    "ok": true,
+    "end_UTC": "2026-11-12T02:58:17.306486+00:00",
+    "mass_g": {
+      "peca": 666.3763011146261,
+      "adesao": 2.600877646467394,
+      "suporte": 113.48701775637724
+    },
+    "orca_total_g": 782.46,
+    "time_s": 123251,
+    "warnings": [
+      {
+        "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+        "level": "3",
+        "error_code": "1000C002"
+      }
+    ]
+  },
+  "UNI_HONEYCOMB3D30_SUPERIOR": {
+    "case": "UNI_HONEYCOMB3D30_SUPERIOR",
+    "start_UTC": "2026-11-12T03:01:14.147016+00:00",
+    "input": "desempenho\\05_Orca\\R07\\COMPARATIVO\\GARRA_SUPERIOR_UNI_HONEYCOMB3D30_K1MAX.3mf",
+    "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+    "scale": 1,
+    "sent_to_printer": false,
+    "returncode": 0,
+    "ok": true,
+    "end_UTC": "2026-11-12T03:03:36.778164+00:00",
+    "mass_g": {
+      "peca": 641.6084724040426,
+      "adesao": 2.6008775670930913,
+      "suporte": 113.48711411678012
+    },
+    "orca_total_g": 757.7,
+    "time_s": 123066,
+    "warnings": [
+      {
+        "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+        "level": "3",
+        "error_code": "1000C002"
+      }
+    ]
+  },
+  "UNI_HONEYCOMB3D30_INFERIOR_ESQ": {
+    "case": "UNI_HONEYCOMB3D30_INFERIOR_ESQ",
+    "start_UTC": "2026-11-12T03:04:21.148520+00:00",
+    "input": "desempenho\\05_Orca\\R07\\COMPARATIVO\\GARRA_INFERIOR_ESQ_UNI_HONEYCOMB3D30_K1MAX.3mf",
+    "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+    "scale": 1,
+    "sent_to_printer": false,
+    "returncode": 0,
+    "ok": true,
+    "end_UTC": "2026-11-12T03:06:05.948096+00:00",
+    "mass_g": {
+      "peca": 414.18065801454725,
+      "adesao": 1.5574985431698605,
+      "suporte": 96.2278930600936
+    },
+    "orca_total_g": 511.97,
+    "time_s": 83300,
+    "warnings": [
+      {
+        "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+        "level": "3",
+        "error_code": "1000C002"
+      }
+    ]
+  },
+  "UNI_GIROIDE35_SUPERIOR": {
+    "case": "UNI_GIROIDE35_SUPERIOR",
+    "start_UTC": "2026-11-12T03:07:02.239456+00:00",
+    "input": "desempenho\\05_Orca\\R07\\COMPARATIVO\\GARRA_SUPERIOR_UNI_GIROIDE35_K1MAX.3mf",
+    "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+    "scale": 1,
+    "sent_to_printer": false,
+    "returncode": 0,
+    "ok": true,
+    "end_UTC": "2026-11-12T03:13:33.727990+00:00",
+    "mass_g": {
+      "peca": 706.4000786814594,
+      "adesao": 2.6008775670930913,
+      "suporte": 113.48711411678013
+    },
+    "orca_total_g": 822.49,
+    "time_s": 123050,
+    "warnings": [
+      {
+        "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+        "level": "3",
+        "error_code": "1000C002"
+      }
+    ]
+  },
+  "UNI_GIROIDE35_INFERIOR_ESQ": {
+    "case": "UNI_GIROIDE35_INFERIOR_ESQ",
+    "start_UTC": "2026-11-12T03:15:11.229074+00:00",
+    "input": "desempenho\\05_Orca\\R07\\COMPARATIVO\\GARRA_INFERIOR_ESQ_UNI_GIROIDE35_K1MAX.3mf",
+    "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+    "scale": 1,
+    "sent_to_printer": false,
+    "returncode": 0,
+    "ok": true,
+    "end_UTC": "2026-11-12T03:16:15.118041+00:00",
+    "mass_g": {
+      "peca": 448.79050525718293,
+      "adesao": 1.5574985431698605,
+      "suporte": 96.22789306009366
+    },
+    "orca_total_g": 546.58,
+    "time_s": 83426,
+    "warnings": [
+      {
+        "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+        "level": "3",
+        "error_code": "1000C002"
+      }
+    ]
+  },
+  "UNI_TPMSD40_SUPERIOR": {
+    "case": "UNI_TPMSD40_SUPERIOR",
+    "start_UTC": "2026-11-12T03:16:42.353667+00:00",
+    "input": "desempenho\\05_Orca\\R07\\COMPARATIVO\\GARRA_SUPERIOR_UNI_TPMSD40_K1MAX.3mf",
+    "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+    "scale": 1,
+    "sent_to_printer": false,
+    "returncode": 0,
+    "ok": true,
+    "end_UTC": "2026-11-12T03:27:11.115007+00:00",
+    "mass_g": {
+      "peca": 793.7465665331803,
+      "adesao": 2.6008775670930913,
+      "suporte": 113.48711411678023
+    },
+    "orca_total_g": 909.83,
+    "time_s": 132397,
+    "warnings": [
+      {
+        "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+        "level": "3",
+        "error_code": "1000C002"
+      }
+    ]
+  },
+  "UNI_TPMSD40_INFERIOR_ESQ": {
+    "case": "UNI_TPMSD40_INFERIOR_ESQ",
+    "start_UTC": "2026-11-12T03:32:16.636436+00:00",
+    "input": "desempenho\\05_Orca\\R07\\COMPARATIVO\\GARRA_INFERIOR_ESQ_UNI_TPMSD40_K1MAX.3mf",
+    "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+    "scale": 1,
+    "sent_to_printer": false,
+    "returncode": 0,
+    "ok": true,
+    "end_UTC": "2026-11-12T03:35:45.852718+00:00",
+    "mass_g": {
+      "peca": 495.5786315586688,
+      "adesao": 1.5574985431698605,
+      "suporte": 96.22789306009356
+    },
+    "orca_total_g": 593.36,
+    "time_s": 88635,
+    "warnings": [
+      {
+        "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+        "level": "3",
+        "error_code": "1000C002"
+      }
+    ]
+  }
+}

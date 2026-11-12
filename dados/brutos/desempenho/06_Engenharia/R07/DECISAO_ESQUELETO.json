@@ -1,0 +1,307 @@
+{
+  "fontes": {
+    "massa": "Orca CLI K1 Max 1:1 (05_Orca)",
+    "resistencia": "FE voxels montagem (06_Engenharia/R07/MONTAGEM)",
+    "impacto": "FE transiente 3D (06_Engenharia/R07/IMPACTO)"
+  },
+  "referencia_instalada": {
+    "descricao": "Garra atual Tritan Hexa3D 30% (deck do cliente); massa = fatiamento Hexa3D 30% x 1,18/1,10",
+    "pecas_impressas_g": 1576.9
+  },
+  "variantes": {
+    "R06 (zonal TPMS-D, atual do projeto)": {
+      "massa": {
+        "superior_g": 754.5,
+        "inferior_g": 443.8,
+        "garra_g": 1642.3,
+        "filamento_g": 1954.0,
+        "tempo_h": 85.8,
+        "delta_vs_R06_pct": 0.0,
+        "delta_vs_Tritan_Hexa3D30_pct": 4.1,
+        "delta_vs_Tritan_Hexa3D30_g": 65.4
+      },
+      "montagem": {
+        "rigidez_asa_montada_N_mm": 187.6,
+        "sigma_Z_24kg_MPa_(x PICO)": 18.71,
+        "peca_critica": "superior",
+        "kg_max_PA6-CF_Z48": 61.6,
+        "FS_24kg_PA6-CF_Z48": 2.57,
+        "FS_30kg_PA6-CF_Z48": 2.05,
+        "kg_max_PAHT_CF15_Z18.2": 23.3,
+        "FS_24kg_PAHT_CF15_Z18.2": 0.97,
+        "FS_30kg_PAHT_CF15_Z18.2": 0.78,
+        "desl_24kg_mm": 1.894
+      },
+      "fadiga_PAHT": {
+        "so_12kg_h": 151,
+        "mix_1pct_24kg_h": 0
+      },
+      "fadiga_PA6CF": {
+        "so_12kg_h": 234315,
+        "mix_1pct_24kg_h": 124694
+      }
+    },
+    "R07 COM esqueleto (giroide 25/20% + zonas)": {
+      "massa": {
+        "superior_g": 731.0,
+        "inferior_g": 383.2,
+        "garra_g": 1497.5,
+        "filamento_g": 1809.2,
+        "tempo_h": 78.9,
+        "delta_vs_R06_pct": -8.8,
+        "delta_vs_Tritan_Hexa3D30_pct": -5.0,
+        "delta_vs_Tritan_Hexa3D30_g": -79.4
+      },
+      "montagem": {
+        "rigidez_asa_montada_N_mm": 230.9,
+        "sigma_Z_24kg_MPa_(x PICO)": 11.49,
+        "peca_critica": "superior",
+        "kg_max_PA6-CF_Z48": 100.3,
+        "FS_24kg_PA6-CF_Z48": 4.18,
+        "FS_30kg_PA6-CF_Z48": 3.34,
+        "kg_max_PAHT_CF15_Z18.2": 38.0,
+        "FS_24kg_PAHT_CF15_Z18.2": 1.58,
+        "FS_30kg_PAHT_CF15_Z18.2": 1.27,
+        "desl_24kg_mm": 1.539
+      },
+      "fadiga_PAHT": {
+        "so_12kg_h": 14527,
+        "mix_1pct_24kg_h": 948
+      },
+      "fadiga_PA6CF": {
+        "so_12kg_h": 1323987,
+        "mix_1pct_24kg_h": 1153949
+      },
+      "impacto_superior": {
+        "f1_Hz_com_24kg": 31.0,
+        "fator_dinamico_3D": 1.7,
+        "sigma_Z_pico_MPa_(x PICO)": 16.99,
+        "FI_giroide_pico": 0.2583,
+        "desl_pico_mm": 0.497,
+        "FS_dinamico_PA6CF_Z48": 2.82,
+        "FS_dinamico_PAHT_Z18.2": 1.07
+      }
+    },
+    "R07 SEM esqueleto (mesmas zonas)": {
+      "massa": {
+        "superior_g": 666.4,
+        "inferior_g": 383.2,
+        "garra_g": 1432.8,
+        "filamento_g": 1744.5,
+        "tempo_h": 75.2,
+        "delta_vs_R06_pct": -12.8,
+        "delta_vs_Tritan_Hexa3D30_pct": -9.1,
+        "delta_vs_Tritan_Hexa3D30_g": -144.1
+      },
+      "montagem": {
+        "rigidez_asa_montada_N_mm": 216.4,
+        "sigma_Z_24kg_MPa_(x PICO)": 12.34,
+        "peca_critica": "superior",
+        "kg_max_PA6-CF_Z48": 93.3,
+        "FS_24kg_PA6-CF_Z48": 3.89,
+        "FS_30kg_PA6-CF_Z48": 3.11,
+        "kg_max_PAHT_CF15_Z18.2": 35.4,
+        "FS_24kg_PAHT_CF15_Z18.2": 1.47,
+        "FS_30kg_PAHT_CF15_Z18.2": 1.18,
+        "desl_24kg_mm": 1.642
+      },
+      "fadiga_PAHT": {
+        "so_12kg_h": 8485,
+        "mix_1pct_24kg_h": 332
+      },
+      "fadiga_PA6CF": {
+        "so_12kg_h": 1079797,
+        "mix_1pct_24kg_h": 912810
+      },
+      "impacto_superior": {
+        "f1_Hz_com_24kg": 29.6,
+        "fator_dinamico_3D": 1.71,
+        "sigma_Z_pico_MPa_(x PICO)": 18.09,
+        "FI_giroide_pico": 0.2684,
+        "desl_pico_mm": 0.549,
+        "FS_dinamico_PA6CF_Z48": 2.65,
+        "FS_dinamico_PAHT_Z18.2": 1.01
+      }
+    },
+    "Uniforme giroide 30%": {
+      "massa": {
+        "superior_g": 651.9,
+        "inferior_g": 419.9,
+        "garra_g": 1491.6,
+        "filamento_g": 1803.3,
+        "tempo_h": 75.0,
+        "delta_vs_R06_pct": -9.2,
+        "delta_vs_Tritan_Hexa3D30_pct": -5.4,
+        "delta_vs_Tritan_Hexa3D30_g": -85.3
+      },
+      "montagem": {
+        "rigidez_asa_montada_N_mm": 205.5,
+        "sigma_Z_24kg_MPa_(x PICO)": 18.69,
+        "peca_critica": "superior",
+        "kg_max_PA6-CF_Z48": 61.6,
+        "FS_24kg_PA6-CF_Z48": 2.57,
+        "FS_30kg_PA6-CF_Z48": 2.05,
+        "kg_max_PAHT_CF15_Z18.2": 23.4,
+        "FS_24kg_PAHT_CF15_Z18.2": 0.97,
+        "FS_30kg_PAHT_CF15_Z18.2": 0.78,
+        "desl_24kg_mm": 1.729
+      },
+      "fadiga_PAHT": {
+        "so_12kg_h": 153,
+        "mix_1pct_24kg_h": 0
+      },
+      "fadiga_PA6CF": {
+        "so_12kg_h": 235442,
+        "mix_1pct_24kg_h": 125578
+      },
+      "impacto_superior": {
+        "f1_Hz_com_24kg": 27.5,
+        "fator_dinamico_3D": 1.73,
+        "sigma_Z_pico_MPa_(x PICO)": 27.98,
+        "FI_giroide_pico": 0.4586,
+        "desl_pico_mm": 0.651,
+        "FS_dinamico_PA6CF_Z48": 1.72,
+        "FS_dinamico_PAHT_Z18.2": 0.65
+      }
+    },
+    "Uniforme giroide 35%": {
+      "massa": {
+        "superior_g": 706.4,
+        "inferior_g": 448.8,
+        "garra_g": 1604.0,
+        "filamento_g": 1915.7,
+        "tempo_h": 80.5,
+        "delta_vs_R06_pct": -2.3,
+        "delta_vs_Tritan_Hexa3D30_pct": 1.7,
+        "delta_vs_Tritan_Hexa3D30_g": 27.1
+      },
+      "montagem": {
+        "rigidez_asa_montada_N_mm": 226.6,
+        "sigma_Z_24kg_MPa_(x PICO)": 16.82,
+        "peca_critica": "superior",
+        "kg_max_PA6-CF_Z48": 68.5,
+        "FS_24kg_PA6-CF_Z48": 2.85,
+        "FS_30kg_PA6-CF_Z48": 2.28,
+        "kg_max_PAHT_CF15_Z18.2": 26.0,
+        "FS_24kg_PAHT_CF15_Z18.2": 1.08,
+        "FS_30kg_PAHT_CF15_Z18.2": 0.87,
+        "desl_24kg_mm": 1.568
+      },
+      "fadiga_PAHT": {
+        "so_12kg_h": 499,
+        "mix_1pct_24kg_h": 1
+      },
+      "fadiga_PA6CF": {
+        "so_12kg_h": 368702,
+        "mix_1pct_24kg_h": 237100
+      }
+    },
+    "Uniforme giroide 40%": {
+      "massa": {
+        "superior_g": 760.9,
+        "inferior_g": 477.5,
+        "garra_g": 1715.9,
+        "filamento_g": 2027.6,
+        "tempo_h": 86.7,
+        "delta_vs_R06_pct": 4.5,
+        "delta_vs_Tritan_Hexa3D30_pct": 8.8,
+        "delta_vs_Tritan_Hexa3D30_g": 139.0
+      },
+      "montagem": {
+        "rigidez_asa_montada_N_mm": 248.9,
+        "sigma_Z_24kg_MPa_(x PICO)": 15.17,
+        "peca_critica": "superior",
+        "kg_max_PA6-CF_Z48": 75.9,
+        "FS_24kg_PA6-CF_Z48": 3.16,
+        "FS_30kg_PA6-CF_Z48": 2.53,
+        "kg_max_PAHT_CF15_Z18.2": 28.8,
+        "FS_24kg_PAHT_CF15_Z18.2": 1.2,
+        "FS_30kg_PAHT_CF15_Z18.2": 0.96,
+        "desl_24kg_mm": 1.428
+      },
+      "fadiga_PAHT": {
+        "so_12kg_h": 1416,
+        "mix_1pct_24kg_h": 10
+      },
+      "fadiga_PA6CF": {
+        "so_12kg_h": 547710,
+        "mix_1pct_24kg_h": 399680
+      },
+      "impacto_superior": {
+        "f1_Hz_com_24kg": 30.8,
+        "fator_dinamico_3D": 1.71,
+        "sigma_Z_pico_MPa_(x PICO)": 22.33,
+        "FI_giroide_pico": 0.3942,
+        "desl_pico_mm": 0.509,
+        "FS_dinamico_PA6CF_Z48": 2.15,
+        "FS_dinamico_PAHT_Z18.2": 0.81
+      }
+    },
+    "Uniforme 3D honeycomb 30% (citado como atual)": {
+      "massa": {
+        "superior_g": 641.6,
+        "inferior_g": 414.2,
+        "garra_g": 1470.0,
+        "filamento_g": 1781.6,
+        "tempo_h": 80.5,
+        "delta_vs_R06_pct": -10.5,
+        "delta_vs_Tritan_Hexa3D30_pct": -6.8,
+        "delta_vs_Tritan_Hexa3D30_g": -106.9
+      },
+      "montagem": {
+        "rigidez_asa_montada_N_mm": 205.5,
+        "sigma_Z_24kg_MPa_(x PICO)": 18.69,
+        "peca_critica": "superior",
+        "kg_max_PA6-CF_Z48": 61.6,
+        "FS_24kg_PA6-CF_Z48": 2.57,
+        "FS_30kg_PA6-CF_Z48": 2.05,
+        "kg_max_PAHT_CF15_Z18.2": 23.4,
+        "FS_24kg_PAHT_CF15_Z18.2": 0.97,
+        "FS_30kg_PAHT_CF15_Z18.2": 0.78,
+        "desl_24kg_mm": 1.729
+      },
+      "fadiga_PAHT": {
+        "so_12kg_h": 153,
+        "mix_1pct_24kg_h": 0
+      },
+      "fadiga_PA6CF": {
+        "so_12kg_h": 235442,
+        "mix_1pct_24kg_h": 125578
+      },
+      "nota": "resistência = giroide 30% (a lei homogeneizada não distingue o padrão)"
+    },
+    "Uniforme TPMS-D 40% (proposta do documento)": {
+      "massa": {
+        "superior_g": 793.7,
+        "inferior_g": 495.6,
+        "garra_g": 1784.9,
+        "filamento_g": 2096.6,
+        "tempo_h": 86.0,
+        "delta_vs_R06_pct": 8.7,
+        "delta_vs_Tritan_Hexa3D30_pct": 13.2,
+        "delta_vs_Tritan_Hexa3D30_g": 208.0
+      },
+      "montagem": {
+        "rigidez_asa_montada_N_mm": 248.9,
+        "sigma_Z_24kg_MPa_(x PICO)": 15.17,
+        "peca_critica": "superior",
+        "kg_max_PA6-CF_Z48": 75.9,
+        "FS_24kg_PA6-CF_Z48": 3.16,
+        "FS_30kg_PA6-CF_Z48": 2.53,
+        "kg_max_PAHT_CF15_Z18.2": 28.8,
+        "FS_24kg_PAHT_CF15_Z18.2": 1.2,
+        "FS_30kg_PAHT_CF15_Z18.2": 0.96,
+        "desl_24kg_mm": 1.428
+      },
+      "fadiga_PAHT": {
+        "so_12kg_h": 1416,
+        "mix_1pct_24kg_h": 10
+      },
+      "fadiga_PA6CF": {
+        "so_12kg_h": 547710,
+        "mix_1pct_24kg_h": 399680
+      },
+      "nota": "resistência = giroide 40% (a lei homogeneizada não distingue o padrão)"
+    }
+  }
+}

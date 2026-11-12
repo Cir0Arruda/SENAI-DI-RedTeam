@@ -1,0 +1,49 @@
+{
+  "part_cm3": 1391.15,
+  "part_original_cm3": 1391.13,
+  "zones": {
+    "TUBOS": {
+      "cm3": 16.17,
+      "faces": 3278,
+      "watertight": true,
+      "lumps": 45
+    },
+    "ALMAS": {
+      "cm3": 81.86,
+      "faces": 5402,
+      "watertight": true,
+      "lumps": 8
+    },
+    "COLAR": {
+      "cm3": 119.05,
+      "faces": 4422,
+      "watertight": true,
+      "lumps": 20
+    },
+    "ROSA": {
+      "cm3": 143.2,
+      "faces": 5358,
+      "watertight": true,
+      "lumps": 5
+    },
+    "AMARELO": {
+      "cm3": 27.23,
+      "faces": 1414,
+      "watertight": true,
+      "lumps": 8
+    },
+    "BASE": {
+      "cm3": 720.97,
+      "faces": 9112,
+      "watertight": true,
+      "lumps": 11
+    },
+    "CASCA": {
+      "cm3": 282.67,
+      "faces": 23038,
+      "watertight": true,
+      "lumps": 1
+    }
+  },
+  "sum_cm3": 1391.15
+}

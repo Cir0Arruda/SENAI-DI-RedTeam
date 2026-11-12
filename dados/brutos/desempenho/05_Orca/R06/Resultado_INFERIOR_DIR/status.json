@@ -1,0 +1,25 @@
+{
+  "case": "INFERIOR_DIR",
+  "start_UTC": "2026-11-11T17:21:12.472371+00:00",
+  "input": "desempenho\\05_Orca\\R06\\GARRA_INFERIOR_DIR_R06_ZONAS_INTERNAS_K1MAX.3mf",
+  "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+  "scale": 1,
+  "sent_to_printer": false,
+  "returncode": 0,
+  "ok": true,
+  "end_UTC": "2026-11-11T17:27:07.585094+00:00",
+  "mass_g": {
+    "peca": 444.0204435797066,
+    "adesao": 1.5574854343836373,
+    "suporte": 96.27477201972017
+  },
+  "orca_total_g": 541.85,
+  "time_s": 85996,
+  "warnings": [
+    {
+      "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+      "level": "3",
+      "error_code": "1000C002"
+    }
+  ]
+}

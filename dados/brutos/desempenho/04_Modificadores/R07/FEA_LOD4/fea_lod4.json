@@ -1,0 +1,34 @@
+{
+  "pitch_mm": 0.5,
+  "aresta_mm": [
+    4.5,
+    6.5
+  ],
+  "nivel_exterior_mm": 0.316,
+  "parede_mm": 2.25,
+  "desvio_exterior_mm": {
+    "p95": 0.878,
+    "max": 2.379
+  },
+  "folga_min_casca_mm": 0.734,
+  "bodies": {
+    "CASCA": {
+      "cm3": 380.65,
+      "faces": 28780,
+      "watertight": true,
+      "aspecto_max": 66.6,
+      "aspecto_gt20": 19
+    },
+    "NUCLEO": {
+      "cm3": 1013.04,
+      "faces": 10038,
+      "watertight": true,
+      "aspecto_max": 66.6,
+      "aspecto_gt20": 19
+    }
+  },
+  "original": {
+    "cm3": 1391.13,
+    "aspecto_max": 40922.5
+  }
+}

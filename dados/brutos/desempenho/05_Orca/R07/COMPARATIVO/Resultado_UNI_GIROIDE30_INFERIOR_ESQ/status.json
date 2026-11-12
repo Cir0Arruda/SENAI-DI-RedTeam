@@ -1,0 +1,25 @@
+{
+  "case": "UNI_GIROIDE30_INFERIOR_ESQ",
+  "start_UTC": "2026-11-12T02:43:02.199294+00:00",
+  "input": "desempenho\\05_Orca\\R07\\COMPARATIVO\\GARRA_INFERIOR_ESQ_UNI_GIROIDE30_K1MAX.3mf",
+  "printer": "Creality K1 Max 300 mm, bico 0,4 mm",
+  "scale": 1,
+  "sent_to_printer": false,
+  "returncode": 0,
+  "ok": true,
+  "end_UTC": "2026-11-12T02:44:51.611006+00:00",
+  "mass_g": {
+    "peca": 419.87489300017404,
+    "adesao": 1.5574985431698605,
+    "suporte": 96.22789306009363
+  },
+  "orca_total_g": 517.66,
+  "time_s": 78278,
+  "warnings": [
+    {
+      "msg": "the_actual_nozzle_hrc_smaller_than_the_required_nozzle_hrc",
+      "level": "3",
+      "error_code": "1000C002"
+    }
+  ]
+}

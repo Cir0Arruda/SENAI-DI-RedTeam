@@ -1,0 +1,20 @@
+{
+  "gripper_infill_core_percent": 30,
+  "pad_infill_core_percent": 40,
+  "layer_height_mm": 0.2,
+  "nozzle_mm": 0.4,
+  "gripper_perimeters": 5,
+  "assumed_line_width_mm": 0.4,
+  "assumed_gripper_wall_mm": 2,
+  "assumed_gripper_top_bottom_mm": 1.2,
+  "assumed_pad_wall_mm": 1.2,
+  "assumed_pad_top_bottom_mm": 1.2,
+  "assumed_pattern": "gyroid",
+  "assumed_build_direction": "Z of source component",
+  "user_accepted_missing_parameter_hypotheses": true,
+  "historical_screenshot_material": "Tritan; process transferred as exploratory reference, not confirmed PA-CF production",
+  "cad_status": "external envelopes only; explicit gyroid/shell core and constitutive law not generated",
+  "simulation_status": "not solved",
+  "wear_hours": null,
+  "fatigue_life_cycles": null
+}

@@ -1,0 +1,30 @@
+{
+  "members": [
+    {
+      "class": "BRepLump",
+      "doc": "Returns the BRepShells owned by the lump",
+      "name": "shells",
+      "namespace": "adsk.fusion",
+      "readonly": true,
+      "type": "property"
+    },
+    {
+      "class": "BRepLump",
+      "doc": "Returns the BRepFaces owned by the lump",
+      "name": "faces",
+      "namespace": "adsk.fusion",
+      "readonly": true,
+      "type": "property"
+    },
+    {
+      "class": "BRepLump",
+      "doc": "Returns the bounding box of the lump",
+      "name": "boundingBox",
+      "namespace": "adsk.fusion",
+      "readonly": true,
+      "type": "property"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

@@ -1,0 +1,33 @@
+{
+  "design": "N10_COM",
+  "mass_model_g": 744.8,
+  "solid_cm3": 494.8,
+  "infill_cm3": 980.0,
+  "base_phi": 0.12,
+  "web_t": 3.0,
+  "cases": {
+    "ONE_24": {
+      "disp_max_mm": 0.5996,
+      "iters": 29,
+      "reaction_N": [
+        -0.0,
+        0.0,
+        355.36
+      ],
+      "solid_vm_max_MPa": 4.865,
+      "solid_FI_xy_max": 0.0459,
+      "solid_FI_z_max": 0.1103,
+      "infill_FI_max": {
+        "0.12": 0.1032,
+        "0.2": 0.0275,
+        "0.35": 0.0452,
+        "0.45": 0.1512
+      },
+      "hot_xyz": [
+        -544.8,
+        338.5,
+        341.4
+      ]
+    }
+  }
+}

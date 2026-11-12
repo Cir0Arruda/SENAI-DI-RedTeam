@@ -1,0 +1,65 @@
+{
+  "revision": "R04",
+  "scale": 1,
+  "external_geometry_changed": false,
+  "weights_are_slicer_estimates_not_measurements": true,
+  "PA_structural_parts_g": 1618.9838548264602,
+  "TPU_PAD_parts_g": 93.0596892177923,
+  "polymer_assembled_parts_g_excluding_hardware": 1712.0435440442525,
+  "total_filament_consumption_g_including_supports_adhesion": 2068.66,
+  "PA_total_filament_g": 1929.65,
+  "TPU_total_filament_g": 139.01,
+  "support_g": 350.9222598258703,
+  "adhesion_other_g": 5.692218933487342,
+  "printer_time_s_sum": 339973,
+  "whole_assembly_mass_with_hardware": null,
+  "impact_force_N": null,
+  "PAD_protection_improvement_percent": null,
+  "wear_rate": null,
+  "service_life_hours": null,
+  "thermal_results": null,
+  "cases": [
+    {
+      "caso": "SUPERIOR",
+      "material": "PA6-CF",
+      "massa_pecas_g": 780.3264879513956,
+      "suportes_g": 112.46210466902151,
+      "adesao_outros_g": 2.577233304226781,
+      "consumo_total_Orca_g": 895.37,
+      "filamento_m": 341.51,
+      "tempo_s": 143070
+    },
+    {
+      "caso": "INFERIOR_ESQ",
+      "material": "PA6-CF",
+      "massa_pecas_g": 419.3411806988694,
+      "suportes_g": 96.23324760600131,
+      "adesao_outros_g": 1.5574986742577224,
+      "consumo_total_Orca_g": 517.13,
+      "filamento_m": 197.25,
+      "tempo_s": 78609
+    },
+    {
+      "caso": "INFERIOR_DIR",
+      "material": "PA6-CF",
+      "massa_pecas_g": 419.31618617619506,
+      "suportes_g": 96.28023602399281,
+      "adesao_outros_g": 1.5574869550028385,
+      "consumo_total_Orca_g": 517.15,
+      "filamento_m": 197.25,
+      "tempo_s": 78613
+    },
+    {
+      "caso": "PAD",
+      "material": "TPU95A",
+      "massa_pecas_g": 93.0596892177923,
+      "suportes_g": 45.94667152685464,
+      "adesao_outros_g": 0,
+      "consumo_total_Orca_g": 139.01,
+      "filamento_m": 47.37,
+      "tempo_s": 39681
+    }
+  ],
+  "video": "paused_by_user",
+  "Fusion_new_jobs_submitted": 0
+}

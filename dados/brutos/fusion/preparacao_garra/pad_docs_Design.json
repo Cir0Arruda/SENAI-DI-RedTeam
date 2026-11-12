@@ -1,0 +1,14 @@
+{
+  "members": [
+    {
+      "class": "Design",
+      "doc": "\nCreates an InterferenceInput object. This object collects the entities and options that are\nused when calculating interference. To analyze interference you first create an InterferenceInput\nsupplying the entities and set any other settings and then provide this object as input to the\nanalyzeInterference method.\nentities : An ObjectCollection containing the BRepBody and/or Occurrence entities that will be used in the\ninterference calculation. All entities must be in the context of the root component of the top-level design.\nReturns an InterferenceInput object which you can use to set any other interference settings and then\nuse as input to the analyzeInterference method to calculate the interference. Returns null if the\ncreation failed.\n",
+      "name": "createInterferenceInput",
+      "namespace": "adsk.fusion",
+      "signature": "(entities: ObjectCollection) -> adsk.fusion.InterferenceInput",
+      "type": "function"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

@@ -1,0 +1,362 @@
+{
+  "PICO_fator_Fusion_voxel": 2.2,
+  "variantes": {
+    "R06 (atual)": {
+      "massa_FE_g": {
+        "sup": 786.0,
+        "inf": 465.9
+      },
+      "rigidez_asa_N_mm": 298.7,
+      "peca_critica": "superior",
+      "MPa_por_N": 0.04585,
+      "tensao_Z_MPa": {
+        "12": 8.15,
+        "24": 16.29,
+        "30": 20.37
+      },
+      "materiais": {
+        "PAHT CF15 (TDS, Z=18,2 MPa)": {
+          "F_ruptura_N": 397,
+          "kg_max_estatico_g": 40.5,
+          "kg_max_com_g+5": 26.8,
+          "FS_24kg_g+5": 1.12,
+          "FS_30kg_g+5": 0.89,
+          "energia_ate_ruptura_J": 0.264,
+          "fadiga": {
+            "ciclos_12kg": "3.34e+05",
+            "ciclos_24kg": "11.1",
+            "ciclos_30kg": "1",
+            "horas_so_12kg": 696,
+            "horas_so_24kg": 0,
+            "horas_so_30kg": 0,
+            "horas_mix_1pct_erro": 2
+          }
+        },
+        "PA6-CF valor usado no FE (Z=48 MPa)": {
+          "F_ruptura_N": 1047,
+          "kg_max_estatico_g": 106.7,
+          "kg_max_com_g+5": 70.7,
+          "FS_24kg_g+5": 2.95,
+          "FS_30kg_g+5": 2.36,
+          "energia_ate_ruptura_J": 1.834,
+          "fadiga": {
+            "ciclos_12kg": "2.01e+08",
+            "ciclos_24kg": "4.03e+06",
+            "ciclos_30kg": "5.71e+05",
+            "horas_so_12kg": 418272,
+            "horas_so_24kg": 8398,
+            "horas_so_30kg": 1190,
+            "horas_mix_1pct_erro": 281081
+          }
+        }
+      },
+      "freq_natural_24kg_Hz": 17.8
+    },
+    "R07 COM esqueleto": {
+      "massa_FE_g": {
+        "sup": 846.9,
+        "inf": 470.3
+      },
+      "rigidez_asa_N_mm": 361.3,
+      "peca_critica": "superior",
+      "MPa_por_N": 0.02805,
+      "tensao_Z_MPa": {
+        "12": 4.98,
+        "24": 9.97,
+        "30": 12.46
+      },
+      "materiais": {
+        "PAHT CF15 (TDS, Z=18,2 MPa)": {
+          "F_ruptura_N": 649,
+          "kg_max_estatico_g": 66.2,
+          "kg_max_com_g+5": 43.8,
+          "FS_24kg_g+5": 1.83,
+          "FS_30kg_g+5": 1.46,
+          "energia_ate_ruptura_J": 0.582,
+          "fadiga": {
+            "ciclos_12kg": "1.83e+07",
+            "ciclos_24kg": "3.33e+04",
+            "ciclos_30kg": "1.42e+03",
+            "horas_so_12kg": 38030,
+            "horas_so_24kg": 69,
+            "horas_so_30kg": 3,
+            "horas_mix_1pct_erro": 5879
+          }
+        },
+        "PA6-CF valor usado no FE (Z=48 MPa)": {
+          "F_ruptura_N": 1711,
+          "kg_max_estatico_g": 174.5,
+          "kg_max_com_g+5": 115.6,
+          "FS_24kg_g+5": 4.82,
+          "FS_30kg_g+5": 3.85,
+          "energia_ate_ruptura_J": 4.052,
+          "fadiga": {
+            "ciclos_12kg": "9.15e+08",
+            "ciclos_24kg": "8.38e+07",
+            "ciclos_30kg": "2.54e+07",
+            "horas_so_12kg": 1907035,
+            "horas_so_24kg": 174566,
+            "horas_so_30kg": 52815,
+            "horas_mix_1pct_erro": 1734860
+          }
+        }
+      },
+      "freq_natural_24kg_Hz": 19.5
+    },
+    "R07 SEM esqueleto (mesmos %)": {
+      "massa_FE_g": {
+        "sup": 788.2,
+        "inf": 455.8
+      },
+      "rigidez_asa_N_mm": 341.9,
+      "peca_critica": "superior",
+      "MPa_por_N": 0.02981,
+      "tensao_Z_MPa": {
+        "12": 5.3,
+        "24": 10.59,
+        "30": 13.24
+      },
+      "materiais": {
+        "PAHT CF15 (TDS, Z=18,2 MPa)": {
+          "F_ruptura_N": 611,
+          "kg_max_estatico_g": 62.3,
+          "kg_max_com_g+5": 41.2,
+          "FS_24kg_g+5": 1.72,
+          "FS_30kg_g+5": 1.37,
+          "energia_ate_ruptura_J": 0.545,
+          "fadiga": {
+            "ciclos_12kg": "1.23e+07",
+            "ciclos_24kg": "1.51e+04",
+            "ciclos_30kg": "531",
+            "horas_so_12kg": 25642,
+            "horas_so_24kg": 32,
+            "horas_so_30kg": 1,
+            "horas_mix_1pct_erro": 2813
+          }
+        },
+        "PA6-CF valor usado no FE (Z=48 MPa)": {
+          "F_ruptura_N": 1610,
+          "kg_max_estatico_g": 164.2,
+          "kg_max_com_g+5": 108.8,
+          "FS_24kg_g+5": 4.53,
+          "FS_30kg_g+5": 3.63,
+          "energia_ate_ruptura_J": 3.793,
+          "fadiga": {
+            "ciclos_12kg": "7.88e+08",
+            "ciclos_24kg": "6.21e+07",
+            "ciclos_30kg": "1.74e+07",
+            "horas_so_12kg": 1642324,
+            "horas_so_24kg": 129467,
+            "horas_so_30kg": 36350,
+            "horas_mix_1pct_erro": 1470493
+          }
+        }
+      },
+      "freq_natural_24kg_Hz": 19.0
+    },
+    "R07 SEM esqueleto, giroide mais denso (mesma massa)": {
+      "massa_FE_g": {
+        "sup": 849.4,
+        "inf": 468.1
+      },
+      "rigidez_asa_N_mm": 365.7,
+      "peca_critica": "superior",
+      "MPa_por_N": 0.02924,
+      "tensao_Z_MPa": {
+        "12": 5.2,
+        "24": 10.39,
+        "30": 12.99
+      },
+      "materiais": {
+        "PAHT CF15 (TDS, Z=18,2 MPa)": {
+          "F_ruptura_N": 622,
+          "kg_max_estatico_g": 63.5,
+          "kg_max_com_g+5": 42.0,
+          "FS_24kg_g+5": 1.75,
+          "FS_30kg_g+5": 1.4,
+          "energia_ate_ruptura_J": 0.53,
+          "fadiga": {
+            "ciclos_12kg": "1.4e+07",
+            "ciclos_24kg": "1.95e+04",
+            "ciclos_30kg": "730",
+            "horas_so_12kg": 29112,
+            "horas_so_24kg": 41,
+            "horas_so_30kg": 2,
+            "horas_mix_1pct_erro": 3574
+          }
+        },
+        "PA6-CF valor usado no FE (Z=48 MPa)": {
+          "F_ruptura_N": 1642,
+          "kg_max_estatico_g": 167.4,
+          "kg_max_com_g+5": 110.9,
+          "FS_24kg_g+5": 4.62,
+          "FS_30kg_g+5": 3.7,
+          "energia_ate_ruptura_J": 3.685,
+          "fadiga": {
+            "ciclos_12kg": "8.27e+08",
+            "ciclos_24kg": "6.84e+07",
+            "ciclos_30kg": "1.97e+07",
+            "horas_so_12kg": 1723292,
+            "horas_so_24kg": 142547,
+            "horas_so_30kg": 40998,
+            "horas_mix_1pct_erro": 1551267
+          }
+        }
+      },
+      "freq_natural_24kg_Hz": 19.6
+    }
+  },
+  "tranco_estop": [
+    {
+      "tempo_subida_ms": 10,
+      "DAF": 2.0
+    },
+    {
+      "tempo_subida_ms": 25,
+      "DAF": 1.65
+    },
+    {
+      "tempo_subida_ms": 50,
+      "DAF": 1.33
+    },
+    {
+      "tempo_subida_ms": 100,
+      "DAF": 1.16
+    },
+    {
+      "tempo_subida_ms": 200,
+      "DAF": 1.08
+    }
+  ],
+  "fluencia": {
+    "R06 (atual)": {
+      "flecha_inicial_12kg_mm": 0.595,
+      "flecha_1000h_mm": 0.85,
+      "flecha_10000h_mm": 1.082
+    },
+    "R07 COM esqueleto": {
+      "flecha_inicial_12kg_mm": 0.492,
+      "flecha_1000h_mm": 0.703,
+      "flecha_10000h_mm": 0.894
+    },
+    "R07 SEM esqueleto (mesmos %)": {
+      "flecha_inicial_12kg_mm": 0.52,
+      "flecha_1000h_mm": 0.742,
+      "flecha_10000h_mm": 0.945
+    },
+    "R07 SEM esqueleto, giroide mais denso (mesma massa)": {
+      "flecha_inicial_12kg_mm": 0.486,
+      "flecha_1000h_mm": 0.694,
+      "flecha_10000h_mm": 0.883
+    }
+  },
+  "desgaste": {
+    "1000h": {
+      "volume_mm3_por_furo": 0.0028
+    },
+    "10000h": {
+      "volume_mm3_por_furo": 0.0284
+    },
+    "esmagamento_M6_MPa_24kg": 0.99
+  },
+  "justificativa_material_R07": [
+    {
+      "material": "Tritan*",
+      "UTS_Z_MPa": 58.0,
+      "E_Z_MPa": 1549,
+      "HDT_C": 85.0,
+      "kg_max_g+5": 139.7,
+      "FS_24kg": 5.82,
+      "TOPSIS_24_7": 0.364,
+      "fonte": "https://productcatalog.eastman.com/tds/ProdDatasheet.aspx?pn=tritan+copolyester+tx1001&product=71070312"
+    },
+    {
+      "material": "PA12-CF10",
+      "UTS_Z_MPa": 52.2,
+      "E_Z_MPa": 1807,
+      "HDT_C": 105.0,
+      "kg_max_g+5": 125.7,
+      "FS_24kg": 5.24,
+      "TOPSIS_24_7": 0.524,
+      "fonte": "https://cdn.shopify.com/s/files/1/0548/7299/7945/files/TDS_FIBERON_PA12-CF10_V1.1_EN.pdf?v=1740427088"
+    },
+    {
+      "material": "PA6-CF",
+      "UTS_Z_MPa": 48.0,
+      "E_Z_MPa": 2171,
+      "HDT_C": 164.0,
+      "kg_max_g+5": 115.6,
+      "FS_24kg": 4.82,
+      "TOPSIS_24_7": 0.83,
+      "fonte": "https://store.bblcdn.com/b2abc59ac250492b979a52f1ce3e61b3.pdf"
+    },
+    {
+      "material": "PETG",
+      "UTS_Z_MPa": 45.7,
+      "E_Z_MPa": 2204,
+      "HDT_C": 65.0,
+      "kg_max_g+5": 110.1,
+      "FS_24kg": 4.59,
+      "TOPSIS_24_7": 0.217,
+      "fonte": "https://polymaker.com/wp-content/uploads/lana-downloads/TDS_Polymaker_PETG_V2.0_2025-11-17.pdf"
+    },
+    {
+      "material": "PCTG",
+      "UTS_Z_MPa": 45.0,
+      "E_Z_MPa": 1860,
+      "HDT_C": 64.0,
+      "kg_max_g+5": 108.3,
+      "FS_24kg": 4.51,
+      "TOPSIS_24_7": 0.152,
+      "fonte": "https://www.3dfuel.com/pages/pctg"
+    },
+    {
+      "material": "PA12",
+      "UTS_Z_MPa": 45.0,
+      "E_Z_MPa": 1400,
+      "HDT_C": 55.0,
+      "kg_max_g+5": 108.3,
+      "FS_24kg": 4.51,
+      "TOPSIS_24_7": 0.233,
+      "fonte": "https://fiberlogy.com/app/uploads/2026/05/FIBERLOGY_NYLONPA12_TDS.pdf"
+    },
+    {
+      "material": "PC",
+      "UTS_Z_MPa": 41.4,
+      "E_Z_MPa": 2150,
+      "HDT_C": 99.0,
+      "kg_max_g+5": 99.8,
+      "FS_24kg": 4.16,
+      "TOPSIS_24_7": 0.403,
+      "fonte": "https://cdn.shopify.com/s/files/1/0548/7299/7945/files/PolyMax_PC_TDS_EN_V5.4.pdf"
+    },
+    {
+      "material": "PA6 (LEHVOSS)",
+      "UTS_Z_MPa": 41.0,
+      "E_Z_MPa": 2800,
+      "HDT_C": 90.0,
+      "kg_max_g+5": 98.7,
+      "FS_24kg": 4.11,
+      "TOPSIS_24_7": 0.468,
+      "fonte": "https://www.lehvoss.de/fileadmin/Compounds/PDFs/LUVOCOM_3F/LUVOCOM_3F_PAHT_9936_BK_L/Datasheet_LUVOCOM_R__3F_PAHT_9936_BK_L_Filament.pdf"
+    },
+    {
+      "material": "PAHT CF15 (BASF)",
+      "UTS_Z_MPa": 18.2,
+      "E_Z_MPa": null,
+      "HDT_C": null,
+      "kg_max_g+5": 43.8,
+      "FS_24kg": 1.83,
+      "TOPSIS_24_7": null,
+      "fonte": "https://forward-am.com/material-portfolio/ultrafuse-filaments-for-fused-filaments-fabrication-fff/reinforced-filaments/ultrafuse-paht-cf15/"
+    }
+  ],
+  "HIPOTESES": [
+    "480 ciclos/h (8/min); 1% dos ciclos com erro de 24 kg numa asa",
+    "carga de projeto = massa x (g + 5 m/s2) (aceleração do robô)",
+    "pico real = pico voxel x 2.2 (calibrado contra Fusion)",
+    "S-N normalizada smax/S = 1 - 0,10 log10 N (conservadora para PA-CF curto, FFF)",
+    "falha governada por tração/cisalhamento entre camadas (Z)",
+    "fluência e desgaste: ordens de grandeza de literatura, não ensaiados"
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "document": "SAMI - PAD95 SUPERIOR R02 - GARRA30 PAD40",
+  "status": "geometry_created_not_simulated",
+  "pads": [
+    {
+      "region": "A1",
+      "center_local_cm": [
+        -11.0282670572,
+        -12.6480648562,
+        -5.9
+      ],
+      "center_world_cm": [
+        -67.73338307306587,
+        21.800055418372644,
+        28.037336860271097
+      ],
+      "halves": [
+        {
+          "component": "PAD95_R02_A1_L_ENVELOPE_INFILL40",
+          "volume_envelope_cm3": 17.734651023776557,
+          "faces": 98,
+          "lumps": 1
+        },
+        {
+          "component": "PAD95_R02_A1_R_ENVELOPE_INFILL40",
+          "volume_envelope_cm3": 10.93741976401281,
+          "faces": 56,
+          "lumps": 1
+        }
+      ],
+      "neighbor_tools": 2,
+      "maximum_outer_radius_mm": 39,
+      "nominal_flange_radius_mm": 31,
+      "nominal_radial_clearance_mm": 0.5,
+      "envelope_height_mm": 25.5,
+      "upper_extension_mm": 5,
+      "bolt_access_diameter_mm": 15,
+      "retention_groove_width_mm": 3.5,
+      "retention_groove_depth_mm": 1.2,
+      "split_gap_mm": 0.8
+    },
+    {
+      "region": "A2",
+      "center_local_cm": [
+        -11.0282670572,
+        0.3519351437575,
+        -5.9
+      ],
+      "center_world_cm": [
+        -67.73338307306582,
+        34.800055418330146,
+        28.037336860271097
+      ],
+      "halves": [
+        {
+          "component": "PAD95_R02_A2_L_ENVELOPE_INFILL40",
+          "volume_envelope_cm3": 12.693371382482114,
+          "faces": 73,
+          "lumps": 1
+        },
+        {
+          "component": "PAD95_R02_A2_R_ENVELOPE_INFILL40",
+          "volume_envelope_cm3": 11.580308135340633,
+          "faces": 67,
+          "lumps": 1
+        }
+      ],
+      "neighbor_tools": 4,
+      "maximum_outer_radius_mm": 39,
+      "nominal_flange_radius_mm": 31,
+      "nominal_radial_clearance_mm": 0.5,
+      "envelope_height_mm": 25.5,
+      "upper_extension_mm": 5,
+      "bolt_access_diameter_mm": 15,
+      "retention_groove_width_mm": 3.5,
+      "retention_groove_depth_mm": 1.2,
+      "split_gap_mm": 0.8
+    },
+    {
+      "region": "A3",
+      "center_local_cm": [
+        8.871732942803,
+        0.3519351437575,
+        -5.9
+      ],
+      "center_world_cm": [
+        -47.833383073062826,
+        34.80005541833009,
+        28.037336860271097
+      ],
+      "halves": [
+        {
+          "component": "PAD95_R02_A3_L_ENVELOPE_INFILL40",
+          "volume_envelope_cm3": 11.582325613019455,
+          "faces": 64,
+          "lumps": 1
+        },
+        {
+          "component": "PAD95_R02_A3_R_ENVELOPE_INFILL40",
+          "volume_envelope_cm3": 12.700482128381877,
+          "faces": 70,
+          "lumps": 1
+        }
+      ],
+      "neighbor_tools": 2,
+      "maximum_outer_radius_mm": 39,
+      "nominal_flange_radius_mm": 31,
+      "nominal_radial_clearance_mm": 0.5,
+      "envelope_height_mm": 25.5,
+      "upper_extension_mm": 5,
+      "bolt_access_diameter_mm": 15,
+      "retention_groove_width_mm": 3.5,
+      "retention_groove_depth_mm": 1.2,
+      "split_gap_mm": 0.8
+    },
+    {
+      "region": "A4",
+      "center_local_cm": [
+        8.871732942803,
+        -12.6480648562,
+        -5.9
+      ],
+      "center_world_cm": [
+        -47.83338307306286,
+        21.800055418372594,
+        28.037336860271097
+      ],
+      "halves": [
+        {
+          "component": "PAD95_R02_A4_L_ENVELOPE_INFILL40",
+          "volume_envelope_cm3": 10.943191269518172,
+          "faces": 71,
+          "lumps": 1
+        },
+        {
+          "component": "PAD95_R02_A4_R_ENVELOPE_INFILL40",
+          "volume_envelope_cm3": 17.742084554473216,
+          "faces": 101,
+          "lumps": 1
+        }
+      ],
+      "neighbor_tools": 4,
+      "maximum_outer_radius_mm": 39,
+      "nominal_flange_radius_mm": 31,
+      "nominal_radial_clearance_mm": 0.5,
+      "envelope_height_mm": 25.5,
+      "upper_extension_mm": 5,
+      "bolt_access_diameter_mm": 15,
+      "retention_groove_width_mm": 3.5,
+      "retention_groove_depth_mm": 1.2,
+      "split_gap_mm": 0.8
+    }
+  ],
+  "archive": "FUSION\\preparacao_garra\\SAMI_PAD95_CONFORMAL_R02.f3d",
+  "infill_note": "CAD envelopes are solid; 40% applies to core in slicer and is not a homogenized FEA material"
+}

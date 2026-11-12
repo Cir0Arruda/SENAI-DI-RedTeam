@@ -1,0 +1,14 @@
+{
+  "members": [
+    {
+      "class": "Materials",
+      "doc": "\nAdd a Material to a Design by copying an existing Material from Favorites, a Library or from the\nMaterials stored in the Design. This method currently only applies to the Materials collection from a Design and\ncannot be used to copy a Material to a library.\nmaterialToCopy : The Material you want to copy. The Material to copy can be from Favorites, a Library or from the\nmaterials stored in the Design.\nname : The Material name to apply to the copy.\nReturns the newly created Material or null if the copy operation failed.\n",
+      "name": "addByCopy",
+      "namespace": "adsk.core",
+      "signature": "(materialToCopy: Material, name: str) -> adsk.core.Material",
+      "type": "function"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

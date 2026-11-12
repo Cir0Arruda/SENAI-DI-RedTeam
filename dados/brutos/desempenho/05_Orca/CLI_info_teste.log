@@ -1,0 +1,14 @@
+[ORCA_ANTERIOR_MONTAGEM_ESCALADA.3mf]
+size_x = 495.499084
+size_y = 325.497864
+size_z = 184.999512
+min_x = -247.749542
+min_y = -162.748932
+min_z = -92.499756
+max_x = 247.749542
+max_y = 162.748932
+max_z = 92.499756
+number_of_facets = 1566676
+manifold = yes
+number_of_parts =  95
+volume = 3755545.500000

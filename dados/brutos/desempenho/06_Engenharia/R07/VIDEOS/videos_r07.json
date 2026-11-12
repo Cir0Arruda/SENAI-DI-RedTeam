@@ -1,0 +1,57 @@
+{
+  "carga_24kg_asa": {
+    "R07_COM": {
+      "kg_max_PA6CF": 100.3,
+      "kg_max_PAHT": 38.0,
+      "FS24_PA6CF": 4.18,
+      "FS24_PAHT": 1.58,
+      "desl24_mm": 1.539
+    },
+    "R07_SEM": {
+      "kg_max_PA6CF": 93.3,
+      "kg_max_PAHT": 35.4,
+      "FS24_PA6CF": 3.89,
+      "FS24_PAHT": 1.47,
+      "desl24_mm": 1.642
+    },
+    "UNI_30": {
+      "kg_max_PA6CF": 61.6,
+      "kg_max_PAHT": 23.4,
+      "FS24_PA6CF": 2.57,
+      "FS24_PAHT": 0.97,
+      "desl24_mm": 1.729
+    }
+  },
+  "impacto_distribuicao": {
+    "F25_COM": {
+      "t_pico_ms": 21.5,
+      "sigma_Z_pico_MPa_(x PICO)": 16.99,
+      "FI_giroide_pico": 0.2583,
+      "desl_pico_mm": 0.497,
+      "FS_dinamico_PA6CF_Z48": 2.82,
+      "FS_dinamico_PAHT_Z18.2": 1.07,
+      "fator_dinamico_3D": 1.7
+    },
+    "F25_SEM": {
+      "t_pico_ms": 22.5,
+      "sigma_Z_pico_MPa_(x PICO)": 18.09,
+      "FI_giroide_pico": 0.2684,
+      "desl_pico_mm": 0.549,
+      "FS_dinamico_PA6CF_Z48": 2.65,
+      "FS_dinamico_PAHT_Z18.2": 1.01,
+      "fator_dinamico_3D": 1.71
+    }
+  },
+  "absorcao_giroide": {
+    "F25_COM": {
+      "pct_energia_giroide_no_pico": 31.0,
+      "pct_energia_giroide_max": 35.2,
+      "FI_giroide_pico": 0.2583
+    },
+    "F25_SEM": {
+      "pct_energia_giroide_no_pico": 37.6,
+      "pct_energia_giroide_max": 45.4,
+      "FI_giroide_pico": 0.2684
+    }
+  }
+}

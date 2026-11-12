@@ -1,0 +1,20 @@
+{
+  "members": [
+    {
+      "class": "StitchFeatureInput",
+      "doc": "Gets and sets the ValueInput object that defines the stitching tolerance. It must define a length.",
+      "name": "tolerance",
+      "namespace": "adsk.fusion",
+      "type": "property"
+    },
+    {
+      "class": "StitchFeatureInput",
+      "doc": "Gets and sets the feature operation to perform. This property value is only valid if the isSolid property returns\ntrue. Otherwise the value of this property is ignored.",
+      "name": "operation",
+      "namespace": "adsk.fusion",
+      "type": "property"
+    }
+  ],
+  "message": "API documentation query completed",
+  "success": true
+}

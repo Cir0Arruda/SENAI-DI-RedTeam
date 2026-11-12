@@ -1,0 +1,70 @@
+{
+  "design": "UNI_40",
+  "mass_model_g": 892.9,
+  "solid_cm3": 382.1,
+  "infill_cm3": 1092.7,
+  "base_phi": 0.4,
+  "web_t": 0.0,
+  "cases": {
+    "ONE_24": {
+      "disp_max_mm": 0.4944,
+      "iters": 25,
+      "reaction_N": [
+        -0.0,
+        -0.0,
+        355.36
+      ],
+      "solid_vm_max_MPa": 5.537,
+      "solid_FI_xy_max": 0.0497,
+      "solid_FI_z_max": 0.1239,
+      "infill_FI_max": {
+        "0.4": 0.2287
+      },
+      "hot_xyz": [
+        -544.8,
+        338.5,
+        341.4
+      ]
+    },
+    "ONE_30": {
+      "disp_max_mm": 0.618,
+      "iters": 25,
+      "reaction_N": [
+        -0.0,
+        -0.0,
+        444.2
+      ],
+      "solid_vm_max_MPa": 6.921,
+      "solid_FI_xy_max": 0.0621,
+      "solid_FI_z_max": 0.1548,
+      "infill_FI_max": {
+        "0.4": 0.2858
+      },
+      "hot_xyz": [
+        -544.8,
+        338.5,
+        341.4
+      ]
+    },
+    "SYM_24": {
+      "disp_max_mm": 0.249,
+      "iters": 25,
+      "reaction_N": [
+        -0.0,
+        -0.0,
+        355.36
+      ],
+      "solid_vm_max_MPa": 2.876,
+      "solid_FI_xy_max": 0.0283,
+      "solid_FI_z_max": 0.0632,
+      "infill_FI_max": {
+        "0.4": 0.1224
+      },
+      "hot_xyz": [
+        -550.8,
+        335.5,
+        341.4
+      ]
+    }
+  }
+}
