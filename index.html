@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=r08d">
+  <link rel="stylesheet" href="assets/css/style.css?v=r08e">
   <script type="importmap">
     { "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
@@ -32,7 +32,7 @@
       <button class="rail-btn" data-go="#s-sai" title="Projeto SAI: solução e PAD">
         <svg class="i" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg>
       </button>
-      <button class="rail-btn" data-go="#s-roi" title="Custo e retorno">
+      <button class="rail-btn" data-go="#s-custo" title="Custos e retorno">
         <svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .8-3 2s1.3 1.7 3 2 3 .8 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"/></svg>
       </button>
       <button class="rail-btn" data-go="#s-sustent" title="Sustentabilidade e conclusão">
@@ -86,7 +86,7 @@
               <li class="glass"><b>01</b><span>Introdução<small>As dores da Ajinomoto: a garra quebra, a linha para e o custo de oportunidade</small></span></li>
               <li class="glass"><b>02</b><span>Ideias anteriores<small>Matriz de prioridade: valor agregado × complexidade</small></span></li>
               <li class="glass"><b>03</b><span>Projeto SAI<small>A solução: material novo, estrutura interna sem esqueleto e PAD de sacrifício</small></span></li>
-              <li class="glass"><b>04</b><span>Custos<small>Custo SAI × Tritan e retorno do investimento</small></span></li>
+              <li class="glass"><b>04</b><span>Custos<small>Custo de aquisição, peso e retorno do investimento</small></span></li>
               <li class="glass"><b>05</b><span>Sustentabilidade e conclusão<small>Descarte e reciclagem, segurança, peso, caixas garantidas e durabilidade</small></span></li>
             </ol>
           </div>
@@ -195,6 +195,7 @@
                 <article class="glass card mx-win">
                   <span class="tag ok">escolhido</span>
                   <h3>Projeto SAI</h3>
+                  <p class="mx-sigla"><b>S</b>istema de <b>A</b>mortecimento de <b>I</b>mpacto</p>
                   <p><b>Valor 9 · complexidade 6.</b> O maior valor com uma complexidade que a equipe consegue entregar: troca de material, estrutura interna sem esqueleto e PAD de sacrifício, tudo impresso.</p>
                 </article>
                 <ul class="mx-list">
@@ -379,6 +380,57 @@
                 </table>
               </div>
               <p class="note">Na garra o giroide leva a carga com o mínimo de peso; no PAD o giroide mais denso vira uma mola que espalha o golpe no tempo. O exterior não muda: 5 paredes em volta de tudo.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Custos: aquisição da garra SAI × Tritan -->
+        <section class="slide" data-title="Custos" id="s-custo">
+          <div class="wrap wide">
+            <div class="s-head compact">
+              <span class="kicker">Custos · Aquisição</span>
+              <h2>Quanto custa <em>a garra SAI</em></h2>
+            </div>
+            <div class="split" style="--cols:minmax(0,1.25fr) minmax(0,1fr); align-items:start">
+              <div class="glass card" style="padding:14px 18px">
+                <table class="tbl compact custo-tbl">
+                  <thead><tr><th></th><th>Tritan (atual)</th><th>Garra SAI</th></tr></thead>
+                  <tbody>
+                    <tr><td>Material</td><td>Tritan importado</td><td>Nylon com fibra de carbono + borracha (PADs), nacionais</td></tr>
+                    <tr><td>Garra (3 peças)</td><td>R$ 250,00</td><td>R$ <span data-r07="R07_SEM.custo_rs" data-d="2">450,08</span> <small><span data-r07="R07_SEM.fil_g" data-d="0">1.745</span> g de material</small></td></tr>
+                    <tr><td>8 PADs de proteção</td><td class="na">—</td><td>R$ 21,96 <small><span data-r07="pads.total_g" data-d="0">139</span> g de material</small></td></tr>
+                    <tr><td>Bico da impressora</td><td class="na">—</td><td>R$ 23,50 <small>bico endurecido</small></td></tr>
+                    <tr class="total"><td>Custo de aquisição</td><td>R$ 250,00</td><td><b>R$ 495,54</b></td></tr>
+                    <tr><td>Peso da garra montada</td><td>2,834 kg</td><td><b>2,690 kg</b> <small>144 g mais leve</small></td></tr>
+                    <tr><td>Prazo do material</td><td>15 a 20 dias</td><td>5 a 8 dias úteis</td></tr>
+                    <tr><td>Trocas por ano</td><td>4 garras <small>quebra a cada 3 meses</small></td><td>6 PADs <small>a cada 2 meses</small></td></tr>
+                    <tr class="total"><td>Gasto com peças no ano</td><td>R$ 1.000,00</td><td><b>R$ 627,33</b> <small>garra + trocas de PAD</small></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div style="display:grid; gap:12px">
+                <div class="glass card chart" style="padding:14px 18px">
+                  <h4>Para onde vão os R$ 495,54</h4>
+                  <p class="sub">material de uma garra SAI completa</p>
+                  <div class="cost-bar sai-bar" aria-hidden="true"><i class="c-garra" style="--w:90.83%"></i><i class="c-pad" style="--w:4.43%"></i><i class="c-bico" style="--w:4.74%"></i></div>
+                  <div class="legend" style="margin:8px 0 0"><span><i style="background:var(--ink-2)"></i>garra · 91%</span><span><i style="background:var(--s-indigo)"></i>8 PADs · 4%</span><span><i style="background:#c27c0e"></i>bico · 5%</span></div>
+                </div>
+                <div class="glass card chart" style="padding:14px 18px">
+                  <h4>Tritan × SAI</h4>
+                  <p class="sub">R$ · só peças</p>
+                  <div class="cmp-bars">
+                    <div class="cb-group"><span class="cb-t">Comprar uma garra</span>
+                      <div class="cb"><span>Tritan</span><i style="--w:25%; background:#5b5bd6"></i><b>R$ 250</b></div>
+                      <div class="cb"><span>SAI</span><i style="--w:49.55%; background:#e5232f"></i><b>R$ 495,54</b></div>
+                    </div>
+                    <div class="cb-group"><span class="cb-t">Peças em 1 ano</span>
+                      <div class="cb"><span>Tritan</span><i style="--w:100%; background:#5b5bd6"></i><b>R$ 1.000</b></div>
+                      <div class="cb"><span>SAI</span><i style="--w:62.73%; background:#e5232f"></i><b>R$ 627,33</b></div>
+                    </div>
+                  </div>
+                </div>
+                <p class="note" style="margin:0">Comprar a garra SAI custa R$ 245,54 a mais, mas como ela não quebra a cada 3 meses, o gasto com peças no ano fica <b>37% menor</b>. O retorno mês a mês está no próximo slide. <span class="tag eq">valores de exemplo</span> Preços da equipe; fora da conta: mão de obra e energia.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -1542,7 +1594,7 @@
         </section>
 
         <!-- Custos: garra SAI sem esqueleto × Tritan -->
-        <section class="slide" data-title="Custos" id="s-custo">
+        <section class="slide" data-title="Custos (antigo)" id="arq-s-custo">
           <div class="wrap wide">
             <div class="s-head compact">
               <span class="kicker">Custos · Garra SAI sem esqueleto</span>
@@ -1839,15 +1891,15 @@
     <figure><img src="" alt=""><figcaption></figcaption></figure>
   </dialog>
 
-  <script src="assets/js/main.js?v=r08d"></script>
-  <script src="assets/js/bancada-dados.js?v=r08d"></script>
-  <script src="assets/js/bancada.js?v=r08d"></script>
-  <script src="assets/js/r07-dados.js?v=r08d"></script>
-  <script src="assets/js/r07.js?v=r08d"></script>
-  <script src="assets/js/conjunto-dados.js?v=r08d"></script>
-  <script src="assets/js/conjunto.js?v=r08d"></script>
-  <script src="assets/js/sai.js?v=r08d"></script>
-  <script src="assets/js/anim.js?v=r08d"></script>
-  <script type="module" src="assets/js/viewer3d.js?v=r08d"></script>
+  <script src="assets/js/main.js?v=r08e"></script>
+  <script src="assets/js/bancada-dados.js?v=r08e"></script>
+  <script src="assets/js/bancada.js?v=r08e"></script>
+  <script src="assets/js/r07-dados.js?v=r08e"></script>
+  <script src="assets/js/r07.js?v=r08e"></script>
+  <script src="assets/js/conjunto-dados.js?v=r08e"></script>
+  <script src="assets/js/conjunto.js?v=r08e"></script>
+  <script src="assets/js/sai.js?v=r08e"></script>
+  <script src="assets/js/anim.js?v=r08e"></script>
+  <script type="module" src="assets/js/viewer3d.js?v=r08e"></script>
 </body>
 </html>
