@@ -80,32 +80,33 @@
     if (isOn(s)) grow(); else bars.forEach(b => { b.style.width = 'var(--w)'; });
   }
 
-  /* ---------- ROI: custo acumulado em 12 meses, Tritan × SAI ---------- */
+  /* ---------- ROI: gasto acumulado com material em 24 meses, Tritan × SAI (valores de exemplo) ---------- */
   function roi() {
     const host = document.getElementById('chart-roi');
     if (!host) return;
-    const PARADA = 84000, TRITAN = 250, SAI = 495.54, PADS = 21.96, HORAS = 8760;
-    // eventos [mês, valor]
-    const tritan = [3, 6, 9, 12].map(m => [m, PARADA + TRITAN]);
+    const MESES = 24, TRITAN = 250, SAI = 495.54, PADS = 21.96, HORAS = 730 * MESES;
+    const trocasPad = Array.from({ length: MESES / 2 }, (_, i) => [2 * (i + 1), PADS]);
+    // eventos [mês, valor em R$ de material]
+    const tritan = Array.from({ length: MESES / 3 }, (_, i) => [3 * (i + 1), TRITAN]);
     const cen = {
-      sim:  { sai: [[0, SAI], ...[2, 4, 6, 8, 10, 12].map(m => [m, PADS])], quebras: 0,
-              txt: 'A garra SAI não quebra no ano; só os PADs são trocados.' },
-      cons: { sai: [[0, SAI], ...[2, 4, 6, 8, 10, 12].map(m => [m, PADS]), [6, PARADA + SAI]], quebras: 1,
-              txt: 'Mesmo com 1 quebra no ano, o SAI ainda gasta um quarto do que se gasta hoje.' }
+      sim:  { sai: [[0, SAI], ...trocasPad], quebras: 0,
+              txt: 'Pelas simulações a garra SAI não quebra; só os PADs são trocados a cada 2 meses.' },
+      cons: { sai: [[0, SAI], ...trocasPad, [6, SAI], [18, SAI]], quebras: 2,
+              txt: 'Conservador: a garra SAI quebra 1 vez por ano e é trocada inteira.' }
     };
     const acum = (ev, m) => ev.filter(e => e[0] <= m).reduce((a, e) => a + e[1], 0);
-    const W = 640, H = 300, L = 70, R = 92, T = 12, B = 30, yMax = 350000;
-    const x = m => L + (m / 12) * (W - L - R), y = v => T + (1 - v / yMax) * (H - T - B);
+    const W = 640, H = 300, L = 62, R = 84, T = 14, B = 30, yMax = 2200;
+    const x = m => L + (m / MESES) * (W - L - R), y = v => T + (1 - v / yMax) * (H - T - B);
     const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img' }, host);
     const grid = el('g', { class: 'grid' }, svg), axis = el('g', { class: 'axis' }, svg);
-    for (let v = 0; v <= 300000; v += 100000) {
+    for (let v = 0; v <= 2000; v += 500) {
       el('line', { x1: L, x2: W - R, y1: y(v), y2: y(v) }, grid);
-      el('text', { x: L - 8, y: y(v) + 4, 'text-anchor': 'end' }, axis).textContent = v ? `R$ ${v / 1000} mil` : 'R$ 0';
+      el('text', { x: L - 8, y: y(v) + 4, 'text-anchor': 'end' }, axis).textContent = `R$ ${fmt(v)}`;
     }
-    for (let m = 0; m <= 12; m += 3) el('text', { x: x(m), y: H - 8, 'text-anchor': 'middle' }, axis).textContent = m ? `${m} meses` : 'início';
+    for (let m = 0; m <= MESES; m += 6) el('text', { x: x(m), y: H - 8, 'text-anchor': 'middle' }, axis).textContent = m ? `${m} meses` : 'início';
     const step = ev => {
       let d = `M${x(0)},${y(0)}`, v = 0;
-      for (let m = 0; m <= 12; m++) {
+      for (let m = 0; m <= MESES; m++) {
         const nv = acum(ev, m);
         d += ` H${x(m).toFixed(1)}`;
         if (nv !== v) { d += ` V${y(nv).toFixed(1)}`; v = nv; }
@@ -117,12 +118,13 @@
     const g = el('g', { 'clip-path': 'url(#roi-clip)' }, svg);
     el('path', { d: step(tritan), fill: 'none', stroke: INDIGO, 'stroke-width': 2.2, 'stroke-linejoin': 'round' }, g);
     const pSai = el('path', { fill: 'none', stroke: RED, 'stroke-width': 2.2, 'stroke-linejoin': 'round' }, g);
-    // marcadores das paradas de hoje
-    tritan.forEach(([m]) => el('circle', { cx: x(m), cy: y(acum(tritan, m)), r: 4, fill: INDIGO, stroke: '#fff', 'stroke-width': 2 }, g));
-    el('text', { x: x(3) + 6, y: y(acum(tritan, 3)) - 8, class: 'lbl' }, g).textContent = '1 parada';
-    const endT = el('text', { x: x(12) + 8, y: y(acum(tritan, 12)) + 4, class: 'lbl' }, g);
-    endT.textContent = `R$ ${fmt(acum(tritan, 12) / 1000)} mil`;
-    const endS = el('text', { x: x(12) + 8, class: 'lbl red' }, g);
+    // marcadores das quebras da garra de Tritan
+    tritan.forEach(([m]) => el('circle', { cx: x(m), cy: y(acum(tritan, m)), r: 3.5, fill: INDIGO, stroke: '#fff', 'stroke-width': 2 }, g));
+    el('text', { x: x(3) + 6, y: y(acum(tritan, 3)) - 8, class: 'lbl' }, g).textContent = '1 quebra';
+    el('text', { x: x(MESES) + 8, y: y(acum(tritan, MESES)) + 4, class: 'lbl' }, g).textContent = `R$ ${fmt(acum(tritan, MESES))}`;
+    const endS = el('text', { x: x(MESES) + 8, class: 'lbl red' }, g);
+    const pbDot = el('circle', { r: 5, fill: '#fff', stroke: RED, 'stroke-width': 2.5 }, g);
+    const pbTxt = el('text', { class: 'lbl red', 'text-anchor': 'middle' }, g);
     // hover
     const cross = el('line', { y1: T, y2: H - B, stroke: 'rgba(21,21,29,.3)', 'stroke-dasharray': '3 3', opacity: 0 }, svg);
     const tip = document.createElement('div'); tip.className = 'tip'; host.appendChild(tip);
@@ -130,13 +132,13 @@
     const hit = el('rect', { x: L, y: T, width: W - L - R, height: H - T - B, fill: 'transparent' }, svg);
     hit.addEventListener('pointermove', ev => {
       const r = svg.getBoundingClientRect(), hr = host.getBoundingClientRect();
-      const m = Math.max(0, Math.min(12, Math.round(((ev.clientX - r.left) * (W / r.width) - L) / (W - L - R) * 12)));
-      const a = acum(tritan, m), b = acum(cen[cur].sai, m);
+      const m = Math.max(0, Math.min(MESES, Math.round(((ev.clientX - r.left) * (W / r.width) - L) / (W - L - R) * MESES)));
+      const a = acum(tritan, m), b = acum(cen[cur].sai, m), d = a - b;
       cross.setAttribute('x1', x(m)); cross.setAttribute('x2', x(m)); cross.setAttribute('opacity', 1);
       tip.innerHTML = `<b>${m ? `${m}º mês` : 'início'}</b>
-        <div class="r"><i style="background:${INDIGO}"></i>Tritan: R$ ${fmt(a)}</div>
-        <div class="r"><i style="background:${RED}"></i>SAI: R$ ${fmt(b)}</div>
-        <div>economia: R$ ${fmt(a - b)}</div>`;
+        <div class="r"><i style="background:${INDIGO}"></i>Tritan: R$ ${fmt(a, 2)}</div>
+        <div class="r"><i style="background:${RED}"></i>SAI: R$ ${fmt(b, 2)}</div>
+        <div>${d >= 0 ? `economia: R$ ${fmt(d, 2)}` : `ainda falta: R$ ${fmt(-d, 2)}`}</div>`;
       tip.classList.add('on');
       const hx = ev.clientX - hr.left, hy = ev.clientY - hr.top;
       tip.style.left = `${Math.min(Math.max(hx + 14, 8), host.clientWidth - tip.offsetWidth - 8)}px`;
@@ -161,20 +163,27 @@
     };
     const show = (c, anim) => {
       cur = c;
-      const C = cen[c], hoje = acum(tritan, 12), sai = acum(C.sai, 12);
-      const pecas = SAI + 6 * PADS + C.quebras * SAI;                 // gasto com peças do SAI no ano
-      const eco = hoje - sai, x_ = eco / pecas, hSai = sai / HORAS, pb = SAI / (eco / HORAS);
+      const C = cen[c], hoje = acum(tritan, MESES), sai = acum(C.sai, MESES);
+      const eco = hoje - sai, pct = eco / sai * 100;
+      let pb = null;
+      // primeiro mês a partir do qual o SAI fica sempre abaixo da Tritan
+      for (let m = MESES; m >= 1 && acum(C.sai, m) <= acum(tritan, m); m--) pb = m;
       pSai.setAttribute('d', step(C.sai));
       endS.setAttribute('y', y(sai) + 4);
-      endS.textContent = sai < 10000 ? `R$ ${fmt(sai)}` : `R$ ${fmt(sai / 1000)} mil`;
+      endS.textContent = `R$ ${fmt(sai)}`;
+      if (pb !== null) {
+        const py = y(acum(C.sai, pb));
+        pbDot.setAttribute('cx', x(pb)); pbDot.setAttribute('cy', py); pbDot.setAttribute('opacity', 1);
+        pbTxt.setAttribute('x', x(pb)); pbTxt.setAttribute('y', py + 22); pbTxt.textContent = 'se paga aqui';
+      } else { pbDot.setAttribute('opacity', 0); pbTxt.textContent = ''; }
       $('roi-cen-txt').textContent = C.txt;
-      $('roi-eco-s').textContent = `${4 - C.quebras} paradas evitadas`;
-      $('roi-x-s').textContent = `R$ ${fmt(eco)} ÷ R$ ${fmt(pecas, 2)} em peças`;
-      $('roi-pb-s').textContent = `R$ 495,54 ÷ R$ ${fmt(eco / HORAS, 2)} economizados por hora`;
-      const fE = v => `R$ ${fmt(v)}`, fX = v => `${fmt(v)}×`, fH = v => `R$ ${fmt(v, 2)}`, fP = v => `${fmt(v)} h`;
-      if (anim) { count($('roi-eco'), eco, fE); count($('roi-x'), x_, fX); count($('roi-h'), hSai, fH); count($('roi-pb'), pb, fP); }
-      else { setNum($('roi-eco'), fE(eco)); setNum($('roi-x'), fX(x_)); setNum($('roi-h'), fH(hSai)); setNum($('roi-pb'), fP(pb)); }
-      svg.setAttribute('aria-label', `Custo acumulado em 12 meses: com a garra de Tritan chega a R$ ${fmt(hoje)}; com o SAI, R$ ${fmt(sai)}.`);
+      $('roi-eco-s').textContent = `Tritan R$ ${fmt(hoje)} × SAI R$ ${fmt(sai, 2)}`;
+      $('roi-x-s').textContent = `R$ ${fmt(eco, 2)} ÷ R$ ${fmt(sai, 2)} gastos com o SAI`;
+      $('roi-h-s').textContent = `Tritan: R$ ${fmt(hoje / HORAS, 2)} por hora`;
+      const fE = v => `R$ ${fmt(v, 2)}`, fX = v => `${fmt(v)}%`, fH = v => `R$ ${fmt(v, 2)}`, fP = v => `${fmt(v)} meses`;
+      const els = [[$('roi-eco'), eco, fE], [$('roi-x'), pct, fX], [$('roi-h'), sai / HORAS, fH], [$('roi-pb'), pb || MESES, fP]];
+      els.forEach(([e, v, f]) => (anim ? count(e, v, f) : setNum(e, f(v))));
+      svg.setAttribute('aria-label', `Gasto acumulado com material em ${MESES} meses: garra de Tritan R$ ${fmt(hoje)}; garra SAI R$ ${fmt(sai, 2)}${pb ? `; o SAI se paga no ${pb}º mês` : ''}.`);
     };
     show('sim', false);
     document.querySelectorAll('#roi-cen button').forEach(b => b.addEventListener('click', () => {

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=r07l">
+  <link rel="stylesheet" href="assets/css/style.css?v=r07m">
   <script type="importmap">
     { "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
@@ -1157,13 +1157,13 @@
           </div>
         </section>
 
-        <!-- ROI: custo acumulado no ano, Tritan × SAI -->
+        <!-- ROI: gasto acumulado com material, Tritan × SAI (valores de exemplo) -->
         <section class="slide" data-title="Retorno (ROI)" id="s-roi">
           <div class="wrap wide">
             <div class="s-head compact" style="display:flex; justify-content:space-between; align-items:end; gap:16px; flex-wrap:wrap">
               <div>
                 <span class="kicker">Custos · Retorno do investimento</span>
-                <h2>O SAI se paga na <em>primeira</em> quebra evitada</h2>
+                <h2>Com o tempo, o SAI <em>gasta menos</em> material</h2>
               </div>
               <div class="seg" id="roi-cen" role="tablist" aria-label="Cenário do SAI">
                 <button class="on" role="tab" aria-selected="true" data-c="sim">Pelas simulações</button>
@@ -1172,31 +1172,31 @@
             </div>
             <div class="split" style="--cols:minmax(0,1.35fr) minmax(0,1fr); align-items:start">
               <div class="glass card chart" style="padding:14px 18px">
-                <h4>Custo acumulado em 12 meses</h4>
-                <p class="sub">peças + custo de oportunidade das paradas · R$</p>
+                <h4>Gasto acumulado com material em 24 meses <span class="tag eq" style="margin-left:6px">exemplo</span></h4>
+                <p class="sub">peças compradas e impressas · R$</p>
                 <div class="legend"><span><i style="background:#5b5bd6"></i>Tritan (atual)</span><span><i style="background:#e5232f"></i>SAI sem esqueleto</span></div>
                 <div id="chart-roi" class="roi-host"></div>
                 <p class="note" id="roi-cen-txt" style="margin:4px 0 0">&nbsp;</p>
               </div>
               <div style="display:grid; gap:12px">
                 <div class="g2 roi-kpi">
-                  <div class="glass stat sm"><b id="roi-eco">R$ 336.373</b><span>economia no 1º ano</span><small id="roi-eco-s">4 paradas evitadas</small></div>
-                  <div class="glass stat sm"><b class="ink" id="roi-x">536×</b><span>de retorno sobre o gasto com o SAI</span><small id="roi-x-s">R$ 336.373 ÷ R$ 627,33</small></div>
-                  <div class="glass stat sm"><b class="ink" id="roi-h">R$ 0,07</b><span>por hora com o SAI</span><small>Tritan: R$ 38,47 por hora</small></div>
-                  <div class="glass stat sm"><b class="ink" id="roi-pb">13 h</b><span>de operação pagam a garra</span><small id="roi-pb-s">R$ 495,54 ÷ economia por hora</small></div>
+                  <div class="glass stat sm"><b id="roi-eco">R$ 1.240,94</b><span>economia em 2 anos</span><small id="roi-eco-s">Tritan R$ 2.000 × SAI R$ 759,06</small></div>
+                  <div class="glass stat sm"><b class="ink" id="roi-x">163%</b><span>de retorno sobre o gasto com o SAI</span><small id="roi-x-s">R$ 1.240,94 ÷ R$ 759,06 gastos com o SAI</small></div>
+                  <div class="glass stat sm"><b class="ink" id="roi-pb">9 meses</b><span>para o SAI se pagar</span><small>depois disso, só economia</small></div>
+                  <div class="glass stat sm"><b class="ink" id="roi-h">R$ 0,04</b><span>de material por hora com o SAI</span><small id="roi-h-s">Tritan: R$ 0,11 por hora</small></div>
                 </div>
                 <div class="glass card" style="padding:12px 16px">
-                  <h3 style="margin:0 0 6px; font-size:15px">Como a conta foi feita</h3>
+                  <h3 style="margin:0 0 6px; font-size:15px">Como a conta foi feita <span class="tag eq" style="margin-left:4px">valores de exemplo</span></h3>
                   <ul class="hip">
-                    <li><b>Hoje:</b> a parte superior de Tritan quebra a cada 3 meses, por impactos comuns e pelo erro raro de uma asa pegar as duas caixas. São 4 paradas de 45 min por ano, cada uma com R$ 84.000 de custo de oportunidade e R$ 250 de peça.</li>
-                    <li><b>SAI, pelas simulações:</b> o PAD derruba o golpe comum para 169 N, contra 1.380 N que rompem a garra; as duas caixas numa asa (24 kg) ficam com folga de 3,9×; a fadiga passa de 100 anos. A garra não quebra no ano, e os 8 PADs são trocados a cada 2 meses numa parada programada.</li>
-                    <li><b>Conservador:</b> mesmo assim a garra SAI quebra 1 vez no ano: uma parada e uma garra nova.</li>
-                    <li>Custo por hora com a linha rodando 24 h por dia (8.760 h no ano).</li>
+                    <li><b>Tritan:</b> a parte superior quebra a cada 3 meses, por impactos comuns e pelo erro raro de uma asa pegar as duas caixas. Cada quebra custa R$ 250 de peça.</li>
+                    <li><b>SAI, pelas simulações:</b> o PAD derruba o golpe comum para 169 N, contra 1.380 N que rompem a garra; as duas caixas numa asa (24 kg) ficam com folga de 3,9×; a fadiga passa de 100 anos. A garra custa R$ 495,54 e não quebra; os 8 PADs (R$ 21,96) são trocados a cada 2 meses.</li>
+                    <li><b>Conservador:</b> mesmo assim a garra SAI quebra 1 vez por ano e é trocada inteira.</li>
+                    <li>Material por hora com a linha rodando 24 h por dia.</li>
                   </ul>
                 </div>
               </div>
             </div>
-            <p class="note"><span class="tag eq">valores estimados</span> O custo de oportunidade é estimado pelo valor final do produto no varejo (R$ 84.000 por parada de 45 min). As quebras e as horas são hipóteses da equipe; a resistência vem das simulações (FE e modelo de impacto), não de ensaio.</p>
+            <p class="note"><span class="tag eq">valores de exemplo</span> As quebras e as trocas foram estipuladas e serão ajustadas conforme o tempo de uso real da garra. Só entra material (preços da equipe e gramas do Orca); a resistência vem das simulações (FE e modelo de impacto), não de ensaio. A linha parada não entra nesta conta: cada quebra evitada ainda poupa a parada de 45 min.</p>
           </div>
         </section>
 
@@ -1380,53 +1380,9 @@
           </div>
         </section>
 
-      </div>
-
-      <!-- Pandinha RedLab: caminha na capa e aponta o QR -->
-      <div class="panda-walk" aria-hidden="true">
-        <div class="panda" id="panda">
-          <div class="panda-bubble" id="panda-bubble"><span class="pb-desk">Aponte a câmera para o QR e veja os dados no celular</span><span class="pb-mob">Deslize e veja todos os dados</span></div>
-          <svg class="panda-svg" viewBox="0 0 120 160">
-            <g class="p-leg p-leg-b"><rect x="44" y="118" width="15" height="34" rx="7.5" /></g>
-            <g class="p-arm-b"><rect x="21" y="78" width="13" height="32" rx="6.5" /></g>
-            <path class="p-shirt" d="M34 74 Q60 64 86 74 L92 98 L84 100 L84 126 Q60 132 36 126 L36 100 L28 98 Z" />
-            <text class="p-shirt-txt" x="60" y="108">RedLab</text>
-            <g class="p-leg p-leg-a"><rect x="62" y="118" width="15" height="34" rx="7.5" /></g>
-            <g class="p-arm-a"><path d="M80 84 Q96 84 98 70" /></g>
-            <g class="p-phone"><rect x="92" y="46" width="13" height="22" rx="2.5" class="ph-body" /><rect x="94" y="49" width="9" height="15" rx="1.2" class="ph-screen" /></g>
-            <g class="p-head">
-              <circle cx="38" cy="18" r="10" class="blk" /><circle cx="84" cy="18" r="10" class="blk" />
-              <circle cx="60" cy="42" r="30" class="wht" />
-              <ellipse cx="49" cy="42" rx="8" ry="10.5" transform="rotate(-20 49 42)" class="blk" />
-              <ellipse cx="73" cy="42" rx="8" ry="10.5" transform="rotate(20 73 42)" class="blk" />
-              <g class="p-eyes"><circle cx="51" cy="41" r="3.2" class="wht" /><circle cx="75" cy="41" r="3.2" class="wht" /><circle cx="52.4" cy="40.4" r="1.6" class="blk" /><circle cx="76.4" cy="40.4" r="1.6" class="blk" /></g>
-              <ellipse cx="62" cy="54" rx="4.2" ry="3" class="blk" />
-              <path d="M57 59 Q62 63 67 59" class="p-mouth" />
-            </g>
-          </svg>
-        </div>
-      </div>
-
-      <footer class="footbar">
-        <button class="nav-btn" id="prev" aria-label="Slide anterior">
-          <svg class="i" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
-        </button>
-        <div class="progress"><i id="bar"></i></div>
-        <button class="qr" id="qr-btn" type="button" aria-haspopup="dialog" aria-label="Ampliar o QR code para abrir esta apresentação no celular">
-          <img src="assets/img/qr-site.svg" alt="" width="52" height="52">
-          <span><b>Veja no celular</b>dados e simulações</span>
-        </button>
-        <button class="nav-btn" id="next" aria-label="Próximo slide">
-          <svg class="i" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
-        </button>
-      </footer>
-    </main>
-  </div>
-
-  <!-- Arquivo: slides retirados no remake da apresentação. Ficam guardados aqui, fora da navegação e invisíveis. -->
-  <template id="arquivo">
+        <!-- Arquivo desocultado para revisão: slides retirados no remake (no fim da apresentação) -->
         <!-- Capa -->
-        <section class="slide" data-title="SENAI" id="s-capa">
+        <section class="slide arq" data-title="Arquivo · SENAI" id="arq-s-capa">
           <div class="wrap wide split" style="--cols:minmax(0,1.1fr) minmax(0,1fr)">
             <div>
               <span class="kicker">SENAI · RedLab</span>
@@ -1447,7 +1403,7 @@
         </section>
 
         <!-- Roteiro -->
-        <section class="slide" data-title="Roteiro">
+        <section class="slide arq" data-title="Arquivo · Roteiro">
           <div class="wrap wide split" style="--cols:minmax(0,.9fr) minmax(0,1.3fr)">
             <div>
               <span class="kicker">Apresentação</span>
@@ -1470,7 +1426,7 @@
         </section>
 
         <!-- Problema -->
-        <section class="slide" data-title="Problema" id="s-intro">
+        <section class="slide arq" data-title="Arquivo · Problema" id="arq-s-intro">
           <div class="wrap wide">
             <div class="s-head compact">
               <span class="kicker">Introdução · Problema</span>
@@ -1481,7 +1437,7 @@
               <article class="glass card"><h3>Troca demorada</h3><p>Substituir a garra exige parada de manutenção de cerca de 45 minutos.</p></article>
               <article class="glass card"><h3>Desperdício</h3><p>Com a linha parada, caixas deixam de ser produzidas e o custo de oportunidade cresce a cada minuto.</p></article>
             </div>
-            <div class="glass ticker" id="anim-parada" aria-label="Contador da parada: em 45 minutos a linha perde 280 caixas e R$ 84.000">
+            <div class="glass ticker" id="arq-anim-parada" aria-label="Contador da parada: em 45 minutos a linha perde 280 caixas e R$ 84.000">
               <span class="t-lbl"><i class="t-dot"></i>Linha parada</span>
               <b class="t-clock">00:00</b>
               <div class="t-bar"><i></i></div>
@@ -1498,7 +1454,7 @@
         </section>
 
         <!-- Proposta -->
-        <section class="slide" data-title="Proposta">
+        <section class="slide arq" data-title="Arquivo · Proposta">
           <div class="wrap wide">
             <div class="s-head compact">
               <span class="kicker">Introdução · Proposta</span>
@@ -1526,7 +1482,7 @@
         </section>
 
         <!-- PAD de sacrifício: especificações e animação do choque -->
-        <section class="slide" data-title="PAD de sacrifício" id="s-pad">
+        <section class="slide arq" data-title="Arquivo · PAD de sacrifício" id="arq-s-pad">
           <div class="wrap wide">
             <div class="s-head compact">
               <span class="kicker">Desenvolvimento · Componente de desgaste</span>
@@ -1577,7 +1533,7 @@
         </section>
 
         <!-- 7b · Vídeo do impacto (HyperFrames, modelo R03) -->
-        <section class="slide" data-title="Impacto em vídeo">
+        <section class="slide arq" data-title="Arquivo · Impacto em vídeo">
           <div class="wrap wide">
             <div class="s-head compact">
               <span class="kicker">Testes de Bancada · Impacto</span>
@@ -1585,7 +1541,7 @@
             </div>
             <div class="split vid-split" style="--cols:minmax(0,1.5fr) minmax(0,1fr); align-items:start">
               <figure class="glass media" style="margin:0; background:#f2f6f8">
-                <video id="video-impacto" src="assets/video/impacto_pad_r03.mp4" poster="assets/video/impacto_pad_r03_poster.jpg"
+                <video id="arq-video-impacto" src="assets/video/impacto_pad_r03.mp4" poster="assets/video/impacto_pad_r03_poster.jpg"
                        autoplay muted loop playsinline preload="auto" disablepictureinpicture
                        style="display:block; width:100%; height:auto; max-height:56vh; aspect-ratio:16/9; object-fit:contain"
                        aria-label="Animação: esfera de aço atinge o PAD laranja no recorte A1 da garra; gráfico mostra força sem e com PAD"></video>
@@ -1615,7 +1571,7 @@
         </section>
 
         <!-- Custos -->
-        <section class="slide" data-title="Custos">
+        <section class="slide arq" data-title="Arquivo · Custos">
           <div class="wrap wide">
             <div class="s-head compact">
               <span class="kicker">Desenvolvimento · Custos</span>
@@ -1655,7 +1611,49 @@
           </div>
         </section>
 
-  </template>
+
+      </div>
+
+      <!-- Pandinha RedLab: caminha na capa e aponta o QR -->
+      <div class="panda-walk" aria-hidden="true">
+        <div class="panda" id="panda">
+          <div class="panda-bubble" id="panda-bubble"><span class="pb-desk">Aponte a câmera para o QR e veja os dados no celular</span><span class="pb-mob">Deslize e veja todos os dados</span></div>
+          <svg class="panda-svg" viewBox="0 0 120 160">
+            <g class="p-leg p-leg-b"><rect x="44" y="118" width="15" height="34" rx="7.5" /></g>
+            <g class="p-arm-b"><rect x="21" y="78" width="13" height="32" rx="6.5" /></g>
+            <path class="p-shirt" d="M34 74 Q60 64 86 74 L92 98 L84 100 L84 126 Q60 132 36 126 L36 100 L28 98 Z" />
+            <text class="p-shirt-txt" x="60" y="108">RedLab</text>
+            <g class="p-leg p-leg-a"><rect x="62" y="118" width="15" height="34" rx="7.5" /></g>
+            <g class="p-arm-a"><path d="M80 84 Q96 84 98 70" /></g>
+            <g class="p-phone"><rect x="92" y="46" width="13" height="22" rx="2.5" class="ph-body" /><rect x="94" y="49" width="9" height="15" rx="1.2" class="ph-screen" /></g>
+            <g class="p-head">
+              <circle cx="38" cy="18" r="10" class="blk" /><circle cx="84" cy="18" r="10" class="blk" />
+              <circle cx="60" cy="42" r="30" class="wht" />
+              <ellipse cx="49" cy="42" rx="8" ry="10.5" transform="rotate(-20 49 42)" class="blk" />
+              <ellipse cx="73" cy="42" rx="8" ry="10.5" transform="rotate(20 73 42)" class="blk" />
+              <g class="p-eyes"><circle cx="51" cy="41" r="3.2" class="wht" /><circle cx="75" cy="41" r="3.2" class="wht" /><circle cx="52.4" cy="40.4" r="1.6" class="blk" /><circle cx="76.4" cy="40.4" r="1.6" class="blk" /></g>
+              <ellipse cx="62" cy="54" rx="4.2" ry="3" class="blk" />
+              <path d="M57 59 Q62 63 67 59" class="p-mouth" />
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <footer class="footbar">
+        <button class="nav-btn" id="prev" aria-label="Slide anterior">
+          <svg class="i" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <div class="progress"><i id="bar"></i></div>
+        <button class="qr" id="qr-btn" type="button" aria-haspopup="dialog" aria-label="Ampliar o QR code para abrir esta apresentação no celular">
+          <img src="assets/img/qr-site.svg" alt="" width="52" height="52">
+          <span><b>Veja no celular</b>dados e simulações</span>
+        </button>
+        <button class="nav-btn" id="next" aria-label="Próximo slide">
+          <svg class="i" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </footer>
+    </main>
+  </div>
 
   <dialog class="qr-big" id="qr-dialog" aria-label="QR code da apresentação">
     <img src="assets/img/qr-site.svg" alt="QR code que abre cir0arruda.github.io/SENAI-DI-RedTeam">
@@ -1667,15 +1665,15 @@
     <figure><img src="" alt=""><figcaption></figcaption></figure>
   </dialog>
 
-  <script src="assets/js/main.js?v=r07l"></script>
-  <script src="assets/js/bancada-dados.js?v=r07l"></script>
-  <script src="assets/js/bancada.js?v=r07l"></script>
-  <script src="assets/js/r07-dados.js?v=r07l"></script>
-  <script src="assets/js/r07.js?v=r07l"></script>
-  <script src="assets/js/conjunto-dados.js?v=r07l"></script>
-  <script src="assets/js/conjunto.js?v=r07l"></script>
-  <script src="assets/js/sai.js?v=r07l"></script>
-  <script src="assets/js/anim.js?v=r07l"></script>
-  <script type="module" src="assets/js/viewer3d.js?v=r07l"></script>
+  <script src="assets/js/main.js?v=r07m"></script>
+  <script src="assets/js/bancada-dados.js?v=r07m"></script>
+  <script src="assets/js/bancada.js?v=r07m"></script>
+  <script src="assets/js/r07-dados.js?v=r07m"></script>
+  <script src="assets/js/r07.js?v=r07m"></script>
+  <script src="assets/js/conjunto-dados.js?v=r07m"></script>
+  <script src="assets/js/conjunto.js?v=r07m"></script>
+  <script src="assets/js/sai.js?v=r07m"></script>
+  <script src="assets/js/anim.js?v=r07m"></script>
+  <script type="module" src="assets/js/viewer3d.js?v=r07m"></script>
 </body>
 </html>
