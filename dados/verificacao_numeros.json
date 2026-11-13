@@ -1,5 +1,5 @@
 {
- "conferidos": 83,
+ "conferidos": 78,
  "problemas": [],
  "linhas": [
   {
@@ -156,7 +156,7 @@
   },
   {
    "slide": 8,
-   "item": "pico sem PAD (N)",
+   "item": "pico sem PAD (N), escrito no vídeo",
    "mostrado": 451,
    "calculado": 450.9143,
    "status": "OK",
@@ -172,7 +172,7 @@
   },
   {
    "slide": 8,
-   "item": "redução (%)",
+   "item": "redução (%), aria do gráfico",
    "mostrado": 62.6,
    "calculado": 62.6264,
    "status": "OK",
@@ -195,7 +195,7 @@
    "fonte": "parametros_resultados_R03.json"
   },
   {
-   "slide": 8,
+   "slide": 9,
    "item": "força em que o PAD se esmaga (N)",
    "mostrado": 240,
    "calculado": 237.0,
@@ -203,7 +203,7 @@
    "fonte": "pad_limites.json"
   },
   {
-   "slide": 8,
+   "slide": 9,
    "item": "240 N em kgf (\"24 kg\")",
    "mostrado": 24,
    "calculado": 24.159,
@@ -211,15 +211,7 @@
    "fonte": "pad_limites.json"
   },
   {
-   "slide": 8,
-   "item": "% da ruptura que chega à garra",
-   "mostrado": 17,
-   "calculado": 17.1491,
-   "status": "OK",
-   "fonte": "pad_limites.json"
-  },
-  {
-   "slide": 8,
+   "slide": 9,
    "item": "ruptura da garra (N)",
    "mostrado": 1380,
    "calculado": 1382.0,
@@ -227,7 +219,7 @@
    "fonte": "pad_limites.json"
   },
   {
-   "slide": 8,
+   "slide": 9,
    "item": "ruptura = 93,3 kg × (g + 5)",
    "mostrado": 1380,
    "calculado": 1381.773,
@@ -235,44 +227,12 @@
    "fonte": "pad_limites.py"
   },
   {
-   "slide": 8,
+   "slide": 9,
    "item": "1.380 N em kgf (\"140 kg\")",
    "mostrado": 140,
    "calculado": 140.8767,
    "status": "OK",
    "fonte": "pad_limites.json"
-  },
-  {
-   "slide": 8,
-   "item": "energia com ÷ sem PAD",
-   "mostrado": 2.2,
-   "calculado": 2.1901,
-   "status": "OK",
-   "fonte": "pad_limites.json"
-  },
-  {
-   "slide": 8,
-   "item": "1 kg caindo, com PAD (cm)",
-   "mostrado": 27,
-   "calculado": 27.0133,
-   "status": "OK",
-   "fonte": "pad_limites.json"
-  },
-  {
-   "slide": 8,
-   "item": "1 kg caindo, sem PAD (cm)",
-   "mostrado": 12,
-   "calculado": 12.3344,
-   "status": "OK",
-   "fonte": "pad_limites.json"
-  },
-  {
-   "slide": 8,
-   "item": "\"pouco mais de um terço\" (169 ÷ 451)",
-   "mostrado": 0.37,
-   "calculado": 0.3737,
-   "status": "OK",
-   "fonte": "R03"
   },
   {
    "slide": 14,
@@ -347,7 +307,7 @@
    "fonte": "Orca"
   },
   {
-   "slide": 10,
+   "slide": 12,
    "item": "material da garra SAI = Orca × R$ 420/kg",
    "mostrado": 732.69,
    "calculado": 732.69,
@@ -379,34 +339,34 @@
    "fonte": "entradas_custo.json"
   },
   {
-   "slide": 11,
-   "item": "troca da garra SAI: 30 min × 6 caixas/min",
-   "mostrado": 180,
-   "calculado": 180,
+   "slide": 13,
+   "item": "troca da garra SAI = troca de hoje (caixas)",
+   "mostrado": 280,
+   "calculado": 280,
    "status": "OK",
-   "fonte": "custo_real.json"
+   "fonte": "equipe"
   },
   {
-   "slide": 11,
-   "item": "troca dos PADs: 10 min × 6 caixas/min",
-   "mostrado": 60,
-   "calculado": 60,
+   "slide": 13,
+   "item": "troca dos PADs: 20 min × 6 caixas/min",
+   "mostrado": 120,
+   "calculado": 120,
    "status": "OK",
-   "fonte": "custo_real.json"
+   "fonte": "equipe"
   },
   {
    "slide": 0,
    "item": "caixas do SAI em 2 anos = instalação + 7 trocas de PAD",
-   "mostrado": 600,
-   "calculado": 600,
+   "mostrado": 1120,
+   "calculado": 1120,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
    "slide": 0,
-   "item": "cruzamento em caixas refeito: 180 ÷ (180 + 280 − 240) × 3 meses",
-   "mostrado": 2.45,
-   "calculado": 2.4545,
+   "item": "cruzamento em caixas refeito: entre 3 e 6 meses, 3 + 3 × 120 ÷ 160",
+   "mostrado": 5.25,
+   "calculado": 5.25,
    "status": "OK",
    "fonte": "custo_real.json"
   },
@@ -419,31 +379,31 @@
    "fonte": "entradas_custo.json"
   },
   {
-   "slide": 10,
+   "slide": 12,
    "item": "garra SAI pronta e instalada (R$)",
-   "mostrado": 1121.29,
-   "calculado": 1121.29,
+   "mostrado": 1128.84,
+   "calculado": 1128.84,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
-   "slide": 10,
+   "slide": 12,
    "item": "encontro direto (milhões de caixas)",
-   "mostrado": 4.6,
-   "calculado": 4.5873,
+   "mostrado": 4.0,
+   "calculado": 4.0376,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
-   "slide": 10,
+   "slide": 12,
    "item": "encontro direto (meses)",
-   "mostrado": 17.5,
-   "calculado": 17.46,
+   "mostrado": 15.4,
+   "calculado": 15.36,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
-   "slide": 10,
+   "slide": 12,
    "item": "custo direto 24 meses, Tritan (R$)",
    "mostrado": 2342.48,
    "calculado": 2342.48,
@@ -451,23 +411,23 @@
    "fonte": "custo_real.json"
   },
   {
-   "slide": 10,
+   "slide": 12,
    "item": "custo direto 24 meses, SAI (R$)",
-   "mostrado": 1854.74,
-   "calculado": 1854.74,
+   "mostrado": 1635.57,
+   "calculado": 1635.57,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
-   "slide": 10,
+   "slide": 12,
    "item": "tabela = série do gráfico (SAI, 24 meses)",
-   "mostrado": 1854.74,
-   "calculado": 1854.74,
+   "mostrado": 1635.57,
+   "calculado": 1635.57,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
-   "slide": 10,
+   "slide": 12,
    "item": "tabela = série do gráfico (Tritan, 24 meses)",
    "mostrado": 2342.48,
    "calculado": 2342.48,
@@ -475,15 +435,15 @@
    "fonte": "custo_real.json"
   },
   {
-   "slide": 10,
+   "slide": 12,
    "item": "SAI custa menos no ciclo (%)",
-   "mostrado": 21,
-   "calculado": 20.8215,
+   "mostrado": 30,
+   "calculado": 30.1778,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
-   "slide": 10,
+   "slide": 12,
    "item": "por mil caixas, Tritan (R$)",
    "mostrado": 0.37,
    "calculado": 0.37,
@@ -491,15 +451,15 @@
    "fonte": "custo_real.json"
   },
   {
-   "slide": 10,
+   "slide": 12,
    "item": "por mil caixas, SAI (R$)",
-   "mostrado": 0.29,
-   "calculado": 0.29,
+   "mostrado": 0.26,
+   "calculado": 0.26,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
-   "slide": 10,
+   "slide": 12,
    "item": "filamento em 24 meses, SAI (R$)",
    "mostrado": 908.37,
    "calculado": 908.37,
@@ -507,15 +467,15 @@
    "fonte": "custo_real.json"
   },
   {
-   "slide": 10,
-   "item": "mão de obra + inspeção em 24 meses, SAI (R$)",
-   "mostrado": 564.84,
-   "calculado": 564.84,
+   "slide": 12,
+   "item": "mão de obra em 24 meses, SAI (R$)",
+   "mostrado": 345.67,
+   "calculado": 345.67,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
-   "slide": 10,
+   "slide": 12,
    "item": "trocas de PAD no ciclo (a cada 3 meses, a 24ª vai com a garra)",
    "mostrado": 7,
    "calculado": 7,
@@ -523,31 +483,31 @@
    "fonte": "custo_real.json"
   },
   {
-   "slide": 11,
+   "slide": 13,
    "item": "SAI compensa a instalação, previsto (dias)",
-   "mostrado": 75,
-   "calculado": 75,
+   "mostrado": 160,
+   "calculado": 160,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
-   "slide": 11,
+   "slide": 13,
    "item": "SAI compensa a instalação, conservador (dias)",
-   "mostrado": 110,
-   "calculado": 110,
+   "mostrado": 446,
+   "calculado": 446,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
-   "slide": 11,
-   "item": "caixas produzidas até compensar (mil)",
-   "mostrado": 645,
-   "calculado": 645.055,
+   "slide": 13,
+   "item": "caixas produzidas até compensar (milhões)",
+   "mostrado": 1.4,
+   "calculado": 1.3797,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
-   "slide": 11,
+   "slide": 13,
    "item": "linha parada em 2 anos, Tritan (min)",
    "mostrado": 360,
    "calculado": 360,
@@ -555,31 +515,31 @@
    "fonte": "equipe"
   },
   {
-   "slide": 11,
+   "slide": 13,
    "item": "linha parada em 2 anos, SAI (min)",
-   "mostrado": 100,
-   "calculado": 100,
+   "mostrado": 185,
+   "calculado": 185,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
-   "slide": 11,
+   "slide": 13,
    "item": "caixas a mais em 2 anos",
-   "mostrado": 1640,
-   "calculado": 1640,
+   "mostrado": 1120,
+   "calculado": 1120,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
    "slide": 0,
    "item": "caixas a mais, conservador",
-   "mostrado": 960,
-   "calculado": 960,
+   "mostrado": 400,
+   "calculado": 400,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
-   "slide": 11,
+   "slide": 13,
    "item": "caixas perdidas pelo Tritan (8 × 280)",
    "mostrado": 2240,
    "calculado": 2240,
@@ -587,7 +547,7 @@
    "fonte": "equipe"
   },
   {
-   "slide": 11,
+   "slide": 13,
    "item": "paradas surpresa em 2 anos (Tritan)",
    "mostrado": 8,
    "calculado": 8,
@@ -595,7 +555,7 @@
    "fonte": "custo_real.json"
   },
   {
-   "slide": 11,
+   "slide": 13,
    "item": "vida no pior caso no slide (anos)",
    "mostrado": 2.4,
    "calculado": 2.39,
@@ -603,18 +563,18 @@
    "fonte": "estudo_custos.json"
   },
   {
-   "slide": 13,
+   "slide": 14,
    "item": "caixas a mais por ano",
-   "mostrado": 820,
-   "calculado": 820.0,
+   "mostrado": 560,
+   "calculado": 560.0,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
-   "slide": 13,
-   "item": "compensa a instalação em cerca de 75 dias (conclusão)",
-   "mostrado": 75,
-   "calculado": 75,
+   "slide": 14,
+   "item": "compensa a instalação em cerca de 160 dias (conclusão)",
+   "mostrado": 160,
+   "calculado": 160,
    "status": "OK",
    "fonte": "custo_real.json"
   },

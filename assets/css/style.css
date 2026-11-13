@@ -945,3 +945,22 @@ dialog.qr-big .nav-btn { position: absolute; top: 12px; right: 12px; }
 .pt-bar.sai i.g { width: 16px; height: 16px; margin: -8px 0 0 -8px; background: #15151d; }
 .pt-ax { display: flex; justify-content: space-between; margin-left: 56px; font-size: 11.5px; color: var(--muted); }
 #s-custo .custo-tbl th { white-space: nowrap; }
+
+/* PAD (slide 8): vídeo do escudo + três fatos */
+#s-pad .pad-filme { padding: 10px; }
+#s-pad .pad-filme video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: var(--r-sm); background: #fff; }
+.pad-fatos { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.pad-fatos li { display: grid; gap: 4px; padding: 16px 20px; border-radius: var(--r-lg); }
+.pad-fatos li b { font-size: clamp(34px, 3.6vw, 52px); font-weight: 600; letter-spacing: -.04em; line-height: 1; color: var(--ink); }
+.pad-fatos li:first-child b { color: var(--red); }
+.pad-fatos li span { font-size: 15px; line-height: 1.4; color: var(--ink-2); }
+#s-pad .fonte-row { margin-top: 12px; }
+/* Valor de teste (slide 9) */
+#s-pad-teste .teste-row { display: grid; gap: 10px; align-content: start; }
+#s-pad-teste .teste-aviso { padding: 12px 16px; }
+#s-pad-teste .teste-aviso p { margin: 6px 0 0; font-size: 14px; line-height: 1.45; }
+#s-pad-teste .lim { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; column-gap: 12px; align-content: start; padding: 12px 16px; }
+#s-pad-teste .lim .lim-n { order: -1; }
+#s-pad-teste .lim .tag { justify-self: start; margin: 0; }
+#s-pad-teste .lim p { grid-column: 1 / -1; }
+#s-pad-teste .pv-svg .axis text, #s-pad-teste .pv-svg .lbl { font-size: 14px; }

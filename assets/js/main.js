@@ -63,16 +63,18 @@
 
 // Vídeo do impacto: reprodução automática em loop contínuo (mudo, exigência dos navegadores para autoplay).
 (() => {
-  const v = document.getElementById('video-impacto');
-  if (!v) return;
-  v.muted = true; v.defaultMuted = true; v.loop = true;
-  const play = () => { if (v.paused) v.play().catch(() => {}); };
-  play();
-  v.addEventListener('canplay', play);
-  v.addEventListener('pause', () => setTimeout(play, 200));
-  document.addEventListener('slidechange', play);
-  document.addEventListener('visibilitychange', play);
-  ['pointerdown', 'keydown'].forEach(ev => document.addEventListener(ev, play, { once: true }));
+  ['video-impacto', 'video-escudo'].forEach(id => {
+    const v = document.getElementById(id);
+    if (!v) return;
+    v.muted = true; v.defaultMuted = true; v.loop = true;
+    const play = () => { if (v.paused) v.play().catch(() => {}); };
+    play();
+    v.addEventListener('canplay', play);
+    v.addEventListener('pause', () => setTimeout(play, 200));
+    document.addEventListener('slidechange', play);
+    document.addEventListener('visibilitychange', play);
+    ['pointerdown', 'keydown'].forEach(ev => document.addEventListener(ev, play, { once: true }));
+  });
 })();
 
 // Ajuste à tela: no computador, se o conteúdo de um slide não cabe na altura, reduz proporcionalmente (zoom) até caber.

@@ -38,7 +38,7 @@ linhas = [
     ('Energia', 'impressora e secador de filamento', T24['energia'], S24['energia']),
     ('Impressora', 'depreciação, desgaste e bico endurecido', T24['impressora'] + T24['bico'], S24['impressora'] + S24['bico']),
     ('Impressões perdidas', 'refugo e consumíveis', T24['refugo'] + T24['consumiveis'], S24['refugo'] + S24['consumiveis']),
-    ('Mão de obra', 'imprimir, acabar, trocar e inspecionar', T24['mao_de_obra'], S24['mao_de_obra'] + S24['inspecao']),
+    ('Mão de obra', 'imprimir, acabar e trocar', T24['mao_de_obra'], S24['mao_de_obra']),
 ]
 assert abs(sum(l[2] for l in linhas) - T24['direto']) < 0.02 and abs(sum(l[3] for l in linhas) - S24['direto']) < 0.02
 tbl = '\n'.join(f'                    <tr><td>{a} <small>{b}</small></td><td>R$ {br(t, 2)}</td><td>R$ {br(s, 2)}</td></tr>' for a, b, t, s in linhas)
@@ -73,7 +73,7 @@ html = f'''<!-- CUSTO:INICIO (gerado por dados/scripts/custo_slides.py a partir 
                     </tbody>
                   </table>
                 </div>
-                <p class="note" style="margin:0"><span class="tag sim">preços de mercado</span> Lojas e tarifas de nov/2026: energia R$ 0,70/kWh (indústria, CPFL), técnico R$ {br(E['rs_h_tecnico'], 2)}/h com encargos, impressora K1 Max R$ 5.500 em 5.000 h. Tempos de troca e refugo são hipóteses. Fontes em <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/custos/entradas_custo.json" target="_blank" rel="noopener">entradas_custo.json</a>.</p>
+                <p class="note" style="margin:0"><span class="tag sim">preços de mercado</span> Lojas e tarifas de nov/2026: energia R$ 0,70/kWh (indústria, CPFL), técnico R$ {br(E['rs_h_tecnico'], 2)}/h com encargos, impressora K1 Max R$ 5.500 em 5.000 h. Tempos de troca da equipe: garra {E['min_parada_corretiva']} min, PADs {E['troca_pads_min']} min. Refugo e acabamento são hipóteses. Fontes em <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/custos/entradas_custo.json" target="_blank" rel="noopener">entradas_custo.json</a>.</p>
               </div>
             </div>
           </div>
@@ -116,13 +116,13 @@ html = f'''<!-- CUSTO:INICIO (gerado por dados/scripts/custo_slides.py a partir 
                   </div>
                   <ul class="hip">
                     <li><b>Hoje, corretiva:</b> a garra quebra sem aviso, cerca de 4 vezes por ano, e a linha para na hora: {E['min_parada_corretiva']} min e {E['caixas_parada_corretiva']} caixas por quebra.</li>
-                    <li><b>Com o SAI, preventiva:</b> PADs a cada trimestre ({E['troca_pads_min']} min) e garra nova a cada 2 anos ({E['troca_garra_min'] + E['troca_pads_min']} min), antes dos {br(E['vida_pior_caso_anos'], 1)} anos do pior caso. Data marcada, peça pronta e técnico escalado.</li>
-                    <li><b>Previsível:</b> a troca entra no plano de manutenção. Se for feita na janela semanal de limpeza, a perda de caixas cai a zero.</li>
+                    <li><b>Com o SAI, preventiva:</b> PADs a cada trimestre ({E['troca_pads_min']} min) e garra nova a cada 2 anos ({E['min_parada_corretiva']} min, como hoje), antes dos {br(E['vida_pior_caso_anos'], 1)} anos do pior caso. Data marcada, peça pronta e técnico escalado.</li>
+                    <li><b>Previsível:</b> a troca entra no plano de manutenção. A produção sabe o dia, a peça já está impressa e o técnico já está escalado.</li>
                   </ul>
                 </div>
               </div>
             </div>
-            <p class="note" style="margin:8px 0 0"><span class="tag sim">estimativa</span> Produção esperada: a quebra do Tritan é aleatória (média de 1 a cada 3 meses, dado da equipe), por isso a linha é contínua. Cada quebra para a linha {E['min_parada_corretiva']} min e perde {E['caixas_parada_corretiva']} caixas. A troca da garra SAI para {E['troca_garra_min'] + E['troca_pads_min']} min ({EV['sai_troca']['caixas']} caixas) e a dos PADs {E['troca_pads_min']} min ({EV['pads']['caixas']} caixas), com data marcada. As caixas não foram convertidas em reais: o valor real da caixa não é conhecido. Conservador: a garra SAI dura só {C['cenarios']['conservador']['vida_meses']} meses e ainda quebra {round(C['cenarios']['conservador']['quebras_sai_ano'])} vez por ano. A inspeção semanal do PAD entra na janela de limpeza.</p>
+            <p class="note" style="margin:8px 0 0"><span class="tag sim">estimativa</span> Produção esperada: a quebra do Tritan é aleatória (média de 1 a cada 3 meses, dado da equipe), por isso a linha é contínua. Cada quebra para a linha {E['min_parada_corretiva']} min e perde {E['caixas_parada_corretiva']} caixas. A troca da garra SAI também leva {E['min_parada_corretiva']} min ({EV['sai_troca']['caixas']} caixas); a dos PADs é rápida, {E['troca_pads_min']} min ({EV['pads']['caixas']} caixas), sempre com data marcada. Tempos da equipe. As caixas não foram convertidas em reais: o valor real da caixa não é conhecido. Conservador: a garra SAI dura só {C['cenarios']['conservador']['vida_meses']} meses e ainda quebra {round(C['cenarios']['conservador']['quebras_sai_ano'])} vez por ano.</p>
           </div>
         </section>
 <!-- CUSTO:FIM -->'''

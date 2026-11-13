@@ -1,0 +1,206 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #ffffff; font-family: "Inter", sans-serif; color: #15151d; }
+    #esc-svg { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+    #esc-svg .mono { font-family: "IBM Plex Mono", monospace; }
+    #esc-svg .disp { font-family: "Inter", sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+    #esc-svg .num { font-family: "Inter", sans-serif; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  </style>
+  <div id="root" data-composition-id="escudo" data-width="1920" data-height="1080">
+    <svg id="esc-svg" class="clip" data-start="0" data-duration="12" data-track-index="0" viewBox="0 0 1920 1080"
+         role="img" aria-label="Mesma batida de teste com e sem PAD: sem PAD a garra recebe 451 N; com PAD o anel amassa, guarda 86% da energia e a garra recebe 169 N">
+      <defs>
+        <pattern id="esc-grade" width="28" height="28" patternUnits="userSpaceOnUse">
+          <path d="M28 0H0V28" fill="none" stroke="rgba(21,21,29,.05)" stroke-width="1" />
+        </pattern>
+        <radialGradient id="esc-aco" cx="35%" cy="32%" r="70%">
+          <stop offset="0" stop-color="#f4f6f7" />
+          <stop offset=".45" stop-color="#9aa6ae" />
+          <stop offset="1" stop-color="#3a464e" />
+        </radialGradient>
+        <clipPath id="esc-clip-gs"><path id="esc-clipg-s" d="" /></clipPath>
+        <clipPath id="esc-clip-gc"><path id="esc-clipg-c" d="" /></clipPath>
+        <clipPath id="esc-clip-p"><rect id="esc-clipp" x="0" y="0" width="0" height="0" rx="6" /></clipPath>
+      </defs>
+      <rect width="1920" height="1080" fill="#ffffff" />
+
+      <!-- cabeçalho -->
+      <g id="esc-head">
+        <rect x="96" y="88" width="16" height="16" fill="#e5232f" />
+        <text x="126" y="104" class="mono" font-size="28" font-weight="600" letter-spacing="2">SIMULAÇÃO · VALOR DE TESTE</text>
+        <text x="96" y="178" class="disp" font-size="66">Mesma batida. O PAD segura o golpe.</text>
+        <text x="96" y="226" font-size="29" fill="#3b3d50">Esfera de aço de 263 g a 1 m/s (0,13 J): uma batida de teste, só para comparar a garra com e sem PAD.</text>
+      </g>
+      <line x1="96" y1="262" x2="1824" y2="262" stroke="#15151d" stroke-width="3" />
+      <line x1="960" y1="290" x2="960" y2="990" stroke="#15151d" stroke-opacity=".25" stroke-width="2" stroke-dasharray="6 8" />
+
+      <!-- pistas -->
+      <g id="esc-lane-s">
+        <text x="96" y="316" class="mono" font-size="30" font-weight="600" fill="#5b5bd6">SEM PAD</text>
+        <text x="912" y="316" font-size="28" fill="#3b3d50" text-anchor="end">a garra leva o golpe inteiro</text>
+        <path id="esc-garra-s" d="" fill="#d9dde0" stroke="#15151d" stroke-width="3" />
+        <g clip-path="url(#esc-clip-gs)" data-layout-allow-overflow><g id="esc-rings-s"></g></g>
+        <circle id="esc-ball-s" cx="504" cy="300" r="72" fill="url(#esc-aco)" stroke="#15151d" stroke-width="2" />
+      </g>
+      <g id="esc-lane-c">
+        <text x="1008" y="316" class="mono" font-size="30" font-weight="600" fill="#e5232f">COM PAD</text>
+        <text x="1824" y="316" font-size="28" fill="#3b3d50" text-anchor="end">o PAD amassa antes da garra</text>
+        <path id="esc-garra-c" d="" fill="#d9dde0" stroke="#15151d" stroke-width="3" />
+        <g clip-path="url(#esc-clip-gc)" data-layout-allow-overflow><g id="esc-rings-cg"></g></g>
+        <rect id="esc-pad" x="0" y="0" width="0" height="0" rx="6" fill="#e07a1f" stroke="#15151d" stroke-width="3" />
+        <rect id="esc-pad-cheio" x="0" y="0" width="0" height="0" fill="#9c4a0b" clip-path="url(#esc-clip-p)" opacity="0" />
+        <g clip-path="url(#esc-clip-p)" data-layout-allow-overflow><g id="esc-rings-cp"></g></g>
+        <circle id="esc-ball-c" cx="1416" cy="300" r="72" fill="url(#esc-aco)" stroke="#15151d" stroke-width="2" />
+        <g id="esc-pad-nota" opacity="0">
+          <line x1="1580" y1="600" x2="1636" y2="548" stroke="#15151d" stroke-width="2" />
+          <text x="1644" y="540" font-size="28" fill="#15151d">o PAD guarda</text>
+          <text x="1644" y="574" font-size="28" fill="#15151d">a batida</text>
+        </g>
+      </g>
+
+      <!-- medidores de força -->
+      <g id="esc-med-s">
+        <text x="96" y="822" class="mono" font-size="28" fill="#3b3d50">PICO DE FORÇA NA GARRA</text>
+        <rect x="96" y="840" width="520" height="28" fill="none" stroke="#15151d" stroke-width="2" />
+        <rect id="esc-bar-s" x="96" y="840" width="0" height="28" fill="#5b5bd6" />
+        <text id="esc-num-s" x="912" y="872" class="num" font-size="70" text-anchor="end" fill="#5b5bd6">0 N</text>
+      </g>
+      <g id="esc-med-c">
+        <text x="1008" y="822" class="mono" font-size="28" fill="#3b3d50">PICO DE FORÇA NA GARRA</text>
+        <rect x="1008" y="840" width="520" height="28" fill="none" stroke="#15151d" stroke-width="2" />
+        <rect id="esc-bar-c" x="1008" y="840" width="0" height="28" fill="#e5232f" />
+        <text id="esc-num-c" x="1824" y="872" class="num" font-size="70" text-anchor="end" fill="#e5232f">0 N</text>
+      </g>
+
+      <!-- para onde vai a batida -->
+      <g id="esc-en" opacity="0">
+        <text x="96" y="934" class="mono" font-size="28" fill="#3b3d50">ONDE FICA A BATIDA</text>
+        <rect x="420" y="906" width="492" height="38" fill="#5b5bd6" />
+        <text x="430" y="935" class="mono" font-size="28" font-weight="600" fill="#fff">GARRA 100%</text>
+        <text x="1008" y="934" class="mono" font-size="28" fill="#3b3d50">ONDE FICA A BATIDA</text>
+        <rect id="esc-en-pad" x="1332" y="906" width="0" height="38" fill="#e07a1f" />
+        <rect id="esc-en-garra" x="1332" y="906" width="0" height="38" fill="#e5232f" />
+        <text id="esc-en-pad-t" x="1342" y="935" class="mono" font-size="28" font-weight="600" fill="#15151d">PAD 86%</text>
+        <text id="esc-en-garra-t" x="1824" y="980" class="mono" font-size="28" font-weight="600" fill="#e5232f" text-anchor="end">↑ GARRA 14%</text>
+      </g>
+
+      <!-- relógio da câmera lenta -->
+      <g id="esc-relogio" opacity="0">
+        <rect x="850" y="368" width="220" height="50" fill="#15151d" />
+        <text id="esc-ms" x="960" y="403" class="mono" font-size="28" font-weight="600" fill="#fff" text-anchor="middle">0,00 ms</text>
+      </g>
+
+      <!-- carimbo final -->
+      <g id="esc-carimbo" opacity="0">
+        <rect x="1008" y="352" width="300" height="146" fill="#e5232f" />
+        <text x="1028" y="440" class="disp" font-size="78" fill="#fff">−63%</text>
+        <text x="1028" y="482" font-size="28" fill="#fff">de força na garra</text>
+      </g>
+
+      <text x="96" y="1030" class="mono" font-size="28" fill="#74768c">Modelo de molas (R03), não é ensaio · 1 ms = 1 s · movimento 12×</text>
+    </svg>
+  </div>
+  <script>
+    (() => {
+      const D = window.IMPACTO, S = D.serie, N = S.t.length, DT = S.t[1] - S.t[0];
+      const NS = 'http://www.w3.org/2000/svg', $ = id => document.getElementById(id);
+      const RED = '#e5232f', BLUE = '#5b5bd6', ORANGE_D = '#8f420a';
+      const MAG = 12, PAD_W = 300, PAD_H = 64, G_W = 620, G_H = 120, R_BALL = 72;
+      const CX = { s: 504, c: 1416 }, G_TOP = 640;
+      const T0 = 2.2, MS_POR_S = 1;                        // câmera lenta: 1 ms do modelo = 1 s de vídeo
+      const FMAX = D.pico_sem_N, E0 = D.energia_J;
+
+      const at = (k, ms) => {                              // interpolação linear na série
+        if (ms <= 0) return S[k][0];
+        const i = ms / DT, a = Math.floor(i);
+        if (a >= N - 1) return S[k][N - 1];
+        return S[k][a] + (S[k][a + 1] - S[k][a]) * (i - a);
+      };
+      const fim = { s: D.duracao_sem_ms, c: D.duracao_com_ms };
+      const forca = (lane, ms) => (ms > fim[lane] ? 0 : Math.max(0, at(lane === 's' ? 'fs' : 'fc', ms)));
+      const picoAte = (lane, ms) => { let m = 0; for (let x = 0; x <= Math.min(ms, 7); x += DT) m = Math.max(m, forca(lane, x)); return m; };
+
+      // anéis: um a cada 0,1 ms enquanto houver contato
+      const NASC = []; for (let b = 0; b <= 5; b += 0.1) NASC.push(+b.toFixed(2));
+      const mkRings = host => NASC.map(() => { const c = document.createElementNS(NS, 'circle'); c.setAttribute('fill', 'none'); c.setAttribute('r', 0); host.appendChild(c); return c; });
+      const rings = { s: mkRings($('esc-rings-s')), cg: mkRings($('esc-rings-cg')), cp: mkRings($('esc-rings-cp')) };
+
+      const garraPath = (cx, sag) => {
+        const x0 = cx - G_W / 2, x1 = cx + G_W / 2, y0 = G_TOP, y1 = G_TOP + G_H;
+        return `M${x0},${y0} Q${cx},${y0 + 2 * sag} ${x1},${y0} L${x1},${y1} L${x0},${y1} Z`;
+      };
+      const fmtN = v => `${Math.round(v).toLocaleString('pt-BR')} N`;
+
+      function drawRings(set, cx, cy, ms, lane, amp, color, vel, rmax, width) {
+        set.forEach((c, i) => {
+          const tb = NASC[i], idade = ms - tb;
+          const f = forca(lane, tb);
+          if (idade < 0 || f <= 0 || tb > fim[lane]) { c.setAttribute('opacity', 0); return; }
+          const r = idade * vel, a = amp(f) * Math.max(0, 1 - r / rmax);
+          c.setAttribute('cx', cx); c.setAttribute('cy', cy); c.setAttribute('r', r.toFixed(1));
+          c.setAttribute('stroke', color); c.setAttribute('stroke-width', width);
+          c.setAttribute('opacity', a.toFixed(3));
+        });
+      }
+
+      function draw(t) {
+        const ms = Math.max(0, Math.min(7, (t - T0) * MS_POR_S));
+        const antes = t < T0, k = Math.min(1, Math.max(0, (t - 1.0) / (T0 - 1.0)));
+        const desce = 1 - Math.pow(1 - k, 2.2);                 // as esferas chegam freando para a câmera lenta
+        for (const lane of ['s', 'c']) {
+          const cx = CX[lane];
+          const def = lane === 's' ? at('ds', Math.min(ms, fim.s)) : at('dc', Math.min(ms, fim.c));
+          const comp = lane === 'c' ? Math.max(0, at('cp', Math.min(ms, fim.c))) : 0;
+          const sag = (ms <= fim[lane] ? def : 0) * MAG;
+          $('esc-garra-' + lane).setAttribute('d', garraPath(cx, sag));
+          $('esc-clipg-' + lane).setAttribute('d', garraPath(cx, sag));
+          let topo = G_TOP + sag;                                  // onde a esfera encosta
+          if (lane === 'c') {
+            const h = PAD_H - (ms <= fim.c ? comp : 0) * MAG, w = PAD_W + (PAD_H - h) * 1.6;
+            const y = G_TOP + sag - h;
+            for (const id of ['esc-pad', 'esc-clipp']) {
+              const r = $(id); r.setAttribute('x', cx - w / 2); r.setAttribute('y', y); r.setAttribute('width', w); r.setAttribute('height', h);
+            }
+            const cheio = $('esc-pad-cheio');
+            cheio.setAttribute('x', cx - w / 2); cheio.setAttribute('y', y); cheio.setAttribute('width', w); cheio.setAttribute('height', h);
+            cheio.setAttribute('opacity', (ms <= fim.c ? at('ep', ms) / E0 : 0) * 0.55);
+            topo = y;
+          }
+          let cy;
+          if (antes) cy = topo - R_BALL - 100 * (1 - desce);
+          else if (ms <= fim[lane]) cy = topo - R_BALL;
+          else cy = topo - R_BALL - Math.min(80, (ms - fim[lane]) * 1.0 * MAG * 3);   // volta a 1 m/s (subida ampliada, curta)
+          $('esc-ball-' + lane).setAttribute('cy', cy.toFixed(1));
+          const pico = antes ? 0 : picoAte(lane, ms);
+          $('esc-bar-' + lane).setAttribute('width', (pico / 500 * 520).toFixed(1));
+          $('esc-num-' + lane).textContent = fmtN(pico);
+        }
+        drawRings(rings.s, CX.s, G_TOP, ms, 's', f => f / FMAX, BLUE, 260, 520, 7);
+        const padTopo = parseFloat($('esc-pad').getAttribute('y'));
+        drawRings(rings.cp, CX.c, padTopo, ms, 'c', f => 0.25 + 0.75 * f / D.pico_com_N, ORANGE_D, 120, 260, 7);
+        drawRings(rings.cg, CX.c, G_TOP, ms, 'c', f => f / FMAX, RED, 260, 520, 7);
+        $('esc-ms').textContent = `${ms.toFixed(2).replace('.', ',')} ms`;
+        const ep = Math.min(1, Math.max(0, (t - 7.4) / 1.0));
+        const wPad = 492 * D.energia_pad_pct / 100 * ep;
+        $('esc-en-pad').setAttribute('width', wPad.toFixed(1));
+        $('esc-en-garra').setAttribute('x', (1332 + wPad).toFixed(1));
+        $('esc-en-garra').setAttribute('width', ((492 - 492 * D.energia_pad_pct / 100) * ep).toFixed(1));
+      }
+
+      const clock = { t: 0 };
+      const tl = gsap.timeline({ paused: true });
+      tl.to(clock, { t: 12, duration: 12, ease: 'none', onUpdate: () => draw(clock.t) }, 0);
+      tl.fromTo('#esc-head', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.1);
+      tl.fromTo(['#esc-lane-s', '#esc-lane-c'], { opacity: 0 }, { opacity: 1, duration: 0.5, ease: 'power2.out', stagger: 0.15 }, 0.5);
+      tl.fromTo(['#esc-med-s', '#esc-med-c'], { opacity: 0 }, { opacity: 1, duration: 0.5, ease: 'power2.out' }, 0.9);
+      tl.fromTo('#esc-relogio', { opacity: 0 }, { opacity: 1, duration: 0.3 }, T0 - 0.2);
+      tl.fromTo('#esc-pad-nota', { opacity: 0 }, { opacity: 1, duration: 0.4 }, T0 + 1.6);
+      tl.fromTo('#esc-en', { opacity: 0 }, { opacity: 1, duration: 0.4 }, 7.3);
+      tl.to('#esc-relogio', { opacity: 0, duration: 0.3 }, 9.2);
+      tl.fromTo('#esc-carimbo', { opacity: 0, scale: 1.25, transformOrigin: '1158px 425px' }, { opacity: 1, scale: 1, duration: 0.35, ease: 'back.out(2)' }, 9.4);
+      window.__timelines = window.__timelines || {};
+      window.__timelines['escudo'] = tl;
+      draw(0);
+    })();
+  </script>
+</template>
