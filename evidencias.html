@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evidências · Projeto SAI</title>
+  <meta name="description" content="Arquivos de origem dos dados da garra SAI: relatórios do Autodesk Fusion, fatiamentos do OrcaSlicer, FE próprio, modelo do PAD e ilustrações, cada um com a sua fonte.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/evidencias.css?v=e1">
+</head>
+<body>
+  <header class="ev-top">
+    <a class="voltar" href="index.html#15">← Voltar à apresentação</a>
+    <nav class="ev-nav" aria-label="Seções">
+      <a href="#fusion" style="--c: var(--o-fusion)"><i></i>Autodesk Fusion</a>
+      <a href="#orca" style="--c: var(--o-orca)"><i></i>OrcaSlicer</a>
+      <a href="#fe" style="--c: var(--o-fe)"><i></i>FE próprio</a>
+      <a href="#pad" style="--c: var(--o-mola)"><i></i>PAD</a>
+      <a href="#ilustracoes" style="--c: var(--o-ilus)"><i></i>Ilustrações</a>
+      <a href="#brutos">Arquivos brutos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="ev-hero">
+      <h1>Evidências do <b>Projeto SAI</b></h1>
+      <p>Esta página não faz parte da apresentação. Ela guarda os arquivos de onde saíram os números, para quem quiser conferir.</p>
+      <p>Aqui só há arquivos que existem no repositório ou na Release. Cada item diz de qual programa veio. Nada aqui é ensaio físico: a garra ainda não foi impressa nem testada em bancada.</p>
+      <div class="legenda glass" role="list" aria-label="Origem de cada item">
+        <span role="listitem" style="--c: var(--o-fusion)"><i></i>Autodesk Fusion: estudos de tensão</span>
+        <span role="listitem" style="--c: var(--o-orca)"><i></i>OrcaSlicer: fatiamento, peso e tempo</span>
+        <span role="listitem" style="--c: var(--o-fe)"><i></i>FE próprio (Python): garra com preenchimento</span>
+        <span role="listitem" style="--c: var(--o-mola)"><i></i>Modelo de molas: impacto no PAD</span>
+        <span role="listitem" style="--c: var(--o-ilus)"><i></i>Ilustração: explica, não calcula</span>
+      </div>
+    </section>
+
+    <!-- ============ 1. AUTODESK FUSION ============ -->
+    <section class="ev-sec" id="fusion" style="--c: var(--o-fusion)">
+      <h2><i></i>Autodesk Fusion</h2>
+      <p class="intro">O Fusion resolveu 3 estudos de tensão estática (F1, F2 e F3), todos na versão 2706.1.17. Os relatórios abaixo são os arquivos nativos que o próprio Fusion exportou. As imagens desta seção foram tiradas deles sem mudar nenhum byte (<a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/evidencias/fusion/manifesto.json">manifesto com o SHA-256 de cada uma</a>).</p>
+
+      <!-- F1 -->
+      <article class="estudo glass" id="f1">
+        <header><span class="cod">[F1]</span><h3>Peça superior maciça em PA6-CF, 24 kg</h3><span class="tag" style="--c: var(--o-fusion)"><i></i>Autodesk Fusion</span></header>
+        <p>Peça de cima da garra, sem preenchimento (sólida). Estudo 1. Relatório exportado em 11/11/2026 às 00:28.</p>
+        <div class="dados">
+          <dl><dt>Material</dt><dd>Bambu PA6-CF V3.0</dd><dd>Módulo <b>4.430 MPa</b>, Poisson <b>0,39</b></dd><dd>Resistência à tração <b>102 MPa</b></dd></dl>
+          <dl><dt>Malha</dt><dd>Elemento médio <b>3 mm</b>, parabólico</dd><dd><b>498.261</b> nós · <b>339.001</b> elementos</dd></dl>
+          <dl><dt>Fixação e carga</dt><dd>Fixo nos 6 furos da flange do robô</dd><dd><b>4 × 88,84 N</b> para baixo (−Z)</dd><dd>24 kg × (9,81 + 5 m/s²) = 355,36 N</dd></dl>
+        </div>
+        <div class="res-wrap"><table class="res">
+          <thead><tr><th>Resultado</th><th class="n">PA6-CF</th></tr></thead>
+          <tbody>
+            <tr><td>Tensão de von Mises máxima</td><td class="n">3,232 MPa</td></tr>
+            <tr><td>1ª tensão principal máxima</td><td class="n">5,163 MPa</td></tr>
+            <tr><td>Deslocamento máximo</td><td class="n">≈ 0,080 mm</td></tr>
+            <tr><td>Fator de segurança mínimo</td><td class="n">19,755</td></tr>
+          </tbody>
+        </table></div>
+        <div class="galeria">
+          <figure><a class="img" href="assets/img/bancada/malha.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/bancada/malha.png" alt="Peça superior no Fusion" width="1160" height="609"></a><figcaption>Modelo analisado<small>relatório F1, imagem 8</small></figcaption></figure>
+          <figure><a class="img" href="evidencias/fusion/pa6cf_restricoes.png" target="_blank" rel="noopener"><img loading="lazy" src="evidencias/fusion/pa6cf_restricoes.png" alt="Fixação nos 6 furos da flange" width="1160" height="609"></a><figcaption>Fixação: Fixo1<small>relatório F1, imagem 9</small></figcaption></figure>
+          <figure><a class="img" href="assets/img/bancada/cargas.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/bancada/cargas.png" alt="Quatro cargas para baixo nas interfaces" width="1160" height="609"></a><figcaption>Carga: Força1<small>relatório F1, imagem 10</small></figcaption></figure>
+          <figure><a class="img" href="assets/img/bancada/pa6cf_sf.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/bancada/pa6cf_sf.png" alt="Mapa do fator de segurança, PA6-CF" width="1500" height="604"></a><figcaption>Fator de segurança<small>relatório F1, imagem 11</small></figcaption></figure>
+          <figure><div class="falta">A imagem de von Mises não está no relatório do PA6-CF: na exportação, o Fusion repetiu ali a imagem do fator de segurança.</div><figcaption>Tensão de von Mises<small>relatório F1, imagem 13 (repetida)</small></figcaption></figure>
+          <figure><a class="img" href="assets/img/bancada/pa6cf_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/bancada/pa6cf_p1.png" alt="Mapa da 1ª tensão principal, PA6-CF" width="1500" height="604"></a><figcaption>1ª tensão principal<small>relatório F1, imagem 14</small></figcaption></figure>
+          <figure><a class="img" href="assets/img/bancada/pa6cf_p3.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/bancada/pa6cf_p3.png" alt="Mapa da 3ª tensão principal, PA6-CF" width="1500" height="604"></a><figcaption>3ª tensão principal<small>relatório F1, imagem 15</small></figcaption></figure>
+          <figure><a class="img" href="assets/img/bancada/pa6cf_desl.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/bancada/pa6cf_desl.png" alt="Mapa do deslocamento, PA6-CF" width="1500" height="604"></a><figcaption>Deslocamento total<small>relatório F1, imagem 16</small></figcaption></figure>
+        </div>
+        <p class="aviso"><b>Duas coisas que o relatório mostra e precisam de explicação.</b> (1) A tabela de máximos e mínimos saiu vazia na exportação: os números acima foram lidos nas legendas das figuras e na tela de resultados, e estão anotados nas <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/brutos/fusion/preparacao_garra/COMPARACAO_SAMI_2026-11-11.md">notas da campanha</a>. (2) O texto automático do Fusion diz que o projeto pode "dobrar permanentemente ou quebrar". No cadastro do material, a resistência ao escoamento ficou em 0,00 MPa, porque o fabricante não publica esse valor. O fator de segurança usa a resistência máxima à tração, como está no próprio relatório.</p>
+        <div class="arquivos">
+          <a class="principal" href="dados/brutos/fusion/preparacao_garra/SAMI_PA6CF_24kg_Relatorio_Fusion.html" target="_blank" rel="noopener">Relatório nativo do Fusion (abre no navegador)</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/brutos/fusion/preparacao_garra/SAMI_PA6CF_24kg_Relatorio_Fusion.txt">Texto do relatório</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/brutos/fusion/preparacao_garra/campanha_2026-11-11.json">Registro da campanha (JSON)</a>
+        </div>
+      </article>
+
+      <!-- F2 -->
+      <article class="estudo glass" id="f2">
+        <header><span class="cod">[F2]</span><h3>Mesma peça em Tritan TX1001 (material da garra atual)</h3><span class="tag" style="--c: var(--o-fusion)"><i></i>Autodesk Fusion</span></header>
+        <p>Mesmo documento, mesma malha, mesma fixação e mesma carga do F1. Só muda o material. Estudo 2. Relatório exportado em 11/11/2026 às 00:58.</p>
+        <div class="dados">
+          <dl><dt>Material</dt><dd>Eastman Tritan TX1001</dd><dd>Módulo <b>1.548 MPa</b>, Poisson <b>0,38</b></dd><dd>Resistência na ruptura <b>58 MPa</b></dd></dl>
+          <dl><dt>Malha</dt><dd><b>498.261</b> nós · <b>339.001</b> elementos</dd></dl>
+          <dl><dt>Fixação e carga</dt><dd>Iguais ao F1: <b>4 × 88,84 N</b> em −Z</dd></dl>
+        </div>
+        <div class="res-wrap"><table class="res">
+          <thead><tr><th>Resultado</th><th class="n">PA6-CF (F1)</th><th class="n">Tritan (F2)</th></tr></thead>
+          <tbody>
+            <tr><td>Tensão de von Mises máxima</td><td class="n">3,232 MPa</td><td class="n">3,222 MPa</td></tr>
+            <tr><td>1ª tensão principal máxima</td><td class="n">5,163 MPa</td><td class="n">5,025 MPa</td></tr>
+            <tr><td>Deslocamento máximo</td><td class="n">≈ 0,080 mm</td><td class="n">≈ 0,230 mm</td></tr>
+            <tr><td>Fator de segurança mínimo</td><td class="n">19,755</td><td class="n">11,542</td></tr>
+          </tbody>
+        </table></div>
+        <div class="galeria">
+          <figure><a class="img" href="evidencias/fusion/tritan_modelo.png" target="_blank" rel="noopener"><img loading="lazy" src="evidencias/fusion/tritan_modelo.png" alt="Peça superior no Fusion, estudo Tritan" width="1160" height="609"></a><figcaption>Modelo analisado<small>relatório F2, imagem 8</small></figcaption></figure>
+          <figure><a class="img" href="evidencias/fusion/tritan_restricoes.png" target="_blank" rel="noopener"><img loading="lazy" src="evidencias/fusion/tritan_restricoes.png" alt="Fixação nos furos da flange, estudo Tritan" width="1160" height="609"></a><figcaption>Fixação: Fixo1<small>relatório F2, imagem 9</small></figcaption></figure>
+          <figure><a class="img" href="evidencias/fusion/tritan_cargas.png" target="_blank" rel="noopener"><img loading="lazy" src="evidencias/fusion/tritan_cargas.png" alt="Cargas nas interfaces, estudo Tritan" width="1160" height="609"></a><figcaption>Carga: Força1<small>relatório F2, imagem 10</small></figcaption></figure>
+          <figure><a class="img" href="assets/img/bancada/tritan_sf.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/bancada/tritan_sf.png" alt="Mapa do fator de segurança, Tritan" width="1500" height="604"></a><figcaption>Fator de segurança<small>relatório F2, imagem 11</small></figcaption></figure>
+          <figure><a class="img" href="assets/img/bancada/tritan_vm.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/bancada/tritan_vm.png" alt="Mapa de von Mises, Tritan" width="1500" height="604"></a><figcaption>Tensão de von Mises<small>relatório F2, imagem 13</small></figcaption></figure>
+          <figure><a class="img" href="assets/img/bancada/tritan_p1.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/bancada/tritan_p1.png" alt="Mapa da 1ª tensão principal, Tritan" width="1500" height="604"></a><figcaption>1ª tensão principal<small>relatório F2, imagem 14</small></figcaption></figure>
+          <figure><a class="img" href="assets/img/bancada/tritan_p3.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/bancada/tritan_p3.png" alt="Mapa da 3ª tensão principal, Tritan" width="1500" height="604"></a><figcaption>3ª tensão principal<small>relatório F2, imagem 15</small></figcaption></figure>
+          <figure><a class="img" href="assets/img/bancada/tritan_desl.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/bancada/tritan_desl.png" alt="Mapa do deslocamento, Tritan" width="1500" height="604"></a><figcaption>Deslocamento total<small>relatório F2, imagem 16</small></figcaption></figure>
+        </div>
+        <p class="nota">Os dados do Tritan são de peça moldada (injetada), e os do PA6-CF são de corpo de prova impresso. Por isso a comparação mostra rigidez, não qual peça impressa aguenta mais.</p>
+        <div class="arquivos">
+          <a class="principal" href="dados/brutos/fusion/preparacao_garra/SAMI_TRITAN_24kg_Relatorio_Fusion.html" target="_blank" rel="noopener">Relatório nativo do Fusion (abre no navegador)</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/brutos/fusion/preparacao_garra/SAMI_TRITAN_24kg_Relatorio_Fusion.txt">Texto do relatório</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/brutos/fusion/preparacao_garra/COMPARACAO_SAMI_2026-11-11.md">Notas da campanha F1 + F2</a>
+        </div>
+      </article>
+
+      <!-- F3 -->
+      <article class="estudo glass" id="f3">
+        <header><span class="cod">[F3]</span><h3>Conferência do método: esfera de 50 mm com 100 N</h3><span class="tag" style="--c: var(--o-fusion)"><i></i>Autodesk Fusion</span></header>
+        <p>Teste simples feito antes da garra, para conferir o caminho completo no Fusion: material cadastrado, malha, carga e relatório. Relatório exportado em 10/11/2026.</p>
+        <div class="dados">
+          <dl><dt>Modelo e material</dt><dd>Esfera maciça de 50 mm</dd><dd>SUNLU ABS-Like (resina), módulo <b>1.020 MPa</b></dd></dl>
+          <dl><dt>Malha</dt><dd>Elemento médio <b>2,5 mm</b></dd><dd><b>33.245</b> nós · <b>23.151</b> elementos</dd></dl>
+          <dl><dt>Resultado</dt><dd>von Mises máx. <b>0,263 MPa</b></dd><dd>Deslocamento máx. <b>≈ 0,005 mm</b></dd><dd>Fator de segurança mín. <b>59,155</b></dd></dl>
+        </div>
+        <div class="galeria">
+          <figure><a class="img" href="evidencias/fusion/esfera_modelo.png" target="_blank" rel="noopener"><img loading="lazy" src="evidencias/fusion/esfera_modelo.png" alt="Esfera no Fusion" width="1160" height="609"></a><figcaption>Modelo analisado<small>relatório F3, imagem 8</small></figcaption></figure>
+          <figure><a class="img" href="evidencias/fusion/esfera_restricoes.png" target="_blank" rel="noopener"><img loading="lazy" src="evidencias/fusion/esfera_restricoes.png" alt="Calota de baixo fixa" width="1160" height="609"></a><figcaption>Fixação: calota de baixo<small>relatório F3, imagem 9</small></figcaption></figure>
+          <figure><a class="img" href="evidencias/fusion/esfera_cargas.png" target="_blank" rel="noopener"><img loading="lazy" src="evidencias/fusion/esfera_cargas.png" alt="100 N na calota de cima" width="1160" height="609"></a><figcaption>Carga: 100 N na calota de cima<small>relatório F3, imagem 10</small></figcaption></figure>
+          <figure><a class="img" href="evidencias/fusion/esfera_fator_seguranca.png" target="_blank" rel="noopener"><img loading="lazy" src="evidencias/fusion/esfera_fator_seguranca.png" alt="Fator de segurança da esfera" width="1500" height="604"></a><figcaption>Fator de segurança<small>relatório F3, imagem 11</small></figcaption></figure>
+          <figure><a class="img" href="evidencias/fusion/esfera_von_mises.png" target="_blank" rel="noopener"><img loading="lazy" src="evidencias/fusion/esfera_von_mises.png" alt="von Mises da esfera" width="1500" height="604"></a><figcaption>Tensão de von Mises<small>relatório F3, imagem 13</small></figcaption></figure>
+          <figure><a class="img" href="evidencias/fusion/esfera_principal_1.png" target="_blank" rel="noopener"><img loading="lazy" src="evidencias/fusion/esfera_principal_1.png" alt="1ª tensão principal da esfera" width="1500" height="604"></a><figcaption>1ª tensão principal<small>relatório F3, imagem 14</small></figcaption></figure>
+          <figure><a class="img" href="evidencias/fusion/esfera_principal_3.png" target="_blank" rel="noopener"><img loading="lazy" src="evidencias/fusion/esfera_principal_3.png" alt="3ª tensão principal da esfera" width="1500" height="604"></a><figcaption>3ª tensão principal<small>relatório F3, imagem 15</small></figcaption></figure>
+          <figure><a class="img" href="evidencias/fusion/esfera_deslocamento.png" target="_blank" rel="noopener"><img loading="lazy" src="evidencias/fusion/esfera_deslocamento.png" alt="Deslocamento da esfera" width="1500" height="604"></a><figcaption>Deslocamento total<small>relatório F3, imagem 16</small></figcaption></figure>
+        </div>
+        <p class="nota">Dois estudos térmicos da esfera foram montados, mas não rodaram: o Fusion pedia créditos de nuvem que a conta não tinha. Não há resultado térmico.</p>
+        <div class="arquivos">
+          <a class="principal" href="dados/brutos/fusion/Esfera_SUNLU_100N_Relatorio_Fusion.html" target="_blank" rel="noopener">Relatório nativo do Fusion (abre no navegador)</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/brutos/fusion/RESULTADOS_ESFERA_SUNLU.md">Resultados e hipóteses</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/brutos/fusion/Esfera_SUNLU_100N_Relatorio_Fusion_texto.txt">Texto do relatório</a>
+        </div>
+      </article>
+
+      <!-- F4 -->
+      <article class="estudo glass" id="f4">
+        <header><span class="cod">[F4]</span><h3>Garra R07 com preenchimento: montada, mas sem resultado</h3><span class="tag" style="--c: var(--o-fusion)"><i></i>Autodesk Fusion</span></header>
+        <p>A equipe tentou levar a peça com preenchimento para o Fusion. O registro mostra o que aconteceu:</p>
+        <div class="dados">
+          <dl><dt>1ª tentativa (11/11)</dt><dd>98 corpos e 7 materiais</dd><dd>Os contatos automáticos pararam em cerca de 5% por mais de 12 min. Foi cancelado.</dd></dl>
+          <dl><dt>2ª tentativa (12/11)</dt><dd>Modelo leve de 2 corpos: casca <b>281,98 cm³</b> + núcleo <b>1.110,07 cm³</b></dd><dd>O solve deu erro de malha na casca (triângulos muito finos).</dd></dl>
+          <dl><dt>Consequência</dt><dd>O Fusion não calculou a garra com preenchimento.</dd><dd>Essa conta foi feita no FE próprio (abaixo).</dd></dl>
+        </div>
+        <div class="arquivos">
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/fusion/fusion_build_2corpos.json">Registro do modelo de 2 corpos (JSON)</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/RELATORIO_R07.md#4-fusion">Relatório R07, seção 4</a>
+        </div>
+      </article>
+
+      <!-- Capturas -->
+      <article class="estudo glass" id="capturas">
+        <header><h3>Capturas de tela do Fusion: o exterior da garra</h3><span class="tag" style="--c: var(--o-fusion)"><i></i>Autodesk Fusion</span></header>
+        <p>Imagens salvas pelo próprio Fusion, por comando da API (<code>Viewport.saveAsImageFile</code>), na preparação da garra (rodada R04). Mostram a geometria externa original e as peças com as zonas internas escondidas: por fora, nada muda.</p>
+        <div class="galeria largo">
+          <figure><a class="img" href="assets/img/bancada/garra_montagem.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/bancada/garra_montagem.png" alt="Garra montada no Fusion, geometria externa original" width="1600" height="1100"></a><figcaption>Garra montada, exterior original<small>GARRA_R04_EXTERIOR_ORIGINAL_PREPARACAO.png</small></figcaption></figure>
+          <figure><a class="img" href="evidencias/fusion/captura_superior_exterior_inalterado.png" target="_blank" rel="noopener"><img loading="lazy" src="evidencias/fusion/captura_superior_exterior_inalterado.png" alt="Peça superior no Fusion com exterior inalterado" width="1600" height="1100"></a><figcaption>Peça superior, exterior inalterado<small>GARRA_SUPERIOR_ZONAS_R04_EXTERIOR_INALTERADO.png</small></figcaption></figure>
+          <figure><a class="img" href="evidencias/fusion/captura_inferior_esq_exterior_inalterado.png" target="_blank" rel="noopener"><img loading="lazy" src="evidencias/fusion/captura_inferior_esq_exterior_inalterado.png" alt="Peça inferior esquerda no Fusion" width="1600" height="1100"></a><figcaption>Inferior esquerda, exterior inalterado<small>GARRA_INFERIOR_ESQ_ZONAS_R04_EXTERIOR_INALTERADO.png</small></figcaption></figure>
+          <figure><a class="img" href="evidencias/fusion/captura_inferior_dir_exterior_inalterado.png" target="_blank" rel="noopener"><img loading="lazy" src="evidencias/fusion/captura_inferior_dir_exterior_inalterado.png" alt="Peça inferior direita no Fusion" width="1600" height="1100"></a><figcaption>Inferior direita, exterior inalterado<small>GARRA_INFERIOR_DIR_ZONAS_R04_EXTERIOR_INALTERADO.png</small></figcaption></figure>
+          <figure><a class="img" href="evidencias/fusion/captura_pads_separados.png" target="_blank" rel="noopener"><img loading="lazy" src="evidencias/fusion/captura_pads_separados.png" alt="Oito PADs separados no Fusion" width="1600" height="1100"></a><figcaption>Os 8 PADs separados<small>PADs_R04_SEPARADOS.png</small></figcaption></figure>
+        </div>
+        <div class="arquivos">
+          <a class="principal" href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/modelos/SAI_final/cad">CAD final da garra SAI (STEP exportado do Fusion)</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/modelos_3d.zip">Modelos 3D, inclusive arquivos .f3d do Fusion (Release, 300 MB)</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ 2. ORCASLICER ============ -->
+    <section class="ev-sec" id="orca" style="--c: var(--o-orca)">
+      <h2><i></i>OrcaSlicer</h2>
+      <p class="intro">Peso, tempo de impressão e camadas vêm do fatiamento no OrcaSlicer 2.5.0, para a Creality K1 Max, em escala 1:1. Nenhum arquivo foi enviado à impressora (<code>"sent_to_printer": false</code> em cada registro).</p>
+      <article class="estudo glass" id="o1">
+        <header><span class="cod">[O1]</span><h3>Fatiamento da garra SAI final</h3><span class="tag" style="--c: var(--o-orca)"><i></i>OrcaSlicer</span></header>
+        <div class="res-wrap"><table class="res">
+          <thead><tr><th>Peça</th><th>Material</th><th>Preenchimento</th><th class="n">Peso da peça</th><th class="n">Tempo</th><th>Registro</th></tr></thead>
+          <tbody>
+            <tr><td>Superior</td><td>PA6-CF</td><td>giroide 25% + 4 zonas</td><td class="n">666,4 g</td><td class="n">34,2 h</td><td><a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/dados/brutos/desempenho/05_Orca/R07/COMPARATIVO/Resultado_R07_SEM_SUPERIOR">log e status</a></td></tr>
+            <tr><td>Inferior esquerda</td><td>PA6-CF</td><td>giroide 20% + 3 zonas</td><td class="n">383,2 g</td><td class="n">20,5 h</td><td><a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/dados/brutos/desempenho/05_Orca/R07/Resultado_INFERIOR_ESQ_B20">log e status</a></td></tr>
+            <tr><td>Inferior direita</td><td>PA6-CF</td><td>giroide 20% + 3 zonas</td><td class="n">383,2 g</td><td class="n">20,5 h</td><td><a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/dados/brutos/desempenho/05_Orca/R07/Resultado_INFERIOR_DIR_B20">log e status</a></td></tr>
+            <tr><td>8 PADs</td><td>TPU 95A</td><td>giroide 40%</td><td class="n">93,1 g</td><td class="n">11,0 h</td><td><a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/dados/brutos/desempenho/05_Orca/Resultado_PAD_K1MAX">log e status</a></td></tr>
+            <tr><td><b>Total</b></td><td></td><td></td><td class="n"><b>1.525,9 g</b></td><td class="n"><b>86,2 h</b></td><td></td></tr>
+          </tbody>
+        </table></div>
+        <div class="galeria largo">
+          <figure class="claro"><a class="img" href="assets/img/r07/camadas_r07_superior_sem.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/r07/camadas_r07_superior_sem.jpg" alt="Camadas reais do G-code da peça superior"></a><figcaption>Camadas do G-code real da peça superior (garra SAI). Só os tubos dos furos ficam a 100%.<small>assets/img/r07/camadas_r07_superior_sem.jpg · r07_camadas.py</small></figcaption></figure>
+          <figure class="claro"><a class="img" href="assets/img/r07/camadas_r07_inferior.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/r07/camadas_r07_inferior.jpg" alt="Camadas reais do G-code da peça inferior"></a><figcaption>Camadas do G-code da inferior direita na variante com esqueleto (comparação). A garra SAI usa a versão sem esqueleto.<small>assets/img/r07/camadas_r07_inferior.jpg · r07_camadas.py</small></figcaption></figure>
+          <figure class="claro"><a class="img" href="assets/img/r07/encaixe_r07_sem.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/r07/encaixe_r07_sem.jpg" alt="Corte do encaixe com as zonas internas"></a><figcaption>Corte do encaixe, feito com os modificadores do Orca. Mostra geometria, não é cálculo de tensão.<small>assets/img/r07/encaixe_r07_sem.jpg · r07_encaixe.py</small></figcaption></figure>
+        </div>
+        <div class="arquivos">
+          <a class="principal" href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/modelos/SAI_final">Projetos 3MF da garra SAI, prontos para fatiar</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/orca_fatiados_R07.zip">Fatiados R07 com G-code (Release, 1,04 GB)</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/orca_fatiados_R04.zip">Fatiado dos PADs (Release, 266 MB)</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/orca/r07_comparativo_fatiamento.json">Comparativo de todos os fatiamentos (JSON)</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ 3. FE PRÓPRIO ============ -->
+    <section class="ev-sec" id="fe" style="--c: var(--o-fe)">
+      <h2><i></i>FE próprio (Python)</h2>
+      <p class="intro"><b>Não é Fusion.</b> Como o Fusion não resolveu a peça com preenchimento ([F4]), a garra montada com as zonas e o giroide foi calculada por um programa de elementos finitos feito pela equipe em Python (voxels de 3 mm). Os vídeos e gráficos abaixo são desenhados a partir desses campos já calculados: nenhum deles cria resultado novo.</p>
+      <article class="estudo glass" id="calibracao">
+        <header><h3>Ligação com o Fusion: calibração do pico</h3><span class="tag" style="--c: var(--o-fe)"><i></i>FE próprio + Fusion F1</span></header>
+        <p>A mesma peça maciça, com a mesma carga do F1, foi calculada nos dois programas. O deslocamento bate; o pico de tensão do FE por voxels é menor, por isso os resultados do FE são multiplicados por 2,2.</p>
+        <div class="res-wrap"><table class="res">
+          <thead><tr><th>Peça superior maciça, 355,36 N</th><th class="n">Fusion [F1]</th><th class="n">FE por voxels</th><th class="n">Razão</th></tr></thead>
+          <tbody>
+            <tr><td>von Mises máxima</td><td class="n">3,232 MPa</td><td class="n">1,459 MPa</td><td class="n">2,22</td></tr>
+            <tr><td>1ª principal máxima</td><td class="n">5,163 MPa</td><td class="n">1,915 MPa</td><td class="n">2,70</td></tr>
+            <tr><td>Deslocamento máximo</td><td class="n">0,080 mm</td><td class="n">0,0779 mm</td><td class="n">1,03</td></tr>
+          </tbody>
+        </table></div>
+        <p class="nota">Se a calibração usasse a 1ª principal (2,7), os fatores de segurança cairiam cerca de 19% (garra SAI: FS 3,89 → 3,17). O pico do Fusion fica perto de apoios e furos e não teve estudo de convergência: é uma calibração de ordem de grandeza.</p>
+        <div class="arquivos">
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/fusion/calibracao_pico.json">Calibração (JSON)</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/scripts/calibracao_pico.py">Script</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/montagem/montagem_R07_SEM.json">Resultado da garra SAI montada (JSON)</a>
+        </div>
+      </article>
+
+      <article class="estudo glass" id="fe-videos">
+        <header><h3>Vídeos de simulação</h3><span class="tag" style="--c: var(--o-fe)"><i></i>FE próprio</span></header>
+        <div class="galeria largo">
+          <figure><video src="assets/video/carga_sai.mp4" poster="assets/video/carga_sai_poster.jpg" controls muted playsinline preload="none"></video><figcaption>Garra SAI com 24 kg numa asa<small>r07_video_sai.py · montagem_R07_SEM</small></figcaption></figure>
+          <figure><video src="assets/video/carga_24kg_asa.mp4" poster="assets/video/carga_24kg_asa_poster.jpg" controls muted playsinline preload="none"></video><figcaption>Com e sem esqueleto e giroide 30%, carga de 0 a 24 kg numa asa<small>r07_videos.py · FE estático linear</small></figcaption></figure>
+          <figure><video src="assets/video/impacto_r07_comparativo.mp4" poster="assets/video/impacto_r07_poster.jpg" controls muted playsinline preload="none"></video><figcaption>Corte da peça superior das 4 variantes durante o tranco<small>r07_impacto.py · FE transiente</small></figcaption></figure>
+          <figure><video src="assets/video/impacto_distribuicao.mp4" poster="assets/video/impacto_distribuicao_poster.jpg" controls muted playsinline preload="none"></video><figcaption>Índice de falha voxel a voxel nos 80 ms do tranco<small>r07_impacto.py --campos3d</small></figcaption></figure>
+          <figure><video src="assets/video/absorcao_giroide.mp4" poster="assets/video/absorcao_giroide_poster.jpg" controls muted playsinline preload="none"></video><figcaption>Quanto o giroide trabalha e quanta energia ele guarda<small>r07_impacto.py --campos3d</small></figcaption></figure>
+        </div>
+      </article>
+
+      <article class="estudo glass" id="fe-graficos">
+        <header><h3>Gráficos e mapas</h3><span class="tag" style="--c: var(--o-fe)"><i></i>FE próprio</span></header>
+        <p>Comparam a garra SAI (R07 sem esqueleto) com as outras variantes estudadas. Peso e massa vêm do OrcaSlicer; resistência, flecha, impacto e fadiga vêm do FE próprio.</p>
+        <div class="galeria">
+          <figure class="claro"><a class="img" href="assets/img/r07/01_massa_garra.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/r07/01_massa_garra.jpg" alt="Gráfico de massa por variante"></a><figcaption>Massa impressa por variante e Tritan instalada (Orca)<small>01_massa_garra.jpg</small></figcaption></figure>
+          <figure class="claro"><a class="img" href="assets/img/r07/02_garra_completa_payload.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/r07/02_garra_completa_payload.jpg" alt="Gráfico de garra mais caixas contra o limite do robô"></a><figcaption>Garra e garra + 2 caixas contra o limite de 30 kg do UR30<small>02_garra_completa_payload.jpg</small></figcaption></figure>
+          <figure class="claro"><a class="img" href="assets/img/r07/03_carga_maxima_montagem.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/r07/03_carga_maxima_montagem.jpg" alt="Gráfico de carga máxima numa asa"></a><figcaption>Carga máxima numa asa, garra montada<small>03_carga_maxima_montagem.jpg</small></figcaption></figure>
+          <figure class="claro"><a class="img" href="assets/img/r07/04_fs_24_30.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/r07/04_fs_24_30.jpg" alt="Gráfico de fator de segurança com 24 e 30 kg"></a><figcaption>Fator de segurança com 24 e 30 kg numa asa<small>04_fs_24_30.jpg</small></figcaption></figure>
+          <figure class="claro"><a class="img" href="assets/img/r07/05_massa_x_resistencia.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/r07/05_massa_x_resistencia.jpg" alt="Gráfico de massa contra resistência"></a><figcaption>Massa contra resistência<small>05_massa_x_resistencia.jpg</small></figcaption></figure>
+          <figure class="claro"><a class="img" href="assets/img/r07/06_rigidez_deslocamento.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/r07/06_rigidez_deslocamento.jpg" alt="Gráfico de flecha e rigidez"></a><figcaption>Flecha a 24 kg e rigidez da asa montada<small>06_rigidez_deslocamento.jpg</small></figcaption></figure>
+          <figure class="claro"><a class="img" href="assets/img/r07/07_mapas_montagem_lado_a_lado.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/r07/07_mapas_montagem_lado_a_lado.jpg" alt="Mapas de índice de falha da garra montada"></a><figcaption>Mapas de índice de falha da garra montada<small>07_mapas_montagem_lado_a_lado.jpg</small></figcaption></figure>
+          <figure class="claro"><a class="img" href="assets/img/r07/08_mapas_superior_lado_a_lado.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/r07/08_mapas_superior_lado_a_lado.jpg" alt="Mapas da peça superior"></a><figcaption>Mapas da peça superior isolada<small>08_mapas_superior_lado_a_lado.jpg</small></figcaption></figure>
+          <figure class="claro"><a class="img" href="assets/img/r07/09_impacto_curvas.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/r07/09_impacto_curvas.jpg" alt="Curvas do impacto no tempo"></a><figcaption>Impacto: tensão e índice do giroide no tempo<small>09_impacto_curvas.jpg</small></figcaption></figure>
+          <figure class="claro"><a class="img" href="assets/img/r07/10_impacto_resumo.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/r07/10_impacto_resumo.jpg" alt="Resumo do impacto por variante"></a><figcaption>Impacto: pico, fator dinâmico e FS por variante<small>10_impacto_resumo.jpg</small></figcaption></figure>
+          <figure class="claro"><a class="img" href="assets/img/r07/11_impacto_snapshot_pico.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/r07/11_impacto_snapshot_pico.jpg" alt="Seção crítica no pico do impacto"></a><figcaption>Seção crítica no instante de pico do impacto<small>11_impacto_snapshot_pico.jpg</small></figcaption></figure>
+          <figure class="claro"><a class="img" href="assets/img/r07/12_fadiga.jpg" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/r07/12_fadiga.jpg" alt="Vida estimada em fadiga"></a><figcaption>Vida estimada em fadiga (peça superior)<small>12_fadiga.jpg</small></figcaption></figure>
+        </div>
+        <div class="arquivos">
+          <a class="principal" href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/RELATORIO_R07.md">Relatório técnico R07</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/dados/montagem">Garra montada (JSON)</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/dados/impacto">Impacto (JSON)</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/fadiga/r07_vida.json">Fadiga (JSON)</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/dados/scripts">Scripts</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/fe_campos_npz.zip">Campos de FE em NumPy (Release, 255 MB)</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ 4. PAD ============ -->
+    <section class="ev-sec" id="pad" style="--c: var(--o-mola)">
+      <h2><i></i>PAD: modelo de molas</h2>
+      <p class="intro"><b>Não é Fusion e não é FE.</b> A força no impacto com e sem PAD vem de um modelo matemático de molas em uma dimensão (estudo R03): esfera de 263 g a 1 m/s, pico de 451 N sem PAD e 169 N com PAD. É uma estimativa, sem ensaio.</p>
+      <article class="estudo glass" id="r03">
+        <header><span class="cod">[E3]</span><h3>Impacto no PAD, estudo R03</h3><span class="tag" style="--c: var(--o-mola)"><i></i>Modelo de molas 1D</span></header>
+        <div class="galeria largo">
+          <figure><video src="assets/video/impacto_pad_r03.mp4" poster="assets/video/impacto_pad_r03_poster.jpg" controls muted playsinline preload="none"></video><figcaption>Animação do resultado do R03 (feita com HyperFrames a partir da série de forças do modelo)<small>assets/video/impacto_pad_r03.mp4</small></figcaption></figure>
+          <figure><video src="assets/video/pad_impacto_limpo.mp4" poster="assets/video/pad_impacto_limpo_poster.jpg" controls muted playsinline preload="none"></video><figcaption>O mesmo vídeo, recortado e sem legenda (usado no slide Valor de teste)<small>assets/video/pad_impacto_limpo.mp4</small></figcaption></figure>
+          <figure class="claro"><a class="img" href="assets/img/bancada/impacto_pico.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/bancada/impacto_pico.png" alt="Gráfico do pico de força com e sem PAD"></a><figcaption>Pico de força com e sem PAD. O próprio gráfico avisa: modelo 1D, não é FEA.<small>assets/img/bancada/impacto_pico.png</small></figcaption></figure>
+        </div>
+        <div class="arquivos">
+          <a class="principal" href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/brutos/impacto_pad_hexa15/01_Relatorio/RELATORIO_SAMI_HEXA15.md">Relatório do R03</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/brutos/impacto_pad_hexa15/02_Dados/parametros_resultados_R03.json">Parâmetros e resultados (JSON)</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/brutos/impacto_pad_hexa15/02_Dados/resposta_temporal_R03.csv">Série de forças no tempo (CSV)</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/impacto/pad_limites.json">Limites do PAD na garra SAI (JSON)</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ 5. ILUSTRAÇÕES ============ -->
+    <section class="ev-sec" id="ilustracoes" style="--c: var(--o-ilus)">
+      <h2><i></i>Ilustrações e material da equipe</h2>
+      <p class="intro"><b>Não são simulação nem filmagem.</b> Servem para explicar a ideia na apresentação. Os números que aparecem nelas vêm dos itens acima ou dos dados da equipe.</p>
+      <article class="estudo glass">
+        <div class="galeria largo">
+          <figure><video src="assets/video/linha_palete.mp4" poster="assets/video/linha_palete_poster.jpg" controls muted playsinline preload="none"></video><figcaption>Animação da linha de paletização (HyperFrames)<small>dados/hyperframes/linha_palete</small></figcaption></figure>
+          <figure><video src="assets/video/pad_escudo.mp4" poster="assets/video/pad_escudo_poster.jpg" controls muted playsinline preload="none"></video><figcaption>Animação do PAD como escudo (HyperFrames), com as forças do R03<small>dados/hyperframes/pad_escudo</small></figcaption></figure>
+          <figure class="claro"><a class="img" href="assets/img/bancada/zonas_coloridas.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/img/bancada/zonas_coloridas.png" alt="Desenho da garra com as zonas pintadas pela equipe"></a><figcaption>Zonas de reforço marcadas à mão pela equipe sobre o desenho da montagem. Foi o ponto de partida das zonas internas.<small>assets/img/bancada/zonas_coloridas.png</small></figcaption></figure>
+        </div>
+        <div class="arquivos">
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/dados/hyperframes">Projetos das animações</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ 6. BRUTOS ============ -->
+    <section class="ev-sec" id="brutos">
+      <h2>Arquivos brutos e pacotes completos</h2>
+      <p class="intro">Tudo o que foi gerado nas rodadas: logs, JSON, CSV e relatórios em texto. Os arquivos grandes ficam na Release, porque o GitHub não aceita arquivos acima de 100 MB no repositório.</p>
+      <article class="estudo glass">
+        <div class="res-wrap"><table class="res">
+          <thead><tr><th>Pacote</th><th>O que tem</th><th class="n">Tamanho</th></tr></thead>
+          <tbody>
+            <tr><td><a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/textos_logs_dados.zip">textos_logs_dados.zip</a></td><td>os 486 arquivos de <code>dados/brutos</code>: logs do Orca, JSON, CSV, scripts e relatórios</td><td class="n">7 MB</td></tr>
+            <tr><td><a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/relatorios_imagens_videos.zip">relatorios_imagens_videos.zip</a></td><td>230 imagens, relatórios em PDF e vídeos de simulação</td><td class="n">74 MB</td></tr>
+            <tr><td><a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/orca_projetos_3mf.zip">orca_projetos_3mf.zip</a></td><td>40 projetos do Orca com os modificadores internos</td><td class="n">84 MB</td></tr>
+            <tr><td><a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/orca_fatiados_R07.zip">orca_fatiados_R07.zip</a></td><td>15 fatiamentos R07 com G-code</td><td class="n">1,04 GB</td></tr>
+            <tr><td><a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/orca_fatiados_R06.zip">orca_fatiados_R06.zip</a></td><td>6 fatiamentos R06</td><td class="n">583 MB</td></tr>
+            <tr><td><a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/orca_fatiados_R04.zip">orca_fatiados_R04.zip</a></td><td>5 fatiamentos da 1ª rodada (3 peças e PADs)</td><td class="n">266 MB</td></tr>
+            <tr><td><a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/modelos_3d.zip">modelos_3d.zip</a></td><td>259 modelos STL, STEP e Fusion (.f3d)</td><td class="n">300 MB</td></tr>
+            <tr><td><a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/download/dados-2026-11-12/fe_campos_npz.zip">fe_campos_npz.zip</a></td><td>12 campos de FE em NumPy</td><td class="n">255 MB</td></tr>
+          </tbody>
+        </table></div>
+        <div class="arquivos">
+          <a class="principal" href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/tag/dados-2026-11-12">Release dados-2026-11-12</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/dados/brutos">Pasta dados/brutos no GitHub</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/README.md">Guia da pasta de dados</a>
+          <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/REFERENCIAS.md">Referências</a>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <p>Para conferir as imagens do Fusion: <code>python dados/scripts/evidencias_fusion.py --conferir</code>. O script compara cada imagem desta página com a que está dentro do relatório nativo e mostra se algum byte mudou.</p>
+      <p>Nos relatórios publicados, o nome do autor foi trocado por "usuario", para não expor dados pessoais. As imagens dos relatórios são idênticas às exportadas pelo Fusion.</p>
+      <p><a href="index.html#15">← Voltar à apresentação</a></p>
+    </footer>
+  </main>
+</body>
+</html>

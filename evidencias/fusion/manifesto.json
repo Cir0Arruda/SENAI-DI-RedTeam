@@ -1,0 +1,415 @@
+{
+  "gerado_por": "dados/scripts/evidencias_fusion.py",
+  "relatorios": [
+    {
+      "ref": "F1",
+      "relatorio": "dados/brutos/fusion/preparacao_garra/SAMI_PA6CF_24kg_Relatorio_Fusion.html",
+      "sha256": "8fa2e8233d52aeee41d2a99977a6bcc8ea45d4f818e15375cd7a11e9a59225f1",
+      "bytes": 3043334,
+      "versao_fusion": "2706.1.17",
+      "figuras": [
+        {
+          "posicao_no_html": 8,
+          "nome": "modelo",
+          "titulo": "Modelo analisado",
+          "sha256": "99de0514258ed81b5162038d813386b3b686bb8e955b33c7b3c8925d02df2e23",
+          "bytes": 188057,
+          "tamanho_px": [
+            1160,
+            609
+          ],
+          "arquivo": "assets/img/bancada/malha.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 9,
+          "nome": "restricoes",
+          "titulo": "Restrição: Fixo1",
+          "sha256": "2100b7df0a81d3ea79b67e6c34a86fd4acedd623ba9b28b74e5470651b323be4",
+          "bytes": 195300,
+          "tamanho_px": [
+            1160,
+            609
+          ],
+          "arquivo": "evidencias/fusion/pa6cf_restricoes.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 10,
+          "nome": "cargas",
+          "titulo": "Carga: Força1",
+          "sha256": "986e0025fde483053278df0d5c6a0e95318b075bc7cf78db4cf63bdb435f0800",
+          "bytes": 196087,
+          "tamanho_px": [
+            1160,
+            609
+          ],
+          "arquivo": "assets/img/bancada/cargas.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 11,
+          "nome": "fator_seguranca",
+          "titulo": "Fator de segurança (resultados guiados)",
+          "sha256": "3bff0bc116f31cbcb2b6f03ef488d31eb9601b01415c8bf34eb2f7d28dba7c37",
+          "bytes": 266888,
+          "tamanho_px": [
+            1500,
+            604
+          ],
+          "arquivo": "assets/img/bancada/pa6cf_sf.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 12,
+          "nome": "fator_seguranca_resultados",
+          "titulo": "Fator de segurança (resultados)",
+          "sha256": "3bff0bc116f31cbcb2b6f03ef488d31eb9601b01415c8bf34eb2f7d28dba7c37",
+          "bytes": 266888,
+          "estado": "repetida: o relatório traz aqui a mesma imagem de \"Fator de segurança (resultados guiados)\""
+        },
+        {
+          "posicao_no_html": 13,
+          "nome": "von_mises",
+          "titulo": "Tensão de von Mises",
+          "sha256": "3bff0bc116f31cbcb2b6f03ef488d31eb9601b01415c8bf34eb2f7d28dba7c37",
+          "bytes": 266888,
+          "estado": "repetida: o relatório traz aqui a mesma imagem de \"Fator de segurança (resultados guiados)\""
+        },
+        {
+          "posicao_no_html": 14,
+          "nome": "principal_1",
+          "titulo": "1ª tensão principal",
+          "sha256": "0e70bae9ce797dfb96ce99168fafb0af819dc3177c50a000247382c5790bdbba",
+          "bytes": 289831,
+          "tamanho_px": [
+            1500,
+            604
+          ],
+          "arquivo": "assets/img/bancada/pa6cf_p1.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 15,
+          "nome": "principal_3",
+          "titulo": "3ª tensão principal",
+          "sha256": "6a55a6ef3dc12c0e0f9be2a4f6b1e72c56c5e8ac9b6e99768c6699a5d556ccd1",
+          "bytes": 282293,
+          "tamanho_px": [
+            1500,
+            604
+          ],
+          "arquivo": "assets/img/bancada/pa6cf_p3.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 16,
+          "nome": "deslocamento",
+          "titulo": "Deslocamento total",
+          "sha256": "f10bd736f77ab59b3779e2791ddcc65232a0044bc708b07b215e5363fc9338e5",
+          "bytes": 299247,
+          "tamanho_px": [
+            1500,
+            604
+          ],
+          "arquivo": "assets/img/bancada/pa6cf_desl.png",
+          "estado": "ok"
+        }
+      ]
+    },
+    {
+      "ref": "F2",
+      "relatorio": "dados/brutos/fusion/preparacao_garra/SAMI_TRITAN_24kg_Relatorio_Fusion.html",
+      "sha256": "f60f3a81bf4a816ff9709f116608a966241aaa8afe434432bc1bb7f87ef2c8ec",
+      "bytes": 3093579,
+      "versao_fusion": "2706.1.17",
+      "figuras": [
+        {
+          "posicao_no_html": 8,
+          "nome": "modelo",
+          "titulo": "Modelo analisado",
+          "sha256": "751671907b67843669b5fa2eff27dcacc42a91df06f17857936dd65ac27529f3",
+          "bytes": 188054,
+          "tamanho_px": [
+            1160,
+            609
+          ],
+          "arquivo": "evidencias/fusion/tritan_modelo.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 9,
+          "nome": "restricoes",
+          "titulo": "Restrição: Fixo1",
+          "sha256": "1dc8241744ae3e3b6ea9eb2e839f96a10f6d563767ab622257797710123cbac1",
+          "bytes": 195303,
+          "tamanho_px": [
+            1160,
+            609
+          ],
+          "arquivo": "evidencias/fusion/tritan_restricoes.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 10,
+          "nome": "cargas",
+          "titulo": "Carga: Força1",
+          "sha256": "eb8c0b5965cb9017adb67854f2a3e6e1cf880938bf3cfdf8e30b6b61606321e8",
+          "bytes": 196083,
+          "tamanho_px": [
+            1160,
+            609
+          ],
+          "arquivo": "evidencias/fusion/tritan_cargas.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 11,
+          "nome": "fator_seguranca",
+          "titulo": "Fator de segurança (resultados guiados)",
+          "sha256": "6b8d37de2784012be56255bce838e9ce8ba29f5dc9ab835fb1fe78aabcc605c5",
+          "bytes": 267002,
+          "tamanho_px": [
+            1500,
+            604
+          ],
+          "arquivo": "assets/img/bancada/tritan_sf.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 12,
+          "nome": "fator_seguranca_resultados",
+          "titulo": "Fator de segurança (resultados)",
+          "sha256": "6b8d37de2784012be56255bce838e9ce8ba29f5dc9ab835fb1fe78aabcc605c5",
+          "bytes": 267002,
+          "estado": "repetida: o relatório traz aqui a mesma imagem de \"Fator de segurança (resultados guiados)\""
+        },
+        {
+          "posicao_no_html": 13,
+          "nome": "von_mises",
+          "titulo": "Tensão de von Mises",
+          "sha256": "3674a6b00c9df2be38d4ce069aaab28cdb44c6c19c8524556c3405b467e33a6e",
+          "bytes": 312701,
+          "tamanho_px": [
+            1500,
+            604
+          ],
+          "arquivo": "assets/img/bancada/tritan_vm.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 14,
+          "nome": "principal_1",
+          "titulo": "1ª tensão principal",
+          "sha256": "f0e5fa37256b7e29090e7f8339459c266a37c9d851bed5a764be5e93825e0969",
+          "bytes": 287890,
+          "tamanho_px": [
+            1500,
+            604
+          ],
+          "arquivo": "assets/img/bancada/tritan_p1.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 15,
+          "nome": "principal_3",
+          "titulo": "3ª tensão principal",
+          "sha256": "80196f66a7b8697390b86f2d582c5af1a9422934e6e30af859fd213418d7cffa",
+          "bytes": 275500,
+          "tamanho_px": [
+            1500,
+            604
+          ],
+          "arquivo": "assets/img/bancada/tritan_p3.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 16,
+          "nome": "deslocamento",
+          "titulo": "Deslocamento total",
+          "sha256": "82311280cb98b629cd570bb5d8a4318bbcb1485e66d0f8c2e12dc06093d8628f",
+          "bytes": 299626,
+          "tamanho_px": [
+            1500,
+            604
+          ],
+          "arquivo": "assets/img/bancada/tritan_desl.png",
+          "estado": "ok"
+        }
+      ]
+    },
+    {
+      "ref": "F3",
+      "relatorio": "dados/brutos/fusion/Esfera_SUNLU_100N_Relatorio_Fusion.html",
+      "sha256": "33ee933877bac15feb7bf612810e3b999877192f4481c5f993fb2d4ce0469db5",
+      "bytes": 1483914,
+      "versao_fusion": "2706.1.17",
+      "figuras": [
+        {
+          "posicao_no_html": 8,
+          "nome": "modelo",
+          "titulo": "Modelo analisado",
+          "sha256": "ebcead559dcd39282185926f4c76cabf098f493554240db3682cd6a1310e0e0d",
+          "bytes": 68486,
+          "tamanho_px": [
+            1160,
+            609
+          ],
+          "arquivo": "evidencias/fusion/esfera_modelo.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 9,
+          "nome": "restricoes",
+          "titulo": "Restrição: Fixo1",
+          "sha256": "d6aaa5dca658c151d33255aee2035c732c9169e2852932871b680d4f4a5c5cae",
+          "bytes": 68603,
+          "tamanho_px": [
+            1160,
+            609
+          ],
+          "arquivo": "evidencias/fusion/esfera_restricoes.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 10,
+          "nome": "cargas",
+          "titulo": "Carga: Força1",
+          "sha256": "2fd4c999d7a54aadd8d41fbfaaaaee8a486735399dba285a3b33bd5ddfbe8543",
+          "bytes": 66075,
+          "tamanho_px": [
+            1160,
+            609
+          ],
+          "arquivo": "evidencias/fusion/esfera_cargas.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 11,
+          "nome": "fator_seguranca",
+          "titulo": "Fator de segurança (resultados guiados)",
+          "sha256": "7f3edcc58a5f1365b26be9048b921fc0cfd73f9ae825f7ba81c0b97681331bbc",
+          "bytes": 136104,
+          "tamanho_px": [
+            1500,
+            604
+          ],
+          "arquivo": "evidencias/fusion/esfera_fator_seguranca.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 12,
+          "nome": "fator_seguranca_resultados",
+          "titulo": "Fator de segurança (resultados)",
+          "sha256": "7f3edcc58a5f1365b26be9048b921fc0cfd73f9ae825f7ba81c0b97681331bbc",
+          "bytes": 136104,
+          "estado": "repetida: o relatório traz aqui a mesma imagem de \"Fator de segurança (resultados guiados)\""
+        },
+        {
+          "posicao_no_html": 13,
+          "nome": "von_mises",
+          "titulo": "Tensão de von Mises",
+          "sha256": "65c303339594b29abad970bb2700b06ed7e94f84af04859e1b564729e3424e16",
+          "bytes": 165553,
+          "tamanho_px": [
+            1500,
+            604
+          ],
+          "arquivo": "evidencias/fusion/esfera_von_mises.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 14,
+          "nome": "principal_1",
+          "titulo": "1ª tensão principal",
+          "sha256": "b320362c2a6a9fad514748bd58340a921253f671b125f8c5f6142477bff38339",
+          "bytes": 134885,
+          "tamanho_px": [
+            1500,
+            604
+          ],
+          "arquivo": "evidencias/fusion/esfera_principal_1.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 15,
+          "nome": "principal_3",
+          "titulo": "3ª tensão principal",
+          "sha256": "93b7cd26ad6ab9ba49d1511e148b536338f828c9fce017423304c5c45403e2fa",
+          "bytes": 158370,
+          "tamanho_px": [
+            1500,
+            604
+          ],
+          "arquivo": "evidencias/fusion/esfera_principal_3.png",
+          "estado": "ok"
+        },
+        {
+          "posicao_no_html": 16,
+          "nome": "deslocamento",
+          "titulo": "Deslocamento total",
+          "sha256": "343dc5de0893ede47ad14b5ad5d5b6e52ebf9f0d017e9958ae4108a023669c62",
+          "bytes": 148600,
+          "tamanho_px": [
+            1500,
+            604
+          ],
+          "arquivo": "evidencias/fusion/esfera_deslocamento.png",
+          "estado": "ok"
+        }
+      ]
+    }
+  ],
+  "capturas": [
+    {
+      "origem": "desempenho/01_Fusion/GARRA_R04_EXTERIOR_ORIGINAL_PREPARACAO.png",
+      "arquivo": "assets/img/bancada/garra_montagem.png",
+      "sha256": "fd0c35ee9b620116ef65bc7d608504a0c9c2ab531bfef272e99d9e6860e85348",
+      "tamanho_px": [
+        1600,
+        1100
+      ],
+      "como": "Autodesk Fusion API: Viewport.saveAsImageFile(1600, 1100)"
+    },
+    {
+      "origem": "desempenho/01_Fusion/GARRA_SUPERIOR_ZONAS_R04_EXTERIOR_INALTERADO.png",
+      "arquivo": "evidencias/fusion/captura_superior_exterior_inalterado.png",
+      "sha256": "aed8ed3f92105ff880259ffcddf1ea273aff7bc410112dce7804d068651bd31e",
+      "tamanho_px": [
+        1600,
+        1100
+      ],
+      "como": "Autodesk Fusion API: Viewport.saveAsImageFile(1600, 1100)"
+    },
+    {
+      "origem": "desempenho/01_Fusion/GARRA_INFERIOR_ESQ_ZONAS_R04_EXTERIOR_INALTERADO.png",
+      "arquivo": "evidencias/fusion/captura_inferior_esq_exterior_inalterado.png",
+      "sha256": "14c65082c9f8a286a3d5870a3eac3893f1636fd3bf64ac7f80107b3109993eab",
+      "tamanho_px": [
+        1600,
+        1100
+      ],
+      "como": "Autodesk Fusion API: Viewport.saveAsImageFile(1600, 1100)"
+    },
+    {
+      "origem": "desempenho/01_Fusion/GARRA_INFERIOR_DIR_ZONAS_R04_EXTERIOR_INALTERADO.png",
+      "arquivo": "evidencias/fusion/captura_inferior_dir_exterior_inalterado.png",
+      "sha256": "5a80f759c9a5ec21549ba4dbad74bb923affdb9c913ccfa66f70abc297f8a9fd",
+      "tamanho_px": [
+        1600,
+        1100
+      ],
+      "como": "Autodesk Fusion API: Viewport.saveAsImageFile(1600, 1100)"
+    },
+    {
+      "origem": "desempenho/01_Fusion/PADs_R04_SEPARADOS.png",
+      "arquivo": "evidencias/fusion/captura_pads_separados.png",
+      "sha256": "c13e5f20905fd90f626390747922183b7481340ece3ce4a2167e2c4deda9bd73",
+      "tamanho_px": [
+        1600,
+        1100
+      ],
+      "como": "Autodesk Fusion API: Viewport.saveAsImageFile(1600, 1100)"
+    }
+  ]
+}
