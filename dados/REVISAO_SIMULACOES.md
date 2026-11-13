@@ -170,7 +170,7 @@ Release pública `dados-2026-11-12`: <https://github.com/Cir0Arruda/SENAI-DI-Red
 
 Também não existe um **STEP do SAI com as zonas internas**. As zonas só existem como modificadores dentro do projeto do Orca. Quem não usa Orca ou Bambu Studio recebe só o exterior.
 
-**Proposta:** um pacote `SAI_final.zip` (cerca de 90 MB) numa nova Release, com:
+**Feito em 13/11/2026:** o pacote está em [`modelos/SAI_final/`](../modelos/SAI_final/) (59 MB, no próprio repositório, sem precisar baixar a Release). A proposta original era:
 1. os 4 projetos `.3mf` acima, renomeados (`SAI_superior.3mf`, `SAI_inferior_esq.3mf`, `SAI_inferior_dir.3mf`, `SAI_PADs.3mf`);
 2. o STEP do exterior e o STEP dos PADs;
 3. os STLs dos modificadores das zonas, para quem usa outro fatiador;
@@ -203,5 +203,5 @@ Também não existe um **STEP do SAI com as zonas internas**. As zonas só exist
 1. "Parada para manuseio a cada 45 min de operação" (Processo): cerca de 6 caixas/min × 45 min dá 270, não 280. Confirmar se os 45 min são a parada ou o intervalo entre paradas.
 2. Critério do FS no relatório do Tritan (item 5): ruptura (11,5) ou escoamento (13,3).
 3. Critério do fator de pico (von Mises 2,2 ou 1ª principal 2,7): só o ensaio de bancada decide.
-4. Pacote `SAI_final.zip` para a Ajinomoto (seção 6): proposto, ainda não montado.
+4. ~~Pacote `SAI_final.zip` para a Ajinomoto (seção 6)~~ **Feito em 13/11/2026**, como pasta no repositório: [`modelos/SAI_final/`](../modelos/SAI_final/). Conferido duas vezes por `scripts/sai_pacote_final.py`, com 0 erros. Os fatiados com G-code continuam na Release.
 5. Os slides arquivados (escondidos) mantêm valores antigos; não aparecem na apresentação.

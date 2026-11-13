@@ -1,0 +1,870 @@
+{
+ "pacote": "Garra SAI, arquivos finais (R07 sem almas)",
+ "gerado_por": "dados/scripts/sai_pacote_final.py",
+ "enviado_a_impressora": false,
+ "erros": [],
+ "conferencia": {
+  "SAI_superior_PA6-CF_giroide25.3mf": {
+   "config": {
+    "impressora": "Creality K1 Max",
+    "bico_mm": "0.4",
+    "camada_mm": "0.2",
+    "paredes": "5",
+    "preenchimento": "25%",
+    "padrao": "gyroid",
+    "topo_fundo": [
+     "6",
+     "6"
+    ],
+    "material": "PA6-CF",
+    "perfil_filamento": "Bambu PA6-CF @BBL X1C",
+    "bico_C": "275",
+    "suporte": true
+   },
+   "partes": [
+    {
+     "nome": "GARRA_SUPERIOR_CONTINUA_BASE20",
+     "tipo": "normal_part",
+     "preenchimento": null,
+     "padrao": null,
+     "malha": {
+      "faces": 120356,
+      "volume_cm3": 1391.13,
+      "fechada": true,
+      "caixa_mm": [
+       261.0,
+       248.5,
+       85.0
+      ]
+     }
+    },
+    {
+     "nome": "MOD_SOLIDO_100_INTERNO_R07",
+     "tipo": "modifier_part",
+     "preenchimento": "100%",
+     "padrao": "gyroid",
+     "malha": {
+      "faces": 9064,
+      "volume_cm3": 17.24,
+      "fechada": true,
+      "caixa_mm": [
+       252.1,
+       236.6,
+       76.9
+      ]
+     }
+    },
+    {
+     "nome": "MOD_COLAR_55_INTERNO_R07",
+     "tipo": "modifier_part",
+     "preenchimento": "55%",
+     "padrao": "gyroid",
+     "malha": {
+      "faces": 8858,
+      "volume_cm3": 142.55,
+      "fechada": true,
+      "caixa_mm": [
+       120.0,
+       110.5,
+       28.7
+      ]
+     }
+    },
+    {
+     "nome": "MOD_ROSA_35_INTERNO_R07",
+     "tipo": "modifier_part",
+     "preenchimento": "35%",
+     "padrao": "gyroid",
+     "malha": {
+      "faces": 15096,
+      "volume_cm3": 151.26,
+      "fechada": true,
+      "caixa_mm": [
+       258.0,
+       189.7,
+       30.8
+      ]
+     }
+    },
+    {
+     "nome": "MOD_AMARELO_20_INTERNO_R07",
+     "tipo": "modifier_part",
+     "preenchimento": "20%",
+     "padrao": "gyroid",
+     "malha": {
+      "faces": 3142,
+      "volume_cm3": 27.78,
+      "fechada": true,
+      "caixa_mm": [
+       238.9,
+       165.9,
+       9.8
+      ]
+     }
+    }
+   ],
+   "checagens": [
+    "OK material PA6-CF",
+    "OK 5 paredes",
+    "OK giroide 25%",
+    "OK camada 0.2 mm, bico 0.4 mm",
+    "OK sem caminho pessoal",
+    "OK malha fechada: GARRA_SUPERIOR_CONTINUA_BASE20",
+    "OK malha fechada: MOD_SOLIDO_100_INTERNO_R07",
+    "OK malha fechada: MOD_COLAR_55_INTERNO_R07",
+    "OK malha fechada: MOD_ROSA_35_INTERNO_R07",
+    "OK malha fechada: MOD_AMARELO_20_INTERNO_R07",
+    "OK modificadores ['MOD_AMARELO_20_INTERNO_R07', 'MOD_COLAR_55_INTERNO_R07', 'MOD_ROSA_35_INTERNO_R07', 'MOD_SOLIDO_100_INTERNO_R07']",
+    "OK MOD_SOLIDO_100_INTERNO_R07 a 100%",
+    "OK MOD_SOLIDO_100_INTERNO_R07 igual a stl/zonas/superior_tubos_100.stl",
+    "OK MOD_COLAR_55_INTERNO_R07 a 55%",
+    "OK MOD_COLAR_55_INTERNO_R07 igual a stl/zonas/superior_colar_55.stl",
+    "OK MOD_ROSA_35_INTERNO_R07 a 35%",
+    "OK MOD_ROSA_35_INTERNO_R07 igual a stl/zonas/superior_ressaltos_35.stl",
+    "OK MOD_AMARELO_20_INTERNO_R07 a 20%",
+    "OK MOD_AMARELO_20_INTERNO_R07 igual a stl/zonas/superior_assento_20.stl",
+    "OK exterior igual a stl/pecas/SAI_superior.stl"
+   ],
+   "fatiamento_K1Max": {
+    "massa_peca_g": 666.4,
+    "horas": 34.2
+   }
+  },
+  "SAI_inferior_esq_PA6-CF_giroide20.3mf": {
+   "config": {
+    "impressora": "Creality K1 Max",
+    "bico_mm": "0.4",
+    "camada_mm": "0.2",
+    "paredes": "5",
+    "preenchimento": "20%",
+    "padrao": "gyroid",
+    "topo_fundo": [
+     "6",
+     "6"
+    ],
+    "material": "PA6-CF",
+    "perfil_filamento": "Bambu PA6-CF @BBL X1C",
+    "bico_C": "275",
+    "suporte": true
+   },
+   "partes": [
+    {
+     "nome": "GARRA_INFERIOR_ESQ_CONTINUA_BASE20",
+     "tipo": "normal_part",
+     "preenchimento": null,
+     "padrao": null,
+     "malha": {
+      "faces": 66174,
+      "volume_cm3": 815.63,
+      "fechada": true,
+      "caixa_mm": [
+       203.0,
+       288.0,
+       72.7
+      ]
+     }
+    },
+    {
+     "nome": "MOD_AMARELO_20_INTERNO_R07",
+     "tipo": "modifier_part",
+     "preenchimento": "20%",
+     "padrao": "gyroid",
+     "malha": {
+      "faces": 5260,
+      "volume_cm3": 34.34,
+      "fechada": true,
+      "caixa_mm": [
+       79.9,
+       216.0,
+       13.0
+      ]
+     }
+    },
+    {
+     "nome": "MOD_SOLIDO_100_INTERNO_R07",
+     "tipo": "modifier_part",
+     "preenchimento": "100%",
+     "padrao": "gyroid",
+     "malha": {
+      "faces": 2308,
+      "volume_cm3": 4.49,
+      "fechada": true,
+      "caixa_mm": [
+       53.1,
+       189.0,
+       19.3
+      ]
+     }
+    },
+    {
+     "nome": "MOD_ROSAPES_35_INTERNO_R07",
+     "tipo": "modifier_part",
+     "preenchimento": "35%",
+     "padrao": "gyroid",
+     "malha": {
+      "faces": 15122,
+      "volume_cm3": 115.21,
+      "fechada": true,
+      "caixa_mm": [
+       200.0,
+       285.0,
+       69.1
+      ]
+     }
+    }
+   ],
+   "checagens": [
+    "OK material PA6-CF",
+    "OK 5 paredes",
+    "OK giroide 20%",
+    "OK camada 0.2 mm, bico 0.4 mm",
+    "OK sem caminho pessoal",
+    "OK malha fechada: GARRA_INFERIOR_ESQ_CONTINUA_BASE20",
+    "OK malha fechada: MOD_AMARELO_20_INTERNO_R07",
+    "OK malha fechada: MOD_SOLIDO_100_INTERNO_R07",
+    "OK malha fechada: MOD_ROSAPES_35_INTERNO_R07",
+    "OK modificadores ['MOD_AMARELO_20_INTERNO_R07', 'MOD_ROSAPES_35_INTERNO_R07', 'MOD_SOLIDO_100_INTERNO_R07']",
+    "OK MOD_SOLIDO_100_INTERNO_R07 a 100%",
+    "OK MOD_SOLIDO_100_INTERNO_R07 igual a stl/zonas/inferior_esq_tubos_100.stl",
+    "OK MOD_ROSAPES_35_INTERNO_R07 a 35%",
+    "OK MOD_ROSAPES_35_INTERNO_R07 igual a stl/zonas/inferior_esq_ressaltos_e_pes_35.stl",
+    "OK MOD_AMARELO_20_INTERNO_R07 a 20%",
+    "OK MOD_AMARELO_20_INTERNO_R07 igual a stl/zonas/inferior_esq_assento_20.stl",
+    "OK exterior igual a stl/pecas/SAI_inferior_esq.stl"
+   ],
+   "fatiamento_K1Max": {
+    "massa_peca_g": 383.2,
+    "horas": 20.5
+   }
+  },
+  "SAI_inferior_dir_PA6-CF_giroide20.3mf": {
+   "config": {
+    "impressora": "Creality K1 Max",
+    "bico_mm": "0.4",
+    "camada_mm": "0.2",
+    "paredes": "5",
+    "preenchimento": "20%",
+    "padrao": "gyroid",
+    "topo_fundo": [
+     "6",
+     "6"
+    ],
+    "material": "PA6-CF",
+    "perfil_filamento": "Bambu PA6-CF @BBL X1C",
+    "bico_C": "275",
+    "suporte": true
+   },
+   "partes": [
+    {
+     "nome": "GARRA_INFERIOR_DIR_CONTINUA_BASE20",
+     "tipo": "normal_part",
+     "preenchimento": null,
+     "padrao": null,
+     "malha": {
+      "faces": 66174,
+      "volume_cm3": 815.63,
+      "fechada": true,
+      "caixa_mm": [
+       203.0,
+       288.0,
+       72.7
+      ]
+     }
+    },
+    {
+     "nome": "MOD_AMARELO_20_INTERNO_R07",
+     "tipo": "modifier_part",
+     "preenchimento": "20%",
+     "padrao": "gyroid",
+     "malha": {
+      "faces": 5182,
+      "volume_cm3": 34.33,
+      "fechada": true,
+      "caixa_mm": [
+       79.7,
+       216.0,
+       13.0
+      ]
+     }
+    },
+    {
+     "nome": "MOD_SOLIDO_100_INTERNO_R07",
+     "tipo": "modifier_part",
+     "preenchimento": "100%",
+     "padrao": "gyroid",
+     "malha": {
+      "faces": 2284,
+      "volume_cm3": 4.49,
+      "fechada": true,
+      "caixa_mm": [
+       53.1,
+       189.0,
+       19.3
+      ]
+     }
+    },
+    {
+     "nome": "MOD_ROSAPES_35_INTERNO_R07",
+     "tipo": "modifier_part",
+     "preenchimento": "35%",
+     "padrao": "gyroid",
+     "malha": {
+      "faces": 15126,
+      "volume_cm3": 115.17,
+      "fechada": true,
+      "caixa_mm": [
+       200.0,
+       285.0,
+       69.1
+      ]
+     }
+    }
+   ],
+   "checagens": [
+    "OK material PA6-CF",
+    "OK 5 paredes",
+    "OK giroide 20%",
+    "OK camada 0.2 mm, bico 0.4 mm",
+    "OK sem caminho pessoal",
+    "OK malha fechada: GARRA_INFERIOR_DIR_CONTINUA_BASE20",
+    "OK malha fechada: MOD_AMARELO_20_INTERNO_R07",
+    "OK malha fechada: MOD_SOLIDO_100_INTERNO_R07",
+    "OK malha fechada: MOD_ROSAPES_35_INTERNO_R07",
+    "OK modificadores ['MOD_AMARELO_20_INTERNO_R07', 'MOD_ROSAPES_35_INTERNO_R07', 'MOD_SOLIDO_100_INTERNO_R07']",
+    "OK MOD_SOLIDO_100_INTERNO_R07 a 100%",
+    "OK MOD_SOLIDO_100_INTERNO_R07 igual a stl/zonas/inferior_dir_tubos_100.stl",
+    "OK MOD_ROSAPES_35_INTERNO_R07 a 35%",
+    "OK MOD_ROSAPES_35_INTERNO_R07 igual a stl/zonas/inferior_dir_ressaltos_e_pes_35.stl",
+    "OK MOD_AMARELO_20_INTERNO_R07 a 20%",
+    "OK MOD_AMARELO_20_INTERNO_R07 igual a stl/zonas/inferior_dir_assento_20.stl",
+    "OK exterior igual a stl/pecas/SAI_inferior_dir.stl"
+   ],
+   "fatiamento_K1Max": {
+    "massa_peca_g": 383.2,
+    "horas": 20.5
+   }
+  },
+  "SAI_PADs_TPU95A_giroide40.3mf": {
+   "config": {
+    "impressora": "Creality K1 Max",
+    "bico_mm": "0.4",
+    "camada_mm": "0.2",
+    "paredes": "3",
+    "preenchimento": "40%",
+    "padrao": "gyroid",
+    "topo_fundo": [
+     "6",
+     "6"
+    ],
+    "material": "TPU",
+    "perfil_filamento": "Generic TPU",
+    "bico_C": "230",
+    "suporte": true
+   },
+   "partes": [
+    {
+     "nome": "PAD95_R02_A1_L_ENVELOPE_INFILL40",
+     "tipo": "normal_part",
+     "preenchimento": null,
+     "padrao": null,
+     "malha": {
+      "faces": 6682,
+      "volume_cm3": 17.73,
+      "fechada": true,
+      "caixa_mm": [
+       71.4,
+       51.6,
+       25.5
+      ]
+     }
+    },
+    {
+     "nome": "PAD95_R02_A1_R_ENVELOPE_INFILL40",
+     "tipo": "normal_part",
+     "preenchimento": null,
+     "padrao": null,
+     "malha": {
+      "faces": 3314,
+      "volume_cm3": 10.93,
+      "fechada": true,
+      "caixa_mm": [
+       37.9,
+       59.3,
+       25.5
+      ]
+     }
+    },
+    {
+     "nome": "PAD95_R02_A2_L_ENVELOPE_INFILL40",
+     "tipo": "normal_part",
+     "preenchimento": null,
+     "padrao": null,
+     "malha": {
+      "faces": 6490,
+      "volume_cm3": 12.69,
+      "fechada": true,
+      "caixa_mm": [
+       71.4,
+       60.0,
+       25.5
+      ]
+     }
+    },
+    {
+     "nome": "PAD95_R02_A2_R_ENVELOPE_INFILL40",
+     "tipo": "normal_part",
+     "preenchimento": null,
+     "padrao": null,
+     "malha": {
+      "faces": 5458,
+      "volume_cm3": 11.57,
+      "fechada": true,
+      "caixa_mm": [
+       71.4,
+       52.3,
+       25.5
+      ]
+     }
+    },
+    {
+     "nome": "PAD95_R02_A3_L_ENVELOPE_INFILL40",
+     "tipo": "normal_part",
+     "preenchimento": null,
+     "padrao": null,
+     "malha": {
+      "faces": 5264,
+      "volume_cm3": 11.57,
+      "fechada": true,
+      "caixa_mm": [
+       71.4,
+       52.4,
+       25.5
+      ]
+     }
+    },
+    {
+     "nome": "PAD95_R02_A3_R_ENVELOPE_INFILL40",
+     "tipo": "normal_part",
+     "preenchimento": null,
+     "padrao": null,
+     "malha": {
+      "faces": 6184,
+      "volume_cm3": 12.69,
+      "fechada": true,
+      "caixa_mm": [
+       71.4,
+       60.0,
+       25.5
+      ]
+     }
+    },
+    {
+     "nome": "PAD95_R02_A4_L_ENVELOPE_INFILL40",
+     "tipo": "normal_part",
+     "preenchimento": null,
+     "padrao": null,
+     "malha": {
+      "faces": 3738,
+      "volume_cm3": 10.94,
+      "fechada": true,
+      "caixa_mm": [
+       37.9,
+       59.3,
+       25.5
+      ]
+     }
+    },
+    {
+     "nome": "PAD95_R02_A4_R_ENVELOPE_INFILL40",
+     "tipo": "normal_part",
+     "preenchimento": null,
+     "padrao": null,
+     "malha": {
+      "faces": 7390,
+      "volume_cm3": 17.74,
+      "fechada": true,
+      "caixa_mm": [
+       71.4,
+       51.6,
+       25.5
+      ]
+     }
+    }
+   ],
+   "checagens": [
+    "OK material TPU",
+    "OK 3 paredes",
+    "OK giroide 40%",
+    "OK camada 0.2 mm, bico 0.4 mm",
+    "OK sem caminho pessoal",
+    "OK malha fechada: PAD95_R02_A1_L_ENVELOPE_INFILL40",
+    "OK malha fechada: PAD95_R02_A1_R_ENVELOPE_INFILL40",
+    "OK malha fechada: PAD95_R02_A2_L_ENVELOPE_INFILL40",
+    "OK malha fechada: PAD95_R02_A2_R_ENVELOPE_INFILL40",
+    "OK malha fechada: PAD95_R02_A3_L_ENVELOPE_INFILL40",
+    "OK malha fechada: PAD95_R02_A3_R_ENVELOPE_INFILL40",
+    "OK malha fechada: PAD95_R02_A4_L_ENVELOPE_INFILL40",
+    "OK malha fechada: PAD95_R02_A4_R_ENVELOPE_INFILL40",
+    "OK modificadores []",
+    "OK 8 PADs",
+    "OK PAD95_R02_A1_L_ENVELOPE_INFILL40 igual a stl/pecas/SAI_PAD_A1_L.stl",
+    "OK PAD95_R02_A1_R_ENVELOPE_INFILL40 igual a stl/pecas/SAI_PAD_A1_R.stl",
+    "OK PAD95_R02_A2_L_ENVELOPE_INFILL40 igual a stl/pecas/SAI_PAD_A2_L.stl",
+    "OK PAD95_R02_A2_R_ENVELOPE_INFILL40 igual a stl/pecas/SAI_PAD_A2_R.stl",
+    "OK PAD95_R02_A3_L_ENVELOPE_INFILL40 igual a stl/pecas/SAI_PAD_A3_L.stl",
+    "OK PAD95_R02_A3_R_ENVELOPE_INFILL40 igual a stl/pecas/SAI_PAD_A3_R.stl",
+    "OK PAD95_R02_A4_L_ENVELOPE_INFILL40 igual a stl/pecas/SAI_PAD_A4_L.stl",
+    "OK PAD95_R02_A4_R_ENVELOPE_INFILL40 igual a stl/pecas/SAI_PAD_A4_R.stl"
+   ]
+  },
+  "cad/SAI_garra_montada_3pecas_8PADs.step": {
+   "corpos_solidos": 11,
+   "privado": false
+  },
+  "cad/SAI_PADs_8_pecas.step": {
+   "corpos_solidos": 8,
+   "privado": false
+  },
+  "stl": {
+   "stl/pecas/SAI_superior.stl": {
+    "faces": 120356,
+    "volume_cm3": 1391.13,
+    "fechada": true,
+    "caixa_mm": [
+     261.0,
+     248.5,
+     85.0
+    ]
+   },
+   "stl/pecas/SAI_inferior_esq.stl": {
+    "faces": 66174,
+    "volume_cm3": 815.63,
+    "fechada": true,
+    "caixa_mm": [
+     203.0,
+     288.0,
+     72.7
+    ]
+   },
+   "stl/pecas/SAI_inferior_dir.stl": {
+    "faces": 66174,
+    "volume_cm3": 815.63,
+    "fechada": true,
+    "caixa_mm": [
+     203.0,
+     288.0,
+     72.7
+    ]
+   },
+   "stl/pecas/SAI_PAD_A1_L.stl": {
+    "faces": 6682,
+    "volume_cm3": 17.73,
+    "fechada": true,
+    "caixa_mm": [
+     71.4,
+     51.6,
+     25.5
+    ]
+   },
+   "stl/pecas/SAI_PAD_A1_R.stl": {
+    "faces": 3314,
+    "volume_cm3": 10.93,
+    "fechada": true,
+    "caixa_mm": [
+     37.9,
+     59.3,
+     25.5
+    ]
+   },
+   "stl/pecas/SAI_PAD_A2_L.stl": {
+    "faces": 6490,
+    "volume_cm3": 12.69,
+    "fechada": true,
+    "caixa_mm": [
+     71.4,
+     60.0,
+     25.5
+    ]
+   },
+   "stl/pecas/SAI_PAD_A2_R.stl": {
+    "faces": 5458,
+    "volume_cm3": 11.57,
+    "fechada": true,
+    "caixa_mm": [
+     71.4,
+     52.3,
+     25.5
+    ]
+   },
+   "stl/pecas/SAI_PAD_A3_L.stl": {
+    "faces": 5264,
+    "volume_cm3": 11.57,
+    "fechada": true,
+    "caixa_mm": [
+     71.4,
+     52.4,
+     25.5
+    ]
+   },
+   "stl/pecas/SAI_PAD_A3_R.stl": {
+    "faces": 6184,
+    "volume_cm3": 12.69,
+    "fechada": true,
+    "caixa_mm": [
+     71.4,
+     60.0,
+     25.5
+    ]
+   },
+   "stl/pecas/SAI_PAD_A4_L.stl": {
+    "faces": 3738,
+    "volume_cm3": 10.94,
+    "fechada": true,
+    "caixa_mm": [
+     37.9,
+     59.3,
+     25.5
+    ]
+   },
+   "stl/pecas/SAI_PAD_A4_R.stl": {
+    "faces": 7390,
+    "volume_cm3": 17.74,
+    "fechada": true,
+    "caixa_mm": [
+     71.4,
+     51.6,
+     25.5
+    ]
+   },
+   "stl/zonas/superior_tubos_100.stl": {
+    "faces": 9064,
+    "volume_cm3": 17.24,
+    "fechada": true,
+    "caixa_mm": [
+     252.1,
+     236.6,
+     76.9
+    ]
+   },
+   "stl/zonas/superior_colar_55.stl": {
+    "faces": 8858,
+    "volume_cm3": 142.55,
+    "fechada": true,
+    "caixa_mm": [
+     120.0,
+     110.5,
+     28.7
+    ]
+   },
+   "stl/zonas/superior_ressaltos_35.stl": {
+    "faces": 15096,
+    "volume_cm3": 151.26,
+    "fechada": true,
+    "caixa_mm": [
+     258.0,
+     189.7,
+     30.8
+    ]
+   },
+   "stl/zonas/superior_assento_20.stl": {
+    "faces": 3142,
+    "volume_cm3": 27.78,
+    "fechada": true,
+    "caixa_mm": [
+     238.9,
+     165.9,
+     9.8
+    ]
+   },
+   "stl/zonas/inferior_esq_tubos_100.stl": {
+    "faces": 2308,
+    "volume_cm3": 4.49,
+    "fechada": true,
+    "caixa_mm": [
+     53.1,
+     189.0,
+     19.3
+    ]
+   },
+   "stl/zonas/inferior_esq_ressaltos_e_pes_35.stl": {
+    "faces": 15122,
+    "volume_cm3": 115.21,
+    "fechada": true,
+    "caixa_mm": [
+     200.0,
+     285.0,
+     69.1
+    ]
+   },
+   "stl/zonas/inferior_esq_assento_20.stl": {
+    "faces": 5260,
+    "volume_cm3": 34.34,
+    "fechada": true,
+    "caixa_mm": [
+     79.9,
+     216.0,
+     13.0
+    ]
+   },
+   "stl/zonas/inferior_dir_tubos_100.stl": {
+    "faces": 2284,
+    "volume_cm3": 4.49,
+    "fechada": true,
+    "caixa_mm": [
+     53.1,
+     189.0,
+     19.3
+    ]
+   },
+   "stl/zonas/inferior_dir_ressaltos_e_pes_35.stl": {
+    "faces": 15126,
+    "volume_cm3": 115.17,
+    "fechada": true,
+    "caixa_mm": [
+     200.0,
+     285.0,
+     69.1
+    ]
+   },
+   "stl/zonas/inferior_dir_assento_20.stl": {
+    "faces": 5182,
+    "volume_cm3": 34.33,
+    "fechada": true,
+    "caixa_mm": [
+     79.7,
+     216.0,
+     13.0
+    ]
+   }
+  },
+  "fe_montagem": {
+   "variante": "R07_SEM",
+   "FS_24kg_PA6-CF": 3.89,
+   "kg_max_asa": 93.3,
+   "confere": true
+  }
+ },
+ "arquivos": {
+  ".gitattributes": {
+   "bytes": 92,
+   "sha256": "ad2389ba2ec06048911f2795acad5319e91498474e5d7bb984cf7df77fb593cc"
+  },
+  "cad/SAI_garra_montada_3pecas_8PADs.step": {
+   "bytes": 30218610,
+   "sha256": "f0b8656ad8e2543737eebfedfdd187a6e1ece8c475609faeea4dd2c128de4e01"
+  },
+  "cad/SAI_PADs_8_pecas.step": {
+   "bytes": 3978894,
+   "sha256": "310d0366de3a84912c53e7e9e90fd0540e66dc75b4f07b597af491ddaf683ae6"
+  },
+  "LEIA-ME.md": {
+   "bytes": 4760,
+   "sha256": "0421b5e78b952cae0e73a7083f0f2e4d91ce0a8d38a8a856f606fc8e2f0b023e"
+  },
+  "SAI_inferior_dir_PA6-CF_giroide20.3mf": {
+   "bytes": 1229713,
+   "sha256": "67ff45401852eada85d514a88cc8be0ede9f202dd4e02dd8bc97050982b69ccc"
+  },
+  "SAI_inferior_esq_PA6-CF_giroide20.3mf": {
+   "bytes": 1230177,
+   "sha256": "2e47a1aeab400d8c89b6a9cab86f462a5e5466c1414dd8447a3f83c49a0ab6b5"
+  },
+  "SAI_PADs_TPU95A_giroide40.3mf": {
+   "bytes": 614816,
+   "sha256": "799b2cbfd9f6fd9a3fab8181fddaca0e3c3e561c9078393efc4e5bf0aa134bb5"
+  },
+  "SAI_superior_PA6-CF_giroide25.3mf": {
+   "bytes": 2444108,
+   "sha256": "b28b7900da3acc14f58d95aec26e3297f77a4617c8a0408f8394257fc866e48b"
+  },
+  "stl/pecas/SAI_inferior_dir.stl": {
+   "bytes": 3308784,
+   "sha256": "df9184e8d21cfffe94f37db66163c4a390155bfe49a05c760c3893ba011a062b"
+  },
+  "stl/pecas/SAI_inferior_esq.stl": {
+   "bytes": 3308784,
+   "sha256": "01041f7f55f618752e0ed8ab51cce5bccb3bbe7313bce550131554abb0a22641"
+  },
+  "stl/pecas/SAI_PAD_A1_L.stl": {
+   "bytes": 334184,
+   "sha256": "662067c2f421241102163f3e173ed04fb94d15bbd270226155686269e0451fca"
+  },
+  "stl/pecas/SAI_PAD_A1_R.stl": {
+   "bytes": 165784,
+   "sha256": "52aa90b725bf146173be02ffbf6ac38062b5df7edbf4f4c10a84c80f16457b9e"
+  },
+  "stl/pecas/SAI_PAD_A2_L.stl": {
+   "bytes": 324584,
+   "sha256": "a4b4f5930c91baf3e8e4c8e81439a29f4b2dd976373433798ea61371185d2153"
+  },
+  "stl/pecas/SAI_PAD_A2_R.stl": {
+   "bytes": 272984,
+   "sha256": "fc20c28b4f8d80b52d6ba69e29755d2a10921fd305a43494c656b9b0fadbade4"
+  },
+  "stl/pecas/SAI_PAD_A3_L.stl": {
+   "bytes": 263284,
+   "sha256": "d0bb412ebfa1fd7bcea42c50cbe3d28f1a1df25dee4807959ee9e3644e6a6b9d"
+  },
+  "stl/pecas/SAI_PAD_A3_R.stl": {
+   "bytes": 309284,
+   "sha256": "a31f02ab4494ffe52f579f194fc27428c27e4a1f3490aa598fa03818df0d0796"
+  },
+  "stl/pecas/SAI_PAD_A4_L.stl": {
+   "bytes": 186984,
+   "sha256": "b1ed0fa21f5515bd9da5f0780deb9ac4e9f5f8fdc054cdd84e3131619f8c630b"
+  },
+  "stl/pecas/SAI_PAD_A4_R.stl": {
+   "bytes": 369584,
+   "sha256": "7b3d203adb6c8a3f32128b51cd2629171b800d4694803acd69e3e9b2238c6a10"
+  },
+  "stl/pecas/SAI_superior.stl": {
+   "bytes": 6017884,
+   "sha256": "355574f4534de5f347298b717490ca27872492615ab57c49986a5ad0e903f082"
+  },
+  "stl/zonas/inferior_dir_assento_20.stl": {
+   "bytes": 259184,
+   "sha256": "25ca6efcbc6b70b07934ee76aefb975d3e3d1130367af3144645f35b74bcbed6"
+  },
+  "stl/zonas/inferior_dir_ressaltos_e_pes_35.stl": {
+   "bytes": 756384,
+   "sha256": "bfc79b6ba496c5aed93ac2f951d7ea9f93de4ed7e5386b7f1d29f26899fab493"
+  },
+  "stl/zonas/inferior_dir_tubos_100.stl": {
+   "bytes": 114284,
+   "sha256": "d212f5d4975d16f0c474a1060eb621309ab090fb2546f857405059d08cacb602"
+  },
+  "stl/zonas/inferior_esq_assento_20.stl": {
+   "bytes": 263084,
+   "sha256": "7164c992e9598286432577ef4739d794a2027ff5c5c179f63e263d8750f13f24"
+  },
+  "stl/zonas/inferior_esq_ressaltos_e_pes_35.stl": {
+   "bytes": 756184,
+   "sha256": "ffbb1922721f4d47b78ceace93fd33ba358994ac86ccb51262b31db4335e567a"
+  },
+  "stl/zonas/inferior_esq_tubos_100.stl": {
+   "bytes": 115484,
+   "sha256": "08eef32428cbf6702a051702200de7abe263500209aaeafeaa97da4a95272d8e"
+  },
+  "stl/zonas/superior_assento_20.stl": {
+   "bytes": 157184,
+   "sha256": "616039249cc6ff9be151e246734da34968ad9389649f6509ef21a8386bb75d4c"
+  },
+  "stl/zonas/superior_colar_55.stl": {
+   "bytes": 442984,
+   "sha256": "f098f9f2d18061bc5296c4bb117abb5e61363dcfd027b8af7d9eb16a3935f75a"
+  },
+  "stl/zonas/superior_ressaltos_35.stl": {
+   "bytes": 754884,
+   "sha256": "02f6d594f318173ecb437d262767fd88ccfa15a173e77bda3b9b187d9dd2e6bf"
+  },
+  "stl/zonas/superior_tubos_100.stl": {
+   "bytes": 453284,
+   "sha256": "5e2ab53c0dd6e7b9ed12a20b21c9da044f21f44dc6ff0f353c77cc9b2d309387"
+  }
+ },
+ "pads_fatiamento_K1Max": {
+  "massa_8_pecas_g": 93.1,
+  "suporte_g": 45.9,
+  "horas": 11.0
+ }
+}

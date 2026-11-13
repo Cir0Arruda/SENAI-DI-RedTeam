@@ -29,6 +29,10 @@ A garra instalada é de Tritan Hexa3D 30%. Sua massa é estimada como o fatiamen
 | `videos/` | números mostrados junto dos vídeos (`videos_r07.json`) | gerados por `scripts/r07_videos.py` só com campos já calculados |
 | `scripts/` | scripts Python que geraram os resultados, as figuras e o vídeo | |
 
+## Arquivos 3D finais da garra SAI
+
+A pasta [`modelos/SAI_final/`](../modelos/SAI_final/) tem os arquivos que entraram nos cálculos, prontos para imprimir: os 4 projetos do OrcaSlicer com as zonas internas, os STL das peças e das zonas, o CAD (STEP) e um `LEIA-ME`. O script [`scripts/sai_pacote_final.py`](scripts/sai_pacote_final.py) monta a pasta e confere cada arquivo; o resultado fica em `manifesto.json`.
+
 ## Arquivos completos (Release)
 
 Os arquivos grandes estão na [Release `dados-2026-11-12`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/releases/tag/dados-2026-11-12), porque o GitHub não aceita arquivos acima de 100 MB no repositório. Dentro de cada zip, `desempenho/` é a pasta das rodadas da garra (R04 a R07), `fusion/` é a dos estudos do Fusion e `impacto_pad_hexa15/` é a do estudo de impacto do PAD.
