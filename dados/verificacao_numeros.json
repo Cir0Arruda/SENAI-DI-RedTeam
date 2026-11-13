@@ -372,25 +372,25 @@
   },
   {
    "slide": 13,
-   "item": "troca dos PADs: 20 min × 6 caixas/min",
-   "mostrado": 120,
-   "calculado": 120,
+   "item": "troca dos PADs: menos de 5 min, não conta como parada (caixas)",
+   "mostrado": 0,
+   "calculado": 0,
    "status": "OK",
    "fonte": "equipe"
   },
   {
    "slide": 0,
-   "item": "caixas do SAI em 2 anos = instalação + 7 trocas de PAD",
-   "mostrado": 1120,
-   "calculado": 1120,
+   "item": "caixas do SAI em 2 anos = só a instalação",
+   "mostrado": 280,
+   "calculado": 280,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
    "slide": 0,
-   "item": "cruzamento em caixas refeito: entre 3 e 6 meses, 3 + 3 × 120 ÷ 160",
-   "mostrado": 5.25,
-   "calculado": 5.25,
+   "item": "empate refeito: o Tritan perde 280 caixas no 3º mês, o mesmo da instalação",
+   "mostrado": 3.0,
+   "calculado": 3.0,
    "status": "OK",
    "fonte": "custo_real.json"
   },
@@ -413,16 +413,16 @@
   {
    "slide": 12,
    "item": "encontro direto (milhões de caixas)",
-   "mostrado": 4.0,
-   "calculado": 4.0376,
+   "mostrado": 3.9,
+   "calculado": 3.9038,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
    "slide": 12,
    "item": "encontro direto (meses)",
-   "mostrado": 15.4,
-   "calculado": 15.36,
+   "mostrado": 14.8,
+   "calculado": 14.85,
    "status": "OK",
    "fonte": "custo_real.json"
   },
@@ -437,16 +437,16 @@
   {
    "slide": 12,
    "item": "custo direto 24 meses, SAI (R$)",
-   "mostrado": 1635.57,
-   "calculado": 1635.57,
+   "mostrado": 1582.65,
+   "calculado": 1582.65,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
    "slide": 12,
    "item": "tabela = série do gráfico (SAI, 24 meses)",
-   "mostrado": 1635.57,
-   "calculado": 1635.57,
+   "mostrado": 1582.65,
+   "calculado": 1582.65,
    "status": "OK",
    "fonte": "custo_real.json"
   },
@@ -461,8 +461,8 @@
   {
    "slide": 12,
    "item": "SAI custa menos no ciclo (%)",
-   "mostrado": 30,
-   "calculado": 30.1778,
+   "mostrado": 32,
+   "calculado": 32.437,
    "status": "OK",
    "fonte": "custo_real.json"
   },
@@ -477,8 +477,8 @@
   {
    "slide": 12,
    "item": "por mil caixas, SAI (R$)",
-   "mostrado": 0.26,
-   "calculado": 0.26,
+   "mostrado": 0.25,
+   "calculado": 0.25,
    "status": "OK",
    "fonte": "custo_real.json"
   },
@@ -493,8 +493,8 @@
   {
    "slide": 12,
    "item": "mão de obra em 24 meses, SAI (R$)",
-   "mostrado": 345.67,
-   "calculado": 345.67,
+   "mostrado": 292.75,
+   "calculado": 292.75,
    "status": "OK",
    "fonte": "custo_real.json"
   },
@@ -509,24 +509,24 @@
   {
    "slide": 13,
    "item": "SAI compensa a instalação, previsto (dias)",
-   "mostrado": 160,
-   "calculado": 160,
+   "mostrado": 91,
+   "calculado": 91,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
    "slide": 13,
    "item": "SAI compensa a instalação, conservador (dias)",
-   "mostrado": 446,
-   "calculado": 446,
+   "mostrado": 122,
+   "calculado": 122,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
    "slide": 13,
-   "item": "caixas produzidas até compensar (milhões)",
-   "mostrado": 1.4,
-   "calculado": 1.3797,
+   "item": "meses de linha rodando até compensar",
+   "mostrado": 3,
+   "calculado": 3.0,
    "status": "OK",
    "fonte": "custo_real.json"
   },
@@ -541,24 +541,24 @@
   {
    "slide": 13,
    "item": "linha parada em 2 anos, SAI (min)",
-   "mostrado": 185,
-   "calculado": 185,
+   "mostrado": 45,
+   "calculado": 45,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
    "slide": 13,
    "item": "caixas a mais em 2 anos",
-   "mostrado": 1120,
-   "calculado": 1120,
+   "mostrado": 1960,
+   "calculado": 1960,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
    "slide": 0,
    "item": "caixas a mais, conservador",
-   "mostrado": 400,
-   "calculado": 400,
+   "mostrado": 1120,
+   "calculado": 1120,
    "status": "OK",
    "fonte": "custo_real.json"
   },
@@ -589,16 +589,16 @@
   {
    "slide": 14,
    "item": "caixas a mais por ano",
-   "mostrado": 560,
-   "calculado": 560.0,
+   "mostrado": 980,
+   "calculado": 980.0,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
    "slide": 14,
-   "item": "compensa a instalação em cerca de 160 dias (conclusão)",
-   "mostrado": 160,
-   "calculado": 160,
+   "item": "compensa a instalação em cerca de 91 dias (conclusão)",
+   "mostrado": 91,
+   "calculado": 91,
    "status": "OK",
    "fonte": "custo_real.json"
   },

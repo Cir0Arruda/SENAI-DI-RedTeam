@@ -256,7 +256,7 @@ Os destinos do slide (recicladores do polo calçadista para o TPU e de polímero
 Origem: equipe do projeto, com base na linha da Ajinomoto. Ficam registrados em [`dados/README.md`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/README.md) e em [`custos/entradas_custo.json`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/custos/entradas_custo.json).
 - **Linha:** cerca de 6 caixas por minuto; 2 caixas por ciclo do robô (uma em cada asa); 40 caixas por palete, em 4 camadas de 10; 12 itens e 12 kg por caixa.
 - **Garra instalada:** Tritan, 2,834 kg; quebra a cada 3 meses (4 vezes por ano), rompendo na raiz.
-- **Paradas:** a troca da garra para a linha 45 min (280 caixas); a troca só dos PADs leva cerca de 20 min (120 caixas, estimativa da equipe). Parada para manuseio a cada 45 min de operação.
+- **Paradas:** a troca da garra para a linha 45 min (280 caixas); a troca só dos PADs leva menos de 5 min e não conta como parada. Parada para manuseio a cada 45 min de operação.
 - **Manutenção proposta:** garra SAI nova a cada 24 meses e PADs a cada trimestre, com data marcada.
 - **Impressão:** a mesma impressora que imprime o Tritan imprime o PA6-CF, trocando o bico ([O1]).
 - **Prazos:** Tritan importado 15 a 20 dias; PA6-CF nacional 5 a 8 dias úteis.

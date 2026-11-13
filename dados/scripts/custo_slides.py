@@ -29,7 +29,7 @@ P = C['cenarios']['previsto']
 S24, T24 = C['periodo_24m']['sai'], C['periodo_24m']['tritan']
 ed, ec = P['encontro_direto'], P['encontro_caixas']
 lp = P['linha_parada_min_24m']
-h = lambda m: f'{m // 60} h' if m % 60 == 0 else f'{br(m / 60, 1)} h'
+h = lambda m: f'{br(m)} min' if m < 60 else f'{m // 60} h' if m % 60 == 0 else f'{br(m / 60, 1)} h'
 EV = C['eventos']
 cx = P['caixas_perdidas_24m']
 
@@ -95,7 +95,7 @@ html = f'''<!-- CUSTO:INICIO (gerado por dados/scripts/custo_slides.py a partir 
                     </tbody>
                   </table>
                 </div>
-                <p class="note" style="margin:0"><span class="tag sim">preços de mercado</span> Lojas e tarifas de nov/2026: energia R$ 0,70/kWh (indústria, CPFL), técnico R$ {br(E['rs_h_tecnico'], 2)}/h com encargos, impressora K1 Max R$ 5.500 em 5.000 h. Tempos de troca da equipe: garra {E['min_parada_corretiva']} min, PADs {E['troca_pads_min']} min. Refugo e acabamento são hipóteses. Fontes em <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/custos/entradas_custo.json" target="_blank" rel="noopener">entradas_custo.json</a>.</p>
+                <p class="note" style="margin:0"><span class="tag sim">preços de mercado</span> Lojas e tarifas de nov/2026: energia R$ 0,70/kWh (indústria, CPFL), técnico R$ {br(E['rs_h_tecnico'], 2)}/h com encargos, impressora K1 Max R$ 5.500 em 5.000 h. Tempos de troca da equipe: garra {E['min_parada_corretiva']} min; PADs em menos de {E['troca_pads_min']} min, sem parar a linha. Refugo e acabamento são hipóteses. Fontes em <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/custos/entradas_custo.json" target="_blank" rel="noopener">entradas_custo.json</a>.</p>
               </div>
             </div>
           </div>
@@ -116,15 +116,15 @@ html = f'''<!-- CUSTO:INICIO (gerado por dados/scripts/custo_slides.py a partir 
             </div>
             <div class="split" style="--cols:minmax(0,1.08fr) minmax(0,1fr); align-items:start">
               <div class="glass card chart" style="padding:14px 18px">
-                <h4>Caixas que deixam de sair, acumulado <span class="tag sim" style="margin-left:6px">estimativa</span></h4>
-                <p class="sub">minutos de linha parada × {E['caixas_por_min']} caixas por minuto · quebra do Tritan: {E['caixas_parada_corretiva']} caixas · caixas, sem converter em reais</p>
+                <h4>Caixas perdidas com a linha parada, somadas mês a mês <span class="tag sim" style="margin-left:6px">estimativa</span></h4>
+                <p class="sub">quanto mais baixa a linha, melhor · cada troca de garra para a linha {E['min_parada_corretiva']} min e perde {E['caixas_parada_corretiva']} caixas</p>
                 <div class="legend"><span><i style="background:#5b5bd6"></i>Tritan (atual)</span><span><i style="background:#e5232f"></i>Garra SAI</span></div>
                 <div id="chart-roi2" class="roi-host"></div>
-                <p class="note" id="roi2-txt" style="margin:4px 0 0">Previsto: a garra SAI é trocada a cada 2 anos e os PADs a cada trimestre, sempre com data marcada.</p>
+                <p class="note" id="roi2-txt" style="margin:4px 0 0">Previsto: a garra SAI só para a linha na instalação. Os PADs são trocados a cada trimestre em menos de {E['troca_pads_min']} min, sem contar como parada.</p>
               </div>
               <div style="display:grid; gap:12px">
                 <div class="g2 roi-kpi">
-                  <div class="glass stat sm"><b id="roi2-pb">{ec['dias']} dias</b><span>para compensar a parada da instalação</span><small id="roi2-pb-s">cerca de {mi(ec['caixas'])} caixas produzidas</small></div>
+                  <div class="glass stat sm"><b id="roi2-pb">{ec['dias']} dias</b><span>para compensar a parada da instalação</span><small id="roi2-pb-s">cerca de {br(ec['mes'], 0 if ec['mes'] % 1 == 0 else 1)} meses de linha rodando</small></div>
                   <div class="glass stat sm"><b class="ink" id="roi2-cx">{br(cx['a_mais'])}</b><span>caixas a mais em 2 anos</span><small id="roi2-cx-s">Tritan perde {br(cx['tritan'])}; SAI {br(cx['sai'])}</small></div>
                   <div class="glass stat sm"><b class="ink" id="roi2-min">{h(lp['tritan'])} → {h(lp['sai'])}</b><span>de linha parada em 2 anos</span><small id="roi2-min-s">Tritan {br(lp['tritan'])} min; SAI {br(lp['sai'])} min</small></div>
                   <div class="glass stat sm"><b class="ink" id="roi2-sp">{P['paradas_surpresa_24m']['tritan']} → {P['paradas_surpresa_24m']['sai']}</b><span>paradas surpresa em 2 anos</span><small>viram trocas com data marcada</small></div>
@@ -133,18 +133,18 @@ html = f'''<!-- CUSTO:INICIO (gerado por dados/scripts/custo_slides.py a partir 
                   <h3 style="margin:0 0 8px; font-size:15px">Da manutenção corretiva para a preventiva</h3>
                   <div class="prev-tl" aria-hidden="true">
                     <div class="pt-row"><span class="pt-l">Tritan</span><div class="pt-bar tri">{''.join(f'<i style="--x:{(q * 3 - 1.5) / 24 * 100:.2f}%"></i>' for q in range(1, 9))}</div></div>
-                    <div class="pt-row"><span class="pt-l">SAI</span><div class="pt-bar sai">{''.join(f'<i style="--x:{q * 3 / 24 * 100:.2f}%"></i>' for q in range(1, 8))}<i class="g" style="--x:100%"></i></div></div>
+                    <div class="pt-row"><span class="pt-l">SAI</span><div class="pt-bar sai"><i class="g" style="--x:0%"></i>{''.join(f'<i class="p" style="--x:{q * 3 / 24 * 100:.2f}%"></i>' for q in range(1, 8))}<i class="g" style="--x:100%"></i></div></div>
                     <div class="pt-ax"><span>início</span><span>1 ano</span><span>2 anos</span></div>
+                    <div class="pt-leg"><span><i class="q"></i>quebra: para {E['min_parada_corretiva']} min</span><span><i class="s"></i>troca de garra: {E['min_parada_corretiva']} min, com data</span><span><i class="p"></i>troca de PAD: menos de {E['troca_pads_min']} min, não para</span></div>
                   </div>
                   <ul class="hip">
                     <li><b>Hoje, corretiva:</b> a garra quebra sem aviso, cerca de 4 vezes por ano, e a linha para na hora: {E['min_parada_corretiva']} min e {E['caixas_parada_corretiva']} caixas por quebra.</li>
-                    <li><b>Com o SAI, preventiva:</b> PADs a cada trimestre ({E['troca_pads_min']} min) e garra nova a cada 2 anos ({E['min_parada_corretiva']} min, como hoje), antes dos {br(E['vida_pior_caso_anos'], 1)} anos do pior caso. Data marcada, peça pronta e técnico escalado.</li>
-                    <li><b>Previsível:</b> a troca entra no plano de manutenção. A produção sabe o dia, a peça já está impressa e o técnico já está escalado.</li>
+                    <li><b>Com o SAI, preventiva:</b> a linha só para na instalação e na garra nova a cada 2 anos ({E['min_parada_corretiva']} min, como hoje), antes dos {br(E['vida_pior_caso_anos'], 1)} anos do pior caso, com data marcada e peça pronta. Os PADs são trocados a cada trimestre em menos de {E['troca_pads_min']} min, sem contar como parada.</li>
                   </ul>
                 </div>
               </div>
             </div>
-            <p class="note" style="margin:8px 0 0"><span class="tag sim">estimativa</span> Produção esperada: a quebra do Tritan é aleatória (média de 1 a cada 3 meses, dado da equipe), por isso a linha é contínua. Cada quebra para a linha {E['min_parada_corretiva']} min e perde {E['caixas_parada_corretiva']} caixas. A troca da garra SAI também leva {E['min_parada_corretiva']} min ({EV['sai_troca']['caixas']} caixas); a dos PADs é rápida, {E['troca_pads_min']} min ({EV['pads']['caixas']} caixas), sempre com data marcada. Tempos da equipe. As caixas não foram convertidas em reais: o valor real da caixa não é conhecido. Conservador: a garra SAI dura só {C['cenarios']['conservador']['vida_meses']} meses e ainda quebra {round(C['cenarios']['conservador']['quebras_sai_ano'])} vez por ano.</p>
+            <p class="note" style="margin:8px 0 0"><span class="tag sim">estimativa</span> A quebra do Tritan é aleatória (em média 1 a cada 3 meses, dado da equipe), por isso a linha é reta e não em degraus. Troca de garra: {E['min_parada_corretiva']} min e {EV['sai_troca']['caixas']} caixas, igual no Tritan e no SAI; troca de PAD: menos de {E['troca_pads_min']} min, não conta como parada (tempos da equipe). A garra nova dos 2 anos já é do ciclo seguinte. Caixas sem converter em reais. Conservador: a garra SAI dura só {C['cenarios']['conservador']['vida_meses']} meses e ainda quebra {round(C['cenarios']['conservador']['quebras_sai_ano'])} vez por ano.</p>
           </div>
         </section>
 <!-- CUSTO:FIM -->'''

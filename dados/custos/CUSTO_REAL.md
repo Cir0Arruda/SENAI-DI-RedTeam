@@ -10,19 +10,19 @@ O modelo separa duas coisas:
 ## Tempos de troca (dados da equipe)
 
 - **Troca da garra: 45 min, 280 caixas.** Vale para a quebra do Tritan e para a instalação ou troca da garra SAI. É o tempo real da linha hoje.
-- **Troca só dos PADs: 20 min, 120 caixas** (20 min × 6 caixas por minuto). Estimativa da equipe: trocar os PADs é rápido, o que demora é trocar a garra.
+- **Troca só dos PADs: menos de 5 min, e não conta como parada.** Dado da equipe (13/nov/2026): só a troca da garra conta. O modelo põe 5 min de técnico no custo direto e nenhuma caixa perdida. A sensibilidade mostra o caso em que cada troca de PAD parasse a linha 5 min (30 caixas).
 - Nenhum outro tempo foi suposto. As hipóteses de janela de sanitização e de inspeção semanal saíram do modelo.
 
 ## Resumo
 
 - **A garra SAI custa R$ 1.128,84 pronta e instalada**, e não R$ 600. Esse valor inclui filamento, energia, impressora, bico, refugo, consumíveis e mão de obra.
-- **Só no custo direto**, ela empata com o Tritan em **4,0 milhões de caixas (15,4 meses)**. Nos 2 anos do ciclo, custa **30% menos**: R$ 1.635,57 contra R$ 2.342,48.
-- **Em produção**, a parada de instalação (45 min, 280 caixas) é compensada em **160 dias**, depois de cerca de 1,4 milhão de caixas produzidas. A partir daí o SAI perde menos caixas que o Tritan.
+- **Só no custo direto**, ela empata com o Tritan em **3,9 milhões de caixas (14,8 meses)**. Nos 2 anos do ciclo, custa **32% menos**: R$ 1.582,65 contra R$ 2.342,48.
+- **Em produção**, a parada de instalação (45 min, 280 caixas) é compensada em **91 dias** (3 meses): é quando o Tritan, em média, já quebrou uma vez e perdeu as mesmas 280 caixas. A partir daí o SAI não perde mais nenhuma caixa no ciclo.
 - **Em 2 anos**:
-  - o SAI produz **1.120 caixas a mais**: o Tritan perde 2.240 e o SAI 1.120;
-  - a linha fica parada **6 h com o Tritan e 3,1 h com o SAI** (360 min contra 185 min);
-  - as **8 paradas surpresa** viram 8 trocas com data marcada: a instalação e 7 trocas de PAD.
-- **No cenário conservador**, a garra dura só 12 meses e quebra 1 vez por ano. No custo direto o SAI fica mais caro (R$ 4.949,70 em 2 anos), mas ainda produz 400 caixas a mais, e a instalação se compensa em 446 dias.
+  - o SAI produz **1.960 caixas a mais**: o Tritan perde 2.240 e o SAI 280 (só a instalação);
+  - a linha fica parada **6 h com o Tritan e 45 min com o SAI**;
+  - as **8 paradas surpresa** viram 1 parada com data marcada, a instalação. As 7 trocas de PAD levam menos de 5 min e não contam como parada.
+- **No cenário conservador**, a garra dura só 12 meses e quebra 1 vez por ano. No custo direto o SAI fica mais caro (R$ 4.904,34 em 2 anos), mas ainda produz 1.120 caixas a mais, e a instalação se compensa em 122 dias.
 
 ## Vida de 2,4 anos: confirmada
 
@@ -50,14 +50,14 @@ O modelo separa duas coisas:
 | Evento | Custo direto | Linha parada | Caixas perdidas |
 |---|---|---|---|
 | Garra SAI nova (3 peças + 8 PADs, montagem e troca) | R$ 1.128,84 | 45 min | 280 |
-| Troca dos 8 PADs | R$ 72,39 | 20 min | 120 |
+| Troca dos 8 PADs (menos de 5 min, não conta como parada) | R$ 64,83 | 0 | 0 |
 | Quebra do Tritan (reimpressão da peça superior e troca corretiva) | R$ 292,81 | 45 min | 280 |
 | Quebra da SAI (só no conservador) | R$ 1.128,84 | 45 min | 280 |
 
 4. **Valor esperado**: o Tritan quebra em média 1 vez por trimestre, então o gráfico mostra o valor esperado. Por isso é uma linha, e não uma escada.
-5. **Eixo X em caixas**: 6 por minuto, 24 h, 262.800 por mês.
-6. **O ciclo de 2 anos** termina antes da garra nova do mês 24, porque ela já serve o ciclo seguinte. O gráfico de Retorno vai até 30 meses e mostra essa troca.
-7. **Paradas programadas** param a linha pelo tempo da troca, como as quebras.
+5. **Eixo X**: no Custos, caixas produzidas (6 por minuto, 24 h, 262.800 por mês). No Retorno, meses, que é mais fácil de ler; as caixas produzidas aparecem ao passar o mouse.
+6. **O ciclo de 2 anos** termina antes da garra nova do mês 24, porque ela já serve o ciclo seguinte. Os dois gráficos vão até 24 meses.
+7. **Só a troca da garra para a linha**: instalação, troca preventiva e quebra, 45 min cada. A troca dos PADs não conta como parada.
 
 ## Para onde vai o dinheiro em 2 anos (custo direto)
 
@@ -67,8 +67,8 @@ O modelo separa duas coisas:
 | Energia | R$ 42,64 | R$ 28,91 |
 | Impressora e bico | R$ 386,56 | R$ 239,40 |
 | Refugo e consumíveis | R$ 100,72 | R$ 113,22 |
-| Mão de obra (imprimir, acabar e trocar) | R$ 386,96 | R$ 345,67 |
-| **Total** | **R$ 2.342,48** | **R$ 1.635,57** |
+| Mão de obra (imprimir, acabar e trocar) | R$ 386,96 | R$ 292,75 |
+| **Total** | **R$ 2.342,48** | **R$ 1.582,65** |
 
 ## Valores da equipe que o modelo trocou ou deixou de usar
 
@@ -83,17 +83,18 @@ O modelo separa duas coisas:
 
 | Caso | Encontro no custo direto | Instalação compensada em caixas | Caixas a mais em 2 anos |
 |---|---|---|---|
-| Base | 15,4 meses | 160 dias | 1.120 |
-| PA6-CF pelo preço da equipe (R$ 258/kg) | 11,1 meses | 160 dias | 1.120 |
-| PA6-CF Bambu Lab (R$ 786/kg) | 24,0 meses | 160 dias | 1.120 |
-| Material do Tritan a R$ 250, mais os custos ocultos | 11,5 meses | 160 dias | 1.120 |
-| Mão de obra a R$ 43,91/h | 15,6 meses | 160 dias | 1.120 |
-| Impressora a 280 W e tarifa B3 | 15,3 meses | 160 dias | 1.120 |
-| Refugo de 20% no PA6-CF | 16,5 meses | 160 dias | 1.120 |
-| Tritan quebra só 2 vezes por ano | não cruza | não compensa | 0 |
-| 270 caixas por quebra (45 min × 6/min) | 15,4 meses | 164 dias | 1.050 |
+| Base | 14,8 meses | 91 dias | 1.960 |
+| PA6-CF pelo preço da equipe (R$ 258/kg) | 10,8 meses | 91 dias | 1.960 |
+| PA6-CF Bambu Lab (R$ 786/kg) | 23,4 meses | 91 dias | 1.960 |
+| Material do Tritan a R$ 250, mais os custos ocultos | 11,2 meses | 91 dias | 1.960 |
+| Mão de obra a R$ 43,91/h | 14,9 meses | 91 dias | 1.960 |
+| Impressora a 280 W e tarifa B3 | 14,8 meses | 91 dias | 1.960 |
+| Refugo de 20% no PA6-CF | 16,0 meses | 91 dias | 1.960 |
+| Tritan quebra só 2 vezes por ano | não cruza | 182 dias | 840 |
+| 270 caixas por quebra (45 min × 6/min) | 14,8 meses | 91 dias | 1.890 |
+| Se cada troca de PAD parasse a linha 5 min (30 caixas) | 14,8 meses | 102 dias | 1.750 |
 
-O que decide o resultado é **quantas vezes o Tritan quebra de verdade**. Com 2 quebras por ano, as 4 quebras do Tritan em 2 anos (1.120 caixas) empatam com a instalação e as trocas de PAD do SAI.
+O que decide o resultado é **quantas vezes o Tritan quebra de verdade**. Com só 2 quebras por ano, o custo direto do SAI não chega a empatar em 2 anos, mas em caixas ele ainda compensa a instalação em 182 dias e produz 840 caixas a mais.
 
 Os preços de filamento, energia e mão de obra mexem só no custo direto.
 
@@ -107,7 +108,8 @@ Um agente revisor (`.claude/agents/revisor-custos.md`) refez as contas do zero, 
   - **Caso do Tritan a R$ 250 renomeado.** Agora deixa claro que os custos ocultos são somados por cima.
 - Depois da revisão:
   - a produção perdida deixou de ser convertida em reais, porque o valor real da caixa não é conhecido;
-  - os tempos de troca passaram a ser os da equipe (garra 45 min, PADs 20 min), e as hipóteses de inspeção semanal e de janela de sanitização saíram.
+  - os tempos de troca passaram a ser os da equipe (garra 45 min), e as hipóteses de inspeção semanal e de janela de sanitização saíram;
+  - a equipe informou que a troca dos PADs leva menos de 5 min e não conta como parada (13/nov/2026). Antes o modelo usava 20 min e 120 caixas por troca de PAD; o Retorno passou de 160 para 91 dias.
 - Pontos que ficam em aberto, para confirmar com a equipe:
   - **280 ou 270 caixas por parada.** As 10 caixas a mais podem ser da retomada da linha.
   - **8.760 h por ano.** Com a limpeza semanal, o mais realista fica entre 8.400 e 8.550 h. O efeito é pequeno.

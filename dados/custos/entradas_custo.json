@@ -1,6 +1,6 @@
 {
- "o_que_e": "Entradas do modelo de custo real da garra SAI × garra de Tritan (dados/scripts/custo_real.py). tipo: equipe = informado pela equipe; medido = arquivo do projeto; pesquisa = valor de mercado com fonte (nov/2026); HIP = hipótese. Na dúvida, o valor base favorece o Tritan. Produção só em caixas; tempos de troca da equipe (garra 45 min, PADs 20 min).",
- "data": "2026-11-12",
+ "o_que_e": "Entradas do modelo de custo real da garra SAI × garra de Tritan (dados/scripts/custo_real.py). tipo: equipe = informado pela equipe; medido = arquivo do projeto; pesquisa = valor de mercado com fonte (nov/2026); HIP = hipótese. Na dúvida, o valor base favorece o Tritan. Produção só em caixas; tempos de troca da equipe: garra 45 min; PADs em menos de 5 min, que não contam como parada.",
+ "data": "2026-11-13",
  "entradas": {
   "caixas_por_min": {
    "valor": 6,
@@ -18,9 +18,14 @@
    "fonte": "equipe: 280 caixas por troca de garra (45 × 6/min dá 270; as 10 a mais devem ser da retomada da linha: ver a sensibilidade)"
   },
   "troca_pads_min": {
-   "valor": 20,
+   "valor": 5,
    "tipo": "equipe",
-   "fonte": "equipe: a troca dos 8 PADs é rápida, cerca de 20 min (estimativa); a 6 caixas por minuto, 120 caixas"
+   "fonte": "equipe: a troca dos 8 PADs leva menos de 5 min. O modelo usa 5 min só para a mão de obra"
+  },
+  "troca_pads_para_linha": {
+   "valor": 0,
+   "tipo": "equipe",
+   "fonte": "equipe: a troca dos PADs não conta como parada da linha; só a troca da garra conta (1 = contar 5 min e 30 caixas, ver a sensibilidade)"
   },
   "min_parada_corretiva": {
    "valor": 45,
@@ -203,9 +208,9 @@
    "fonte": "equipe: PADs trocados a cada trimestre, com data marcada"
   },
   "horizonte_meses": {
-   "valor": 30,
+   "valor": 24,
    "tipo": "HIP",
-   "fonte": "mostra a troca preventiva aos 24 meses e chega perto dos 2,4 anos"
+   "fonte": "o ciclo de 2 anos da garra SAI; a garra nova do mês 24 já é do ciclo seguinte"
   },
   "conservador_quebras_sai_ano": {
    "valor": 1,

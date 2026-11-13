@@ -9,11 +9,12 @@ Modelo:
     secador durante a impressão) + uso da impressora (depreciação e desgaste) + desgaste do bico endurecido (só PA6-CF)
     + consumíveis + refugo (a fração perdida em falhas, sobre material, energia e máquina) + mão de obra.
   - Produção (caixas): a troca da garra para a linha 45 min e perde 280 caixas (dado da equipe), tanto na
-    quebra do Tritan quanto na troca da garra SAI. A troca dos PADs é rápida: 20 min (estimativa da equipe),
-    120 caixas no ritmo de 6 por minuto.
+    quebra do Tritan quanto na troca da garra SAI. A troca dos PADs leva menos de 5 min e NÃO conta como
+    parada (dado da equipe): entra só a mão de obra de 5 min. A sensibilidade mostra o caso em que ela pararia a linha.
     As caixas NÃO são convertidas em reais: o valor real da caixa para a fábrica não é conhecido.
   - Garra SAI: compra no início (3 peças + 8 PADs + montagem + instalação numa parada programada);
-    troca preventiva a cada 24 meses; PADs a cada trimestre, também em parada programada.
+    troca preventiva a cada 24 meses; PADs a cada trimestre, sem parar a linha.
+  - Horizonte: o ciclo de 2 anos. A garra nova do mês 24 já é do ciclo seguinte e fica fora das contas.
   - Tritan: já está instalada. Quebra em média 4 vezes por ano; cada quebra custa a reimpressão da peça
     superior + a troca corretiva, e para a linha 45 min. Como a quebra é aleatória, o gráfico usa o valor
     esperado: uma reta, não uma escada.
@@ -49,8 +50,10 @@ def modelo(V):
         c = dict(material=mat, energia=ene, impressora=maq, bico=bico, consumiveis=cons, refugo=ref, mao_de_obra=mo)
         return {'nome': nome, 'horas': horas, 'kg': kg, **{k: r2(v) for k, v in c.items()}, 'total': r2(sum(c.values()))}
 
-    def parada(minutos, caixas):
-        return {'min': minutos, 'linha_parada_min': minutos, 'mao_de_obra': r2(minutos / 60 * RH), 'caixas': caixas}
+    def parada(minutos, caixas, linha=None):
+        """minutos: tempo do técnico; linha: minutos com a linha parada (igual aos minutos, se não for dito)."""
+        linha = minutos if linha is None else linha
+        return {'min': minutos, 'linha_parada_min': linha, 'mao_de_obra': r2(minutos / 60 * RH), 'caixas': caixas}
 
     kg_sai, kg_pad = V['sai_fil_g'] / 1000, V['pads_fil_g'] / 1000
     imp_sai = impressao('garra SAI (3 peças)', kg_sai, V['preco_pacf_kg'], V['sai_horas'], V['sai_impressoes'],
@@ -61,7 +64,9 @@ def modelo(V):
                         V['tritan_garra_horas'] * V['tritan_sup_frac'], 1, V['refugo_tritan'], V['secagem_tritan_h_kg'], False,
                         V['pos_min_peca_grande'])
     TROCA = parada(V['min_parada_corretiva'], V['caixas_parada_corretiva'])     # troca da garra: 45 min, 280 caixas
-    par = {'sai_troca': TROCA, 'pads': parada(V['troca_pads_min'], V['troca_pads_min'] * CX_MIN), 'corretiva': TROCA}
+    PARA = V['troca_pads_para_linha']                                            # 0: a troca dos PADs não para a linha
+    par = {'sai_troca': TROCA, 'corretiva': TROCA,
+           'pads': parada(V['troca_pads_min'], V['troca_pads_min'] * CX_MIN * PARA, V['troca_pads_min'] * PARA)}
 
     def evento(nome, imps, p):
         c = {k: sum(i[k] for i in imps) for k in CAT}
@@ -113,7 +118,7 @@ def modelo(V):
     cen = {}
     for nome, q, vida in (('previsto', 0.0, VIDA), ('conservador', V['conservador_quebras_sai_ano'], V['conservador_vida_meses'])):
         sd = serie('direto', q, vida, 24, False)          # Custos: o ciclo de 2 anos
-        sc = serie('caixas', q, vida)                     # Retorno: caixas perdidas até 30 meses
+        sc = serie('caixas', q, vida, N * TRI, False)     # Retorno: caixas perdidas no mesmo ciclo
         a, c24 = sd[-1], serie('caixas', q, vida, 24, False)[-1]
         mn = serie('linha_parada_min', q, vida, 24, False)[-1]
         n_troca = len(range(vida, 24, vida))
@@ -126,8 +131,8 @@ def modelo(V):
             'caixas_perdidas_24m': {'tritan': round(c24['tritan']), 'sai': round(c24['sai']), 'a_mais': round(c24['tritan'] - c24['sai'])},
             'linha_parada_min_24m': {'tritan': round(mn['tritan']), 'sai': round(mn['sai'])},
             'paradas_surpresa_24m': {'tritan': round(V['quebras_tritan_ano'] * 2), 'sai': round(q * 2)},
-            'paradas_programadas_24m': {'tritan': 0, 'sai': 1 + n_troca + n_pad},
-            'paradas_24m': {'tritan': round(V['quebras_tritan_ano'] * 2), 'sai': round(1 + n_troca + n_pad + q * 2)},
+            'paradas_programadas_24m': {'tritan': 0, 'sai': 1 + n_troca + n_pad * PARA},
+            'paradas_24m': {'tritan': round(V['quebras_tritan_ano'] * 2), 'sai': round(1 + n_troca + n_pad * PARA + q * 2)},
         }
 
     # 24 meses por categoria (slide de Custos)
@@ -135,12 +140,13 @@ def modelo(V):
         return {k: r2(sum(EV[e][k] * n for e, n in lista)) for k in CAT + ['direto', 'caixas', 'linha_parada_min']}
     p24 = {'sai': soma([('sai_inicio', 1), ('pads', n_pad_24)]),
            'tritan': soma([('tritan', V['quebras_tritan_ano'] * 2)])}
-    p24['sai']['eventos'] = {'garras': 1, 'trocas_pad': n_pad_24, 'paradas_programadas': 1 + n_pad_24, 'paradas_surpresa': 0}
+    p24['sai']['eventos'] = {'garras': 1, 'trocas_pad': n_pad_24, 'paradas_programadas': 1 + n_pad_24 * PARA, 'paradas_surpresa': 0}
     p24['tritan']['eventos'] = {'quebras': V['quebras_tritan_ano'] * 2, 'paradas_programadas': 0, 'paradas_surpresa': V['quebras_tritan_ano'] * 2}
 
     return {
         'producao': {'caixas_por_min': CX_MIN, 'caixas_por_mes': round(CX_MES), 'caixas_24m': round(cx24)},
-        'impressora_rs_h': r2(MAQ_H), 'troca': {'min': TROCA['min'], 'caixas': TROCA['caixas']}, 'troca_pads': {'min': par['pads']['min'], 'caixas': par['pads']['caixas']},
+        'impressora_rs_h': r2(MAQ_H), 'troca': {'min': TROCA['min'], 'caixas': TROCA['caixas']},
+        'troca_pads': {'min': par['pads']['min'], 'caixas': par['pads']['caixas'], 'para_linha': bool(PARA)},
         'impressoes': {'sai': imp_sai, 'pads': imp_pad, 'tritan': imp_tri}, 'paradas': par,
         'eventos': EV, 'periodo_24m': p24, 'cenarios': cen,
         'vida': {'pior_caso_anos': V['vida_pior_caso_anos'], 'troca_preventiva_meses': VIDA, 'pads_meses': PAD_M},
@@ -159,6 +165,7 @@ SENS = [
     ('refugo de 20% no PA6-CF', {'refugo_pacf': 0.20}),
     ('Tritan quebra só 2 vezes por ano', {'quebras_tritan_ano': 2}),
     ('270 caixas por parada (45 min × 6/min)', {'caixas_parada_corretiva': 270}),
+    ('se a troca dos PADs parasse a linha 5 min (30 caixas)', {'troca_pads_para_linha': 1}),
 ]
 sens = []
 for nome, mud in SENS:
