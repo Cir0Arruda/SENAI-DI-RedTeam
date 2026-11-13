@@ -122,3 +122,15 @@ footer { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--line);
   .galeria, .galeria.largo { grid-template-columns: 1fr; }
   .ev-hero p { font-size: 16px; }
 }
+
+/* Ferramentas: Fusion e Claude Code */
+.ferramentas { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.ferr { padding: 20px 22px; }
+.ferr header { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+.ferr header img { width: 48px; height: 48px; border-radius: 12px; flex: none; }
+.ferr header img.lg-claude { padding: 9px; background: #fbeee8; }
+.ferr h3 { margin: 0; font-size: 20px; }
+.ferr header span { font-size: 13px; color: var(--muted); }
+.ferr ul { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: 14.5px; }
+.ferr li { margin: 4px 0; }
+.ferr li b { color: var(--ink); }

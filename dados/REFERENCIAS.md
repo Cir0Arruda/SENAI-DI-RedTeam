@@ -262,3 +262,18 @@ Origem: equipe do projeto, com base na linha da Ajinomoto. Ficam registrados em 
 - **Prazos:** Tritan importado 15 a 20 dias; PA6-CF nacional 5 a 8 dias úteis.
 - **Matriz de prioridade** (slide Ideias anteriores): notas de valor e complexidade de 0 a 10 dadas pela equipe.
 - **Valores da equipe que o modelo de custo trocou ou deixou de usar:** PA6-CF R$ 258/kg (o modelo usa R$ 420, preço de mercado), R$ 250 por quebra do Tritan, bico de R$ 23,50 de uma vez e R$ 84.000 por parada. O porquê está em [`custos/CUSTO_REAL.md`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/custos/CUSTO_REAL.md).
+
+---
+
+## 11. Uso de inteligência artificial
+
+**[C1] Claude Code (Anthropic): apoio nos testes e na organização dos dados.**
+- O projeto teve ajuda do Claude Code, assistente de programação com IA da Anthropic, na parte de testes, como a aplicação em Python ([S3], scripts em [`dados/scripts/`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/dados/scripts)).
+- **Regra de uso:** o Claude Code foi proibido de buscar informações novas e de mudar o modelo sem permissão da equipe.
+- **Para que foi usado:**
+  - organização dos dados;
+  - validação dos resultados;
+  - automação dos testes no Autodesk Fusion ([S1]);
+  - identificação de falhas e eventos nos dados.
+- Exemplo: a conferência byte a byte das imagens do Fusion ([`evidencias_fusion.py`](https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/scripts/evidencias_fusion.py)) achou uma figura corrompida na cópia publicada do relatório [F1], que foi restaurada a partir do arquivo original.
+- Produto: <https://claude.com/claude-code>

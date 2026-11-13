@@ -8,12 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/evidencias.css?v=e1">
+  <link rel="stylesheet" href="assets/css/evidencias.css?v=e2">
 </head>
 <body>
   <header class="ev-top">
     <a class="voltar" href="index.html#15">← Voltar à apresentação</a>
     <nav class="ev-nav" aria-label="Seções">
+      <a href="#ferramentas">Ferramentas e IA</a>
       <a href="#fusion" style="--c: var(--o-fusion)"><i></i>Autodesk Fusion</a>
       <a href="#orca" style="--c: var(--o-orca)"><i></i>OrcaSlicer</a>
       <a href="#fe" style="--c: var(--o-fe)"><i></i>FE próprio</a>
@@ -34,6 +35,36 @@
         <span role="listitem" style="--c: var(--o-fe)"><i></i>FE próprio (Python): garra com preenchimento</span>
         <span role="listitem" style="--c: var(--o-mola)"><i></i>Modelo de molas: impacto no PAD</span>
         <span role="listitem" style="--c: var(--o-ilus)"><i></i>Ilustração: explica, não calcula</span>
+      </div>
+    </section>
+
+    <!-- ============ FERRAMENTAS ============ -->
+    <section class="ev-sec" id="ferramentas">
+      <h2>Ferramentas usadas</h2>
+      <p class="intro">Os estudos de tensão foram feitos no Autodesk Fusion. Nos testes, a equipe teve apoio do Claude Code, com regras de uso definidas.</p>
+      <div class="ferramentas">
+        <article class="ferr glass">
+          <header><img src="assets/img/logos/fusion.webp" alt="Logo do Autodesk Fusion" width="48" height="48"><div><h3>Autodesk Fusion</h3><span>Licença Educacional · versão 2706.1.17</span></div></header>
+          <ul>
+            <li>Modelo 3D da garra e dos PADs (STEP e F3D).</li>
+            <li>Estudos de tensão estática resolvidos: [F1] PA6-CF, [F2] Tritan e [F3] esfera de conferência.</li>
+            <li>Relatórios nativos exportados pelo próprio Fusion, abertos na seção abaixo.</li>
+          </ul>
+        </article>
+        <article class="ferr glass">
+          <header><img class="lg-claude" src="assets/img/logos/claude.svg" alt="Logo do Claude" width="48" height="48"><div><h3>Claude Code</h3><span>assistente de programação com IA, da Anthropic</span></div></header>
+          <ul>
+            <li>O projeto teve ajuda do Claude Code na parte de testes, como a aplicação em Python (os scripts de <code>dados/scripts/</code>).</li>
+            <li><b>Regra de uso:</b> foi proibido de buscar informações novas e de mudar o modelo sem permissão da equipe.</li>
+            <li><b>Para que foi usado:</b> organização dos dados; validação dos resultados; automação dos testes no Fusion; identificação de falhas e eventos nos dados.</li>
+            <li>Exemplo: a conferência byte a byte das imagens do Fusion achou uma figura corrompida na cópia publicada do relatório [F1], que foi restaurada a partir do arquivo original.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="arquivos">
+        <a href="https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/REFERENCIAS.md#11-uso-de-intelig%C3%AAncia-artificial">Referência [C1] no GitHub</a>
+        <a href="https://claude.com/claude-code">claude.com/claude-code</a>
+        <a href="https://www.autodesk.com/products/fusion-360/">Autodesk Fusion</a>
       </div>
     </section>
 

@@ -350,6 +350,18 @@ window.REFS = {
 "busca": "equipe dados informados pela equipe origem: equipe do projeto, com base na linha da ajinomoto. ficam registrados em dados/readme.md e em custos/entradas_custo.json . linha: cerca de 6 caixas por minuto; 2 caixas por ciclo do robo (uma em cada asa); 40 caixas por palete, em 4 camadas de 10; 12 itens e 12 kg por caixa. garra instalada: tritan, 2,834 kg; quebra a cada 3 meses (4 vezes por ano), rompendo na raiz. paradas: a troca da garra para a linha 45 min (280 caixas); a troca so dos pads leva cerca de 20 min (120 caixas, estimativa da equipe). parada para manuseio a cada 45 min de operacao. manutencao proposta: garra sai nova a cada 24 meses e pads a cada trimestre, com data marcada. impressao: a mesma impressora que imprime o tritan imprime o pa6-cf, trocando o bico ( [o1] ). prazos: tritan importado 15 a 20 dias; pa6-cf nacional 5 a 8 dias uteis. matriz de prioridade (slide ideias anteriores): notas de valor e complexidade de 0 a 10 dadas pela equipe. valores da equipe que o modelo de custo trocou ou deixou de usar: pa6-cf r$ 258/kg (o modelo usa r$ 420, preco de mercado), r$ 250 por quebra do tritan, bico de r$ 23,50 de uma vez e r$ 84.000 por parada. o porque esta em custos/custo_real.md . dados informados pela equipe"
 }
 ]
+},
+{
+"titulo": "Uso de inteligência artificial",
+"intro": "",
+"itens": [
+{
+"cod": "C1",
+"titulo": "Claude Code (Anthropic): apoio nos testes e na organização dos dados",
+"html": "<ul><li>O projeto teve ajuda do Claude Code, assistente de programação com IA da Anthropic, na parte de testes, como a aplicação em Python (<a class=\"rv-x\" href=\"#ref-S3\" data-ref=\"S3\">[S3]</a>, scripts em <a href=\"https://github.com/Cir0Arruda/SENAI-DI-RedTeam/tree/main/dados/scripts\" target=\"_blank\" rel=\"noopener\"><code>dados/scripts/</code></a>).</li><li><b>Regra de uso:</b> o Claude Code foi proibido de buscar informações novas e de mudar o modelo sem permissão da equipe.</li><li><b>Para que foi usado:</b><ul><li>organização dos dados;</li><li>validação dos resultados;</li><li>automação dos testes no Autodesk Fusion (<a class=\"rv-x\" href=\"#ref-S1\" data-ref=\"S1\">[S1]</a>);</li><li>identificação de falhas e eventos nos dados.</li></ul></li><li>Exemplo: a conferência byte a byte das imagens do Fusion (<a href=\"https://github.com/Cir0Arruda/SENAI-DI-RedTeam/blob/main/dados/scripts/evidencias_fusion.py\" target=\"_blank\" rel=\"noopener\"><code>evidencias_fusion.py</code></a>) achou uma figura corrompida na cópia publicada do relatório <a class=\"rv-x\" href=\"#ref-F1\" data-ref=\"F1\">[F1]</a>, que foi restaurada a partir do arquivo original.</li><li>Produto: <a href=\"https://claude.com/claude-code\" target=\"_blank\" rel=\"noopener\">claude.com/claude-code</a></li></ul>",
+"busca": "c1 claude code (anthropic): apoio nos testes e na organizacao dos dados o projeto teve ajuda do claude code, assistente de programacao com ia da anthropic, na parte de testes, como a aplicacao em python ( [s3] , scripts em dados/scripts/ ). regra de uso: o claude code foi proibido de buscar informacoes novas e de mudar o modelo sem permissao da equipe. para que foi usado: organizacao dos dados; validacao dos resultados; automacao dos testes no autodesk fusion ( [s1] ); identificacao de falhas e eventos nos dados. exemplo: a conferencia byte a byte das imagens do fusion ( evidencias_fusion.py ) achou uma figura corrompida na copia publicada do relatorio [f1] , que foi restaurada a partir do arquivo original. produto: claude.com/claude-code uso de inteligencia artificial"
+}
+]
 }
 ]
 };
