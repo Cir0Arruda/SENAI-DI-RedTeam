@@ -27,7 +27,9 @@ def mi(cx):
 
 P = C['cenarios']['previsto']
 S24, T24 = C['periodo_24m']['sai'], C['periodo_24m']['tritan']
-ed, et = P['encontro_direto'], P['encontro_total']
+ed, ec = P['encontro_direto'], P['encontro_caixas']
+lp = P['linha_parada_min_24m']
+h = lambda m: f'{m // 60} h' if m % 60 == 0 else f'{br(m / 60, 1)} h'
 EV = C['eventos']
 cx = P['caixas_perdidas_24m']
 
@@ -82,8 +84,8 @@ html = f'''<!-- CUSTO:INICIO (gerado por dados/scripts/custo_slides.py a partir 
           <div class="wrap wide">
             <div class="s-head compact" style="display:flex; justify-content:space-between; align-items:end; gap:16px; flex-wrap:wrap">
               <div>
-                <span class="kicker">Custos · Retorno com a produção</span>
-                <h2>Contando as caixas, o SAI <em id="roi2-tit">se paga em {et['dias']} dias</em></h2>
+                <span class="kicker">Custos · Retorno em produção</span>
+                <h2>Contando as caixas, o SAI <em id="roi2-tit">compensa a instalação em {ec['dias']} dias</em></h2>
               </div>
               <div class="seg" id="roi2-cen" role="tablist" aria-label="Cenário do SAI">
                 <button class="on" role="tab" aria-selected="true" data-c="previsto">Previsto</button>
@@ -92,17 +94,17 @@ html = f'''<!-- CUSTO:INICIO (gerado por dados/scripts/custo_slides.py a partir 
             </div>
             <div class="split" style="--cols:minmax(0,1.08fr) minmax(0,1fr); align-items:start">
               <div class="glass card chart" style="padding:14px 18px">
-                <h4>Custo total acumulado por caixas produzidas <span class="tag sim" style="margin-left:6px">estimativa</span></h4>
-                <p class="sub">custo direto + caixas que deixam de sair nas paradas (R$ {br(C['producao']['valor_caixa_rs'])} por caixa: margem de {round(E['margem_bruta'] * 100)}%) · R$</p>
+                <h4>Caixas que deixam de sair, acumulado <span class="tag sim" style="margin-left:6px">estimativa</span></h4>
+                <p class="sub">minutos de linha parada × {E['caixas_por_min']} caixas por minuto · quebra do Tritan: {E['caixas_parada_corretiva']} caixas · caixas, sem converter em reais</p>
                 <div class="legend"><span><i style="background:#5b5bd6"></i>Tritan (atual)</span><span><i style="background:#e5232f"></i>Garra SAI</span></div>
                 <div id="chart-roi2" class="roi-host"></div>
                 <p class="note" id="roi2-txt" style="margin:4px 0 0">Previsto: a garra SAI é trocada a cada 2 anos e os PADs a cada trimestre, sempre com data marcada.</p>
               </div>
               <div style="display:grid; gap:12px">
                 <div class="g2 roi-kpi">
-                  <div class="glass stat sm"><b id="roi2-pb">{et['dias']} dias</b><span>para o SAI se pagar</span><small id="roi2-pb-s">cerca de {mi(et['caixas'])} de caixas produzidas</small></div>
-                  <div class="glass stat sm"><b class="ink" id="roi2-eco">{mil(P['total_24m']['economia'])}</b><span>de economia em 2 anos</span><small id="roi2-eco-s">Tritan {mil(P['total_24m']['tritan'])} × SAI {mil(P['total_24m']['sai'])}</small></div>
-                  <div class="glass stat sm"><b class="ink" id="roi2-cx">{br(cx['tritan'] - cx['sai'])}</b><span>caixas a mais em 2 anos</span><small id="roi2-cx-s">Tritan perde {br(cx['tritan'])}; SAI {br(cx['sai'])}</small></div>
+                  <div class="glass stat sm"><b id="roi2-pb">{ec['dias']} dias</b><span>para compensar a parada da instalação</span><small id="roi2-pb-s">cerca de {mi(ec['caixas'])} caixas produzidas</small></div>
+                  <div class="glass stat sm"><b class="ink" id="roi2-cx">{br(cx['a_mais'])}</b><span>caixas a mais em 2 anos</span><small id="roi2-cx-s">Tritan perde {br(cx['tritan'])}; SAI {br(cx['sai'])}</small></div>
+                  <div class="glass stat sm"><b class="ink" id="roi2-min">{h(lp['tritan'])} → {h(lp['sai'])}</b><span>de linha parada em 2 anos</span><small id="roi2-min-s">Tritan {br(lp['tritan'])} min; SAI {br(lp['sai'])} min</small></div>
                   <div class="glass stat sm"><b class="ink" id="roi2-sp">{P['paradas_surpresa_24m']['tritan']} → {P['paradas_surpresa_24m']['sai']}</b><span>paradas surpresa em 2 anos</span><small>viram trocas com data marcada</small></div>
                 </div>
                 <div class="glass card prev-card" style="padding:12px 16px">
@@ -120,7 +122,7 @@ html = f'''<!-- CUSTO:INICIO (gerado por dados/scripts/custo_slides.py a partir 
                 </div>
               </div>
             </div>
-            <p class="note" style="margin:8px 0 0"><span class="tag sim">estimativa</span> Custo esperado: a quebra do Tritan é aleatória (média de 1 a cada 3 meses, dado da equipe), por isso a linha é contínua. Cada quebra soma a reimpressão da peça superior, a troca e as caixas paradas. A caixa vale a margem bruta do setor (30% de R$ 300), não o preço. Conservador: a garra SAI dura só {C['cenarios']['conservador']['vida_meses']} meses e ainda quebra {round(C['cenarios']['conservador']['quebras_sai_ano'])} vez por ano. A inspeção semanal do PAD entra na janela de limpeza.</p>
+            <p class="note" style="margin:8px 0 0"><span class="tag sim">estimativa</span> Produção esperada: a quebra do Tritan é aleatória (média de 1 a cada 3 meses, dado da equipe), por isso a linha é contínua. Cada quebra para a linha {E['min_parada_corretiva']} min e perde {E['caixas_parada_corretiva']} caixas. A troca da garra SAI para {E['troca_garra_min'] + E['troca_pads_min']} min ({EV['sai_troca']['caixas']} caixas) e a dos PADs {E['troca_pads_min']} min ({EV['pads']['caixas']} caixas), com data marcada. As caixas não foram convertidas em reais: o valor real da caixa não é conhecido. Conservador: a garra SAI dura só {C['cenarios']['conservador']['vida_meses']} meses e ainda quebra {round(C['cenarios']['conservador']['quebras_sai_ano'])} vez por ano. A inspeção semanal do PAD entra na janela de limpeza.</p>
           </div>
         </section>
 <!-- CUSTO:FIM -->'''

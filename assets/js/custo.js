@@ -1,5 +1,6 @@
-// Custos e Retorno: custo acumulado esperado, Tritan × garra SAI, por caixas produzidas (dados em custo-dados.js).
-// Linhas, não escadas: a quebra do Tritan é aleatória (em média a cada 3 meses), então o gráfico mostra o custo esperado.
+// Custos e Retorno: Tritan × garra SAI por caixas produzidas (dados em custo-dados.js).
+// Custos: custo direto acumulado em R$. Retorno: caixas que deixam de sair, sem converter em reais.
+// Linhas, não escadas: a quebra do Tritan é aleatória (em média a cada 3 meses), então o gráfico mostra o valor esperado.
 (() => {
   const C = window.CUSTO;
   if (!C) return;
@@ -19,8 +20,11 @@
   const isOn = node => !!node && node.closest('.slide')?.classList.contains('on');
   const nice = v => { const p = 10 ** Math.floor(Math.log10(v)), m = v / p; return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p; };
 
-  // Gráfico de linhas: x = caixas produzidas (com o mês embaixo), y = R$ acumulado
-  function chart(host, { mesMax, campo, marca24 }) {
+  const hTxt = m => (m % 60 ? `${fmt(m / 60, 1)} h` : `${m / 60} h`);
+
+  // Gráfico de linhas: x = caixas produzidas (com o mês embaixo), y = R$ ou caixas acumuladas
+  function chart(host, { mesMax, campo, marca24, un = 'rs', encLbl = 'se paga aqui' }) {
+    const yf = un === 'rs' ? rs : v => fmt(v);
     const W = 560, H = 306, L = 70, R = 76, T = 16, B = 60;
     const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img' }, host);
     const grid = el('g', { class: 'grid' }, svg), axis = el('g', { class: 'axis' }, svg), yAx = el('g', {}, axis);
@@ -57,10 +61,13 @@
       const p = S.reduce((a, q) => (Math.abs(q.caixas - fx) < Math.abs(a.caixas - fx) ? q : a));
       const d = p.tritan - p.sai;
       cross.setAttribute('x1', x(p.caixas)); cross.setAttribute('x2', x(p.caixas)); cross.setAttribute('opacity', 1);
+      const linha = un === 'rs'
+        ? [`Tritan: R$ ${fmt(p.tritan, 0)}`, `SAI: R$ ${fmt(p.sai, 0)}`, d >= 0 ? `o SAI economiza R$ ${fmt(d, 0)}` : `o SAI ainda custa R$ ${fmt(-d, 0)} a mais`]
+        : [`Tritan: ${fmt(p.tritan)} caixas perdidas`, `SAI: ${fmt(p.sai)} caixas perdidas`, d >= 0 ? `o SAI salvou ${fmt(d)} caixas` : `o SAI ainda perdeu ${fmt(-d)} caixas a mais`];
       tip.innerHTML = `<b>${p.mes ? `${p.mes} meses · ${cxTxt(p.caixas)} caixas` : 'início'}</b>
-        <div class="r"><i style="background:${INDIGO}"></i>Tritan: R$ ${fmt(p.tritan, 0)}</div>
-        <div class="r"><i style="background:${RED}"></i>SAI: R$ ${fmt(p.sai, 0)}</div>
-        <div>${d >= 0 ? `o SAI economiza R$ ${fmt(d, 0)}` : `o SAI ainda custa R$ ${fmt(-d, 0)} a mais`}</div>`;
+        <div class="r"><i style="background:${INDIGO}"></i>${linha[0]}</div>
+        <div class="r"><i style="background:${RED}"></i>${linha[1]}</div>
+        <div>${linha[2]}</div>`;
       tip.classList.add('on');
       const hx = ev.clientX - hr.left, hy = ev.clientY - hr.top;
       tip.style.left = `${Math.min(Math.max(hx + 14, 8), host.clientWidth - tip.offsetWidth - 8)}px`;
@@ -83,7 +90,7 @@
       grid.replaceChildren(); yAx.replaceChildren();
       for (let v = 0; v <= yMax + 1e-6; v += step) {
         el('line', { x1: L, x2: W - R, y1: y(v), y2: y(v) }, grid);
-        el('text', { x: L - 8, y: y(v) + 4, 'text-anchor': 'end' }, yAx).textContent = rs(v);
+        el('text', { x: L - 8, y: y(v) + 4, 'text-anchor': 'end' }, yAx).textContent = yf(v);
       }
       const path = k => S.map((p, i) => `${i ? 'L' : 'M'}${x(p.caixas).toFixed(1)},${y(p[k]).toFixed(1)}`).join('');
       pT.setAttribute('d', path('tritan')); pS.setAttribute('d', path('sai'));
@@ -93,25 +100,26 @@
         el('circle', { cx: x(p.caixas), cy: y(p.sai), r: 3.6, fill: RED, stroke: '#fff', 'stroke-width': 1.6 }, dots);
       });
       const last = S[S.length - 1], yT = y(last.tritan), yS = y(last.sai), sep = Math.abs(yT - yS) < 16 ? 9 : 0;
-      endT.setAttribute('x', x(last.caixas) + 8); endT.setAttribute('y', yT + 4 - (yT <= yS ? sep : -sep)); endT.textContent = rs(last.tritan);
-      endS.setAttribute('x', x(last.caixas) + 8); endS.setAttribute('y', yS + 4 + (yT <= yS ? sep : -sep)); endS.textContent = rs(last.sai);
+      endT.setAttribute('x', x(last.caixas) + 8); endT.setAttribute('y', yT + 4 - (yT <= yS ? sep : -sep)); endT.textContent = yf(last.tritan);
+      endS.setAttribute('x', x(last.caixas) + 8); endS.setAttribute('y', yS + 4 + (yT <= yS ? sep : -sep)); endS.textContent = yf(last.sai);
       prev.replaceChildren();
       if (marca24) S.filter(q => q.mes > 0 && q.mes % (c.vida_meses || 24) === 0).forEach(p => {
         el('text', { x: x(p.caixas), y: y(p.sai) + 20, class: 'lbl sm', 'text-anchor': 'middle' }, prev).textContent = 'garra nova';
       });
       const e = c[`encontro_${campo}`];
       if (e) {
-        const ex = x(e.mes * C.producao.caixas_por_mes), ey = y(e.valor_rs);
+        const ex = x(e.mes * C.producao.caixas_por_mes), ey = y(e.valor);
         encDot.setAttribute('cx', ex); encDot.setAttribute('cy', ey);
         // perto da base (retorno rápido): rótulo no alto, com linha guia; senão, abaixo e à direita do ponto
         const alto = ey > H - B - 60, ly = alto ? T + 22 : ey + 24;
         encLn.setAttribute('x1', ex); encLn.setAttribute('x2', ex); encLn.setAttribute('y1', ey - 7); encLn.setAttribute('y2', alto ? ly + 22 : ey - 7);
-        encT1.setAttribute('x', ex + 8); encT1.setAttribute('y', ly); encT1.textContent = 'se paga aqui';
+        encT1.setAttribute('x', ex + 8); encT1.setAttribute('y', ly); encT1.textContent = encLbl;
         encT2.setAttribute('x', ex + 8); encT2.setAttribute('y', ly + 15);
         encT2.textContent = `${cxTxt(e.caixas)} caixas · ${e.dias < 60 ? `${e.dias} dias` : `${fmt(e.mes, 1)} meses`}`;
         enc.setAttribute('opacity', 1);
       } else enc.setAttribute('opacity', 0);
-      svg.setAttribute('aria-label', `Custo acumulado esperado até ${mesMax} meses (${cxTxt(last.caixas)} caixas): Tritan ${rs(last.tritan)}, garra SAI ${rs(last.sai)}.${e ? ` As linhas se cruzam com ${cxTxt(e.caixas)} caixas, cerca de ${e.dias} dias.` : ''}`);
+      const oque = un === 'rs' ? 'Custo direto acumulado' : 'Caixas perdidas acumuladas';
+      svg.setAttribute('aria-label', `${oque} até ${mesMax} meses (${cxTxt(last.caixas)} caixas produzidas): Tritan ${yf(last.tritan)}, garra SAI ${yf(last.sai)}.${e ? ` As linhas se cruzam com ${cxTxt(e.caixas)} caixas, cerca de ${e.dias} dias.` : ''}`);
       return c;
     };
     const slide = host.closest('.slide');
@@ -124,21 +132,21 @@
   const hC = document.getElementById('chart-custo');
   if (hC) chart(hC, { mesMax: 24, campo: 'direto', marca24: false }).show('previsto');
 
-  // Slide de Retorno: custo com a produção parada, até 30 meses, com cenário
+  // Slide de Retorno: caixas que deixam de sair, até 30 meses, com cenário (sem converter em reais)
   const hR = document.getElementById('chart-roi2');
   if (hR) {
-    const ch = chart(hR, { mesMax: C.cenarios.previsto.serie_total.at(-1).mes, campo: 'total', marca24: true });
+    const ch = chart(hR, { mesMax: C.cenarios.previsto.serie_caixas.at(-1).mes, campo: 'caixas', marca24: true, un: 'cx', encLbl: 'compensa aqui' });
     const $ = id => document.getElementById(id);
     const put = cen => {
-      const c = ch.show(cen), e = c.encontro_total, t = c.total_24m;
-      const cp = c.caixas_perdidas_24m, sp = c.paradas_surpresa_24m;
+      const c = ch.show(cen), e = c.encontro_caixas;
+      const cp = c.caixas_perdidas_24m, sp = c.paradas_surpresa_24m, lp = c.linha_parada_min_24m;
       const set = (id, v) => { const n = $(id); if (n) n.textContent = v; };
       set('roi2-pb', e ? `${e.dias} dias` : '—');
-      set('roi2-tit', e ? `se paga em ${e.dias} dias` : 'ainda não se paga');
+      set('roi2-tit', e ? `compensa a instalação em ${e.dias} dias` : 'não compensa');
       set('roi2-pb-s', e ? `cerca de ${cxTxt(e.caixas)} caixas produzidas` : '');
-      set('roi2-eco', rs(t.economia));
-      set('roi2-eco-s', `Tritan ${rs(t.tritan)} × SAI ${rs(t.sai)}`);
-      set('roi2-cx', fmt(cp.tritan - cp.sai));
+      set('roi2-min', `${hTxt(lp.tritan)} → ${hTxt(lp.sai)}`);
+      set('roi2-min-s', `Tritan ${fmt(lp.tritan)} min; SAI ${fmt(lp.sai)} min`);
+      set('roi2-cx', fmt(cp.a_mais));
       set('roi2-cx-s', `Tritan perde ${fmt(cp.tritan)}; SAI ${fmt(cp.sai)}`);
       set('roi2-sp', `${sp.tritan} → ${sp.sai}`);
       set('roi2-txt', cen === 'previsto'

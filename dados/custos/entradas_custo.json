@@ -4,11 +4,9 @@
  "entradas": {
   "caixas_por_min": {"valor": 6, "tipo": "equipe", "fonte": "equipe: cerca de 6 caixas por minuto"},
   "horas_ano": {"valor": 8760, "tipo": "HIP", "fonte": "linha 24 h por dia, 365 dias (mesma hipótese do estudo de fadiga)"},
-  "caixas_parada_corretiva": {"valor": 280, "tipo": "equipe", "fonte": "equipe: 280 caixas por parada"},
+  "caixas_parada_corretiva": {"valor": 280, "tipo": "equipe", "fonte": "equipe: 280 caixas por parada (45 min × 6/min dá 270; as 10 a mais devem ser da retomada da linha: ver a sensibilidade)"},
   "min_parada_corretiva": {"valor": 45, "tipo": "equipe", "fonte": "equipe: parada de 45 min"},
   "quebras_tritan_ano": {"valor": 4, "tipo": "equipe", "fonte": "equipe: quebra a cada 3 meses"},
-  "preco_caixa_rs": {"valor": 300, "tipo": "equipe", "fonte": "equipe: R$ 84.000 por 280 caixas. Confere com o varejo: 12 kg a cerca de R$ 21–28/kg (distribuidoras, nov/2026)"},
-  "margem_bruta": {"valor": 0.30, "tipo": "pesquisa", "fonte": "margem bruta de fabricantes de alimentos no Brasil em 2025: M. Dias Branco 32,2% (infomoney.com.br, fev/2026), Camil 22,4% (visnoinvest.com.br, mai/2026). A caixa que não sai é margem perdida, não faturamento"},
 
   "preco_pacf_kg": {"valor": 420, "tipo": "pesquisa", "fonte": "PA6-CF nacional 1 kg: Voolt3D R$ 420 e Creality Hyper PA6-CF R$ 434 (nov/2026). O valor da equipe (R$ 258) está abaixo do mercado; Bambu Lab sai por R$ 745–827"},
   "preco_tpu_kg": {"valor": 158, "tipo": "equipe", "fonte": "equipe; confere com o mercado: mediana de R$ 159,90 (melhorfilamento.com.br, 2026), Brasfila R$ 158"},
@@ -61,7 +59,7 @@
  "valores_da_equipe_substituidos": {
   "preco_pacf_kg": "R$ 258/kg (abaixo do mercado; o modelo usa R$ 420)",
   "tritan_quebra_rs": "R$ 250 por quebra (o modelo calcula a peça superior pelo preço de mercado: 0,81 kg × R$ 220)",
-  "faturamento_parada_rs": "R$ 84.000 por parada (faturamento; o modelo usa a margem bruta de 30%: R$ 25.200)",
+  "faturamento_parada_rs": "R$ 84.000 por parada: não usado. O valor real da caixa para a fábrica não é conhecido, então a produção perdida é contada em caixas, sem converter em reais",
   "bico_rs": "R$ 23,50 de uma vez (o modelo usa o desgaste do bico por hora de PA6-CF)"
  }
 }

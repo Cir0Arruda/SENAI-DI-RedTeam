@@ -1,5 +1,5 @@
 {
- "conferidos": 80,
+ "conferidos": 83,
  "problemas": [],
  "linhas": [
   {
@@ -380,17 +380,33 @@
   },
   {
    "slide": 11,
-   "item": "caixa = R$ 300 × margem de 30%",
-   "mostrado": 90,
-   "calculado": 90.0,
+   "item": "troca da garra SAI: 30 min × 6 caixas/min",
+   "mostrado": 180,
+   "calculado": 180,
    "status": "OK",
-   "fonte": "entradas_custo.json"
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 11,
+   "item": "troca dos PADs: 10 min × 6 caixas/min",
+   "mostrado": 60,
+   "calculado": 60,
+   "status": "OK",
+   "fonte": "custo_real.json"
   },
   {
    "slide": 0,
-   "item": "quebra do Tritan: total = direto + 280 caixas × R$ 90",
-   "mostrado": 25492.81,
-   "calculado": 25492.81,
+   "item": "caixas do SAI em 2 anos = instalação + 7 trocas de PAD",
+   "mostrado": 600,
+   "calculado": 600,
+   "status": "OK",
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 0,
+   "item": "cruzamento em caixas refeito: 180 ÷ (180 + 280 − 240) × 3 meses",
+   "mostrado": 2.45,
+   "calculado": 2.4545,
    "status": "OK",
    "fonte": "custo_real.json"
   },
@@ -508,41 +524,41 @@
   },
   {
    "slide": 11,
-   "item": "SAI se paga, previsto (dias)",
-   "mostrado": 79,
-   "calculado": 79,
+   "item": "SAI compensa a instalação, previsto (dias)",
+   "mostrado": 75,
+   "calculado": 75,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
    "slide": 11,
-   "item": "SAI se paga, conservador (dias)",
-   "mostrado": 118,
-   "calculado": 118,
+   "item": "SAI compensa a instalação, conservador (dias)",
+   "mostrado": 110,
+   "calculado": 110,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
    "slide": 11,
-   "item": "caixas até o retorno (mil)",
-   "mostrado": 683,
-   "calculado": 683.054,
+   "item": "caixas produzidas até compensar (mil)",
+   "mostrado": 645,
+   "calculado": 645.055,
    "status": "OK",
    "fonte": "custo_real.json"
   },
   {
    "slide": 11,
-   "item": "economia em 2 anos com as caixas (R$ mil)",
-   "mostrado": 148,
-   "calculado": 148.0877,
+   "item": "linha parada em 2 anos, Tritan (min)",
+   "mostrado": 360,
+   "calculado": 360,
    "status": "OK",
-   "fonte": "custo_real.json"
+   "fonte": "equipe"
   },
   {
    "slide": 11,
-   "item": "economia conservadora (R$ mil)",
-   "mostrado": 84,
-   "calculado": 83.5761,
+   "item": "linha parada em 2 anos, SAI (min)",
+   "mostrado": 100,
+   "calculado": 100,
    "status": "OK",
    "fonte": "custo_real.json"
   },
@@ -551,6 +567,14 @@
    "item": "caixas a mais em 2 anos",
    "mostrado": 1640,
    "calculado": 1640,
+   "status": "OK",
+   "fonte": "custo_real.json"
+  },
+  {
+   "slide": 0,
+   "item": "caixas a mais, conservador",
+   "mostrado": 960,
+   "calculado": 960,
    "status": "OK",
    "fonte": "custo_real.json"
   },
@@ -588,9 +612,9 @@
   },
   {
    "slide": 13,
-   "item": "se paga em cerca de 79 dias (conclusão)",
-   "mostrado": 79,
-   "calculado": 79,
+   "item": "compensa a instalação em cerca de 75 dias (conclusão)",
+   "mostrado": 75,
+   "calculado": 75,
    "status": "OK",
    "fonte": "custo_real.json"
   },

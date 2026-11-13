@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=r10a">
+  <link rel="stylesheet" href="assets/css/style.css?v=r10b">
   <script type="importmap">
     { "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
@@ -455,8 +455,8 @@
           <div class="wrap wide">
             <div class="s-head compact" style="display:flex; justify-content:space-between; align-items:end; gap:16px; flex-wrap:wrap">
               <div>
-                <span class="kicker">Custos · Retorno com a produção</span>
-                <h2>Contando as caixas, o SAI <em id="roi2-tit">se paga em 79 dias</em></h2>
+                <span class="kicker">Custos · Retorno em produção</span>
+                <h2>Contando as caixas, o SAI <em id="roi2-tit">compensa a instalação em 75 dias</em></h2>
               </div>
               <div class="seg" id="roi2-cen" role="tablist" aria-label="Cenário do SAI">
                 <button class="on" role="tab" aria-selected="true" data-c="previsto">Previsto</button>
@@ -465,17 +465,17 @@
             </div>
             <div class="split" style="--cols:minmax(0,1.08fr) minmax(0,1fr); align-items:start">
               <div class="glass card chart" style="padding:14px 18px">
-                <h4>Custo total acumulado por caixas produzidas <span class="tag sim" style="margin-left:6px">estimativa</span></h4>
-                <p class="sub">custo direto + caixas que deixam de sair nas paradas (R$ 90 por caixa: margem de 30%) · R$</p>
+                <h4>Caixas que deixam de sair, acumulado <span class="tag sim" style="margin-left:6px">estimativa</span></h4>
+                <p class="sub">minutos de linha parada × 6 caixas por minuto · quebra do Tritan: 280 caixas · caixas, sem converter em reais</p>
                 <div class="legend"><span><i style="background:#5b5bd6"></i>Tritan (atual)</span><span><i style="background:#e5232f"></i>Garra SAI</span></div>
                 <div id="chart-roi2" class="roi-host"></div>
                 <p class="note" id="roi2-txt" style="margin:4px 0 0">Previsto: a garra SAI é trocada a cada 2 anos e os PADs a cada trimestre, sempre com data marcada.</p>
               </div>
               <div style="display:grid; gap:12px">
                 <div class="g2 roi-kpi">
-                  <div class="glass stat sm"><b id="roi2-pb">79 dias</b><span>para o SAI se pagar</span><small id="roi2-pb-s">cerca de 683 mil de caixas produzidas</small></div>
-                  <div class="glass stat sm"><b class="ink" id="roi2-eco">R$ 148 mil</b><span>de economia em 2 anos</span><small id="roi2-eco-s">Tritan R$ 204 mil × SAI R$ 56 mil</small></div>
+                  <div class="glass stat sm"><b id="roi2-pb">75 dias</b><span>para compensar a parada da instalação</span><small id="roi2-pb-s">cerca de 645 mil caixas produzidas</small></div>
                   <div class="glass stat sm"><b class="ink" id="roi2-cx">1.640</b><span>caixas a mais em 2 anos</span><small id="roi2-cx-s">Tritan perde 2.240; SAI 600</small></div>
+                  <div class="glass stat sm"><b class="ink" id="roi2-min">6 h → 1,7 h</b><span>de linha parada em 2 anos</span><small id="roi2-min-s">Tritan 360 min; SAI 100 min</small></div>
                   <div class="glass stat sm"><b class="ink" id="roi2-sp">8 → 0</b><span>paradas surpresa em 2 anos</span><small>viram trocas com data marcada</small></div>
                 </div>
                 <div class="glass card prev-card" style="padding:12px 16px">
@@ -493,7 +493,7 @@
                 </div>
               </div>
             </div>
-            <p class="note" style="margin:8px 0 0"><span class="tag sim">estimativa</span> Custo esperado: a quebra do Tritan é aleatória (média de 1 a cada 3 meses, dado da equipe), por isso a linha é contínua. Cada quebra soma a reimpressão da peça superior, a troca e as caixas paradas. A caixa vale a margem bruta do setor (30% de R$ 300), não o preço. Conservador: a garra SAI dura só 12 meses e ainda quebra 1 vez por ano. A inspeção semanal do PAD entra na janela de limpeza.</p>
+            <p class="note" style="margin:8px 0 0"><span class="tag sim">estimativa</span> Produção esperada: a quebra do Tritan é aleatória (média de 1 a cada 3 meses, dado da equipe), por isso a linha é contínua. Cada quebra para a linha 45 min e perde 280 caixas. A troca da garra SAI para 30 min (180 caixas) e a dos PADs 10 min (60 caixas), com data marcada. As caixas não foram convertidas em reais: o valor real da caixa não é conhecido. Conservador: a garra SAI dura só 12 meses e ainda quebra 1 vez por ano. A inspeção semanal do PAD entra na janela de limpeza.</p>
           </div>
         </section>
 <!-- CUSTO:FIM -->
@@ -556,7 +556,7 @@
                 <article class="glass card conc"><span class="conc-n">02</span><h3>O peso</h3>
                   <p>Conjunto de <b>2,783 kg</b>, já com os 8 PADs: <b>−51 g</b> (−1,8%) em relação à garra atual, sem mudar nada por fora. Mais folga para o UR30.</p></article>
                 <article class="glass card conc"><span class="conc-n">03</span><h3>Custo de oportunidade</h3>
-                  <p>Cada quebra evitada garante <b>280 caixas</b> (3.360 itens) que deixariam de ser produzidas: <b>1.120 caixas por ano</b>. Descontadas as trocas programadas, sobram 820 caixas a mais por ano, e o SAI se paga em cerca de 79 dias.</p></article>
+                  <p>Cada quebra evitada garante <b>280 caixas</b> (3.360 itens) que deixariam de ser produzidas: <b>1.120 caixas por ano</b>. Descontadas as trocas programadas, sobram 820 caixas a mais por ano, e em cerca de 75 dias o SAI já compensa a parada da instalação.</p></article>
                 <article class="glass card conc"><span class="conc-n">04</span><h3>Manutenção preventiva e controle</h3>
                   <p>A quebra deixa de ser surpresa: o PAD é o ponto de troca, a cada 2 meses, numa parada programada. Dá para controlar por checklist (PAD amassado = trocar) e manter PADs e uma garra reserva em estoque.</p></article>
                 <article class="glass card conc"><span class="conc-n">05</span><h3>Durabilidade</h3>
@@ -1947,17 +1947,17 @@
     <figure><img src="" alt=""><figcaption></figcaption></figure>
   </dialog>
 
-  <script src="assets/js/main.js?v=r10a"></script>
-  <script src="assets/js/bancada-dados.js?v=r10a"></script>
-  <script src="assets/js/bancada.js?v=r10a"></script>
-  <script src="assets/js/r07-dados.js?v=r10a"></script>
-  <script src="assets/js/r07.js?v=r10a"></script>
-  <script src="assets/js/conjunto-dados.js?v=r10a"></script>
-  <script src="assets/js/conjunto.js?v=r10a"></script>
-  <script src="assets/js/sai.js?v=r10a"></script>
-  <script src="assets/js/custo-dados.js?v=r10a"></script>
-  <script src="assets/js/custo.js?v=r10a"></script>
-  <script src="assets/js/anim.js?v=r10a"></script>
-  <script type="module" src="assets/js/viewer3d.js?v=r10a"></script>
+  <script src="assets/js/main.js?v=r10b"></script>
+  <script src="assets/js/bancada-dados.js?v=r10b"></script>
+  <script src="assets/js/bancada.js?v=r10b"></script>
+  <script src="assets/js/r07-dados.js?v=r10b"></script>
+  <script src="assets/js/r07.js?v=r10b"></script>
+  <script src="assets/js/conjunto-dados.js?v=r10b"></script>
+  <script src="assets/js/conjunto.js?v=r10b"></script>
+  <script src="assets/js/sai.js?v=r10b"></script>
+  <script src="assets/js/custo-dados.js?v=r10b"></script>
+  <script src="assets/js/custo.js?v=r10b"></script>
+  <script src="assets/js/anim.js?v=r10b"></script>
+  <script type="module" src="assets/js/viewer3d.js?v=r10b"></script>
 </body>
 </html>
