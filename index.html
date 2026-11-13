@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=r12a">
+  <link rel="stylesheet" href="assets/css/style.css?v=r12i">
   <script type="importmap">
     { "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
@@ -137,29 +137,9 @@
             </div>
             <div class="split" style="--cols:minmax(0,1.45fr) minmax(0,1fr); align-items:start">
               <figure class="glass card anim-card" style="margin:0; padding:14px 16px">
-                <svg class="line-svg" id="anim-linha" viewBox="0 0 640 300" role="img" aria-label="Animação: o robô UR30 pega duas caixas por vez da esteira e monta o palete em 4 camadas de 10 caixas; ao completar 40 caixas, um novo palete começa">
-                  <rect class="floor" x="0" y="262" width="640" height="2" />
-                  <!-- esteira -->
-                  <g class="belt"><rect x="10" y="226" width="250" height="16" rx="8" /><circle cx="22" cy="234" r="5" /><circle cx="248" cy="234" r="5" /></g>
-                  <g id="belt-boxes"></g>
-                  <!-- robô -->
-                  <g class="robot">
-                    <rect x="300" y="236" width="44" height="26" rx="6" class="rb-base" />
-                    <g id="robot-arm" class="rb-arm">
-                      <rect x="314" y="110" width="16" height="130" rx="8" />
-                      <g id="robot-fore"><rect x="314" y="104" width="130" height="14" rx="7" /><g id="robot-claw"><rect x="436" y="104" width="14" height="40" rx="5" /><rect x="420" y="140" width="46" height="9" rx="4" class="claw" /></g></g>
-                    </g>
-                  </g>
-                  <!-- palete -->
-                  <g id="pallet"><rect x="440" y="248" width="190" height="14" rx="3" class="pal" /></g>
-                  <g id="pallet-boxes"></g>
-                </svg>
-                <div class="line-hud">
-                  <div><b id="hud-caixas">0</b><span>caixas</span></div>
-                  <div><b id="hud-palete">1</b><span>palete (de 7)</span></div>
-                  <div><b id="hud-itens">0</b><span>itens</span></div>
-                  <div><b id="hud-kg">0</b><span>kg</span></div>
-                </div>
+                <video id="video-linha" class="line-video" src="assets/video/linha_palete.mp4" poster="assets/video/linha_palete_poster.jpg"
+                       autoplay muted loop playsinline preload="auto" disablepictureinpicture
+                       aria-label="Vídeo: o robô UR30 pega duas caixas por vez da esteira e monta o palete em 4 camadas de 10; ao completar 40 caixas o palete sai e entra outro vazio. Contadores: 40 caixas, 480 itens, 480 kg e 6 min 40 s de linha por palete."></video>
                 <figcaption class="note" style="margin-top:6px">Tempo acelerado. Na linha real são cerca de 6 caixas por minuto; cada caixa tem 12 itens e 12 kg.</figcaption>
               </figure>
               <div style="display:grid; gap:12px">
@@ -273,6 +253,9 @@
                 </article>
               </div>
             </div>
+            <div class="fonte-row">
+              <p class="fonte"><img src="assets/img/logos/fusion.webp" alt="" width="28" height="28"><span><b>Simulações no Autodesk Fusion</b> modelo 3D e estudo de carga da garra · Licença Educacional · versão 2706.1.17</span></p>
+            </div>
           </div>
         </section>
 
@@ -364,7 +347,10 @@
               </article>
             </div>
             </div>
-            <p class="note" style="margin:8px 0 0"><span class="tag sim">estimativa</span> Forças pelo modelo de molas do projeto (R03); animação ilustrativa. Não é ensaio.</p>
+            <div class="fonte-row">
+              <p class="note" style="margin:0"><span class="tag sim">estimativa</span> Forças pelo modelo de molas do projeto (R03); animação ilustrativa. Não é ensaio.</p>
+              <p class="fonte"><img src="assets/img/logos/fusion.webp" alt="" width="28" height="28"><span><b>Modelo 3D: Autodesk Fusion</b> Licença Educacional · versão 2706.1.17</span></p>
+            </div>
           </div>
         </section>
 
@@ -453,12 +439,21 @@
               <h2>Quanto custa a garra SAI <em>de verdade</em></h2>
             </div>
             <div class="split" style="--cols:minmax(0,1.08fr) minmax(0,1fr); align-items:start">
+              <div style="display:grid; gap:12px">
               <div class="glass card chart" style="padding:14px 18px">
                 <h4>Custo direto acumulado no ciclo de 2 anos <span class="tag sim" style="margin-left:6px">estimativa</span></h4>
                 <p class="sub">material, energia, impressora, refugo e mão de obra · sem a produção parada · R$</p>
                 <div class="legend"><span><i style="background:#5b5bd6"></i>Tritan (atual)</span><span><i style="background:#e5232f"></i>Garra SAI</span></div>
                 <div id="chart-custo" class="roi-host"></div>
                 <p class="note" style="margin:4px 0 0">A garra SAI começa mais cara: <b>R$ 1.128,84</b> para imprimir, montar e instalar. As linhas se cruzam com <b>4,0 milhões de caixas</b> (15,4 meses). No fim dos 2 anos ela custa <b>30% menos</b>.</p>
+              </div>
+                <div class="glass card imp-card">
+                  <h3>Mesma impressora do Tritan, só troca o bico</h3>
+                  <p>A impressora que já imprime o Tritan imprime o PA6-CF trocando só o bico por um de <b>aço endurecido</b>, que aguenta a fibra de carbono.</p>
+                  <div class="imp-tot"><b>86,2 h</b><span>para imprimir todo o SAI (3 peças da garra + 8 PADs), cerca de <b>3,6 dias</b> de impressora · a peça de Tritan leva 35,1 h</span></div>
+                  <div class="imp-bar" role="img" aria-label="Tempo de impressão por peça: peça de cima 34,2 h, peças de baixo 20,5 h e 20,5 h, 8 PADs 11,0 h"><i style="--w:39.73%; background:#e5232f" title="peça de cima: 34,2 h"></i><i style="--w:23.74%; background:#f08a8f" title="peça de baixo, esq.: 20,5 h"></i><i style="--w:23.76%; background:#f6b8bb" title="peça de baixo, dir.: 20,5 h"></i><i style="--w:12.77%; background:#5b5bd6" title="8 PADs: 11,0 h"></i></div>
+                  <div class="imp-leg"><span><i style="background:#e5232f"></i>peça de cima <b>34,2 h</b></span><span><i style="background:#f08a8f"></i>peça de baixo, esq. <b>20,5 h</b></span><span><i style="background:#f6b8bb"></i>peça de baixo, dir. <b>20,5 h</b></span><span><i style="background:#5b5bd6"></i>8 PADs <b>11,0 h</b></span></div>
+                </div>
               </div>
               <div style="display:grid; gap:12px">
                 <div class="glass card" style="padding:12px 16px">
@@ -1936,17 +1931,17 @@
     <figure><img src="" alt=""><figcaption></figcaption></figure>
   </dialog>
 
-  <script src="assets/js/main.js?v=r12a"></script>
-  <script src="assets/js/bancada-dados.js?v=r12a"></script>
-  <script src="assets/js/bancada.js?v=r12a"></script>
-  <script src="assets/js/r07-dados.js?v=r12a"></script>
-  <script src="assets/js/r07.js?v=r12a"></script>
-  <script src="assets/js/conjunto-dados.js?v=r12a"></script>
-  <script src="assets/js/conjunto.js?v=r12a"></script>
-  <script src="assets/js/sai.js?v=r12a"></script>
-  <script src="assets/js/custo-dados.js?v=r12a"></script>
-  <script src="assets/js/custo.js?v=r12a"></script>
-  <script src="assets/js/anim.js?v=r12a"></script>
-  <script type="module" src="assets/js/viewer3d.js?v=r12a"></script>
+  <script src="assets/js/main.js?v=r12i"></script>
+  <script src="assets/js/bancada-dados.js?v=r12i"></script>
+  <script src="assets/js/bancada.js?v=r12i"></script>
+  <script src="assets/js/r07-dados.js?v=r12i"></script>
+  <script src="assets/js/r07.js?v=r12i"></script>
+  <script src="assets/js/conjunto-dados.js?v=r12i"></script>
+  <script src="assets/js/conjunto.js?v=r12i"></script>
+  <script src="assets/js/sai.js?v=r12i"></script>
+  <script src="assets/js/custo-dados.js?v=r12i"></script>
+  <script src="assets/js/custo.js?v=r12i"></script>
+  <script src="assets/js/anim.js?v=r12i"></script>
+  <script type="module" src="assets/js/viewer3d.js?v=r12i"></script>
 </body>
 </html>

@@ -63,7 +63,7 @@
 
 // Vídeo do impacto: reprodução automática em loop contínuo (mudo, exigência dos navegadores para autoplay).
 (() => {
-  ['video-impacto', 'video-escudo'].forEach(id => {
+  ['video-impacto', 'video-escudo', 'video-linha'].forEach(id => {
     const v = document.getElementById(id);
     if (!v) return;
     v.muted = true; v.defaultMuted = true; v.loop = true;

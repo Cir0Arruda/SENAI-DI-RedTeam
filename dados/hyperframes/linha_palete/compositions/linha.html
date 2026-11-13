@@ -1,0 +1,261 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #ffffff; font-family: "Inter", sans-serif; color: #15151d; }
+    #lp-svg { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+    #lp-svg .mono { font-family: "IBM Plex Mono", monospace; }
+    #lp-svg .num { font-family: "Inter", sans-serif; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  </style>
+  <div id="root" data-composition-id="linha" data-width="1920" data-height="1080">
+    <svg id="lp-svg" class="clip" data-start="0" data-duration="31" data-track-index="0" viewBox="0 0 1920 1080"
+         role="img" aria-label="Robô UR30 pega duas caixas por vez da esteira e monta um palete de 40 caixas em 4 camadas de 10; no ritmo real de 6 caixas por minuto, um palete leva 6 minutos e 40 segundos">
+      <defs>
+        <clipPath id="lp-clip-esteira"><rect x="60" y="0" width="760" height="900" /></clipPath>
+      </defs>
+      <rect width="1920" height="1080" fill="#ffffff" />
+
+      <!-- cena desenhada a cada quadro -->
+      <g id="lp-fundo"></g>
+      <g id="lp-esteira-cx" clip-path="url(#lp-clip-esteira)" data-layout-allow-overflow></g>
+      <g id="lp-palete" data-layout-allow-overflow></g>
+      <g id="lp-robo" data-layout-allow-overflow></g>
+
+      <!-- rótulos do desenho -->
+      <g id="lp-rotulos" class="mono" font-size="34" fill="#74768c">
+        <line x1="420" y1="828" x2="420" y2="846" stroke="#74768c" stroke-width="2" />
+        <text x="420" y="884" text-anchor="middle">esteira · 6 caixas/min</text>
+        <line x1="960" y1="828" x2="960" y2="846" stroke="#74768c" stroke-width="2" />
+        <text x="960" y="884" text-anchor="middle">robô UR30</text>
+        <line x1="1420" y1="828" x2="1420" y2="846" stroke="#74768c" stroke-width="2" />
+        <text x="1420" y="884" text-anchor="middle">palete · 4 camadas</text>
+      </g>
+
+      <!-- aviso de palete cheio -->
+      <g id="lp-cheio" opacity="0">
+        <rect x="1236" y="150" width="380" height="64" rx="10" fill="#e5232f" />
+        <text x="1426" y="193" text-anchor="middle" font-size="30" font-weight="700" fill="#ffffff">Palete cheio: 40 caixas</text>
+      </g>
+
+      <!-- contadores -->
+      <g id="lp-hud">
+        <line x1="96" y1="912" x2="1824" y2="912" stroke="#15151d" stroke-opacity=".15" stroke-width="2" />
+        <text x="96" y="958" class="mono" font-size="32" fill="#74768c">CAIXAS NO PALETE</text>
+        <text id="lp-n-cx" x="96" y="1016" class="num" font-size="58" fill="#e5232f">0 / 40</text>
+        <text x="520" y="958" class="mono" font-size="32" fill="#74768c">ITENS</text>
+        <text id="lp-n-it" x="520" y="1016" class="num" font-size="58" fill="#15151d">0</text>
+        <text x="800" y="958" class="mono" font-size="32" fill="#74768c">PESO</text>
+        <text id="lp-n-kg" x="800" y="1016" class="num" font-size="58" fill="#15151d">0 kg</text>
+        <text x="1100" y="958" class="mono" font-size="32" fill="#74768c">TEMPO NA LINHA</text>
+        <text id="lp-n-t" x="1100" y="1016" class="num" font-size="58" fill="#15151d">00:00</text>
+        <text x="1824" y="958" class="mono" font-size="32" fill="#74768c" text-anchor="end">tempo acelerado</text>
+        <text x="1824" y="1000" class="mono" font-size="32" fill="#74768c" text-anchor="end">ilustração fora de escala</text>
+      </g>
+    </svg>
+  </div>
+  <script>
+    (() => {
+      const $ = id => document.getElementById(id);
+      const INK = '#15151d', MUTED = '#74768c';
+      const CX_F = '#d9b07a', CX_T = '#ebcd9e', CX_S = '#bf9460', FITA = '#a87a43';
+      const ROBO = '#e6e9ee', TAMPA = '#8fb0d8', GARRA = '#24242c', MANG = '#2f8fdc';
+
+      // geometria (px)
+      const PISO = 820, BT = 620, BH = 78, BW = 130, BD = 100, OX = 26, OY = -16, GAP = 10;
+      const PX = 560;                       // centro do par de caixas no ponto de pega
+      const PASSO = 320;                    // distância entre pares na esteira
+      const PAL_X = 1150, PT = PISO - 40;   // palete: canto da frente e topo
+      const BX = 960, SY = 610;             // eixo da base e altura do ombro
+      const L1 = 380, L2 = 340, FERR = 170; // braço, antebraço, punho até a ponta das ventosas
+      const CICLO = 1.4, N_CICLOS = 20, T_TROCA = 28;   // 20 ciclos de 2 caixas = 40 caixas
+      const SEG_REAL = 20;                  // 2 caixas a cada 20 s = 6 caixas por minuto
+
+      const cl = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
+      const sm = v => { v = cl(v); return v * v * (3 - 2 * v); };
+      const lerp = (a, b, k) => a + (b - a) * k;
+      const f1 = v => v.toFixed(1);
+
+      // ---------- desenho ----------
+      const caixa = (x, yb, w = BW, sw = 0) => {
+        // x: canto esquerdo da face da frente; yb: base; w: largura da frente; sw: largura de uma face lateral (giro)
+        const yt = yb - BH, W = w + sw;
+        let s = '';
+        s += `<polygon points="${f1(x + W)},${f1(yb)} ${f1(x + W)},${f1(yt)} ${f1(x + W + OX)},${f1(yt + OY)} ${f1(x + W + OX)},${f1(yb + OY)}" fill="${CX_S}" stroke="${INK}" stroke-width="2.5" stroke-linejoin="round"/>`;
+        s += `<polygon points="${f1(x)},${f1(yt)} ${f1(x + W)},${f1(yt)} ${f1(x + W + OX)},${f1(yt + OY)} ${f1(x + OX)},${f1(yt + OY)}" fill="${CX_T}" stroke="${INK}" stroke-width="2.5" stroke-linejoin="round"/>`;
+        s += `<rect x="${f1(x)}" y="${f1(yt)}" width="${f1(w)}" height="${BH}" fill="${CX_F}" stroke="${INK}" stroke-width="2.5"/>`;
+        if (sw > 1) s += `<rect x="${f1(x + w)}" y="${f1(yt)}" width="${f1(sw)}" height="${BH}" fill="${CX_S}" stroke="${INK}" stroke-width="2.5"/>`;
+        if (w > 30) {
+          s += `<line x1="${f1(x + W / 2 + OX / 2)}" y1="${f1(yt + OY / 2 - 6)}" x2="${f1(x + W / 2 + OX / 2)}" y2="${f1(yt + OY / 2 + 6)}" stroke="${FITA}" stroke-width="3"/>`;
+          s += `<rect x="${f1(x + w * 0.12)}" y="${f1(yt + 18)}" width="${f1(w * 0.34)}" height="14" fill="none" stroke="${FITA}" stroke-width="2"/>`;
+        }
+        return s;
+      };
+
+      function fundo(viagem) {
+        let s = `<line x1="40" y1="${PISO}" x2="1880" y2="${PISO}" stroke="${INK}" stroke-width="3"/>`;
+        for (let x = 60; x < 1880; x += 36) s += `<line x1="${x}" y1="${PISO}" x2="${x - 18}" y2="${PISO + 18}" stroke="${INK}" stroke-opacity=".18" stroke-width="2"/>`;
+        // esteira
+        [110, 760].forEach(x => { s += `<rect x="${x - 9}" y="${BT + 30}" width="18" height="${PISO - BT - 30}" fill="#c9ced6" stroke="${INK}" stroke-width="2.5"/>`; });
+        s += `<rect x="70" y="${PISO - 8}" width="80" height="8" fill="${INK}"/><rect x="720" y="${PISO - 8}" width="80" height="8" fill="${INK}"/>`;
+        s += `<line x1="110" y1="${PISO - 70}" x2="760" y2="${PISO - 70}" stroke="${INK}" stroke-width="2.5" stroke-opacity=".6"/>`;
+        s += `<rect x="60" y="${BT}" width="760" height="30" rx="15" fill="#3a3d4a" stroke="${INK}" stroke-width="3"/>`;
+        const off = viagem % 40;
+        s += `<line x1="70" y1="${BT + 4}" x2="810" y2="${BT + 4}" stroke="#7a7f92" stroke-width="3" stroke-dasharray="18 22" stroke-dashoffset="${f1(-off)}"/>`;
+        const ang = viagem / PASSO * Math.PI / 2;
+        for (let x = 75; x <= 805; x += 73) {
+          s += `<circle cx="${x}" cy="${BT + 15}" r="11" fill="#c3c7cf" stroke="${INK}" stroke-width="2"/>`;
+          for (let k = 0; k < 2; k++) {
+            const a = ang + k * Math.PI / 2;
+            s += `<line x1="${f1(x - 9 * Math.cos(a))}" y1="${f1(BT + 15 - 9 * Math.sin(a))}" x2="${f1(x + 9 * Math.cos(a))}" y2="${f1(BT + 15 + 9 * Math.sin(a))}" stroke="${INK}" stroke-width="1.6"/>`;
+          }
+        }
+        // pedestal e base do robô
+        s += `<rect x="${BX - 70}" y="${PISO - 12}" width="140" height="12" fill="#7d8692" stroke="${INK}" stroke-width="2.5"/>`;
+        s += `<rect x="${BX - 46}" y="${SY + 90}" width="92" height="${PISO - SY - 102}" fill="#a9b1bb" stroke="${INK}" stroke-width="3"/>`;
+        s += `<line x1="${BX - 30}" y1="${SY + 100}" x2="${BX - 30}" y2="${PISO - 22}" stroke="${INK}" stroke-opacity=".25" stroke-width="2"/>`;
+        s += `<rect x="${BX - 62}" y="${SY + 78}" width="124" height="14" fill="#7d8692" stroke="${INK}" stroke-width="2.5"/>`;
+        return s;
+      }
+
+      function palete(dx, nCx) {
+        // nCx: quantas caixas já estão no palete (0..40)
+        const x0 = PAL_X + dx;
+        let s = '';
+        const prof = 5 * OX, profY = 5 * OY, W = 2 * BW + GAP + 20;
+        s += `<polygon points="${x0},${PT} ${x0 + W},${PT} ${x0 + W + prof},${PT + profY} ${x0 + prof},${PT + profY}" fill="#e2c08c" stroke="${INK}" stroke-width="2.5"/>`;
+        for (let k = 1; k < 5; k++) s += `<line x1="${f1(x0 + k * OX)}" y1="${f1(PT + k * OY)}" x2="${f1(x0 + W + k * OX)}" y2="${f1(PT + k * OY)}" stroke="${INK}" stroke-opacity=".35" stroke-width="2"/>`;
+        s += `<polygon points="${x0 + W},${PT} ${x0 + W + prof},${PT + profY} ${x0 + W + prof},${PISO + profY} ${x0 + W},${PISO}" fill="#b58a52" stroke="${INK}" stroke-width="2.5"/>`;
+        s += `<rect x="${x0}" y="${PT}" width="${W}" height="12" fill="#cfa66d" stroke="${INK}" stroke-width="2.5"/>`;
+        [0, W / 2 - 22, W - 44].forEach(b => { s += `<rect x="${f1(x0 + b)}" y="${PT + 12}" width="44" height="28" fill="#cfa66d" stroke="${INK}" stroke-width="2.5"/>`; });
+        // caixas: de trás para a frente, de baixo para cima
+        const lista = [];
+        for (let n = 0; n < nCx; n += 2) {
+          const par = n / 2, L = Math.floor(par / 5), r = 4 - (par % 5);
+          for (let i = 0; i < 2 && n + i < nCx; i++) lista.push({ L, r, i });
+        }
+        lista.sort((a, b) => b.r - a.r || a.L - b.L || a.i - b.i);
+        lista.forEach(({ L, r, i }) => { s += caixa(x0 + 10 + i * (BW + GAP) + r * OX, PT - L * BH + r * OY); });
+        return s;
+      }
+
+      // ponta das ventosas para o par de número n no palete
+      const alvoPalete = n => {
+        const L = Math.floor(n / 5), r = 4 - (n % 5);
+        return { x: PAL_X + 10 + BW + GAP / 2 + r * OX + OX / 2, y: PT - L * BH + r * OY - BH + OY / 2 };
+      };
+      const PEGA = { x: PX + OX / 2, y: BT - BH + OY / 2 };
+
+      // cinemática: o braço fica num plano vertical que gira em torno do eixo da base (th = 0: palete, th = pi: esteira)
+      function ik(r, yW) {
+        const up = SY - yW, d = Math.min(Math.hypot(r, up), 0.985 * (L1 + L2));
+        const fi = Math.atan2(up, r), al = Math.acos(cl((L1 * L1 + d * d - L2 * L2) / (2 * L1 * d), -1, 1));
+        const a1 = fi + al;
+        return { er: L1 * Math.cos(a1), ey: SY - L1 * Math.sin(a1) };
+      }
+
+      function pose(t) {
+        // devolve th, r (raio da ponta), y (altura da ponta), estado da carga e quantas caixas no palete
+        if (t >= T_TROCA) return { th: Math.PI, r: BX - PEGA.x, y: PEGA.y - 120, carga: false, n: N_CICLOS, u: 0 };
+        const n = Math.floor(t / CICLO), u = (t - n * CICLO) / CICLO;
+        const q = alvoPalete(n);
+        const rp = BX - PEGA.x, yp = PEGA.y, rq = q.x - BX, yq = q.y;
+        const yT = Math.min(yp, yq) - 100, yA = yp - 120;
+        let th, r, y;
+        if (u < 0.12) { th = Math.PI; r = rp; y = lerp(yA, yp, sm(u / 0.12)); }
+        else if (u < 0.18) { th = Math.PI; r = rp; y = yp; }
+        else if (u < 0.30) { th = Math.PI; r = rp; y = lerp(yp, yT, sm((u - 0.18) / 0.12)); }
+        else if (u < 0.62) { const k = sm((u - 0.30) / 0.32); th = lerp(Math.PI, 0, k); r = lerp(rp, rq, k); y = yT - 50 * Math.sin(Math.PI * k); }
+        else if (u < 0.74) { th = 0; r = rq; y = lerp(yT, yq, sm((u - 0.62) / 0.12)); }
+        else if (u < 0.80) { th = 0; r = rq; y = yq; }
+        else if (u < 0.88) { th = 0; r = rq; y = lerp(yq, yT, sm((u - 0.80) / 0.08)); }
+        else { const k = sm((u - 0.88) / 0.12); th = lerp(0, Math.PI, k); r = lerp(rq, rp, k); y = lerp(yT, yA, k) - 50 * Math.sin(Math.PI * k); }
+        return { th, r, y, carga: u >= 0.15 && u < 0.77, n, u };
+      }
+
+      function robo(p) {
+        const c = Math.cos(p.th), sn = Math.abs(Math.sin(p.th)), ac = Math.abs(c);
+        const px = rr => BX + rr * c;
+        const yW = p.y - FERR, e = ik(p.r, yW);
+        const S = { x: BX, y: SY }, E = { x: px(e.er), y: e.ey }, Wp = { x: px(p.r), y: yW };
+        const largura = (a, b) => a * ac + b * sn;
+        let s = '';
+        // caixas na garra (giram com a garra)
+        if (p.carga) {
+          const w = BW * ac, sw = BD * sn * 0.6;
+          [-1, 1].forEach(sg => {
+            const cxc = Wp.x - OX / 2 + sg * (BW + GAP) / 2 * c;
+            s += caixa(cxc - (w + sw) / 2, p.y - OY / 2 + BH, w, sw);
+          });
+        }
+        // garra: punho, flange, corpo de Tritan, barra das asas, ventosas e mangueiras
+        const gy = Wp.y;
+        s += `<rect x="${f1(Wp.x - 22)}" y="${f1(gy)}" width="44" height="62" rx="10" fill="${ROBO}" stroke="${INK}" stroke-width="3"/>`;
+        s += `<rect x="${f1(Wp.x - largura(50, 50))}" y="${f1(gy + 60)}" width="${f1(2 * largura(50, 50))}" height="12" fill="#b9c0c8" stroke="${INK}" stroke-width="2.5"/>`;
+        s += `<rect x="${f1(Wp.x - largura(34, 34))}" y="${f1(gy + 72)}" width="${f1(2 * largura(34, 34))}" height="46" rx="6" fill="${GARRA}" stroke="${INK}" stroke-width="2.5"/>`;
+        const meiaAsa = largura(150, 34);
+        s += `<rect x="${f1(Wp.x - meiaAsa)}" y="${f1(gy + 116)}" width="${f1(2 * meiaAsa)}" height="24" rx="6" fill="${GARRA}" stroke="${INK}" stroke-width="2.5"/>`;
+        const vent = [-110, -40, 40, 110].map(a => Wp.x + a * c);
+        vent.forEach(vx => {
+          s += `<rect x="${f1(vx - 10)}" y="${f1(gy + 140)}" width="20" height="12" fill="#2f9e5b" stroke="${INK}" stroke-width="2"/>`;
+          s += `<path d="M${f1(vx - 13)},${f1(gy + 152)} h26 l4,18 h-34 z" fill="#f39a1e" stroke="${INK}" stroke-width="2" stroke-linejoin="round"/>`;
+        });
+        [-1, 1].forEach(sg => {
+          const ex = Wp.x + sg * 120 * c, mx = Wp.x + sg * 70 * c;
+          s += `<path d="M${f1(Wp.x + 8 * sg)},${f1(gy + 30)} C${f1(mx)},${f1(gy + 10)} ${f1(ex)},${f1(gy + 60)} ${f1(ex)},${f1(gy + 118)}" fill="none" stroke="${MANG}" stroke-width="6" stroke-linecap="round"/>`;
+        });
+        // braço: elos com contorno e juntas com tampa
+        const elo = (a, b, w) => `<line x1="${f1(a.x)}" y1="${f1(a.y)}" x2="${f1(b.x)}" y2="${f1(b.y)}" stroke="${INK}" stroke-width="${w + 6}" stroke-linecap="round"/><line x1="${f1(a.x)}" y1="${f1(a.y)}" x2="${f1(b.x)}" y2="${f1(b.y)}" stroke="${ROBO}" stroke-width="${w}" stroke-linecap="round"/>`;
+        const junta = (q, R) => `<circle cx="${f1(q.x)}" cy="${f1(q.y)}" r="${R}" fill="${ROBO}" stroke="${INK}" stroke-width="3"/><ellipse cx="${f1(q.x)}" cy="${f1(q.y)}" rx="${f1(R * 0.55 * Math.max(ac, 0.3))}" ry="${f1(R * 0.55)}" fill="${TAMPA}" stroke="${INK}" stroke-width="2"/>`;
+        // base giratória (junta 1)
+        s += `<rect x="${BX - 52}" y="${SY + 20}" width="104" height="60" rx="14" fill="${ROBO}" stroke="${INK}" stroke-width="3"/>`;
+        s += `<rect x="${BX - 52}" y="${SY + 56}" width="104" height="10" fill="${TAMPA}" stroke="${INK}" stroke-width="2"/>`;
+        s += elo(S, E, 58) + elo(E, Wp, 48);
+        s += junta(S, 46) + junta(E, 38) + junta(Wp, 30);
+        return s;
+      }
+
+      const mmss = sec => { const m = Math.floor(sec / 60), ss = Math.round(sec % 60); return `${String(m).padStart(2, '0')}:${String(ss).padStart(2, '0')}`; };
+
+      function draw(t) {
+        const p = pose(t);
+        const troca = t >= T_TROCA, tt = t - T_TROCA;
+        // esteira: pares andam no meio do ciclo
+        const adv = troca ? 0 : sm((p.u - 0.30) / 0.50);
+        const viagem = PASSO * ((troca ? N_CICLOS : p.n) + adv);
+        $('lp-fundo').innerHTML = fundo(viagem);
+        let est = '';
+        for (let k = 4; k >= 0; k--) {
+          const ind = p.n + k;
+          if (k === 0 && (p.carga || (!troca && p.u >= 0.77))) continue;
+          const xc = PX - PASSO * k + (k > 0 ? PASSO * adv : 0);
+          for (let i = 1; i >= 0; i--) est += caixa(xc - BW - GAP / 2 + i * (BW + GAP), BT);
+        }
+        $('lp-esteira-cx').innerHTML = est;
+        // palete: caixas já colocadas
+        let nCx = troca ? 40 : 2 * p.n + (p.u >= 0.77 ? 2 : 0);
+        let pal = '';
+        if (troca) {
+          const sai = 900 * sm((tt - 0.3) / 1.4), entra = 900 * (1 - sm((tt - 1.6) / 1.2));
+          if (sai < 899) pal += palete(sai, 40);
+          pal += palete(entra, 0);
+          if (tt >= 1.7) nCx = 0;
+        } else pal = palete(0, nCx);
+        $('lp-palete').innerHTML = pal;
+        $('lp-robo').innerHTML = robo(p);
+        // contadores
+        const real = troca ? (tt >= 1.7 ? 0 : N_CICLOS * SEG_REAL) : (p.n + p.u) * SEG_REAL;
+        $('lp-n-cx').textContent = `${nCx} / 40`;
+        $('lp-n-it').textContent = (nCx * 12).toLocaleString('pt-BR');
+        $('lp-n-kg').textContent = `${(nCx * 12).toLocaleString('pt-BR')} kg`;
+        $('lp-n-t').textContent = mmss(real);
+      }
+
+      const clock = { t: 0 };
+      const tl = gsap.timeline({ paused: true });
+      tl.to(clock, { t: 31, duration: 31, ease: 'none', onUpdate: () => draw(clock.t) }, 0);
+      tl.fromTo('#lp-cheio', { opacity: 0 }, { opacity: 1, duration: 0.25 }, T_TROCA + 0.05);
+      tl.to('#lp-cheio', { opacity: 0, duration: 0.3 }, T_TROCA + 2.2);
+      window.__timelines = window.__timelines || {};
+      window.__timelines['linha'] = tl;
+      draw(0);
+    })();
+  </script>
+</template>

@@ -97,6 +97,10 @@ fil = round(orca['orca_total_g'] + b20['INFERIOR_ESQ']['orca_total_g'] + b20['IN
 horas = (orca['time_s'] + b20['INFERIOR_ESQ']['time_s'] + b20['INFERIOR_DIR']['time_s']) / 3600
 ok(14, 'garra SAI impressa (g)', 1433, sup + ie + idr, 0, 'Orca', '1.433 g')
 ok(14, 'tempo de impressão da garra (h)', 75.2, horas, 1, 'Orca', '75,2 h')
+t_tot = horas + pads['Orca_summary']['prediction_s'] / 3600
+ok(12, 'tempo de impressão de todo o SAI: garra + 8 PADs (h)', 86.2, t_tot, 1, 'Orca', '86,2 h')
+ok(12, 'tempo de impressão de todo o SAI (dias de impressora)', 3.6, t_tot / 24, 1, 'Orca', '3,6 dias')
+ok(12, 'peça de cima da garra (h)', 34.2, orca['time_s'] / 3600, 1, 'Orca', '34,2 h')
 ok(10, 'filamento dos PADs (g)', 139, pads['Orca_summary']['total_filament_mass_g'], 0, 'Orca', '139')
 ok(0, 'tempo dos PADs (h)', 11.0, pads['Orca_summary']['prediction_s'] / 3600, 1, 'Orca')
 pads_g = pads['category_mass_g']['peca']

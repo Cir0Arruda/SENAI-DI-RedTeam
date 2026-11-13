@@ -1,5 +1,5 @@
 {
- "conferidos": 78,
+ "conferidos": 81,
  "problemas": [],
  "linhas": [
   {
@@ -247,6 +247,30 @@
    "item": "tempo de impressão da garra (h)",
    "mostrado": 75.2,
    "calculado": 75.1714,
+   "status": "OK",
+   "fonte": "Orca"
+  },
+  {
+   "slide": 12,
+   "item": "tempo de impressão de todo o SAI: garra + 8 PADs (h)",
+   "mostrado": 86.2,
+   "calculado": 86.1939,
+   "status": "OK",
+   "fonte": "Orca"
+  },
+  {
+   "slide": 12,
+   "item": "tempo de impressão de todo o SAI (dias de impressora)",
+   "mostrado": 3.6,
+   "calculado": 3.5914,
+   "status": "OK",
+   "fonte": "Orca"
+  },
+  {
+   "slide": 12,
+   "item": "peça de cima da garra (h)",
+   "mostrado": 34.2,
+   "calculado": 34.2364,
    "status": "OK",
    "fonte": "Orca"
   },

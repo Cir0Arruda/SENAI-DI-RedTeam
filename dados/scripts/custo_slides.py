@@ -43,6 +43,19 @@ linhas = [
 assert abs(sum(l[2] for l in linhas) - T24['direto']) < 0.02 and abs(sum(l[3] for l in linhas) - S24['direto']) < 0.02
 tbl = '\n'.join(f'                    <tr><td>{a} <small>{b}</small></td><td>R$ {br(t, 2)}</td><td>R$ {br(s, 2)}</td></tr>' for a, b, t, s in linhas)
 eco_d = P['direto_24m']['economia']
+
+# tempo de impressão de todo o produto (Orca), peça por peça
+ORCA = R / 'dados' / 'orca'
+t_sup = json.loads((ORCA / 'r07_comparativo_fatiamento.json').read_text(encoding='utf-8'))['R07_SEM_SUPERIOR']['time_s'] / 3600
+_b20 = json.loads((ORCA / 'r07_fatiamento_base20.json').read_text(encoding='utf-8'))
+t_ie, t_id = _b20['INFERIOR_ESQ']['time_s'] / 3600, _b20['INFERIOR_DIR']['time_s'] / 3600
+t_pad = C['impressoes']['pads']['horas']
+t_tot = t_sup + t_ie + t_id + t_pad
+assert abs(t_sup + t_ie + t_id - C['impressoes']['sai']['horas']) < 0.05
+t_tri = C['impressoes']['tritan']['horas']
+pecas = [('peça de cima', t_sup, '#e5232f'), ('peça de baixo, esq.', t_ie, '#f08a8f'), ('peça de baixo, dir.', t_id, '#f6b8bb'), ('8 PADs', t_pad, '#5b5bd6')]
+imp_bar = ''.join(f'<i style="--w:{h / t_tot * 100:.2f}%; background:{c}" title="{n}: {br(h, 1)} h"></i>' for n, h, c in pecas)
+imp_leg = ''.join(f'<span><i style="background:{c}"></i>{n} <b>{br(h, 1)} h</b></span>' for n, h, c in pecas)
 pct_d = eco_d / P['direto_24m']['tritan'] * 100
 
 html = f'''<!-- CUSTO:INICIO (gerado por dados/scripts/custo_slides.py a partir de dados/custos/custo_real.json) -->
@@ -53,12 +66,21 @@ html = f'''<!-- CUSTO:INICIO (gerado por dados/scripts/custo_slides.py a partir 
               <h2>Quanto custa a garra SAI <em>de verdade</em></h2>
             </div>
             <div class="split" style="--cols:minmax(0,1.08fr) minmax(0,1fr); align-items:start">
+              <div style="display:grid; gap:12px">
               <div class="glass card chart" style="padding:14px 18px">
                 <h4>Custo direto acumulado no ciclo de 2 anos <span class="tag sim" style="margin-left:6px">estimativa</span></h4>
                 <p class="sub">material, energia, impressora, refugo e mão de obra · sem a produção parada · R$</p>
                 <div class="legend"><span><i style="background:#5b5bd6"></i>Tritan (atual)</span><span><i style="background:#e5232f"></i>Garra SAI</span></div>
                 <div id="chart-custo" class="roi-host"></div>
                 <p class="note" style="margin:4px 0 0">A garra SAI começa mais cara: <b>R$ {br(EV['sai_inicio']['direto'], 2)}</b> para imprimir, montar e instalar. As linhas se cruzam com <b>{mi(ed['caixas'])} de caixas</b> ({br(ed['mes'], 1)} meses). No fim dos 2 anos ela custa <b>{round(pct_d)}% menos</b>.</p>
+              </div>
+                <div class="glass card imp-card">
+                  <h3>Mesma impressora do Tritan, só troca o bico</h3>
+                  <p>A impressora que já imprime o Tritan imprime o PA6-CF trocando só o bico por um de <b>aço endurecido</b>, que aguenta a fibra de carbono.</p>
+                  <div class="imp-tot"><b>{br(t_tot, 1)} h</b><span>para imprimir todo o SAI (3 peças da garra + 8 PADs), cerca de <b>{br(t_tot / 24, 1)} dias</b> de impressora · a peça de Tritan leva {br(t_tri, 1)} h</span></div>
+                  <div class="imp-bar" role="img" aria-label="Tempo de impressão por peça: peça de cima {br(t_sup, 1)} h, peças de baixo {br(t_ie, 1)} h e {br(t_id, 1)} h, 8 PADs {br(t_pad, 1)} h">{imp_bar}</div>
+                  <div class="imp-leg">{imp_leg}</div>
+                </div>
               </div>
               <div style="display:grid; gap:12px">
                 <div class="glass card" style="padding:12px 16px">

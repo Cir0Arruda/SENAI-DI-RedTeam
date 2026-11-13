@@ -23,9 +23,9 @@
   const hTxt = m => (m % 60 ? `${fmt(m / 60, 1)} h` : `${m / 60} h`);
 
   // Gráfico de linhas: x = caixas produzidas (com o mês embaixo), y = R$ ou caixas acumuladas
-  function chart(host, { mesMax, campo, marca24, un = 'rs', encLbl = 'se paga aqui' }) {
+  function chart(host, { mesMax, campo, marca24, un = 'rs', encLbl = 'se paga aqui', alt = 306 }) {
     const yf = un === 'rs' ? rs : v => fmt(v);
-    const W = 560, H = 306, L = 70, R = 76, T = 16, B = 60;
+    const W = 560, H = alt, L = 70, R = 76, T = 16, B = 60;
     const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img' }, host);
     const grid = el('g', { class: 'grid' }, svg), axis = el('g', { class: 'axis' }, svg), yAx = el('g', {}, axis);
     const cxMax = mesMax * C.producao.caixas_por_mes;
@@ -130,7 +130,7 @@
 
   // Slide de Custos: custo direto no período de manutenção (24 meses)
   const hC = document.getElementById('chart-custo');
-  if (hC) chart(hC, { mesMax: 24, campo: 'direto', marca24: false }).show('previsto');
+  if (hC) chart(hC, { mesMax: 24, campo: 'direto', marca24: false, alt: 236 }).show('previsto');
 
   // Slide de Retorno: caixas que deixam de sair, até 30 meses, com cenário (sem converter em reais)
   const hR = document.getElementById('chart-roi2');

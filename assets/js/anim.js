@@ -191,7 +191,7 @@
     const W = () => walk.clientWidth, PW = () => panda.offsetWidth;
     // roteiro: entra pela esquerda, para perto do QR mostrando o balão, volta olhando o celular, sai e recomeça
     let x = -140, dir = 1, mode = 'walk', wait = 0, t = 0, target = 0;
-    const targetRight = () => W() - PW() - (innerWidth > 640 ? 180 : 24);
+    const targetRight = () => W() - PW() - (innerWidth > 640 ? 380 : 24);   // para antes do QR, na faixa de baixo
     const pose = (swing) => {
       legA.setAttribute('transform', `rotate(${swing * 22} 69 120)`);
       legB.setAttribute('transform', `rotate(${-swing * 22} 51 120)`);
