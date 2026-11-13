@@ -123,7 +123,12 @@
     "OK MOD_ROSA_35_INTERNO_R07 igual a stl/zonas/superior_ressaltos_35.stl",
     "OK MOD_AMARELO_20_INTERNO_R07 a 20%",
     "OK MOD_AMARELO_20_INTERNO_R07 igual a stl/zonas/superior_assento_20.stl",
-    "OK exterior igual a stl/pecas/SAI_superior.stl"
+    "OK exterior igual a stl/pecas/SAI_superior.stl",
+    "OK STL da peça = projeto só deslocado na mesa (erro 0.0000 mm)",
+    "OK stl/zonas/superior_tubos_100.stl na mesma posição da peça que no projeto (fora 0.000 mm)",
+    "OK stl/zonas/superior_colar_55.stl na mesma posição da peça que no projeto (fora 0.000 mm)",
+    "OK stl/zonas/superior_ressaltos_35.stl na mesma posição da peça que no projeto (fora 0.000 mm)",
+    "OK stl/zonas/superior_assento_20.stl na mesma posição da peça que no projeto (fora 0.000 mm)"
    ],
    "fatiamento_K1Max": {
     "massa_peca_g": 666.4,
@@ -230,7 +235,11 @@
     "OK MOD_ROSAPES_35_INTERNO_R07 igual a stl/zonas/inferior_esq_ressaltos_e_pes_35.stl",
     "OK MOD_AMARELO_20_INTERNO_R07 a 20%",
     "OK MOD_AMARELO_20_INTERNO_R07 igual a stl/zonas/inferior_esq_assento_20.stl",
-    "OK exterior igual a stl/pecas/SAI_inferior_esq.stl"
+    "OK exterior igual a stl/pecas/SAI_inferior_esq.stl",
+    "OK STL da peça = projeto só deslocado na mesa (erro 0.0000 mm)",
+    "OK stl/zonas/inferior_esq_tubos_100.stl na mesma posição da peça que no projeto (fora 0.000 mm)",
+    "OK stl/zonas/inferior_esq_ressaltos_e_pes_35.stl na mesma posição da peça que no projeto (fora 0.000 mm)",
+    "OK stl/zonas/inferior_esq_assento_20.stl na mesma posição da peça que no projeto (fora 0.000 mm)"
    ],
    "fatiamento_K1Max": {
     "massa_peca_g": 383.2,
@@ -337,7 +346,11 @@
     "OK MOD_ROSAPES_35_INTERNO_R07 igual a stl/zonas/inferior_dir_ressaltos_e_pes_35.stl",
     "OK MOD_AMARELO_20_INTERNO_R07 a 20%",
     "OK MOD_AMARELO_20_INTERNO_R07 igual a stl/zonas/inferior_dir_assento_20.stl",
-    "OK exterior igual a stl/pecas/SAI_inferior_dir.stl"
+    "OK exterior igual a stl/pecas/SAI_inferior_dir.stl",
+    "OK STL da peça = projeto só deslocado na mesa (erro 0.0000 mm)",
+    "OK stl/zonas/inferior_dir_tubos_100.stl na mesma posição da peça que no projeto (fora 0.000 mm)",
+    "OK stl/zonas/inferior_dir_ressaltos_e_pes_35.stl na mesma posição da peça que no projeto (fora 0.000 mm)",
+    "OK stl/zonas/inferior_dir_assento_20.stl na mesma posição da peça que no projeto (fora 0.000 mm)"
    ],
    "fatiamento_K1Max": {
     "massa_peca_g": 383.2,
@@ -758,8 +771,8 @@
    "sha256": "310d0366de3a84912c53e7e9e90fd0540e66dc75b4f07b597af491ddaf683ae6"
   },
   "LEIA-ME.md": {
-   "bytes": 4760,
-   "sha256": "0421b5e78b952cae0e73a7083f0f2e4d91ce0a8d38a8a856f606fc8e2f0b023e"
+   "bytes": 5078,
+   "sha256": "1e74a8f74feb88faa158e9526d0dc012f6686f5916c6b91b84dc05766c9683b8"
   },
   "SAI_inferior_dir_PA6-CF_giroide20.3mf": {
    "bytes": 1229713,
@@ -823,43 +836,43 @@
   },
   "stl/zonas/inferior_dir_assento_20.stl": {
    "bytes": 259184,
-   "sha256": "25ca6efcbc6b70b07934ee76aefb975d3e3d1130367af3144645f35b74bcbed6"
+   "sha256": "102780c1cc5e47b9d8ae04e64e066cbe5005ade84ce61780bd3bcbdc936f9009"
   },
   "stl/zonas/inferior_dir_ressaltos_e_pes_35.stl": {
    "bytes": 756384,
-   "sha256": "bfc79b6ba496c5aed93ac2f951d7ea9f93de4ed7e5386b7f1d29f26899fab493"
+   "sha256": "f0d7e1096276358421c291a38e8171c8c0df161371de70d45ed79a3257e289c8"
   },
   "stl/zonas/inferior_dir_tubos_100.stl": {
    "bytes": 114284,
-   "sha256": "d212f5d4975d16f0c474a1060eb621309ab090fb2546f857405059d08cacb602"
+   "sha256": "1c29d5150dbfe1e69a573116e4554541155fb0e169c5b0727c16a5a0b1075bb0"
   },
   "stl/zonas/inferior_esq_assento_20.stl": {
    "bytes": 263084,
-   "sha256": "7164c992e9598286432577ef4739d794a2027ff5c5c179f63e263d8750f13f24"
+   "sha256": "566a5363988f6552fff0b96a9ed01fcc12f4d5845449fe9f1d7ac2d7cb0587bb"
   },
   "stl/zonas/inferior_esq_ressaltos_e_pes_35.stl": {
    "bytes": 756184,
-   "sha256": "ffbb1922721f4d47b78ceace93fd33ba358994ac86ccb51262b31db4335e567a"
+   "sha256": "a6f11b6ce12fcfa231b4814ccfc603644743debc8e41d7fa9b6e5c4eb6c0d4e9"
   },
   "stl/zonas/inferior_esq_tubos_100.stl": {
    "bytes": 115484,
-   "sha256": "08eef32428cbf6702a051702200de7abe263500209aaeafeaa97da4a95272d8e"
+   "sha256": "b6ff4fdba4502874994b67fe115f981638e83087d9488e805808a8ccdc2ed930"
   },
   "stl/zonas/superior_assento_20.stl": {
    "bytes": 157184,
-   "sha256": "616039249cc6ff9be151e246734da34968ad9389649f6509ef21a8386bb75d4c"
+   "sha256": "6fa85aa981d3e4fdfaccd6392cbaf2f5c161810e2d5fd38ccdf2ca9b45d7f606"
   },
   "stl/zonas/superior_colar_55.stl": {
    "bytes": 442984,
-   "sha256": "f098f9f2d18061bc5296c4bb117abb5e61363dcfd027b8af7d9eb16a3935f75a"
+   "sha256": "44edbb7e9f59d698bf3992618e8d9aab4ee69f7c17e1c5a2029565437e210a25"
   },
   "stl/zonas/superior_ressaltos_35.stl": {
    "bytes": 754884,
-   "sha256": "02f6d594f318173ecb437d262767fd88ccfa15a173e77bda3b9b187d9dd2e6bf"
+   "sha256": "257d9e8f20887092495e582bc5097c7236276c02adea6453ecd894ba090e9beb"
   },
   "stl/zonas/superior_tubos_100.stl": {
    "bytes": 453284,
-   "sha256": "5e2ab53c0dd6e7b9ed12a20b21c9da044f21f44dc6ff0f353c77cc9b2d309387"
+   "sha256": "34a05a65efa7baf61f666a7eb8a831818770eda6db79fdc354eb1a0bdfa80444"
   }
  },
  "pads_fatiamento_K1Max": {

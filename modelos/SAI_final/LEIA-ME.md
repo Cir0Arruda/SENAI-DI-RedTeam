@@ -35,7 +35,7 @@ Dentro da peça, cada zona tem um preenchimento diferente. No fatiador, isso apa
 ## Outras pastas
 
 - `stl/pecas/`: as peças em STL, para quem usa outro fatiador: as 3 da garra e os 8 PADs.
-- `stl/zonas/`: as zonas internas em STL. Em outro fatiador, importe cada uma como **modificador** da peça, na mesma posição (os arquivos já estão na posição certa), e dê o preenchimento do nome do arquivo.
+- `stl/zonas/`: as zonas internas em STL. Elas usam as mesmas coordenadas dos STL de `stl/pecas/`: cada zona já está no lugar certo dentro da sua peça. Em outro fatiador, importe a peça e as zonas dela juntas, como um objeto só, sem centralizar nem mover nenhuma. Depois marque cada zona como **modificador** e dê o preenchimento do nome do arquivo. Só o STL da peça, sem as zonas, sai com o preenchimento padrão do fatiador, diferente do que foi calculado.
 - `cad/SAI_garra_montada_3pecas_8PADs.step`: CAD da garra montada (3 peças e 8 PADs, 11 corpos), exportado do Autodesk Fusion. Serve para encaixe e desenho. As zonas internas não estão no STEP: elas só existem no fatiador.
 - `cad/SAI_PADs_8_pecas.step`: os 8 PADs separados.
 - `manifesto.json`: o que foi conferido em cada arquivo, com o SHA-256 de cada um.
@@ -50,7 +50,7 @@ Dentro da peça, cada zona tem um preenchimento diferente. No fatiador, isso apa
 
 ## De onde vêm os números
 
-- **Conferência deste pacote:** `dados/scripts/sai_pacote_final.py`. O script copia os arquivos, confere material, paredes, preenchimento e cada zona contra o STL de origem, e confere que todas as malhas estão fechadas. Para conferir de novo: `python dados/scripts/sai_pacote_final.py --conferir`.
+- **Conferência deste pacote:** `dados/scripts/sai_pacote_final.py`. O script copia os arquivos, confere material, paredes, preenchimento e cada zona contra o STL de origem, confere que cada zona em STL fica no mesmo lugar da peça que no projeto, e que todas as malhas estão fechadas. Para conferir de novo: `python dados/scripts/sai_pacote_final.py --conferir`.
 - **Resistência da garra montada:** o FE próprio do projeto (Python, voxels de 3 mm) usou esta mesma versão (`R07_SEM`): as mesmas zonas, giroide 25% e 20%, 5 paredes e a resistência entre camadas. Resultado: 24 kg numa asa dão FS 3,89, e a garra aguentaria cerca de 93 kg numa asa (`dados/montagem/montagem_R07_SEM.json`).
 - **Autodesk Fusion:** comparou o PA6-CF e o Tritan na peça superior maciça. Não considerou o preenchimento (`dados/REVISAO_SIMULACOES.md`, seção 5).
 - **PAD:** as forças vêm de um modelo de molas (estimativa), não do Fusion.

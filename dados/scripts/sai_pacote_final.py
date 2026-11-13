@@ -15,6 +15,8 @@ O que a conferência exige (falha se algo não bater):
     20% assento), iguais aos STL "sem almas";
   - PADs: 8 meias-peças, TPU, giroide 40%, 3 paredes, iguais aos STL R02;
   - exterior de cada peça igual ao STL original (volume, caixa e número de faces);
+  - cada STL de zona no mesmo lugar, em relação ao STL da peça, que o modificador no projeto
+    (as zonas de origem estão nas coordenadas da garra montada; o script as desloca para as da peça);
   - todas as malhas fechadas;
   - o FE da garra montada (montagem_R07_SEM.json) é da mesma variante (R07_SEM: giroide 25% e 20%, sem almas);
   - nenhum caminho de pasta pessoal dentro dos arquivos de texto do pacote.
@@ -146,6 +148,69 @@ def ler_3mf(p: Path):
     return cfg, partes, privado
 
 
+STL_DT = np.dtype([('n', '<f4', 3), ('v', '<f4', 9), ('a', '<u2')])
+
+
+def stl_sopa(p: Path):
+    """Triângulos do STL binário, na ordem do arquivo (n x 3 x 3, mm)."""
+    b = p.read_bytes(); n = int(np.frombuffer(b, '<u4', 1, 80)[0])
+    return np.frombuffer(b, STL_DT, n, 84)['v'].reshape(-1, 3, 3).astype(float)
+
+
+def stl_mover(p: Path, d):
+    """Desloca o STL binário pelo vetor d (mm). Só translação: forma e normais não mudam."""
+    b = p.read_bytes(); n = int(np.frombuffer(b, '<u4', 1, 80)[0])
+    a = np.frombuffer(b, STL_DT, n, 84).copy()
+    a['v'] = (a['v'].reshape(-1, 3, 3).astype(float) + d).reshape(-1, 9).astype(np.float32)
+    p.write_bytes(b[:84] + a.tobytes() + b[84 + 50 * n:])
+
+
+def _mat(s):
+    m = np.eye(4)
+    if s:
+        v = [float(x) for x in s.split()]
+        m[:3, :3] = np.array(v[:9]).reshape(3, 3).T; m[:3, 3] = v[9:12]
+    return m
+
+
+def sopas_3mf(p: Path):
+    """Triângulos de cada parte do projeto, já na posição da mesa (com as transformações do 3MF)."""
+    z = zipfile.ZipFile(p); raiz = '3D/3dmodel.model'; cache = {}
+
+    def objs(nome):
+        if nome not in cache:
+            cache[nome] = {o.get('id'): o for o in ET.fromstring(z.read(nome)).iter(NS + 'object')}
+        return cache[nome]
+    nomes = {o.get('id'): [{m.get('key'): m.get('value') for m in pt.findall('metadata')}.get('name')
+                           for pt in o.findall('part')]
+             for o in ET.fromstring(z.read('Metadata/model_settings.config')).findall('object')}
+    out = {}
+    for it in ET.fromstring(z.read(raiz)).find(NS + 'build'):
+        oid = it.get('objectid'); m0 = _mat(it.get('transform'))
+        for i, c in enumerate(objs(raiz)[oid].iter(NS + 'component')):
+            cam = [v for k, v in c.attrib.items() if k.endswith('path')]
+            me = objs(cam[0].lstrip('/') if cam else raiz)[c.get('objectid')].find(NS + 'mesh')
+            v = np.array([[float(x.get(k)) for k in 'xyz'] for x in me.find(NS + 'vertices')])
+            t = np.array([[int(x.get(k)) for k in ('v1', 'v2', 'v3')] for x in me.find(NS + 'triangles')])
+            m = m0 @ _mat(c.get('transform'))
+            out[nomes[oid][i]] = (v @ m[:3, :3].T + m[:3, 3])[t]
+    return out
+
+
+def posicao_zonas(base: Path, nome: str, esp: dict):
+    """Compara a posição de cada zona em relação à peça: no projeto 3MF e nos STL do pacote.
+    Devolve, por zona, o deslocamento que falta no STL da zona (mm) e o erro de forma."""
+    sop = sopas_3mf(base / nome)
+    ext = [k for k in sop if k not in esp['zonas']]
+    peca = stl_sopa(base / esp['exterior'])
+    t = (sop[ext[0]] - peca).reshape(-1, 3).mean(0)            # peça do 3MF = STL da peça + t
+    r = {'_peca': float(np.abs(sop[ext[0]] - peca - t).max())}
+    for mn, (_, arq) in esp['zonas'].items():
+        z = stl_sopa(base / arq); d = (sop[mn] - t - z).reshape(-1, 3).mean(0)
+        r[mn] = (d, float(np.abs(sop[mn] - t - z - d).max()))
+    return r
+
+
 def igual(a, b, tol=0.05):
     return (a and b and a['faces'] == b['faces'] and abs(a['volume_cm3'] - b['volume_cm3']) <= tol
             and all(abs(x - y) <= 0.2 for x, y in zip(sorted(a['caixa_mm']), sorted(b['caixa_mm']))))
@@ -177,6 +242,13 @@ def conferir(base: Path):
         if 'exterior' in esp:
             ext = [p for p in partes if p['tipo'] == 'normal_part']
             ok(len(ext) == 1 and igual(ext[0]['malha'], stl[esp['exterior']]), f"exterior igual a {esp['exterior']}")
+            # posição: o STL da zona tem de ficar no mesmo lugar da peça que no projeto (só translação da mesa)
+            pos = posicao_zonas(base, nome, esp)
+            ok(pos['_peca'] < 0.01, f"STL da peça = projeto só deslocado na mesa (erro {pos['_peca']:.4f} mm)")
+            for mn, (_, arq) in esp['zonas'].items():
+                d, e = pos[mn]
+                ok(float(np.abs(d).max()) < 0.01 and e < 0.01,
+                   f'{arq} na mesma posição da peça que no projeto (fora {float(np.abs(d).max()):.3f} mm)')
         if 'pads' in esp:
             pn = {p['nome']: p for p in partes}
             ok(set(pn) == set(esp['pads']), f'{len(pn)} PADs')
@@ -211,6 +283,17 @@ def montar():
     for dest, src in {**PROJETOS, **CAD, **STL}.items():
         d = OUT / dest; d.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(src, d)
+    # as zonas de origem estão nas coordenadas da garra montada (as do FE); as peças em STL estão
+    # centradas na origem. Desloca cada zona para ficar, em relação ao STL da peça, onde está no projeto.
+    for nome, esp in ESPERADO.items():
+        if 'exterior' not in esp:
+            continue
+        pos = posicao_zonas(OUT, nome, esp)
+        for mn, (_, arq) in esp['zonas'].items():
+            d, e = pos[mn]
+            if e > 0.01:
+                raise SystemExit(f'{nome}: a zona {mn} não é a mesma forma do projeto (erro {e:.4f} mm)')
+            stl_mover(OUT / arq, d)
 
 
 def main():
