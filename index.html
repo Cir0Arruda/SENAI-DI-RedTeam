@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=r12l">
+  <link rel="stylesheet" href="assets/css/style.css?v=r12m">
   <script type="importmap">
     { "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
@@ -29,7 +29,7 @@
       <button class="rail-btn" data-go="#s-intro" title="Introdução: o problema">
         <svg class="i" viewBox="0 0 24 24"><path d="M12 3l9 16H3zM12 10v4M12 17v.01"/></svg>
       </button>
-      <button class="rail-btn" data-go="#s-desenv" title="Projeto SAI: material, solução e PAD">
+      <button class="rail-btn" data-go="#s-sai-capa" title="Projeto SAI: material, solução e PAD">
         <svg class="i" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg>
       </button>
       <button class="rail-btn" data-go="#s-sustent" title="Sustentabilidade e segurança">
@@ -103,10 +103,16 @@
               <span class="kicker">Introdução · O problema da Ajinomoto</span>
               <h2>A garra quebra e a linha <em>para</em></h2>
             </div>
+            <div class="intro-top">
+            <figure class="intro-foto glass">
+              <a href="assets/img/problema/garra_linha.webp" data-zoom="Garra atual de Tritan na linha da Ajinomoto, rompida na raiz, onde se prende ao robô"><img src="assets/img/problema/garra_linha.webp" alt="Garra de ventosas atual montada no robô da linha, rompida na raiz, onde se prende ao robô" width="1083" height="708"></a>
+              <figcaption><span class="tag bad">Garra atual</span> rompida na raiz</figcaption>
+            </figure>
             <div class="flow">
               <article class="glass card"><h3>A garra rompe</h3><p>Quando a garra bate em algo, ela rompe. A falha começa entre as camadas da impressão, bem na raiz onde a garra se prende ao robô.</p></article>
               <article class="glass card"><h3>A linha para ou vira manual</h3><p>Sem a garra, a paletização fica parada ou passa a ser feita na mão. Só a troca da garra leva cerca de 45 minutos.</p></article>
               <article class="glass card"><h3>A peça de reposição demora</h3><p>A garra atual é de Tritan importado, com entrega de 15 a 20 dias. Sem peça em estoque, a parada pode durar mais.</p></article>
+            </div>
             </div>
             <div class="glass ticker" id="anim-parada" aria-label="Contador da parada: em 45 minutos deixam de ser produzidas 280 caixas, ou 3.360 itens">
               <span class="t-lbl"><i class="t-dot"></i>Linha parada</span>
@@ -190,6 +196,42 @@
                 </ul>
               </div>
             </div>
+          </div>
+        </section>
+
+        <!-- Capa do Projeto SAI: transição da introdução para o projeto -->
+        <section class="slide" data-title="Projeto SAI" id="s-sai-capa">
+          <div class="wrap wide sai-capa">
+            <div class="sai-txt">
+              <span class="kicker">03 · O projeto</span>
+              <h2 class="sai-letras" aria-label="SAI"><span aria-hidden="true">S</span><span aria-hidden="true">A</span><span aria-hidden="true">I</span></h2>
+              <p class="sai-nome"><span><b>S</b>istema</span> <span>de <b>A</b>mortecimento</span> <span>de <b>I</b>mpacto</span></p>
+              <ul class="sai-pilares" aria-label="O que muda na garra">
+                <li><i>01</i>Material novo</li>
+                <li><i>02</i>Estrutura por dentro</li>
+                <li><i>03</i>PAD de sacrifício</li>
+              </ul>
+            </div>
+            <figure class="sai-palco" aria-hidden="true">
+              <svg viewBox="0 0 400 360" role="presentation">
+                <defs>
+                  <radialGradient id="sai-bola-g" cx="35%" cy="30%" r="70%"><stop offset="0" stop-color="#8f8ff0"/><stop offset="1" stop-color="#3f3fb8"/></radialGradient>
+                  <linearGradient id="sai-pad-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5a5f"/><stop offset="1" stop-color="#e5232f"/></linearGradient>
+                  <linearGradient id="sai-garra-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9e8f3"/><stop offset="1" stop-color="#c9c8d8"/></linearGradient>
+                </defs>
+                <ellipse class="sai-sombra" cx="200" cy="322" rx="120" ry="12"/>
+                <rect class="sai-garra" x="90" y="222" width="220" height="92" rx="18" fill="url(#sai-garra-g)"/>
+                <text class="sai-rot" x="200" y="276" text-anchor="middle">garra</text>
+                <g class="sai-ondas">
+                  <ellipse class="sai-onda" cx="200" cy="196" rx="70" ry="14"/>
+                  <ellipse class="sai-onda o2" cx="200" cy="196" rx="70" ry="14"/>
+                </g>
+                <g class="sai-pad"><rect x="118" y="194" width="164" height="30" rx="15" fill="url(#sai-pad-g)"/></g>
+                <text class="sai-rot pad" x="292" y="190">PAD</text>
+                <g class="sai-bola"><circle cx="200" cy="168" r="26" fill="url(#sai-bola-g)"/></g>
+              </svg>
+              <figcaption>O PAD amassa primeiro e a garra fica protegida.</figcaption>
+            </figure>
           </div>
         </section>
 
@@ -1957,19 +1999,19 @@
     </div>
   </dialog>
 
-  <script src="assets/js/main.js?v=r12l"></script>
-  <script src="assets/js/bancada-dados.js?v=r12l"></script>
-  <script src="assets/js/bancada.js?v=r12l"></script>
-  <script src="assets/js/r07-dados.js?v=r12l"></script>
-  <script src="assets/js/r07.js?v=r12l"></script>
-  <script src="assets/js/conjunto-dados.js?v=r12l"></script>
-  <script src="assets/js/conjunto.js?v=r12l"></script>
-  <script src="assets/js/sai.js?v=r12l"></script>
-  <script src="assets/js/custo-dados.js?v=r12l"></script>
-  <script src="assets/js/custo.js?v=r12l"></script>
-  <script src="assets/js/anim.js?v=r12l"></script>
-  <script src="assets/js/referencias-dados.js?v=r12l"></script>
-  <script src="assets/js/referencias.js?v=r12l"></script>
-  <script type="module" src="assets/js/viewer3d.js?v=r12l"></script>
+  <script src="assets/js/main.js?v=r12m"></script>
+  <script src="assets/js/bancada-dados.js?v=r12m"></script>
+  <script src="assets/js/bancada.js?v=r12m"></script>
+  <script src="assets/js/r07-dados.js?v=r12m"></script>
+  <script src="assets/js/r07.js?v=r12m"></script>
+  <script src="assets/js/conjunto-dados.js?v=r12m"></script>
+  <script src="assets/js/conjunto.js?v=r12m"></script>
+  <script src="assets/js/sai.js?v=r12m"></script>
+  <script src="assets/js/custo-dados.js?v=r12m"></script>
+  <script src="assets/js/custo.js?v=r12m"></script>
+  <script src="assets/js/anim.js?v=r12m"></script>
+  <script src="assets/js/referencias-dados.js?v=r12m"></script>
+  <script src="assets/js/referencias.js?v=r12m"></script>
+  <script type="module" src="assets/js/viewer3d.js?v=r12m"></script>
 </body>
 </html>

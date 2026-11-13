@@ -1056,3 +1056,85 @@ dialog.refs-viewer[open] { display: flex; animation: rv-in .35s var(--ease); }
   .rv-foot span:nth-child(2) { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { dialog.refs-viewer[open], .rv-flash { animation: none; } }
+
+/* Slide 3: foto da garra quebrada como 1º quadro, antes dos 3 problemas */
+.intro-top { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 3fr); gap: 12px; align-items: stretch; }
+.intro-foto { position: relative; margin: 0; min-height: 190px; padding: 0; overflow: hidden; border-radius: var(--r-lg); }
+.intro-foto a { position: absolute; inset: 0; cursor: zoom-in; }
+.intro-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% 60%; }
+.intro-foto figcaption { position: absolute; left: 8px; right: 8px; top: 8px; width: fit-content; pointer-events: none; display: flex; align-items: center; gap: 6px; padding: 5px 10px 5px 5px; border-radius: 999px; background: rgba(255,255,255,.92); font-size: 12px; line-height: 1.25; color: var(--ink-2); box-shadow: 0 6px 18px -8px rgba(0,0,0,.35); }
+.intro-foto figcaption .tag { flex: none; }
+@media (max-width: 900px) {
+  .intro-top { grid-template-columns: 1fr; }
+  .intro-foto { min-height: 0; aspect-ratio: 1083 / 708; }
+}
+
+/* Capa do Projeto SAI (transição): letras S-A-I, nome e bola caindo num PAD */
+.sai-capa { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: center; gap: 24px 40px; min-height: 100%; }
+.sai-letras { display: flex; margin: 14px 0 6px; font-size: clamp(110px, 15vw, 230px); line-height: .86; font-weight: 700; letter-spacing: -.05em; color: var(--ink); }
+.sai-letras span { display: inline-block; }
+.slide.on .sai-letras span { animation: sai-sobe .8s var(--ease) both; }
+.slide.on .sai-letras span:nth-child(2) { animation-delay: .14s; }
+.slide.on .sai-letras span:nth-child(3) { animation-delay: .28s; }
+.sai-nome { margin: 0 0 22px; font-size: clamp(22px, 2.3vw, 34px); line-height: 1.2; color: var(--ink-2); }
+.sai-nome b { color: var(--red); font-weight: 700; }
+.sai-nome span { display: inline-block; }
+.slide.on .sai-nome span { animation: sai-aparece .6s var(--ease) both; animation-delay: .7s; }
+.slide.on .sai-nome span:nth-child(2) { animation-delay: .85s; }
+.slide.on .sai-nome span:nth-child(3) { animation-delay: 1s; }
+.sai-pilares { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.sai-pilares li { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px 0 8px; border-radius: 999px; background: var(--glass-3); border: 1px solid var(--stroke); box-shadow: var(--shadow); font-size: 15px; font-weight: 500; color: var(--ink); }
+.sai-pilares i { font-style: normal; font-family: var(--mono); font-size: 12px; color: var(--red); background: var(--red-soft); border-radius: 999px; padding: 3px 7px; }
+.slide.on .sai-pilares li { animation: sai-aparece .55s var(--ease) both; animation-delay: 1.3s; }
+.slide.on .sai-pilares li:nth-child(2) { animation-delay: 1.45s; }
+.slide.on .sai-pilares li:nth-child(3) { animation-delay: 1.6s; }
+
+.sai-palco { position: relative; margin: 0; padding: 18px 18px 14px; border-radius: var(--r-xl); background: radial-gradient(closest-side, rgba(255,255,255,.75), rgba(255,255,255,0)); }
+.sai-palco svg { display: block; width: 100%; height: auto; max-height: 52vh; overflow: visible; }
+.sai-palco figcaption { margin-top: 4px; text-align: center; font-size: 15px; color: var(--ink-2); }
+.sai-sombra { fill: rgba(21,21,29,.08); }
+.sai-rot { font-family: var(--font); font-size: 15px; font-weight: 600; fill: #74768c; letter-spacing: .02em; }
+.sai-rot.pad { fill: var(--red); font-size: 14px; }
+.sai-onda { fill: none; stroke: var(--red); stroke-width: 3; opacity: 0; }
+.sai-pad, .sai-bola, .sai-onda { transform-box: fill-box; }
+.sai-pad { transform-origin: 50% 100%; }
+.sai-onda { transform-origin: 50% 50%; }
+/* a batida se repete enquanto o slide está aberto */
+.slide.on .sai-bola { animation: sai-bola 3.2s linear .9s infinite both; }
+.slide.on .sai-pad { animation: sai-pad 3.2s ease-out .9s infinite both; }
+.slide.on .sai-onda { animation: sai-onda 3.2s ease-out .9s infinite both; }
+.slide.on .sai-onda.o2 { animation-delay: 1.05s; }
+
+@keyframes sai-sobe { from { opacity: 0; transform: translateY(45%); } to { opacity: 1; transform: none; } }
+@keyframes sai-aparece { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes sai-bola {
+  0%   { transform: translateY(-190px); opacity: 0; animation-timing-function: cubic-bezier(.55,0,1,.45); }
+  6%   { opacity: 1; }
+  28%  { transform: translateY(4px); animation-timing-function: cubic-bezier(0,.55,.45,1); }
+  42%  { transform: translateY(-46px); animation-timing-function: cubic-bezier(.55,0,1,.45); }
+  54%  { transform: translateY(2px); animation-timing-function: cubic-bezier(0,.55,.45,1); }
+  61%  { transform: translateY(-10px); }
+  68%, 88% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+@keyframes sai-pad {
+  0%, 26% { transform: none; }
+  30% { transform: scale(1.08, .55); }
+  37% { transform: scale(.97, 1.08); }
+  44% { transform: none; }
+  54% { transform: scale(1.03, .82); }
+  60%, 100% { transform: none; }
+}
+@keyframes sai-onda {
+  0%, 27% { opacity: 0; transform: scale(.4); }
+  30% { opacity: .8; transform: scale(.6); }
+  50%, 100% { opacity: 0; transform: scale(1.9); }
+}
+@media (max-width: 900px) {
+  .sai-capa { grid-template-columns: 1fr; }
+  .sai-palco { max-width: 420px; justify-self: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .slide.on .sai-letras span, .slide.on .sai-nome span, .slide.on .sai-pilares li { animation: none; }
+  .slide.on .sai-bola, .slide.on .sai-pad, .slide.on .sai-onda { animation: none; }
+}
